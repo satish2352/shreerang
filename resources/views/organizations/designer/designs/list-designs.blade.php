@@ -28,11 +28,11 @@ padding-left: 20px !important;
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd">
-                            <h1>Organization <span class="table-project-n">Data</span> Table</h1>
+                            <h1>Designs <span class="table-project-n">Data</span> Table</h1>
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
                                         <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('hr-add-employees') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Organization</button></a>
+                                                <a href="{{ route('add-designs') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Organization</button></a>
                                         </div>
                                     </div>
                                 <div class="col-lg-10"></div>
@@ -80,18 +80,10 @@ padding-left: 20px !important;
                                         <tr>
                                             <th data-field="state" data-checkbox="true"></th>
                                             <th data-field="id">ID</th>
-                                            <th data-field="company_name" data-editable="true">Employee Name</th>
-                                            <th data-field="email" data-editable="true">Email</th>
-                                            <th data-field="mobile_number" data-editable="true">Mobile Number</th>
-                                            <th data-field="role_name" data-editable="true">Role Name</th>
-                                            <th data-field="department_name" data-editable="true">Department Name</th>
-                                            <th data-field="address" data-editable="true">Address</th>
-                                            <th data-field="aadhar_number" data-editable="true">Aadhar Number</th>
-                                            <th data-field="pancard_number" data-editable="true">Pancard Number</th>
-                                            <th data-field="total_experience" data-editable="true">Total Experience</th>
-                                            <th data-field="highest_qualification" data-editable="true">Highest Qualification</th>
-                                            <th data-field="gender" data-editable="true">Gender</th>
-                                            <th data-field="joining_date" data-editable="true">Joining Date</th>
+                                            <th data-field="design_name" data-editable="true">Design Name</th>
+                                            <th data-field="design_page" data-editable="true">Design Page</th>
+                                            <th data-field="project_name" data-editable="true">Project Name</th>
+                                            <th data-field="time_allocation" data-editable="true">Time Allocated For Design</th>
                                             <th data-field="image" data-editable="false">Image</th>
                                             <th data-field="action">Action</th>
                                         </tr>
@@ -102,23 +94,16 @@ padding-left: 20px !important;
                                         <tr>
                                             <td></td>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ucwords($data->employee_name)}}</td>
-                                            <td>{{ucwords($data->email)}}</td>
-                                            <td>{{ucwords($data->mobile_number)}}</td>
-                                            <td>{{ isset($data->department->department_name) ? $data->department->department_name : 'N/A' }}</td>
-                                            <td>{{ isset($data->role->role_name) ? $data->role->role_name : 'N/A' }}</td>
-                                            <td>{{ucwords($data->address)}}</td>
-                                            <td>{{ucwords($data->aadhar_number)}}</td>
-                                            <td>{{ucwords($data->pancard_number)}}</td>
-                                            <td>{{ucwords($data->total_experience)}}</td>
-                                            <td>{{ucwords($data->highest_qualification)}}</td>
-                                            <td>{{ucwords($data->gender)}}</td>
-                                            <td>{{ucwords($data->joining_date)}}</td>
-                                            <td><img style="max-width:250px; max-height:150px;" src="{{ Config::get('DocumentConstant.EMPLOYEES_HR_VIEW') . $data->image }}" alt="{{ strip_tags($data['company_name']) }} Image" /></td>
+                                            <td>{{ucwords($data->design_name)}}</td>
+                                            <td>{{ucwords($data->design_page)}}</td>
+                                            <td>{{ucwords($data->project_name)}}</td>
+                                            <td>{{ucwords($data->time_allocation)}}</td>
+                                            
+                                            <td><img style="max-width:250px; max-height:150px;" src="{{ Config::get('DocumentConstant.DESIGNS_VIEW') . $data->image }}" alt="{{ strip_tags($data['company_name']) }} Image" /></td>
                                             <td>
                                                 <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('hr-edit-employees', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    <a href="{{route('hr-delete-employees', base64_encode($data->id))}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                                    <a href="{{route('edit-designs', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                    <a href="{{route('delete-designs', base64_encode($data->id))}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                                 </div>
                                             </td>
                                            </tr>

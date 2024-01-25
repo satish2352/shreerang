@@ -15,9 +15,8 @@ class OrganizationsMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
 
-    public function handle($request, Closure $next,... $allowedRoleName)
+    public function handle($request, Closure $next,$allowedRoleName)
     {
- dd(session()->all(), $allowedRoleName);
         if ($request->session()->get('role_name') == $allowedRoleName) {
             return $next($request);
         } else {

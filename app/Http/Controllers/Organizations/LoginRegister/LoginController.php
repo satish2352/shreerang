@@ -23,7 +23,7 @@ class LoginController extends Controller
     }
 
   public function submitLogin(Request $request)
-{
+{   
     $rules = [
         'email' => 'required|email',
         'password' => 'required',
@@ -44,19 +44,30 @@ class LoginController extends Controller
                 ->withErrors($validation);
         } else {
             $resp = self::$loginServe->checkLogin($request);
+
             if ($resp['status'] == 'success') {
                 if (is_object($resp['msg']) && property_exists($resp['msg'], 'id')) {
                     $userId = $resp['msg']->id;
                     Session::put('user_id', $userId);
                 }
-
                 if ($resp['role_id'] == 1) 
                 {
                     return redirect('/dashboard');
                 } 
-                else 
+                else if ($request->session()->get('role_name') == "Hr. Departments")
                 {
-                    return redirect('/organizations/dashboard');
+                    return redirect('/hr-dashboard');
+                } else if ($request->session()->get('role_name') == "Admin")
+                {
+                    return redirect('/admin-dashboard');
+                }
+                else if ($request->session()->get('role_name') == "Designer")
+                {
+                    return redirect('/designer-dashboard');
+                } 
+                else if ($request->session()->get('role_name') == "Production")
+                {
+                    return redirect('/production-dashboard');
                 }
             } 
             else {

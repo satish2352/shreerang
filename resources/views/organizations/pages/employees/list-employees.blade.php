@@ -28,11 +28,11 @@ padding-left: 20px !important;
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd">
-                            <h1>Organization <span class="table-project-n">Data</span> Table</h1>
+                            <h1>Employees <span class="table-project-n">Data</span> Table</h1>
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
                                         <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('organizations-add-employees') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" href="{{route('add-organizations')}}">Add Organization</button></a>
+                                                <a href="{{ route('organizations-add-employees') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" href="{{route('add-organizations')}}">Add Employees</button></a>
                                         </div>
                                     </div>
                                 <div class="col-lg-10"></div>

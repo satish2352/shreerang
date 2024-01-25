@@ -75,19 +75,7 @@ Route::group(['middleware' => ['admin']], function () {
 });
 
 
-
-
-
-
-
-
-
-
-
-
 /////////////////////////////////////////////////////////------Organizations-----------------//////////////////////////////////////////
-
-
 
 
 
@@ -99,11 +87,11 @@ Route::get('/organizations/login', ['as' => 'organization-login', 'uses' => 'App
 Route::post('/organizations/submitLogin', ['as' => 'organization-submitLogin', 'uses' => 'App\Http\Controllers\Organizations\LoginRegister\LoginController@submitLogin']);
 
 
-Route::group(['middleware' => ['organizations:admin']], function () {
+Route::group(['middleware' => ['organizations:Admin']], function () {
 
     Route::get('/log-out', ['as' => 'organization-log-out', 'uses' => 'App\Http\Controllers\Organizations\LoginRegister\LoginController@logout']);
 
-    Route::get('/organizations/dashboard', ['as' => '/organizations.dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
+    Route::get('/admin-dashboard', ['as' => '/admin-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
 
     Route::get('/organizations-list-employees', ['as' => 'organizations-list-employees', 'uses' => 'App\Http\Controllers\Organizations\Employees\EmployeesController@index']);
     Route::get('/organizations-add-employees', ['as' => 'organizations-add-employees', 'uses' => 'App\Http\Controllers\Organizations\Employees\EmployeesController@add']);
@@ -115,19 +103,58 @@ Route::group(['middleware' => ['organizations:admin']], function () {
 });
 
 
-
-
-
-
-
-Route::group(['middleware' => ['organizations:HR']], function () {
+Route::group(['middleware' => 'organizations:Hr. Departments'], function () {
 
     Route::get('/log-out', ['as' => 'organization-log-out', 'uses' => 'App\Http\Controllers\Organizations\LoginRegister\LoginController@logout']);
-    Route::get('/organizations/dashboard', ['as' => '/organizations.dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
-    Route::get('/hr-list-employees', ['as' => 'hr-list-employees', 'uses' => 'App\Http\Controllers\Organizations\Employees\EmployeesController@index']);
-    Route::get('/hr-add-employees', ['as' => 'hr-add-employees', 'uses' => 'App\Http\Controllers\Organizations\Employees\EmployeesController@add']);
-    Route::post('/hr-store-employees', ['as' => 'hr-store-employees', 'uses' =>  'App\Http\Controllers\Organizations\Employees\EmployeesController@store']);
-    Route::get('/hr-edit-employees/{id}', ['as' => 'hr-edit-employees', 'uses' =>  'App\Http\Controllers\Organizations\Employees\EmployeesController@edit']);
-    Route::post('/hr-update-employees', ['as' => 'hr-update-employees', 'uses' =>  'App\Http\Controllers\Organizations\Employees\EmployeesController@update']);
-    Route::any('/hr-delete-employees/{id}', ['as' => 'hr-delete-employees', 'uses' =>  'App\Http\Controllers\Organizations\Employees\EmployeesController@destroy']);
+    Route::get('/hr-dashboard', ['as' => '/hr-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
+    Route::get('/hr-list-employees', ['as' => 'hr-list-employees', 'uses' => 'App\Http\Controllers\Organizations\HR\Employees\EmployeesHrController@index']);
+    Route::get('/hr-add-employees', ['as' => 'hr-add-employees', 'uses' => 'App\Http\Controllers\Organizations\HR\Employees\EmployeesHrController@add']);
+    Route::post('/hr-store-employees', ['as' => 'hr-store-employees', 'uses' =>  'App\Http\Controllers\Organizations\HR\Employees\EmployeesHrController@store']);
+    Route::get('/hr-edit-employees/{id}', ['as' => 'hr-edit-employees', 'uses' =>  'App\Http\Controllers\Organizations\HR\Employees\EmployeesHrController@edit']);
+    Route::post('/hr-update-employees', ['as' => 'hr-update-employees', 'uses' =>  'App\Http\Controllers\Organizations\HR\Employees\EmployeesHrController@update']);
+    Route::any('/hr-delete-employees/{id}', ['as' => 'hr-delete-employees', 'uses' =>  'App\Http\Controllers\Organizations\HR\Employees\EmployeesHrController@destroy']);
 });
+
+
+Route::group(['middleware' => ['organizations:Designer']], function () {
+
+    Route::get('/log-out', ['as' => 'organization-log-out', 'uses' => 'App\Http\Controllers\Organizations\LoginRegister\LoginController@logout']);
+    Route::get('/designer-dashboard', ['as' => '/designer-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
+    Route::get('/list-designs', ['as' => 'list-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@index']);
+    Route::get('/add-designs', ['as' => 'add-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@add']);
+    Route::post('/store-designs', ['as' => 'store-designs', 'uses' =>  'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@store']);
+    Route::get('/edit-designs/{id}', ['as' => 'edit-designs', 'uses' =>  'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@edit']);
+    Route::post('/update-designs', ['as' => 'update-designs', 'uses' =>  'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@update']);
+    Route::any('/delete-designs/{id}', ['as' => 'delete-designs', 'uses' =>  'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@destroy']);
+});
+
+Route::group(['middleware' => ['organizations:Production']], function () {
+
+    Route::get('/log-out', ['as' => 'organization-log-out', 'uses' => 'App\Http\Controllers\Organizations\LoginRegister\LoginController@logout']);
+    Route::get('/production-dashboard', ['as' => '/production-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
+    Route::get('/list-products', ['as' => 'list-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@index']);
+    Route::get('/add-products', ['as' => 'add-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@add']);
+    Route::post('/store-products', ['as' => 'store-products', 'uses' =>  'App\Http\Controllers\Organizations\Productions\ProductionController@store']);
+    Route::get('/edit-products/{id}', ['as' => 'edit-products', 'uses' =>  'App\Http\Controllers\Organizations\Productions\ProductionController@edit']);
+    Route::post('/update-products', ['as' => 'update-products', 'uses' =>  'App\Http\Controllers\Organizations\Productions\ProductionController@update']);
+    Route::any('/delete-products/{id}', ['as' => 'delete-products', 'uses' =>  'App\Http\Controllers\Organizations\Productions\ProductionController@destroy']);
+
+    Route::get('/list-purchase', ['as' => 'list-purchase', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@index']);
+    Route::get('/add-purchase', ['as' => 'add-purchase', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@add']);
+    Route::post('/store-purchase', ['as' => 'store-purchase', 'uses' =>  'App\Http\Controllers\Organizations\Productions\PurchaseController@store']);
+    Route::get('/edit-purchase/{id}', ['as' => 'edit-purchase', 'uses' =>  'App\Http\Controllers\Organizations\Productions\PurchaseController@edit']);
+    Route::post('/update-purchase', ['as' => 'update-purchase', 'uses' =>  'App\Http\Controllers\Organizations\Productions\PurchaseController@update']);
+    Route::any('/delete-purchase/{id}', ['as' => 'delete-purchase', 'uses' =>  'App\Http\Controllers\Organizations\Productions\PurchaseController@destroy']);
+});
+
+// Route::group(['middleware' => ['organizations:Purchase']], function () {
+
+//     Route::get('/log-out', ['as' => 'organization-log-out', 'uses' => 'App\Http\Controllers\Organizations\LoginRegister\LoginController@logout']);
+//     Route::get('/production-dashboard', ['as' => '/production-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
+//     Route::get('/list-products', ['as' => 'list-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@index']);
+//     Route::get('/add-products', ['as' => 'add-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@add']);
+//     Route::post('/store-products', ['as' => 'store-products', 'uses' =>  'App\Http\Controllers\Organizations\Productions\ProductionController@store']);
+//     Route::get('/edit-products/{id}', ['as' => 'edit-products', 'uses' =>  'App\Http\Controllers\Organizations\Productions\ProductionController@edit']);
+//     Route::post('/update-products', ['as' => 'update-products', 'uses' =>  'App\Http\Controllers\Organizations\Productions\ProductionController@update']);
+//     Route::any('/delete-products/{id}', ['as' => 'delete-products', 'uses' =>  'App\Http\Controllers\Organizations\Productions\ProductionController@destroy']);
+// });

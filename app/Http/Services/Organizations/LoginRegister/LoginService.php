@@ -6,7 +6,7 @@ use App\Http\Repository\Organizations\LoginRegister\LoginRepository;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Session;
-use App\Models\RolesModel;
+use App\Models\DepartmentsModel;
 class LoginService 
 {
 	protected $repo;
@@ -17,15 +17,16 @@ class LoginService
 
     public function checkLogin($request) {
         $response = $this->repo->checkLogin($request);
-        $roleName = RolesModel::join('tbl_employees', 'tbl_employees.role_id', '=', 'tbl_roles.id')
+        $roleName = DepartmentsModel::join('tbl_employees', 'tbl_employees.department_id', '=', 'tbl_departments.id')
                 ->where('tbl_employees.email',$request->email )
-                ->select('tbl_roles.role_name')
-                ->get();     
+                ->select('tbl_departments.department_name')
+                ->get();    
         $role="";
         foreach($roleName as $name)
         {
-            $role=$name->role_name;
+            $role=$name->department_name;
         }
+        // dd($role);
             if($response['user_details']) {
             $password = $request['password'];
             if (Hash::check($password, $response['user_details']['u_password'])) {

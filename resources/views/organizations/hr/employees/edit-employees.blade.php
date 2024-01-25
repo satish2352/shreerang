@@ -4,13 +4,18 @@
     label {
         margin-top: 20px;
     }
+    label.error {
+        color: red; /* Change 'red' to your desired text color */
+        font-size: 12px; /* Adjust font size if needed */
+        /* Add any other styling as per your design */
+    }
 </style>
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="sparkline12-list">
             <div class="sparkline12-hd">
                 <div class="main-sparkline12-hd">
-                    <center><h1>Add Organization Data</h1></center>
+                    <center><h1>Edit Employee Data</h1></center>
                 </div>
             </div>
             <div class="sparkline12-graph">
@@ -23,7 +28,7 @@
                         @endif
 
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                             @if (Session::get('status') == 'success')
+                            @if (Session::get('status') == 'success')
                                 <div class="col-12 grid-margin">
                                     <div class="alert alert-custom-success " id="success-alert">
                                         <button type="button"  data-bs-dismiss="alert"></button>
@@ -50,34 +55,35 @@
                                 </div>
                             @endif
                             <div class="all-form-element-inner">
-                                <form action="{{ route('organizations-update-employees') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('hr-update-employees') }}" id="editEmployeeForm" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group-inner">
-                                                <input type="hidden" class="form-control" value="@if (old('id')) {{ old('id') }}@else{{ $editData->id }} @endif" id="id" name="id" >
+                                        <input type="hidden" class="form-control" value="{{ $editData->id }}" id="id" name="id" >
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <label for="company_name">Employee Name:</label>
-                                                <input type="text" class="form-control" value="@if (old('employee_name')) {{ old('employee_name') }}@else{{ $editData->employee_name }} @endif" id="employee_name" name="employee_name" placeholder="Enter Employees name">
+                                                <label for="employee_name">Employee Name:</label>
+                                                <input type="text" class="form-control" value="{{ $editData->employee_name }}" id="employee_name" name="employee_name" placeholder="Enter Employee name">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <label for="email">Email:</label>
-                                                <input type="email" class="form-control" id="email" value="@if (old('email')) {{ old('email') }}@else{{ $editData->email }} @endif" name="email" placeholder="Enter email">
+                                                <label for="email">Employee Email:</label>
+                                                <input type="email" class="form-control" id="email" value="{{ $editData->email }}" name="email" placeholder="Enter email">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <label for="mobile_number">Mobile Number:</label>
-                                                <input type="text" class="form-control" id="mobile_number" value="@if (old('mobile_number')) {{ old('mobile_number') }}@else{{ $editData->mobile_number }} @endif" name="mobile_number" placeholder="Enter mobile number">
+                                                <input type="text" class="form-control" id="mobile_number" value="{{ $editData->mobile_number }}" name="mobile_number" placeholder="Enter mobile number">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <label for="address">Employee Address:</label>
-                                                <input type="text" class="form-control" id="address" value="@if (old('address')) {{ old('address') }}@else{{ $editData->address }} @endif" name="address" placeholder="Enter company address">
+                                                <input type="text" class="form-control" id="address" value="{{ $editData->address }}" name="address" placeholder="Enter company address">
                                             </div>
                                         </div>
-                                         <div class="row">
+
+                                        <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                            <div class="form-select-list">
+                                                <div class="form-select-list">
                                                     <label for="department_id">Select Department:</label>
                                                     <select class="form-control custom-select-value" name="department_id">
                                                         <option value="">Select Department</option>
@@ -90,40 +96,73 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                            <div class="form-select-list">
-                                                <label for="role_id">Select Role:</label>
-                                                <select class="form-control custom-select-value" name="role_id">
-                                                    <option value="">Select Role</option>
-                                                    @foreach($roles as $data)
-                                                        <option value="{{ $data->id }}" {{ $data->id == $editData->role_id ? 'selected' : '' }}>
-                                                            {{ ucfirst($data->role_name) }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
+                                                <div class="form-select-list">
+                                                    <label for="role_id">Select Role:</label>
+                                                    <select class="form-control custom-select-value" name="role_id">
+                                                        <option value="">Select Role</option>
+                                                        @foreach($roles as $data)
+                                                            <option value="{{ $data->id }}" {{ $data->id == $editData->role_id ? 'selected' : '' }}>
+                                                                {{ ucfirst($data->role_name) }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
-                                        </div>
+
                                         <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <label for="aadhar_number">Aadhar Number:</label>
+                                                <input type="text" class="form-control" id="aadhar_number" value="{{ $editData->aadhar_number }}" name="aadhar_number" placeholder="Enter Aadhar number">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <label for="pan_card">PAN Card:</label>
+                                                <input type="text" class="form-control" id="pancard_number" value="{{ $editData->pancard_number }}" name="pancard_number" placeholder="Enter PAN Card number">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-select-list">
+                                                    <label for="gender">Gender:</label>
+                                                    <select class="form-control custom-select-value" name="gender">
+                                                        <option value="male" {{ $editData->gender == 'male' ? 'selected' : '' }}>Male</option>
+                                                        <option value="female" {{ $editData->gender == 'female' ? 'selected' : '' }}>Female</option>
+                                                        <option value="other" {{ $editData->gender == 'other' ? 'selected' : '' }}>Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <label for="joining_date">Joining Date:</label>
+                                                <input type="date" class="form-control" id="joining_date" name="joining_date" value="{{ old('joining_date') ?? $editData->joining_date }}" placeholder="Select joining date">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <label for="highest_qualification">Highest Qualification:</label>
+                                                <input type="text" class="form-control" id="highest_qualification" name="highest_qualification" value="{{ old('highest_qualification') ?? $editData->highest_qualification }}" placeholder="Enter highest qualification">
+                                            </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <label for="image">Image:</label>
                                                 <input type="file" class="form-control" id="image" name="image" value="@if (old('image')) {{ old('image') }}@else{{ $editData->image }} @endif">
                                                 @if (old('image') || isset($editData))
                                                     <div>
                                                         <label>Old Image:  </label>
-                                                        <img src="@if (old('image')) {{ old('image') }} @elseif(isset($editData)) {{ Config::get('DocumentConstant.EMPLOYEES_VIEW') . $editData->emp_image }} @endif" alt="Old Image" style="max-width: 100px;">
+                                                        <img src="@if (old('image')) {{ old('image') }} @elseif(isset($editData)) {{ Config::get('DocumentConstant.EMPLOYEES_HR_VIEW') . $editData->image }} @endif" alt="Old Image" style="max-width: 100px;">
                                                     </div>
                                                 @endif
                                             </div>
-                                        </div>  
                                         </div>
-                                        <div class="login-btn-inner">
-                                            <div class="row">
-                                                <div class="col-lg-5"></div>
-                                                <div class="col-lg-7">
-                                                    <div class="login-horizental cancel-wp pull-left">
-                                                        <a href="{{ route('list-employees') }}"><button class="btn btn-white" style="margin-bottom:50px">Cancel</button></a>
-                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit" style="margin-bottom:50px">Save Data</button>
-                                                    </div>
+                                    </div>
+
+                                    <div class="login-btn-inner">
+                                        <div class="row">
+                                            <div class="col-lg-5"></div>
+                                            <div class="col-lg-7">
+                                                <div class="login-horizental cancel-wp pull-left">
+                                                    <a href="{{ route('list-employees') }}"><button class="btn btn-white" style="margin-bottom:50px">Cancel</button></a>
+                                                    <button class="btn btn-sm btn-primary login-submit-cs" type="submit" style="margin-bottom:50px">Save Data</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -137,15 +176,13 @@
         </div>
     </div>
 </div>
-  <script src="{{asset('js/password-meter/pwstrength-bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/password-meter/zxcvbn.js')}}"></script>
-    <script src="{{asset('js/password-meter/password-meter-active.js')}}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script>
-   jQuery.noConflict();
-   jQuery(document).ready(function ($) {
-      $("#addEmployeeForm").validate({
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script>
+    jQuery.noConflict();
+    jQuery(document).ready(function ($) {
+        $("#editEmployeeForm").validate({
             rules: {
                 employee_name: {
                     required: true,
@@ -164,6 +201,21 @@
                     required: true,
                 },
                 role_id: {
+                    required: true,
+                },
+                aadhar_number: {
+                    required: true,
+                },
+                pancard_number: {
+                    required: true,
+                },
+                total_experience: {
+                    required: true,
+                },
+                highest_qualification: {
+                    required: true,
+                },
+                gender: {
                     required: true,
                 },
                 image: {
@@ -194,16 +246,31 @@
                 role_id: {
                     required: "Please select a role.",
                 },
+                aadhar_number: {
+                    required: "Please enter Aadhar number.",
+                },
+                pancard_number: {
+                    required: "Please enter Pancard number.",
+                },
+                total_experience: {
+                    required: "Please enter total experience.",
+                },
+                joining_date: {
+                    required: "Please enter joining date.",
+                },
+                highest_qualification: {
+                    required: "Please enter highest qualification.",
+                },
+                gender: {
+                    required: "Please select gender.",
+                },
                 image: {
                     required: "Please select an image.",
-                    accept: "Please select a valid image file.",
-                },
-                password: {
-                    required: "Please enter a password.",
+                    accept: "Please select an image file.", 
                 },
             },
         });
     });
-</script>
+    </script>
 
 @endsection

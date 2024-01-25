@@ -23,6 +23,7 @@ class EmployeesController extends Controller
     public function index(){
         try {
             $getOutput = $this->service->getAll();
+            // dd($getOutput);
             return view('organizations.pages.employees.list-employees', compact('getOutput'));
         } catch (\Exception $e) {
             return $e;

@@ -25,7 +25,7 @@
                             </ul>
                         </li>
                 @endif
-                @if(session()->get('role_name')=='admin')
+                @if(session()->get('role_name')=='Admin')
                         
                         <li>
                             <a class="has-arrow" href="{{route('organizations-list-employees')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Employees</span></a>
@@ -34,15 +34,36 @@
                             </ul>
                         </li>
                 @endif
-                @if(session()->get('role_name')=='HR')
+                @if(session()->get('role_name')=='Hr. Departments')
                         <li>
-                            <a class="has-arrow" href="{{route('organizations-list-employees')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Staffs</span></a>
+                            <a class="has-arrow" href="{{route('hr-list-employees')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Staffs</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{route('organizations-list-employees')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Add Staffs</span></a></li>
+                                <li><a title="Inbox" href="{{route('hr-list-employees')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Add Staffs</span></a></li>
                             </ul>
                         </li>
                 @endif
-                       <a title="Landing Page" href="#" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
+                @if(session()->get('role_name')=='Designer')
+                        <li>
+                            <a class="has-arrow" href="{{route('list-designs')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Designs</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{{route('list-designs')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">List Designs</span></a></li>
+                            </ul>
+                        </li>
+                @endif
+                @if(session()->get('role_name')=='Production')
+                        <li>
+                            <a class="has-arrow" href="{{route('list-products')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Designs</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{{route('list-products')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">List Designs</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="{{route('list-purchase')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Purchase</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{{route('list-purchase')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">List Purchase</span></a></li>
+                            </ul>
+                        </li>
+                @endif
                     </ul>
                 </nav>
             </div>
