@@ -19,6 +19,15 @@ padding-left: 20px !important;
     font-size: 14px;
     text-align: left;
 }
+  .custom-datatable-overright table tbody tr td a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .custom-datatable-overright table tbody tr td a:hover {
+    color: red;
+  }
 </style>
 <div class="data-table-area mg-tb-15">
     <div class="container-fluid">
@@ -77,20 +86,21 @@ padding-left: 20px !important;
                                     <thead>
                                         <tr>
                                             
-                                            <th data-field="id">ID</th>
-                                            <th data-field="company_name" data-editable="true">Company Name</th>
-                                            <th data-field="email" data-editable="true">Email</th>
-                                            <!-- <th data-field="password" data-editable="true">Password</th> -->
-                                            <th data-field="mobile_number" data-editable="true">Mobile Number</th>
-                                            <th data-field="address" data-editable="true">Address</th>
-                                            <th data-field="employee_count" data-editable="true">Employee Count</th>
-                                            <th data-field="founding_date" data-editable="true">Founding Date</th>
-                                            <th data-field="website" data-editable="true">Website Link</th>
-                                            <th data-field="instagram_link" data-editable="true">Instagram Link</th>
-                                            <th data-field="facebook_link" data-editable="true">Faceboook Link</th>
-                                            <th data-field="twitter_link" data-editable="true">Twitter Link</th>
+                                            <th data-field="">#</th>
+                                            <th data-field="id">ORG ID</th>
+                                            <th data-field="company_name" data-editable="false">Company Name</th>
+                                            <th data-field="email" data-editable="false">Email</th>
+                                            <!-- <th data-field="password" data-editable="false">Password</th> -->
+                                            <th data-field="mobile_number" data-editable="false">Mobile Number</th>
+                                            <th data-field="address" data-editable="false">Address</th>
+                                            <th data-field="employee_count" data-editable="false">Employee Count</th>
+                                            <th data-field="founding_date" data-editable="false">Founding Date</th>
+                                            <th data-field="website" data-editable="false">Website Link</th>
+                                            <th data-field="instagram_link" data-editable="false">Instagram Link</th>
+                                            <th data-field="facebook_link" data-editable="false">Faceboook Link</th>
+                                            <th data-field="twitter_link" data-editable="false">Twitter Link</th>
                                             <th data-field="image" data-editable="false">Image</th>
-                                            <!-- <th data-field="is_active" data-editable="true">Is Active</th> -->
+                                            <!-- <th data-field="is_active" data-editable="false">Is Active</th> -->
                                             <th data-field="action">Action</th>
                                         </tr>
                                     </thead>
@@ -99,7 +109,8 @@ padding-left: 20px !important;
                                         <tr>
                                             
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ucwords($data->company_name)}}</td>
+                                            <td>ORG-{{ucwords($data->id)}}</td>
+                                            <td><a href="{{route('organization-details', base64_encode($data->id))}}">{{ucwords($data->company_name)}}</a></td>
                                             <td>{{ucwords($data->email)}}</td>
                                             <!-- <td style="width:299px !important;">{{ucwords($data->password)}}</td> -->
                                             <td>{{ucwords($data->mobile_number)}}</td>

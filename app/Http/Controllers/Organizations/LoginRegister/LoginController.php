@@ -69,6 +69,14 @@ class LoginController extends Controller
                 {
                     return redirect('/production-dashboard');
                 }
+                else if ($request->session()->get('role_name') == "Purchase")
+                {
+                    return redirect('/purchase-dashboard');
+                }
+                else if ($request->session()->get('role_name') == "Store")
+                {
+                    return redirect('/store-dashboard');
+                }
             } 
             else {
                 return redirect('/organizations/login')->with('error', $resp['msg']);

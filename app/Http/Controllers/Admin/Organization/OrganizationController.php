@@ -9,6 +9,10 @@ use Session;
 use Validator;
 use Config;
 use Carbon;
+use App\Models\
+{
+    OrganizationModel,DepartmentsModel,RolesModel,EmployeesModel,HREmployee
+};    
 class OrganizationController extends Controller
 { 
     public function __construct(){
@@ -82,7 +86,7 @@ class OrganizationController extends Controller
   
           try {
               $validation = Validator::make($request->all(), $rules, $messages);
-            //   dd($validation->fails());
+
               if ($validation->fails()) {
                   return redirect('add-organizations')
                       ->withInput()
@@ -119,15 +123,12 @@ class OrganizationController extends Controller
 
 
         public function update(Request $request){
-            // dd($request);
             $rules = [
                     'company_name' => 'required|string|max:255',
                     'email' => 'required|email|max:255',
                     'mobile_number' => 'required|string|max:20',
                     'address' => 'required|string|max:255',
                     'employee_count' => 'nullable',
-                    // 'founding_date' => 'nullable|date|string',
-                    // 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
                 ];
     
             if($request->has('image')) {
@@ -194,15 +195,7 @@ class OrganizationController extends Controller
                     ->with(['msg' => $e->getMessage(), 'status' => 'error']);
             }
         }
-        // public function updateOne(Request $request){
-        //     try {
-        //         $active_id = $request->active_id;
-        //     $result = $this->service->updateOne($active_id);
-        //         return redirect('list-organizations')->with('flash_message', 'Updated!');  
-        //     } catch (\Exception $e) {
-        //         return $e;
-        //     }
-        // }
+        
         public function destroy(Request $request){
             $delete_data_id = base64_decode($request->id);
             try {
@@ -222,5 +215,32 @@ class OrganizationController extends Controller
             } catch (\Exception $e) {
                 return $e;
             }
-        } 
+        }
+
+    public function details(Request $request){
+        $id=base64_decode($request->id);
+        $detailsData = OrganizationModel::where('id',$id)->get();
+        $dept=DepartmentsModel::get();
+        $roles=RolesModel::get();
+        $employees = EmployeesModel::get();
+
+        // dd($employees);
+        // $detailsData->founding_date = Carbon\Carbon::parse($detailsData->founding_date)->format('d/m/Y');
+        return view('admin.pages.organizations.detail-organizations',compact('detailsData','dept','roles','employees'));
+    }
+    
+
+
+     public function filterEmployees(Request $request)
+    {
+        try {
+            $data = EmployeesModel::where('department_id', $request->roleId)->get();
+           
+
+            return $data;
+        } catch (\Exception $e) {
+            return $e;
+        }
+    }
+
 }

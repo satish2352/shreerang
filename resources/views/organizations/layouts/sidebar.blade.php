@@ -64,6 +64,22 @@
                             </ul>
                         </li>
                 @endif
+                @if(session()->get('role_name')=='Purchase')   
+                        <li>
+                            <a class="has-arrow" href="{{route('list-purchase')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Purchase</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{{route('list-purchase')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">List Purchase</span></a></li>
+                            </ul>
+                        </li>
+                @endif
+                @if(session()->get('role_name')=='Store')   
+                        <li>
+                            <a class="has-arrow" href="{{route('list-purchase')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Purchase</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{{route('list-purchase')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">List Purchase</span></a></li>
+                            </ul>
+                        </li>
+                @endif
                     </ul>
                 </nav>
             </div>

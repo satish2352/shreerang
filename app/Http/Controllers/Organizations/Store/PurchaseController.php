@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Organizations\Productions;
+namespace App\Http\Controllers\Organizations\Store;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Services\Organizations\Productions\PurchaseServices;
+use App\Http\Services\Organizations\Store\PurchaseServices;
 use Session;
 use Validator;
 use Config;
@@ -22,7 +22,7 @@ class PurchaseController extends Controller
     public function index(){
         try {
             $getOutput = PurchaseModel::get();
-            return view('organizations.productions.purchases.list-purchase', compact('getOutput'));
+            return view('organizations.store.purchases.list-purchase', compact('getOutput'));
         } catch (\Exception $e) {
             return $e;
         }
@@ -30,7 +30,7 @@ class PurchaseController extends Controller
 
     public function add(){
 
-        return view('organizations.productions.purchases.add-purchase');
+        return view('organizations.store.purchases.add-purchase');
     }
 
       public function store(Request $request){
@@ -99,7 +99,7 @@ class PurchaseController extends Controller
     $edit_data_id = base64_decode($request->id);
     $editData = $this->service->getById($edit_data_id);
 
-    return view('organizations.productions.purchases.edit-purchase', compact('editData'));
+    return view('organizations.store.purchases.edit-purchase', compact('editData'));
 }
 
 

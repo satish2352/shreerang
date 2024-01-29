@@ -1,6 +1,6 @@
 <?php
-namespace App\Http\Services\Organizations\Productions;
-use App\Http\Repository\Organizations\Productions\PurchaseRepository;
+namespace App\Http\Services\Organizations\Store;
+use App\Http\Repository\Organizations\Store\PurchaseRepository;
 use Carbon\Carbon;
 use App\Models\ {
     DesignModel

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Repository\Organizations\Productions;
+namespace App\Http\Repository\Organizations\Store;
 use Illuminate\Database\QueryException;
 use DB;
 use Illuminate\Support\Carbon;
