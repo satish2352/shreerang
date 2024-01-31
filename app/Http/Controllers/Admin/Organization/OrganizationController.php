@@ -224,7 +224,7 @@ class OrganizationController extends Controller
         $roles=RolesModel::get();
         $employees = EmployeesModel::get();
 
-        // dd($employees);
+        // dd($dept);
         // $detailsData->founding_date = Carbon\Carbon::parse($detailsData->founding_date)->format('d/m/Y');
         return view('admin.pages.organizations.detail-organizations',compact('detailsData','dept','roles','employees'));
     }
@@ -233,14 +233,13 @@ class OrganizationController extends Controller
 
      public function filterEmployees(Request $request)
     {
-        try {
-            $data = EmployeesModel::where('department_id', $request->roleId)->get();
-           
-
-            return $data;
-        } catch (\Exception $e) {
-            return $e;
-        }
+          try {
+        $roleId = $request->id;
+        $data = EmployeesModel::where('department_id', $roleId)->get();
+        return response()->json($data);
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
     }
 
+}
 }

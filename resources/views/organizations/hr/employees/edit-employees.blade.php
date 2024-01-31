@@ -143,13 +143,20 @@
                                                 <label for="highest_qualification">Highest Qualification:</label>
                                                 <input type="text" class="form-control" id="highest_qualification" name="highest_qualification" value="{{ old('highest_qualification') ?? $editData->highest_qualification }}" placeholder="Enter highest qualification">
                                             </div>
+                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <label for="total_experience">Total Experience:<span><i>(in year)</i></span></label>
+                                                <input type="text" class="form-control" id="total_experience" name="total_experience" placeholder="Enter total experience" value="{{ old('total_experience') ?? $editData->total_experience }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                             
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <label for="image">Image:</label>
-                                                <input type="file" class="form-control" id="image" name="image" value="@if (old('image')) {{ old('image') }}@else{{ $editData->image }} @endif">
+                                                <input type="file" class="form-control" id="image" name="image" value="@if (old('emp_image')) {{ old('image') }}@else{{ $editData->emp_image }} @endif">
                                                 @if (old('image') || isset($editData))
                                                     <div>
                                                         <label>Old Image:  </label>
-                                                        <img src="@if (old('image')) {{ old('image') }} @elseif(isset($editData)) {{ Config::get('DocumentConstant.EMPLOYEES_HR_VIEW') . $editData->image }} @endif" alt="Old Image" style="max-width: 100px;">
+                                                        <img src="@if (old('image')) {{ old('emp_image') }} @elseif(isset($editData)) {{ Config::get('DocumentConstant.EMPLOYEES_VIEW') . $editData->emp_image }} @endif" alt="Old Image" style="max-width: 100px;">
                                                     </div>
                                                 @endif
                                             </div>
@@ -271,6 +278,27 @@
             },
         });
     });
+ $("#image").change(function () {
+        readURL(this);
+    });
+
+    function readURL(input) {
+        var oldImageName = "@if (isset($editData)) {{ $editData->image }} @endif";
+        $("#image").val(oldImageName);
+        $("#oldImageDisplay img").show(); // Show the old image
+        $("#selectedImageDisplay").hide(); // Hide the selected image display
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("#selectedImageDisplay img").attr('src', e.target.result);
+                $("#oldImageDisplay img").hide(); // Hide the old image
+                $("#selectedImageDisplay").show(); // Show the selected image
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+});
     </script>
 
 @endsection

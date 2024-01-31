@@ -20,6 +20,12 @@ return new class extends Migration
             $table->string('email');
             $table->string('mobile_number');
             $table->string('address');
+            $table->string('aadhar_number')->nullable();
+            $table->string('pancard_number')->nullable();
+            $table->string('total_experience')->nullable();
+            $table->string('highest_qualification')->nullable();
+            $table->string('gender')->nullable();
+            $table->date('joining_date')->nullable();
             $table->string('image');
             $table->boolean('is_deleted')->default(false);
             $table->boolean('is_active')->default(true);

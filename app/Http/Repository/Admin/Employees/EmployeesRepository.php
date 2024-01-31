@@ -42,6 +42,7 @@ class EmployeesRepository  {
             $userData=new User();
             $userData->u_email= $request->email;
             $userData->role_id= "2";
+            $userData->org_id = $request->company_id;
             $userData->u_password= bcrypt($request->password);
             $userData->save();
 
@@ -96,8 +97,9 @@ class EmployeesRepository  {
             $return_data = array();
             $userData = User::where('u_email', $request->email)->first();
             // dd($userData);
-
+            $userData->org_id = $request->company_id;
             $userData->u_email= $request->email;
+            $userData->role_id= "2";
             $userData->role_id= "2";
             $userData->u_password= bcrypt($request->password);
             $userData->save();

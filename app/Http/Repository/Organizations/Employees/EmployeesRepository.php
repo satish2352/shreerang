@@ -28,10 +28,14 @@ class EmployeesRepository  {
     public function addAll($request)
     {   
         try {
+            // dd($request->session()->get('org_id'));
+
            //insert data to users table
             $userData=new User();
             $userData->u_email= $request->email;
+            $userData->u_email= $request->email;
             $userData->role_id=$request->role_id;
+            $userData->org_id = $request->session()->get('org_id');
             $userData->u_password= bcrypt($request->password);
             $userData->save();
 
@@ -83,10 +87,13 @@ class EmployeesRepository  {
 
         public function updateAll($request){
         try { 
+            // dd($request->session()->get('org_id'));
             $return_data = array();
             $userData = User::where('u_email', $request->email)->first();
             $userData->u_email= $request->email;
             $userData->role_id=$request->role_id;
+            $dataOutput->org_id = $request->session()->get('org_id');
+
             $userData->u_password= bcrypt($request->password);
             $userData->save();
 

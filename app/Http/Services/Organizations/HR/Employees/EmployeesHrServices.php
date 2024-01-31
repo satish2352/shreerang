@@ -3,7 +3,7 @@ namespace App\Http\Services\Organizations\HR\Employees;
 use App\Http\Repository\Organizations\HR\Employees\EmployeesHrRepository;
 use Carbon\Carbon;
 use App\Models\ {
-    HREmployee
+    EmployeesModel
     };
 
 use Config;
@@ -28,9 +28,9 @@ class EmployeesHrServices
         try {
             $last_id = $this->repo->addAll($request);
             // dd($last_id);
-            $path = Config::get('DocumentConstant.EMPLOYEES_HR_ADD');
+            $path = Config::get('DocumentConstant.EMPLOYEES_ADD');
             $ImageName = $last_id['ImageName'];
-            uploadImage($request, 'image', $path, $ImageName);
+            uploadImage($request, 'emp_image', $path, $ImageName);
            
             if ($last_id) {
                 return ['status' => 'success', 'msg' => 'Data Added Successfully.'];
@@ -52,13 +52,11 @@ class EmployeesHrServices
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-            $path = Config::get('DocumentConstant.EMPLOYEES_HR_ADD');
-            // dd($request->hasFile('image'));
-
+            $path = Config::get('DocumentConstant.EMPLOYEES_ADD');
             if ($request->hasFile('image')) {
                 if ($return_data['image']) {
-                    if (file_exists_view(Config::get('DocumentConstant.EMPLOYEES_HR_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('DocumentConstant.EMPLOYEES_HR_DELETE') . $return_data['image']);
+                    if (file_exists_view(Config::get('DocumentConstant.EMPLOYEES_DELETE') . $return_data['image'])) {
+                        removeImage(Config::get('DocumentConstant.EMPLOYEES_DELETE') . $return_data['image']);
                     }
 
                 }
@@ -69,8 +67,8 @@ class EmployeesHrServices
                     
                 }                
                 uploadImage($request, 'image', $path, $englishImageName);
-                $slide_data = HREmployee::find($return_data['last_insert_id']);
-                $slide_data->image = $englishImageName;
+                $slide_data = EmployeesModel::find($return_data['last_insert_id']);
+                $slide_data->emp_image = $englishImageName;
                 $slide_data->save();
             }          
             if ($return_data) {

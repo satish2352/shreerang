@@ -29,34 +29,29 @@
 
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             @if (Session::get('status') == 'success')
-                                <div class="col-12 grid-margin">
-                                    <div class="alert alert-custom-success " id="success-alert">
-                                        <button type="button" data-bs-dismiss="alert"></button>
-                                        <strong style="color: green;">Success!</strong> {{ Session::get('msg') }}
-                                    </div>
+                            <div class="col-md-12">
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>Success!</strong> {{ Session::get('msg') }}
                                 </div>
-                            @endif
+                            </div>
+                        @endif
 
-                            @if (Session::get('status') == 'error')
-                                <div class="col-12 grid-margin">
-                                    <div class="alert alert-custom-danger " id="error-alert">
-                                        <button type="button" data-bs-dismiss="alert"></button>
-                                        <strong style="color: red;">Error!</strong> {!! session('msg') !!}
-                                    </div>
+                        @if (Session::get('status') == 'error')
+                            <div class="col-md-12">
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>Error!</strong> {!! session('msg') !!}
                                 </div>
-                            @endif
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+                            </div>
+                        @endif
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="all-form-element-inner">
-                                    <form action="{{ route('store-purchase') }}" method="POST" id="addDesignsForm" enctype="multipart/form-data">
+                                    <form action="{{ route('store-store-purchase') }}" method="POST" id="addDesignsForm" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group-inner">
                                             <div class="row">
@@ -92,7 +87,7 @@
                                                     <div class="col-lg-5"></div>
                                                     <div class="col-lg-7">
                                                         <div class="login-horizental cancel-wp pull-left">
-                                                            <a href="{{ route('list-purchase') }}" class="btn btn-white" style="margin-bottom:50px">Cancel</a>
+                                                            <a href="{{ route('list-store-purchase') }}" class="btn btn-white" style="margin-bottom:50px">Cancel</a>
                                                             <button class="btn btn-sm btn-primary login-submit-cs" type="submit" style="margin-bottom:50px">Save Data</button>
                                                         </div>
                                                     </div>

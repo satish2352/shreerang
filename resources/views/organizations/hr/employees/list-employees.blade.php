@@ -32,7 +32,7 @@ padding-left: 20px !important;
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
                                         <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('hr-add-employees') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Organization</button></a>
+                                                <a href="{{ route('hr-add-employees') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Staffs</button></a>
                                         </div>
                                     </div>
                                 <div class="col-lg-10"></div>
@@ -114,7 +114,7 @@ padding-left: 20px !important;
                                             <td>{{ucwords($data->highest_qualification)}}</td>
                                             <td>{{ucwords($data->gender)}}</td>
                                             <td>{{ucwords($data->joining_date)}}</td>
-                                            <td><img style="max-width:250px; max-height:150px;" src="{{ Config::get('DocumentConstant.EMPLOYEES_HR_VIEW') . $data->image }}" alt="{{ strip_tags($data['company_name']) }} Image" /></td>
+                                            <td><img style="max-width:250px; max-height:150px;" src="{{ Config::get('DocumentConstant.EMPLOYEES_VIEW') . $data->emp_image }}" alt="{{ strip_tags($data['company_name']) }} Image" /></td>
                                             <td>
                                                 <div style="display: flex; align-items: center;">
                                                     <a href="{{route('hr-edit-employees', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>

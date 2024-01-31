@@ -22,7 +22,7 @@ class PurchaseController extends Controller
     public function index(){
         try {
             $getOutput = PurchaseModel::get();
-            return view('organizations.productions.purchases.list-purchase', compact('getOutput'));
+            return view('organizations.productions.purchases.list-purchases', compact('getOutput'));
         } catch (\Exception $e) {
             return $e;
         }
@@ -30,7 +30,7 @@ class PurchaseController extends Controller
 
     public function add(){
 
-        return view('organizations.productions.purchases.add-purchase');
+        return view('organizations.productions.purchases.add-purchases');
     }
 
       public function store(Request $request){
@@ -70,7 +70,7 @@ class PurchaseController extends Controller
               $validation = Validator::make($request->all(), $rules, $messages);
               
               if ($validation->fails()) {
-                  return redirect('add-purchase')
+                  return redirect('add-purchases')
                       ->withInput()
                       ->withErrors($validation);
               } else {
@@ -81,14 +81,14 @@ class PurchaseController extends Controller
                       $status = $add_record['status'];
   
                       if ($status == 'success') {
-                          return redirect('list-purchase')->with(compact('msg', 'status'));
+                          return redirect('list-purchases')->with(compact('msg', 'status'));
                       } else {
-                          return redirect('add-purchase')->withInput()->with(compact('msg', 'status'));
+                          return redirect('add-purchases')->withInput()->with(compact('msg', 'status'));
                       }
                   }
               }
           } catch (Exception $e) {
-              return redirect('add-purchase')->withInput()->with(['msg' => $e->getMessage(), 'status' => 'error']);
+              return redirect('add-purchases')->withInput()->with(['msg' => $e->getMessage(), 'status' => 'error']);
           }
       }
 
@@ -99,7 +99,7 @@ class PurchaseController extends Controller
     $edit_data_id = base64_decode($request->id);
     $editData = $this->service->getById($edit_data_id);
 
-    return view('organizations.productions.purchases.edit-purchase', compact('editData'));
+    return view('organizations.productions.purchases.edit-purchases', compact('editData'));
 }
 
 
@@ -148,7 +148,7 @@ class PurchaseController extends Controller
                         $msg = $update_data['msg'];
                         $status = $update_data['status'];
                         if ($status == 'success') {
-                            return redirect('list-purchase')->with(compact('msg', 'status'));
+                            return redirect('list-purchases')->with(compact('msg', 'status'));
                         } else {
                             return redirect()->back()
                                 ->withInput()
@@ -172,7 +172,7 @@ class PurchaseController extends Controller
                     $msg = $delete_record['msg'];
                     $status = $delete_record['status'];
                     if ($status == 'success') {
-                        return redirect('list-purchase')->with(compact('msg', 'status'));
+                        return redirect('list-purchases')->with(compact('msg', 'status'));
                     } else {
                         return redirect()->back()
                             ->withInput()

@@ -44,7 +44,7 @@
                            
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="all-form-element-inner">
-                                    <form action="{{ route('update-purchase', $editData->id) }}" method="POST" id="editDesignsForm" enctype="multipart/form-data">
+                                    <form action="{{ route('update-store-purchase', $editData->id) }}" method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                         @csrf
                                        <input type="hidden" name="id" id="id" class="form-control"
                                     value="{{ $editData->id }}" placeholder="">
@@ -76,7 +76,7 @@
                                                     <div class="col-lg-5"></div>
                                                     <div class="col-lg-7">
                                                         <div class="login-horizental cancel-wp pull-left">
-                                                            <a href="{{ route('list-purchase') }}" class="btn btn-white" style="margin-bottom:50px">Cancel</a>
+                                                            <a href="{{ route('list-store-purchase') }}" class="btn btn-white" style="margin-bottom:50px">Cancel</a>
                                                             <button class="btn btn-sm btn-primary login-submit-cs" type="submit" style="margin-bottom:50px">Update Data</button>
                                                         </div>
                                                     </div>

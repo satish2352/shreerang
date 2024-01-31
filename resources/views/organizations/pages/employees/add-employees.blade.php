@@ -21,39 +21,30 @@
             <div class="sparkline12-graph">
                 <div class="basic-login-form-ad">
                     <div class="row">
-                        @if(session('msg'))
-                            <div class="alert alert-{{ session('status') }}">
-                                {{ session('msg') }}
+                        
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        @if (Session::get('status') == 'success')
+                            <div class="col-md-12">
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>Success!</strong> {{ Session::get('msg') }}
+                                </div>
                             </div>
                         @endif
 
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                             @if (Session::get('status') == 'success')
-                                <div class="col-12 grid-margin">
-                                    <div class="alert alert-custom-success " id="success-alert">
-                                        <button type="button"  data-bs-dismiss="alert"></button>
-                                        <strong style="color: green;">Success!</strong> {{ Session::get('msg') }}
-                                    </div>
+                        @if (Session::get('status') == 'error')
+                            <div class="col-md-12">
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>Error!</strong> {!! session('msg') !!}
                                 </div>
-                            @endif
-
-                            @if (Session::get('status') == 'error')
-                                <div class="col-12 grid-margin">
-                                    <div class="alert alert-custom-danger " id="error-alert">
-                                        <button type="button"  data-bs-dismiss="alert"></button>
-                                        <strong style="color: red;">Error!</strong> {!! session('msg') !!}
-                                    </div>
-                                </div>
-                            @endif
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+                            </div>
+                        @endif
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="all-form-element-inner">
                                 <form action="{{ route('organizations-store-employees') }}" method="POST" id="addEmployeeForm" enctype="multipart/form-data">

@@ -10,7 +10,10 @@ use Validator;
 use Config;
 use Carbon;
 use App\Models\DepartmentsModel;
-use App\Models\RolesModel;
+use App\Models\
+{
+    RolesModel,EmployeesModel
+};
 
 class EmployeesHrController extends Controller
 { 
@@ -42,6 +45,14 @@ class EmployeesHrController extends Controller
 
       public function store(Request $request){
 
+        $emailExists = EmployeesModel::where('email', $request->email)->exists();
+
+        if ($emailExists) {
+            return redirect()->back()->with([
+                'msg' => 'Email already exists',
+                'status' => 'error'
+            ]);
+        }
         $rules = [
                 'employee_name' => 'required|string|max:255',
                 'email' => 'required|email|max:255',
@@ -137,6 +148,9 @@ class EmployeesHrController extends Controller
 
 
         public function update(Request $request){
+
+        
+
             $rules = [
                 'employee_name' => 'required|string|max:255',
                 'email' => 'required|email|max:255',
@@ -147,7 +161,7 @@ class EmployeesHrController extends Controller
                 'joining_date' => 'required|date', // Add Joining Date
                 'highest_qualification' => 'required|string|max:255', // Add Highest Qualification
                 'gender' => 'required|in:male,female,other', // Add Gender
-                'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
+                // 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
             ];
 
             $messages = [

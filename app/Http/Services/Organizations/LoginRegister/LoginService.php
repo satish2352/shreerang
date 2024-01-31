@@ -17,6 +17,7 @@ class LoginService
 
     public function checkLogin($request) {
         $response = $this->repo->checkLogin($request);
+        // dd($response);
         $roleName = DepartmentsModel::join('tbl_employees', 'tbl_employees.department_id', '=', 'tbl_departments.id')
                 ->where('tbl_employees.email',$request->email )
                 ->select('tbl_departments.department_name')
@@ -30,7 +31,7 @@ class LoginService
             if($response['user_details']) {
             $password = $request['password'];
             if (Hash::check($password, $response['user_details']['u_password'])) {
-                $request->session()->put('org_id',$response['user_details']['id']);
+                $request->session()->put('org_id',$response['user_details']['org_id']);
                 $request->session()->put('role_name',$role);
                 $request->session()->put('u_email',$response['user_details']['u_email']);
                 $json = ['status'=>'success','msg'=>$response['user_details'],'role_id'=>$response['user_details']['role_id']];

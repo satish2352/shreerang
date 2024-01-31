@@ -32,6 +32,7 @@ padding-left: 20px !important;
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="tab-content-details shadow-reset">
+                    
                     @foreach($detailsData as $data)
                     <h2>{{$data->company_name}}</h2>
                   @endforeach
@@ -144,9 +145,9 @@ padding-left: 20px !important;
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <div class="review-content-section">
                                                     <div class="row">
-                                                        <div class="col-lg-9">
+                                                        <div class="col-lg-4">
                                                             <div class="pro-edt-img">
-                                                                <img src="{{ Config::get('DocumentConstant.ORGANIZATION_VIEW') . $data->image }}" alt="">
+                                                                <img src="{{ Config::get('DocumentConstant.ORGANIZATION_VIEW') . $data->image }}" height="400px" width="400px" alt="">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
@@ -170,15 +171,16 @@ padding-left: 20px !important;
                                         </div>
                                     </div>
                                     <div class="product-tab-list tab-pane fade" id="INFORMATION">
-                                        <div class="row">
                                             <div class="sparkline13-graph">
                                                 <div class="datatable-dashv1-list custom-datatable-overright">
                                                     <div id="toolbar">
-                                                       <select class="form-control">
-                                                        {{--@foreach($roles as $data)
-                                                          <option value="{{ route('filter-employees', base64_encode($data->id)) }}">{{ $data->role_name }}</a></option>
-                                                        @endforeach--}}
-                                                            
+                                                       <select class="form-control" id="roleSelect">
+                                                            <option disabled>All</option>
+                                                        @foreach($dept as $data)
+                                                                <option value="{{$data->id }}">
+                                                                    <a href="{{ route('filter-employees', base64_encode($data->id)) }}">{{ $data->department_name }}</a>
+                                                                </option>
+                                                            @endforeach
                                                         </select>
                                                     </div>  
                                                     <div class="table-responsive"> 
@@ -188,27 +190,24 @@ padding-left: 20px !important;
                                                             data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true"
                                                             data-toolbar="#toolbar">
                                                             <thead>
-                                                                <tr>
-                                                                    
+                                                                <tr >
                                                                     <th data-field="">#</th>
-                                                                    
                                                                     <th data-field="company_name" data-editable="false">Employee Name</th>
                                                                     <th data-field="email" data-editable="false">Email</th>
                                                                     <!-- <th data-field="password" data-editable="false">Password</th> -->
                                                                     <th data-field="mobile_number" data-editable="false">Mobile Number</th>
                                                                     <th data-field="address" data-editable="false">Address</th>
                                                                     <th data-field="image" data-editable="false">Image</th>
-                                                                    <!-- <th data-field="is_active" data-editable="false">Is Active</th> -->
                                                                 </tr>
                                                             </thead>
-                                                            <tbody  id="show_role">
+                                                            <tbody  id="fetchedDataContainer">
                                                                   @foreach($employees as $data)
                                                                   <tr>
                                                                       
                                                                       <td>{{ $loop->iteration }}</td>
                                                                     
                                                                       <td>{{ucwords($data->employee_name)}}</a></td>
-                                                                      <td>{{ucwords($data->email)}}</td>
+                                                                      <td>{{$data->email}}</td>
                                                                       <td>{{ucwords($data->mobile_number)}}</td>
                                                                       <td>{{ucwords($data->address)}}</td>
                                                                       <td><img style="max-width:250px; max-height:150px;" src="{{ Config::get('DocumentConstant.EMPLOYEES_VIEW') . $data->emp_image }}" alt="{{ strip_tags($data['company_name']) }} Image" /></td>
@@ -228,16 +227,53 @@ padding-left: 20px !important;
                 </div>
             </div>
         </div>
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
     $(document).ready(function () {
-        // Attach change event to the dropdown
-        $('#roleDropdown').change(function () {
-            // Get the selected URL and navigate to it
-            var selectedUrl = $(this).val();
-            window.location.href = selectedUrl;
+        $('#roleSelect').change(function () {
+            var selectedRoleId = $(this).val();
+
+            $.ajax({
+                url: "{{ url('filter-employees') }}/" + selectedRoleId,
+                method: 'GET',
+                data: { id: selectedRoleId },
+                success: function (data) {
+                    $("#fetchedDataContainer").empty();
+                    try {
+                        console.log("=======", data);
+                        if (Array.isArray(data)) {
+                            data.forEach(function (item, index) {
+                                var imageUrl = "{{ Config::get('DocumentConstant.EMPLOYEES_VIEW') }}" + item.emp_image;
+                                var newRow = '<tr>' +
+                                    '<td>' + (index + 1) + '</td>' +
+                                    '<td>' + ucwords(item.employee_name) + '</td>' +
+                                    '<td>' + item.email + '</td>' +
+                                    '<td>' + ucwords(item.mobile_number) + '</td>' +
+                                    '<td>' + ucwords(item.address) + '</td>' +
+                                    '<td><img style="max-width:250px; max-height:150px;" src="' + imageUrl + '" alt="' + item.company_name + ' Image" /></td>' +
+                                    '</tr>';
+                                $('#fetchedDataContainer').append(newRow);
+                                });
+                        } else {
+                            console.error('Invalid data format. Expected an array.');
+                        }
+                    } catch (error) {
+                        console.error('Error parsing JSON:', error);
+                    }
+                },
+                error: function (error) {
+                    console.error('Error fetching data:', error);
+                }
+            });
         });
     });
+
+    function ucwords(str) {
+        return str.replace(/\b\w/g, function (char) {
+            return char.toUpperCase();
+        });
+    }
+
 </script>
 
 @endsection

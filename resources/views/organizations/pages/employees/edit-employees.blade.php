@@ -16,39 +16,27 @@
             <div class="sparkline12-graph">
                 <div class="basic-login-form-ad">
                     <div class="row">
-                        @if(session('msg'))
-                            <div class="alert alert-{{ session('status') }}">
-                                {{ session('msg') }}
+                        @if (Session::get('status') == 'success')
+                            <div class="col-md-12">
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>Success!</strong> {{ Session::get('msg') }}
+                                </div>
                             </div>
                         @endif
 
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                             @if (Session::get('status') == 'success')
-                                <div class="col-12 grid-margin">
-                                    <div class="alert alert-custom-success " id="success-alert">
-                                        <button type="button"  data-bs-dismiss="alert"></button>
-                                        <strong style="color: green;">Success!</strong> {{ Session::get('msg') }}
-                                    </div>
+                        @if (Session::get('status') == 'error')
+                            <div class="col-md-12">
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>Error!</strong> {!! session('msg') !!}
                                 </div>
-                            @endif
-
-                            @if (Session::get('status') == 'error')
-                                <div class="col-12 grid-margin">
-                                    <div class="alert alert-custom-danger " id="error-alert">
-                                        <button type="button"  data-bs-dismiss="alert"></button>
-                                        <strong style="color: red;">Error!</strong> {!! session('msg') !!}
-                                    </div>
-                                </div>
-                            @endif
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+                            </div>
+                        @endif
                             <div class="all-form-element-inner">
                                 <form action="{{ route('organizations-update-employees') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -204,6 +192,27 @@
             },
         });
     });
+    $("#image").change(function () {
+        readURL(this);
+    });
+
+    function readURL(input) {
+        var oldImageName = "@if (isset($editData)) {{ $editData->image }} @endif";
+        $("#image").val(oldImageName);
+        $("#oldImageDisplay img").show(); // Show the old image
+        $("#selectedImageDisplay").hide(); // Hide the selected image display
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("#selectedImageDisplay img").attr('src', e.target.result);
+                $("#oldImageDisplay img").hide(); // Hide the old image
+                $("#selectedImageDisplay").show(); // Show the selected image
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+});
 </script>
 
 @endsection

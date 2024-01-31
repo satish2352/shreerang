@@ -32,7 +32,7 @@ padding-left: 20px !important;
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
                                         <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('add-purchase') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Purchase</button></a>
+                                                <a href="{{ route('add-store-purchase') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Purchase</button></a>
                                         </div>
                                     </div>
                                 <div class="col-lg-10"></div>
@@ -100,7 +100,7 @@ padding-left: 20px !important;
                                             
                                             <td>
                                                 <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('edit-purchase', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                    <a href="{{route('edit-store-purchase', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                                 </div>
                                             </td>
                                            </tr>

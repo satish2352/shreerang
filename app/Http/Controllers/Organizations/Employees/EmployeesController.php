@@ -11,6 +11,7 @@ use Config;
 use Carbon;
 use App\Models\DepartmentsModel;
 use App\Models\RolesModel;
+use App\Models\EmployeesModel;
 
 class EmployeesController extends Controller
 { 
@@ -41,6 +42,17 @@ class EmployeesController extends Controller
 
 
       public function store(Request $request){
+
+        $emailExists = EmployeesModel::where('email', $request->email)->exists();
+
+        if ($emailExists) {
+            return redirect()->back()->with([
+                'msg' => 'Email already exists',
+                'status' => 'error'
+            ]);
+        }
+
+
          $rules = [
                     'employee_name' => 'required|string|max:255',
                     'email' => 'required|email|max:255',

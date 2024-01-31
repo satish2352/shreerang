@@ -58,9 +58,9 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{route('list-purchase')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Purchase</span></a>
+                            <a class="has-arrow" href="{{route('list-purchases')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Purchase</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{route('list-purchase')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">List Purchase</span></a></li>
+                                <li><a title="Inbox" href="{{route('list-purchases')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">List Purchase</span></a></li>
                             </ul>
                         </li>
                 @endif
@@ -74,9 +74,9 @@
                 @endif
                 @if(session()->get('role_name')=='Store')   
                         <li>
-                            <a class="has-arrow" href="{{route('list-purchase')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Purchase</span></a>
+                            <a class="has-arrow" href="{{route('list-store-purchase')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Purchase</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{route('list-purchase')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">List Purchase</span></a></li>
+                                <li><a title="Inbox" href="{{route('list-store-purchase')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">List Purchase</span></a></li>
                             </ul>
                         </li>
                 @endif
