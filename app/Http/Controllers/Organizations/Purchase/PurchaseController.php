@@ -99,7 +99,7 @@ class PurchaseController extends Controller
     $edit_data_id = base64_decode($request->id);
     $editData = $this->service->getById($edit_data_id);
 
-    return view('organizations.purchase.purchases.edit-purchase', compact('editData'));
+    return view('organizations.productions.purchases.edit-purchase', compact('editData'));
 }
 
 

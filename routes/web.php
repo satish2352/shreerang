@@ -160,6 +160,15 @@ Route::group(['middleware' => ['organizations:Purchase']], function () {
     Route::get('/edit-purchase/{id}', ['as' => 'edit-purchase', 'uses' =>  'App\Http\Controllers\Organizations\Purchase\PurchaseController@edit']);
     Route::post('/update-purchase', ['as' => 'update-purchase', 'uses' =>  'App\Http\Controllers\Organizations\Purchase\PurchaseController@update']);
     Route::any('/delete-purchase/{id}', ['as' => 'delete-purchase', 'uses' =>  'App\Http\Controllers\Organizations\Purchase\PurchaseController@destroy']);
+
+
+    Route::get('/list-purchase-order', ['as' => 'list-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@index']);
+    Route::get('/add-purchase-order', ['as' => 'add-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@create']);
+    Route::post('/store-purchase-order', ['as' => 'store-purchase-order', 'uses' =>  'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@store']);
+    Route::post('/show-purchase-order/{id}', ['as' => 'show-purchase-order', 'uses' =>  'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@store']);
+    Route::get('/edit-purchase-order/{id}', ['as' => 'edit-purchase-order', 'uses' =>  'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@edit']);
+    Route::post('/update-purchase-order', ['as' => 'update-purchase-order', 'uses' =>  'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@update']);
+    Route::any('/delete-purchase-order/{id}', ['as' => 'delete-purchase-order', 'uses' =>  'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@destroy']);
 });
 
 Route::group(['middleware' => ['organizations:Store']], function () {
