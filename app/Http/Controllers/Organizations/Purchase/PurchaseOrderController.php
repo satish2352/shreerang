@@ -6,8 +6,6 @@ use App\Models\PurchaseOrdersModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
-
 class PurchaseOrderController extends Controller
 {
     /**
@@ -18,9 +16,9 @@ class PurchaseOrderController extends Controller
     public function index()
     {
         $title = 'Purchase Orders';
-        $invoices = PurchaseOrdersModel::get();
+        $getOutput = PurchaseOrdersModel::get();
         return view('organizations.purchase.invoices.list-purchase-orders',compact(
-            'title','invoices'
+            'title','getOutput'
         ));
     }
 
@@ -43,76 +41,77 @@ class PurchaseOrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-   public function store(Request $request)
-{
-    dd($request);
-    $this->validate($request, [
-        'client' => 'required',
-        'project' => 'required',
-        'email' => 'required',
-        'tax' => 'required',
-        'client_address' => 'required',
-        'billing_address' => 'required',
-        'invoice_date' => 'required',
-        'due_date' => 'required',
-        'items' => 'required',
-        'note' => 'nullable',
-    ]);
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'client_name' => 'required',
+            'po_number' => 'required',
+            'email' => 'required',
+            'tax' => 'required',
+            'client_address' => 'required',
+            'gst_number' => 'required',
+            'invoice_date' => 'required',
+            'items' => 'required',
+            'note' => 'nullable',
+        ]);
 
-    // Calculate total amount
-    $amount = 0;
-    foreach ($request->items as $item) {
-        $amount += $item['amount'];
+       
+        $amount = 0;
+        foreach ($request->items as $item) {
+            $amount += $item['amount'];
+        }
+
+        $itemsJson = json_encode($request->items);
+
+        
+        $invoice = new PurchaseOrdersModel([
+            'client_name' => $request->client_name,
+            'phone_number' => $request->phone_number,
+            'tax' => $request->tax,
+            'email' => $request->email,
+            'client_address' => $request->client_address,
+            'gst_number' => $request->gst_number,
+            'invoice_date' => $request->invoice_date,
+            'payment_terms' => $request->payment_terms,
+            'items' => $itemsJson,
+            'discount' => $request->discount,
+            'total' => $amount,
+            'note' => $request->note,
+            'status' => $request->status,
+        ]);
+
+        if ($invoice->save()) {
+            $msg = 'Invoice has been created';
+            $status = 'success';
+
+            return redirect('list-purchase-order')->with(compact('msg', 'status'));
+        } else {
+            $msg = 'Failed to create invoice';
+            $status = 'error';
+
+            return redirect('add-purchase-order')->withInput()->with(compact('msg', 'status'));
+        }
     }
 
-    // Assuming you have an Invoice model
-    $invoice = new PurchaseOrdersModel([
-        'client_id' => $request->client,
-        'project_id' => $request->project,
-        'tax_id' => $request->tax,
-        'email' => $request->email,
-        'client_address' => $request->client_address,
-        'billing_address' => $request->billing_address,
-        'invoice_date' => $request->invoice_date,
-        'due_date' => $request->due_date,
-        'items' => $request->items,
-        'discount' => $request->discount,
-        'total' => $amount,
-        'note' => $request->note,
-        'status' => $request->status,
-    ]);
 
-    $invoice->save();
-
-    $notification = notify('Invoice has been created');
-    return redirect()->route('invoices.index')->with($notification);
-}
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Invoice $invoice
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Invoice $invoice)
+    
+    public function show(Request $request)
     {
+        $show_data_id = base64_decode($request->id);
+        $invoice = PurchaseOrdersModel::find($show_data_id);
         // dd($invoice);
         $title = 'view invoice';
-        return view('backend.invoices.show',compact(
-            'invoice','title'
-        ));
+        return view('organizations.purchase.invoices.show-purchase-orders',compact('invoice','title'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Invoice $invoice
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Invoice $invoice)
+     
+    public function edit(Request $request)
     {
+        $show_data_id = base64_decode($request->id);
+        $invoice = PurchaseOrdersModel::find($show_data_id);
+        // dd($invoice);
         $title = 'edit invoice';
-        return view('backend.invoices.edit',compact(
+        return view('organizations.purchase.invoices.edit-purchase-orders',compact(
             'title','invoice'
         ));
     }
@@ -124,44 +123,57 @@ class PurchaseOrderController extends Controller
      * @param  \App\Models\Invoice $invoice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Invoice $invoice)
-    {
-        $this->validate($request,[
-            'client' => 'required',
-            'project' => 'required',
-            'email' => 'required',
-            'tax' => 'required',
-            'client_address' => 'required',
-            'billing_address' => 'required',
-            'invoice_date' => 'required',
-            'due_date' => 'required',
-            'items' => 'required',
-            'note' => 'nullable',
-        ]);
-        $settings = new InvoiceSettings();
-        $prefix = $settings->prefix;
-        $amount = 0;
-        foreach($request->items as $item){
-            $amount += $item['amount'];
-        }
-        $invoice->update([
-            'client_id' => $request->client,
-            'project_id' => $request->project,
-            'tax_id' => $request->tax,
-            'email' => $request->email,
-            'client_address' => $request->client_address,
-            'billing_address' => $request->billing_address,
-            'invoice_date' => $request->invoice_date,
-            'due_date' => $request->due_date,
-            'items' => $request->items,
-            'discount' => $request->discount,
-            'total' => $amount,
-            'note' =>$request->note,
-            'status' => $request->status,
-        ]);
-        $notification = notify('invoice has been updated');
-        return redirect()->route('invoices.index')->with($notification);
+public function update(Request $request)
+{
+    // dd($request);
+    $this->validate($request, [
+        'client_name' => 'required',
+        'phone_number' => 'required',
+        'email' => 'required',
+        'tax' => 'required',
+        'client_address' => 'required',
+        'gst_number' => 'required',
+        'invoice_date' => 'required',
+        'items' => 'required',
+        'note' => 'nullable',
+    ]);
+
+
+    $itemsJson = json_encode($request->items);
+
+
+    $amount = 0;
+    foreach ($request->items as $item) {
+        $amount += $item['amount'];
     }
+
+    $invoice=PurchaseOrdersModel::find($request->id);
+    $invoice->update([
+        'client_name' => $request->client_name,
+        'phone_number' => $request->phone_number,
+        'tax' => $request->tax,
+        'email' => $request->email,
+        'client_address' => $request->client_address,
+        'gst_number' => $request->gst_number,
+        'invoice_date' => $request->invoice_date,
+        'payment_terms' => $request->payment_terms,
+        'items' => $itemsJson,
+        'discount' => $request->discount,
+        'total' => $amount,
+        'note' => $request->note,
+        'status' => $request->status,
+    ]);
+    // dd($invoice->wasChanged());
+     if ($invoice->wasChanged()) {
+        $msg = 'Invoice has been updated';
+        $status = 'success';
+        return redirect()->route('list-purchase-order')->with(compact('msg', 'status'));
+    } else {
+        $msg = 'No changes were made to the invoice';
+        $status = 'error';
+        return redirect()->route('list-purchase-order')->with(compact('msg', 'status'));
+    }
+}
 
     /**
      * Remove the specified resource from storage.

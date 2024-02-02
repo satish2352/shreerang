@@ -58,6 +58,7 @@
   <!-- modernizr JS
 		============================================ -->
   <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
   <link rel="stylesheet" href="{{asset('assets/css/bootstrap-datetimepicker.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/plugins/select2/select2.min.css')}}">
 

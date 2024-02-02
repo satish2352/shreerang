@@ -75,41 +75,7 @@
 
 
 
-        <script>
-$(document).ready(function() {
-  $('body').on('click', '.deletebtn', function() {
-    $('#delete_modal').modal('show');
-    var id = $(this).data('id');
-    $('#delete_id').val(id);
-  });
-  $('.alert').delay(2000).fadeOut();
-  @if(Session::has('message'))
-  var type = "{{ Session::get('alert-type', '') }}";
-  switch (type) {
-    case 'info':
-      toastr.info("{{ Session::get('message') }}");
-      break;
 
-    case 'success':
-      toastr.success("{{ Session::get('message') }}");
-      break;
-
-    case 'warning':
-      toastr.warning("{{ Session::get('message') }}");
-      break;
-
-    case 'error':
-      toastr.error("{{ Session::get('message') }}");
-      break;
-
-    case 'danger':
-      toastr.error("{{ Session::get('message') }}");
-      break;
-
-  }
-  @endif
-});
-        </script>
         @yield('scripts')
 
         </html>

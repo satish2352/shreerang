@@ -15,26 +15,28 @@
             <div class="main-sparkline13-hd">
               <h1>Purchase Order <span class="table-project-n">Data</span> Table</h1>
             </div><br>
-            <form action="{{route('store-purchase-order')}} " id="forms" method="post" enctype="multipart/form-data">
+            <form action="{{route('update-purchase-order')}}" method="post" enctype="multipart/form-data">
               @csrf
+
               <div class="row">
                 <div class="col-sm-6 col-md-3">
                   <div class="form-group">
                     <label>Client Name<span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="client_name" id="client_name" required>
+                    <input class="form-control" type="text" name="client_name" value="{{$invoice->client_name}}">
+                    <input class="form-control" type="hidden" name="id" value="{{$invoice->id}}">
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                   <div class="form-group">
                     <label>Phone Number <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="phone_number">
+                    <input class="form-control" type="text" name="phone_number" value="{{$invoice->phone_number}}">
                   </div>
                 </div>
 
                 <div class="col-sm-6 col-md-3">
                   <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="email" name="email">
+                    <input class="form-control" type="email" name="email" value="{{$invoice->email}}">
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
@@ -42,13 +44,13 @@
                     <label>Tax</label>
                     <select name="tax" class="form-control" title="select tax" id="inv_tax">
                       <option value="null">Select Tax</option>
-                      <option value="9">C-GST</option>
-                      <option value="9">S-GST</option>
-                      <option value="18">C-GST + S-GST</option>
-
+                      <option value="9" {{ $invoice->tax == 9 ? 'selected' : '' }}>C-GST</option>
+                      <option value="9" {{ $invoice->tax == 9 ? 'selected' : '' }}>S-GST</option>
+                      <option value="18" {{ $invoice->tax == 18 ? 'selected' : '' }}>C-GST + S-GST</option>
                     </select>
                   </div>
                 </div>
+
               </div>
               <div class="row">
 
@@ -56,7 +58,8 @@
                   <div class="form-group">
                     <label>Invoice date <span class="text-danger">*</span></label>
                     <div class="cal-icon">
-                      <input class="form-control datetimepicker" type="text" name="invoice_date">
+                      <input class="form-control datetimepicker" type="text" name="invoice_date"
+                        value="{{$invoice->invoice_date}}">
                     </div>
                   </div>
                 </div>
@@ -64,30 +67,31 @@
                   <div class="form-group">
                     <label>GST Number<span class="text-danger">*</span></label>
                     <div class="cal-icon">
-                      <input class="form-control " type="text" name="gst_number">
+                      <input class="form-control " type="text" name="gst_number" value="{{$invoice->gst_number}}">
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                   <div class="form-group">
                     <label>Payment Terms</label>
-                    <select name="payment_terms" class="form-control" title="select tax" id="">
-                      <option value="null">Select Tax</option>
-                      <option value="30">30 Days</option>
-                      <option value="60">60 Days</option>
-                      <option value="90">90 Days</option>
-
+                    <select name="payment_terms" class="form-control" title="select payment terms" id="">
+                      <option value="null">Select Payment Terms</option>
+                      <option value="30" {{ $invoice->payment_terms == 30 ? 'selected' : '' }}>30 Days</option>
+                      <option value="60" {{ $invoice->payment_terms == 60 ? 'selected' : '' }}>60 Days</option>
+                      <option value="90" {{ $invoice->payment_terms == 90 ? 'selected' : '' }}>90 Days</option>
                     </select>
                   </div>
                 </div>
+
                 <div class="col-sm-6 col-md-3">
                   <div class="form-group">
                     <label>Client Address</label>
-                    <textarea class="form-control" rows="3" name="client_address"></textarea>
+                    <textarea class="form-control" rows="3"
+                      name="client_address">{{ $invoice->client_address }}</textarea>
                   </div>
                 </div>
-              </div>
 
+              </div>
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="table-responsive">
@@ -109,6 +113,58 @@
                         </tr>
                       </thead>
                       <tbody data-repeater-list="items">
+                        @php
+                        try {
+                        $items = json_decode($invoice->items, true, 512, JSON_THROW_ON_ERROR);
+                        } catch (JsonException $e) {
+                        $items = [];
+                        }
+                        $count=0;
+                        @endphp
+
+                        @foreach ($items as $item)
+                        $count++;
+                        <tr>
+                          <td>
+                            <input type="text" name="items[id][]" class="form-control" style="min-width:50px" readonly
+                              value="{{ $item['id'] }}">
+                          </td>
+                          <td>
+                            <input class="form-control" name="items[part_no][]" value="{{ $item['part_no'] }}"
+                              type="text" style="min-width:150px">
+                          </td>
+                          <td>
+                            <input class="form-control" name="items[description][]" value="{{ $item['description'] }}"
+                              type="text" style="min-width:150px">
+                          </td>
+                          <td>
+                            <input class="form-control datetimepicker" name="items[due_date][]"
+                              value="{{ $item['due_date'] }}" style="width:100px" type="text">
+                          </td>
+                          <td>
+                            <input class="form-control" name="items[hsn][]" value="{{ $item['hsn'] }}"
+                              style="width:80px" type="text">
+                          </td>
+                          <td>
+                            <input class="form-control" name="items[quantity][]" value="{{ $item['quantity'] }}"
+                              style="width:120px" type="text">
+                          </td>
+                          <td>
+                            <input class="form-control" name="items[rate][]" value="{{ $item['rate'] }}"
+                              style="width:120px" type="text">
+                          </td>
+                          <td>
+                            <input class="form-control" name="items[amount][]" value="{{ $item['amount'] }}" readonly
+                              style="width:120px" type="text">
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-sm btn-danger font-18 ml-2" title="Delete"
+                              data-repeater-delete>
+                              <i class="fa fa-trash"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        @endforeach
                         <tr data-repeater-item>
                           <td>
                             <input type="text" name="id" class="form-control" style="min-width:50px" readonly value="1">
@@ -146,29 +202,67 @@
                       </tbody>
                     </table>
                   </div>
+                  <div class="table-responsive">
+                    <table class="table table-hover table-white">
+                      <tbody>
+                        <tr>
+                          <td colspan="6" style="text-align: right">Sub Total</td>
+                          <td style="text-align: right;width: 230px">
+                            <input class="form-control text-right" value="{{$invoice->total}} Rs." readonly type="text">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="6" style="text-align: right">Discount</td>
+                          <td style="text-align: right;width: 230px">
+                            <input class="form-control text-right"
+                              value="{{'- '.(($invoice->discount/100) * $invoice->total).' Rs. '}}" readonly
+                              type="text">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="6" style="text-align: right">Tax</td>
+                          <td style="text-align: right;width: 230px">
+                            <input class="form-control text-right"
+                              value="{{'+ '.(($invoice->tax/100) * ($invoice->total-(($invoice->discount/100) * $invoice->total))).' Rs. '}}"
+                              readonly type="text">
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td colspan="6" style="text-align: right; font-weight: bold">
+                            Grand Total
+                          </td>
+                          <td style="text-align: right; font-weight: bold; font-size: 16px;width: 230px;color:black">
+                            {{(($invoice->total -(($invoice->discount/100) * $invoice->total))  + (($invoice->percentage/100) * ($invoice->total-(($invoice->discount/100) * $invoice->total))))+((($invoice->tax/100) * ($invoice->total-(($invoice->discount/100) * $invoice->total))))}}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Discount </label>
-                    <input class="form-control text-right" type="text" name="discount" value="" placeholder="0">
+                    <input class="form-control text-right" type="text" name="discount" value="{{$invoice->discount}}">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Status</label>
-                    <select name="status" class="form-control">
-                      <option value="paid">Paid</option>
-                      <option value="pending">Pending</option>
+                    <select name="status" id="status" class="form-control">
+                      <option value="paid" {{ $invoice->status == 'paid' ? 'selected' : '' }}>Paid</option>
+                      <option value="pending" {{ $invoice->status == 'pending' ? 'selected' : '' }}>Pending</option>
                     </select>
                   </div>
                 </div>
+
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>Other Information</label>
-                    <textarea class="form-control" name="note"></textarea>
+                    <textarea class="form-control" name="note">{{$invoice->note}}</textarea>
                   </div>
                 </div>
               </div>
@@ -190,7 +284,6 @@
         </div>
         @endsection
 
-
         @section('scripts')
         <!-- Select2 JS -->
         <script src="{{asset('assets/plugins/select2/select2.min.js')}}"></script>
@@ -199,7 +292,7 @@
         <script>
         $(document).ready(function() {
           'use strict';
-          var index = 0;
+          var index = `{{$count}}`;
 
           var tax = $('#inv_tax').val();
 
@@ -277,23 +370,7 @@
 
           dateTime();
 
-          $('#forms').validate({
-            rules: {
-              client_name: {
-                required: true,
-              },
-            },
-            messages: {
-              client_name: {
-                required: 'Please enter client name',
-              },
 
-            },
-            submitHandler: function(form) {
-              // Form submission logic (e.g., AJAX request)
-              form.submit();
-            },
-          });
         });
         </script>
         @endsection

@@ -21,7 +21,7 @@ class PurchaseController extends Controller
 
     public function index(){
         try {
-            $getOutput = PurchaseModel::get();
+            $getOutput = PurchaseModel::orderBy('created_at', 'desc')->get();
             return view('organizations.purchase.purchases.list-purchase', compact('getOutput'));
         } catch (\Exception $e) {
             return $e;
@@ -29,7 +29,6 @@ class PurchaseController extends Controller
     }    
 
     public function add(){
-
         return view('organizations.purchase.purchases.add-purchase');
     }
 

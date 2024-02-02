@@ -14,23 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('purchase_orders', function (Blueprint $table) {
-            $table->id();
-            $table->string('inv_id')->nullable();
-            $table->string('client_name')->nullable();
-            $table->string('tax')->nullable();
-            $table->string('part_number')->nullable();
-            $table->string('description')->nullable();
-            
-            $table->string('email')->nullable();
-            $table->string('hsn')->nullable();
-            $table->string('billing_address')->nullable();
-            $table->string('invoice_date')->nullable();
-            $table->string('due_date')->nullable();
-            $table->jsonb('items')->nullable();
-            $table->string('note')->nullable();
-            $table->string('discount')->nullable();
-            $table->string('total')->nullable();
-            $table->string('status')->nullable();
+                $table->id();
+                $table->string('client_name')->nullable();
+                $table->string('tax')->nullable();
+                $table->string('payment_terms')->nullable();
+                $table->string('gst_number')->nullable();
+                $table->string('email')->nullable();
+                $table->string('invoice_date')->nullable();
+                $table->jsonb('items')->nullable();
+                $table->string('note')->nullable();
+                $table->string('discount')->nullable();
+                $table->string('total')->nullable();
+                $table->string('status')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
