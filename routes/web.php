@@ -181,3 +181,14 @@ Route::group(['middleware' => ['organizations:Store']], function () {
     Route::post('/update-store-purchase', ['as' => 'update-store-purchase', 'uses' =>  'App\Http\Controllers\Organizations\Store\PurchaseController@update']);
     Route::any('/delete-store-purchase/{id}', ['as' => 'delete-store-purchase', 'uses' =>  'App\Http\Controllers\Organizations\Store\PurchaseController@destroy']);
 });
+
+
+
+// frontend website shreerag path 
+Route::get('/', ['as' => 'index', 'uses' => 'App\Http\Controllers\Website\PagesController@index']);
+Route::get('/about', ['as' => 'about', 'uses' => 'App\Http\Controllers\Website\PagesController@about']);
+Route::get('/services', ['as' => 'services', 'uses' => 'App\Http\Controllers\Website\PagesController@services']);
+Route::get('/product', ['as' => 'product', 'uses' => 'App\Http\Controllers\Website\PagesController@product']);
+Route::get('/product_details', ['as' => 'product_details', 'uses' => 'App\Http\Controllers\Website\PagesController@product_details']);
+Route::get('/contact', ['as' => 'contact', 'uses' => 'App\Http\Controllers\Website\PagesController@contact']);
+

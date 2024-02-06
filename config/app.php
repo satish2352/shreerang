@@ -55,8 +55,7 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
-
-    'asset_url' => env('ASSET_URL', 'http://localhost/newProjects/public'),
+    'asset_url' => env('ASSET_URL', 'http://localhost/newShreerag/shreerang/public'),
     // 'asset_url' => env('ASSET_URL', null),
 
     /*
