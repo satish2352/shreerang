@@ -96,7 +96,6 @@ a:hover,
 a,
 button,
 .green,
-.line-head,
 .count-box h3,
 .feature-num span,
 .plus-btn:hover,
@@ -127,7 +126,9 @@ button,
     color: #029A99;
 }
 
-
+.line-head{
+ color: #FFFFFF;
+}
 /* ....................................
 5. bg black
 .......................................*/
@@ -175,6 +176,9 @@ button,
     background-color: #243772;
 }
 
+.procard:hover{
+    background: #243772;
+}
 .card-info{
     background: #243772; 
 }

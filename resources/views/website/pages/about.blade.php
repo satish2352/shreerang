@@ -27,9 +27,11 @@
 
         <div class="col-lg-5">
             <div class="row">
+                <h1 class="green f-700">1985</h1>
                 <img src="{{ asset('website/assets/img/about/1985.png')}}" alt="">
             </div>
             <div class="row pt-50">
+                <h1 class="green f-700">2000</h1>
                 <img src="{{ asset('website/assets/img/about/2000.png')}}" alt="">
             </div>
         </div>
@@ -51,9 +53,11 @@
         </div>
         <div class="col-lg-5 pt-75">
         <div class="row">
+            <h1 class="green f-700">1987</h1>
                 <img src="{{ asset('website/assets/img/about/1987.png')}}" alt="">
             </div>
             <div class="row pt-50">
+                <h1 class="green f-700">2007</h1>
                 <img src="{{ asset('website/assets/img/about/2007.png')}}" alt="">
             </div>
         </div>
@@ -81,39 +85,41 @@
 </section> -->
 <!-- end history -->
     <!-- Director Desk -->
-    <section class="pt-50" id="direct" data-overlay="9">
+    <section class="pt-30 pb-50" id="direct" data-overlay="9">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
+                        <div class="fancy-head text-center relative z-5 mb-4 wow fadeInDown">
                             <h1>Director Desk</h1>
                         </div>
                     </div>
-                </div>        
+                </div>  
+                <div class="container">
+       
+                    <div class="row">
+                       <div class="card director shadow-1">
+                               
+                           <div class="row p-2">
+                               <div class="col-lg-4 col-md-4 col-sm-4">
+                                   <img src="{{ asset('website/assets/img/about/director1.png')}}" alt="">
+                               </div>
+                               <div class="col-lg-8 col-md-8 col-sm-8 text-break p-5">
+                                   <h4 class="white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
+                                   
+                                   </div>
+                                  
+                                   
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                        
+           </div>
+                
             </div>
   
    
-        <div class="container p-5 pt-10">
        
-                 <div class="row">
-                    <div class="card director shadow-1">
-                            
-                        <div class="row p-2">
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <img src="{{ asset('website/assets/img/about/director1.png')}}" alt="">
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 text-break p-5">
-                                <h4 class="white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
-                                
-                                </div>
-                               
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                     
-        </div>
                 </section>
 
     <!-- end Director desk -->
@@ -127,7 +133,7 @@
                     <div class="row">
                     <div class="col-lg-6 text-center">
                         <div class="">
-                            <h2 class="f-700">Vission</h2>
+                            <h1 class="f-700">Vission</h1>
                         </div>
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
@@ -139,7 +145,7 @@
                     
                         <img src="{{ asset('website/assets/img/about/mission.png')}}" id="vision_mision" alt="">
                         <div class="">
-                            <h2 class="f-700">Mission</h2>
+                            <h1 class="f-700">Mission</h1>
                         </div>
                     </div>
                     <div class="col-lg-6 pt-60 order-md-1">
@@ -180,7 +186,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jessica David</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -193,7 +199,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -208,7 +214,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Anjelina</a></h5>
                                     <p class="designation white fs-13">Finance Manager</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -221,7 +227,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -236,7 +242,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jessica David</a></h5>
                                     <p class="designation white fs-13">Web Designer</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -249,7 +255,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -264,7 +270,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jhone Doe</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -277,7 +283,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -292,7 +298,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jessica</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -305,7 +311,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -320,7 +326,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jhone Doe</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -333,7 +339,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>

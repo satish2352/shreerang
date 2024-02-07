@@ -24,7 +24,7 @@
                 </div>
             </div>
         <div class="bakimgbnr">
-            <div class="container pt-50 pb-50">
+            <div class="container pt-5 pb-50">
             
                 <div class="row">
               
@@ -58,32 +58,32 @@
             <div class="row align-items-center">
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h1 class="white f-600 mb-10">
+                        <h2 class="white f-600 mb-10">
                             <span class="">01</span>
                             Woodworking
                             <span class="green"></span>
-                        </h1>
+                        </h2>
                         <p class="white mb-55 mb-md-30 pr-60 pr-md-00">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h1 class="white f-600 mb-10">
+                        <h2 class="white f-600 mb-10">
                             <span class="">02</span>
                             Metalworking
  
-                        </h1>
+                        </h2>
                         <p class="white mb-55 mb-md-30 pr-60 pr-md-00">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h1 class="white f-600 mb-10">
+                        <h2 class="white f-600 mb-10">
                             <span class="">03</span>
                             Woodworking <span class=""></span>
-                        </h1>
+                        </h2>
                         <p class="white mb-55 mb-md-30 pr-60 pr-md-00">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
@@ -195,7 +195,7 @@
     <section>
         <div class="container-fluid pb-10 pt-50">
             <div class="row">
-                <img src="{{ asset('website/assets/img/products/prodbannr.png')}}" alt="">
+                <img src="{{ asset('website/assets/img/banner/HOME_PAGE3.png')}}" alt="">
             </div>
         </div>
     </section>
