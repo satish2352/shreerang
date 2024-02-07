@@ -133,7 +133,7 @@
                     <div class="row">
                     <div class="col-lg-6 text-center">
                         <div class="">
-                            <h1 class="f-700">Vission</h1>
+                            <h1 class="f-700">Vision</h1>
                         </div>
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>

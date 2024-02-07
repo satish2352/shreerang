@@ -329,7 +329,7 @@
                         <h1> Our Clients Review</h1>
                     </div>
                 </div>
-                <div class="col-lg-5 text-center text-lg-right">
+                {{-- <div class="col-lg-5 text-center text-lg-right">
                     <div class="arrow-navigation mb-15 mt-md-20 wow fadeInRight">
                         <a href="#" class="nav-slide slide-left testi-2">
                             <img src="{{ asset('website/assets/img/icons/ar_lt.png')}}" alt="">
@@ -338,7 +338,7 @@
                             <img src="{{ asset('website/assets/img/icons/ar_rt.png')}}" alt="">
                         </a>
                     </div>
-                </div>
+                </div> --}}
                 <!-- <div class="col-12">
                     <div class="hr-2 bg-blue opacity-1 mt-45"></div>
                 </div> -->
@@ -347,7 +347,7 @@
                 <div class="col-xl-12">
                     <div class="owl-carousel owl-theme testimonial-2-slide  wow fadeIn">
                         <div class="item">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 320px;">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772;">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -358,8 +358,8 @@
                                     </li>
                                 </ul> -->
                                 <h4 class="f-700 mb-20 pt-20">Best Service Ever</h4>
-                                <p class="mb-35">Quisque enim ipsum,luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
-                                <div class="client-2-img d-flex align-items-center justify-content-md-start justify-content-center">
+                                <p class="mb-35 pb-10"> jhruios  Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
+                                <div class="client-2-img d-flex align-items-center fixed-bottom justify-content-md-start justify-content-center">
                                     <div class="img-div mr-30 pb-10">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/testimonial/client1.jpg')}}" class=" rounded-circle" alt="">
@@ -374,7 +374,7 @@
                         </div>
 
                         <div class="item">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 320px;">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772;">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -385,8 +385,8 @@
                                     </li>
                                 </ul> -->
                                 <h4 class="f-700 mb-20 pt-20">100% Recommended</h4>
-                                <p class="mb-35">Etiam mattis posuere sem, a bibendum nulla congue nec. Donec eget metus nisi. Suspendisse potenti.safsdgd thukevf wdynj sfhyj Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
-                                <div class="client-2-img d-flex align-items-center justify-content-md-start justify-content-center">
+                                <p class="mb-35 pb-10">Etiam mattis posuere sem, a bibendum nulla congue nec. Donec eget metus nisi. Suspendisse potenti.safsdgd thukevf wdynj sfhyj Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
+                                <div class="client-2-img d-flex align-items-center fixed-bottom  justify-content-md-start justify-content-center">
                                     <div class="img-div mr-30 pb-10">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/testimonial/client2.jpg')}}" class=" rounded-circle" alt="">
@@ -401,7 +401,7 @@
                         </div>
 
                         <div class="item">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 320px;">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772;">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -412,9 +412,9 @@
                                     </li>
                                 </ul> -->
                                 <h4 class="f-700 mb-20 pt-20">Bizz is the Best</h4>
-                                <p class="mb-35">Maecenas dignissim in dolor in blandit. Curabitur congue finibus convallis. In at eros vel lorem tempor malesuada quis efficitur erat. Nullam nec purus tempus, posuere elit non
+                                <p class="mb-35 pb-10">Maecenas dignissim in dolor in blandit. eros vel lorem tempor malesuada quis efficitur erat. Nullam nec purus tempus, posuere elit non
                                 </p>
-                                <div class="client-2-img d-flex align-items-center justify-content-md-start justify-content-center">
+                                <div class="client-2-img d-flex align-items-center fixed-bottom  justify-content-md-start justify-content-center">
                                     <div class="img-div mr-30 pb-10">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/testimonial/client3.jpg')}}" class=" rounded-circle" alt="">
@@ -429,7 +429,7 @@
                         </div>
 
                         <div class="item">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 320px;">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772;">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -440,8 +440,8 @@
                                     </li>
                                 </ul> -->
                                 <h4 class="f-700 mb-20 pt-20">Best Service Ever</h4>
-                                <p class="mb-35">Quisque enim ipsum, commodo et ven enatis rutrum, luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
-                                <div class="client-2-img d-flex align-items-center justify-content-md-start justify-content-center">
+                                <p class="mb-35 pb-10">Quisque enim ipsum, commodo et ven enatis gdghc jhytgv uhjbf jgfjg rutrum, luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
+                                <div class="client-2-img d-flex align-items-center fixed-bottom  justify-content-md-start justify-content-center">
                                     <div class="img-div mr-30 pb-10">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/testimonial/client1.jpg')}}" class=" rounded-circle" alt="">
@@ -456,7 +456,7 @@
                         </div>
 
                         <div class="item">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 320px;">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772;">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -468,14 +468,14 @@
                                 </ul> -->
                                 
                                 <h4 class="f-700 mb-20 pt-20">100% Recommended</h4>
-                                <p class="mb-35">Etiam mattis posuere sem, a bibendum nulla asfsdg kuyj dgfh yhjmh congue nec. Donec eget metus nisi. Suspendisse potenti. Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
-                                <div class="client-2-img d-flex align-items-center justify-content-md-start justify-content-center">
+                                <p class="mb-35 pb-10">Etiam mattis posuere sem, a bibendum nulla asfsdg kuyj dgfh yhjmh congue nec. Donec eget metus nisi. Suspendisse potenti. Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
+                                <div class="client-2-img d-flex align-items-center fixed-bottom justify-content-md-start justify-content-center">
                                     <div class="img-div mr-30 pb-10">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/testimonial/client2.jpg')}}" class=" rounded-circle" alt="">
                                         </div>
                                     </div>
-                                    <div class="client-text-2 mb-10">
+                                    <div class="client-text-2  mb-10">
                                         <h6 class="client-name green fs-17 f-700">Jessica David</h6>
                                         <p class="mb-0 fs-13 f-500">CEO, Abc Company</p>
                                     </div>

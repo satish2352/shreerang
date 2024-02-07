@@ -28,8 +28,8 @@
                             <div class="footer-links pt-45 pt-md- mb-sm-0">
                                 <h4 class="green f-700 mb-35">Contact</h4>
                                 <ul class="links-list">
-                                    <li><a href="tel: +91 7028082176">7028082176</a></li>
-                                    <li><a href="tel: +91 0253-2383517">0253 - 2383517</a></li>
+                                    <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<a href="tel: +91 7028082176">7028082176</a></li>
+                                    <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<a href="tel: +91 0253-2383517">0253 - 2383517</a></li>
                                 
                                 </ul>
                                 <div class="social-links">
@@ -55,10 +55,10 @@
                             <div class="footer-links pt-45 mb-sm-0">
                                 <h4 class="green f-700 mb-35">Quick Links</h4>
                                 <ul class="links-list">
-                                    <li><a href="{{url('/')}}">Home</a></li>
-                                    <li><a href="{{url('/about')}}">About Us</a></li>
-                                    <li><a href="{{url('/services')}}">Services</a></li>
-                                    <li><a href="{{url('/product')}}">Product</a></li>
+                                    <li><i class="fa fa-home" aria-hidden="true"></i> &nbsp;<a href="{{url('/')}}">Home</a></li>
+                                    <li><i class="fa fa-info-circle" aria-hidden="true"></i> &nbsp;<a href="{{url('/about')}}">About Us</a></li>
+                                    <li><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;<a href="{{url('/product')}}">Product</a></li>
+                                    <li><i class="fa fa-cogs" aria-hidden="true"></i> &nbsp;<a href="{{url('/services')}}">Services</a></li>
                                     
                                 </ul>
                             </div>
@@ -73,7 +73,7 @@
                                 <div class="col-xl-8 col-md-8">
                                     <div class="row">
                                         <div class="col-xl-9 col-md-8">
-                                        <p class="mb-3 white">© Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php">sumagoinfotech</a> 2024. All rights reserved.</p>
+                                        <p class="mb-3 white">© Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank"><img src="{{ asset('website/assets/img/logo/sumgo.png')}}" style="width: 25px;" alt=""></a> 2024. All rights reserved.</p>
                                         </div>
                                         <div class="col-xl-3 col-md-4 text-right">
                                             <p class="mb-3 white">Terms & Conditions</p>
