@@ -195,7 +195,7 @@
     <section>
         <div class="container-fluid pb-10 pt-50">
             <div class="row">
-                <img src="{{ asset('website/assets/img/products/prodbannr.png')}}" alt="">
+                <img src="{{ asset('website/assets/img/banner/HOME_PAGE3.png')}}" alt="">
             </div>
         </div>
     </section>

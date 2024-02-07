@@ -1,6 +1,6 @@
 
     <!-- Footer area start -->
-<section class="pb-20">
+<section class="">
     <div class="row footlogocol">
         <div class="col-lg-3 col-md-12 text-center  bg-green-op-6" style="">
             <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="footlogo" alt="">

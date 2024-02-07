@@ -10,11 +10,11 @@
                         <div class="row">
                             <div class="col-xl-7 col-lg-8">
                                 <div class="slider-content z-10">
-                                    <h5 class="line-head">
+                                    {{-- <h5 class="line-head">
                               25 years of experience
                             <span class="line  after"></span>
-                          </h5>
-                                    <h1 class="banner-head-2 f-700 mt-25 mb-35 mt-xs-20 mb-xs-30">We are Uncompetitive in Consulting Solution Around the world.</h1>
+                          </h5> --}}
+                                    <h1 class="banner-head-2 f-700 mt-25 mb-35 mt-xs-20 mb-xs-30">Effortless Efficiency: Transform your material handling experience</h1>
                                     {{-- <a href="#" class="btn btn-square">Learn More<i class="fas fa-long-arrow-alt-right ml-20"></i></a> --}}
                                 </div>
                             </div>
@@ -28,11 +28,29 @@
                         <div class="row">
                             <div class="col-xl-7 col-lg-8">
                                 <div class="slider-content z-10">
-                                    <h5 class="line-head">
+                                    {{-- <h5 class="line-head">
                                         1000+ Happy Clients
                                         <span class="line  after"></span>
-                                    </h5>
-                                    <h1 class="banner-head-2 f-700 mt-25 mb-35 mt-xs-20 mb-xs-30">Let's Make Something Awesome Together with the Right People.</h1>
+                                    </h5> --}}
+                                    <h1 class="banner-head-2 f-700 mt-25 mb-35 mt-xs-20 mb-xs-30"> Discover durability like never before with our robust solutions</h1>
+                                    {{-- <a href="#" class="btn btn-square">Learn More<i class="fas fa-long-arrow-alt-right ml-20"></i></a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="silder-img" id="sliderbk1" style="background-image: url('{{ asset('website/assets/img/banner/HOME_PAGE.png')}}');" data-overlay="7">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-8">
+                                <div class="slider-content z-10">
+                                    {{-- <h5 class="line-head">
+                                        25 years of experience
+                                    <span class="line  after"></span>
+                                </h5> --}}
+                                    <h1 class="banner-head-2 f-700 mt-25 mb-35 mt-xs-20 mb-xs-30">Elevate your business operations with our innovative designs</h1>
                                     {{-- <a href="#" class="btn btn-square">Learn More<i class="fas fa-long-arrow-alt-right ml-20"></i></a> --}}
                                 </div>
                             </div>
@@ -90,11 +108,11 @@
     <!-- Slider end -->
 
      <!-- title start -->
-     <section class="callback-area pt-25 pb-5" data-overlay="9">
+     <section class="callback-area" data-overlay="9">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
+                    <div class="fancy-head text-center relative z-5 m-4 wow fadeInDown">
                         <h1 class="white">Our Products</h1>
                     </div>
                 </div>
@@ -106,16 +124,16 @@
 
        <!-- products  start -->
 <div class="">
-     <section class="team-area bg-blue-op-11 pt-50 pb-70">
+     <section class="team-area bg-blue-op-11 pt-20 pb-30">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-30">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center p-3">
                         <h3 class="f-700 p-3">TAILOR</h3>
-                        <a href="#"><img src="{{ asset('website/assets/img/products/Ellipse 7.png')}}" alt=""></a>
+                        <a ><img src="{{ asset('website/assets/img/products/Ellipse 7.png')}}" alt=""></a>
                     </div>
-                        <div class="team-hover-div text-center transition-3">
+                        <div class="team-hover-div procard text-center transition-3">
                             {{-- <h4 class="white f-700"><a href="#">TAILOR</a></h4> --}}
                             <!-- <p class="green mb-0">Co Founder</p> -->
                         </div>
@@ -125,9 +143,9 @@
                     <div class="team-2-each card relative border shadow-3">
                         <div class="product_img text-center p-3">
                             <h3 class="f-700 p-3">PLATFORM</h3>
-                            <a href="#"><img src="{{ asset('website/assets/img/products/Ellipse 6.png')}}" alt=""></a>
+                            <a><img src="{{ asset('website/assets/img/products/Ellipse 6.png')}}" alt=""></a>
                         </div>
-                        <div class="team-hover-div text-center transition-4">
+                        <div class="team-hover-div procard text-center transition-4">
                             {{-- <h5 class="white f-700"><a href="#">PLATFORM</a></h5> --}}
                             <!-- <p class="green mb-0">Marketing Manager</p> -->
                         </div>
@@ -137,9 +155,9 @@
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center p-3">
                         <h3 class="f-700 p-3">PLATS</h3>
-                        <a href="#"><img src="{{ asset('website/assets/img/products/Ellipse 5.png')}}" alt=""></a>
+                        <a><img src="{{ asset('website/assets/img/products/Ellipse 5.png')}}" alt=""></a>
                     </div>
-                        <div class="team-hover-div text-center transition-4">
+                        <div class="team-hover-div procard text-center transition-4">
                             {{-- <h5 class="white f-700"><a href="#">PLATS</a></h5> --}}
                             <!-- <p class="green mb-0">Web Designer</p> -->
                         </div>
@@ -149,9 +167,9 @@
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center p-3">
                         <h3 class="f-700 p-3">PLATFORM</h3>
-                        <a href="#"><img src="{{ asset('website/assets/img/products/Ellipse 6.png')}}" alt=""></a>
+                        <a><img src="{{ asset('website/assets/img/products/Ellipse 6.png')}}" alt=""></a>
                     </div>
-                        <div class="team-hover-div text-center transition-4">
+                        <div class="team-hover-div procard text-center transition-4">
                             {{-- <h5 class=" f-700"><a href="#">TAILOR</a></h5> --}}
                             <!-- <p class="green mb-0">Finance Manager</p> -->
                         </div>
@@ -161,9 +179,9 @@
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center p-3">
                         <h3 class="f-700 p-3">TAILOR</h3>
-                        <a href="#"><img src="{{ asset('website/assets/img/products/Ellipse 7.png')}}" alt=""></a>
+                        <a><img src="{{ asset('website/assets/img/products/Ellipse 7.png')}}" alt=""></a>
                     </div>
-                        <div class="team-hover-div text-center transition-4">
+                        <div class="team-hover-div procard text-center transition-4">
                             {{-- <h5 class="white f-700"><a href="#">PLATFORM</a></h5> --}}
                             <!-- <p class="green mb-0">Web Designer</p> -->
                         </div>
@@ -173,9 +191,9 @@
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center p-3">
                         <h3 class="f-700 p-3">PLATS</h3>
-                        <a href="#"><img src="{{ asset('website/assets/img/products/Ellipse 5.png')}}" alt=""></a>
+                        <a><img src="{{ asset('website/assets/img/products/Ellipse 5.png')}}" alt=""></a>
                     </div>
-                        <div class="team-hover-div text-center transition-4">
+                        <div class="team-hover-div procard text-center transition-4">
                             {{-- <h5 class="white f-700"><a href="#">PLATS</a></h5> --}}
                             <!-- <p class="green mb-0">Web Designer</p> -->
                         </div>
@@ -198,7 +216,7 @@
 
 
         <!-- services start -->
-        <section class="servicebk pt-60 pb-50" data-overlay="9">
+        <section class="servicebk pt-40 pb-40" data-overlay="9">
         <div class="container">
             <div class="row">
                     <div class="col-xl-12">
@@ -475,7 +493,7 @@
     <section>
         <div class="container pt-30 pb-30">
             <div class="row">
-                <img src="{{ asset('website/assets/img/banner/contact.png')}}" alt="">
+                <img src="{{ asset('website/assets/img/banner/HOME_PAGE2.png')}}" alt="">
             </div>
         </div>
     </section>

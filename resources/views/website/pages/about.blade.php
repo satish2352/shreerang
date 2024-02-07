@@ -89,35 +89,37 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
+                        <div class="fancy-head text-center relative z-5 mb-4 wow fadeInDown">
                             <h1>Director Desk</h1>
                         </div>
                     </div>
-                </div>        
+                </div>  
+                <div class="container">
+       
+                    <div class="row">
+                       <div class="card director shadow-1">
+                               
+                           <div class="row p-2">
+                               <div class="col-lg-4 col-md-4 col-sm-4">
+                                   <img src="{{ asset('website/assets/img/about/director1.png')}}" alt="">
+                               </div>
+                               <div class="col-lg-8 col-md-8 col-sm-8 text-break p-5">
+                                   <h4 class="white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
+                                   
+                                   </div>
+                                  
+                                   
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                        
+           </div>
+                
             </div>
   
    
-        <div class="container">
        
-                 <div class="row p-4">
-                    <div class="card director shadow-1">
-                            
-                        <div class="row p-2">
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <img src="{{ asset('website/assets/img/about/director1.png')}}" alt="">
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 text-break p-5">
-                                <h4 class="white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
-                                
-                                </div>
-                               
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                     
-        </div>
                 </section>
 
     <!-- end Director desk -->

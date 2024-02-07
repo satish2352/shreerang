@@ -176,6 +176,9 @@ button,
     background-color: #243772;
 }
 
+.procard:hover{
+    background: #243772;
+}
 .card-info{
     background: #243772; 
 }
