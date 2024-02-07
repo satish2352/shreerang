@@ -96,7 +96,6 @@ a:hover,
 a,
 button,
 .green,
-.line-head,
 .count-box h3,
 .feature-num span,
 .plus-btn:hover,
@@ -127,7 +126,9 @@ button,
     color: #029A99;
 }
 
-
+.line-head{
+ color: #FFFFFF;
+}
 /* ....................................
 5. bg black
 .......................................*/

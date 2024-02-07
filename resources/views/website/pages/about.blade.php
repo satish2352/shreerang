@@ -27,9 +27,11 @@
 
         <div class="col-lg-5">
             <div class="row">
+                <h1 class="green f-700">1985</h1>
                 <img src="{{ asset('website/assets/img/about/1985.png')}}" alt="">
             </div>
             <div class="row pt-50">
+                <h1 class="green f-700">2000</h1>
                 <img src="{{ asset('website/assets/img/about/2000.png')}}" alt="">
             </div>
         </div>
@@ -51,9 +53,11 @@
         </div>
         <div class="col-lg-5 pt-75">
         <div class="row">
+            <h1 class="green f-700">1987</h1>
                 <img src="{{ asset('website/assets/img/about/1987.png')}}" alt="">
             </div>
             <div class="row pt-50">
+                <h1 class="green f-700">2007</h1>
                 <img src="{{ asset('website/assets/img/about/2007.png')}}" alt="">
             </div>
         </div>
@@ -93,9 +97,9 @@
             </div>
   
    
-        <div class="container p-5 pt-10">
+        <div class="container">
        
-                 <div class="row">
+                 <div class="row p-4">
                     <div class="card director shadow-1">
                             
                         <div class="row p-2">
@@ -127,7 +131,7 @@
                     <div class="row">
                     <div class="col-lg-6 text-center">
                         <div class="">
-                            <h2 class="f-700">Vission</h2>
+                            <h1 class="f-700">Vission</h1>
                         </div>
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
@@ -139,7 +143,7 @@
                     
                         <img src="{{ asset('website/assets/img/about/mission.png')}}" id="vision_mision" alt="">
                         <div class="">
-                            <h2 class="f-700">Mission</h2>
+                            <h1 class="f-700">Mission</h1>
                         </div>
                     </div>
                     <div class="col-lg-6 pt-60 order-md-1">
@@ -180,7 +184,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jessica David</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -193,7 +197,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -208,7 +212,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Anjelina</a></h5>
                                     <p class="designation white fs-13">Finance Manager</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -221,7 +225,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -236,7 +240,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jessica David</a></h5>
                                     <p class="designation white fs-13">Web Designer</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -249,7 +253,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -264,7 +268,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jhone Doe</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -277,7 +281,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -292,7 +296,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jessica</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -305,7 +309,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -320,7 +324,7 @@
                                 <div class="team-content z-5">
                                     <h5 class="green f-700 fs-19 relative"><a href="#">Jhone Doe</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
-                                    <ul class="social-icons boxed-social mb-5">
+                                    {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -333,7 +337,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
