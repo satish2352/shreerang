@@ -57,7 +57,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-2 col-md-5 col-sm-4 col-5">
                     <div class="logo transition-4">
-                        <a href="index-2.html">
+                        <a href="{{url('/')}}">
                             <img src="{{ asset('website/assets/img/logo/LANSCAPE LOG.png')}}" class="transition-4" alt="logo">
                         </a>
                     </div>

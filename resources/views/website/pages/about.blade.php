@@ -85,7 +85,7 @@
 </section> -->
 <!-- end history -->
     <!-- Director Desk -->
-    <section class="pt-50" id="direct" data-overlay="9">
+    <section class="pt-30 pb-50" id="direct" data-overlay="9">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">

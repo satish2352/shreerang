@@ -1632,7 +1632,7 @@ p.big-p {
 }
 
 .team-hover-div {
-    padding: 15px 30px;
+    padding: 5px 30px;
     border-radius: 10px 10px 10px 10px;
     /* position: absolute; */
     left: 0;
@@ -3668,6 +3668,6 @@ ul.theme-ul li img {
 
 }
 .contbak{
-    background-image: url('../img/banner/shreerag contact map background.png');
+    background-image: url('../img/banner/mapbakground.png');
 
 }

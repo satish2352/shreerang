@@ -274,7 +274,7 @@
     <!-- services end -->
 
       <!-- How we work  -->
-      <section class="pt-50" data-overlay="9">
+      <section class="pt-20" data-overlay="9">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -286,7 +286,7 @@
             </div>
         </section>
       <section>
-        <div class="container pt-10 pb-95">
+        <div class="container pt-10 pb-10">
             <div class="row">
                 <div class="col-xl-4">
                     <div class="text-center">
@@ -316,9 +316,9 @@
     <!-- end  How we work-->
 
      <!-- Testimonial area start -->
-     <section class="testimonials-2 reviw pt-60 pb-95">
+     <section class="testimonials-2 reviw pt-30 pb-20">
         <div class="container">
-            <div class="row align-items-end mb-45">
+            <div class="row align-items-end mb-30">
                 <div class="col-lg-7 col-md-12 text-center text-lg-left">
                     <div class="fancy-head left-al wow fadeInLeft">
                         {{-- <h5 class="line-head mb-15">

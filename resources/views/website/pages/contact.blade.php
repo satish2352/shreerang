@@ -12,7 +12,7 @@
     <!--  -->
     <section>
         <div class="contbak">
-            <div class="container-fluid mb-40 pt-30 pb-100">
+            <div class="container-fluid mb-40 pt-100 pb-100">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-12 p-2">
                         <div class="card text-center">
@@ -22,8 +22,8 @@
                             </div>
                             <div class="card-body text-center">
                               <h3 class="card-title f-700">Plant No 1</h3>
-                              <h6 class="card-title p-4">W-127 (A),<br>
-                                Ambad Nashik. </h6>
+                              <h6 class="card-title p-4">W-127 (A), <br>
+                                MIDC, Ambad Nashik- 422010 </h6>
                               <p class="card-text card-title"> </p>
                             </div>
                             <ul class="text-center">
@@ -33,7 +33,7 @@
                             </ul>
                             <div class="p-3 text-center card-info">
                               
-                              <h4 class="white f-600"> <a href="#" class="card-link">Get Direction</a> </h4>
+                              <h4 class="white f-600"> <a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87" target="blank" class="card-link">Get Direction</a> </h4>
                               
                             </div>
                           </div>
@@ -45,9 +45,9 @@
                                 <img src="{{ asset('website/assets/img/contact/location.png')}}" style="width: 150px;" class="card-img-top" alt="...">
                             </div>
                             <div class="card-body text-center">
-                              <h3 class="card-title f-700">Plant No 1</h3>
+                              <h3 class="card-title f-700">Plant No 2</h3>
                               <h6 class="card-title p-4"> W-118 (A), <br> MIDC Ambad Nashik 
-                                422010  W-127 (A),</h6>
+                                422010</h6>
                               <p class="card-text card-title"> </p>
                             </div>
                             <ul class="text-center">
@@ -57,7 +57,7 @@
                             </ul>
                             <div class="p-3 text-center card-info">
                               
-                              <h4 class="white f-600"> <a href="#" class="card-link">Get Direction</a> </h4>
+                              <h4 class="white f-600"> <a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6" target="blank" class="card-link">Get Direction</a> </h4>
                               
                             </div>
                           </div>
@@ -69,8 +69,8 @@
                                 <img src="{{ asset('website/assets/img/contact/location.png')}}" style="width: 150px;" class="card-img-top" alt="...">
                             </div>
                             <div class="card-body text-center">
-                              <h3 class="card-title f-700">Plant No 1</h3>
-                              <h6 class="card-title p-4"> GAT NO679/2/1 , Kurli Alandi Road ,Chankan , Tal khed Dist. Pun - 410501
+                              <h3 class="card-title f-700">Plant No 3</h3>
+                              <h6 class="card-title p-4"> GAT NO-679/2/1 , Kurli Alandi Road ,Chankan , Tal khed Dist. Pun - 410501
                             </h6>
                               <p class="card-text card-title"> </p>
                             </div>
@@ -81,7 +81,7 @@
                             </ul>
                             <div class="p-3 text-center card-info">
                               
-                              <h4 class="white f-600"> <a href="#" class="card-link">Get Direction</a> </h4>
+                              <h4 class="white f-600"> <a href="" target="blank" class="card-link">Get Direction</a> </h4>
                               
                             </div>
                           </div>
@@ -93,8 +93,8 @@
                                 <img src="{{ asset('website/assets/img/contact/location.png')}}" style="width: 150px;" class="card-img-top" alt="...">
                             </div>
                             <div class="card-body text-center">
-                              <h3 class="card-title f-700">Plant No 1</h3>
-                              <h6 class="card-title p-4">   GF Plot No - 913 Shreeji Engg, GIDC  , Halol , Panchamahal Gujarat - 389350</h6>
+                              <h3 class="card-title f-700">Plant No 4</h3>
+                              <h6 class="card-title p-4"> GF PLOT NO-913 Shreeji Engg.,GIDC,Halol , Panchamahal Gujarat - 389350</h6>
                               <p class="card-text card-title"> </p>
                             </div>
                             <ul class="text-center">
@@ -104,7 +104,7 @@
                             </ul>
                             <div class="p-3 text-center card-info">
                               
-                              <h4 class="white f-600"> <a href="#" class="card-link">Get Direction</a> </h4>
+                              <h4 class="white f-600"> <a href="https://maps.app.goo.gl/8vvmafbwcG6vSJ5A9" target="blank" class="card-link">Get Direction</a> </h4>
                               
                             </div>
                           </div>
