@@ -5,7 +5,7 @@
      <section class="slider-area-2 relative">
         <div class="owl-carousel slider-2">
             <div class="item">
-                <div class="silder-img" id="sliderbk1" style="background-image: url('{{ asset('website/assets/img/banner/HOME_PAGE.PNG')}}');" data-overlay="7">
+                <div class="silder-img" id="sliderbk1" style="background-image: url('{{ asset('website/assets/img/banner/HOME_PAGE.png')}}');" data-overlay="7">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-7 col-lg-8">
