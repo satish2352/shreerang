@@ -12,7 +12,7 @@
     <!--  -->
     <section>
         <div class="contbak">
-            <div class="container-fluid mb-40 pt-100 pb-100">
+            <div class="container-fluid mb-40 pt-60 pb-60">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-12 p-2">
                         <div class="card text-center">

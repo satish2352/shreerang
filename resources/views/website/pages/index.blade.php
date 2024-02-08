@@ -124,7 +124,7 @@
 
        <!-- products  start -->
 <div class="">
-     <section class="team-area bg-blue-op-11 pt-20 pb-30">
+     <section class="team-area bg-blue-op-11 pt-40 pb-40">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-30">
@@ -216,7 +216,7 @@
 
 
         <!-- services start -->
-        <section class="servicebk pt-40 pb-40" data-overlay="9">
+        <section class="servicebk pt-60 pb-60" data-overlay="9">
         <div class="container">
             <div class="row">
                     <div class="col-xl-12">
@@ -274,7 +274,7 @@
     <!-- services end -->
 
       <!-- How we work  -->
-      <section class="pt-20" data-overlay="9">
+      <section class="pt-60" data-overlay="9">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -286,7 +286,7 @@
             </div>
         </section>
       <section>
-        <div class="container pt-10 pb-10">
+        <div class="container pt-10 pb-40">
             <div class="row">
                 <div class="col-xl-4">
                     <div class="text-center">
@@ -316,7 +316,7 @@
     <!-- end  How we work-->
 
      <!-- Testimonial area start -->
-     <section class="testimonials-2 reviw pt-30 pb-20">
+     <section class="testimonials-2 reviw pt-60 pb-60">
         <div class="container">
             <div class="row align-items-end mb-30">
                 <div class="col-lg-7 col-md-12 text-center text-lg-left">
@@ -491,7 +491,7 @@
     
     <!-- contact -->
     <section>
-        <div class="container pt-30 pb-30">
+        <div class="container pt-60 pb-60">
             <div class="row">
                 <img src="{{ asset('website/assets/img/banner/HOME_PAGE2.png')}}" alt="">
             </div>
