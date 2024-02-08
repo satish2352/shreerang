@@ -1,134 +1,157 @@
 @extends('organizations.layouts.master')
 @section('content')
-<br>
-<div class="container-fluid">
-  <strong>
-    <div class="row">
-      <div class="col-sm-6 col-md-10 m-b-20">
-        <img src="" class="inv-logo" alt="logo">
-        <ul class="list-unstyled">
-          <li>{{ env('APP_NAME', 'Shreerag') }}</li>
+<style type="text/css" media="print">
+.no-print {
+  display: none !important;
+}
 
-          <li>W-127 A, MIDC, Ambad , Nashik-422010 , Maharashtra Code-27 , CIN U99999MH1997PTC108601</li>
-          <li>shreerageng@rediffmail.com</li>
-          <li>Contact Number:- +91 9822502226</li>
-        </ul>
-      </div>
-      <div class="col-sm-6 col-md-2 m-b-20">
-        <div class="invoice-details">
-          <h4 class="text-uppercase">PO No : ST-{{$invoice->id}}</h4>
+.left {
+  float: left;
+  width: 50%;
+}
+
+.right {
+  float: right;
+  width: 50%;
+}
+
+.left {
+  float: left;
+  width: 50%;
+}
+
+.right {
+  float: right;
+  width: 50%;
+}
+
+.tops {
+  margin-top: -83px;
+}
+</style>
+<br>
+<div class="form-group-inner login-btn-inner row">
+  <div class="row no-print ">
+    <div class="col-md-11 text-right login-horizental cancel-wp pull-left">
+      <button class="btn btn-sm btn-primary login-submit-cs" onclick="printInvoice()">Print</button>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+<div class="container-fluid tops">
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12 selfProfile asdf">
+      <hr>
+      <center>
+        <h4>SHREERAG ENGINEERING & AUTO PVT.LTD.</h4>
+        <center>
+          <hr>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-md-6 col-lg-6 col-sm-6 left">
+      <ul class="list-unstyled">
+        <li>
+          <h5>SUPPLIER NAME:- SHREERAJ ENGINEERING</h5>
+        </li>
+        <li>
+          <h5>GAT NO. 679/2/1, KURULI- ALANDI ROAD , CHAKKAN , TAL. KHED , DIST. PUNE-410501</h5>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-6 right">
+      <div class="row ">
+        <div class="col-md-8 col-lg-8 col-sm-8 left">
           <ul class="list-unstyled">
-            <li>Issued Date: <span>{{date_format(date_create($invoice->invoice_date),'d M, Y')}}</span></li>
-            <li>Due date: <span>{{date_format(date_create($invoice->due_date),'d M, Y')}}</span></li>
+            <li>
+              <h5>GRN. NO:- 1686</h5>
+            </li>
+            <li>
+              <h5>PO No. :- 1617</h5>
+            </li>
+            <li>
+              <h5>DC/Inv No.:- 398<h5>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 asdf">
+          <ul class="list-unstyled">
+            <li>
+              <h5>GRN. DATE:- 27/01/2024</h5>
+            </li>
+            <li>
+              <h5>PO Date. :- 25/01/2024</h5>
+            </li>
+            <li>
+              <h5>DC/Inv Date:- 25/01/2024<h5>
+            </li>
           </ul>
         </div>
       </div>
-    </div><br><br>
-  </strong>
-  <div class="row">
-    <div class="col-sm-6 col-lg-7 col-xl-8 m-b-20">
-      <h5>To:</h5>
-      <strong>
-        <ul class="list-unstyled">
-          <li>
-            Client Name :- {{$invoice->client_name}}
-          </li>
-          <li>Client Address :- {{$invoice->client_address}}</li>
-          <li>Email :- <a href="javascript:void(0)">{{$invoice->email}}</a></li>
-          <li>GST Number :- {{$invoice->gst_number}}</li>
-        </ul>
-      </strong>
+
+
+
     </div>
-
-  </div><br><br>
-  <div class="table-responsive">
-    <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th class="col-sm-2">Part No.</th>
-          <th class="col-md-2">Description</th>
-          <th class="col-md-2">Due Date</th>
-          <th class="col-md-2">HSN</th>
-          <th class="col-md-2">Quantity</th>
-          <th class="col-md-2">Rate</th>
-          <th>Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        @php
-        $items = json_decode($invoice->items, true);
-        @endphp
-
-        @if(is_array($items))
-        @foreach ($items as $item)
-        <tr>
-          <td>{{ $item['id'] }}</td>
-          <td>{{ $item['part_no'] }}</td>
-          <td class="d-none d-sm-table-cell">{{ $item['description'] }}</td>
-          <td>{{ $item['due_date'] }}</td>
-          <td>{{ $item['hsn'] }}</td>
-          <td>{{ $item['quantity'] }}</td>
-          <td>{{ $item['rate'] }}</td>
-          <td class="text-right">{{$item['amount']}}</td>
-
-        </tr>
-        @endforeach
-        @endif
-      </tbody>
-
-
-    </table>
   </div>
-  <div>
-    <div class="row invoice-payment">
-      <div class="col-sm-7">
-      </div>
-      <div class="col-sm-5">
-        <div class="m-b-20">
-          <div class="table-responsive no-border">
-            <table class="table mb-0">
-              <tbody>
-                <tr>
-                  <th>Subtotal:</th>
-                  <td class="text-right">
-                    {{$invoice->total}} Rs.</td>
-                </tr>
-                <tr>
-                  <th>Discount: <span class="text-regular">({{$invoice->discount}}%)</span></th>
-                  <td class="text-right">
-                    {{'- '.(($invoice->discount/100) * $invoice->total).' Rs. '}}
-                  </td>
-                </tr>
-                <tr>
-                  <th>Tax: <span class="text-regular">({{$invoice->tax}}%)</span></th>
-                  <td class="text-right">
-                    {{'+ '.(($invoice->tax/100) * ($invoice->total-(($invoice->discount/100) * $invoice->total))).' Rs. '}}
-                  </td>
-                </tr>
-                <tr>
+</div>
+<div class="row ">
+  <div class="col-sm-12 col-lg-12 col-xl-12 m-b-20">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover" border='1'>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="col-sm-2">Part No. Description.</th>
+            <th class="col-md-2">QC Check Remark:- </th>
+            <th class="col-md-2">Challan Qty.</th>
+            <th class="col-md-2">Actual Qty.</th>
+            <th class="col-md-2">Accepted Qty.</th>
+            <th class="col-md-2">Rej Qty.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>1</td>
+          <td>6"*2" SPRING LOADED BRACKET WITH RED CIPU WHEEL [ FIX = @ NOS, S/W=@ NOS]</td>
+          <td>10</td>
+          <td>SETS</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row ">
+  <center>
+    <div class="col-md-6 col-lg-6 col-sm-6 left">
 
-                <tr>
-                  <th>Total:</th>
-                  <td class="text-right text-primary">
-                    <h5>
-                      {{' '.(($invoice->total -(($invoice->discount/100) * $invoice->total))  + (($invoice->percentage/100) * ($invoice->total-(($invoice->discount/100) * $invoice->total))))+((($invoice->tax/100) * ($invoice->total-(($invoice->discount/100) * $invoice->total)))).' Rs.'}}
-                    </h5>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-6 right">
+      <div class="row ">
+        <div class="col-md-3 col-lg-3 col-sm-3 left">
+
+          <p>Accepted Qty.:- 4.00</p>
         </div>
+        <div class="col-md-3 col-lg-3 col-sm-3 right">
+          <p>Rejected Qty.:- 0.00</p>
+        </div>
+
       </div>
+  </center>
+</div>
+<div class="row ">
+  <center>
+    <div class="col-md-6 col-lg-6 col-sm-6 left"><br><br><br><br>
+      <p>(Receiver's Signatory)</p>
     </div>
-    <div class="invoice-info">
-      <h5>Other information</h5>
-      <p class="text-muted">{{$invoice->note}}</p>
-    </div><br>
-  </div>
-</div>
-</div>
+    <div class="col-md-6 col-lg-6 col-sm-6 right">
+      <p>For SHREERAG ENGINEERING & AUTO PVT. LTD.</p><br><br><br>
+      <h6>(Authorized Signatory)</h6>
+    </div>
+  </center>
 </div>
 </div>
 @endsection
@@ -136,39 +159,9 @@
 
 @section('scripts')
 <!-- Select2 JS -->
-<script src="{{asset('assets/plugins/select2/select2.min.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap-datetimepicker.min.js')}}"></script>
-<script src="{{asset('assets/plugins/jquery-repeater/jquery.repeater.min.js')}}"></script>
 <script>
-$(document).ready(function() {
-  'use strict';
-  var index = 0;
-
-  var tax = $('#inv_tax').val();
-
-  $('table.repeater').repeater({
-
-    show: function() {
-      var id = $(`input[name="items[${index}][id]"]`);
-      var name = $(`input[name="items[${index}][name]"]`);
-      var unit_cost = $(`input[name="items[${index}][unit_cost]"]`);
-      var quantity = $(`input[name="items[${index}][quantity]"]`);
-      var amount = $(`input[name="items[${index}][amount]"]`);
-      var item_amount = unit_cost.val() * quantity.val();
-      amount.val(item_amount);
-
-      index++;
-      id.val(index)
-      $(this).slideDown();
-    },
-
-    hide: function(deleteElement) {
-      index--;
-      $(this).slideUp(deleteElement);
-    },
-
-  });
-
-});
+function printInvoice() {
+  window.print();
+}
 </script>
 @endsection

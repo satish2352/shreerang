@@ -1,8 +1,8 @@
-        <div class="footer-copyright-area">
-          <div class="container-fluid">
+        <div class="footer-copyright-area no-print">
+          <div class="container-fluid no-print">
             <div class="row">
               <div class="col-lg-12">
-                <div class="footer-copy-right">
+                <div class="footer-copy-right ">
                   <p>Copyright &copy; 2018 <a href="#">NKS</a> All rights reserved for Organizations.</p>
                 </div>
               </div>
