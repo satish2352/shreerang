@@ -14,7 +14,7 @@
     <!--  -->
     <section>
         <div class="contbak">
-            <div class="container-fluid mb-40 pt-60 pb-60">
+            <div class="container-fluid mb-10 pt-50 pb-50">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-12 p-2">
                         <div class="card text-center">
@@ -24,7 +24,7 @@
                             </div>
                             <div class="card-body text-center">
                               <h3 class="card-title f-700">Plant No 1</h3>
-                              <h6 class="card-title pt-50 pb-50">W-127 (A), <br>
+                              <h6 class="card-title">W-127 (A), <br>
                                 MIDC, Ambad Nashik- 422010 </h6>
                               <p class="card-text card-title"> </p>
                             </div>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="card-body text-center">
                               <h3 class="card-title f-700">Plant No 2</h3>
-                              <h6 class="card-title pt-50 pb-50"> W-118 (A), <br> MIDC Ambad Nashik 
+                              <h6 class="card-title"> W-118 (A), <br> MIDC Ambad Nashik 
                                 422010</h6>
                               <p class="card-text card-title"> </p>
                             </div>
@@ -72,7 +72,7 @@
                             </div>
                             <div class="card-body text-center">
                               <h3 class="card-title f-700">Plant No 3</h3>
-                              <h6 class="card-title pt-50 pb-50"> GAT NO-679/2/1 , Kurli Alandi Road ,Chankan , Tal khed Dist. Pun - 410501
+                              <h6 class="card-title"> GAT NO-679/2/1 , Kurli Alandi Road ,Chankan , Tal khed Dist. Pun - 410501
                             </h6>
                               <p class="card-text card-title"> </p>
                             </div>
@@ -96,7 +96,7 @@
                             </div>
                             <div class="card-body text-center">
                               <h3 class="card-title f-700">Plant No 4</h3>
-                              <h6 class="card-title pt-50 pb-50"> GF PLOT NO-913 Shreeji Engg.,GIDC,Halol , Panchamahal Gujarat - 389350</h6>
+                              <h6 class="card-title"> GF PLOT NO-913 Shreeji Engg.,GIDC,Halol , Panchamahal Gujarat - 389350</h6>
                               <p class="card-text card-title"> </p>
                             </div>
                             <ul class="text-center">

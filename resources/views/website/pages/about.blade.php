@@ -31,11 +31,11 @@
         <div class="row">
 
         <div class="col-lg-5">
-            <div class="row justify-content-sm-start justify-content-center">
+            <div class="row justify-content-sm-start justify-content-center justify-content-md-start">
                 <h1 class="green f-700">1985</h1>
                 <img src="{{ asset('website/assets/img/about/1985.png')}}" alt="">
             </div>
-            <div class="row pt-45 justify-content-sm-start justify-content-center order-md-1">
+            <div class="row pt-45 justify-content-sm-start justify-content-center justify-content-md-start">
                 <h1 class="green f-700">1987</h1>
                 <img src="{{ asset('website/assets/img/about/2000.png')}}" alt="">
             </div>
@@ -57,11 +57,11 @@
                     </ul>
         </div>
         <div class="col-lg-5 pt-45">
-        <div class="row justify-content-sm-start justify-content-center order-md-2">
+        <div class="row justify-content-sm-start justify-content-center justify-content-md-start">
             <h1 class="green f-700">2000</h1>
                 <img src="{{ asset('website/assets/img/about/1987.png')}}" alt="">
             </div>
-            <div class="row pt-45 justify-content-sm-start justify-content-center">
+            <div class="row pt-45 justify-content-sm-start justify-content-center justify-content-md-start">
                 <h1 class="green f-700">2007</h1>
                 <img src="{{ asset('website/assets/img/about/2007.png')}}" alt="">
             </div>
@@ -102,14 +102,14 @@
                 <div class="container">
        
                     <div class="row">
-                       <div class="card director shadow-1">
+                       <div class="card director relative shadow-1">
                                
                            <div class="row p-2">
                                <div class="col-lg-4 col-md-4 col-sm-4">
                                    <img src="{{ asset('website/assets/img/about/director1.png')}}" alt="">
                                </div>
                                <div class="col-lg-8 col-md-8 col-sm-8 p-5">
-                                   <h4 class="white ">Lorem ipsum dolor adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
+                                   <h5 class="white ">Lorem ipsum dolor adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h5>
                                    
                                    </div>
                                   
@@ -132,7 +132,7 @@
 
     <section class="misiionbak">
         <div class="container pt-500">
-            <div class="row pt-600 pb-60">
+            <div class="row pt-600 pb-40">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-10">
                     <div class="row">
@@ -153,7 +153,7 @@
                             <h1 class="f-700">Mission</h1>
                         </div>
                     </div>
-                    <div class="col-lg-6 pt-60 order-md-1">
+                    <div class="col-lg-6 pt-30 order-md-1">
                     <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo pariatur odio. Placeat vitae temporibus suscipit harum doloremque, ipsum corrupti, quis tempore, cumque dignissimos sunt quia laborum? Ducimus, alias quidem?</h5>
                     </div>
                     </div>
@@ -171,7 +171,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
+                        <div class="fancy-head text-center relative z-5 mb-20 wow fadeInDown">
                             <h1>Team</h1>
                         </div>
                     </div>
@@ -179,7 +179,7 @@
             </div>
         </section>
     
-       <section class="team-area pt-10 pb-100">
+       <section class="team-area pt-10 pb-30">
         <div class="container">
             <div class="row">
 

@@ -27,20 +27,20 @@
                 </div>
             </div>
         <div class="bakimgbnr">
-            <div class="container pt-5 pb-50">
+            <div class="container pt-5 pb-10">
             
                 <div class="row">
               
                     <div class="col-lg-3">
                         <img src="{{ asset('website/assets/img/service/trolly.png')}}" alt="">
                     </div>
-                    <div class="col-lg-3 pt-80">
+                    <div class="col-lg-3 pt-50 pb-40">
                         <img src="{{ asset('website/assets/img/service/roller.png')}}" alt="">
                     </div>
                     <div class="col-lg-3">
                         <img src="{{ asset('website/assets/img/service/conveyer.png')}}" alt="">
                     </div>
-                    <div class="col-lg-3 pt-80">
+                    <div class="col-lg-3 pt-50">
                         <img src="{{ asset('website/assets/img/service/metalic_pallet.png')}}" alt="">
                     </div>
                 </div>
