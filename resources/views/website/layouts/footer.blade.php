@@ -25,14 +25,14 @@
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2">
-                            <div class="footer-links pt-20 pt-md- mb-sm-0 foottitle">
-                                <h4 class="green f-700 mb-20">Contact</h4>
-                                <ul class="links-list">
+                            <div class="footer-links pt-20 pt-md- mb-sm-0">
+                                <h4 class="green f-700 mb-20 foottitle">Contact</h4>
+                                <ul class="links-list foottitle_sub">
                                     <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<a href="tel: +91 7028082176">7028082176</a></li>
                                     <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<a href="tel: +91 0253-2383517">0253 - 2383517</a></li>
                                 
                                 </ul>
-                                <div class="social-links">
+                                <div class="social-links foottitle_sub">
                                         <ul class="social-icons">
                                             <li>
                                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -52,9 +52,9 @@
                             
                         </div>
                         <div class="col-lg-3 col-md-2 col-sm-2">
-                            <div class="footer-links pt-20 mb-sm-0 foottitle">
-                                <h4 class="green f-700 mb-20">Quick Links</h4>
-                                <ul class="links-list">
+                            <div class="footer-links pt-20 mb-sm-0">
+                                <h4 class="green f-700 mb-20 foottitle">Quick Links</h4>
+                                <ul class="links-list foottitle_sub">
                                     <li><i class="fa fa-home" aria-hidden="true"></i> &nbsp;<a href="{{url('/')}}">Home</a></li>
                                     <li><i class="fa fa-info-circle" aria-hidden="true"></i> &nbsp;<a href="{{url('/about')}}">About Us</a></li>
                                     <li><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;<a href="{{url('/product')}}">Product</a></li>
