@@ -1639,7 +1639,7 @@ p.big-p {
     right: 0;
     bottom: 0;
     z-index: 5;
-    background-color: #029A99;
+    background-color: #243772;
     /* opacity: 0; */
 }
 
@@ -3587,6 +3587,9 @@ non use css
 .......................................*/
 .reviw{
     background-image: url('../img/banner/Rectangle 1705.png');
+}
+.misiionbak{
+    background-image: url('../img/banner/MISIONBACKGRD.png');
 }
 #instaimg{
     width: 80%;

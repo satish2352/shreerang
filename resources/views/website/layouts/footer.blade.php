@@ -5,7 +5,7 @@
         <div class="col-lg-3 col-md-12 text-center  bg-green-op-6" style="">
             <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="footlogo" alt="">
         </div>
-        <div class="col-lg-9 col-md-12 col-sm-12 bg-green-op-6">
+        <div class="col-lg-9 col-md-12 col-sm-12 bg-green-op-6 justify-content-md-center">
             <footer class="footer-area footbak">
                 <div class="container-fluid">
                     <div class="row">
@@ -13,8 +13,8 @@
                         
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="footer-links pt-45 pt-md- mb-0" >
-                                <h4 class="green f-700 mb-35">Address</h4>
+                            <div class="footer-links pt-20 pt-md- mb-0">
+                                <h4 class="green f-700 mb-20 foottitle">Address</h4>
                                 <ul class="links-list">
                                     <li><span class="green">Plant No 1</span><a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87"  target="blank"> - W-127 (A), MIDC, Ambad Nashik- 422010,</li></a>
                                     <li><span class="green">Plant No 2</span><a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6"  target="blank"> - W-118 (A), MIDC, Ambad Nashik - 422010 ,</li></a>
@@ -25,8 +25,8 @@
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2">
-                            <div class="footer-links pt-45 pt-md- mb-sm-0">
-                                <h4 class="green f-700 mb-35">Contact</h4>
+                            <div class="footer-links pt-20 pt-md- mb-sm-0 foottitle">
+                                <h4 class="green f-700 mb-20">Contact</h4>
                                 <ul class="links-list">
                                     <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<a href="tel: +91 7028082176">7028082176</a></li>
                                     <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<a href="tel: +91 0253-2383517">0253 - 2383517</a></li>
@@ -52,8 +52,8 @@
                             
                         </div>
                         <div class="col-lg-3 col-md-2 col-sm-2">
-                            <div class="footer-links pt-45 mb-sm-0">
-                                <h4 class="green f-700 mb-35">Quick Links</h4>
+                            <div class="footer-links pt-20 mb-sm-0 foottitle">
+                                <h4 class="green f-700 mb-20">Quick Links</h4>
                                 <ul class="links-list">
                                     <li><i class="fa fa-home" aria-hidden="true"></i> &nbsp;<a href="{{url('/')}}">Home</a></li>
                                     <li><i class="fa fa-info-circle" aria-hidden="true"></i> &nbsp;<a href="{{url('/about')}}">About Us</a></li>
@@ -75,7 +75,7 @@
                                         <div class="col-xl-9 col-md-8">
                                         <p class="mb-3 white">© Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank"><img src="{{ asset('website/assets/img/logo/sumgo.png')}}" style="width: 25px;" alt=""></a> 2024. All rights reserved.</p>
                                         </div>
-                                        <div class="col-xl-3 col-md-4 text-right">
+                                        <div class="col-xl-3 col-md-4 justify-content-md-center justify-content-lg-end">
                                             <p class="mb-3 white">Terms & Conditions</p>
                                         </div>
                                     </div>

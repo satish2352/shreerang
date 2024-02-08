@@ -2,12 +2,15 @@
 @extends('website.layouts.master')
 @section('content')
 <section>
-   <!-- Slider start -->
-   <div class="img">
+
+     <!-- bannar start -->
+     <div class="banrimgs">
         <img src="{{ asset('website/assets/img/banner/SERVICES.png')}}" alt="">
     </div>
-
-    <!-- Slider end -->
+    <div class="mobibanrimgs">
+    <img src="{{ asset('website/assets/img/banner/mobservice.png')}}" alt="">
+    </div>
+    <!-- bannar end -->
 
 
     <!-- imgs -->
@@ -193,10 +196,15 @@
 
     <!-- img -->
     <section>
-        <div class="container-fluid pb-10 pt-50">
-            <div class="row">
-                <img src="{{ asset('website/assets/img/banner/HOME_PAGE3.png')}}" alt="">
-            </div>
+        <div class="container-fluid pb-25 pt-25">
+                  <!-- bannar start -->
+                  <div class="banrimgs">
+                    <img src="{{ asset('website/assets/img/banner/HOME_PAGE3.png')}}" alt="">
+                </div>
+                <div class="mobibanrimgs">
+                <img src="{{ asset('website/assets/img/banner/mobconnect.jpg')}}" alt="">
+                </div>
+            <!-- bannar end -->
         </div>
     </section>
     <!-- img -->

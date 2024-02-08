@@ -3,10 +3,15 @@
 @section('content')
 <section>
     <section>
-        <div class="img relative">
+     
+         <!-- bannar start -->
+        <div class="banrimgs">
             <img src="{{ asset('website/assets/img/banner/ABOUT US.png')}}" alt="">
-            <!-- <div class="text-center absolute">Centered</div> -->
         </div>
+        <div class="mobibanrimgs">
+        <img src="{{ asset('website/assets/img/banner/mobabout.png')}}" alt="">
+        </div>
+        <!-- bannar end -->
 
     </section>
 
@@ -27,7 +32,7 @@
 
         <div class="col-lg-5">
             <div class="row">
-                <h1 class="green f-700">1985</h1>
+                <h1 class="green f-700 text-center">1985</h1>
                 <img src="{{ asset('website/assets/img/about/1985.png')}}" alt="">
             </div>
             <div class="row pt-50">
@@ -125,7 +130,7 @@
     <!-- end Director desk -->
     <!-- vission mission -->
 
-    <section class="pt-50">
+    <section class="misiionbak">
         <div class="container pt-500">
             <div class="row pt-600 pb-60">
                 <div class="col-lg-1"></div>

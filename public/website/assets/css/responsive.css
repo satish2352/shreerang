@@ -119,6 +119,10 @@
         -webkit-transition: all .4s;
         transition: all .4s;
     }
+   
+    .mobibanrimgs{
+        display: none;
+    }
     .transperant-head.fixed-nav .main-menu > ul> li > a {
         padding: 18px 0px;
     }
@@ -291,6 +295,13 @@
         min-height: 650px;
     }
 
+    .foottitle{
+        text-align: center;
+    }
+    .banrimgs{
+        display: none;
+    }
+   
     .menu-links {
         margin-right: 0;
     }

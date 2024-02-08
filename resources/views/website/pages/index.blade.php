@@ -491,10 +491,17 @@
     
     <!-- contact -->
     <section>
-        <div class="container pt-60 pb-60">
-            <div class="row">
+        <div class="container pt-40 pb-40">
+           
+             <!-- bannar start -->
+            <div class="banrimgs">
                 <img src="{{ asset('website/assets/img/banner/HOME_PAGE2.png')}}" alt="">
             </div>
+            <div class="mobibanrimgs">
+            <img src="{{ asset('website/assets/img/banner/mobcontbannr.png')}}" alt="">
+            </div>
+        <!-- bannar end -->
+
         </div>
     </section>
 
