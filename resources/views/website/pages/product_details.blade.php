@@ -21,7 +21,7 @@
         </div>
     </section>
 
-    <section class="team-detail pt-100 pb-100">
+    <section class="team-detail pt-40 pb-10">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <h2 class="f-700 mb-20">Parts Trolley</h2>
+                    <h2 class="f-700 mb-20 pt-30">Parts Trolley</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dolor lorem, tempor elementum eros a, tempor aliquet tellus. Proin id arcu lorem. Nam at tellus elementum lorem tincidunt consequat. Suspendisse aliquam vitae mi non eleifend. Aliquam posuere id neque ut finibus. Etiam tristique lorem in neque vehicula fermentum. Aenean in ultrices odio. Sed feugiat maximus mattis. Vivamus at mollis erat. Integer quam orci, iaculis vitae maximus a, fermentum at erat. Aliquam volutpat ex risus.</p>
                     <ul class="check-list-2">
                         <li>Pellentesque varius turpis ligula, in cursus leo dictum quis. Nam volutpat. </li>

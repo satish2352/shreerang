@@ -31,12 +31,12 @@
         <div class="row">
 
         <div class="col-lg-5">
-            <div class="row">
-                <h1 class="green f-700 text-center">1985</h1>
+            <div class="row justify-content-sm-start justify-content-center">
+                <h1 class="green f-700">1985</h1>
                 <img src="{{ asset('website/assets/img/about/1985.png')}}" alt="">
             </div>
-            <div class="row pt-50">
-                <h1 class="green f-700">2000</h1>
+            <div class="row pt-45 justify-content-sm-start justify-content-center order-md-1">
+                <h1 class="green f-700">1987</h1>
                 <img src="{{ asset('website/assets/img/about/2000.png')}}" alt="">
             </div>
         </div>
@@ -56,12 +56,12 @@
                         </li>
                     </ul>
         </div>
-        <div class="col-lg-5 pt-75">
-        <div class="row">
-            <h1 class="green f-700">1987</h1>
+        <div class="col-lg-5 pt-45">
+        <div class="row justify-content-sm-start justify-content-center order-md-2">
+            <h1 class="green f-700">2000</h1>
                 <img src="{{ asset('website/assets/img/about/1987.png')}}" alt="">
             </div>
-            <div class="row pt-50">
+            <div class="row pt-45 justify-content-sm-start justify-content-center">
                 <h1 class="green f-700">2007</h1>
                 <img src="{{ asset('website/assets/img/about/2007.png')}}" alt="">
             </div>
@@ -108,8 +108,8 @@
                                <div class="col-lg-4 col-md-4 col-sm-4">
                                    <img src="{{ asset('website/assets/img/about/director1.png')}}" alt="">
                                </div>
-                               <div class="col-lg-8 col-md-8 col-sm-8 text-break p-5">
-                                   <h4 class="white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
+                               <div class="col-lg-8 col-md-8 col-sm-8 p-5">
+                                   <h4 class="white ">Lorem ipsum dolor adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
                                    
                                    </div>
                                   
@@ -142,7 +142,7 @@
                         </div>
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
-                    <div class="col-lg-6 pt-100 pb-50">
+                    <div class="col-lg-6 pt-60 pb-50">
                     <h5 class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h5>
                     </div>
                     

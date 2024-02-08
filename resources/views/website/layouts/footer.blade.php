@@ -75,7 +75,7 @@
                                         <div class="col-xl-9 col-md-8">
                                         <p class="mb-3 white">© Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank"><img src="{{ asset('website/assets/img/logo/sumgo.png')}}" style="width: 25px;" alt=""></a> 2024. All rights reserved.</p>
                                         </div>
-                                        <div class="col-xl-3 col-md-4 justify-content-md-center justify-content-lg-end">
+                                        <div class="col-xl-3 col-md-4 banrimgs justify-content-lg-end">
                                             <p class="mb-3 white">Terms & Conditions</p>
                                         </div>
                                     </div>
