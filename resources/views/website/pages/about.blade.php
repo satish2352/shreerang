@@ -90,7 +90,7 @@
 </section> -->
 <!-- end history -->
     <!-- Director Desk -->
-    <section class="pt-30 pb-50" id="direct">
+    <section class="pt-30 pb-40" id="direct">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -154,14 +154,14 @@
     <!-- vission mission -->
 
     <section class="">
-        <div class="container pt-500">
+        <div class="container pt-30">
             <div class="row pt-600 pb-40">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-10">
                     <div class="row">
                     <div class="col-lg-5 text-center">
                         <div class="">
-                            <h1 class="f-700">Vision</h1>
+                            <h1 class="f-700">VISION</h1>
                         </div>
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
@@ -173,7 +173,7 @@
                     
                         <img src="{{ asset('website/assets/img/about/mission.png')}}" id="vision_mision" alt="">
                         <div class="">
-                            <h1 class="f-700">Mission</h1>
+                            <h1 class="f-700">MISSION</h1>
                         </div>
                     </div>
                     <div class="col-lg-6 pt-30 order-md-1 misn1">

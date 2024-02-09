@@ -123,7 +123,7 @@
                             <h4 class="card-header card-info1 text-center text-white">
                                 Address
                     </h4>
-                            <div class="card-body text-justify py-4 px-5">
+                            <div class="card-body text-justify py-4 px-5 p-5">
                             <ul class="clrtext">
                                     <li><span class="f-600">Plant No 1</span> - W-127 (A),</li>
                                     <li><span class="f-600">Plant No 2</span> - W-118 (A) MIDC Ambad Nashik - 422010 ,</li>
