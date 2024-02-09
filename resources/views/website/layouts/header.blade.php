@@ -63,10 +63,10 @@
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-7 col-sm-8 col-7">
-                    <div class="icon-links d-flex align-items-start">
+                    {{-- <div class="icon-links d-flex align-items-start">
                 
                         <a href="{{url('/contact')}}" class="btn btn-round d-none d-sm-block blob-small">Contact Us</a>
-                    </div>
+                    </div> --}}
                     <div class="menu-links">
                         <nav class="main-menu white">
                             <ul>
@@ -93,6 +93,8 @@
                                     </ul>
                                 </li>
                                 <li>
+                                    <a href="{{url('/contact')}}" class="btn btn-round2 d-none d-sm-block blob-small">Contact Us</a>
+
                                     <a href="{{url('/contact')}}" class="d-lg-none d-md-none d-sm-block">Contact us</a>
                                     
                                     <ul class="">

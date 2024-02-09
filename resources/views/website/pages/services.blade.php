@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
-                                <h1>Manufacturing  <span class="green">of</span></h1>
+                                <h1 class="clrtext">Manufacturing  <span class="green">of</span></h1>
                             </div>
                         </div>
                     </div>        
@@ -217,7 +217,7 @@
             <div class="row">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-5 col-md-12 p-3">
-                        <div class="card">
+                        <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/caster.png')}}" class="card-img-top" alt="...">
                         <div class="card-body  text-center card-info">
                         <h3 class="white f-600"> Caster wheels </h3>
@@ -226,7 +226,7 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-12 p-3">
-                        <div class="card">
+                        <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info">
                         <h3 class="white f-600"> Movement Trollies </h3>
@@ -240,7 +240,7 @@
                     <div class="col-lg-1"></div>
 
                     <div class="col-lg-5 col-md-12 p-3">
-                        <div class="card">
+                        <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center card-info">
                         <h3 class="white f-600"> Challenging Fabrication Works </h3>
@@ -249,7 +249,7 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-12 p-3">
-                        <div class="card">
+                        <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/presshop.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info">
                         <h3 class="white f-600"> Press Shop Works  </h3>

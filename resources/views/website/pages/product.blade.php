@@ -33,12 +33,12 @@
             <div class="row ">
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="team-each card team1 prosha mb-20">
+                    <div class="team-each team1 prosha mb-20">
                         <div class="team-image  relative">
                             <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">
                             
                         </div>
-                        <div class="team-info text-center transition-4">
+                        <div class="team-info transition-4">
                             <h5>
                             <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
                             </h5>
@@ -48,12 +48,12 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="team-each card team1 prosha mb-20">
+                    <div class="team-each team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod2.png')}}" alt="">
                            
                         </div>
-                        <div class="team-info text-center transition-4">
+                        <div class="team-info transition-4">
                             <h5>
                             <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
                             </h5>
@@ -63,12 +63,12 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="team-each card team1 prosha mb-20">
+                    <div class="team-each team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod3.png')}}" alt="">
                            
                         </div>
-                        <div class="team-info text-center transition-4">
+                        <div class="team-info transition-4">
                             <h5>
                             <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
                             </h5>
@@ -78,12 +78,12 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="team-each card team1 prosha mb-20">
+                    <div class="team-each team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod4.png')}}" alt="">
                             
                         </div>
-                        <div class="team-info text-center transition-4">
+                        <div class="team-info transition-4">
                             <h5>
                             <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
                             </h5>
@@ -93,12 +93,12 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="team-each card prosha mb-20">
+                    <div class="team-each team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod5.png')}}" alt="">
                            
                         </div>
-                        <div class="team-info text-center transition-4">
+                        <div class="team-info transition-4">
                             <h5>
                             <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
                             </h5>
@@ -108,12 +108,12 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="team-each card team1 prosha mb-20">
+                    <div class="team-each team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod6.png')}}" alt="">
                            
                         </div>
-                        <div class="team-info text-center transition-4">
+                        <div class="team-info transition-4">
                             <h5>
                         <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
                         </h5>
@@ -123,12 +123,12 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="team-each card team1 prosha mb-20">
+                    <div class="team-each team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">
                            
                         </div>
-                        <div class="team-info text-center transition-4">
+                        <div class="team-info transition-4">
                             <h5>
                             <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
                             </h5>
@@ -138,12 +138,12 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="team-each card team1 prosha mb-20">
+                    <div class="team-each team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod4.png')}}" alt="">
                             
                         </div>
-                        <div class="team-info text-center transition-4">
+                        <div class="team-info transition-4">
                             <h5>
                             <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
                             </h5>
@@ -153,12 +153,12 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="team-each card team1 prosha mb-20">
+                    <div class="team-each team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod2.png')}}" alt="">
                            
                         </div>
-                        <div class="team-info text-center transition-4">
+                        <div class="team-info transition-4">
                             <h5>
                             <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
                             </h5>

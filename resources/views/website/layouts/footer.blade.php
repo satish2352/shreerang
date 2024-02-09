@@ -33,7 +33,7 @@
                                     <li><a href="tel: +91 0253-2383517">0253 - 2383517</a></li>
                                 
                                 </ul>
-                                <div class="social-links foottitle_sub">
+                                <div class="social-links foottitle_sub pt-10">
                                         <ul class="social-icons">
                                             <li>
                                                 <a href="#"><i class="fab fa-facebook-f"></i></a>

@@ -230,7 +230,7 @@
         <div class="container">
             <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
+                        <div class="fancy-head text-center relative z-5 mb-20 wow fadeInDown">
                             <h1 class="white">Service</h1>
                         </div>
                     </div>
@@ -262,7 +262,7 @@
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h4 class="white f-700 mb-10">
                                 <span class="f-800 fs1">03</span>
-                                WOODWORKING <span class="green"></span>
+                                WOODWORKING<span class="green"></span>
                             </h4>
                             <p class="white mb-5 mb-md-30 pr-60 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
                             <div class="servbtn">
@@ -299,28 +299,28 @@
             </div>
         </section> --}}
       <section>
-        <div class="container pt-10 pb-10">
+        <div class="container pt-50 pb-50">
             <div class="row">
-                <div class="col-xl-4 p-3">
-                    <div class="text-center">
+                <div class="col-xl-4 p-4">
+                    <div class="text-justify">
                         <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">01 </h1></span> Request</h2>
                         <img src="{{ asset('website/assets/img/icons/request.png')}}" alt="">
-                        <h6 class="clrtext">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore facere reiciendis adipisci accusantium, aut unde officiis eveniet</h6>
+                        <h6 class="clrtext">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 
-                <div class="col-xl-4 p-3">
-                    <div class="pb-12 text-center">
+                <div class="col-xl-4 p-4">
+                    <div class="pb-12 text-justify">
                     <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">02 </h1></span> Develop</h2>
                         <img src="{{ asset('website/assets/img/icons/develop.png')}}"  alt="">
-                        <h6 class="clrtext">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore facere reiciendis adipisci accusantium, aut unde officiis eveniet</h6>
+                        <h6 class="clrtext">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
-                <div class="col-xl-4 p-3">
-                    <div class="pb-12 text-center ">
+                <div class="col-xl-4 p-4">
+                    <div class="pb-12 text-justify ">
                     <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">03 </h1></span> Install</h2>
                         <img src="{{ asset('website/assets/img/icons/install.png')}}"  alt="">
-                        <h6 class="clrtext">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore facere reiciendis adipisci accusantium, aut unde officiis eveniet</h6>
+                        <h6 class="clrtext">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
             </div>
@@ -329,7 +329,7 @@
     <!-- end  How we work-->
 
      <!-- Testimonial area start -->
-     <section class="testimonials-2 reviw pt-80 pb-80">
+     <section class="testimonials-2 reviw pt-50 pb-80">
         <div class="container">
             <div class="row align-items-center mb-30">
                 <div class="col-lg-12 col-md-12 text-center text-lg-center">
@@ -370,7 +370,7 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
-                                <h4 class="f-700 mb-20 pt-20"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext"> jhruios  Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1 justify-content-md-start justify-content-center">
                                     <div class="img-div mr-30 pb-10">
@@ -397,7 +397,7 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
-                                <h4 class="f-700 mb-20 pt-20"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext">Etiam mattis posuere sem, a bibendum nulla congue nec. Donec eget metus nisi. Suspendisse potenti.safsdgd thukevf wdynj sfhyj Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1  justify-content-md-start justify-content-center">
                                     <div class="img-div mr-30 pb-10">
@@ -424,7 +424,7 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
-                                <h4 class="f-700 mb-20 pt-20"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext">Maecenas dignissim in dolor in blandit. eros vel lorem tempor malesuada quis efficitur erat. Nullam nec purus tempus, posuere elit non
                                 </p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1  justify-content-md-start justify-content-center">
@@ -452,7 +452,7 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
-                                <h4 class="f-700 mb-20 pt-20"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext">Quisque enim ipsum, commodo et ven enatis gdghc jhytgv uhjbf jgfjg rutrum, luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1  justify-content-md-start justify-content-center">
                                     <div class="img-div mr-30 pb-10">
@@ -480,7 +480,7 @@
                                     </li>
                                 </ul> -->
                                 
-                                <h4 class="f-700 mb-20 pt-20"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext">Etiam mattis posuere sem, a bibendum nulla asfsdg kuyj dgfh yhjmh congue nec. Donec eget metus nisi. Suspendisse potenti. Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1 justify-content-md-start justify-content-center">
                                     <div class="img-div mr-30 pb-10">

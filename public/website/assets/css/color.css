@@ -186,6 +186,14 @@ button,
     height: 83px;
     background: #243772; 
 }
+.card-info1{
+    background: #243772; 
+
+}
+.bkcl{
+    background: #243772; 
+
+}
 /*blue bg opacity classes*/
 
 .bg-blue-op-9 {
@@ -344,7 +352,7 @@ button,
 .thanks[data-overlay]::before,
 .experience li:before,
 .service-icon-2 {
-    background: #e9f1f9;
+    background: #FFFFFF;
 }
 
 #direct{

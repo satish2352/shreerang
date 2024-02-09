@@ -120,15 +120,15 @@
 
                 <div class="addrescard">
                     <div class="card">
-                            <h4 class="card-header card-info text-center text-white">
+                            <h4 class="card-header card-info1 text-center text-white">
                                 Address
                     </h4>
                             <div class="card-body text-justify py-4 px-5">
-                            <ul class="text-black">
-                                    <li><span class="green">Plant No 1</span> - W-127 (A),</li>
-                                    <li><span class="green">Plant No 2</span> - W-118 (A) MIDC Ambad Nashik - 422010 ,</li>
-                                    <li><span class="green">Plant No 3</span> - GAT NO679/2/1 , Kurli Alandi Road ,Chankan , Tal khed Dist. Pune - 410501,</li>
-                                    <li><span class="green">Plant No 4</span> - GF Plot No - 913 Shreeji Engg, GIDC  , Halol , Panchamahal Gujarat - 389350</li>
+                            <ul class="clrtext">
+                                    <li><span class="f-600">Plant No 1</span> - W-127 (A),</li>
+                                    <li><span class="f-600">Plant No 2</span> - W-118 (A) MIDC Ambad Nashik - 422010 ,</li>
+                                    <li><span class="f-600">Plant No 3</span> - GAT NO679/2/1 , Kurli Alandi Road ,Chankan , Tal khed Dist. Pune - 410501,</li>
+                                    <li><span class="f-600">Plant No 4</span> - GF Plot No - 913 Shreeji Engg, GIDC  , Halol , Panchamahal Gujarat - 389350</li>
                                     
                                 </ul>
                             </div>
@@ -161,7 +161,7 @@
                                       <h3 class="f-700 clrtext">Follow us on</h3>
                                     
                                     </div>
-                                    <div class="col-lg-6 col-md-6 social-links">
+                                    <div class="col-lg-6 col-md-6 social-links social-links1">
                                     <ul class="social-icons">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>

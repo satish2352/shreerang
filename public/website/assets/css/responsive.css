@@ -44,7 +44,13 @@
     
     }
     #footlogo{
-        width: 80%;
+        
+        height: 410px;
+        /* padding: -35px; */
+        padding-bottom: 0%;
+        width: 540px;
+        margin: -25px 1px 5px 52px;
+
     }
 }
 /* Large devices (Above 1200px) */
@@ -152,7 +158,7 @@
         display: none;
     }
     .transperant-head.fixed-nav .main-menu > ul> li > a {
-        padding: 18px 0px;
+        padding: 18px 15px;
     }
     .transperant-head.fixed-nav .logo img {
         max-width: 200px;
@@ -322,10 +328,23 @@
     .slider-area {
         min-height: 650px;
     }
-    .deskk{
-        /* top: 50px; */
+    /* .deskk{
+        
         text-align: justify;
     }
+    .backd p {
+        transform: translate(0%, 10%);
+    }
+
+    .dirim {
+        height: 250px;
+        width: 250px;
+        transform: translate(10%, 10%);
+    }
+    .sid1 {
+    border-radius: 0% 0% 0% 0%;
+    background: url('website/assets/img/about/director1.png'), #243772;
+} */
 
     .servicebk{
         background-color: #243772;

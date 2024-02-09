@@ -21,7 +21,7 @@
             <div class="container pt-30">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
+                        <div class="fancy-head text-center relative z-5 mb-10 wow fadeInDown">
                             <h1>History</h1>
                         </div>
                     </div>
@@ -99,7 +99,30 @@
                         </div>
                     </div>
                 </div>  
+
                 <div class="container">
+                    <img src="{{ asset('website/assets/img/about/review.png')}}" alt="">
+                </div>
+                {{-- <div class="container-fluid text-center">
+                    <div class="row sup ">
+            
+                        <div class="col-lg-3 sid1">
+                            <img src="{{ asset('website/assets/img/about/director1.png')}}" class=" dirim" alt="">
+                        </div>
+                        <div class="col-lg-6 backd d-flex align-items-center">
+                            <p class=" ps-lg-5  py-sm-5"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, saepe! Culpa facere
+                                a aut fugit
+                                perspiciatis itaque alias amet tempore autem tenetur. Mollitia accusantium magnam quasi labore
+                                necessitatibus enim inventore!</p>
+                        </div>
+                        <div class="col-lg-3 sid2">
+            
+                        </div>
+            
+            
+                    </div>
+                </div> --}}
+                {{-- <div class="container">
        
                     <div class="row">
                        <div class="card director relative shadow-1">
@@ -117,9 +140,9 @@
                                </div>
                            </div>
                        </div>
-                   </div>
+                    </div>
                         
-           </div>
+                </div> --}}
                 
             </div>
   
@@ -130,7 +153,7 @@
     <!-- end Director desk -->
     <!-- vission mission -->
 
-    <section class="misiionbak">
+    <section class="">
         <div class="container pt-500">
             <div class="row pt-600 pb-40">
                 <div class="col-lg-1"></div>
