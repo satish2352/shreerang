@@ -568,7 +568,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var currentUrl = window.location.href;
 
     // Select all navigation links
-    var navLinks = document.querySelectorAll('.main-menu a');
+    var navLinks = document.querySelectorAll('.main-menu li a');
 
     // Loop through each link and check if its href matches the current URL
     navLinks.forEach(function(link) {
@@ -578,3 +578,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+

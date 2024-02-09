@@ -14,8 +14,8 @@
  
 
     <!-- Product area start -->
-    <section class="cardbkclr">   
-        <section class="pt-50" data-overlay="9">
+    {{-- <section class="cardbkclr">    --}}
+        {{-- <section class="pt-50" data-overlay="9">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -25,16 +25,16 @@
                     </div>
                 </div>        
             </div>
-        </section>
+        </section> --}}
     
          <!-- Product area start -->
     
-        <div class="container team-area pt-10 pb-5">
+        <div class="container team-area pt-50 pb-5">
             <div class="row ">
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="team-each mb-20">
-                        <div class="team-image relative">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="team-each card team1 prosha mb-20">
+                        <div class="team-image  relative">
                             <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">
                             
                         </div>
@@ -47,8 +47,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="team-each mb-20">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="team-each card team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod2.png')}}" alt="">
                            
@@ -62,8 +62,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="team-each mb-20">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="team-each card team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod3.png')}}" alt="">
                            
@@ -77,8 +77,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="team-each mb-20">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="team-each card team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod4.png')}}" alt="">
                             
@@ -92,8 +92,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="team-each mb-20">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="team-each card prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod5.png')}}" alt="">
                            
@@ -107,8 +107,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="team-each mb-20">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="team-each card team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod6.png')}}" alt="">
                            
@@ -122,8 +122,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="team-each mb-20">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="team-each card team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">
                            
@@ -137,8 +137,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="team-each mb-20">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="team-each card team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod4.png')}}" alt="">
                             
@@ -152,8 +152,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="team-each mb-20">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="team-each card team1 prosha mb-20">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod2.png')}}" alt="">
                            
@@ -170,15 +170,15 @@
             </div>
             
         </div>
-    </section>
+    {{-- </section> --}}
     
     <!-- Product area end -->
 
     <section>
-        <div class="container-fluid pt-25 pb-25">
+        <div class="container-fluid pt-35 pb-50">
                   <!-- bannar start -->
                   <div class="banrimgs">
-                    <img src="{{ asset('website/assets/img/banner/HOME_PAGE3.png')}}" alt="">
+                    <img src="{{ asset('website/assets/img/banner/HOME_PAGE31.png')}}" alt="">
                 </div>
                 <div class="mobibanrimgs">
                 <img src="{{ asset('website/assets/img/banner/mobconnect.jpg')}}" alt="">

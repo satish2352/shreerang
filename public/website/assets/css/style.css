@@ -321,14 +321,26 @@ label {
     border-radius: 100px;
     padding: 15px 15px;
     line-height: 11px;
-    text-transform: uppercase;
-    font-size: 13px;
+    /* text-transform: uppercase; */
+    font-size: 18px;
     font-weight: 600;
     color: #fff;
     letter-spacing: .4px;
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 }
 
+.btn-round1 {
+    border-radius: 50%;
+    padding: 3px 6px 3px 18px;
+    line-height: 11px;
+    /* text-transform: uppercase; */
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #029A99;
+    letter-spacing: .4px;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
 .btn-round:hover {
     color: #fff;
 }
@@ -531,12 +543,12 @@ label {
 }
 
 .menu-links:after {
-    position: absolute;
+    /* position: absolute; */
     content: close-quote;
-    width: 2px;
+    /* width: 2px; */
     height: 30px;
     background-color: #fff;
-    right: -4px;
+    /* right: -4px; */
     top: 50%;
     transform: translatey(-50%);
     opacity: .20;
@@ -556,22 +568,24 @@ label {
 }
 
 .main-menu li a {
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: .8px;
     font-weight: 500;
     display: inline-block;
     padding: 44px 0px;
     color: #fff;
+    text-transform: capitalize;
 }
-
+/* .main-menu li a:hover{
+    color: #000;
+} */
 .main-menu li a i {
     font-size: 10px;
 }
 
-
 #vision_mision{
-    width: 350px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
 
 .addrescard{
@@ -597,22 +611,26 @@ label {
  border: 5px solid #4CD0B2;
 }
 
-.main-menu li:after {
-    position: absolute;
+.main-menu li :after {
+    /* position: absolute;
     content: close-quote;
     bottom: -3px;
     height: 3px;
     left: 0;
     right: 0;
-    width: 0;
+    width: 0; */
+    color: transparent;
 }
 
-.main-menu li:hover:after,
-.main-menu li.active:after {
-    width: 100%;
-    transition: all .4s;
-    z-index: 5;
+.main-menu a:hover:after,
+.main-menu a.active:after {
+   color: #4CD0B2;
    
+}
+.main-menu li.active a {
+    /* font-size: 20px; */
+    font-weight: 700;
+    color: #4CD0B2; /* Change color of the text */
 }
 
 .main-menu li .submenu {
@@ -1558,6 +1576,12 @@ p.big-p {
     /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
 }
 
+.team_shadow{
+    box-shadow: rgba(70, 70, 71, 0.48) 6px 0px 6px 0px;
+}
+.prosha{
+    box-shadow: rgba(56, 56, 56, 0.48) 15px 10px 10px 0px;
+}
 .social-icons li a {
     color: #fff;
     margin: 0px 10px;
@@ -1565,6 +1589,9 @@ p.big-p {
 
 .team-info {
     padding: 20px 10px;
+    background: #029A99
+}
+.team1{
     background: #029A99
 }
 
@@ -1625,21 +1652,24 @@ p.big-p {
 .team-2-each img {
     border-radius: 50%;
 }
-
+#prodimgss{
+    width: 75%;
+    padding: 30px 10px 30px 10px;
+}
 
 .team-2-each:hover img {
     opacity: 1;
 }
 
 .team-hover-div {
-    padding: 5px 30px;
-    border-radius: 10px 10px 10px 10px;
+    padding: 10px 30px;
+    border-radius: 5px 5px 5px 5px;
     /* position: absolute; */
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 5;
-    background-color: #243772;
+    background-color: #029A99;
     /* opacity: 0; */
 }
 
@@ -1675,11 +1705,11 @@ p.big-p {
 /*team 3 css*/
 
 .team-detail-3 {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     right: 0;
-    bottom: -52px;
-    padding: 20px 25px;
+    bottom: 0px;
+    padding: 15px 15px;
     padding-left: 60px;
 }
 
@@ -1751,6 +1781,10 @@ p.big-p {
 
 .each-team-3.fix {
     margin-bottom: 30px;
+}
+.each-team-3 .card{
+    width: 150px;
+    height: 150px;
 }
 
 .image-team-3 img {
@@ -1929,7 +1963,7 @@ p.big-p {
 
 .client-image:before {
     position: absolute;
-    content: close-quote;
+    /* content: close-quote; */
     border: 2px solid;
     left: -8px;
     right: -8px;
@@ -3524,7 +3558,7 @@ ul li:last-child .icon-round-box-icon {
 .experience li {
     position: relative;
     padding-left: 41px;
-    padding-bottom: 13rem;
+    padding-bottom: 12rem;
     font-size: 14px;
 }
 
@@ -3586,10 +3620,10 @@ ul li:last-child .icon-round-box-icon {
 non use css
 .......................................*/
 .reviw{
-    background-image: url('../img/banner/Rectangle 1705.png');
+    background-image: url('../img/banner/HOME_PAGE3.png');
 }
-.misiionbak{
-    background-image: url('../img/banner/MISIONBACKGRD.png');
+.fs1{
+    font-size: 36px;
 }
 #instaimg{
     width: 80%;
@@ -3657,7 +3691,8 @@ ul.theme-ul li img {
 /* footer */
 .hrline{
     border:2px solid #029A99;
-    width: 65%;
+    width: 75%;
+    margin-right: 110px;
 }
 
 

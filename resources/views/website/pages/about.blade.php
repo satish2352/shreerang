@@ -90,7 +90,7 @@
 </section> -->
 <!-- end history -->
     <!-- Director Desk -->
-    <section class="pt-30 pb-50" id="direct" data-overlay="9">
+    <section class="pt-30 pb-50" id="direct">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -108,8 +108,8 @@
                                <div class="col-lg-4 col-md-4 col-sm-4">
                                    <img src="{{ asset('website/assets/img/about/director1.png')}}" alt="">
                                </div>
-                               <div class="col-lg-8 col-md-8 col-sm-8 p-5">
-                                   <h5 class="white ">Lorem ipsum dolor adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h5>
+                               <div class="col-lg-8 col-md-8 col-sm-8 p-5 deskk">
+                                   <h5 class="white">Lorem ipsum dolor adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h5>
                                    
                                    </div>
                                   
@@ -136,25 +136,25 @@
                 <div class="col-lg-1"></div>
                 <div class="col-lg-10">
                     <div class="row">
-                    <div class="col-lg-6 text-center">
+                    <div class="col-lg-5 text-center">
                         <div class="">
                             <h1 class="f-700">Vision</h1>
                         </div>
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
-                    <div class="col-lg-6 pt-60 pb-50">
-                    <h5 class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h5>
+                    <div class="col-lg-6 pt-60 pb-50 vison">
+                    <h5 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h5>
                     </div>
                     
-                    <div class="col-lg-6 order-md-2 text-center">
+                    <div class="col-lg-5 order-md-2 text-center">
                     
                         <img src="{{ asset('website/assets/img/about/mission.png')}}" id="vision_mision" alt="">
                         <div class="">
                             <h1 class="f-700">Mission</h1>
                         </div>
                     </div>
-                    <div class="col-lg-6 pt-30 order-md-1">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo pariatur odio. Placeat vitae temporibus suscipit harum doloremque, ipsum corrupti, quis tempore, cumque dignissimos sunt quia laborum? Ducimus, alias quidem?</h5>
+                    <div class="col-lg-6 pt-30 order-md-1 misn1">
+                    <h5 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo pariatur odio. Placeat vitae temporibus suscipit harum doloremque, ipsum corrupti, quis tempore, cumque dignissimos sunt quia laborum? Ducimus, alias quidem?</h5>
                     </div>
                     </div>
                 </div>
@@ -184,25 +184,25 @@
             <div class="row">
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="each-team-3 fix">
+                    <div class="each-team-3 team_shadow fix">
                         <div class="image-team-3 relative">
-                            <a href="#"><img src="{{ asset('website/assets/img/team/team1b.jpg')}}" alt=""></a>
+                            <a><img src="{{ asset('website/assets/img/team/team1b.png')}}" class="pt-3 pl-3 pr-3" alt=""></a>
                             <div class="team-detail-3 transition-5" data-overlay="8">
                                 <div class="team-content z-5">
-                                    <h5 class="green f-700 fs-19 relative"><a href="#">Jessica David</a></h5>
+                                    <h5 class="green f-700 fs-19 relative"><a>Shubham</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
                                     {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a><i class="fab fa-facebook-f"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a><i class="fab fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            <a><i class="fab fa-linkedin-in"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            <a><i class="fab fa-google-plus-g"></i></a>
                                         </li>
                                     </ul> --}}
                                 </div>
@@ -212,25 +212,25 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="each-team-3 fix">
+                    <div class="each-team-3 team_shadow fix">
                         <div class="image-team-3 relative">
-                            <a href="#"><img src="{{ asset('website/assets/img/team/team2b.jpg')}}" alt=""></a>
+                            <a><img src="{{ asset('website/assets/img/team/team2b.png')}}" class="pt-3 pl-3 pr-3" alt=""></a>
                             <div class="team-detail-3 transition-5" data-overlay="8">
                                 <div class="team-content z-5">
-                                    <h5 class="green f-700 fs-19 relative"><a href="#">Anjelina</a></h5>
+                                    <h5 class="green f-700 fs-19 relative"><a>Shubham</a></h5>
                                     <p class="designation white fs-13">Finance Manager</p>
                                     {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a><i class="fab fa-facebook-f"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a><i class="fab fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            <a><i class="fab fa-linkedin-in"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            <a><i class="fab fa-google-plus-g"></i></a>
                                         </li>
                                     </ul> --}}
                                 </div>
@@ -240,53 +240,25 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="each-team-3 fix">
+                    <div class="each-team-3 team_shadow fix">
                         <div class="image-team-3 relative">
-                            <a href="#"><img src="{{ asset('website/assets/img/team/team3b.jpg')}}" alt=""></a>
+                            <a><img src="{{ asset('website/assets/img/team/team3b.png')}}" class="pt-3 pl-3 pr-3" alt=""></a>
                             <div class="team-detail-3 transition-5" data-overlay="8">
                                 <div class="team-content z-5">
-                                    <h5 class="green f-700 fs-19 relative"><a href="#">Jessica David</a></h5>
+                                    <h5 class="green f-700 fs-19 relative"><a>Shubham</a></h5>
                                     <p class="designation white fs-13">Web Designer</p>
                                     {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a><i class="fab fa-facebook-f"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a><i class="fab fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            <a><i class="fab fa-linkedin-in"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                        </li>
-                                    </ul> --}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="each-team-3 fix">
-                        <div class="image-team-3 relative">
-                            <a href="#"><img src="{{ asset('website/assets/img/team/team4b.jpg')}}" alt=""></a>
-                            <div class="team-detail-3 transition-5" data-overlay="8">
-                                <div class="team-content z-5">
-                                    <h5 class="green f-700 fs-19 relative"><a href="#">Jhone Doe</a></h5>
-                                    <p class="designation white fs-13">Co Founder</p>
-                                    {{-- <ul class="social-icons boxed-social mb-5">
-                                        <li>
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            <a><i class="fab fa-google-plus-g"></i></a>
                                         </li>
                                     </ul> --}}
                                 </div>
@@ -296,25 +268,25 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="each-team-3 fix">
+                    <div class="each-team-3 team_shadow fix">
                         <div class="image-team-3 relative">
-                            <a href="#"><img src="{{ asset('website/assets/img/team/team2b.jpg')}}" alt=""></a>
+                            <a><img src="{{ asset('website/assets/img/team/team4b.png')}}" class="pt-3 pl-3 pr-3" alt=""></a>
                             <div class="team-detail-3 transition-5" data-overlay="8">
                                 <div class="team-content z-5">
-                                    <h5 class="green f-700 fs-19 relative"><a href="#">Jessica</a></h5>
+                                    <h5 class="green f-700 fs-19 relative"><a>Shubham</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
                                     {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a><i class="fab fa-facebook-f"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a><i class="fab fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            <a><i class="fab fa-linkedin-in"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            <a><i class="fab fa-google-plus-g"></i></a>
                                         </li>
                                     </ul> --}}
                                 </div>
@@ -324,25 +296,53 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="each-team-3 fix">
+                    <div class="each-team-3 team_shadow fix">
                         <div class="image-team-3 relative">
-                            <a href="#"><img src="{{ asset('website/assets/img/team/team1b.jpg')}}" alt=""></a>
+                            <a><img src="{{ asset('website/assets/img/team/team5b.png')}}" class="pt-3 pl-3 pr-3" alt=""></a>
                             <div class="team-detail-3 transition-5" data-overlay="8">
                                 <div class="team-content z-5">
-                                    <h5 class="green f-700 fs-19 relative"><a href="#">Jhone Doe</a></h5>
+                                    <h5 class="green f-700 fs-19 relative"><a>Shubham</a></h5>
                                     <p class="designation white fs-13">Co Founder</p>
                                     {{-- <ul class="social-icons boxed-social mb-5">
                                         <li>
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a><i class="fab fa-facebook-f"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a><i class="fab fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            <a><i class="fab fa-linkedin-in"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            <a><i class="fab fa-google-plus-g"></i></a>
+                                        </li>
+                                    </ul> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="each-team-3 team_shadow fix">
+                        <div class="image-team-3 relative">
+                            <a><img src="{{ asset('website/assets/img/team/team6b.png')}}" class="pt-3 pl-3 pr-3" alt=""></a>
+                            <div class="team-detail-3 transition-5" data-overlay="8">
+                                <div class="team-content z-5">
+                                    <h5 class="green f-700 fs-19 relative"><a>Shubham</a></h5>
+                                    <p class="designation white fs-13">Co Founder</p>
+                                    {{-- <ul class="social-icons boxed-social mb-5">
+                                        <li>
+                                            <a><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a><i class="fab fa-linkedin-in"></i></a>
+                                        </li>
+                                        <li>
+                                            <a><i class="fab fa-google-plus-g"></i></a>
                                         </li>
                                     </ul> --}}
                                 </div>
@@ -353,23 +353,23 @@
 
     
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="pagination-type1 center-align mt-30">
                         <ul>
                             <li>
-                                <a href="#"><i class="fas fa-long-arrow-alt-left"></i></a>
+                                <a><i class="fas fa-long-arrow-alt-left"></i></a>
                             </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
+                            <li><a>1</a></li>
+                            <li><a>2</a></li>
+                            <li><a>3</a></li>
                             <li>
-                                <a href="#"><i class="fas fa-long-arrow-alt-right"></i></a>
+                                <a><i class="fas fa-long-arrow-alt-right"></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- Team area end -->

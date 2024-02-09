@@ -51,43 +51,43 @@
     <!-- services start -->
     <section class="servicebnnr pt-60 pb-60">
         <div class="container">
-        <div class="row">
+            {{-- <div class="row">
                 <div class="col-xl-12">
                     <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
                         <h1 class="white">Our Services</h1>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="row align-items-center">
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h2 class="white f-600 mb-10">
-                            <span class="">01</span>
-                            Woodworking
+                        <h4 class="white f-700 mb-10">
+                            <span class="fs1">01</span>
+                             WOODWORKING
                             <span class="green"></span>
-                        </h2>
-                        <p class="white mb-55 mb-md-30 pr-60 pr-md-00">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                        </h4>
+                        <p class="white mb-55 mb-md-30 pr-60 text-center pr-md-00">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h2 class="white f-600 mb-10">
-                            <span class="">02</span>
-                            Metalworking
+                        <h4 class="white f-700 mb-10">
+                            <span class="fs1">02</span>
+                             METALWORKING
  
-                        </h2>
-                        <p class="white mb-55 mb-md-30 pr-60 pr-md-00">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                        </h4>
+                        <p class="white mb-55 mb-md-30 pr-60 text-center pr-md-00">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h2 class="white f-600 mb-10">
-                            <span class="">03</span>
-                            Woodworking <span class=""></span>
-                        </h2>
-                        <p class="white mb-55 mb-md-30 pr-60 pr-md-00">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                        <h4 class="white f-700 mb-10">
+                            <span class="fs1">03</span>
+                             <span class="">WOODWORKING</span>
+                        </h4>
+                        <p class="white mb-55 mb-md-30 pr-60 text-center pr-md-00">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -130,8 +130,8 @@
                                                 
                                             </div>
                                             <div class=" text-center mt-10">
-                                                <h5>
-                                                <a  class="">AUTOMOBILE</a>
+                                                <h5 class="clrtext f-700">
+                                                AUTOMOBILE
                                                 </h5>
                                             
                                             </div>
@@ -145,8 +145,8 @@
                                                 
                                             </div>
                                             <div class=" text-center mt-10">
-                                                <h5>
-                                                <a class="">HOSPITAL</a>
+                                                <h5 class="clrtext f-700">
+                                                HOSPITAL
                                                 </h5>
                                             
                                             </div>
@@ -160,8 +160,8 @@
                                                 
                                             </div>
                                             <div class=" text-center mt-10">
-                                                <h5>
-                                                <a class="">TRAVELING</a>
+                                                <h5 class="clrtext f-700">
+                                                TRAVELING
                                                 </h5>
                                             
                                             </div>
@@ -175,9 +175,9 @@
                                                 
                                             </div>
                                             <div class=" text-center">
-                                                <h5>
-                                                <a class="">PHARMA <br> 
-                                                    INDUSTRIES</a>
+                                                <h5 class="clrtext f-700">
+                                                PHARMA <br> 
+                                                    INDUSTRIES
                                                 </h5>
                                             
                                             </div>
@@ -199,7 +199,7 @@
         <div class="container-fluid pb-25 pt-25">
                   <!-- bannar start -->
                   <div class="banrimgs">
-                    <img src="{{ asset('website/assets/img/banner/HOME_PAGE3.png')}}" alt="">
+                    <img src="{{ asset('website/assets/img/banner/HOME_PAGE3old.png')}}" alt="">
                 </div>
                 <div class="mobibanrimgs">
                 <img src="{{ asset('website/assets/img/banner/mobconnect.jpg')}}" alt="">
@@ -215,42 +215,50 @@
     <section class="cardbkclr">
         <div class="container pt-50 pb-50">
             <div class="row">
-                <div class="col-lg-6 col-md-12 p-3">
-                    <div class="card">
-                    <img src="{{ asset('website/assets/img/service/caster.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body  text-center card-info">
-                <h3 class="white f-600"> Caster wheels </h3>
-                
-                </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5 col-md-12 p-3">
+                        <div class="card">
+                        <img src="{{ asset('website/assets/img/service/caster.png')}}" class="card-img-top" alt="...">
+                        <div class="card-body  text-center card-info">
+                        <h3 class="white f-600"> Caster wheels </h3>
+                    
+                        </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12 p-3">
-                    <div class="card">
-                    <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body text-center  card-info">
-                <h3 class="white f-600"> Movement Trollies </h3>
-                
-                </div>
+                    <div class="col-lg-5 col-md-12 p-3">
+                        <div class="card">
+                        <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
+                        <div class="card-body text-center  card-info">
+                        <h3 class="white f-600"> Movement Trollies </h3>
+                    
+                        </div>
+                        
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12 p-3">
-                    <div class="card">
-                    <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body text-center card-info">
-                <h3 class="white f-600"> Challenging Fabrication Works </h3>
-                
-                </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12 p-3">
-                    <div class="card">
-                <img src="{{ asset('website/assets/img/service/presshop.png')}}" class="card-img-top" alt="...">
-                <div class="card-body text-center  card-info">
-                <h3 class="white f-600"> Press Shop Works  </h3>
+                    <div class="col-lg-1"></div>
                 
-                </div>
-                </div>
-                </div>
+                    <div class="col-lg-1"></div>
+
+                    <div class="col-lg-5 col-md-12 p-3">
+                        <div class="card">
+                        <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
+                        <div class="card-body text-center card-info">
+                        <h3 class="white f-600"> Challenging Fabrication Works </h3>
+                    
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 p-3">
+                        <div class="card">
+                        <img src="{{ asset('website/assets/img/service/presshop.png')}}" class="card-img-top" alt="...">
+                        <div class="card-body text-center  card-info">
+                        <h3 class="white f-600"> Press Shop Works  </h3>
+                    
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+               
             </div>
         </div>
     </section>

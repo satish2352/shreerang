@@ -136,11 +136,14 @@ button,
 .bg-black,
 .silder-img[data-overlay]::before,
 .slider-control.type-3 .dots-slider .owl-dot,
-.team-detail-3[data-overlay]::before,
+
 .inner-banner[data-overlay]::before {
     background: #243772;
 }
 
+.team-detail-3[data-overlay]::before{
+ background: #000;
+}
 
 /* ....................................
 6. bg blue
@@ -172,14 +175,15 @@ button,
     background: #243772;
 }
 
-.servicebk{
-    background-color: #243772;
-}
 
+.clrtext{
+    color: #000;
+}
 .procard:hover{
     background: #029A99;
 }
 .card-info{
+    height: 83px;
     background: #243772; 
 }
 /*blue bg opacity classes*/
@@ -495,6 +499,11 @@ button,
 
 .blackbg-1,
 .footer-area,
+.social-links li a {
+    background-color: #243772;
+}
+.blackbg-1,
+.footer-area1,
 .social-links li a {
     background-color: #243772;
 }
