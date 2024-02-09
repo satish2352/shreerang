@@ -301,7 +301,7 @@
       <section>
         <div class="container pt-50 pb-50">
             <div class="row">
-                <div class="col-xl-4 p-4">
+                <div class="col-xl-4 p-5">
                     <div class="text-justify">
                         <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">01 </h1></span> Request</h2>
                         <img src="{{ asset('website/assets/img/icons/request.png')}}" alt="">
@@ -309,14 +309,14 @@
                     </div>
                 </div>
                 
-                <div class="col-xl-4 p-4">
+                <div class="col-xl-4 p-5">
                     <div class="pb-12 text-justify">
                     <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">02 </h1></span> Develop</h2>
                         <img src="{{ asset('website/assets/img/icons/develop.png')}}"  alt="">
                         <h6 class="clrtext">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
-                <div class="col-xl-4 p-4">
+                <div class="col-xl-4 p-5">
                     <div class="pb-12 text-justify ">
                     <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">03 </h1></span> Install</h2>
                         <img src="{{ asset('website/assets/img/icons/install.png')}}"  alt="">
