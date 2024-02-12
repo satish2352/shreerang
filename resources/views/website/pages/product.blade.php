@@ -29,14 +29,13 @@
     
          <!-- Product area start -->
     
-        <div class="container-fluid testmo1 text-center team-area pt-50 pb-5">
+        <div class="container-fluid testmo1 team-area pt-50 pb-5">
             <div class="row ">
 
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image  relative">
-                            <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">
-                            
+                            <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">            
                         </div>
                         <div class="team-info card-body transition-4">
                             <h5>

@@ -8,26 +8,26 @@
         </div>
         <div class="col-lg-9 col-md-12 col-sm-12 bg-green-op-6 justify-content-md-center">
             <footer class="footer-area footbak">
-                <div class="container-fluid">
+                <div class="container-fluid p-5 pb-50">
                     <div class="row">
-                        <div class="col-lg-2 col-md-1 col-sm-1">
+                        <div class="col-lg-1 col-md-1 col-sm-1">
                         
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="col-lg-5 col-md-6 col-sm-6">
                             <div class="footer-links pt-20 pt-md- mb-0">
-                                <h4 class="green f-700 mb-20 foottitle">Address</h4>
+                                <h4 class="green f-700 mb-20 foottitle">ADDRESS</h4>
                                 <ul class="links-list">
-                                    <li><span class="green">Plant No 1</span><a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87"  target="blank"> - W-127 (A), MIDC, Ambad Nashik- 422010,</li></a>
-                                    <li><span class="green">Plant No 2</span><a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6"  target="blank"> - W-118 (A), MIDC, Ambad Nashik - 422010 ,</li></a>
-                                    <li><span class="green">Plant No 3</span><a href=""  target="blank"> - GAT NO-679/2/1 , Kurli Alandi Road ,Chankan , Tal-khed Dist-Pune - 410501,</li></a>
-                                    <li><span class="green">Plant No 4</span><a href="https://maps.app.goo.gl/8vvmafbwcG6vSJ5A9" target="blank"> - GF PLOT NO-913 Shreeji Engg.,GIDC,Halol , Panchamahal Gujarat - 389350</li></a>
+                                    <li><span class="green f-700">Plant No 1</span><a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87"  target="blank"> - W-127 (A), MIDC, Ambad Nashik- 422010,</li></a>
+                                    <li><span class="green f-700">Plant No 2</span><a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6"  target="blank"> - W-118 (A), MIDC, Ambad Nashik - 422010 ,</li></a>
+                                    <li><span class="green f-700">Plant No 3</span><a href=""  target="blank"> - GAT NO-679/2/1 , Kurli Alandi Road ,Chankan , Tal-khed Dist-Pune - 410501,</li></a>
+                                    <li><span class="green f-700">Plant No 4</span><a href="https://maps.app.goo.gl/8vvmafbwcG6vSJ5A9" target="blank"> - GF PLOT NO-913 Shreeji Engg.,GIDC,Halol , Panchamahal Gujarat - 389350</li></a>
                                    
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2">
                             <div class="footer-links pt-20 pt-md- mb-sm-0">
-                                <h4 class="green f-700 mb-20 foottitle">Contact</h4>
+                                <h4 class="green f-700 mb-20 foottitle">CONTACT</h4>
                                 <ul class="links-list foottitle_sub">
                                     <li><a href="tel: +91 7028082176">7028082176</a></li>
                                     <li><a href="tel: +91 0253-2383517">0253 - 2383517</a></li>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-lg-3 col-md-2 col-sm-2">
                             <div class="footer-links pt-20 mb-sm-0">
-                                <h4 class="green f-700 mb-20 foottitle">Quick Links</h4>
+                                <h4 class="green f-700 mb-20 foottitle">QUICK LINKS</h4>
                                 <ul class="links-list foottitle_sub">
                                     <li><a href="{{url('/')}}">Home</a></li>
                                     <li><a href="{{url('/about')}}">About Us</a></li>
@@ -68,13 +68,13 @@
                     <hr class="hrline">
                     <div>
                    
-                        <div class="container">
+                        <div class="container-fluid">
                             <div class="row align-items-center ">
                                 {{-- <div class="col-xl-1 col-md-1"></div> --}}
                                 <div class="col-xl-12 col-md-12">
                                     <div class="row">
                                         <div class="col-xl-9 col-md-9">
-                                        <p class="mb-3 pl-100 white copyrt">Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank" class="white">sumagoinfotech</a> 2024. All rights reserved.</p>
+                                        <p class="mb-3 white copyrt">Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank" class="white">sumagoinfotech</a> 2024. All rights reserved.</p>
                                         </div>
                                         <div class="col-xl-3 col-md-3 banrimgs justify-content-lg-end">
                                             <p class="mb-3 pl-100 ml-10 white">Terms & Conditions</p>
@@ -115,7 +115,7 @@
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="footer-links pt-20 pt-md- mb-0">
-                                <h4 class="green f-700 mb-20 foottitle">Address</h4>
+                                <h4 class="green f-700 mb-20 foottitle">ADDRESS</h4>
                                 <ul class="links-list">
                                     <li><span class="green">Plant No 1</span><a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87"  target="blank"> - W-127 (A), MIDC, Ambad Nashik- 422010,</li></a>
                                     <li><span class="green">Plant No 2</span><a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6"  target="blank"> - W-118 (A), MIDC, Ambad Nashik - 422010 ,</li></a>
@@ -127,14 +127,14 @@
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2">
                             <div class="footer-links pt-20 pt-md- mb-sm-0">
-                                <h4 class="green f-700 mb-20 foottitle">Contact</h4>
-                                <ul class="links-list foottitle_sub">
+                                <h4 class="green f-700 mb-20 foottitle">CONTACT</h4>
+                                <ul class="links-list text-center">
                                     <li><a href="tel: +91 7028082176">7028082176</a></li>
                                     <li><a href="tel: +91 0253-2383517">0253 - 2383517</a></li>
                                 
                                 </ul>
-                                <div class="social-links ">
-                                        <ul class="social-icons iconlist">
+                                <div class="social-links sociicon1">
+                                        <ul class="social-icons iconlist text-center">
                                             <li>
                                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                                             </li>
@@ -154,8 +154,8 @@
                         </div>
                         <div class="col-lg-3 col-md-2 col-sm-2">
                             <div class="footer-links pt-20 mb-sm-0">
-                                <h4 class="green f-700 mb-20 foottitle">Quick Links</h4>
-                                <ul class="links-list foottitle_sub">
+                                <h4 class="green f-700 mb-20 foottitle">QUICK LINKS</h4>
+                                <ul class="links-list text-center">
                                     <li><a href="{{url('/')}}">Home</a></li>
                                     <li><a href="{{url('/about')}}">About Us</a></li>
                                     <li><a href="{{url('/product')}}">Product</a></li>

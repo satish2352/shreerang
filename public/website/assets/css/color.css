@@ -183,7 +183,7 @@ button,
     background: #029A99;
 }
 .card-info{
-    height: 83px;
+    height: 100px;
     background: #243772; 
 }
 .card-info1{
@@ -258,7 +258,7 @@ button,
 .btn-square-white:hover,
 .each-blog:hover .blog-date,
 .contact-area:before,
-.social-links li a:hover,
+
 .links-list a:before,
 .scroll-btn,
 .dots-slider .owl-dot.active,
@@ -296,6 +296,9 @@ button,
 }
 /*green bg opacity classes*/
 
+.white1{
+    color: #c6c1c1db;
+}
 .bg-green-op-9 {
     background: rgba(9, 188, 138, 0.9)
 }
@@ -509,13 +512,18 @@ background: #e9f1f9;
 
 .blackbg-1,
 .footer-area,
-.social-links li a {
-    background-color: #243772;
-}
-.blackbg-1,
 .footer-area1,
 .social-links li a {
     background-color: #243772;
+}
+
+.footer-area1,
+.sociicon1{
+    background-color: #243772;
+}
+
+.sociicon li a {
+    background-color: #FFFFFF;
 }
 
 .blackbg-2,

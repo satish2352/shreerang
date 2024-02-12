@@ -120,7 +120,7 @@
 
                 <div class="addrescard">
                     <div class="card">
-                            <h4 class="card-header card-info1 text-center text-white">
+                            <h4 class="card-header card-info2 text-center text-white">
                                 Address
                     </h4>
                             <div class="card-body text-justify py-4 px-5 p-5">
@@ -157,12 +157,12 @@
                                              
                                 </div>
                                 <div class="row social-links py-3">
-                                    <div class="col-lg-6 col-md-6">
+                                    <div class="col-lg-6 col-md-6 mt-15">
                                       <h3 class="f-700 clrtext">Follow us on</h3>
                                     
                                     </div>
                                     <div class="col-lg-6 col-md-6 social-links social-links1">
-                                    <ul class="social-icons">
+                                    <ul class="social-icons sociicon">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>

@@ -320,9 +320,9 @@ label {
 .btn-round {
     border-radius: 100px;
     padding: 15px 15px;
-    line-height: 11px;
+    /* line-height: 11px; */
     /* text-transform: uppercase; */
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     color: #fff;
     letter-spacing: .4px;
@@ -580,6 +580,7 @@ label {
     position: relative;
 }
 .servicebk{
+    background-size: cover;
     background-image: url("../img/banner/BLUE BACKGROUND.png");
 
 }
@@ -601,8 +602,8 @@ label {
 }
 
 #vision_mision{
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: auto;
 }
 
 /* .addrescard{
@@ -1611,7 +1612,7 @@ p.big-p {
 }
 
 .team1{
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 20px 20px 15px 15px;
     background: #029A99
 }
 
@@ -2310,6 +2311,10 @@ p.big-p {
     right: 0;
     height: 4px;
     z-index: 5;
+}
+.card-info2 {
+    height: 60px;
+    background: #243772;
 }
 
 .contact-options li {
@@ -3603,7 +3608,7 @@ ul li:last-child .icon-round-box-icon {
 .experience li {
     position: relative;
     padding-left: 41px;
-    padding-bottom: 12rem;
+    padding-bottom: 13rem;
     font-size: 14px;
 }
 
@@ -3632,7 +3637,7 @@ ul li:last-child .icon-round-box-icon {
 }
 
 .experience {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 
@@ -3665,11 +3670,11 @@ ul li:last-child .icon-round-box-icon {
 non use css
 .......................................*/
 .reviw{
+    background: rgba(4, 170, 109, 0.1);
+    background-size: cover;
     background-image: url('../img/banner/HOME_PAGE3.png');
 }
-.fs1{
-    font-size: 36px;
-}
+
 #instaimg{
     width: 80%;
     /* height: 50%; */
@@ -3735,8 +3740,8 @@ ul.theme-ul li img {
 
 /* footer */
 .hrline{
-    border:2px solid #029A99;
-    width: 75%;
+    border:1px solid #029A99;
+    width: 83%;
     margin-right: 110px;
 }
 

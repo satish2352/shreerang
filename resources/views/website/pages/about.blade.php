@@ -143,8 +143,28 @@
                     </div>
                         
                 </div> --}}
+
+
+                {{-- <div class="container">
+                    <div class="row sup">
+            
+                        <div class="col-lg-3 sid1 rounded-start-pill">
+                            <img src="{{ asset('website/assets/img/about/director1.png')}}" class=" dirim" alt="">
+                        </div>
+            
+                        <div class="col-lg-5 backd">
+                            <p class="mt-5 d-flex justify-content-end"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, saepe! Culpa facere
+                                a aut fugit
+                                perspiciatis itaque alias amet tempore autem tenetur. Mollitia accusantium magnam quasi labore
+                                necessitatibus enim inventore!</p>
+                        </div>
+            
+                        <div class="col-lg-3 sid2 rounded-end-pill"></div>
+            
+                    </div>
+                </div>
                 
-            </div>
+            </div> --}}
   
    
        

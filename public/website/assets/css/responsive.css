@@ -1,3 +1,13 @@
+
+/* Large devices (Above 1800px) */
+
+/* @media only screen and (min-width: 1800px) {
+    .copyrt{
+        margin-left: 45px;
+    }
+} */
+
+
 /* Large devices (Above 1400px) */
 
 @media only screen and (min-width: 1400px) {
@@ -62,16 +72,18 @@
     
     }
     #footlogo{
-        
-        height: 410px;
-        /* padding: -35px; */
+        width: 100%;
+        margin-left: 40px;
+
+        /* height: 410px;
+        padding: -35px;
         padding-bottom: 0%;
         width: 410px;
-        margin: -25px 1px 5px 52px;
+        margin: -25px 1px 5px 52px; */
 
     }
     .copyrt{
-        margin-left: 4px;
+        margin-left: 90px;
     }
     .hrline{
         margin-right: 108px;
@@ -124,9 +136,15 @@
         margin-bottom: 10px;
     
     }
-   
+    .copyrt{
+        margin-left: 90px;
+    }
  
-    
+    .hrline {
+        /* border: 1px solid #029A99; */
+        width: 90%;
+        margin-right: 17px;
+    }
     
     
 }
@@ -159,6 +177,21 @@
         -webkit-transition: all .4s;
         transition: all .4s;
     }
+    .paddiall{
+        padding-top: 100px;
+        padding-bottom: 100px; 
+    
+    }
+    .paddiall1{
+        padding-top: 90px;
+        padding-bottom: 90px; 
+    
+    }
+    .paddiall2{
+        padding-top: 100px;
+        padding-bottom: 100px; 
+    
+    }
     .misiionbak{
         background-image: url('../img/banner/MISIONBACKGRD.png');
     }
@@ -168,20 +201,32 @@
         text-align: justify;
     }
     .servbtn{
+       
         margin-left: 60px;
     }
     .testmo{
         padding-left: 100px;
         padding-right: 100px;
     }
+    .card-info1{
+        height: 150px;
+        background: #243772; 
+    }
    
     .testmo1{
         padding-left: 200px;
         padding-right: 200px;
     }
-    .img1{
-        /* padding-top: 45px; */
+    .fs1{
+        font-size: 55px;
     }
+    .fs2{
+        font-size: 35px;
+    }
+    .fs3{
+        font-size: 60px;
+    }
+    
    
     .img2{
         padding-top: 45px;
@@ -194,18 +239,24 @@
     .img4{
         padding-top: 45px;
     }
-   
+    .sevimg{
+        width: 30rem;
+    }
+    .serv{
+        padding-left: 160px;
+        padding-right: 160px;
+    }
     .manuimg1{
         /* padding-top: 45px; */
     }
     .manuimg2{
-        padding-top: 45px;
+        padding-top: 80px;
     }
     .manuimg3{
         /* padding-top: 45px; */
     }
     .manuimg4{
-        padding-top: 45px;
+        padding-top: 80px;
     }
     .fixed-bottom1{
         position: fixed;
@@ -215,14 +266,55 @@
         z-index: 1030;
     
     }
+
+    .pfonts{
+        opacity: 67%;
+        /* color: #fff; */
+        font-size: 22px;
+    }
     #dirimg{
         width: 75%;
     }
    
     .servicebnnr{
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-size: cover;
         background-image: url('../img/banner/GREEN BACKGROUND.png');
     
     }
+    /* director */
+    .dirim {
+        height: 250px;
+        width: 250px;
+        transform: translate(30%, 40%);
+    }
+
+    .backd {
+        background-color: #243772;
+        color: white;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .backd p {
+        transform: translate(20%, 0%);
+    }
+
+    .sid1 {
+        border-radius: 50% 0% 0% 50%;
+        background: url('/img/about/director1.png'), #243772;
+        background-repeat: no-repeat;
+        width: 16rem;
+    }   
+
+    .sid2 {
+        border-radius: 0% 50% 50% 0%;
+        background-color: #243772;
+        width: 8rem;
+    }
+
+/* director */
     .vison{
         margin-top: 60px;
         text-align: start;
@@ -424,10 +516,20 @@
     background: url('website/assets/img/about/director1.png'), #243772;
 } */
 
-.servicebnnr{
-    background-color: #029A99;
+    .servicebnnr{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #029A99;
 
-}
+        
+    }
+
+    .paddiall2{
+        padding-top: 100px;
+        padding-bottom: 100px; 
+    
+    }
+
     .servicebk{
         background-color: #243772;
     }
@@ -446,7 +548,7 @@
         text-align: center;
     }
     .foottitle_sub{
-        margin-left: 100px;
+       align-items: center;
     }
     .banrimgs{
         display: none;
@@ -680,10 +782,10 @@
         margin-bottom: 10px;
         margin-right: 0%;
     }
-    .iconlist li{
+    /* .iconlist li{
 
-        margin: 10px 10px 0px 30px;
-    }
+        margin: 5px 5px 0px 30px;
+    } */
     .footlogocol1 .shreelogo{
         position: absolute;
         bottom: 50rem;
