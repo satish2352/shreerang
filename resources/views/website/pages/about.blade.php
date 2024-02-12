@@ -31,12 +31,12 @@
         <div class="row">
 
         <div class="col-lg-5">
-            <div class="row justify-content-sm-start justify-content-center justify-content-md-start">
+            <div class="row img1 justify-content-sm-start justify-content-center justify-content-md-start">
                 <h1 class="green f-700">1985</h1>
                 <img src="{{ asset('website/assets/img/about/1985.png')}}" alt="">
             </div>
-            <div class="row pt-45 justify-content-sm-start justify-content-center justify-content-md-start">
-                <h1 class="green f-700">1987</h1>
+            <div class="row img2 justify-content-sm-start justify-content-center justify-content-md-start">
+                <h1 class="green f-700">2000</h1>
                 <img src="{{ asset('website/assets/img/about/2000.png')}}" alt="">
             </div>
         </div>
@@ -56,12 +56,12 @@
                         </li>
                     </ul>
         </div>
-        <div class="col-lg-5 pt-45">
+        <div class="col-lg-5 img3">
         <div class="row justify-content-sm-start justify-content-center justify-content-md-start">
-            <h1 class="green f-700">2000</h1>
+            <h1 class="green f-700">1987</h1>
                 <img src="{{ asset('website/assets/img/about/1987.png')}}" alt="">
             </div>
-            <div class="row pt-45 justify-content-sm-start justify-content-center justify-content-md-start">
+            <div class="row img4 justify-content-sm-start justify-content-center justify-content-md-start">
                 <h1 class="green f-700">2007</h1>
                 <img src="{{ asset('website/assets/img/about/2007.png')}}" alt="">
             </div>
@@ -100,8 +100,8 @@
                     </div>
                 </div>  
 
-                <div class="container">
-                    <img src="{{ asset('website/assets/img/about/review.png')}}" alt="">
+                <div class="container text-center">
+                    <img src="{{ asset('website/assets/img/about/review.png')}}" id="dirimg">
                 </div>
                 {{-- <div class="container-fluid text-center">
                     <div class="row sup ">
@@ -161,7 +161,7 @@
                     <div class="row">
                     <div class="col-lg-5 text-center">
                         <div class="">
-                            <h1 class="f-700">VISION</h1>
+                            <h2 class="f-700">VISION</h2>
                         </div>
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
@@ -173,7 +173,7 @@
                     
                         <img src="{{ asset('website/assets/img/about/mission.png')}}" id="vision_mision" alt="">
                         <div class="">
-                            <h1 class="f-700">MISSION</h1>
+                            <h2 class="f-700">MISSION</h2>
                         </div>
                     </div>
                     <div class="col-lg-6 pt-30 order-md-1 misn1">

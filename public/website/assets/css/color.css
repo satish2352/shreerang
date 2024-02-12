@@ -359,7 +359,9 @@ button,
     background: #F1FBFC; 
 }
 /*important*/
-
+.team-each:hover{
+background: #e9f1f9;
+}
 .light-white {
     background: #e9f1f9 !important;
 }

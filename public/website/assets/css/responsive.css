@@ -20,6 +20,24 @@
     .coming-soon[data-overlay]::before {
         height: 100vh;
     }
+    .copyrt{
+        margin-left: 40px;
+    }
+    .addrescard{
+        color: #444;
+        top: 516px ;
+        position: absolute;
+        left: 75rem !important;
+        width: 25%;
+    }
+    .contcatcontainer{
+        position: absolute;
+        /* width: 500px; */
+        top: 75rem;
+        left: 35rem !important;
+        margin-bottom: 10px;
+    
+    }
 }
 
 
@@ -33,7 +51,7 @@
         top: 670px ;
         position: absolute;
         left: 75rem !important;
-        width: 30%;
+        width: 25%;
     }
     .contcatcontainer{
         position: absolute;
@@ -48,11 +66,18 @@
         height: 410px;
         /* padding: -35px; */
         padding-bottom: 0%;
-        width: 540px;
+        width: 410px;
         margin: -25px 1px 5px 52px;
 
     }
+    .copyrt{
+        margin-left: 4px;
+    }
+    .hrline{
+        margin-right: 108px;
+    }
 }
+
 /* Large devices (Above 1200px) */
 
 @media only screen and (min-width: 1000px) {
@@ -86,25 +111,34 @@
     }  */
  .addrescard{
         color: #444;
-        top: 619px;
+        top: 610px;
         position: absolute;
         left: 55rem;
-        width: 30%;;
+        width: 25%;;
     }
     .contcatcontainer{
         position: absolute;
         width: 500px;
-        top: 63rem;
+        top: 62rem;
         left: 15rem;
         margin-bottom: 10px;
     
     }
+   
+ 
     
     
     
 }
 
-
+@media (max-width:800px) and (min-width:1200px){
+    .hrline{
+        margin-right: 65px;
+    }
+    .copyrt{
+        margin-left: 0px;
+    }
+}
 /*end*/
 
 @media only screen and (min-width: 992px) {
@@ -136,7 +170,43 @@
     .servbtn{
         margin-left: 60px;
     }
+    .testmo{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
    
+    .testmo1{
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+    .img1{
+        /* padding-top: 45px; */
+    }
+   
+    .img2{
+        padding-top: 45px;
+    }
+   
+    .img3{
+        padding-top: 45px;
+    }
+   
+    .img4{
+        padding-top: 45px;
+    }
+   
+    .manuimg1{
+        /* padding-top: 45px; */
+    }
+    .manuimg2{
+        padding-top: 45px;
+    }
+    .manuimg3{
+        /* padding-top: 45px; */
+    }
+    .manuimg4{
+        padding-top: 45px;
+    }
     .fixed-bottom1{
         position: fixed;
         right: 0;
@@ -145,7 +215,14 @@
         z-index: 1030;
     
     }
+    #dirimg{
+        width: 75%;
+    }
    
+    .servicebnnr{
+        background-image: url('../img/banner/GREEN BACKGROUND.png');
+    
+    }
     .vison{
         margin-top: 60px;
         text-align: start;
@@ -158,7 +235,8 @@
         display: none;
     }
     .transperant-head.fixed-nav .main-menu > ul> li > a {
-        padding: 18px 15px;
+        /* margin-top: 10px; */
+        padding: 15px 15px;
     }
     .transperant-head.fixed-nav .logo img {
         max-width: 200px;
@@ -346,11 +424,23 @@
     background: url('website/assets/img/about/director1.png'), #243772;
 } */
 
+.servicebnnr{
+    background-color: #029A99;
+
+}
     .servicebk{
         background-color: #243772;
     }
     .misn{
         text-align: center;
+    }
+    .vison{
+        /* margin-top: 60px; */
+        text-align: justify;
+    }
+    .misn1{
+        /* margin-top: 60px; */
+        text-align: justify;
     }
     .foottitle{
         text-align: center;
@@ -377,7 +467,9 @@
         border-radius: 279px 261px 0px 0px;
     }
    
-   
+    #dirimg{
+        width: 100%;
+    }
     .menu-links {
         margin-right: 0;
     }
@@ -588,7 +680,10 @@
         margin-bottom: 10px;
         margin-right: 0%;
     }
-   
+    .iconlist li{
+
+        margin: 10px 10px 0px 30px;
+    }
     .footlogocol1 .shreelogo{
         position: absolute;
         bottom: 50rem;
@@ -793,6 +888,7 @@
         top: 15px;
     }
     .team-2-each {
+       
         max-width: 254px;
         margin: auto;
     }

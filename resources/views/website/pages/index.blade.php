@@ -2,12 +2,12 @@
 @section('content')
 <section>
       <!-- bannar start -->
-      <div class="banrimgs">
-        <img src="{{ asset('website/assets/img/banner/banner_2a.png')}}" alt="">
-    </div>
-    <div class="mobibanrimgs">
+      {{-- <div class="banrimgs"> --}}
+        <img src="{{ asset('website/assets/img/banner/home_bnr.png')}}" alt="">
+    {{-- </div> --}}
+    {{-- <div class="mobibanrimgs">
     <img src="{{ asset('website/assets/img/banner/mobabout.png')}}" alt="">
-    </div>
+    </div> --}}
     <!-- bannar end -->
 
      <!-- Slider start -->
@@ -122,7 +122,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="fancy-head text-center relative z-5 m-4 wow fadeInDown">
+                    <div class="fancy-head text-center relative z-5 m-3 pt-10 wow fadeInDown">
                         <h1 class="white">Product</h1>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
 
         <!-- services start -->
         <section class="servicebk pt-60 pb-60" data-overlay="9">
-        <div class="container">
+        <div class="container-fluid testmo">
             <div class="row">
                     <div class="col-xl-12">
                         <div class="fancy-head text-center relative z-5 mb-20 wow fadeInDown">
@@ -238,33 +238,33 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
-                            <h4 class="white f-700 mb-10">
+                            <h4 class="white text-center f-700 mb-10">
                                 <span class="f-800 fs1">01</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h4>
-                            <p class="white mb-55 mb-md-30 pr-60 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                            <p class="white mb-55 mb-md-30 pr-60 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
-                            <h4 class="white f-700 mb-10">
+                            <h4 class="white f-700 text-center mb-10">
                                 <span class="f-800 fs1">02</span>
                                 METALWORKING
     
                             </h4>
-                            <p class="white mb-55 mb-md-30 pr-60 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                            <p class="white mb-55 mb-md-30 pr-60 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
-                            <h4 class="white f-700 mb-10">
+                            <h4 class="white f-700 text-center mb-10">
                                 <span class="f-800 fs1">03</span>
                                 WOODWORKING<span class="green"></span>
                             </h4>
-                            <p class="white mb-5 mb-md-30 pr-60 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                            <p class="white mb-5 mb-md-30 pr-60 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
                             <div class="servbtn">
                                 <a href="{{url('/services')}}" class="btn btn-round p-4 justify-content-end">View all services</a>
 
@@ -299,28 +299,28 @@
             </div>
         </section> --}}
       <section>
-        <div class="container pt-50 pb-50">
+        <div class="container-fluid testmo pt-50 pb-50">
             <div class="row">
-                <div class="col-xl-4 p-5">
-                    <div class="text-justify">
+                <div class="col-xl-4 pl-30 pr-30 mt-10">
+                    <div class="text-center">
                         <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">01 </h1></span> Request</h2>
                         <img src="{{ asset('website/assets/img/icons/request.png')}}" alt="">
-                        <h6 class="clrtext">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-center">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 
-                <div class="col-xl-4 p-5">
-                    <div class="pb-12 text-justify">
+                <div class="col-xl-4 pl-30 pr-30 mt-10">
+                    <div class="text-center">
                     <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">02 </h1></span> Develop</h2>
                         <img src="{{ asset('website/assets/img/icons/develop.png')}}"  alt="">
-                        <h6 class="clrtext">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-center">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
-                <div class="col-xl-4 p-5">
-                    <div class="pb-12 text-justify ">
+                <div class="col-xl-4 pl-30 pr-30 mt-10">
+                    <div class="text-center">
                     <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">03 </h1></span> Install</h2>
                         <img src="{{ asset('website/assets/img/icons/install.png')}}"  alt="">
-                        <h6 class="clrtext">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-center">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
             </div>
@@ -330,7 +330,7 @@
 
      <!-- Testimonial area start -->
      <section class="testimonials-2 reviw pt-50 pb-80">
-        <div class="container">
+        <div class="container-fluid testmo">
             <div class="row align-items-center mb-30">
                 <div class="col-lg-12 col-md-12 text-center text-lg-center">
                     <div class="fancy-head left-al wow fadeInLeft">
@@ -359,7 +359,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="owl-carousel owl-theme testimonial-2-slide  wow fadeIn">
-                        <div class="item">
+                        <div class="item pl-10 pr-10">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -373,7 +373,7 @@
                                 <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext"> jhruios  Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1 justify-content-md-start justify-content-center">
-                                    <div class="img-div mr-30 pb-10">
+                                    <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team5b.png')}}" class=" rounded-circle" alt="">
                                         </div>
@@ -386,7 +386,7 @@
                             </div>
                         </div>
 
-                        <div class="item">
+                        <div class="item pl-10 pr-10">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -400,7 +400,7 @@
                                 <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext">Etiam mattis posuere sem, a bibendum nulla congue nec. Donec eget metus nisi. Suspendisse potenti.safsdgd thukevf wdynj sfhyj Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1  justify-content-md-start justify-content-center">
-                                    <div class="img-div mr-30 pb-10">
+                                    <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team4b.png')}}" class=" rounded-circle" alt="">
                                         </div>
@@ -413,7 +413,7 @@
                             </div>
                         </div>
 
-                        <div class="item">
+                        <div class="item pl-10 pr-10">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -428,7 +428,7 @@
                                 <p class="mb-35 pb-10 clrtext">Maecenas dignissim in dolor in blandit. eros vel lorem tempor malesuada quis efficitur erat. Nullam nec purus tempus, posuere elit non
                                 </p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1  justify-content-md-start justify-content-center">
-                                    <div class="img-div mr-30 pb-10">
+                                    <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team1b.png')}}" class=" rounded-circle" alt="">
                                         </div>
@@ -441,7 +441,7 @@
                             </div>
                         </div>
 
-                        <div class="item">
+                        <div class="item pl-10 pr-10">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -455,7 +455,7 @@
                                 <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext">Quisque enim ipsum, commodo et ven enatis gdghc jhytgv uhjbf jgfjg rutrum, luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1  justify-content-md-start justify-content-center">
-                                    <div class="img-div mr-30 pb-10">
+                                    <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team3b.png')}}" class=" rounded-circle" alt="">
                                         </div>
@@ -468,7 +468,7 @@
                             </div>
                         </div>
 
-                        <div class="item">
+                        <div class="item pl-10 pr-10">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -483,7 +483,7 @@
                                 <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext">Etiam mattis posuere sem, a bibendum nulla asfsdg kuyj dgfh yhjmh congue nec. Donec eget metus nisi. Suspendisse potenti. Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
                                 <div class="client-2-img d-flex align-items-center fixed-bottom1 justify-content-md-start justify-content-center">
-                                    <div class="img-div mr-30 pb-10">
+                                    <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team2b.png')}}" class=" rounded-circle" alt="">
                                         </div>
@@ -504,15 +504,15 @@
     
     <!-- contact -->
     <section>
-        <div class="container pt-40 pb-40">
+        <div class="container-fluid testmo text-center pt-40 pb-40">
            
              <!-- bannar start -->
-            <div class="banrimgs">
+            {{-- <div class="banrimgs"> --}}
                 <img src="{{ asset('website/assets/img/banner/contact.png')}}" alt="">
-            </div>
-            <div class="mobibanrimgs">
+            {{-- </div> --}}
+            {{-- <div class="mobibanrimgs">
             <img src="{{ asset('website/assets/img/banner/mobcontbannr.png')}}" alt="">
-            </div>
+            </div> --}}
         <!-- bannar end -->
 
         </div>

@@ -4,7 +4,7 @@
 <section>
    <!-- bannar start -->
     <div class="banrimgs">
-        <img src="{{ asset('website/assets/img/banner/contact us.png')}}" alt="">
+        <img src="{{ asset('website/assets/img/banner/contact_us.png')}}" alt="">
     </div>
     <div class="mobibanrimgs">
       <img src="{{ asset('website/assets/img/banner/mobcontact.png')}}" alt="">
