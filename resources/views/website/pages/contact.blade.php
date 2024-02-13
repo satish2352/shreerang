@@ -123,7 +123,7 @@
                             <h4 class="card-header card-info2 text-center text-white">
                                 Address
                     </h4>
-                            <div class="card-body text-justify py-4 px-5 p-5">
+                            <div class="card-body text-justify py-4 px-5">
                             <ul class="clrtext">
                                     <li><span class="f-600">Plant No 1</span> - W-127 (A),</li>
                                     <li><span class="f-600">Plant No 2</span> - W-118 (A) MIDC Ambad Nashik - 422010 ,</li>
@@ -143,22 +143,23 @@
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <img src="{{ asset('website/assets/img/contact/callimg1.png')}}" alt="">
                             </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 mt-4 p-5">
+                            <div class="col-lg-8 col-md-8 col-sm-6 mt-4">
                                 <div class="row">
-                                    <div class="col-lg-4">
-                                    <h3 class="f-700 clrtext">Contact</h3>
+                                    <div class="col-lg-3">
+                                    <h5 class="f-700 clrtext">Contact</h5>
                                     </div>
-                                    <div class="col-lg-4">
-                                    <a href="tel:+91 7028082176" class="h6 clrtext">7028082176</a>  
-                                    </div>
-                                    <div class="col-lg-4">
-                                    <a href="tel: +91 0253 - 2383517" class="h6 clrtext">0253 - 2383517</a>
-                                    </div>
+                                    <ul class="d-flex">
+                                      <li><a href="tel:+91 7028082176" class="clrtext  f-600">7028082176</a>
+                                      </li>
+                                      <li><a href="tel: +91 0253 - 2383517" class="clrtext ml-20 f-600">0253-2383517</a>
+                                      </li>
+                                    </ul>
+                                
                                              
                                 </div>
                                 <div class="row social-links py-3">
                                     <div class="col-lg-6 col-md-6 mt-15">
-                                      <h3 class="f-700 clrtext">Follow us on</h3>
+                                      <h5 class="f-700 clrtext">Follow us on</h5>
                                     
                                     </div>
                                     <div class="col-lg-6 col-md-6 social-links social-links1">

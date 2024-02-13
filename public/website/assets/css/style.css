@@ -319,10 +319,10 @@ label {
 
 .btn-round {
     border-radius: 100px;
-    padding: 15px 15px;
+    padding: 25px 25px;
     /* line-height: 11px; */
     /* text-transform: uppercase; */
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     color: #fff;
     letter-spacing: .4px;
@@ -336,14 +336,14 @@ label {
 }
 .btn-round1 {
     border-radius: 50%;
-    /* padding: 3px 6px 3px 18px; */
+    padding: 12px 5px 12px 30px;
     line-height: 11px;
     /* text-transform: uppercase; */
-    font-size: 18px;
-    font-weight: 600;
+    /* font-size: 18px; */
+    /* font-weight: 600; */
     color: #fff;
     background-color: #029A99;
-    letter-spacing: .4px;
+    /* letter-spacing: .4px; */
     /* box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5); */
 }
 .btn-round2 {
@@ -362,9 +362,10 @@ label {
     color: #fff;
 }
 
+
 .btn-round-blue {
     border-radius: 100px;
-    padding: 15px 25px;
+    padding: 10px 10px;
     line-height: 11px;
     text-transform: uppercase;
     font-size: 13px;
@@ -498,8 +499,8 @@ label {
 }
 
 .btn.wide {
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 15px;
+    padding-right: 35px;
 }
 
 .btn-border-blue {
@@ -532,9 +533,10 @@ label {
     right: 0;
     z-index: 300;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-    height: 90px;
+    height: 100px;
     width: 100%;
 }
+
 
 .logo img {
     max-width: 266px;
@@ -578,18 +580,17 @@ label {
     font-weight: 600;
     position: relative;
 }
-.servicebk{
-    background-size: cover;
-    background-image: url("../img/banner/BLUE BACKGROUND.png");
 
+
+.bg-insta{
+    background: #F9F9F9;
 }
-
 .main-menu li a {
-    font-size: 20px;
-    letter-spacing: .8px;
-    font-weight: 500;
+    font-size: 22px;
+    /* letter-spacing: .8px; */
+    font-weight: 700;
     display: inline-block;
-    padding: 20px 10px;
+    /* padding: 20px 10px; */
     color: #fff;
     text-transform: capitalize;
 }
@@ -623,7 +624,8 @@ label {
 }
 .contcatcontainer .card{
  padding: 1%;
- width: 50rem;
+ width: 40rem;
+ height: 13rem;
  border-radius: 150px;
  border: 5px solid #4CD0B2;
 }
@@ -645,7 +647,7 @@ label {
    
 }
 .main-menu li.active a {
-    /* font-size: 20px; */
+    font-size: 22px;
     font-weight: 700;
     color: #4CD0B2; /* Change color of the text */
 }
@@ -1603,11 +1605,27 @@ p.big-p {
     color: #fff;
     margin: 0px 10px;
 }
+/* .social-icons:active{
+    background: #029A99;
+} */
 
+
+.social-links .social-icons .active a i {
+    background-color: #029A99; /* Red color example */
+}
+
+.experience .ok{
+    top: 20px;
+    height: 40px;
+    width: 40px;
+    border: 8px red solid;
+    border-radius: 50%;
+    background: black;
+}
 .team-info {
     border-radius: 0px 0px 15px 15px;
     padding: 20px 10px;
-    background: #029A99
+    background: #029A99;
 }
 
 .team1{
@@ -1677,8 +1695,8 @@ p.big-p {
     border-radius: 15px 15px 15px 15px;
 }
 #prodimgss{
-    width: 65%;
-    padding: 20px 0px 15px 0px;
+    width: 80%;
+    padding: 40px 0px 40px 0px;
 }
 
 .team-2-each:hover img {
@@ -1787,7 +1805,7 @@ p.big-p {
 }
 
 .team-detail-3 h5:before {
-    position: absolute;
+    /* position: absolute; */
     content: close-quote;
     left: -35px;
     top: 14px;
@@ -2317,6 +2335,7 @@ p.big-p {
 }
 
 .lnh{
+    font-weight: 500;
     line-height: normal;
 }
 .contact-options li {
@@ -2364,7 +2383,9 @@ p.big-p {
     color: #fff;
     background-color: #029A99;
 }
-
+.social-links li .intsa a i:active{
+    background: #029A99;
+}
 
 .social-links1 li a i {
     /* padding-top: 9px; */
@@ -2405,7 +2426,7 @@ p.big-p {
     transition: all .3s;
 }
 
-.links-list a:before {
+/* .links-list a:before {
     position: absolute;
     content: close-quote;
     left: 0;
@@ -2414,17 +2435,17 @@ p.big-p {
     top: 10px;
     width: 0px;
     height: 1px;
-}
+} */
 
-.links-list a:hover:before {
+/* .links-list a:hover:before {
     -webkit-transition: all .4s;
     transition: all .4s;
     width: 15px;
-}
+} */
 
-.links-list a:hover {
+/* .links-list a:hover {
     padding-left: 25px;
-}
+} */
 
 .scroll-btn {
     height: 50px;
@@ -3675,7 +3696,7 @@ non use css
 .......................................*/
 .reviw{
     background: rgba(4, 170, 109, 0.1);
-    background-size: cover;
+    background-size:  100% 101%;;
     background-image: url('../img/banner/HOME_PAGE3.png');
 }
 

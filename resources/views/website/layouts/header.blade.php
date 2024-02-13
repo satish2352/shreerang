@@ -54,7 +54,7 @@
 
     <!-- Header start -->
     <header class="transperant-head transition-4 ">
-        <div class="container">
+        <div class="container nvvv">
             <div class="row align-items-center">
                 <div class="col-lg-2 col-md-5 col-sm-4 col-5">
                     <div class="logo transition-4">
@@ -94,7 +94,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{url('/contact')}}" class="btn btn-round2 d-none d-sm-block blob-small">Contact Us</a>
+                                    <a href="{{url('/contact')}}" class="btn btn-round2 d-none d-sm-block ">Contact Us</a>
 
                                     <a href="{{url('/contact')}}" class="d-lg-none d-md-none d-sm-block">Contact us</a>
                                     

@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="fancy-head text-center relative z-5 mt-30 mb-40 wow fadeInDown">
-                                <h1 class="clrtext fs3">Manufacturing  <span class="green">Of</span></h1>
+                                <h1 class="clrtext fs3">Manufacturing <span class="green">Of</span></h1>
                             </div>
                         </div>
                     </div>        
@@ -61,7 +61,7 @@
     </section>
     <!-- end imgs -->
     <!-- services start -->
-    <section class="servicebnnr">
+    <section class="servicebnnr paddiall">
         <div class="container-fluid testmo">
             {{-- <div class="row">
                 <div class="col-xl-12">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div> --}}
-            <div class="row align-items-center">
+            <div class="row align-items-center paddiall">
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
                         <h4 class="white text-center fs2 f-700 mb-10">
@@ -78,7 +78,7 @@
                              WOODWORKING
                             <span class="green"></span>
                         </h4>
-                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem  ipsum dolor sit amet, isicing elit. Similique distinctio iquam ipsa commodi vitae, quae culpa aut voluptates? consectetur</p>
+                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, dolorum ipsum maxime, ex aliquid sit maiores fugiat suscipit velit sapiente accusamus cupiditate explicabo reprehenderit. Nobis labore similique vel facere ullam.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                              METALWORKING
  
                         </h4>
-                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum dolor sit amet,Similique distinctio neque reiciendis.  vitae, reiciendis, minus quae culpa aut voluptates? consectetur</p>
+                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, dolorum ipsum maxime, ex aliquid sit maiores fugiat suscipit velit sapiente accusamus cupiditate explicabo reprehenderit. Nobis labore similique vel facere ullam.ur</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                             <span class="fs1">03</span>
                              <span class="">WOODWORKING</span>
                         </h4>
-                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum dolor sit amet,Similique distinctio neque reiciendis.  vitae, reiciendis, minus quae culpa aut voluptates? consectetur</p>
+                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, dolorum ipsum maxime, ex aliquid sit maiores fugiat suscipit velit sapiente accusamus cupiditate explicabo reprehenderit. Nobis labore similique vel facere ullam.ur</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -116,7 +116,7 @@
     <section>
         <div class="bkmtrl">
              
-            <div class="pt-50" data-overlay="9">
+            <div class="" data-overlay="9">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -227,8 +227,8 @@
     <section class="cardbkclr">
         <div class="container-fluid testmo1 paddiall">
             <div class="row">
-                    {{-- <div class="col-lg-1"></div> --}}
-                    <div class="col-lg-6 col-md-12 p-4">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5 col-md-12 p-4">
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/caster.png')}}" class="card-img-top" alt="...">
                         <div class="card-body  text-center card-info">
@@ -237,7 +237,7 @@
                         </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 p-4">
+                    <div class="col-lg-5 col-md-12 p-4">
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info">
@@ -247,11 +247,11 @@
                         
                     </div>
                     </div>
-                    {{-- <div class="col-lg-1"></div> --}}
+                    <div class="col-lg-1"></div>
                 
-                    {{-- <div class="col-lg-1"></div> --}}
+                    <div class="col-lg-1"></div>
 
-                    <div class="col-lg-6 col-md-12 p-4">
+                    <div class="col-lg-5 col-md-12 p-4">
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center card-info1">
@@ -260,7 +260,7 @@
                         </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 p-4">
+                    <div class="col-lg-5 col-md-12 p-4">
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/presshop.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info1">
@@ -269,7 +269,7 @@
                         </div>
                         </div>
                     </div>
-                    {{-- <div class="col-lg-1"></div> --}}
+                    <div class="col-lg-1"></div>
                
             </div>
         </div>

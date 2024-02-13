@@ -92,7 +92,7 @@
     .bkmtrl{
         /* height: 56rem; */
         background-image: url("../img/banner/SERVICES BACKGROUND.png");
-        /* background-size: cover; */
+        background-size: 100% 100%;
     }
 }
 
@@ -137,16 +137,16 @@
     }
     .contcatcontainer{
         position: absolute;
-        width: 500px;
+        /* width: 500px; */
         top: 55rem;
         left: 15rem;
         margin-bottom: 10px;
     
     }
     .bkmtrl{
-        height: 56rem;
+        height: 55rem;
         background-image: url("../img/banner/SERVICES BACKGROUND.png");
-        /* background-size: cover; */
+        background-size: 98% 100%;
     }
     .copyrt{
         margin-left: 90px;
@@ -159,10 +159,11 @@
     }
     .hrline {
         /* border: 1px solid #029A99; */
-        width: 90%;
-        margin-right: 17px;
+        width: 82%;
+        /* margin-right: 17px; */
     }
     .footlogocol{
+        background-color: #C2FCF1;
         align-items: center;
         
     }
@@ -186,7 +187,7 @@
     }
     .contcatcontainer{
         position: absolute;
-        width: 500px;
+        /* width: 500px; */
         top: 55rem;
         left: 15rem;
         margin-bottom: 10px;
@@ -202,7 +203,7 @@
         transition: all .4s;
         box-shadow: 0 4px 10px rgba(40, 47, 65, 0.26);
         z-index: 20;
-        height: 65px;
+        height: 80px;
         -webkit-animation: showHeader 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         -moz-animation: showHeader 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         -o-animation: showHeader 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
@@ -229,9 +230,16 @@
         padding-bottom: 50px; 
     
     }
+
+    .servicebk{
+        background-size: 100% 114%;
+        background-image: url("../img/banner/SERVICE_blue_backgroung.png");
+    
+    }
     .mrtp{
+        font-weight: 600;
         position: absolute;
-        margin-top: -40px;
+        margin-top: -10px;
     }
     .icn i{
         padding: 2px;
@@ -251,7 +259,7 @@
 
     .servbtn{
        
-        margin-left: 60px;
+        margin-left: 80px;
     }
     .testmo{
         padding-left: 100px;
@@ -267,13 +275,13 @@
         padding-right: 200px;
     }
     .fs1{
-        font-size: 55px;
+        font-size: 45px;
     }
     .fs2{
         font-size: 30px;
     }
     .fs3{
-        font-size: 50px;
+        font-size: 45px;
     }
     
    
@@ -326,9 +334,8 @@
     }
    
     .servicebnnr{
-        padding-top: 100px;
-        padding-bottom: 100px;
-        background-size: cover;
+       
+        background-size: 100% 100%;
         background-image: url('../img/banner/GREEN BACKGROUND.png');
     
     }
@@ -344,9 +351,12 @@
     .mobibanrimgs{
         display: none;
     }
+    .nvvv{
+        padding: 15px 10px 0px 5px;
+    }
     .transperant-head.fixed-nav .main-menu > ul> li > a {
         /* margin-top: 10px; */
-        padding: 15px 15px;
+        /* padding: 10px 10px; */
     }
     .transperant-head.fixed-nav .logo img {
         max-width: 200px;
@@ -413,7 +423,7 @@
     }
     .footlogocol{
         align-items: center;
-        background-color: #C2FCF1;
+        /* background-color: #C2FCF1; */
     }
     .addrescard{
         color: #444;
@@ -424,7 +434,7 @@
     }
     .contcatcontainer{
         position: absolute;
-        width: 500px;
+        /* width: 500px; */
         top: 55rem;
         left: 15rem;
         margin-bottom: 10px;
@@ -441,7 +451,7 @@
     }
     .footlogocol{
         align-items: center;
-        background-color: #C2FCF1;
+        /* background-color: #C2FCF1; */
     }
     
    
@@ -459,7 +469,7 @@
     }
     .contcatcontainer{
         position: absolute;
-        width: 500px;
+        /* width: 500px; */
         top: 58rem;
         left: 8rem;
         margin-bottom: 10px;
@@ -706,7 +716,7 @@
     }
     .contcatcontainer{
         position: absolute;
-        width: 500px;
+        /* width: 500px; */
         top: 58rem;
         left: 8rem;
         margin-bottom: 10px;
@@ -861,12 +871,12 @@
     }
     .contcatcontainer .card{
        
-        width: 15rem;
+        /* width: 15rem; */
         border-radius: 150px;
        
        }
        .contcatcontainer .card img{
-        width: 14rem;
+        width: 10rem;
        }
   
     .contcatcontainer{

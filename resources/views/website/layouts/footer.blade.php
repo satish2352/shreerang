@@ -17,10 +17,10 @@
                             <div class="footer-links pt-20 pt-md- mb-0">
                                 <h4 class="green f-700 mb-20 foottitle">ADDRESS</h4>
                                 <ul class="links-list">
-                                    <li><span class="green f-700">Plant No 1</span><a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87"  target="blank"> - W-127 (A), MIDC, Ambad Nashik- 422010,</li></a>
-                                    <li><span class="green f-700">Plant No 2</span><a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6"  target="blank"> - W-118 (A), MIDC, Ambad Nashik - 422010 ,</li></a>
-                                    <li><span class="green f-700">Plant No 3</span><a href=""  target="blank"> - GAT NO-679/2/1 , Kurli Alandi Road ,Chankan , Tal-khed Dist-Pune - 410501,</li></a>
-                                    <li><span class="green f-700">Plant No 4</span><a href="https://maps.app.goo.gl/8vvmafbwcG6vSJ5A9" target="blank"> - GF PLOT NO-913 Shreeji Engg.,GIDC,Halol , Panchamahal Gujarat - 389350</li></a>
+                                    <li><span class="green f-700">Plant No 1</span><a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87"  target="blank"> W-127 (A), MIDC, Ambad Nashik- 422010,</li></a>
+                                    <li><span class="green f-700">Plant No 2</span><a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6"  target="blank"> W-118 (A), MIDC, Ambad Nashik - 422010 ,</li></a>
+                                    <li><span class="green f-700">Plant No 3</span><a href=""  target="blank"> GAT NO-679/2/1 , Kurli Alandi Road ,Chankan , Tal-khed Dist-Pune - 410501,</li></a>
+                                    <li><span class="green f-700">Plant No 4</span><a href="https://maps.app.goo.gl/8vvmafbwcG6vSJ5A9" target="blank"> GF PLOT NO-913 Shreeji Engg.,GIDC,Halol , Panchamahal Gujarat - 389350</li></a>
                                    
                                 </ul>
                             </div>
@@ -36,12 +36,12 @@
                                 <div class="social-links foottitle_sub pt-10">
                                         <ul class="social-icons iconlist">
                                             <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="#" ><i class="fab fa-facebook-f"></i></a>
                                             </li>
                                             <!-- <li>
                                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                             </li> -->
-                                            <li>
+                                            <li class="active" >
                                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                             </li>
                                             <li>
@@ -77,7 +77,7 @@
                                         <p class="mb-3 white copyrt">Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank" class="white">sumagoinfotech</a> 2024. All rights reserved.</p>
                                         </div>
                                         <div class="col-xl-3 col-md-3 banrimgs justify-content-lg-end">
-                                            <p class="mb-3 pl-100 ml-10 white">Terms & Conditions</p>
+                                            <p class="mb-3 white">Terms & Conditions</p>
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@
                                             <!-- <li>
                                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                             </li> -->
-                                            <li>
+                                            <li  class="active">
                                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                             </li>
                                             <li>
