@@ -512,11 +512,10 @@ label {
     line-height: 0;
 }
 /* material handling */
-.maetrialback{
-    background-image: url("../img/banner/SERVICES BACKGROUND.png");
-    background-size: cover;
-}
 
+.pdmat{
+    padding: 4rem;
+}
 
 /* ....................................
 3. Header
@@ -2317,6 +2316,9 @@ p.big-p {
     background: #243772;
 }
 
+.lnh{
+    line-height: normal;
+}
 .contact-options li {
     color: #abb3bb;
     position: relative;
@@ -2383,6 +2385,7 @@ p.big-p {
     margin-bottom: 10px;
 }
 .links-list li a {
+    font-weight: 500;
     color: #e5eaf0;
     /* margin-bottom: 10px; */
 }
@@ -2942,6 +2945,7 @@ li:last-child .other-dervices {
     font-weight: 500;
 }
 .director{
+    height: 350px;
     border-radius: 175px;
     background: #243772; 
 }
@@ -3618,7 +3622,7 @@ ul li:last-child .icon-round-box-icon {
     width: 40px;
     height: 40px;
     left: 48px;
-    top: 95px;
+    top: 90px;
     border-radius: 50%;
 }
 
@@ -3626,7 +3630,7 @@ ul li:last-child .icon-round-box-icon {
     content: close-quote;
     position: absolute;
     left: 66px;
-    top: 95px;
+    top: 90px;
     height: 100%;
     width: 2px;
     border: 2px solid black;
@@ -3745,10 +3749,12 @@ ul.theme-ul li img {
     margin-right: 110px;
 }
 
-
+/* .desktopfoot{
+    background-color: #C2FCF1;
+} */
 
 .bakimgbnr{
-    
+    background-size: cover;
     background-image: url('../img/banner/manufat.png');
 }
 

@@ -90,11 +90,11 @@
 </section> -->
 <!-- end history -->
     <!-- Director Desk -->
-    <section class="pt-30 pb-40" id="direct">
+    <section class=" paddiall" id="direct">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 mb-4 wow fadeInDown">
+                        <div class="fancy-head text-center relative z-5 wow fadeInDown">
                             <h1>Director Desk</h1>
                         </div>
                     </div>
@@ -103,36 +103,18 @@
                 <div class="container text-center">
                     <img src="{{ asset('website/assets/img/about/review.png')}}" id="dirimg">
                 </div>
-                {{-- <div class="container-fluid text-center">
-                    <div class="row sup ">
-            
-                        <div class="col-lg-3 sid1">
-                            <img src="{{ asset('website/assets/img/about/director1.png')}}" class=" dirim" alt="">
-                        </div>
-                        <div class="col-lg-6 backd d-flex align-items-center">
-                            <p class=" ps-lg-5  py-sm-5"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, saepe! Culpa facere
-                                a aut fugit
-                                perspiciatis itaque alias amet tempore autem tenetur. Mollitia accusantium magnam quasi labore
-                                necessitatibus enim inventore!</p>
-                        </div>
-                        <div class="col-lg-3 sid2">
-            
-                        </div>
-            
-            
-                    </div>
-                </div> --}}
-                {{-- <div class="container">
-       
-                    <div class="row">
-                       <div class="card director relative shadow-1">
+                
+                {{-- <div class="container paddiall">
+
+                       <div class="director card position-relative shadow-1">  
                                
-                           <div class="row p-2">
+                           <div class="row">
                                <div class="col-lg-4 col-md-4 col-sm-4">
-                                   <img src="{{ asset('website/assets/img/about/director1.png')}}" alt="">
+                                    <img src="{{ asset('website/assets/img/about/doottt.png')}}" class=" pl-20 ml-10" alt="">
+                                   <img src="{{ asset('website/assets/img/about/director1.png')}}" style="top:120px; left:70px; position:absolute; " alt="">
                                </div>
-                               <div class="col-lg-8 col-md-8 col-sm-8 p-5 deskk">
-                                   <h5 class="white">Lorem ipsum dolor adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h5>
+                               <div class="col-lg-6 col-md-8 col-sm-8 ml-30 deskk">
+                                   <h3 class="white">Lorem ipsum dolor adipisicing elit. provident cupiditate blanditiis harum neque ipsum!</h3>
                                    
                                    </div>
                                   
@@ -140,31 +122,14 @@
                                </div>
                            </div>
                        </div>
-                    </div>
+
                         
                 </div> --}}
 
 
-                {{-- <div class="container">
-                    <div class="row sup">
-            
-                        <div class="col-lg-3 sid1 rounded-start-pill">
-                            <img src="{{ asset('website/assets/img/about/director1.png')}}" class=" dirim" alt="">
-                        </div>
-            
-                        <div class="col-lg-5 backd">
-                            <p class="mt-5 d-flex justify-content-end"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, saepe! Culpa facere
-                                a aut fugit
-                                perspiciatis itaque alias amet tempore autem tenetur. Mollitia accusantium magnam quasi labore
-                                necessitatibus enim inventore!</p>
-                        </div>
-            
-                        <div class="col-lg-3 sid2 rounded-end-pill"></div>
-            
-                    </div>
-                </div>
                 
-            </div> --}}
+                
+            </div>
   
    
        
@@ -181,7 +146,7 @@
                     <div class="row">
                     <div class="col-lg-5 text-center">
                         <div class="">
-                            <h2 class="f-700">VISION</h2>
+                            <h2 class="f-700 p-4">VISION</h2>
                         </div>
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
@@ -222,7 +187,7 @@
             </div>
         </section>
     
-       <section class="team-area pt-10 pb-30">
+       <section class="team-area pt-10">
         <div class="container">
             <div class="row">
 

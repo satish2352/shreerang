@@ -363,15 +363,15 @@ button,
 }
 /*important*/
 .team-each:hover{
-background: #e9f1f9;
+background: #FFFFFF;
 }
 .light-white {
     background: #e9f1f9 !important;
 }
-.team-each:hover .team-info h5 a{
+.team-each:hover .team-info h3 a{
     color: #243772;
 }
-.team-each .team-info h5 a{
+.team-each .team-info h3 a{
     color: #e9f1f9;
 }
 /* ....................................

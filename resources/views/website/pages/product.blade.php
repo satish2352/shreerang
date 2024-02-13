@@ -37,11 +37,11 @@
                         <div class="team-image  relative">
                             <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">            
                         </div>
-                        <div class="team-info card-body transition-4">
-                            <h5>
+                        <div class="team-info transition-4">
+                            <h3 class="ml-30">
                             <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
-                            </h5>
-                            <p class="mb-0"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
+                            </h3>
+                            <p class="mb-0 ml-30"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
                         </div>
                     </div>
                 </div>
@@ -53,11 +53,11 @@
                            
                         </div>
                         <div class="team-info transition-4">
-                            <h5>
-                            <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
-                            </h5>
-                            <p class="mb-0"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
-                        </div>
+                            <h3 class="ml-30">
+                                <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
+                                </h3>
+                                <p class="mb-0 ml-30"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
+                            </div>
                     </div>
                 </div>
 
@@ -68,11 +68,11 @@
                            
                         </div>
                         <div class="team-info transition-4">
-                            <h5>
-                            <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
-                            </h5>
-                            <p class="mb-0"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
-                        </div>
+                            <h3 class="ml-30">
+                                <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
+                                </h3>
+                                <p class="mb-0 ml-30"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
+                            </div>
                     </div>
                 </div>
 
@@ -83,10 +83,10 @@
                             
                         </div>
                         <div class="team-info transition-4">
-                            <h5>
-                            <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
-                            </h5>
-                            <p class="mb-0"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
+                            <h3 class="ml-30">
+                                <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
+                                </h3>
+                                <p class="mb-0 ml-30"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
                         </div>
                     </div>
                 </div>
@@ -98,10 +98,10 @@
                            
                         </div>
                         <div class="team-info transition-4">
-                            <h5>
-                            <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
-                            </h5>
-                            <p class="mb-0"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
+                            <h3 class="ml-30">
+                                <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
+                                </h3>
+                                <p class="mb-0 ml-30"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
                         </div>
                     </div>
                 </div>
@@ -113,11 +113,11 @@
                            
                         </div>
                         <div class="team-info transition-4">
-                            <h5>
-                        <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
-                        </h5>
-                        <p class="mb-0"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
-                        </div>
+                            <h3 class="ml-30">
+                                <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
+                                </h3>
+                                <p class="mb-0 ml-30"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
+                            </div>
                     </div>
                 </div>
 
@@ -128,11 +128,11 @@
                            
                         </div>
                         <div class="team-info transition-4">
-                            <h5>
-                            <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
-                            </h5>
-                            <p class="mb-0"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
-                        </div>
+                            <h3 class="ml-30">
+                                <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
+                                </h3>
+                                <p class="mb-0 ml-30"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
+                            </div>
                     </div>
                 </div>
 
@@ -143,11 +143,11 @@
                             
                         </div>
                         <div class="team-info transition-4">
-                            <h5>
-                            <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
-                            </h5>
-                            <p class="mb-0"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
-                        </div>
+                            <h3 class="ml-30">
+                                <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
+                                </h3>
+                                <p class="mb-0 ml-30"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
+                             </div>
                     </div>
                 </div>
 
@@ -158,11 +158,11 @@
                            
                         </div>
                         <div class="team-info transition-4">
-                            <h5>
-                            <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
-                            </h5>
-                            <p class="mb-0"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
-                        </div>
+                            <h3 class="ml-30">
+                                <a href="{{url('/product_details')}}" class="f-700">Parts Trolley</a>
+                                </h3>
+                                <p class="mb-0 ml-30"><a href="{{url('/product_details')}}" class="btn btn-round-blue wide mt-10 z-8">Product</a></p>
+                              </div>
                     </div>
                 </div>
 

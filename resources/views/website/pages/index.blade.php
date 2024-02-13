@@ -215,7 +215,7 @@
                     <div class="col-lg-9 col-md-6"></div>
                     <div class="col-lg-3 col-md-6">
 
-                        <a href="{{url('/product')}}" class="btn btn-round p-4">View all products</a>
+                        <a href="{{url('/product')}}" class="btn btn-round p-3">View all products</a>
                     </div>
                 </div>
         </div>
@@ -227,7 +227,7 @@
 
         <!-- services start -->
         <section class="servicebk paddiall" data-overlay="9">
-        <div class="container-fluid testmo">
+        <div class="container-fluid testmo mobserv">
             <div class="row">
                     <div class="col-xl-12">
                         <div class="fancy-head text-center relative z-5 mb-20 wow fadeInDown">
@@ -238,35 +238,35 @@
                 <div class="row align-items-center mb-10">
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
-                            <h4 class="white text-center fs2 f-700 mb-10">
+                            <h4 class="white text-center f-700 mb-10">
                                 <span class="f-800 fs1">01</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h4>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 pfonts f-500 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 pfonts f-500 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ipsum dolor labore</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
-                            <h4 class="white f-700 text-center fs2 mb-10">
+                            <h4 class="white f-700 text-center mb-10">
                                 <span class="f-800 fs1">02</span>
                                 METALWORKING
     
                             </h4>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 pfonts f-500 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 pfonts f-500 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ipsum dolor labore </p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
-                            <h4 class="white f-700 text-center fs2 mb-10">
+                            <h4 class="white f-700 text-center mb-10">
                                 <span class="f-800 fs1">03</span>
                                 WOODWORKING<span class="green"></span>
                             </h4>
-                            <p class="white1 pfonts mb-5 mb-md-30 pr-60 pfonts f-500 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipi sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                            <p class="white1 pfonts mb-5 mb-md-30 pr-60 pfonts f-500 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet, consectetur adipi sit amet, consectetur adipiscing elit</p>
                             <div class="servbtn">
-                                <a href="{{url('/services')}}" class="btn btn-round p-4 justify-content-end">View all services</a>
+                                <a href="{{url('/services')}}" class="btn btn-round p-3 justify-content-end">View all services</a>
 
                             </div>
                         </div>
@@ -299,28 +299,28 @@
             </div>
         </section> --}}
       <section>
-        <div class="container-fluid testmo pt-50 pb-50">
+        <div class="container-fluid testmo mobserv pb-100">
             <div class="row">
-                <div class="col-xl-4 pl-30 pr-30 mt-10">
+                <div class="col-xl-4 pl-60 pr-60 mt-10 mb-10">
                     <div class="text-center">
                         <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">01 </h1></span> Request</h2>
                         <img src="{{ asset('website/assets/img/icons/request.png')}}" alt="">
-                        <h6 class="clrtext text-center">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 
-                <div class="col-xl-4 pl-30 pr-30 mt-10">
+                <div class="col-xl-4 pl-60 pr-60 mt-10 mb-10">
                     <div class="text-center">
                     <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">02 </h1></span> Develop</h2>
                         <img src="{{ asset('website/assets/img/icons/develop.png')}}"  alt="">
-                        <h6 class="clrtext text-center">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
-                <div class="col-xl-4 pl-30 pr-30 mt-10">
+                <div class="col-xl-4 pl-60 pr-60 mt-10 mb-10">
                     <div class="text-center">
                     <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">03 </h1></span> Install</h2>
                         <img src="{{ asset('website/assets/img/icons/install.png')}}"  alt="">
-                        <h6 class="clrtext text-center">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
             </div>
@@ -329,8 +329,8 @@
     <!-- end  How we work-->
 
      <!-- Testimonial area start -->
-     <section class="testimonials-2 reviw paddiall2">
-        <div class="container-fluid testmo">
+     <section class="testimonials-2 reviw ">
+        <div class="container paddiall2">
             <div class="row align-items-center mb-30">
                 <div class="col-lg-12 col-md-12 text-center text-lg-center">
                     <div class="fancy-head left-al wow fadeInLeft">
@@ -360,7 +360,7 @@
                 <div class="col-xl-12">
                     <div class="owl-carousel owl-theme testimonial-2-slide  wow fadeIn">
                         <div class="item pl-10 pr-10">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 360px; border-top:15px solid #243772; background:#e2feff">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -370,9 +370,9 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
-                                <h4 class="f-700 mb-20 pt-20 ml-50 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext"> jhruios  Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
-                                <div class="client-2-img d-flex align-items-center fixed-bottom1 justify-content-md-start justify-content-center">
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <p class="mb-35 pb-10 clrtext lnh"> jhruios  Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
+                                <div class="client-2-img d-flex  fixed-bottom1 justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team5b.png')}}" class=" rounded-circle" alt="">
@@ -387,7 +387,7 @@
                         </div>
 
                         <div class="item pl-10 pr-10">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 360px; border-top:15px solid #243772; background:#e2feff"">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -397,9 +397,9 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
-                                <h4 class="f-700 mb-20 ml-50 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext">Etiam mattis posuere sem, a bibendum nulla congue nec. Donec eget metus nisi. Suspendisse potenti.safsdgd thukevf wdynj sfhyj Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
-                                <div class="client-2-img d-flex align-items-center fixed-bottom1  justify-content-md-start justify-content-center">
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <p class="mb-35 pb-10 clrtext lnh">Etiam mattis posuere sem, a bibendum nulla congue nec. Donec eget metus nisi. Suspendisse potenti.safsdgd thukevf wdynj sfhyj Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
+                                <div class="client-2-img d-flex  fixed-bottom1  justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team4b.png')}}" class=" rounded-circle" alt="">
@@ -414,7 +414,7 @@
                         </div>
 
                         <div class="item pl-10 pr-10">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 360px; border-top:15px solid #243772; background:#e2feff"">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -424,10 +424,10 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
-                                <h4 class="f-700 mb-20 ml-50 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext">Maecenas dignissim in dolor in blandit. eros vel lorem tempor malesuada quis efficitur erat. Nullam nec purus tempus, posuere elit non
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <p class="mb-35 pb-10 clrtext lnh">Maecenas dignissim in dolor in blandit. eros vel lorem tempor malesuada quis efficitur erat. Nullam nec purus tempus, posuere elit non
                                 </p>
-                                <div class="client-2-img d-flex align-items-center fixed-bottom1  justify-content-md-start">
+                                <div class="client-2-img d-flex fixed-bottom1  justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team1b.png')}}" class=" rounded-circle" alt="">
@@ -442,7 +442,7 @@
                         </div>
 
                         <div class="item pl-10 pr-10">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 360px; border-top:15px solid #243772; background:#e2feff"">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -452,9 +452,9 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
-                                <h4 class="f-700 mb-20 ml-50 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext">Quisque enim ipsum, commodo et ven enatis gdghc jhytgv uhjbf jgfjg rutrum, luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
-                                <div class="client-2-img d-flex align-items-center fixed-bottom1  justify-content-md-start justify-content-center">
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <p class="mb-35 pb-10 clrtext lnh">Quisque enim ipsum, commodo et ven enatis gdghc jhytgv uhjbf jgfjg rutrum, luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
+                                <div class="client-2-img d-flex fixed-bottom1  justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team3b.png')}}" class=" rounded-circle" alt="">
@@ -469,7 +469,7 @@
                         </div>
 
                         <div class="item pl-10 pr-10">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 360px; border-top:15px solid #243772; background:#e2feff"">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -480,9 +480,9 @@
                                     </li>
                                 </ul> -->
                                 
-                                <h4 class="f-700 mb-20 ml-50 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext">Etiam mattis posuere sem, a bibendum nulla asfsdg kuyj dgfh yhjmh congue nec. Donec eget metus nisi. Suspendisse potenti. Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
-                                <div class="client-2-img d-flex align-items-center fixed-bottom1 justify-content-md-start justify-content-center">
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <p class="mb-35 pb-10 clrtext lnh">Etiam mattis posuere sem, a bibendum nulla asfsdg kuyj dgfh yhjmh congue nec. Donec eget metus nisi. Suspendisse potenti. Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
+                                <div class="client-2-img d-flex fixed-bottom1 justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team2b.png')}}" class=" rounded-circle" alt="">

@@ -71,8 +71,9 @@
         margin-bottom: 10px;
     
     }
+ 
     #footlogo{
-        width: 100%;
+        width: 95%;
         margin-left: 40px;
 
         /* height: 410px;
@@ -87,6 +88,11 @@
     }
     .hrline{
         margin-right: 108px;
+    }
+    .bkmtrl{
+        /* height: 56rem; */
+        background-image: url("../img/banner/SERVICES BACKGROUND.png");
+        /* background-size: cover; */
     }
 }
 
@@ -121,29 +127,44 @@
         border-radius: 250px 0px 0px 250px;
         bottom: 0;
     }  */
- .addrescard{
+
+    .addrescard{
         color: #444;
-        top: 610px;
+        top: 450px;
         position: absolute;
-        left: 55rem;
+        left: 60rem;
         width: 25%;;
     }
     .contcatcontainer{
         position: absolute;
         width: 500px;
-        top: 62rem;
+        top: 55rem;
         left: 15rem;
         margin-bottom: 10px;
     
+    }
+    .bkmtrl{
+        height: 56rem;
+        background-image: url("../img/banner/SERVICES BACKGROUND.png");
+        /* background-size: cover; */
     }
     .copyrt{
         margin-left: 90px;
     }
  
+    .pfonts{
+        opacity: 67%;
+        /* color: #fff; */
+        font-size: 22px;
+    }
     .hrline {
         /* border: 1px solid #029A99; */
         width: 90%;
         margin-right: 17px;
+    }
+    .footlogocol{
+        align-items: center;
+        
     }
     
     
@@ -155,6 +176,21 @@
     }
     .copyrt{
         margin-left: 0px;
+    }
+    .addrescard{
+        color: #444;
+        top: 450px;
+        position: absolute;
+        left: 60rem;
+        width: 25%;;
+    }
+    .contcatcontainer{
+        position: absolute;
+        width: 500px;
+        top: 55rem;
+        left: 15rem;
+        margin-bottom: 10px;
+    
     }
 }
 /*end*/
@@ -187,19 +223,32 @@
         padding-bottom: 90px; 
     
     }
+ 
     .paddiall2{
-        padding-top: 100px;
-        padding-bottom: 100px; 
+        padding-top: 50px;
+        padding-bottom: 50px; 
     
+    }
+    .mrtp{
+        position: absolute;
+        margin-top: -40px;
+    }
+    .icn i{
+        padding: 2px;
+        background-color: #243772;
+        color: white;
+        margin-left: 50px;
     }
     .misiionbak{
         background-image: url('../img/banner/MISIONBACKGRD.png');
     }
     .deskk{
-        top: 50px;
-        padding: 0px 45px 0px 1px;
+        top: 94px;
+        padding: 0px 5px 19px 66px;
         text-align: justify;
     }
+
+
     .servbtn{
        
         margin-left: 60px;
@@ -221,23 +270,23 @@
         font-size: 55px;
     }
     .fs2{
-        font-size: 35px;
+        font-size: 30px;
     }
     .fs3{
-        font-size: 60px;
+        font-size: 50px;
     }
     
    
     .img2{
-        padding-top: 45px;
+        padding-top: 20px;
     }
    
     .img3{
-        padding-top: 45px;
+        padding-top: 80px;
     }
    
     .img4{
-        padding-top: 45px;
+        padding-top: 20px;
     }
     .sevimg{
         width: 30rem;
@@ -273,7 +322,7 @@
         font-size: 22px;
     }
     #dirimg{
-        width: 75%;
+        width: 85%;
     }
    
     .servicebnnr{
@@ -283,38 +332,7 @@
         background-image: url('../img/banner/GREEN BACKGROUND.png');
     
     }
-    /* director */
-    .dirim {
-        height: 250px;
-        width: 250px;
-        transform: translate(30%, 40%);
-    }
-
-    .backd {
-        background-color: #243772;
-        color: white;
-        align-items: center;
-        font-size: 20px;
-    }
-
-    .backd p {
-        transform: translate(20%, 0%);
-    }
-
-    .sid1 {
-        border-radius: 50% 0% 0% 50%;
-        background: url('/img/about/director1.png'), #243772;
-        background-repeat: no-repeat;
-        width: 16rem;
-    }   
-
-    .sid2 {
-        border-radius: 0% 50% 50% 0%;
-        background-color: #243772;
-        width: 8rem;
-    }
-
-/* director */
+ 
     .vison{
         margin-top: 60px;
         text-align: start;
@@ -385,8 +403,8 @@
         background-color: #fff;
         height: 63px;
     }
-}
 
+}
 
 /*==========  Non-Mobile First Method  ==========*/
 @media (min-width: 1024px) and (max-width:1336px){
@@ -394,7 +412,23 @@
         display: none;
     }
     .footlogocol{
-        background-color: #4CD0B2;
+        align-items: center;
+        background-color: #C2FCF1;
+    }
+    .addrescard{
+        color: #444;
+        top: 450px;
+        position: absolute;
+        left: 60rem;
+        width: 25%;;
+    }
+    .contcatcontainer{
+        position: absolute;
+        width: 500px;
+        top: 55rem;
+        left: 15rem;
+        margin-bottom: 10px;
+    
     }
    
 }
@@ -404,6 +438,10 @@
 @media only screen and (max-width: 1199px) {
     .main-menu li {
         margin: 0px 12px;
+    }
+    .footlogocol{
+        align-items: center;
+        background-color: #C2FCF1;
     }
     
    
@@ -498,24 +536,7 @@
     .slider-area {
         min-height: 650px;
     }
-    /* .deskk{
-        
-        text-align: justify;
-    }
-    .backd p {
-        transform: translate(0%, 10%);
-    }
-
-    .dirim {
-        height: 250px;
-        width: 250px;
-        transform: translate(10%, 10%);
-    }
-    .sid1 {
-    border-radius: 0% 0% 0% 0%;
-    background: url('website/assets/img/about/director1.png'), #243772;
-} */
-
+ 
     .servicebnnr{
         padding-top: 10px;
         padding-bottom: 10px;
@@ -530,6 +551,18 @@
     
     }
 
+    .deskk{
+        left: 126px;
+        text-align: justify;
+        padding: 0px 1px 18px 100px;
+    }
+
+
+    
+    .mobserv{
+        padding-top: 50px;
+        padding-bottom: 50px; 
+    }
     .servicebk{
         background-color: #243772;
     }
@@ -801,6 +834,11 @@
         padding: 45% 6% 0% 12%;
         border-radius: 279px 261px 0px 0px;
     }
+    .director{
+        height: 350px;
+        border-radius: 175px;
+        background: #243772; 
+    }
    
     .desktopfoot{
         display: none;
@@ -818,7 +856,7 @@
         color: #444;
         top: 40px;
         position: relative;
-        left: 1px;
+        left: 0px;
         width: 100%;;
     }
     .contcatcontainer .card{
@@ -830,6 +868,7 @@
        .contcatcontainer .card img{
         width: 14rem;
        }
+  
     .contcatcontainer{
         position: relative;
         width: 500px;

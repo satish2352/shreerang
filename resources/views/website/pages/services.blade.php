@@ -14,7 +14,7 @@
 
 
     <!-- imgs -->
-    <section class="paddiall" >
+    <section class="paddiall2" >
         <div class="" data-overlay="9">
                 <div class="container">
                     <div class="row">
@@ -78,7 +78,7 @@
                              WOODWORKING
                             <span class="green"></span>
                         </h4>
-                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00 text-opacity-50">Lorem  ipsum dolor sit amet, isicing elit. Similique distinctio neque reiciendis. Obcaecati eveniet quos rerum quia! Ut voluptatum minima aliquam ipsa commodi vitae, reiciendis, minus quae culpa aut voluptates? consectetur</p>
+                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem  ipsum dolor sit amet, isicing elit. Similique distinctio iquam ipsa commodi vitae, quae culpa aut voluptates? consectetur</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                              METALWORKING
  
                         </h4>
-                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum dolor sit amet,Similique distinctio neque reiciendis. Obcaecati eveniet quos rerum quia! Ut voluptatum minima aliquam ipsa commodi vitae, reiciendis, minus quae culpa aut voluptates? consectetur</p>
+                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum dolor sit amet,Similique distinctio neque reiciendis.  vitae, reiciendis, minus quae culpa aut voluptates? consectetur</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                             <span class="fs1">03</span>
                              <span class="">WOODWORKING</span>
                         </h4>
-                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum dolor sit amet,Similique distinctio neque reiciendis. Obcaecati eveniet quos rerum quia! Ut voluptatum minima aliquam ipsa commodi vitae, reiciendis, minus quae culpa aut voluptates? consectetur</p>
+                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum dolor sit amet,Similique distinctio neque reiciendis.  vitae, reiciendis, minus quae culpa aut voluptates? consectetur</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                  
     <div class="container maetrialback">
         <div class="row d-flex justify-content-center m-5">
-                <div class="col-md-8 col-lg-10 shadows p-5">
+                <div class="col-md-8 col-lg-10 card shadows pdmat">
                                     <div class="row shadow-lg ">
                                         <div class="col-md-6 oneim p-3 d-flex justify-content-center">
                                             <!-- <img class="p-4" src="./img/service/AUTOMOBILE.png" alt=""> 

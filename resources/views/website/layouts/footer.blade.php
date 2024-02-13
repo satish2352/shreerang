@@ -1,7 +1,7 @@
 
     <!-- Footer area start -->
     {{-- for desktop view  --}}
-<section class="desktopfoot">
+<section class="desktopfoot paddiall2">
     <div class="row footlogocol">
         <div class="col-lg-3 col-md-12 text-center bg-green-op-6" style="">
             <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="footlogo" alt="">
