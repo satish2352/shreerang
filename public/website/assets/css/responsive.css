@@ -33,21 +33,7 @@
     .copyrt{
         margin-left: 40px;
     }
-    .addrescard{
-        color: #444;
-        top: 516px ;
-        position: absolute;
-        left: 75rem !important;
-        width: 25%;
-    }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 75rem;
-        left: 35rem !important;
-        margin-bottom: 10px;
-    
-    }
+   
 }
 
 
@@ -56,21 +42,7 @@
     /* .footbak{
         border-radius: 250px 0px 0px 250px;
     } */
-    .addrescard{
-        color: #444;
-        top: 670px ;
-        position: absolute;
-        left: 75rem !important;
-        width: 25%;
-    }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 75rem;
-        left: 35rem !important;
-        margin-bottom: 10px;
-    
-    }
+
  
     #footlogo{
         width: 100%;
@@ -103,21 +75,7 @@
         border-radius: 250px 0px 0px 250px;
     }
 
-    /* .addrescard{
-        color: #444;
-        top: 500px;
-        position: absolute;
-        left: 44rem;
-        width: 30%;;
-    }
-    .contcatcontainer{
-        position: absolute;
-        width: 500px;
-        top: 58rem;
-        left: 8rem;
-        margin-bottom: 10px;
-    
-    } */
+  
 }
 
 /* Large devices (Above 1200px) */
@@ -128,21 +86,7 @@
         bottom: 0;
     }  */
 
-    .addrescard{
-        color: #444;
-        top: 450px;
-        position: absolute;
-        left: 60rem;
-        width: 25%;;
-    }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 55rem;
-        left: 15rem;
-        margin-bottom: 10px;
-    
-    }
+
     .bkmtrl{
         height: 55rem;
         background-image: url("../img/banner/SERVICES BACKGROUND.png");
@@ -181,19 +125,23 @@
     }
     .addrescard{
         color: #444;
-        top: 450px;
-        position: absolute;
-        left: 60rem;
-        width: 25%;;
+        top: -38pc;
+        position: relative;
+        left: 57pc;
+        margin-left: -16pc;
+    
     }
+  
+  
     .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 55rem;
-        left: 15rem;
+        position: relative;
+        width: 500px;
+        top: 56rem;
+        left: 20rem;
         margin-bottom: 10px;
     
     }
+ 
 }
 /*end*/
 
@@ -442,21 +390,21 @@
         align-items: center;
         /* background-color: #C2FCF1; */
     }
-    .addrescard{
+    /* .addrescard{
         color: #444;
         top: 450px;
         position: absolute;
-        left: 60rem;
+        left: 57rem;
         width: 25%;;
     }
     .contcatcontainer{
         position: absolute;
-        /* width: 500px; */
+    
         top: 55rem;
         left: 15rem;
         margin-bottom: 10px;
     
-    }
+    } */
    
 }
 
@@ -477,21 +425,7 @@
         display: inline-block;
     }
 
-    .addrescard{
-        color: #444;
-        top: 470px;
-        position: absolute;
-        left: 43rem;
-        width: 30%;;
-    }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 58rem;
-        left: 8rem;
-        margin-bottom: 10px;
-    
-    }
+   
     /* #footlogo{
         width: 50%;
     } */
@@ -571,10 +505,29 @@
 
         
     }
+    .contcatcontainer{
+        position: absolute;
+        /* width: 500px; */
+        top: 75rem;
+        left: 35rem;  
+        margin-bottom: 10px;
+    
+    }
+    .contcatcontainer .card{
+     padding: 1%;
+     width: 40rem;
+     height: 13rem;
+     border-radius: 150px;
+     border: 5px solid #4CD0B2;
+    }
+    
+    .desktopfoot{
+        display: none;
+    }
 
     .paddiall2{
         padding-top: 30px;
-        padding-bottom: 10px; 
+        padding-bottom: 30px; 
     
     }
     .mobmaterl{
@@ -630,13 +583,7 @@
     .banrimgs{
         display: none;
     }
-    .footlogocol1 .shreelogo{
-        position: absolute;
-        bottom: 50rem;
-        z-index: 9;
-        width: 97%;
-        /* padding: 100px 50px 0px 0px; */
-    }
+
     .hrline{
         width: 100%;
     }
@@ -741,21 +688,8 @@
     .icon-box-border {
         text-align: left;
     }
-    .addrescard{
-        color: #444;
-        top: 470px;
-        position: absolute;
-        left: 25rem;
-        width: 45%;;
-    }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 58rem;
-        left: 8rem;
-        margin-bottom: 10px;
+   
     
-    }
     .counts-type-3 {
         border: none;
     }
@@ -863,13 +797,33 @@
 
         margin: 5px 5px 0px 30px;
     } */
+ 
+    /* .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 40pc;
+        margin-left: -16pc;
+    
+    }
+   */
+  
+    .contcatcontainer{
+        display: none;
+        position: relative;
+        top: 0px;
+        left: 1pc;
+        /* margin-bottom: 10px; */
+    
+    }
     .footlogocol1 .shreelogo{
         position: absolute;
-        bottom: 50rem;
+        bottom: 51rem;
         z-index: 9;
         width: 97%;
         /* padding: 100px 50px 0px 0px; */
     }
+ 
     .hrline{
         width: 100%;
     }
@@ -898,9 +852,7 @@
     }
 
    
-    .desktopfoot{
-        display: none;
-    }
+   
     .request-btn {
         max-width: 100%;
     }
@@ -910,31 +862,7 @@
     #mapframe{
         height: 250px;
     }
-    .addrescard{
-        color: #444;
-        top: 40px;
-        position: relative;
-        left: 0px;
-        width: 100%;;
-    }
-    .contcatcontainer .card{
-       
-        /* width: 15rem; */
-        border-radius: 150px;
-       
-       }
-       .contcatcontainer .card img{
-        width: 10rem;
-       }
   
-    .contcatcontainer{
-        position: relative;
-        width: 500px;
-        top: -25px;
-        left: 70px;
-        margin-bottom: 10px;
-    
-    }
     h1 {
         font-size: 32px;
         letter-spacing: 1px;
@@ -1291,3 +1219,123 @@
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 Custom media queries
 */
+@media only screen and (min-width: 767px) and (max-width: 991px){
+    
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 40pc;
+        margin-left: -16pc;
+    
+    }
+  
+  
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -32pc;
+        left: 10pc;
+        margin-bottom: 10px;
+    
+    }
+    .footlogocol1 .shreelogo{
+        position: absolute;
+        bottom: 27rem;
+        z-index: 9;
+        width: 97%;
+        /* padding: 100px 50px 0px 0px; */
+    }
+ 
+   
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px){ 
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 57pc;
+        margin-left: -16pc;
+    
+    }
+  
+  
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -32pc;
+        left: 20pc;
+        margin-bottom: 10px;
+    
+    }
+ }
+
+ @media only screen and (min-width: 1201px) and (max-width: 1399px){
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 68pc;
+        margin-left: -16pc;
+    
+    }
+  
+  
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -32pc;
+        left: 20pc;
+        margin-bottom: 10px;
+    
+    }
+ }
+@media only screen and (min-width: 1400px) and (max-width: 1599px){ 
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 70pc;
+        margin-left: -16pc;
+    
+    }
+  
+  
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -32pc;
+        left: 30pc;
+        margin-bottom: 10px;
+    
+    }
+
+ }
+
+
+@media only screen and (min-width: 1600px) and (max-width: 1920px){ 
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 74pc;
+        margin-left: -16pc;
+    
+    }
+  
+  
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -32pc;
+        left: 40pc;
+        margin-bottom: 10px;
+    
+    }
+ }
+
+@media only screen and (max-width: 766px){ 
+
+
+ }

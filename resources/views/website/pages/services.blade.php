@@ -14,7 +14,7 @@
 
 
     <!-- imgs -->
-    <section class="paddiall2" >
+    <section class="paddiall1" >
         <div class="" data-overlay="9">
                 <div class="container">
                     <div class="row">
