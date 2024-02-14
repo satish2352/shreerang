@@ -114,7 +114,7 @@
                     
                 </div> --}}
                 <div class="container text-center">
-                    <img src="{{ asset('website/assets/img/about/review.png')}}" id="dirimg">
+                    <img src="{{ asset('website/assets/img/about/review.png')}}">
                 </div>
                 
                 {{-- <div class="container paddiall">
