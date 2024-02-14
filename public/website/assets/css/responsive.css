@@ -73,7 +73,7 @@
     }
  
     #footlogo{
-        width: 95%;
+        width: 100%;
         margin-left: 40px;
 
         /* height: 410px;
@@ -153,6 +153,7 @@
     }
  
     .pfonts{
+        height: 8pc;
         opacity: 67%;
         /* color: #fff; */
         font-size: 22px;
@@ -163,7 +164,7 @@
         /* margin-right: 17px; */
     }
     .footlogocol{
-        background-color: #C2FCF1;
+        background-color: #b2f6e7;
         align-items: center;
         
     }
@@ -224,22 +225,23 @@
         padding-bottom: 90px; 
     
     }
- 
-    .paddiall2{
-        padding-top: 50px;
-        padding-bottom: 50px; 
-    
-    }
 
+    .paddiall4{
+        padding-top: 50px;
+        padding-bottom: 70px; 
+    }
     .servicebk{
         background-size: 100% 114%;
         background-image: url("../img/banner/SERVICE_blue_backgroung.png");
     
     }
+    .materl{
+        display: none;
+    }
     .mrtp{
         font-weight: 600;
         position: absolute;
-        margin-top: -10px;
+        margin-top: -50px;
     }
     .icn i{
         padding: 2px;
@@ -251,11 +253,21 @@
         background-image: url('../img/banner/MISIONBACKGRD.png');
     }
     .deskk{
-        top: 94px;
-        padding: 0px 5px 19px 66px;
+        /* position: absolute; */
+        /* padding: 0px 5px 19px 66px; */
         text-align: justify;
+        color: #fff;
+        line-height: normal;
+        font-size: 24px;
+       
+
     }
 
+    .diimg{
+        background-image: url('../img/about/directorcont1.png');
+        height: 25rem;
+        background-size: 100% 100%;
+    }
 
     .servbtn{
        
@@ -266,7 +278,7 @@
         padding-right: 100px;
     }
     .card-info1{
-        height: 150px;
+        height: auto;
         background: #243772; 
     }
    
@@ -303,15 +315,15 @@
         padding-left: 160px;
         padding-right: 160px;
     }
-    .manuimg1{
-        /* padding-top: 45px; */
-    }
+    /* .manuimg1{
+        padding-top: 45px;
+    } */
     .manuimg2{
         padding-top: 80px;
     }
-    .manuimg3{
-        /* padding-top: 45px; */
-    }
+    /* .manuimg3{
+        padding-top: 45px;
+    } */
     .manuimg4{
         padding-top: 80px;
     }
@@ -331,6 +343,11 @@
     }
     #dirimg{
         width: 85%;
+    }
+    #dirimg1{
+        position: relative;
+        height: 30rem;
+        width:100%;
     }
    
     .servicebnnr{
@@ -356,7 +373,7 @@
     }
     .transperant-head.fixed-nav .main-menu > ul> li > a {
         /* margin-top: 10px; */
-        /* padding: 10px 10px; */
+        padding: 10px 12px;
     }
     .transperant-head.fixed-nav .logo img {
         max-width: 200px;
@@ -556,16 +573,33 @@
     }
 
     .paddiall2{
-        padding-top: 100px;
-        padding-bottom: 100px; 
+        padding-top: 30px;
+        padding-bottom: 10px; 
     
     }
-
-    .deskk{
-        left: 126px;
-        text-align: justify;
-        padding: 0px 1px 18px 100px;
+    .mobmaterl{
+        display: none;
     }
+
+    .paddiall4{
+        padding-top: 50px;
+        padding-bottom: 50px; 
+    }
+    .deskk{
+        text-align: justify;
+        color: #fff;
+        line-height: normal;
+        font-size: 14px;
+        /* margin-left: 9rem; */
+
+    }
+
+    .diimg{
+        background-image: url('../img/about/directorcont1.png');
+        height: 20rem;
+        background-size: 100% 100%;
+    }
+
 
 
     
@@ -849,6 +883,20 @@
         border-radius: 175px;
         background: #243772; 
     }
+    .deskk{
+        text-align: justify;
+        color: #fff;
+        line-height: normal;
+        font-size: 14px;
+        margin-left: 9rem;
+
+    }
+    .diimg{
+        background-image: url('../img/about/directorcont1.png');
+        height: 10rem;
+        background-size: 100% 100%;
+    }
+
    
     .desktopfoot{
         display: none;

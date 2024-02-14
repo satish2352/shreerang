@@ -581,12 +581,15 @@ label {
     position: relative;
 }
 
+.fa-facebook-f:before{
+    padding: 2px;
+}
 
 .bg-insta{
     background: #F9F9F9;
 }
 .main-menu li a {
-    font-size: 22px;
+    font-size: 23px;
     /* letter-spacing: .8px; */
     font-weight: 700;
     display: inline-block;
@@ -1614,13 +1617,13 @@ p.big-p {
     background-color: #029A99; /* Red color example */
 }
 
-.experience .ok{
-    top: 20px;
+.experience li.active:after{
+    /* top: 20px; */
     height: 40px;
     width: 40px;
-    border: 8px red solid;
+    border: 6px #00DAC0 solid;
     border-radius: 50%;
-    background: black;
+    background: #029A99;
 }
 .team-info {
     border-radius: 0px 0px 15px 15px;
@@ -2418,7 +2421,7 @@ p.big-p {
 .links-list a {
     position: relative;
     color: #abb3bb;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     padding-left: 0px;
     letter-spacing: .8px;
@@ -3644,6 +3647,7 @@ ul li:last-child .icon-round-box-icon {
     height: 40px;
     left: 48px;
     top: 90px;
+    background-color: #00DAC0;
     border-radius: 50%;
 }
 

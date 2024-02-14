@@ -226,9 +226,9 @@
 
 
         <!-- services start -->
-        <section class="servicebk paddiall" data-overlay="9">
-        <div class="container-fluid testmo mobserv">
-            <div class="row">
+        <section class="servicebk paddiall4" data-overlay="9">
+            <div class="container-fluid testmo mobserv">
+                <div class="row">
                     <div class="col-xl-12">
                         <div class="fancy-head text-center relative z-5 mb-20 wow fadeInDown">
                             <h1 class="white">Service</h1>
@@ -243,7 +243,7 @@
                                 WOODWORKING
                                 <span class="green"></span>
                             </h3>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 pfonts f-500 pr-md-00 p-2 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique debitis facilis ullam, qui ducimus commodi voluptatum laudantium magni architecto pariatur non! Eaque commodi labore eum. Molestiae exercitationem debitis enim quaerat.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
@@ -254,7 +254,7 @@
                                 METALWORKING
     
                             </h3>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 pfonts f-500 pr-md-00 p-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aspernatur incidunt, vero quisquam optio dolore! A dolorum eum neque, facilis placeat, excepturi assumenda ipsum quaerat perferendis laborum at incidunt. Dolores?</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. s laborum at incidunt. Dolores?</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
@@ -265,26 +265,23 @@
                                 WOODWORKING
                                 <span class="green"></span>
                             </h3>
-                            <p class="white1 pfonts mb-md-30 pr-60 pfonts f-500 pr-md-00 p-2 text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque ratione accusamus natus tenetur qui rem voluptas eum odio amet sapiente ullam quo, sit inventore, consequuntur rerum expedita mollitia nobis similique.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
+                        
                         <div class="servbtn">
                             <a href="{{url('/services')}}" class="btn btn-round justify-content-end">View all services</a>
     
                         </div>
                     </div>
                    
+                </div>
+           
             </div>
-            {{-- <div class="row">
-                    <div class="col-lg-9"></div>
-                    <div class="col-lg-3 text-center text-lg-left wow fadeIn">
-                    <div class="exp-cta pr-50 pr-lg-00">
-
-                        <a href="{{url('/services')}}" class="btn btn-round ">View All Services</a>
-                    </div>
-                </div>      
-            </div> --}}
-        </div>
     </section>
     <!-- services end -->
 
@@ -303,24 +300,24 @@
       <section>
         <div class="container-fluid testmo bg-insta mobserv pb-100">
             <div class="row">
-                <div class="col-xl-4 pl-60 pr-60 mt-10 mb-10">
+                <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
-                        <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">01 </h1></span> Request</h2>
+                        <h2 class="f-700 clrtext"><span class="btn btn-round1"><h1 class="white f-800">01 </h1></span> Request</h2>
                         <img src="{{ asset('website/assets/img/icons/1.png')}}" alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 
-                <div class="col-xl-4 pl-60 pr-60 mt-10 mb-10">
+                <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
-                    <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">02 </h1></span> Develop</h2>
+                    <h2 class="f-700 clrtext"><span class="btn btn-round1"><h1 class="white f-800">02 </h1></span> Develop</h2>
                         <img src="{{ asset('website/assets/img/icons/2.png')}}"  alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
-                <div class="col-xl-4 pl-60 pr-60 mt-10 mb-10">
+                <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
-                    <h2 class="f-700 clrtext mb-10"><span class="btn btn-round1"><h1 class="white f-800">03 </h1></span> Install</h2>
+                    <h2 class="f-700 clrtext"><span class="btn btn-round1"><h1 class="white f-800">03 </h1></span> Install</h2>
                         <img src="{{ asset('website/assets/img/icons/3.png')}}"  alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>

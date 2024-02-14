@@ -70,41 +70,44 @@
                     </div>
                 </div>
             </div> --}}
-            <div class="row align-items-center paddiall">
+            <div class="row align-items-center mb-10 paddiall4">
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h4 class="white text-center fs2 f-700 mb-10">
-                            <span class="fs1">01</span>
-                             WOODWORKING
+                        <h3 class="white text-center f-700 mb-10">
+                            <span class="f-800 fs1">01</span>
+                            WOODWORKING
                             <span class="green"></span>
-                        </h4>
-                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, dolorum ipsum maxime, ex aliquid sit maiores fugiat suscipit velit sapiente accusamus cupiditate explicabo reprehenderit. Nobis labore similique vel facere ullam.</p>
+                        </h3>
+                        <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h4 class="white text-center fs2 f-700 mb-10">
-                            <span class="fs1">02</span>
-                             METALWORKING
- 
-                        </h4>
-                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, dolorum ipsum maxime, ex aliquid sit maiores fugiat suscipit velit sapiente accusamus cupiditate explicabo reprehenderit. Nobis labore similique vel facere ullam.ur</p>
+                        <h3 class="white f-700 text-center mb-10">
+                            <span class="f-800 fs1">02</span>
+                            METALWORKING
+
+                        </h3>
+                        <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. s laborum at incidunt. Dolores?</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h4 class="white text-center fs2 f-700 mb-10">
-                            <span class="fs1">03</span>
-                             <span class="">WOODWORKING</span>
-                        </h4>
-                        <p class="white mb-55 mb-md-30 pfonts f-500 text-center pr-md-00">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, dolorum ipsum maxime, ex aliquid sit maiores fugiat suscipit velit sapiente accusamus cupiditate explicabo reprehenderit. Nobis labore similique vel facere ullam.ur</p>
+                        <h3 class="white text-center f-700 mb-10">
+                            <span class="f-800 fs1">03</span>
+                            WOODWORKING
+                            <span class="green"></span>
+                        </h3>
+                        <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
+                
                
             </div>
+       
             
         </div>
     </section>
@@ -114,10 +117,10 @@
     <!-- material handling  -->
     
     <section>
-        <div class="bkmtrl">
+        {{-- <div class="bkmtrl"> --}}
              
             <div class="" data-overlay="9">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="fancy-head text-center relative z-5 wow fadeInDown">
@@ -128,81 +131,84 @@
                 </div>
             </div>
             <div class="row">
-                 
-    <div class="container maetrialback">
-        <div class="row d-flex justify-content-center m-5">
-                <div class="col-md-8 col-lg-10 card shadows pdmat">
-                                    <div class="row shadow-lg ">
-                                        <div class="col-md-6 oneim p-3 d-flex justify-content-center">
-                                            <!-- <img class="p-4" src="./img/service/AUTOMOBILE.png" alt=""> 
-                                            <p><div class="title"></div></p> -->
-                                            <div class="team-each ">
-                                            <div class="team-image">
-                                                <img src="{{ asset('website/assets/img/service/AUTOMOBILE.png')}}" alt="">
-                                                
-                                            </div>
-                                            <div class=" text-center mt-10">
-                                                <h3 class="clrtext f-700">
-                                                AUTOMOBILE
-                                                </h3>
-                                            
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="col-md-6 fourim p-3 d-flex justify-content-center">
-                                            <!-- <img class="p-4"  src="./img/service/HOSPITAL.png" alt=""> -->
-                                            <div class="team-each mb-20">
-                                            <div class="team-image">
-                                                <img src="{{ asset('website/assets/img/service/HOSPITAL.png')}}" alt="">
-                                                
-                                            </div>
-                                            <div class=" text-center mt-10">
-                                                <h3 class="clrtext f-700">
-                                                HOSPITAL
-                                                </h3>
-                                            
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="col-md-6 threeim p-3 d-flex justify-content-center">
-                                            <!-- <img class="p-4"  src="./img/service/TRAVELING.png" alt=""> -->
-                                            <div class="team-each mb-20 mt-10">
-                                            <div class="team-image">
-                                                <img src="{{ asset('website/assets/img/service/TRAVELING.png')}}" alt="">
-                                                
-                                            </div>
-                                            <div class=" text-center mt-10">
-                                                <h3 class="clrtext f-700">
-                                                TRAVELING
-                                                </h3>
-                                            
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="col-md-6 twoim p-3 d-flex justify-content-center">
-                                            <!-- <img   class="p-4" src="./img/service/PHARMA.png" alt=""> -->
-                                            <div class="team-each mt-10">
-                                            <div class="team-image">
-                                                <img src="{{ asset('website/assets/img/service/PHARMA.png')}}" alt="">
-                                                
-                                            </div>
-                                            <div class=" text-center">
-                                                <h3 class="clrtext f-700">
-                                                PHARMA <br> 
-                                                    INDUSTRIES
-                                                </h3>
-                                            
-                                            </div>
-                                        </div>
-                                        </div>
-                                       
-                                    </div>
+                <div class="mobmaterl container-fluid text-center">
+
+                    <img src="{{ asset('website/assets/img/banner/material.png')}}" alt="">
                 </div>
-        </div>
-    </div>
+                 
+            <div class="container  materl maetrialback">
+                <div class="row d-flex justify-content-center m-5">
+                        <div class="col-md-8 col-lg-10 card shadows pdmat">
+                                            <div class="row shadow-lg ">
+                                                <div class="col-md-6 oneim p-3 d-flex justify-content-center">
+                                                    
+                                                    <div class="team-each ">
+                                                    <div class="team-image">
+                                                        <img src="{{ asset('website/assets/img/service/AUTOMOBILE.png')}}" alt="">
+                                                        
+                                                    </div>
+                                                    <div class=" text-center mt-10">
+                                                        <h3 class="clrtext f-700">
+                                                        AUTOMOBILE
+                                                        </h3>
+                                                    
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="col-md-6 fourim p-3 d-flex justify-content-center">
+                                                
+                                                    <div class="team-each mb-20">
+                                                    <div class="team-image">
+                                                        <img src="{{ asset('website/assets/img/service/HOSPITAL.png')}}" alt="">
+                                                        
+                                                    </div>
+                                                    <div class=" text-center mt-10">
+                                                        <h3 class="clrtext f-700">
+                                                        HOSPITAL
+                                                        </h3>
+                                                    
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="col-md-6 threeim p-3 d-flex justify-content-center">
+                                                
+                                                    <div class="team-each mb-20 mt-10">
+                                                    <div class="team-image">
+                                                        <img src="{{ asset('website/assets/img/service/TRAVELING.png')}}" alt="">
+                                                        
+                                                    </div>
+                                                    <div class=" text-center mt-10">
+                                                        <h3 class="clrtext f-700">
+                                                        TRAVELING
+                                                        </h3>
+                                                    
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="col-md-6 twoim p-3 d-flex justify-content-center">
+                                                    
+                                                    <div class="team-each mt-10">
+                                                    <div class="team-image">
+                                                        <img src="{{ asset('website/assets/img/service/PHARMA.png')}}" alt="">
+                                                        
+                                                    </div>
+                                                    <div class=" text-center">
+                                                        <h3 class="clrtext f-700">
+                                                        PHARMA <br> 
+                                                            INDUSTRIES
+                                                        </h3>
+                                                    
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            
+                                            </div>
+                        </div>
+                </div>
+            </div>
 
             </div>
-        </div>
+        {{-- </div> --}}
     </section>
     <!-- end material handling -->
 
@@ -232,7 +238,7 @@
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/caster.png')}}" class="card-img-top" alt="...">
                         <div class="card-body  text-center card-info">
-                        <h1 class="white f-600"> Caster wheels </h1>
+                        <h1 class="white fs2 f-600"> Caster wheels </h1>
                     
                         </div>
                         </div>
@@ -241,7 +247,7 @@
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info">
-                        <h1 class="white f-600"> Movement Trollies </h1>
+                        <h1 class="white fs2 f-600"> Movement Trollies </h1>
                     
                         </div>
                         
@@ -255,7 +261,7 @@
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center card-info1">
-                        <h1 class="white f-600"> Challenging Fabrication Works </h1>
+                        <h1 class="white fs2 f-600"> Challenging Fabrication <br> Works </h1>
                     
                         </div>
                         </div>
@@ -264,7 +270,7 @@
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/presshop.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info1">
-                        <h1 class="white f-600"> Press Shop <br> Works  </h1>
+                        <h1 class="white fs2 f-600"> Press Shop <br> Works  </h1>
                     
                         </div>
                         </div>

@@ -42,7 +42,7 @@
         </div>
         <div class="col-lg-2">
         <ul class="experience">
-                        <li>
+                        <li class="active">
                             <span></span>
                         </li>
                         <li>
@@ -90,19 +90,35 @@
 </section> -->
 <!-- end history -->
     <!-- Director Desk -->
-    <section class=" paddiall" id="direct">
+    <section class="paddiall" id="direct">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 wow fadeInDown">
+                        <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
                             <h1>Director Desk</h1>
                         </div>
                     </div>
                 </div>  
 
-                <div class="container text-center">
-                    <img src="{{ asset('website/assets/img/about/review.png')}}" id="dirimg">
+                <div class="container paddiall diimg">
+                    <div class="row ">
+                        <div class="col-lg-5 col-md-6 col-sm-5"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-7">
+                            <p class="deskk mt-20 mr-50">Lorem ipsum dolor sit modi explicabo similique porro. Rem?</p>
+
+                        </div>
+                        <div class="col-lg-1 col-md-"></div>
+
+                        {{-- <img src="{{ asset('website/assets/img/about/directorcont1.png')}}" id="dirimg1"> --}}
+
+                    </div>
+                    
+                    
+
                 </div>
+                {{-- <div class="container text-center">
+                    <img src="{{ asset('website/assets/img/about/review.png')}}" id="dirimg">
+                </div> --}}
                 
                 {{-- <div class="container paddiall">
 
