@@ -137,10 +137,10 @@
      <section class="team-area bg-blue-op-11 pt-40 pb-40">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h3 class="f-700 p-3 clrtext">TAILOR</h3>
+                        <h2 class="f-800 p-4 clrtext">TAILOR</h2>
                         <a ><img src="{{ asset('website/assets/img/products/Ellipse 7.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-3">
@@ -149,10 +149,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                         <div class="product_img text-center">
-                            <h3 class="f-700 p-3 clrtext">PLATFORM</h3>
+                            <h2 class="f-800 p-4 clrtext">PLATFORM</h2>
                             <a><img src="{{ asset('website/assets/img/products/Ellipse 6.png')}}" id="prodimgss" alt=""></a>
                         </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -161,10 +161,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h3 class="f-700 p-3 clrtext">PLATS</h3>
+                        <h2 class="f-800 p-4 clrtext">PLATS</h2>
                         <a><img src="{{ asset('website/assets/img/products/Ellipse 5.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -173,10 +173,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h3 class="f-700 p-3 clrtext">PLATFORM</h3>
+                        <h2 class="f-800 p-4 clrtext">PLATFORM</h2>
                         <a><img src="{{ asset('website/assets/img/products/Ellipse 6.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -185,10 +185,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h3 class="f-700 p-3 clrtext">TAILOR</h3>
+                        <h2 class="f-800 p-4 clrtext">TAILOR</h2>
                         <a><img src="{{ asset('website/assets/img/products/Ellipse 7.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -197,10 +197,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h3 class="f-700 p-3 clrtext">PLATS</h3>
+                        <h2 class="f-800 p-4 clrtext">PLATS</h2>
                         <a><img src="{{ asset('website/assets/img/products/Ellipse 5.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -298,11 +298,11 @@
             </div>
         </section> --}}
       <section>
-        <div class="container-fluid testmo bg-insta mobserv pb-100">
-            <div class="row">
+        <div class="container-fluid testmo paddiall bg-insta mobserv">
+            <div class="row pb-90">
                 <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
-                        <h2 class="f-700 clrtext"><span class="btn btn-round1"><h1 class="white f-800">01 </h1></span> Request</h2>
+                        <h2 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white f-800">01 </h1></span> Request</h2>
                         <img src="{{ asset('website/assets/img/icons/1.png')}}" alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
@@ -310,14 +310,14 @@
                 
                 <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
-                    <h2 class="f-700 clrtext"><span class="btn btn-round1"><h1 class="white f-800">02 </h1></span> Develop</h2>
+                    <h2 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white f-800">02 </h1></span> Develop</h2>
                         <img src="{{ asset('website/assets/img/icons/2.png')}}"  alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
-                    <h2 class="f-700 clrtext"><span class="btn btn-round1"><h1 class="white f-800">03 </h1></span> Install</h2>
+                    <h2 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white f-800">03 </h1></span> Install</h2>
                         <img src="{{ asset('website/assets/img/icons/3.png')}}"  alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
@@ -329,7 +329,7 @@
 
      <!-- Testimonial area start -->
      <section class="testimonials-2 reviw">
-        <div class="container paddiall">
+        <div class="container-fluid paddiall testmo1">
             <div class="row align-items-center mb-30">
                 <div class="col-lg-12 col-md-12 text-center text-lg-center">
                     <div class="fancy-head left-al wow fadeInLeft">
@@ -358,7 +358,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="owl-carousel owl-theme testimonial-2-slide  wow fadeIn">
-                        <div class="item pl-10 pr-10">
+                        <div class="item pl-20 pr-20">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -385,7 +385,7 @@
                             </div>
                         </div>
 
-                        <div class="item pl-10 pr-10">
+                        <div class="item pl-20 pr-20">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -413,7 +413,7 @@
                             </div>
                         </div>
 
-                        <div class="item pl-10 pr-10">
+                        <div class="item pl-20 pr-20">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -441,7 +441,7 @@
                             </div>
                         </div>
 
-                        <div class="item pl-10 pr-10">
+                        <div class="item pl-20 pr-20">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -468,7 +468,7 @@
                             </div>
                         </div>
 
-                        <div class="item pl-10 pr-10">
+                        <div class="item pl-20 pr-20">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
@@ -496,7 +496,7 @@
                             </div>
                         </div>
 
-                        <div class="item pl-10 pr-10">
+                        <div class="item pl-20 pr-20">
                             <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">

@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="fancy-head text-center relative z-5 mt-30 mb-40 wow fadeInDown">
-                                <h1 class="clrtext fs3">Manufacturing <span class="green">Of</span></h1>
+                                <h1 class="clrtext fs4">Manufacturing <span class="green">Of</span></h1>
                             </div>
                         </div>
                     </div>        
@@ -40,13 +40,13 @@
                     <div class="col-lg-3 manuimg2 text-center">
                         <img src="{{ asset('website/assets/img/service/roller.png')}}" id="sevimg" alt="">
                         <div class="p-3">
-                            <h2 class="f-700 clrtext">Roller</h2>
+                            <h2 class="f-700 clrtext">Rollers</h2>
                         </div>
                     </div>
                     <div class="col-lg-3 manuimg3 text-center">
                         <img src="{{ asset('website/assets/img/service/conveyer.png')}}" id="sevimg" alt="">
                         <div class="p-3">
-                            <h2 class="f-700 clrtext">Conveyer</h2>
+                            <h2 class="f-700 clrtext">Conveyers</h2>
                         </div>
                     </div>
                     <div class="col-lg-3 manuimg4 text-center">
@@ -124,7 +124,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="fancy-head text-center relative z-5 wow fadeInDown">
-                                <h1 class="fs3">Material Handling <span class="green">Equipment For</span></h1>
+                                <h1 class="fs4">Material Handling <span class="green">Equipment For</span></h1>
                             </div>
                         </div>
                     </div>        
@@ -245,7 +245,7 @@
                     </div>
                     <div class="col-lg-5 col-md-12 p-4">
                         <div class="card border-0 bkcl">
-                        <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
+                        <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info">
                         <h1 class="white fs2 f-600"> Movement Trollies </h1>
                     
@@ -259,7 +259,7 @@
 
                     <div class="col-lg-5 col-md-12 p-4">
                         <div class="card border-0 bkcl">
-                        <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
+                        <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center card-info1">
                         <h1 class="white fs2 f-600"> Challenging Fabrication <br> Works </h1>
                     

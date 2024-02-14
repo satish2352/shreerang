@@ -533,7 +533,7 @@ label {
     right: 0;
     z-index: 300;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-    height: 100px;
+    height: 102px;
     width: 100%;
 }
 
@@ -633,6 +633,10 @@ label {
  border: 5px solid #4CD0B2;
 }
 
+#ddimg{
+    width: 63%;
+    height: 457px;
+}
 .main-menu li :after {
     /* position: absolute;
     content: close-quote;
@@ -1698,8 +1702,8 @@ p.big-p {
     border-radius: 15px 15px 15px 15px;
 }
 #prodimgss{
-    width: 80%;
-    padding: 40px 0px 40px 0px;
+    width: 90%;
+    padding:  27px 0px 27px 0px;
 }
 
 .team-2-each:hover img {
@@ -3770,8 +3774,8 @@ ul.theme-ul li img {
 /* footer */
 .hrline{
     border:1px solid #029A99;
-    width: 83%;
-    margin-right: 110px;
+    width: 82%;
+    margin-right: 100px;
 }
 
 /* .desktopfoot{

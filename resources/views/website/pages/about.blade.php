@@ -91,7 +91,7 @@
 <!-- end history -->
     <!-- Director Desk -->
     <section class="paddiall" id="direct">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
@@ -113,8 +113,8 @@
                     </div>
                     
                 </div> --}}
-                <div class="container text-center">
-                    <img src="{{ asset('website/assets/img/about/review.png')}}">
+                <div class="container-fluid text-center">
+                    <img src="{{ asset('website/assets/img/about/review.png')}}" id="ddimg">
                 </div>
                 
                 {{-- <div class="container paddiall">
@@ -152,7 +152,7 @@
     <!-- vission mission -->
 
     <section class="">
-        <div class="container pt-30">
+        <div class="container-fluid testmo pt-30">
             <div class="row pt-600 pb-40">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-10">
@@ -164,7 +164,7 @@
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
                     <div class="col-lg-6 pt-60 pb-50 vison">
-                    <h5 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h5>
+                    <h4 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
                     </div>
                     
                     <div class="col-lg-5 order-md-2 text-center">
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 pt-30 order-md-1 misn1">
-                    <h5 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo pariatur odio. Placeat vitae temporibus suscipit harum doloremque, ipsum corrupti, quis tempore, cumque dignissimos sunt quia laborum? Ducimus, alias quidem?</h5>
+                    <h4 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo pariatur odio. Placeat vitae temporibus suscipit harum doloremque, ipsum corrupti, quis tempore, cumque dignissimos sunt quia laborum? Ducimus, alias quidem?</h4>
                     </div>
                     </div>
                 </div>

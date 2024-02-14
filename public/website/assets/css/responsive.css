@@ -2,9 +2,7 @@
 /* Large devices (Above 1800px) */
 
 /* @media only screen and (min-width: 1800px) {
-    .copyrt{
-        margin-left: 45px;
-    }
+ 
 } */
 
 
@@ -93,20 +91,16 @@
         background-size: 98% 100%;
     }
     .copyrt{
-        margin-left: 90px;
+        margin-left: 82px;
     }
  
     .pfonts{
         height: 8pc;
         opacity: 67%;
         /* color: #fff; */
-        font-size: 22px;
+        font-size: 21px;
     }
-    .hrline {
-        /* border: 1px solid #029A99; */
-        width: 82%;
-        /* margin-right: 17px; */
-    }
+   
     .footlogocol{
         background-color: #b2f6e7;
         align-items: center;
@@ -152,7 +146,7 @@
         transition: all .4s;
         box-shadow: 0 4px 10px rgba(40, 47, 65, 0.26);
         z-index: 20;
-        height: 80px;
+        height: 82px;
         -webkit-animation: showHeader 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         -moz-animation: showHeader 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         -o-animation: showHeader 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
@@ -169,7 +163,7 @@
     
     }
     .paddiall1{
-        padding-top: 90px;
+        padding-top: 50px;
         padding-bottom: 90px; 
     
     }
@@ -195,7 +189,7 @@
         padding: 2px;
         background-color: #243772;
         color: white;
-        margin-left: 50px;
+        margin-left: 30px;
     }
     .misiionbak{
         background-image: url('../img/banner/MISIONBACKGRD.png');
@@ -287,7 +281,7 @@
     .pfonts{
         opacity: 67%;
         /* color: #fff; */
-        font-size: 22px;
+        font-size: 20px;
     }
     #dirimg{
         height: 430px;
@@ -306,6 +300,9 @@
     
     }
  
+    .fs4{
+        font-size: 50px;
+    }
     .vison{
         margin-top: 60px;
         text-align: start;
@@ -322,7 +319,7 @@
     }
     .transperant-head.fixed-nav .main-menu > ul> li > a {
         /* margin-top: 10px; */
-        padding: 10px 12px;
+        padding: 15px 12px;
     }
     .transperant-head.fixed-nav .logo img {
         max-width: 200px;
@@ -1235,7 +1232,7 @@ Custom media queries
     .contcatcontainer{
         position: relative;
         width: 500px;
-        top: -32pc;
+        top: -37pc;
         left: 10pc;
         margin-bottom: 10px;
     
@@ -1265,7 +1262,7 @@ Custom media queries
     .contcatcontainer{
         position: relative;
         width: 500px;
-        top: -32pc;
+        top: -37pc;
         left: 20pc;
         margin-bottom: 10px;
     
@@ -1286,7 +1283,7 @@ Custom media queries
     .contcatcontainer{
         position: relative;
         width: 500px;
-        top: -32pc;
+        top: -37pc;
         left: 20pc;
         margin-bottom: 10px;
     
@@ -1306,7 +1303,7 @@ Custom media queries
     .contcatcontainer{
         position: relative;
         width: 500px;
-        top: -32pc;
+        top: -37pc;
         left: 30pc;
         margin-bottom: 10px;
     
@@ -1329,8 +1326,8 @@ Custom media queries
     .contcatcontainer{
         position: relative;
         width: 500px;
-        top: -32pc;
-        left: 40pc;
+        top: -37pc;
+        left: 36pc;
         margin-bottom: 10px;
     
     }
