@@ -100,7 +100,7 @@
                     </div>
                 </div>  
 
-                <div class="container paddiall diimg">
+                {{-- <div class="container paddiall diimg">
                     <div class="row ">
                         <div class="col-lg-5 col-md-6 col-sm-5"></div>
                         <div class="col-lg-6 col-md-6 col-sm-7">
@@ -109,16 +109,13 @@
                         </div>
                         <div class="col-lg-1 col-md-"></div>
 
-                        {{-- <img src="{{ asset('website/assets/img/about/directorcont1.png')}}" id="dirimg1"> --}}
 
                     </div>
                     
-                    
-
-                </div>
-                {{-- <div class="container text-center">
-                    <img src="{{ asset('website/assets/img/about/review.png')}}" id="dirimg">
                 </div> --}}
+                <div class="container text-center">
+                    <img src="{{ asset('website/assets/img/about/review.png')}}" id="dirimg">
+                </div>
                 
                 {{-- <div class="container paddiall">
 

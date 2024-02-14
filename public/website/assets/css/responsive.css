@@ -290,7 +290,8 @@
         font-size: 22px;
     }
     #dirimg{
-        width: 85%;
+        height: 430px;
+        width: 95%;
     }
     #dirimg1{
         position: relative;
