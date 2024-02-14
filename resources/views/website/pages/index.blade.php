@@ -370,7 +370,7 @@
                                     </li>
                                 </ul> -->
                                 <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext lnh"> jhruios  Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
+                                <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag Engineering's trolleys and rollers have transformed our warehouse operations. Their products' durability and efficiency exceeded our expectations, making them our top choice for material handling solutions."</p>
                                 <div class="client-2-img d-flex  fixed-bottom1 justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
@@ -378,8 +378,8 @@
                                         </div>
                                     </div>
                                     <div class="client-text-2 mb-30">
-                                        <h6 class="client-name green fs-17 f-700 clrtext">Arnav Mane</h6>
-                                        <p class="mb-0 fs-13 f-400 clrtext mb-30">Manufacturer</p>
+                                        <h6 class="client-name green fs-17 f-700 clrtext">Mr. Sachin Katkade </h6>
+                                        <p class="mb-0 fs-13 f-400 clrtext mb-30">Technical Expert</p>
                                     </div>
                                 </div>
                             </div>
@@ -396,17 +396,18 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
+
                                 <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext lnh">Etiam mattis posuere sem, a bibendum nulla congue nec. Donec eget metus nisi. Suspendisse potenti.safsdgd thukevf wdynj sfhyj Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
+                                <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Their conveyors elevated our production efficiency. Their craftsmanship and design expertise make them the go-to partner for reliable material handling solutions."</p>
                                 <div class="client-2-img d-flex  fixed-bottom1  justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
-                                            <img src="{{ asset('website/assets/img/team/team4b.png')}}" class=" rounded-circle" alt="">
+                                            <img src="{{ asset('website/assets/img/team/team3b.png')}}" class=" rounded-circle" alt="">
                                         </div>
                                     </div>
                                     <div class="client-text-2 mb-30">
-                                        <h6 class="client-name green fs-17 f-700 clrtext">Akash Shinde</h6>
-                                        <p class="mb-0 fs-13 f-400 clrtext">Manufacturer</p>
+                                        <h6 class="client-name green fs-17 f-700 clrtext">Dhananjay Makhwani</h6>
+                                        <p class="mb-0 fs-13 f-400 clrtext">Co- worker</p>
                                     </div>
                                 </div>
                             </div>
@@ -423,9 +424,9 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
+
                                 <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext lnh">Maecenas dignissim in dolor in blandit. eros vel lorem tempor malesuada quis efficitur erat. Nullam nec purus tempus, posuere elit non
-                                </p>
+                                <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag’s metallic pallets have been a valuable asset to our inventory management. The precision in their manufacturing process and attention to detail are evident in the quality of their products."</p>
                                 <div class="client-2-img d-flex fixed-bottom1  justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
@@ -433,8 +434,8 @@
                                         </div>
                                     </div>
                                     <div class="client-text-2 mb-30">
-                                        <h6 class="client-name green fs-17 f-700 clrtext">Arnav Mane</h6>
-                                        <p class="mb-0 fs-13 f-400 clrtext">Manufacturer</p>
+                                        <h6 class="client-name green fs-17 f-700 clrtext">Abhaykumar Sansare</h6>
+                                        <p class="mb-0 fs-13 f-400 clrtext">Branch Manager</p>
                                     </div>
                                 </div>
                             </div>
@@ -452,7 +453,7 @@
                                     </li>
                                 </ul> -->
                                 <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext lnh">Quisque enim ipsum, commodo et ven enatis gdghc jhytgv uhjbf jgfjg rutrum, luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulvinar id ligula non, congue aliquam ve.</p>
+                                <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag Engineering's custom trolleys have streamlined our operations. Their commitment to delivering innovative solutions tailored to our industry's needs sets them apart as a trusted partner."</p>
                                 <div class="client-2-img d-flex fixed-bottom1  justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
@@ -460,8 +461,36 @@
                                         </div>
                                     </div>
                                     <div class="client-text-2 mb-30">
-                                        <h6 class="client-name green fs-17 f-700 clrtext">Akash Mane</h6>
-                                        <p class="mb-0 fs-13 f-400 clrtext">Manufacturer</p>
+                                        <h6 class="client-name green fs-17 f-700 clrtext">Prakash Ingale</h6>
+                                        <p class="mb-0 fs-13 f-400 clrtext">Production Manager</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item pl-10 pr-10">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
+                                <!-- <ul class="stars-rate mb-5" data-starsactive="5">
+                                    <li class="text-md-left text-center">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </li>
+                                </ul> -->            
+                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"The rollers are robust, durable, and remarkably efficient. Their professionalism make them our trusted supplier for all material handling equipment."
+                                </p>
+                                <div class="client-2-img d-flex fixed-bottom1 justify-content-md-start justify-content-start">
+                                    <div class="img-div ml-30 mr-10 pb-20">
+                                        <div class="client-image">
+                                            <img src="{{ asset('website/assets/img/team/team2b.png')}}" class=" rounded-circle" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="client-text-2  mb-30">
+                                        <h6 class="client-name green fs-17 f-700 clrtext">Vikas Sawant</h6>
+                                        <p class="mb-0 fs-13 f-400 clrtext">Expert Advisor</p>
                                     </div>
                                 </div>
                             </div>
@@ -480,7 +509,8 @@
                                 </ul> -->
                                 
                                 <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
-                                <p class="mb-35 pb-10 clrtext lnh">Etiam mattis posuere sem, a bibendum nulla asfsdg kuyj dgfh yhjmh congue nec. Donec eget metus nisi. Suspendisse potenti. Pellentesque sed sem sodales, malesuada sapien ut, rutrum sem.</p>
+                                <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag Engineering's conveyors have significantly improved our production line. Their commitment to delivering comprehensive solutions tailored to our business needs makes them a reliable partner."
+                                </p>
                                 <div class="client-2-img d-flex fixed-bottom1 justify-content-md-start justify-content-start">
                                     <div class="img-div ml-30 mr-10 pb-20">
                                         <div class="client-image">
@@ -488,8 +518,8 @@
                                         </div>
                                     </div>
                                     <div class="client-text-2  mb-30">
-                                        <h6 class="client-name green fs-17 f-700 clrtext">Aarnav Shinde</h6>
-                                        <p class="mb-0 fs-13 f-400 clrtext">Manufacturer</p>
+                                        <h6 class="client-name green fs-17 f-700 clrtext">Shubham Pawar</h6>
+                                        <p class="mb-0 fs-13 f-400 clrtext">Safety Manager</p>
                                     </div>
                                 </div>
                             </div>
