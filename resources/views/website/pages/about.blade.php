@@ -337,7 +337,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 pb-60">
                     <div class="each-team-3 team_shadow fix">
                         <div class="image-team-3 relative">
                             <a><img src="{{ asset('website/assets/img/team/team6b.png')}}" class="pt-3 pl-3 pr-3" alt=""></a>

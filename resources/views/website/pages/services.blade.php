@@ -230,7 +230,7 @@
     <!-- cards -->
 
 
-    <section class="cardbkclr">
+    <section class="cardbkclr paddiall2 ">
         <div class="container-fluid testmo1 paddiall">
             <div class="row">
                     <div class="col-lg-1"></div>
@@ -282,5 +282,6 @@
     </section>
     <!-- cards -->
 </section>
+<div class="paddiall2"></div>
 @endsection
  
