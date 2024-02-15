@@ -14,7 +14,7 @@
 
 
     <!-- imgs -->
-    <section class="paddiall1" >
+    <section class="paddiall2" >
         <div class="" data-overlay="9">
                 <div class="container">
                     <div class="row">
@@ -116,10 +116,10 @@
 
     <!-- material handling  -->
     
-    <section>
+    <section class="paddiall2">
         {{-- <div class="bkmtrl"> --}}
              
-            <div class="" data-overlay="9">
+            <div data-overlay="9">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-12">
@@ -131,12 +131,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="mobmaterl container-fluid text-center">
+                <div class="container-fluid text-center">
 
                     <img src="{{ asset('website/assets/img/banner/material.png')}}" alt="">
                 </div>
                  
-            <div class="container  materl maetrialback">
+            {{-- <div class="container  materl maetrialback">
                 <div class="row d-flex justify-content-center m-5">
                         <div class="col-md-8 col-lg-10 card shadows pdmat">
                                             <div class="row shadow-lg ">
@@ -205,7 +205,7 @@
                                             </div>
                         </div>
                 </div>
-            </div>
+            </div> --}}
 
             </div>
         {{-- </div> --}}
@@ -214,13 +214,13 @@
 
     <!-- img -->
     <section>
-        <div class=" pt-25">
+        <div class="">
                   <!-- bannar start -->
                   <div class="banrimgs">
                     <img src="{{ asset('website/assets/img/banner/HOME_PAGE3old.png')}}" alt="">
                 </div>
                 <div class="mobibanrimgs">
-                <img src="{{ asset('website/assets/img/banner/HOME_PAGE3old.jpg')}}" alt="">
+                <img src="{{ asset('website/assets/img/banner/mobconnectold.jpg')}}" alt="">
                 </div>
             <!-- bannar end -->
         </div>
