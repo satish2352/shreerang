@@ -226,7 +226,7 @@
 
 
         <!-- services start -->
-        <section class="servicebk paddiall4" data-overlay="9">
+        <section class="servicebk" data-overlay="9">
             <div class="container-fluid testmo mobserv">
                 <div class="row">
                     <div class="col-xl-12">
@@ -298,7 +298,7 @@
             </div>
         </section> --}}
       <section>
-        <div class="container-fluid testmo paddiall bg-insta mobserv">
+        <div class="container-fluid testmo paddiall4 bg-insta">
             <div class="row pb-90">
                 <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
@@ -405,7 +405,7 @@
                                             <img src="{{ asset('website/assets/img/team/team3b.png')}}" class=" rounded-circle" alt="">
                                         </div>
                                     </div>
-                                    <div class="client-text-2 mb-30">
+                                    <div class="client-text-2 mb-30 pl-20">
                                         <h6 class="client-name green fs-17 f-700 clrtext">Dhananjay Makhwani</h6>
                                         <p class="mb-0 fs-13 f-400 clrtext">Co- worker</p>
                                     </div>
@@ -414,7 +414,7 @@
                         </div>
 
                         <div class="item pl-20 pr-20">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -433,7 +433,7 @@
                                             <img src="{{ asset('website/assets/img/team/team1b.png')}}" class=" rounded-circle" alt="">
                                         </div>
                                     </div>
-                                    <div class="client-text-2 mb-30">
+                                    <div class="client-text-2 mb-30 pl-20">
                                         <h6 class="client-name green fs-17 f-700 clrtext">Abhaykumar Sansare</h6>
                                         <p class="mb-0 fs-13 f-400 clrtext">Branch Manager</p>
                                     </div>
@@ -469,7 +469,7 @@
                         </div>
 
                         <div class="item pl-20 pr-20">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -497,7 +497,7 @@
                         </div>
 
                         <div class="item pl-20 pr-20">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff"">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>

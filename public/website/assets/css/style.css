@@ -655,7 +655,9 @@ label {
     font-weight: 700;
     color: #4CD0B2; /* Change color of the text */
 }
-
+#more {
+    display: none;
+}
 .main-menu li .submenu {
     position: absolute;
     width: 220px;

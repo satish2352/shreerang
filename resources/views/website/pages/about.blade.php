@@ -113,9 +113,9 @@
                     </div>
                     
                 </div> --}}
-                <div class="container-fluid text-center">
+                {{-- <div class="container-fluid text-center">
                     <img src="{{ asset('website/assets/img/about/review.png')}}" id="ddimg">
-                </div>
+                </div> --}}
                 
                 {{-- <div class="container paddiall">
                        <div class="director card position-relative shadow-1">                        
@@ -132,6 +132,29 @@
                        </div>  
                 </div> --}}
 
+                <div class="container p-5 pt-10">
+       
+                    <div class="row">
+                       <div class="card director shadow-1">
+                               
+                           <div class="row">
+                               <div class="col-lg-4 col-md-4 col-sm-4">
+                                <img src="{{ asset('website/assets/img/about/doottt.png')}}" class="pl-10 ml-10" alt="">
+                                <img src="{{ asset('website/assets/img/about/director1.png')}}" id="ddimg1" style="top:120px; left:60px; position:absolute; " alt="">
+                               </div>
+                               <div class="col-lg-8 col-md-8 col-sm-8 text-break p-5">
+                                <h4 class="white" id="texxttt">Lorem ipsum dolor sit amet, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget<span id="dots">...</span><span id="more"> imperdiet sed  congue eros non fermentum.</span></h4>
+                                <br>
+                                <h5 class="white" onclick="myFunction()" id="myBtn">Read more</h5>
+                                   </div>
+                                  
+                                   
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                        
+           </div>
 
                 
                 
@@ -388,4 +411,6 @@
     </section>
     <!-- Team area end -->
 </section>
+<div class="paddiall2"></div>
+
 @endsection

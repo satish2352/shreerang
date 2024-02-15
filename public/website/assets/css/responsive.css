@@ -31,6 +31,7 @@
     .copyrt{
         margin-left: 40px;
     }
+    
    
 }
 
@@ -41,6 +42,7 @@
         border-radius: 250px 0px 0px 250px;
     } */
 
+   
  
     #footlogo{
         width: 100%;
@@ -84,6 +86,10 @@
         bottom: 0;
     }  */
 
+    .servicebk {
+        background-size: 100% 100%;
+        background-image: url('../img/banner/Frame 10.png');
+    }
 
     .bkmtrl{
         height: 55rem;
@@ -178,7 +184,7 @@
         padding-bottom: 70px; 
     }
     .servicebk{
-        background-size: 100% 114%;
+        background-size: 100% 112%;
         background-image: url("../img/banner/SERVICE_blue_backgroung.png");
     
     }
@@ -386,9 +392,10 @@
 }
 
 /*==========  Non-Mobile First Method  ==========*/
-@media (min-width: 1024px) and (max-width:1336px){
+@media (min-width: 1025px) and (max-width:1336px){
     #footlogo{
-        display: none;
+        /* background-color: #C2FCF1; */
+        /* display: none; */
     }
     .footlogocol{
         align-items: center;
@@ -420,7 +427,7 @@
     }
     .footlogocol{
         align-items: center;
-        /* background-color: #C2FCF1; */
+        background-color: #C2FCF1;
     }
     
    
@@ -429,6 +436,7 @@
         display: inline-block;
     }
 
+  
    
     /* #footlogo{
         width: 50%;
@@ -847,6 +855,17 @@
    #ifrm{
     height: 210px;
     }
+
+    #ddimg1{
+        margin-left: -2pc;
+        height: 248px;
+        margin-top: -2pc;
+    
+    }
+    #texxttt {
+        font-size: 14px;
+        margin-top: 11rem;
+    }
   
     .contcatcontainer{
         display: none;
@@ -872,10 +891,11 @@
         padding: 45% 6% 0% 12%;
         border-radius: 279px 261px 0px 0px;
     }
+    /* director deskkk */
     .director{
-        height: 350px;
+        height: 590px;
         border-radius: 175px;
-        background: #243772; 
+        background: #243772;
     }
     .deskk{
         text-align: justify;
@@ -891,6 +911,7 @@
         background-size: 100% 100%;
     }
 
+    
    
    
     .request-btn {
@@ -1056,7 +1077,7 @@
     }
     .team-2-each {
        
-        max-width: 254px;
+        max-width: auto;
         margin: auto;
     }
     .career-box {
@@ -1244,12 +1265,28 @@
 
 /* Extra Small Devices, Phones */
 
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+    .footlogocol1 .shreelogo {
+        position: absolute;
+        bottom: 48rem;
+        z-index: 4;
+        width: 97%;
+        /* padding: 100px 50px 0px 0px; */
+    }
+}
 
 
 /*end*/
 
-@media only screen and (max-width: 320px) {}
+@media only screen and (max-width: 320px) {
+    .footlogocol1 .shreelogo {
+        position: absolute;
+        bottom: 61rem;
+        z-index: 9;
+        width: 97%;
+        /* padding: 100px 50px 0px 0px; */
+    }
+}
 
 
 /*end*/
@@ -1300,6 +1337,10 @@ Custom media queries
     
     }
   
+    .servicebk {
+        background-size: 100% 100%;
+        background-image: url('../img/banner/Frame 10.png');
+    }
   
   
     .contcatcontainer{
@@ -1367,6 +1408,13 @@ Custom media queries
         margin-left: -16pc;
     
     }
+    
+    .servicebnnr{
+       
+        background-size: 100% 116%;
+        background-image: url('../img/banner/Frame 11.png');
+    
+    }
    
     .contcatcontainer{
         position: relative;
@@ -1419,18 +1467,63 @@ Custom media queries
         left: 8pc;
         margin-bottom: 10px;
     }
+    #ddimg1{
+        margin-left: -2pc;
+        height: 211px;
+        margin-top: -3pc;
+    
+    }
+    #texxttt {
+        font-size: 16px;
+        margin-top: 0rem;
+    }
+    .director {
+        height: 230px;
+        border-radius: 175px;
+        background: #243772;
+    }
+  
 }
 
-@media screen and (min-width: 600px) and(max-width: 1024px) { 
+@media screen and (min-width: 992px) and (max-width: 1024px) { 
     .transperant-head.fixed-nav .main-menu > ul> li > a{
         padding: 15px 8px;
     
+    }
+    .main-menu li a{
+        font-size: 20px;
     }
     #ifrm{
         /* width: 100%; */
        
         height: 650px;
         
+    }
+    h2{
+        font-size: 22px;
+    }
+    .footlogocol{
+        align-items: center;
+        background-color: #C2FCF1;
+    }
+  
+
+    .copyrt{
+        margin-left: 48px;
+    }
+    .hrline{
+        margin-right: 60px;
+    }
+    .container{
+        max-width: 1320px;
+    }
+    .testmo1{
+        padding-left: 3%;
+        padding-right: 5%;
+    }
+    .servicebk {
+        background-size: 100% 100%;
+        background-image: url('../img/banner/Frame 10.png');
     }
 
  }
