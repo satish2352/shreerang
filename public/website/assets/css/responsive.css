@@ -177,6 +177,7 @@
         background-image: url("../img/banner/SERVICE_blue_backgroung.png");
     
     }
+  
     .materl{
         display: none;
     }
@@ -229,7 +230,7 @@
         padding-right: 200px;
     }
     .fs1{
-        font-size: 45px;
+        font-size: 47px;
     }
     .fs2{
         font-size: 30px;
@@ -502,6 +503,19 @@
         background-color: #029A99;
 
         
+    }
+    .btn-round1 {
+        border-radius: 50%;
+        padding: 12px 5px 12px 23px;
+        line-height: 11px;
+        color: #fff;
+        background-color: #029A99;
+       
+    }
+    .paddiall1{
+        padding-top: 50px;
+        padding-bottom: 90px; 
+    
     }
     .contcatcontainer{
         position: absolute;
@@ -790,6 +804,9 @@
         float: none;
         margin-bottom: 10px;
         margin-right: 0%;
+    }
+    .fs2{
+        font-size: 25px;
     }
     /* .iconlist li{
 
@@ -1308,6 +1325,9 @@ Custom media queries
         margin-bottom: 10px;
     
     }
+    #ddimg{
+        height: 478px;
+    }
 
  }
 
@@ -1321,19 +1341,29 @@ Custom media queries
         margin-left: -16pc;
     
     }
-  
-  
+   
     .contcatcontainer{
         position: relative;
         width: 500px;
         top: -37pc;
-        left: 36pc;
+        left: 34pc;
         margin-bottom: 10px;
     
     }
+      .copyrt{
+        margin-left: 90px;
+    }
+    .hrline{
+        margin-right: 108px;
+    }
+    #ddimg{
+        height: 480px;
+    }
  }
 
-@media only screen and (max-width: 766px){ 
+ @media only screen and (min-width: 800px) and (max-width: 1199px){ 
 
-
+    .fs5{
+        font-size: 30;
+    }
  }

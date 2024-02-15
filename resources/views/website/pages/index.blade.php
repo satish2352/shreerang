@@ -123,7 +123,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="fancy-head text-center relative z-5 m-3 pt-10 wow fadeInDown">
-                        <h1 class="white fs3">Product</h1>
+                        <h1 class="white fs1">Product</h1>
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h2 class="f-800 p-4 clrtext">TAILOR</h2>
+                        <h4 class="f-800 p-4 fs2 clrtext">TAILOR</h4>
                         <a ><img src="{{ asset('website/assets/img/products/Ellipse 7.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-3">
@@ -152,7 +152,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                         <div class="product_img text-center">
-                            <h2 class="f-800 p-4 clrtext">PLATFORM</h2>
+                            <h4 class="f-800 p-4 fs2 clrtext">PLATFORM</h4>
                             <a><img src="{{ asset('website/assets/img/products/Ellipse 6.png')}}" id="prodimgss" alt=""></a>
                         </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -164,7 +164,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h2 class="f-800 p-4 clrtext">PLATS</h2>
+                        <h4 class="f-800 p-4 fs2 clrtext">PLATS</h4>
                         <a><img src="{{ asset('website/assets/img/products/Ellipse 5.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -176,7 +176,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h2 class="f-800 p-4 clrtext">PLATFORM</h2>
+                        <h4 class="f-800 p-4 fs2 clrtext">PLATFORM</h4>
                         <a><img src="{{ asset('website/assets/img/products/Ellipse 6.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -188,7 +188,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h2 class="f-800 p-4 clrtext">TAILOR</h2>
+                        <h4 class="f-800 p-4 fs2 clrtext">TAILOR</h4>
                         <a><img src="{{ asset('website/assets/img/products/Ellipse 7.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -200,7 +200,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-20 p-4">
                     <div class="team-2-each card relative border shadow-3">
                     <div class="product_img text-center">
-                        <h2 class="f-800 p-4 clrtext">PLATS</h2>
+                        <h4 class="f-800 p-4 fs2 clrtext">PLATS</h4>
                         <a><img src="{{ asset('website/assets/img/products/Ellipse 5.png')}}" id="prodimgss" alt=""></a>
                     </div>
                         <div class="team-hover-div procard text-center transition-4">
@@ -231,40 +231,40 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="fancy-head text-center relative z-5 mb-20 wow fadeInDown">
-                            <h1 class="white">Service</h1>
+                            <h1 class="white fs1">Service</h1>
                         </div>
                     </div>
                 </div>
                 <div class="row align-items-center mb-10">
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
-                            <h3 class="white text-center f-700 mb-10">
+                            <h2 class="white text-center f-700 mb-10">
                                 <span class="f-800 fs1">01</span>
                                 WOODWORKING
                                 <span class="green"></span>
-                            </h3>
+                            </h2>
                             <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
-                            <h3 class="white f-700 text-center mb-10">
+                            <h2 class="white f-700 text-center mb-10">
                                 <span class="f-800 fs1">02</span>
                                 METALWORKING
     
-                            </h3>
+                            </h2>
                             <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. s laborum at incidunt. Dolores?</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
-                            <h3 class="white text-center f-700 mb-10">
+                            <h2 class="white text-center f-700 mb-10">
                                 <span class="f-800 fs1">03</span>
                                 WOODWORKING
                                 <span class="green"></span>
-                            </h3>
+                            </h2>
                             <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
@@ -302,7 +302,7 @@
             <div class="row pb-90">
                 <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
-                        <h2 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white f-800">01 </h1></span> Request</h2>
+                        <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">01 </h1></span> Request</h1>
                         <img src="{{ asset('website/assets/img/icons/1.png')}}" alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
@@ -310,14 +310,14 @@
                 
                 <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
-                    <h2 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white f-800">02 </h1></span> Develop</h2>
+                    <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">02 </h1></span> Develop</h1>
                         <img src="{{ asset('website/assets/img/icons/2.png')}}"  alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 <div class="col-xl-4 pl-60 pr-60 mt-10">
                     <div class="">
-                    <h2 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white f-800">03 </h1></span> Install</h2>
+                    <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">03 </h1></span> Install</h1>
                         <img src="{{ asset('website/assets/img/icons/3.png')}}"  alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
@@ -329,7 +329,7 @@
 
      <!-- Testimonial area start -->
      <section class="testimonials-2 reviw">
-        <div class="container-fluid paddiall testmo1">
+        <div class="container-fluid paddiall  paddiall1 testmo1">
             <div class="row align-items-center mb-30">
                 <div class="col-lg-12 col-md-12 text-center text-lg-center">
                     <div class="fancy-head left-al wow fadeInLeft">
@@ -338,7 +338,7 @@
                             Testimonials
                         <span class="line after"></span>
                         </h5> --}}
-                        <h1 class="clrtext">Testimonial</h1>
+                        <h1 class="clrtext fs1">Testimonial</h1>
                     </div>
                 </div>
                 {{-- <div class="col-lg-5 text-center text-lg-right">

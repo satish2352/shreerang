@@ -633,10 +633,7 @@ label {
  border: 5px solid #4CD0B2;
 }
 
-#ddimg{
-    width: 63%;
-    height: 457px;
-}
+
 .main-menu li :after {
     /* position: absolute;
     content: close-quote;

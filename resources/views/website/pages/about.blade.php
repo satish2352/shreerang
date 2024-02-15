@@ -90,7 +90,7 @@
 </section> -->
 <!-- end history -->
     <!-- Director Desk -->
-    <section class="paddiall" id="direct">
+    <section class="paddiall paddiall2" id="direct">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12">

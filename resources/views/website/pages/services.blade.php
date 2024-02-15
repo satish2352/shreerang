@@ -73,33 +73,33 @@
             <div class="row align-items-center mb-10 paddiall4">
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h3 class="white text-center f-700 mb-10">
+                        <h2 class="white text-center f-700 mb-10">
                             <span class="f-800 fs1">01</span>
                             WOODWORKING
                             <span class="green"></span>
-                        </h3>
+                        </h2>
                         <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h3 class="white f-700 text-center mb-10">
+                        <h2 class="white f-700 text-center mb-10">
                             <span class="f-800 fs1">02</span>
                             METALWORKING
 
-                        </h3>
+                        </h2>
                         <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. s laborum at incidunt. Dolores?</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h3 class="white text-center f-700 mb-10">
+                        <h2 class="white text-center f-700 mb-10">
                             <span class="f-800 fs1">03</span>
                             WOODWORKING
                             <span class="green"></span>
-                        </h3>
+                        </h2>
                         <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
