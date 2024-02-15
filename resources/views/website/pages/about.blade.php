@@ -118,25 +118,18 @@
                 </div>
                 
                 {{-- <div class="container paddiall">
-
-                       <div class="director card position-relative shadow-1">  
-                               
+                       <div class="director card position-relative shadow-1">                        
                            <div class="row">
                                <div class="col-lg-4 col-md-4 col-sm-4">
                                     <img src="{{ asset('website/assets/img/about/doottt.png')}}" class=" pl-20 ml-10" alt="">
                                    <img src="{{ asset('website/assets/img/about/director1.png')}}" style="top:120px; left:70px; position:absolute; " alt="">
                                </div>
                                <div class="col-lg-6 col-md-8 col-sm-8 ml-30 deskk">
-                                   <h3 class="white">Lorem ipsum dolor adipisicing elit. provident cupiditate blanditiis harum neque ipsum!</h3>
-                                   
+                                   <h3 class="white">Lorem ipsum dolor adipisicing elit. provident cupiditate blanditiis harum neque ipsum!</h3>     
                                    </div>
-                                  
-                                   
                                </div>
                            </div>
-                       </div>
-
-                        
+                       </div>  
                 </div> --}}
 
 

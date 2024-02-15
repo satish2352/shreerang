@@ -114,8 +114,8 @@
 
                 </div> --}}
 
-                <div class="relative">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30002.54703617599!2d73.6951784831116!3d19.953108539974554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddecafb71b21c9%3A0xa6dab4828bb274df!2sMIDC%20Ambad%2C%20Nashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707914483331!5m2!1sen!2sin" width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="position-relative ">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30002.54703617599!2d73.6951784831116!3d19.953108539974554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddecafb71b21c9%3A0xa6dab4828bb274df!2sMIDC%20Ambad%2C%20Nashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707914483331!5m2!1sen!2sin" width="100%" id="ifrm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
                 <div class="addrescard">
