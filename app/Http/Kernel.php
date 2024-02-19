@@ -49,9 +49,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\EncryptCookies::class,
             \App\Http\Middleware\AdminMiddleware::class,
          ],
-        'organizations' => [
-            \App\Http\Middleware\OrganizationsMiddleware::class,
-        ],
+       
     ];
 
 

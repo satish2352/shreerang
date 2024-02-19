@@ -1,5 +1,5 @@
 <!-- Static Table Start -->
-@extends('organizations.layouts.master')
+@extends('admin.layouts.master')
 @section('content')
 <style>
 .fixed-table-loading {

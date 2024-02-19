@@ -1,5 +1,5 @@
 <!-- Static Table Start -->
-@extends('organizations.layouts.master')
+@extends('admin.layouts.master')
 @section('content')
 <style>
 .fixed-table-loading {
@@ -28,11 +28,11 @@ padding-left: 20px !important;
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd">
-                            <h1>Designs <span class="table-project-n">Data</span> Table</h1>
+                            <h1>All <span class="table-project-n">Designs</span></h1>
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
                                         <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('add-designs') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Organization</button></a>
+                                                <a href="{{ route('add-designs') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Design</button></a>
                                         </div>
                                     </div>
                                 <div class="col-lg-10"></div>

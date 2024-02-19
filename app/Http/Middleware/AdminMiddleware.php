@@ -14,7 +14,8 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($request->session()->get('role_id')==1) {
+        if ($request->session()->get('role_id')) {
+            //$request->session()->get('role_name')
             return $next($request);
         } else {
             return redirect(route("login"));

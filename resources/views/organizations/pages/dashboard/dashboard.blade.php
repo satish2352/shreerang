@@ -1,4 +1,4 @@
-@extends('organizations.layouts.master')
+@extends('admin.layouts.master')
 @section('content')
 
 @endsection

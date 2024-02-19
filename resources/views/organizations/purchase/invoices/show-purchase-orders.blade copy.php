@@ -1,4 +1,4 @@
-@extends('organizations.layouts.master')
+@extends('admin.layouts.master')
 @section('content')
 <style type="text/css" media="print">
 .no-print {

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('highest_qualification')->nullable();
             $table->string('gender')->nullable();
             $table->date('joining_date')->nullable();
-            $table->string('image');
+            $table->string('emp_image');
             $table->boolean('is_deleted')->default(false);
             $table->boolean('is_active')->default(true);
             $table->timestamps();

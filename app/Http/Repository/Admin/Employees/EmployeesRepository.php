@@ -22,7 +22,7 @@ class EmployeesRepository  {
                 'tbl_employees.*',
                 'tbl_organizations.*'
             )
-            ->join('tbl_organizations', 'tbl_employees.organization_id', '=', 'tbl_organizations.id')
+            ->leftJoin('tbl_organizations', 'tbl_employees.organization_id', '=', 'tbl_organizations.id')
             ->orderBy('tbl_employees.updated_at', 'desc')
             ->get();
 
@@ -36,9 +36,8 @@ class EmployeesRepository  {
 
     public function addAll($request)
     {   
-        // dd($request);
+
         try {
-//=======save the credentials in user data also....
             $userData=new User();
             $userData->u_email= $request->email;
             $userData->role_id= "2";
@@ -46,8 +45,7 @@ class EmployeesRepository  {
             $userData->u_password= bcrypt($request->password);
             $userData->save();
 
-            //=======save the credentials in user data completed....
-           //insert data to users table
+            
             $dataOutput = new EmployeesModel();
             $dataOutput->employee_name = $request->employee_name;
             $dataOutput->email = $request->email;
@@ -68,7 +66,8 @@ class EmployeesRepository  {
                 'status' => 'success'
             ];
 
-        } catch (\Exception $e) {
+        } catch (QueryException $e) {
+            dd($e);
             return [
                 'msg' => $e->getMessage(),
                 'status' => 'error'
