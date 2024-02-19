@@ -286,18 +286,21 @@ button,
 .pagination-type1 ul li a:hover,
 .pagination-type1 ul li.active a,
 .portfolio-overlay:before,
-.line-right:after,
-.experience li:after {
+.line-right:after
+{
     background: #029A99;
 }
 
+.experience li:after {
+    background: #00DAC0;
+}
 .footbak{
     background:rgb(9 188 138 / 9%)
 }
 /*green bg opacity classes*/
 
-.white1{
-    color: #c6c1c1db;
+.white1 {
+    color: #f9f2f2eb;
 }
 .bg-green-op-9 {
     background: rgba(9, 188, 138, 0.9)
@@ -312,7 +315,7 @@ button,
 }
 
 .bg-green-op-6 {
-    background:rgb(9 188 138 / 9%)
+    background:rgb(195 255 238 / 9%)
 }
 
 .bg-green-op-5 {

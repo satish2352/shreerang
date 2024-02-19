@@ -42,7 +42,7 @@
         </div>
         <div class="col-lg-2">
         <ul class="experience">
-                        <li>
+                        <li class="active">
                             <span></span>
                         </li>
                         <li>
@@ -90,42 +90,71 @@
 </section> -->
 <!-- end history -->
     <!-- Director Desk -->
-    <section class=" paddiall" id="direct">
-            <div class="container">
+    <section class="paddiall paddiall2" id="direct">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 wow fadeInDown">
+                        <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
                             <h1>Director Desk</h1>
                         </div>
                     </div>
                 </div>  
 
-                <div class="container text-center">
-                    <img src="{{ asset('website/assets/img/about/review.png')}}" id="dirimg">
-                </div>
+                {{-- <div class="container paddiall diimg">
+                    <div class="row ">
+                        <div class="col-lg-5 col-md-6 col-sm-5"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-7">
+                            <p class="deskk mt-20 mr-50">Lorem ipsum dolor sit modi explicabo similique porro. Rem?</p>
+
+                        </div>
+                        <div class="col-lg-1 col-md-"></div>
+
+
+                    </div>
+                    
+                </div> --}}
+                {{-- <div class="container-fluid text-center">
+                    <img src="{{ asset('website/assets/img/about/review.png')}}" id="ddimg">
+                </div> --}}
                 
                 {{-- <div class="container paddiall">
-
-                       <div class="director card position-relative shadow-1">  
-                               
+                       <div class="director card position-relative shadow-1">                        
                            <div class="row">
                                <div class="col-lg-4 col-md-4 col-sm-4">
                                     <img src="{{ asset('website/assets/img/about/doottt.png')}}" class=" pl-20 ml-10" alt="">
                                    <img src="{{ asset('website/assets/img/about/director1.png')}}" style="top:120px; left:70px; position:absolute; " alt="">
                                </div>
                                <div class="col-lg-6 col-md-8 col-sm-8 ml-30 deskk">
-                                   <h3 class="white">Lorem ipsum dolor adipisicing elit. provident cupiditate blanditiis harum neque ipsum!</h3>
-                                   
+                                   <h3 class="white">Lorem ipsum dolor adipisicing elit. provident cupiditate blanditiis harum neque ipsum!</h3>     
+                                   </div>
+                               </div>
+                           </div>
+                       </div>  
+                </div> --}}
+
+                <div class="container p-5 pt-10">
+       
+                    <div class="row">
+                       <div class="card director shadow-1">
+                               
+                           <div class="row">
+                               <div class="col-lg-4 col-md-4 col-sm-4">
+                                <img src="{{ asset('website/assets/img/about/doottt.png')}}" class="pl-10 ml-10" alt="">
+                                <img src="{{ asset('website/assets/img/about/director1.png')}}" id="ddimg1" style="top:120px; left:60px; position:absolute; " alt="">
+                               </div>
+                               <div class="col-lg-8 col-md-8 col-sm-8 text-break p-5">
+                                <h4 class="white" id="texxttt">Lorem ipsum dolor sit amet, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget<span id="dots">...</span><span id="more"> imperdiet sed  congue eros non fermentum.</span></h4>
+                                <br>
+                                <h5 class="white" onclick="myFunction()" id="myBtn">Read more</h5>
                                    </div>
                                   
                                    
                                </div>
                            </div>
                        </div>
-
+                   </div>
                         
-                </div> --}}
-
+           </div>
 
                 
                 
@@ -139,7 +168,7 @@
     <!-- vission mission -->
 
     <section class="">
-        <div class="container pt-30">
+        <div class="container-fluid testmo pt-30">
             <div class="row pt-600 pb-40">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-10">
@@ -151,7 +180,7 @@
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
                     <div class="col-lg-6 pt-60 pb-50 vison">
-                    <h5 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h5>
+                    <h4 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
                     </div>
                     
                     <div class="col-lg-5 order-md-2 text-center">
@@ -162,7 +191,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 pt-30 order-md-1 misn1">
-                    <h5 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo pariatur odio. Placeat vitae temporibus suscipit harum doloremque, ipsum corrupti, quis tempore, cumque dignissimos sunt quia laborum? Ducimus, alias quidem?</h5>
+                    <h4 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo pariatur odio. Placeat vitae temporibus suscipit harum doloremque, ipsum corrupti, quis tempore, cumque dignissimos sunt quia laborum? Ducimus, alias quidem?</h4>
                     </div>
                     </div>
                 </div>
@@ -331,7 +360,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 pb-60">
                     <div class="each-team-3 team_shadow fix">
                         <div class="image-team-3 relative">
                             <a><img src="{{ asset('website/assets/img/team/team6b.png')}}" class="pt-3 pl-3 pr-3" alt=""></a>
@@ -382,4 +411,6 @@
     </section>
     <!-- Team area end -->
 </section>
+<div class="paddiall2"></div>
+
 @endsection

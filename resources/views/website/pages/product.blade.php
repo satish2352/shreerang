@@ -32,7 +32,7 @@
         <div class="container-fluid testmo1 team-area pt-50 pb-5">
             <div class="row ">
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 p-3">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image  relative">
                             <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">            
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 p-3">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod2.png')}}" alt="">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 p-3">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod3.png')}}" alt="">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 p-3">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod4.png')}}" alt="">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 p-3">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod5.png')}}" alt="">
@@ -106,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 p-3">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod6.png')}}" alt="">
@@ -121,7 +121,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 p-3">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">
@@ -136,7 +136,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 p-3">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod4.png')}}" alt="">
@@ -151,7 +151,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6 p-3">
                     <div class="team-each team1 prosha ml-20 mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod2.png')}}" alt="">

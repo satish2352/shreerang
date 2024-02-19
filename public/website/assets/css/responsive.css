@@ -2,9 +2,7 @@
 /* Large devices (Above 1800px) */
 
 /* @media only screen and (min-width: 1800px) {
-    .copyrt{
-        margin-left: 45px;
-    }
+ 
 } */
 
 
@@ -33,21 +31,8 @@
     .copyrt{
         margin-left: 40px;
     }
-    .addrescard{
-        color: #444;
-        top: 516px ;
-        position: absolute;
-        left: 75rem !important;
-        width: 25%;
-    }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 75rem;
-        left: 35rem !important;
-        margin-bottom: 10px;
     
-    }
+   
 }
 
 
@@ -56,24 +41,11 @@
     /* .footbak{
         border-radius: 250px 0px 0px 250px;
     } */
-    .addrescard{
-        color: #444;
-        top: 670px ;
-        position: absolute;
-        left: 75rem !important;
-        width: 25%;
-    }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 75rem;
-        left: 35rem !important;
-        margin-bottom: 10px;
-    
-    }
+
+   
  
     #footlogo{
-        width: 95%;
+        width: 100%;
         margin-left: 40px;
 
         /* height: 410px;
@@ -103,21 +75,7 @@
         border-radius: 250px 0px 0px 250px;
     }
 
-    /* .addrescard{
-        color: #444;
-        top: 500px;
-        position: absolute;
-        left: 44rem;
-        width: 30%;;
-    }
-    .contcatcontainer{
-        position: absolute;
-        width: 500px;
-        top: 58rem;
-        left: 8rem;
-        margin-bottom: 10px;
-    
-    } */
+  
 }
 
 /* Large devices (Above 1200px) */
@@ -128,42 +86,29 @@
         bottom: 0;
     }  */
 
-    .addrescard{
-        color: #444;
-        top: 450px;
-        position: absolute;
-        left: 60rem;
-        width: 25%;;
+    .servicebk {
+        background-size: 100% 100%;
+        background-image: url('../img/banner/Frame 10.png');
     }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 55rem;
-        left: 15rem;
-        margin-bottom: 10px;
-    
-    }
+
     .bkmtrl{
         height: 55rem;
         background-image: url("../img/banner/SERVICES BACKGROUND.png");
         background-size: 98% 100%;
     }
     .copyrt{
-        margin-left: 90px;
+        margin-left: 82px;
     }
  
     .pfonts{
+        height: 8pc;
         opacity: 67%;
         /* color: #fff; */
-        font-size: 22px;
+        font-size: 21px;
     }
-    .hrline {
-        /* border: 1px solid #029A99; */
-        width: 82%;
-        /* margin-right: 17px; */
-    }
+   
     .footlogocol{
-        background-color: #C2FCF1;
+        background-color: #b2f6e7;
         align-items: center;
         
     }
@@ -180,19 +125,23 @@
     }
     .addrescard{
         color: #444;
-        top: 450px;
-        position: absolute;
-        left: 60rem;
-        width: 25%;;
+        top: -38pc;
+        position: relative;
+        left: 57pc;
+        margin-left: -16pc;
+    
     }
+  
+  
     .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 55rem;
-        left: 15rem;
+        position: relative;
+        width: 500px;
+        top: 56rem;
+        left: 20rem;
         margin-bottom: 10px;
     
     }
+ 
 }
 /*end*/
 
@@ -203,7 +152,7 @@
         transition: all .4s;
         box-shadow: 0 4px 10px rgba(40, 47, 65, 0.26);
         z-index: 20;
-        height: 80px;
+        height: 82px;
         -webkit-animation: showHeader 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         -moz-animation: showHeader 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         -o-animation: showHeader 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
@@ -220,42 +169,59 @@
     
     }
     .paddiall1{
-        padding-top: 90px;
+        padding-top: 50px;
         padding-bottom: 90px; 
     
     }
- 
-    .paddiall2{
-        padding-top: 50px;
-        padding-bottom: 50px; 
-    
+    #ifrm{
+        /* width: 100%; */
+        height: 650px;
+        
     }
 
+    .paddiall4{
+        padding-top: 50px;
+        padding-bottom: 70px; 
+    }
     .servicebk{
-        background-size: 100% 114%;
+        background-size: 100% 112%;
         background-image: url("../img/banner/SERVICE_blue_backgroung.png");
     
+    }
+  
+    .materl{
+        display: none;
     }
     .mrtp{
         font-weight: 600;
         position: absolute;
-        margin-top: -10px;
+        margin-top: -50px;
     }
     .icn i{
         padding: 2px;
         background-color: #243772;
         color: white;
-        margin-left: 50px;
+        margin-left: 30px;
     }
     .misiionbak{
         background-image: url('../img/banner/MISIONBACKGRD.png');
     }
     .deskk{
-        top: 94px;
-        padding: 0px 5px 19px 66px;
+        /* position: absolute; */
+        /* padding: 0px 5px 19px 66px; */
         text-align: justify;
+        color: #fff;
+        line-height: normal;
+        font-size: 24px;
+       
+
     }
 
+    .diimg{
+        background-image: url('../img/about/directorcont1.png');
+        height: 25rem;
+        background-size: 100% 100%;
+    }
 
     .servbtn{
        
@@ -266,7 +232,7 @@
         padding-right: 100px;
     }
     .card-info1{
-        height: 150px;
+        height: auto;
         background: #243772; 
     }
    
@@ -275,7 +241,7 @@
         padding-right: 200px;
     }
     .fs1{
-        font-size: 45px;
+        font-size: 47px;
     }
     .fs2{
         font-size: 30px;
@@ -303,15 +269,15 @@
         padding-left: 160px;
         padding-right: 160px;
     }
-    .manuimg1{
-        /* padding-top: 45px; */
-    }
+    /* .manuimg1{
+        padding-top: 45px;
+    } */
     .manuimg2{
         padding-top: 80px;
     }
-    .manuimg3{
-        /* padding-top: 45px; */
-    }
+    /* .manuimg3{
+        padding-top: 45px;
+    } */
     .manuimg4{
         padding-top: 80px;
     }
@@ -327,10 +293,16 @@
     .pfonts{
         opacity: 67%;
         /* color: #fff; */
-        font-size: 22px;
+        font-size: 20px;
     }
     #dirimg{
-        width: 85%;
+        height: 430px;
+        width: 95%;
+    }
+    #dirimg1{
+        position: relative;
+        height: 30rem;
+        width:100%;
     }
    
     .servicebnnr{
@@ -340,6 +312,9 @@
     
     }
  
+    .fs4{
+        font-size: 50px;
+    }
     .vison{
         margin-top: 60px;
         text-align: start;
@@ -356,7 +331,7 @@
     }
     .transperant-head.fixed-nav .main-menu > ul> li > a {
         /* margin-top: 10px; */
-        /* padding: 10px 10px; */
+        padding: 15px 12px;
     }
     .transperant-head.fixed-nav .logo img {
         max-width: 200px;
@@ -417,29 +392,30 @@
 }
 
 /*==========  Non-Mobile First Method  ==========*/
-@media (min-width: 1024px) and (max-width:1336px){
+@media (min-width: 1025px) and (max-width:1336px){
     #footlogo{
-        display: none;
+        /* background-color: #C2FCF1; */
+        /* display: none; */
     }
     .footlogocol{
         align-items: center;
         /* background-color: #C2FCF1; */
     }
-    .addrescard{
+    /* .addrescard{
         color: #444;
         top: 450px;
         position: absolute;
-        left: 60rem;
+        left: 57rem;
         width: 25%;;
     }
     .contcatcontainer{
         position: absolute;
-        /* width: 500px; */
+    
         top: 55rem;
         left: 15rem;
         margin-bottom: 10px;
     
-    }
+    } */
    
 }
 
@@ -451,7 +427,7 @@
     }
     .footlogocol{
         align-items: center;
-        /* background-color: #C2FCF1; */
+        background-color: #C2FCF1;
     }
     
    
@@ -460,21 +436,8 @@
         display: inline-block;
     }
 
-    .addrescard{
-        color: #444;
-        top: 470px;
-        position: absolute;
-        left: 43rem;
-        width: 30%;;
-    }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 58rem;
-        left: 8rem;
-        margin-bottom: 10px;
-    
-    }
+  
+   
     /* #footlogo{
         width: 50%;
     } */
@@ -546,6 +509,10 @@
     .slider-area {
         min-height: 650px;
     }
+    .transperant-head.fixed-nav .main-menu > ul> li > a {
+        /* margin-top: 10px; */
+        padding: 15px 12px;
+    }
  
     .servicebnnr{
         padding-top: 10px;
@@ -554,18 +521,80 @@
 
         
     }
-
-    .paddiall2{
-        padding-top: 100px;
-        padding-bottom: 100px; 
+    #ifrm{
+        /* width: 100%; */
+        height: 650px;
+        
+    }
+    .btn-round1 {
+        border-radius: 50%;
+        padding: 12px 5px 12px 23px;
+        line-height: 11px;
+        color: #fff;
+        background-color: #029A99;
+       
+    }
+    .paddiall1{
+        padding-top: 50px;
+        padding-bottom: 90px; 
     
     }
-
-    .deskk{
-        left: 126px;
-        text-align: justify;
-        padding: 0px 1px 18px 100px;
+    .contcatcontainer{
+        position: absolute;
+        /* width: 500px; */
+        top: 75rem;
+        left: 35rem;  
+        margin-bottom: 10px;
+    
     }
+    .contcatcontainer .card{
+     padding: 1%;
+     width: 40rem;
+     height: 13rem;
+     border-radius: 150px;
+     border: 5px solid #4CD0B2;
+    }
+    
+    .fixed-bottom1{
+        position: fixed;
+        right: 0;
+        bottom: 15px;
+        left: 12px;
+        z-index: 1030;
+    
+    }
+    .desktopfoot{
+        display: none;
+    }
+
+    .paddiall2{
+        padding-top: 30px;
+        padding-bottom: 30px; 
+    
+    }
+    .mobmaterl{
+        display: none;
+    }
+
+    .paddiall4{
+        padding-top: 50px;
+        padding-bottom: 50px; 
+    }
+    .deskk{
+        text-align: justify;
+        color: #fff;
+        line-height: normal;
+        font-size: 14px;
+        /* margin-left: 9rem; */
+
+    }
+
+    .diimg{
+        background-image: url('../img/about/directorcont1.png');
+        height: 20rem;
+        background-size: 100% 100%;
+    }
+
 
 
     
@@ -596,13 +625,7 @@
     .banrimgs{
         display: none;
     }
-    .footlogocol1 .shreelogo{
-        position: absolute;
-        bottom: 50rem;
-        z-index: 9;
-        width: 97%;
-        /* padding: 100px 50px 0px 0px; */
-    }
+
     .hrline{
         width: 100%;
     }
@@ -707,21 +730,8 @@
     .icon-box-border {
         text-align: left;
     }
-    .addrescard{
-        color: #444;
-        top: 470px;
-        position: absolute;
-        left: 25rem;
-        width: 45%;;
-    }
-    .contcatcontainer{
-        position: absolute;
-        /* width: 500px; */
-        top: 58rem;
-        left: 8rem;
-        margin-bottom: 10px;
+   
     
-    }
     .counts-type-3 {
         border: none;
     }
@@ -825,10 +835,46 @@
         margin-bottom: 10px;
         margin-right: 0%;
     }
+    .fs2{
+        font-size: 25px;
+    }
     /* .iconlist li{
 
         margin: 5px 5px 0px 30px;
     } */
+ 
+    /* .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 40pc;
+        margin-left: -16pc;
+    
+    }
+   */
+   #ifrm{
+    height: 210px;
+    }
+
+    #ddimg1{
+        margin-left: -2pc;
+        height: 248px;
+        margin-top: -2pc;
+    
+    }
+    #texxttt {
+        font-size: 14px;
+        margin-top: 11rem;
+    }
+  
+    .contcatcontainer{
+        display: none;
+        position: relative;
+        top: 0px;
+        left: 1pc;
+        /* margin-bottom: 10px; */
+    
+    }
     .footlogocol1 .shreelogo{
         position: absolute;
         bottom: 50rem;
@@ -836,6 +882,7 @@
         width: 97%;
         /* padding: 100px 50px 0px 0px; */
     }
+ 
     .hrline{
         width: 100%;
     }
@@ -844,15 +891,29 @@
         padding: 45% 6% 0% 12%;
         border-radius: 279px 261px 0px 0px;
     }
+    /* director deskkk */
     .director{
-        height: 350px;
+        height: 590px;
         border-radius: 175px;
-        background: #243772; 
+        background: #243772;
     }
+    .deskk{
+        text-align: justify;
+        color: #fff;
+        line-height: normal;
+        font-size: 14px;
+        margin-left: 9rem;
+
+    }
+    .diimg{
+        background-image: url('../img/about/directorcont1.png');
+        height: 10rem;
+        background-size: 100% 100%;
+    }
+
+    
    
-    .desktopfoot{
-        display: none;
-    }
+   
     .request-btn {
         max-width: 100%;
     }
@@ -862,31 +923,7 @@
     #mapframe{
         height: 250px;
     }
-    .addrescard{
-        color: #444;
-        top: 40px;
-        position: relative;
-        left: 0px;
-        width: 100%;;
-    }
-    .contcatcontainer .card{
-       
-        /* width: 15rem; */
-        border-radius: 150px;
-       
-       }
-       .contcatcontainer .card img{
-        width: 10rem;
-       }
   
-    .contcatcontainer{
-        position: relative;
-        width: 500px;
-        top: -25px;
-        left: 70px;
-        margin-bottom: 10px;
-    
-    }
     h1 {
         font-size: 32px;
         letter-spacing: 1px;
@@ -1040,7 +1077,7 @@
     }
     .team-2-each {
        
-        max-width: 254px;
+        max-width: auto;
         margin: auto;
     }
     .career-box {
@@ -1228,12 +1265,28 @@
 
 /* Extra Small Devices, Phones */
 
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+    .footlogocol1 .shreelogo {
+        position: absolute;
+        bottom: 48rem;
+        z-index: 4;
+        width: 97%;
+        /* padding: 100px 50px 0px 0px; */
+    }
+}
 
 
 /*end*/
 
-@media only screen and (max-width: 320px) {}
+@media only screen and (max-width: 320px) {
+    .footlogocol1 .shreelogo {
+        position: absolute;
+        bottom: 61rem;
+        z-index: 9;
+        width: 97%;
+        /* padding: 100px 50px 0px 0px; */
+    }
+}
 
 
 /*end*/
@@ -1243,3 +1296,234 @@
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 Custom media queries
 */
+@media only screen and (min-width: 767px) and (max-width: 991px){
+    
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 40pc;
+        margin-left: -16pc;
+    
+    }
+  
+  
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -37pc;
+        left: 10pc;
+        margin-bottom: 10px;
+    
+    }
+    .footlogocol1 .shreelogo{
+        position: absolute;
+        bottom: 27rem;
+        z-index: 9;
+        width: 97%;
+        /* padding: 100px 50px 0px 0px; */
+    }
+ 
+   
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px){ 
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 57pc;
+        margin-left: -16pc;
+    
+    }
+  
+    .servicebk {
+        background-size: 100% 100%;
+        background-image: url('../img/banner/Frame 10.png');
+    }
+  
+  
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -37pc;
+        left: 20pc;
+        margin-bottom: 10px;
+    
+    }
+ }
+
+ @media only screen and (min-width: 1201px) and (max-width: 1399px){
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 68pc;
+        margin-left: -16pc;
+    
+    }
+  
+  
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -37pc;
+        left: 20pc;
+        margin-bottom: 10px;
+    
+    }
+ }
+@media only screen and (min-width: 1400px) and (max-width: 1599px){ 
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 70pc;
+        margin-left: -16pc;
+    
+    }
+  
+  
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -37pc;
+        left: 30pc;
+        margin-bottom: 10px;
+    
+    }
+    #ddimg{
+        height: 478px;
+    }
+
+ }
+
+
+@media only screen and (min-width: 1600px) and (max-width: 1920px){ 
+    .addrescard{
+        color: #444;
+        top: -38pc;
+        position: relative;
+        left: 74pc;
+        margin-left: -16pc;
+    
+    }
+    
+    .servicebnnr{
+       
+        background-size: 100% 116%;
+        background-image: url('../img/banner/Frame 11.png');
+    
+    }
+   
+    .contcatcontainer{
+        position: relative;
+        width: 500px;
+        top: -37pc;
+        left: 34pc;
+        margin-bottom: 10px;
+    
+    }
+      .copyrt{
+        margin-left: 90px;
+    }
+    .hrline{
+        margin-right: 108px;
+    }
+    #ddimg{
+        height: 480px;
+    }
+ }
+
+ @media only screen and (min-width: 800px) and (max-width: 1199px){ 
+
+    .fs5{
+        font-size: 30;
+    }
+ }
+
+ /* iPad Air */
+@media only screen and (min-width: 768px) and (max-width: 1024px) { 
+    .footlogocol1 .shreelogo{
+        display: none;
+    }
+    .footer-area1{
+        position: relative;
+        padding: 4% 0% 0% 0%;
+        border-radius: 0px 0px 0px 0px;
+    }
+
+    .container-fluid1 {
+        width: 100%;
+        /* padding-right: 15px; */
+        /* padding-left: 15px; */
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .contcatcontainer {
+        position: relative;
+        width: 500px;
+        top: -37pc;
+        left: 8pc;
+        margin-bottom: 10px;
+    }
+    #ddimg1{
+        margin-left: -2pc;
+        height: 211px;
+        margin-top: -3pc;
+    
+    }
+    #texxttt {
+        font-size: 16px;
+        margin-top: 0rem;
+    }
+    .director {
+        height: 230px;
+        border-radius: 175px;
+        background: #243772;
+    }
+  
+}
+
+@media screen and (min-width: 992px) and (max-width: 1024px) { 
+    .transperant-head.fixed-nav .main-menu > ul> li > a{
+        padding: 15px 8px;
+    
+    }
+    .main-menu li a{
+        font-size: 20px;
+    }
+    #ifrm{
+        /* width: 100%; */
+       
+        height: 650px;
+        
+    }
+    h2{
+        font-size: 22px;
+    }
+    .footlogocol{
+        align-items: center;
+        background-color: #C2FCF1;
+    }
+  
+
+    .copyrt{
+        margin-left: 48px;
+    }
+    .hrline{
+        margin-right: 60px;
+    }
+    .container{
+        max-width: 1320px;
+    }
+    .testmo1{
+        padding-left: 3%;
+        padding-right: 5%;
+    }
+    .servicebk {
+        background-size: 100% 100%;
+        background-image: url('../img/banner/Frame 10.png');
+    }
+
+ }
