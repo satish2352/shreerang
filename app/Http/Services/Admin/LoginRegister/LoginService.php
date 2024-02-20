@@ -26,6 +26,7 @@ class LoginService
                 $request->session()->put('org_id',$response['user_details']['id']);
                 $request->session()->put('role_id',$response['user_details']['role_id']);
                 $request->session()->put('u_email',$response['user_details']['u_email']);
+                $request->session()->put('org_id',$response['user_details']['org_id']);
                 $json = ['status'=>'success','msg'=>$response['user_details'],'role_id'=>$response['user_details']['role_id']];
             } else {
                 $json = ['status'=>'failed','msg'=>'These credentials do not match our records.'];

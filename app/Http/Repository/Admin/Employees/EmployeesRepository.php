@@ -40,7 +40,7 @@ class EmployeesRepository  {
         try {
             $userData=new User();
             $userData->u_email= $request->email;
-            $userData->role_id= "2";
+            $userData->role_id= Config::get('DepartmentConstant.Owner');
             $userData->org_id = $request->company_id;
             $userData->u_password= bcrypt($request->password);
             $userData->save();
