@@ -46,7 +46,7 @@ class LoginController extends Controller
                 if($resp['status']=='success') {
                     return redirect('dashboard');
                 } else {
-                    dd("IN else redirect");
+                    // dd("IN else redirect");
                     return redirect('/login')->with('error', $resp['msg']);
                 }
 

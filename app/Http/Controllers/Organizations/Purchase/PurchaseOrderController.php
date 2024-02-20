@@ -104,6 +104,24 @@ class PurchaseOrderController extends Controller
         return view('organizations.purchase.invoices.show-purchase-orders',compact('invoice','title'));
     }
 
+    public function show21(Request $request)
+    {
+        $show_data_id = base64_decode($request->id);
+        $invoice = PurchaseOrdersModel::find($show_data_id);
+        // dd($invoice);
+        $title = 'view invoice';
+        return view('organizations.purchase.invoices.show-purchase-orders21',compact('invoice','title'));
+    }
+
+    public function showpurchase(Request $request)
+    {
+        $show_data_id = base64_decode($request->id);
+        $invoice = PurchaseOrdersModel::find($show_data_id);
+        dd($invoice);
+        $title = 'view invoice';
+        return view('organizations.purchase.invoices.show-purchase-orders1',compact('invoice','title'));
+    }
+
      
     public function edit(Request $request)
     {

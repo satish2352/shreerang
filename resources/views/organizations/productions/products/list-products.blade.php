@@ -80,10 +80,10 @@ padding-left: 20px !important;
                                         <tr>
                                             <th data-field="state" data-checkbox="true"></th>
                                             <th data-field="id">ID</th>
-                                            <th data-field="design_name" data-editable="true">Design Name</th>
-                                            <th data-field="design_page" data-editable="true">Design Page</th>
+                                            <th data-field="design_name" data-editable="true">Product Name</th>
+                                            <th data-field="design_page" data-editable="true">Product Page</th>
                                             <th data-field="project_name" data-editable="true">Project Name</th>
-                                            <th data-field="time_allocation" data-editable="true">Time Allocated For Design</th>
+                                            <th data-field="time_allocation" data-editable="true">Time Allocated For Product</th>
                                             <th data-field="image" data-editable="false">Image</th>
                                             <th data-field="action">Action</th>
                                         </tr>

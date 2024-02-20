@@ -353,8 +353,8 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -460,8 +460,8 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         ),
         'Fruitcake\\Cors\\' => 
         array (
-            0 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
-            1 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
+            0 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
+            1 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
         ),
         'Faker\\' => 
         array (
@@ -541,7 +541,6 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         'App\\Http\\Controllers\\Admin\\Organization\\OrganizationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Organization/OrganizationController.php',
         'App\\Http\\Controllers\\Admin\\Roles\\RolesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Roles/RolesController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\Organizations\\Dashboard\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Organizations/Dashboard/DashboardController.php',
         'App\\Http\\Controllers\\Organizations\\Designers\\Designs\\DesignerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Organizations/Designers/Designs/DesignerController.php',
         'App\\Http\\Controllers\\Organizations\\Employees\\EmployeesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Organizations/Employees/EmployeesController.php',
         'App\\Http\\Controllers\\Organizations\\HR\\Employees\\EmployeesHrController' => __DIR__ . '/../..' . '/app/Http/Controllers/Organizations/HR/Employees/EmployeesHrController.php',
@@ -551,11 +550,11 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         'App\\Http\\Controllers\\Organizations\\Purchase\\PurchaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/Organizations/Purchase/PurchaseController.php',
         'App\\Http\\Controllers\\Organizations\\Purchase\\PurchaseOrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Organizations/Purchase/PurchaseOrderController.php',
         'App\\Http\\Controllers\\Organizations\\Store\\PurchaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/Organizations/Store/PurchaseController.php',
+        'App\\Http\\Controllers\\Website\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Website/PagesController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\AdminMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminMiddleware.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
-        'App\\Http\\Middleware\\OrganizationsMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/OrganizationsMiddleware.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
@@ -718,8 +717,8 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\RoleSeeder' => __DIR__ . '/../..' . '/database/seeders/RoleSeeder.php',
         'Database\\Seeders\\UsersSeeder' => __DIR__ . '/../..' . '/database/seeders/UsersSeeder.php',
-        'Database\\Seeders\\WebsiteContactDetailsSeeder' => __DIR__ . '/../..' . '/database/seeders/WebsiteContactDetailsSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
         'DateInvalidOperationException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',
@@ -3427,6 +3426,7 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         'Nette\\Utils\\ImageColor' => __DIR__ . '/..' . '/nette/utils/src/Utils/ImageColor.php',
         'Nette\\Utils\\ImageException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\ImageType' => __DIR__ . '/..' . '/nette/utils/src/Utils/ImageType.php',
+        'Nette\\Utils\\Iterables' => __DIR__ . '/..' . '/nette/utils/src/Utils/Iterables.php',
         'Nette\\Utils\\Json' => __DIR__ . '/..' . '/nette/utils/src/Utils/Json.php',
         'Nette\\Utils\\JsonException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\ObjectHelpers' => __DIR__ . '/..' . '/nette/utils/src/Utils/ObjectHelpers.php',
@@ -4526,6 +4526,7 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+        'SQLite3Exception' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
         'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',

@@ -15,7 +15,7 @@
         <div class="sparkline12-list">
             <div class="sparkline12-hd">
                 <div class="main-sparkline12-hd">
-                    <center><h1>Edit Design Data</h1></center>
+                    <center><h1>Edit Production Data</h1></center>
                 </div>
             </div>
             <div class="sparkline12-graph">
@@ -58,11 +58,11 @@
                                         <div class="form-group-inner">
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="design_name">Design Name:</label>
+                                                    <label for="design_name">Product Name:</label>
                                                     <input type="text" class="form-control" id="design_name" name="design_name" value="{{ $editData->design_name }}" placeholder="Enter Employee name">
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="design_page">Design Page:</label>
+                                                    <label for="design_page">Product Page:</label>
                                                     <input type="text" class="form-control" id="design_page" name="design_page" value="{{ $editData->design_page }}" placeholder="Enter design_page">
                                                 </div>
                                             </div>
@@ -73,7 +73,7 @@
                                                     <input type="text" class="form-control" id="project_name" name="project_name" value="{{ $editData->project_name }}" placeholder="Enter Aadhar number">
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="time_allocation">Time Allocated For Design:</label>
+                                                    <label for="time_allocation">Time Allocated For Product:</label>
                                                     <input type="text" class="form-control" id="time_allocation" name="time_allocation" value="{{ $editData->time_allocation }}" placeholder="Enter Pancard number">
                                                 </div>
                                             </div>

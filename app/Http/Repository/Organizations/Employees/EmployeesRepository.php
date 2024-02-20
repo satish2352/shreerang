@@ -17,7 +17,7 @@ class EmployeesRepository  {
                         ->where('organization_id', session()->get('org_id'))
                         ->orderBy('updated_at', 'desc')
                         ->get();
-            // dd($data_output);
+
             return $data_output;
         } catch (\Exception $e) {
             return $e;
@@ -92,7 +92,7 @@ class EmployeesRepository  {
             $userData = User::where('u_email', $request->email)->first();
             $userData->u_email= $request->email;
             $userData->role_id=$request->role_id;
-            $dataOutput->org_id = $request->session()->get('org_id');
+            // $dataOutput->org_id =session()->get('org_id');
 
             $userData->u_password= bcrypt($request->password);
             $userData->save();
