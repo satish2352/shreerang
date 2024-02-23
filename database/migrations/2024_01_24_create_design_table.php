@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('designs', function (Blueprint $table) {
             $table->id();
-            $table->string('design_name');
             $table->string('design_page');
             $table->string('project_name');
             $table->string('time_allocation');

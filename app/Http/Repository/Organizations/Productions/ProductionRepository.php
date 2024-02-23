@@ -4,7 +4,8 @@ use Illuminate\Database\QueryException;
 use DB;
 use Illuminate\Support\Carbon;
 use App\Models\ {
-DesignModel
+DesignModel,
+DesignDetailsModel
 };
 use Config;
 
@@ -21,37 +22,78 @@ class ProductionRepository  {
     }
 
 
-    public function addAll($request)
-    {   
-        try {
-           //insert data to users table
+    // public function addAll($request)
+    // {   
+    //     try {
+    //        //insert data to users table
            
-            $dataOutput = new DesignModel();
-            $dataOutput->design_name = $request->design_name;
-            $dataOutput->design_page = $request->design_page;
-            $dataOutput->project_name = $request->project_name;
-            $dataOutput->time_allocation=$request->time_allocation;
-            $dataOutput->image = 'null';
-            $dataOutput->save();
-            $last_insert_id = $dataOutput->id;
-            $imageName = $last_insert_id . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
+    //         $dataOutput = new DesignModel();
+    //         $dataOutput->design_name = $request->design_name;
+    //         $dataOutput->design_page = $request->design_page;
+    //         $dataOutput->project_name = $request->project_name;
+    //         $dataOutput->time_allocation=$request->time_allocation;
+    //         $dataOutput->image = 'null';
+    //         $dataOutput->save();
+    //         $last_insert_id = $dataOutput->id;
+    //         $imageName = $last_insert_id . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
 
-            $finalOutput = DesignModel::find($last_insert_id);
-            $finalOutput->image = $imageName;
-            $finalOutput->save();
+    //         $finalOutput = DesignModel::find($last_insert_id);
+    //         $finalOutput->image = $imageName;
+    //         $finalOutput->save();
 
-            return [
-                'ImageName' => $imageName,
-                'status' => 'success'
-            ];
+    //         return [
+    //             'ImageName' => $imageName,
+    //             'status' => 'success'
+    //         ];
 
-        } catch (\Exception $e) {
-            return [
-                'msg' => $e->getMessage(),
-                'status' => 'error'
-            ];
+    //     } catch (\Exception $e) {
+    //         return [
+    //             'msg' => $e->getMessage(),
+    //             'status' => 'error'
+    //         ];
+    //     }
+    // }
+    // repository
+public function addAll($request)
+{
+    try {
+        $dataOutput = new DesignModel();
+        $dataOutput->design_page = $request->design_page;
+        $dataOutput->project_name = $request->project_name;
+        $dataOutput->time_allocation = $request->time_allocation;
+        $dataOutput->image = 'null';
+        $dataOutput->save();
+        $last_insert_id = $dataOutput->id;
+
+        // Save data into DesignDetailsModel
+        foreach ($request->addmore as $item) {
+            $designDetails = new DesignDetailsModel();
+            $designDetails->designs_id = $last_insert_id;
+            $designDetails->design_name = $item['design_name'];
+            $designDetails->product_quantity = $item['product_quantity'];
+            $designDetails->product_size = $item['product_size'];
+            $designDetails->save();
         }
+
+        // Updating image name in DesignModel
+        $imageName = $last_insert_id . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
+        $finalOutput = DesignModel::find($last_insert_id);
+        $finalOutput->image = $imageName;
+        $finalOutput->save();
+// dd($finalOutput);
+// die();
+        return [
+            'ImageName' => $imageName,
+            'status' => 'success'
+        ];
+    } catch (\Exception $e) {
+        return [
+            'msg' => $e->getMessage(),
+            'status' => 'error'
+        ];
     }
+}
+
     public function getById($id){
     try {
             $dataOutputByid = DesignModel::find($id);

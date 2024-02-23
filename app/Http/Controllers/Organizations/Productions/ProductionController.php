@@ -40,18 +40,13 @@ class ProductionController extends Controller
 
       public function store(Request $request){
         $rules = [
-                'design_name' => 'required|string|max:255',
                 'design_page' => 'required|max:255',
                 'project_name' => 'required|string|max:20',
                 'time_allocation' => 'required|string|max:255',
                 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
             ];
 
-            $messages = [
-                        'design_name.required' => 'The design name is required.',
-                        'design_name.string' => 'The design name must be a valid string.',
-                        'design_name.max' => 'The design name must not exceed 255 characters.',
-                        
+            $messages = [                        
                         'design_page.required' => 'The design page is required.',
                         'design_page.max' => 'The design page must not exceed 255 characters.',
                         
