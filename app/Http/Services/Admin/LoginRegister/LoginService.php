@@ -22,6 +22,7 @@ class LoginService
             // use bcrypt for login
             $password = $request['password'];
             if (Hash::check($password, $response['user_details']['u_password'])) {
+
                 $request->session()->put('user_id',$response['user_details']['id']);
                 $request->session()->put('org_id',$response['user_details']['id']);
                 $request->session()->put('role_id',$response['user_details']['role_id']);

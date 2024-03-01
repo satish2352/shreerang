@@ -4,10 +4,11 @@
         <a href="index.html"><img class="main-logo" src="{{asset('img/logo/logo.png')}}" alt=""></a>
         <strong><img src="{{asset('img/logo/logosn.png')}}" alt=""></strong>
       </div>
+{{ dd(config('App.AllConstant.ROLE_ID.SUPER')) }}
       <div class="left-custom-menu-adp-wrap comment-scrollbar no-print">
         <nav class="sidebar-nav left-sidebar-menu-pro">
           <ul class="metismenu" id="menu1">
-            @if(session()->get('role_name')=='Super Admin')
+            @if(session()->get('role_id')== {{ config('App.AllConstant.ROLE_ID.SUPER') }})
             <li class="">
               <a class="has-arrow" href="index.html">
                 <i class="fa big-icon fa-home icon-wrap"></i>

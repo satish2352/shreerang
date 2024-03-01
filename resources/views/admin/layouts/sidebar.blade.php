@@ -6,9 +6,9 @@
         </div>
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
             <nav class="sidebar-nav left-sidebar-menu-pro">
-
+{{dd(config('app.allconstant'))}}
                 <ul class="metismenu" id="menu1">
-                    @if (session()->get('role_id') == Config::get('DepartmentConstant.Super'))
+                    @if (session()->get('role_id') ==  config('App.AllConstant.ROLE_ID.SUPER'))
                         <li>
                             <a class="has-arrow" href="{{ route('list-organizations') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
