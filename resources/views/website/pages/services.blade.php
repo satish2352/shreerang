@@ -70,11 +70,11 @@
                     </div>
                 </div>
             </div> --}}
-            <div class="row align-items-center mb-10 paddiall4">
+            <div class="row align-items-md-center  paddiall4">
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h2 class="white text-center f-700 mb-10">
-                            <span class="f-800 fs1">01</span>
+                        <h2 class="white text-center d-flex justify-content-center   f-700 mb-10">
+                            <span class="f-800 fs-1 mr-10">01</span>
                             WOODWORKING
                             <span class="green"></span>
                         </h2>
@@ -84,8 +84,8 @@
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h2 class="white f-700 text-center mb-10">
-                            <span class="f-800 fs1">02</span>
+                        <h2 class="white f-700 text-center d-flex justify-content-center  mb-10">
+                            <span class="f-800 fs-1 mr-10">02</span>
                             METALWORKING
 
                         </h2>
@@ -95,12 +95,12 @@
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                     <div class="exp-cta pr-50 pr-lg-00">
-                        <h2 class="white text-center f-700 mb-10">
-                            <span class="f-800 fs1">03</span>
+                        <h2 class="white text-center d-flex justify-content-center f-700 mb-10">
+                            <span class="f-800 fs-1 mr-10">03</span>
                             WOODWORKING
                             <span class="green"></span>
                         </h2>
-                        <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                        <p class="white1 pfonts mb-55 mb-md-15 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="container-fluid text-center">
+                <div class="container-fluid text-center col-12">
 
                     <img src="{{ asset('website/assets/img/banner/material.png')}}" alt="">
                 </div>
@@ -151,7 +151,7 @@
                                                         <h3 class="clrtext f-700">
                                                         AUTOMOBILE
                                                         </h3>
-                                                    
+
                                                     </div>
                                                 </div>
                                                 </div>
@@ -261,7 +261,7 @@
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center card-info1">
-                        <h1 class="white fs2 f-600"> Challenging Fabrication <br> Works </h1>
+                        <h1 class="white fs2 f-600"> Challenging Fabrication  Works </h1>
                     
                         </div>
                         </div>
