@@ -2,8 +2,9 @@
     <!-- Footer area start -->
     {{-- for desktop view  --}}
 <section class="desktopfoot paddiall2">
-    <div class="row footlogocol">
-        <div class="col-lg-3 col-md-12 text-center bg-green-op-6" style="">
+    <div class="row ">
+    <!-- footlogocol -->
+        <div class="col-lg-3 col-md-12 text-center bg-green-op-100 pt-50" style="">
             <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="footlogo" alt="">
         </div>
         <div class="col-lg-9 col-md-12 col-sm-12 justify-content-md-center">
