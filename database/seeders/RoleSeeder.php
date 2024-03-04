@@ -42,7 +42,7 @@ class RoleSeeder extends Seeder
         RolesModel::create(
             [
                 'id'=> 6,
-                'role_name' => 'PO',
+                'role_name' => 'Quality',
             ]);
         RolesModel::create(
             [
