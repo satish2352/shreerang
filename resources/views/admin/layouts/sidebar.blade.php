@@ -6,9 +6,9 @@
         </div>
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
             <nav class="sidebar-nav left-sidebar-menu-pro">
-{{dd(config('app.allconstant'))}}
+
                 <ul class="metismenu" id="menu1">
-                    @if (session()->get('role_id') ==  config('App.AllConstant.ROLE_ID.SUPER'))
+                    @if (session()->get('role_id') ==  config('constants.ROLE_ID.SUPER'))
                         <li>
                             <a class="has-arrow" href="{{ route('list-organizations') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
@@ -17,7 +17,7 @@
                                 <li><a title="Inbox" href="{{ route('list-organizations') }}"><i
                                             class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
                                             class="mini-sub-pro">List Organizations</span></a></li>
-                                <li><a title="Inbox" href="{{ route('list-employees') }}"><i
+                                <li><a title="Inbox" href="{{ route('organizations-list-employees') }}"><i
                                             class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
                                             class="mini-sub-pro">List Employees</span></a>
                                 </li>
@@ -30,8 +30,18 @@
                                             class="mini-sub-pro">List Roles</span></a></li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a class="has-arrow" href="{{ route('list-products') }}">
+                        <li>
+                            <a class="has-arrow" href="{{ route('list-owner-product') }}"
+                                aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                    class="mini-click-non">Basic Specification</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{{ route('list-owner-product') }}"><i
+                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
+                                            class="mini-sub-pro">List Specification</span></a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="">
+                            <a class="has-arrow" href="index.html">
                                 <i class="fa big-icon fa-home icon-wrap"></i>
                                 <span class="mini-click-non">Basic Product </span>
                             </a>
@@ -40,8 +50,8 @@
                                             class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
                                             class="mini-sub-pro">List Products</span></a></li>
                             </ul>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a class="has-arrow" href="{{ route('organizations-list-employees') }}"
                                 aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
                                     class="mini-click-non">Employees</span></a>
@@ -50,9 +60,9 @@
                                             class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
                                             class="mini-sub-pro">Add Employees</span></a></li>
                             </ul>
-                        </li>
+                        </li> -->
 
-                        <li>
+                        <!-- <li>
                             <a class="has-arrow" href="{{ route('organizations-list-employees') }}"
                                 aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
                                     class="mini-click-non">Employees</span></a>
@@ -61,21 +71,12 @@
                                             class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
                                             class="mini-sub-pro">Add Employees</span></a></li>
                             </ul>
-                        </li>
+                        </li> -->
                     @endif
 
-                    @if (session()->get('role_id') == Config::get('DepartmentConstant.Owner'))
-                        <li>
-                            <a class="has-arrow" href="{{ route('organizations-list-employees') }}"
-                                aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
-                                    class="mini-click-non">Employees</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{ route('organizations-list-employees') }}"><i
-                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
-                                            class="mini-sub-pro">Add Employees</span></a></li>
-                            </ul>
-                        </li>
+                    @if (session()->get('role_id') == config('constants.ROLE_ID.HIGHER_AUTHORITY'))
 
+                       
                         <li>
                             <a class="has-arrow" href="{{ route('organizations-list-employees') }}"
                                 aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
@@ -86,20 +87,12 @@
                                             class="mini-sub-pro">Add Employees</span></a></li>
                             </ul>
                         </li>
+                       
+
+
+                  
                     @endif
-                    @if (session()->get('role_id') == Config::get('DepartmentConstant.HR'))
-                        <li>
-                            <a class="has-arrow" href="{{ route('hr-list-employees') }}" aria-expanded="false"><i
-                                    class="fa big-icon fa-envelope icon-wrap"></i> <span
-                                    class="mini-click-non">Staffs</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{ route('hr-list-employees') }}"><i
-                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
-                                            class="mini-sub-pro">Add Staffs</span></a></li>
-                            </ul>
-                        </li>
-                    @endif
-                    @if (session()->get('role_id') == Config::get('DepartmentConstant.Designer'))
+                    @if (session()->get('role_id') == config('constants.ROLE_ID.DESIGNER'))
                         <li>
                             <a class="has-arrow" href="{{ route('list-designs') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
@@ -110,9 +103,19 @@
                                             class="mini-sub-pro">List Designs</span></a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
+                                    class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                    class="mini-click-non">Designs</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{{ route('list-design-upload') }}"><i
+                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
+                                            class="mini-sub-pro">List Designs</span></a></li>
+                            </ul>
+                        </li>
+                        
                     @endif
-
-                    @if (session()->get('role_id') == Config::get('DepartmentConstant.Production'))
+                    @if (session()->get('role_id') == config('constants.ROLE_ID.PRODUCTION'))
                         <li>
                             <a class="has-arrow" href="{{ route('list-products') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
@@ -134,7 +137,7 @@
                             </ul>
                         </li> --}}
                     @endif
-                    @if (session()->get('role_id') == Config::get('DepartmentConstant.Purchase'))
+                    @if (session()->get('role_id') == config('constants.ROLE_ID.PURCHASE'))
                         <li>
                             <a class="has-arrow" href="{{ route('list-purchase') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
@@ -157,7 +160,7 @@
                             </ul>
                         </li>
                     @endif
-                    @if (session()->get('role_id') == Config::get('DepartmentConstant.Store'))
+                    @if (session()->get('role_id') == config('constants.ROLE_ID.STORE'))
                         <li>
                             <a class="has-arrow" href="{{ route('list-store-purchase') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
@@ -169,7 +172,30 @@
                             </ul>
                         </li>
                     @endif
-
+                    @if (session()->get('role_id') == config('constants.ROLE_ID.QUALITY'))
+                    <li>
+                        <a class="has-arrow" href="{{ route('list-grn') }}" aria-expanded="false"><i
+                                class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                class="mini-click-non">GRN Form</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Inbox" href="{{ route('list-grn') }}"><i
+                                        class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
+                                        class="mini-sub-pro">List GRN</span></a></li>
+                        </ul>
+                    </li>
+                @endif
+                    @if (session()->get('role_id') == config('constants.ROLE_ID.HR'))
+                    <li>
+                        <a class="has-arrow" href="{{ route('hr-list-employees') }}" aria-expanded="false"><i
+                                class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                class="mini-click-non">Staffs</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Inbox" href="{{ route('hr-list-employees') }}"><i
+                                        class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
+                                        class="mini-sub-pro">Add Staffs</span></a></li>
+                        </ul>
+                    </li>
+                @endif
                     {{-- =====sample routing============= --}}
                     {{-- <li>
                         <a class="has-arrow" href="{{ route('list-newproducts') }}" aria-expanded="false"><i

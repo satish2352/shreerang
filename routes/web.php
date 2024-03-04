@@ -185,3 +185,19 @@ Route::post('/store-grn', ['as' => 'store-grn', 'uses' => 'App\Http\Controllers\
 // ========================Quality Department End========
 
 
+// ========================OWNER Department Start========
+Route::get('/list-owner-product', ['as' => 'list-owner-product', 'uses' => 'App\Http\Controllers\Organizations\OwnerProduct\OwnerProductController@index']);
+Route::get('/add-owner-product', ['as' => 'add-owner-product', 'uses' => 'App\Http\Controllers\Organizations\OwnerProduct\OwnerProductController@add']);
+Route::get('/edit-owner-product', ['as' => 'edit-owner-product', 'uses' => 'App\Http\Controllers\Organizations\OwnerProduct\OwnerProductController@edit']);
+Route::post('/store-owner-product', ['as' => 'store-owner-product', 'uses' => 'App\Http\Controllers\Organizations\OwnerProduct\OwnerProductController@store']);
+// Route::get('/edit-grn/{id}', ['as' => 'edit-grn', 'uses' => 'App\Http\Controllers\Organizations\OwnerProduct\OwnerProductController@edit']);
+// Route::post('/update-grn', ['as' => 'update-grn', 'uses' => 'App\Http\Controllers\Organizations\OwnerProduct\OwnerProductController@update']);
+// Route::any('/delete-grn/{id}', ['as' => 'delete-grn', 'uses' => 'App\Http\Controllers\Organizations\OwnerProduct\OwnerProductController@destroy']);
+// ========================OWNER Department End========
+
+
+// ========================DesignUploadcontroller========
+
+Route::get('/list-design-upload', ['as' => 'list-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@index']);
+Route::get('/add-design-upload', ['as' => 'add-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@add']);
+Route::get('/edit-design-upload', ['as' => 'edit-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@edit']);
