@@ -30,16 +30,7 @@
                                             class="mini-sub-pro">List Roles</span></a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a class="has-arrow" href="{{ route('list-owner-product') }}"
-                                aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
-                                    class="mini-click-non">Basic Specification</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{ route('list-owner-product') }}"><i
-                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
-                                            class="mini-sub-pro">List Specification</span></a></li>
-                            </ul>
-                        </li>
+                    
                         <!-- <li class="">
                             <a class="has-arrow" href="index.html">
                                 <i class="fa big-icon fa-home icon-wrap"></i>
@@ -88,7 +79,16 @@
                             </ul>
                         </li>
                        
-
+                        <li>
+                            <a class="has-arrow" href="{{ route('list-owner-product') }}"
+                                aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                    class="mini-click-non">Basic Specification</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{{ route('list-owner-product') }}"><i
+                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
+                                            class="mini-sub-pro">List Specification</span></a></li>
+                            </ul>
+                        </li>
 
                   
                     @endif
