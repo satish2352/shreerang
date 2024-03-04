@@ -16,9 +16,9 @@ class UsersSeeder extends Seeder
     {
         User::create(
             [
-                'u_email' => 'superadmin@gmail.com',
+                'u_email' => 'admin@gmail.com',
                 // 'u_uname' => 'admin@gmail.com',
-                'u_password' => bcrypt('superadmin@gmail.com'),
+                'u_password' => bcrypt('admin@gmail.com'),
                 'role_id' => 111,
                 'org_id' => 0,
                 'f_name' => 'fname',
@@ -32,26 +32,6 @@ class UsersSeeder extends Seeder
                 'pincode' => 'pincode',
                 'ip_address' => '192.168.1.32',
             ]);
-            
-        User::create(
-        [
-            'u_email' => 'test@gmail.com',
-            // 'u_uname' => 'test@gmail.com',
-            'u_password' => bcrypt('test@gmail.com'),
-            'role_id' => 1,
-            'org_id' => 0,
-            'f_name' => 'fname',
-            'm_name' => 'mname',
-            'l_name' => 'lname',
-            'number' => 'number',
-            'designation' => 'designation',
-            'address' => 'address',
-            'state' => 'state',
-            'city' => 'city',
-            'pincode' => 'pincode',
-            'ip_address' => '192.168.1.32',
-        ]);
-
-        
+                    
     }
 }

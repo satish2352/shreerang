@@ -33,6 +33,7 @@ class organizationRepository  {
             $dataOutput->email = $request->email;
             $dataOutput->mobile_number = $request->mobile_number;
             $dataOutput->address = $request->address;
+            $dataOutput->role_id= config('constants.ROLE_ID.HIGHER_AUTHORITY');
             $dataOutput->image = 'null';
             $dataOutput->founding_date = $request->founding_date;
             $dataOutput->employee_count = $request->employee_count;
