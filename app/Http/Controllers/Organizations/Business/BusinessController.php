@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Organizations\OwnerProduct;
+namespace App\Http\Controllers\Organizations\Business;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ use Carbon;
 //     DesignDetailsModel
 //     };
 
-class OwnerProductController extends Controller
+class BusinessController extends Controller
 { 
     // public function __construct(){
     //     $this->service = new ProductionServices();
@@ -24,7 +24,7 @@ class OwnerProductController extends Controller
 
     public function index(){
         try {
-            return view('organizations.owner.owner-product.list-owner-product');
+            return view('organizations.business.business.list-business');
         } catch (\Exception $e) {
             return $e;
         }
@@ -32,14 +32,14 @@ class OwnerProductController extends Controller
     
     public function add(){
         try {
-            return view('organizations.owner.owner-product.add-owner-product');
+            return view('organizations.business.business.add-business');
         } catch (\Exception $e) {
             return $e;
         }
     } 
     public function edit(){
         try {       
-            return view('organizations.owner.owner-product.edit-owner-product');
+            return view('organizations.business.business.edit-business');
         } catch (\Exception $e) {
             return $e;
         }
