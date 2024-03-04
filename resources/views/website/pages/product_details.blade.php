@@ -33,7 +33,7 @@
                         
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-8 mb-70 ">
                     <h2 class="f-700 mb-20">Parts Trolley</h2>
                     <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dolor lorem, tempor elementum eros a, tempor aliquet tellus. Proin id arcu lorem. Nam at tellus elementum lorem tincidunt consequat. Suspendisse aliquam vitae mi non eleifend. Aliquam posuere id neque ut finibus. Etiam tristique lorem in neque vehicula fermentum. Aenean in ultrices odio. Sed feugiat maximus mattis. Vivamus at mollis erat. Integer quam orci, iaculis vitae maximus a, fermentum at erat. Aliquam volutpat ex risus.</h5>
                     <ul class="check-list-2">
@@ -42,7 +42,7 @@
                         <li><h6>Donec faucibus sapien sed bibendum dignissim. Nam ac elit nec diam vestibulum.</h6></li>
                         <li><h6>Donec sed pretium massa pulvinar efficitur</h6></li>
                     </ul>
-                    <div class="hr-2 bg-light-white mb-25 mt-25"></div>
+                    <div class="hr-2 bg-light-white mt-20 "></div>
                     <h5 class="f-700">Purchase Price</h5>
                     <ul class="">
                         <li>

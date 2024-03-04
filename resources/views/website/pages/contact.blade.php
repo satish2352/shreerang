@@ -118,7 +118,7 @@
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30002.54703617599!2d73.6951784831116!3d19.953108539974554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddecafb71b21c9%3A0xa6dab4828bb274df!2sMIDC%20Ambad%2C%20Nashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707914483331!5m2!1sen!2sin" width="100%" id="ifrm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
-                <div class="addrescard">
+                <div class="addrescard pl-md-20 pt-20">
                     <div class="card" style="width: 20rem;">
                             <h4 class="card-header card-info2 text-center text-white">
                                 Address
@@ -147,7 +147,7 @@
                             <div class="col-lg-4 col-2 col-sm-4">
                                 <img src="{{ asset('website/assets/img/contact/callimg1.png')}}" alt="">
                             </div>
-                            <div class="col-lg-8 col-4 col-sm-6 mt-40">
+                            <div class="col-lg-8 col-4 col-sm-6 mt-60">
                                 <div class="row">
                                     <div class="col-lg-3">
                                     <h5 class="f-700 clrtext">Contact</h5>
@@ -161,12 +161,12 @@
                                 
                                              
                                 </div>
-                                <div class="row social-links py-3">
-                                    <div class="col-lg-6 col-md-6 mt-15">
+                                <div class="row social-links mb-20 ">
+                                    <div class="col-lg-5 col-md-5 mt-0 py-3">
                                       <h5 class="f-700 clrtext">Follow us on</h5>
                                     
                                     </div>
-                                    <div class="col-lg-6 col-md-6 social-links social-links1">
+                                    <div class="col-lg-7 col-md-7 social-links social-links1 ">
                                     <ul class="social-icons sociicon">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
