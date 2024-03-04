@@ -31,15 +31,14 @@
                             </ul>
                         </li>
                         <li class="">
-                            <a class="has-arrow" href="index.html">
+                            <a class="has-arrow" href="{{ route('list-products') }}">
                                 <i class="fa big-icon fa-home icon-wrap"></i>
-                                <span class="mini-click-non">Applications</span>
+                                <span class="mini-click-non">Basic Product </span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Dashboard v.1" href="{{ route('forms') }}"><i
-                                            class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span
-                                            class="mini-sub-pro">Forms</span></a></li>
-
+                                <li><a title="Inbox" href="{{ route('list-products') }}"><i
+                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
+                                            class="mini-sub-pro">List Products</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -66,8 +65,6 @@
                     @endif
 
                     @if (session()->get('role_id') == Config::get('DepartmentConstant.Owner'))
-
-                       
                         <li>
                             <a class="has-arrow" href="{{ route('organizations-list-employees') }}"
                                 aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
@@ -172,6 +169,19 @@
                             </ul>
                         </li>
                     @endif
+
+                    {{-- =====sample routing============= --}}
+                    {{-- <li>
+                        <a class="has-arrow" href="{{ route('list-newproducts') }}" aria-expanded="false"><i
+                                class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                class="mini-click-non">NEW Product List</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Inbox" href="{{ route('list-newproducts') }}"><i
+                                        class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
+                                        class="mini-sub-pro">NEW Product List</span></a></li>
+                        </ul>
+                    </li> --}}
+
                 </ul>
             </nav>
         </div>

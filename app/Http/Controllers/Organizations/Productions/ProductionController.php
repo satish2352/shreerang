@@ -9,7 +9,10 @@ use Session;
 use Validator;
 use Config;
 use Carbon;
-use App\Models\DesignModel;
+use App\Models\ {
+    DesignModel,
+    DesignDetailsModel
+    };
 
 class ProductionController extends Controller
 { 
@@ -22,6 +25,7 @@ class ProductionController extends Controller
     public function index(){
         try {
             $getOutput = DesignModel::get();
+          
             return view('organizations.productions.products.list-products', compact('getOutput'));
         } catch (\Exception $e) {
             return $e;
@@ -98,14 +102,16 @@ class ProductionController extends Controller
   public function edit(Request $request){
     $edit_data_id = base64_decode($request->id);
     $editData = $this->service->getById($edit_data_id);
-
+    // dd($editData);
+    // die();
     return view('organizations.productions.products.edit-products', compact('editData'));
 }
 
 
         public function update(Request $request){
+            
            $rules = [
-                'design_name' => 'required|string|max:255',
+                // 'design_name' => 'required|string|max:255',
                 'design_page' => 'required|max:255',
                 'project_name' => 'required|string|max:20',
                 'time_allocation' => 'required|string|max:255',
@@ -113,9 +119,9 @@ class ProductionController extends Controller
             ];
 
             $messages = [
-                        'design_name.required' => 'The design name is required.',
-                        'design_name.string' => 'The design name must be a valid string.',
-                        'design_name.max' => 'The design name must not exceed 255 characters.',
+                        // 'design_name.required' => 'The design name is required.',
+                        // 'design_name.string' => 'The design name must be a valid string.',
+                        // 'design_name.max' => 'The design name must not exceed 255 characters.',
                         
                         'design_page.required' => 'The design page is required.',
                         'design_page.max' => 'The design page must not exceed 255 characters.',
@@ -128,11 +134,11 @@ class ProductionController extends Controller
                         'time_allocation.string' => 'The time allocation must be a valid string.',
                         'time_allocation.max' => 'The time allocation must not exceed 255 characters.',
                         
-                        'image.required' => 'The image is required.',
-                        'image.image' => 'The image must be a valid image file.',
-                        'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
-                        'image.max' => 'The image size must not exceed 10MB.',
-                        'image.min' => 'The image size must not be less than 5KB.',
+                        // 'image.required' => 'The image is required.',
+                        // 'image.image' => 'The image must be a valid image file.',
+                        // 'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
+                        // 'image.max' => 'The image size must not exceed 10MB.',
+                        // 'image.min' => 'The image size must not be less than 5KB.',
                     ];
     
             try {
@@ -142,7 +148,9 @@ class ProductionController extends Controller
                         ->withInput()
                         ->withErrors($validation);
                 } else {
+                    
                     $update_data = $this->service->updateAll($request);
+                    
                     if ($update_data) {
                         $msg = $update_data['msg'];
                         $status = $update_data['status'];
@@ -182,4 +190,60 @@ class ProductionController extends Controller
                 return $e;
             }
         } 
+
+
+        public function destroyAddmore(Request $request){
+            try {
+                $delete_rti = $this->service->deleteByIdAddmore($request->delete_id);
+                if ($delete_rti) {
+                    $msg = $delete_rti['msg'];
+                    $status = $delete_rti['status'];
+                    if ($status == 'success') {
+                        return redirect('edit-products/{id}')->with(compact('msg', 'status'));
+                        
+                    } else {
+                        return redirect()->back()
+                            ->withInput()
+                            ->with(compact('msg', 'status'));
+                    }
+                }
+            } catch (\Exception $e) {
+                return $e;
+            }
+        } 
+
+        public function removeDesignDetails(Request $request, $rowId) {
+            try {
+                $designDetails = DesignDetailsModel::find($rowId);
+        
+                if ($designDetails) {
+                    $designDetails->delete();
+                    return response()->json(['msg' => 'Design details removed successfully.']);
+                } else {
+                    return response()->json(['msg' => 'Design details not found.'], 404);
+                }
+            } catch (\Exception $e) {
+                return response()->json(['msg' => 'Failed to remove design details.', 'error' => $e->getMessage()], 500);
+            }
+        }
+        
+//         // YourController.php
+// public function removeDesignDetails($rowId) {
+//     try {
+// //        dd($rowId);
+// // die();
+//         $designDetails = DesignDetailsModel::find($rowId);
+// // dd($designDetails);
+// // die();
+
+//         if ($designDetails) {
+//             $designDetails->delete();
+//             return response()->json(['msg' => 'Design details removed successfully.']);
+//         } else {
+//             return response()->json(['msg' => 'Design details not found.'], 404);
+//         }
+//     } catch (\Exception $e) {
+//         return response()->json(['msg' => 'Failed to remove design details.', 'error' => $e->getMessage()], 500);
+//     }
+// }
 }

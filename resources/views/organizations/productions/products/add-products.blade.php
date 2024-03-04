@@ -110,7 +110,7 @@ label.error {
 
                                                     <tr>
 
-                                                        <td><input type="text" name="addmore[0][design_name]"
+                                                        <td><input type="text" name="addmore[0][design_name]" id="design_name"
                                                                 placeholder="Enter your Name" class="form-control" />
                                                         </td>
 
@@ -213,7 +213,7 @@ $("#add").click(function() {
         i +
         '][product_size]" placeholder="Enter your Price" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][product_unit]" placeholder="Enter your Unit" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
+        '][product_unit]" placeholder="Enter your Unit" class="form-control" /></td><td><a class="remove-tr delete-btn btn btn-danger m-1" title="Delete"><i class="fas fa-archive"></i></a></td></tr>'
     );
 });
 
@@ -243,6 +243,23 @@ jQuery(document).ready(function($) {
                 required: true,
                 accept: "image/*",
             },
+            design_name: {
+                required: true,
+            },
+            // Add validation rules for other fields
+            'addmore[0][design_name]': {
+                required: true,
+            },
+            'addmore[0][product_quantity]': {
+                required: true,
+            },
+            'addmore[0][product_size]': {
+                required: true,
+            },
+            'addmore[0][product_unit]': {
+                required: true,
+            },
+
         },
         messages: {
             // design_name: {
@@ -260,6 +277,22 @@ jQuery(document).ready(function($) {
             image: {
                 required: "Please select an image.",
                 accept: "Please select an image file.",
+            },
+            design_name: {
+                required: "Please enter Design Name.",
+            },
+             // Add error messages for other fields
+             'addmore[0][design_name]': {
+                required: "Please enter Design Name.",
+            },
+            'addmore[0][product_quantity]': {
+                required: "Please enter Product Quantity.",
+            },
+            'addmore[0][product_size]': {
+                required: "Please enter Product Size.",
+            },
+            'addmore[0][product_unit]': {
+                required: "Please enter Product Unit.",
             },
         },
     });

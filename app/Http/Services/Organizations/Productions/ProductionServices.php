@@ -15,19 +15,28 @@ use Config;
     }
 
 
+    // public function getAll(){
+    //     try {
+    //         return $this->repo->getAll();
+
+    //     } catch (\Exception $e) {
+    //         return $e;
+    //     }
+    // }
+
     public function getAll(){
         try {
-            return $this->repo->getAll();
+            $data = $this->repo->getAll();
+         
         } catch (\Exception $e) {
             return $e;
         }
     }
-
-
+    
     public function addAll($request){
         try {
             $last_id = $this->repo->addAll($request);
-          
+     
             $path = Config::get('DocumentConstant.DESIGNS_ADD');
             $ImageName = $last_id['ImageName'];
             uploadImage($request, 'image', $path, $ImageName);
@@ -43,16 +52,20 @@ use Config;
     }
     public function getById($id){
         try {
-            return $this->repo->getById($id);
+            $result = $this->repo->getById($id);
+            // dd($result); // Dump the result
+            // die();
+            return $result;
         } catch (\Exception $e) {
+            dd($e); // Dump the exception
             return $e;
         }
     }
+    
 
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-            // dd($return_data);
             $path = Config::get('DocumentConstant.DESIGNS_ADD');
             if ($request->hasFile('image')) {
                 if ($return_data['image']) {
@@ -71,7 +84,11 @@ use Config;
                 $slide_data = DesignModel::find($return_data['last_insert_id']);
                 $slide_data->image = $englishImageName;
                 $slide_data->save();
-            }          
+            }      
+            
+            // dd($return_data);
+            //     die();
+            
             if ($return_data) {
                 return ['status' => 'success', 'msg' => 'Data Updated Successfully.'];
             } else {
@@ -87,6 +104,19 @@ use Config;
         try {
             $delete = $this->repo->deleteById($id);
             // dd($delete);
+            if ($delete) {
+                return ['status' => 'success', 'msg' => 'Deleted Successfully.'];
+            } else {
+                return ['status' => 'error', 'msg' => ' Not Deleted.'];
+            }  
+        } catch (Exception $e) {
+            return ['status' => 'error', 'msg' => $e->getMessage()];
+        } 
+    }
+
+    public function deleteByIdAddmore($id){
+        try {
+            $delete = $this->repo->deleteByIdAddmore($id);
             if ($delete) {
                 return ['status' => 'success', 'msg' => 'Deleted Successfully.'];
             } else {

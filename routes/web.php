@@ -40,7 +40,7 @@ Route::get('/register', ['as' => 'register', 'uses' => 'App\Http\Controllers\Adm
 Route::group(['middleware' => ['admin']], function () {
 
     Route::get('/dashboard', ['as' => '/dashboard', 'uses' => 'App\Http\Controllers\Admin\Dashboard\DashboardController@index']);
-    Route::get('/forms', ['as' => 'forms', 'uses' => 'App\Http\Controllers\Admin\Forms\FormsController@index']);
+    // Route::get('/forms', ['as' => 'forms', 'uses' => 'App\Http\Controllers\Admin\Forms\FormsController@index']);
     Route::get('/admin-log-out', ['as' => 'log-out', 'uses' => 'App\Http\Controllers\Admin\LoginRegister\LoginController@logout']);
 
 
@@ -111,6 +111,12 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/edit-products/{id}', ['as' => 'edit-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@edit']);
     Route::post('/update-products', ['as' => 'update-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@update']);
     Route::any('/delete-products/{id}', ['as' => 'delete-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@destroy']);
+   
+    
+    Route::delete('/remove-design-details/{rowId}', ['as' => 'remove-design-details', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@removeDesignDetails']);
+    Route::post('/delete-addmore', ['as' => 'delete-addmore', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@destroyAddmore']);
+    // Route::post('/add-more-rows', ['as' => 'add-more-rows', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@addMoreRows']);
+
 
     Route::get('/list-purchases', ['as' => 'list-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@index']);
     Route::get('/add-purchases', ['as' => 'add-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@add']);
@@ -156,4 +162,18 @@ Route::get('/services', ['as' => 'services', 'uses' => 'App\Http\Controllers\Web
 Route::get('/product', ['as' => 'product', 'uses' => 'App\Http\Controllers\Website\PagesController@product']);
 Route::get('/product_details', ['as' => 'product_details', 'uses' => 'App\Http\Controllers\Website\PagesController@product_details']);
 Route::get('/contact', ['as' => 'contact', 'uses' => 'App\Http\Controllers\Website\PagesController@contact']);
+
+
+
+Route::get('/production-dashboard', ['as' => '/production-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
+Route::get('/list-products', ['as' => 'list-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@index']);
+Route::get('/add-products', ['as' => 'add-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@add']);
+Route::post('/store-products', ['as' => 'store-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@store']);
+Route::get('/edit-products/{id}', ['as' => 'edit-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@edit']);
+Route::post('/update-products', ['as' => 'update-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@update']);
+Route::any('/delete-products/{id}', ['as' => 'delete-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@destroy']);
+
+
+// ========================samplecontroller========
+
 

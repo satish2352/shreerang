@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.css')}}">
     <link rel="stylesheet" href="{{ asset('css/owl.transitions.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- animate CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/animate.css')}}">
