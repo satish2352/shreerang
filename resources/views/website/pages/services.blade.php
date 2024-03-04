@@ -14,13 +14,13 @@
 
 
     <!-- imgs -->
-    <section class="paddiall2" >
+    <section class="paddiall2 mb-50" >
         <div class="" data-overlay="9">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="fancy-head text-center relative z-5 mt-30 mb-40 wow fadeInDown">
-                                <h1 class="clrtext fs4">Manufacturing <span class="green">Of</span></h1>
+                                <h1 class="clrtext fs5">Manufacturing <span class="green fs6">Of</span></h1>
                             </div>
                         </div>
                     </div>        
@@ -78,7 +78,7 @@
                             WOODWORKING
                             <span class="green"></span>
                         </h2>
-                        <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                        <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-50 mt-40 text-center  f-500 pr-md-00  text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                             METALWORKING
 
                         </h2>
-                        <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. s laborum at incidunt. Dolores?</p>
+                        <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-50 mt-40 text-center f-500 pr-md-00 p-2 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. s laborum at incidunt. Dolores?</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                             WOODWORKING
                             <span class="green"></span>
                         </h2>
-                        <p class="white1 pfonts mb-55 mb-md-15 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                        <p class="white1 pfonts mb-55 mb-md-15 pr-70 pl-50 mt-40 text-center f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -124,18 +124,25 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="fancy-head text-center relative z-5 wow fadeInDown">
-                                <h1 class="fs4">Material Handling <span class="green">Equipment For</span></h1>
+                                <h1 class="fs6">Material Handling <span class="green">Equipment For</span></h1>
                             </div>
                         </div>
                     </div>        
                 </div>
             </div>
             <div class="row">
-                <div class="container-fluid text-center col-12">
+                <div class="container-fluid text-center col-12 banrimgs   ">
 
                     <img src="{{ asset('website/assets/img/banner/material.png')}}" alt="">
+                    
                 </div>
-                 
+                
+                <div class="container-fluid text-center mobibanrimgs ">
+
+                    
+                    <img src="{{ asset('website/assets/img/banner/Materialnew2.jpg')}}" alt="">
+                </div>
+
             {{-- <div class="container  materl maetrialback">
                 <div class="row d-flex justify-content-center m-5">
                         <div class="col-md-8 col-lg-10 card shadows pdmat">
@@ -260,17 +267,17 @@
                     <div class="col-lg-5 col-md-12 p-4">
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body text-center card-info1">
-                        <h1 class="white fs2 f-600"> Challenging Fabrication  Works </h1>
+                        <div class="card-body text-center card-info">
+                        <h1 class="white fs2 f-600 line-ht"> Challenging Fabrication Works </h1>
                     
                         </div>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-12 p-4">
-                        <div class="card border-0 bkcl">
+                        <div class="card border-0 bkcl ">
                         <img src="{{ asset('website/assets/img/service/presshop.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body text-center  card-info1">
-                        <h1 class="white fs2 f-600"> Press Shop <br> Works  </h1>
+                        <div class="card-body text-center  card-info">
+                        <h1 class="white fs2 f-600 line-ht"> Press Shop Works  </h1>
                     
                         </div>
                         </div>

@@ -4,7 +4,7 @@
 <section class="desktopfoot paddiall2">
     <div class="row ">
     <!-- footlogocol -->
-        <div class="col-lg-3 col-md-12 text-center bg-green-op-100 pt-50" style="">
+        <div class="col-lg-3 col-md-12 text-center bg-green-op-100 " style="">
             <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="footlogo" alt="">
         </div>
         <div class="col-lg-9 col-md-12 col-sm-12 justify-content-md-center">
@@ -103,9 +103,9 @@
     <div class="row footlogocol1">
         
         <div class="col-md-12 col-sm-12">
-            <div class="col-md-12 shreelogo" style="">
+            <div class="col-md-12 col-sm-12 col-xs-12 center shreelogo justify-content-center"  style="">
 
-                <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="mobfootlogo" alt="">
+                <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="mobfootlogo center" alt="">
         </div>
             <footer class="footer-area1">
                 <div class="container-fluid">
@@ -113,7 +113,7 @@
                         <div class="col-lg-2 col-md-1 col-sm-1">
                             {{-- <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="mobfootlogo" alt=""> --}}
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6 cent">
                             <div class="footer-links pt-20 pt-md- mb-0">
                                 <h4 class="green f-700 mb-20 foottitle">ADDRESS</h4>
                                 <ul class="links-list">
@@ -125,7 +125,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2">
+                        <div class="col-lg-2 col-md-2 col-sm-3  cent">
                             <div class="footer-links pt-20 pt-md- mb-sm-0">
                                 <h4 class="green f-700 mb-20 foottitle">CONTACT</h4>
                                 <ul class="links-list text-center">
@@ -152,7 +152,7 @@
                             </div>
                             
                         </div>
-                        <div class="col-lg-3 col-md-2 col-sm-2">
+                        <div class="col-lg-3 col-md-2 col-sm-2 cent">
                             <div class="footer-links pt-20 mb-sm-0">
                                 <h4 class="green f-700 mb-20 foottitle">QUICK LINKS</h4>
                                 <ul class="links-list text-center">

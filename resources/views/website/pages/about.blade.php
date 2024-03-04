@@ -94,7 +94,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
+                        <div class="fancy-head text-center relative z-5   wow fadeInDown">
                             <h1>Director Desk</h1>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                        </div>  
                 </div> --}}
 
-                <div class="container p-5 pt-10">
+                <div class="container p-5">
        
                     <div class="row">
                        <div class="card director shadow-1">
