@@ -14,6 +14,7 @@ class EmployeesRepository  {
 
     public function getAll(){
         try {
+            dd(session()->get('role_id') );
           $data_output = EmployeesModel::select(
                 'tbl_employees.id as emp_id',
                 'tbl_employees.email as emp_email',
@@ -23,10 +24,11 @@ class EmployeesRepository  {
                 'tbl_organizations.*'
             )
             ->leftJoin('tbl_organizations', 'tbl_employees.organization_id', '=', 'tbl_organizations.id')
-            ->orderBy('tbl_employees.updated_at', 'desc')
-            ->get();
+            ->orderBy('tbl_employees.updated_at', 'desc');
 
-            // dd($data_output);
+           
+            $data_output = $data_output->get();
+
             return $data_output;
         } catch (\Exception $e) {
             return $e;
@@ -40,7 +42,7 @@ class EmployeesRepository  {
         try {
             $userData=new User();
             $userData->u_email= $request->email;
-            $userData->role_id= Config::get('DepartmentConstant.Owner');
+            $userData->role_id= config('constants.ROLE_ID.HIGHER_AUTHORITY');
             $userData->org_id = $request->company_id;
             $userData->u_password= bcrypt($request->password);
             $userData->save();
@@ -53,7 +55,11 @@ class EmployeesRepository  {
             $dataOutput->address = $request->address;
             $dataOutput->emp_image = 'null';
             $dataOutput->organization_id = $request->company_id;
+            $dataOutput->role_id= config('constants.ROLE_ID.HIGHER_AUTHORITY');
+            $dataOutput->department_id= config('constants.ROLE_ID.HIGHER_AUTHORITY');
             $dataOutput->save();
+
+            
             $last_insert_id = $dataOutput->id;
             $imageName = $last_insert_id . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
 

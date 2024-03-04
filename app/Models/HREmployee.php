@@ -12,14 +12,14 @@ class HREmployee extends Model
     protected $table = 'tbl_hr_employees';
     protected $primaryKey = 'id';
 
-    public function role()
-    {
-        return $this->belongsTo(RolesModel::class, 'role_id');
-    }
+    // public function role()
+    // {
+    //     return $this->belongsTo(RolesModel::class, 'role_id');
+    // }
 
-    public function department()
-    {
-        return $this->belongsTo(DepartmentsModel::class, 'department_id');
-    }
+    // public function department()
+    // {
+    //     return $this->belongsTo(DepartmentsModel::class, 'department_id');
+    // }
 
 }
