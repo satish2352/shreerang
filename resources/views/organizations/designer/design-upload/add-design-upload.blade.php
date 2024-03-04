@@ -19,7 +19,7 @@ label.error {
             <div class="sparkline12-hd">
                 <div class="main-sparkline12-hd">
                     <center>
-                        <h1>Add GRN Data</h1>
+                        <h1>Add Design Data</h1>
                     </center>
                 </div>
             </div>

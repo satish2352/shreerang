@@ -82,11 +82,11 @@
                         <li>
                             <a class="has-arrow" href="{{ route('list-owner-product') }}"
                                 aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
-                                    class="mini-click-non">Basic Specification</span></a>
+                                    class="mini-click-non">Business</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Inbox" href="{{ route('list-owner-product') }}"><i
                                             class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
-                                            class="mini-sub-pro">List Specification</span></a></li>
+                                            class="mini-sub-pro">Business List</span></a></li>
                             </ul>
                         </li>
 
