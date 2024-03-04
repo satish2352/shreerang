@@ -363,10 +363,21 @@
 
 .pt-20 {
     padding-top: 20px;
+   
+  
+    
 }
+.cent{
+padding-right:38px;
+text-align: center;
+}
+
 
 .pt-25 {
     padding-top: 25px;
+}
+#pr{
+    padding-right: 300px!important;
 }
 
 .pt-30 {
@@ -1298,7 +1309,7 @@
         padding-left: 15px;
     }
     .pl-md-20 {
-        padding-left: 20px;
+        padding-left: 30px;
     }
     .pl-md-25 {
         padding-left: 25px;
@@ -2228,6 +2239,9 @@
 
 .f-600 {
     font-weight: 600;
+}
+.line-ht{
+    line-height: normal;
 }
 
 .f-500 {
