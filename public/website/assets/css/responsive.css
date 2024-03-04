@@ -1351,6 +1351,9 @@ Custom media queries
         margin-bottom: 10px;
     
     }
+    .pt-20{
+        padding-right: 300px;
+    }
  }
 
  @media only screen and (min-width: 1201px) and (max-width: 1399px){

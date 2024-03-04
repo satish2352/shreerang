@@ -226,12 +226,12 @@
 
 
         <!-- services start -->
-        <section class="servicebk" data-overlay="9">
+        <section class="servicebk" data-overlay="9" >
             <div class="container-fluid testmo mobserv">
                 <div class="row pt-4">
                     <div class="col-xl-12">
                         <div class="fancy-head text-center relative z-5 mb-20  wow fadeInDown">
-                            <h1 class="white fs1 ">Service</h1>
+                            <h1 class="white fs1 pt-5 ">Service</h1>
                         </div>
                     </div>
                 </div>
@@ -243,7 +243,7 @@
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20 text-center f-500  text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
@@ -254,7 +254,7 @@
                                 METALWORKING
     
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. s laborum at incidunt. Dolores?</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20 text-center f-500  text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. s laborum at incidunt. Dolores?</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
@@ -265,7 +265,7 @@
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-60 f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20 text-center f-500   text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
@@ -273,8 +273,8 @@
                     <div class="col-lg-4"></div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         
-                        <div class="servbtn">
-                            <a href="{{url('/services')}}" class="btn btn-round justify-content-end">View all services</a>
+                        <div class="servbtn mb-80 mb-md-20">
+                            <a href="{{url('/services')}}" class="btn btn-round  justify-content-end">View all services</a>
     
                         </div>
                     </div>
@@ -298,13 +298,13 @@
             </div>
         </section> --}}
       <section>
-        <div class="container-fluid testmo paddiall4 bg-insta">
-            <div class="row pb-90">
+        <div class="container-fluid testmo paddiall4 bg-insta mb-3 ">
+            <div class="row pb-50 pb-md-20 pb-sm-20">
                 <div class="col-xl-4 pl-60 pr-60 mt-30">
                     <div class="">
                         <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">01 </h1></span> Request</h1>
                         <img src="{{ asset('website/assets/img/icons/1.png')}}" alt="">
-                        <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-justify fs-18 mrtp pt-3">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 
@@ -312,14 +312,14 @@
                     <div class="">
                     <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">02 </h1></span> Develop</h1>
                         <img src="{{ asset('website/assets/img/icons/2.png')}}"  alt="">
-                        <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-justify fs-18 mrtp pt-3">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 <div class="col-xl-4 pl-60 pr-60 mt-30">
                     <div class="">
                     <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">03 </h1></span> Install</h1>
                         <img src="{{ asset('website/assets/img/icons/3.png')}}"  alt="">
-                        <h6 class="clrtext text-justify fs-18 mrtp">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-justify fs-18 mrtp pt-3">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
             </div>
@@ -369,10 +369,10 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->
-                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20  icn"  id="pr"><i class="fa-solid fa-quote-left  "></i></h4>
                                 <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag Engineering's trolleys and rollers have transformed our warehouse operations. Their products' durability and efficiency exceeded our expectations, making them our top choice for material handling solutions."</p>
                                 <div class="client-2-img d-flex  fixed-bottom1 justify-content-md-start justify-content-start">
-                                    <div class="img-div ml-30 mr-10 pt-20">
+                                    <div class="img-div  pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team5b.png')}}" class=" rounded-circle" alt="">
                                         </div>
@@ -397,17 +397,17 @@
                                     </li>
                                 </ul> -->
 
-                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20 icn" id="pr"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Their conveyors elevated our production efficiency. Their craftsmanship and design expertise make them the go-to partner for reliable material handling solutions."</p>
                                 <div class="client-2-img d-flex  fixed-bottom1  justify-content-md-start justify-content-start">
-                                    <div class="img-div ml-30 mr-10 pb-20">
+                                    <div class="img-div  pb-20 ">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team3b.png')}}" class=" rounded-circle" alt="">
                                         </div>
                                     </div>
-                                    <div class="client-text-2 mb-30 pl-20">
+                                    <div class="client-text-2 mb-30  ">
                                         <h6 class="client-name green fs-17 f-700 clrtext">Dhananjay Makhwani</h6>
-                                        <p class="mb-0 fs-13 f-400 clrtext">Co- worker</p>
+                                        <p class="mb-0 fs-13 f-400 clrtext mb-30">Co- worker</p>
                                     </div>
                                 </div>
                             </div>
@@ -425,15 +425,15 @@
                                     </li>
                                 </ul> -->
 
-                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20 icn" id="pr"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag’s metallic pallets have been a valuable asset to our inventory management. The precision in their manufacturing process and attention to detail are evident in the quality of their products."</p>
                                 <div class="client-2-img d-flex fixed-bottom1  justify-content-md-start justify-content-start">
-                                    <div class="img-div ml-30 mr-10 pb-20">
+                                    <div class="img-div  pb-20 ">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team1b.png')}}" class=" rounded-circle" alt="">
                                         </div>
                                     </div>
-                                    <div class="client-text-2 mb-30 pl-20">
+                                    <div class="client-text-2 mb-30 pl-5 ">
                                         <h6 class="client-name green fs-17 f-700 clrtext">Abhaykumar Sansare</h6>
                                         <p class="mb-0 fs-13 f-400 clrtext">Branch Manager</p>
                                     </div>
@@ -451,16 +451,16 @@
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </li>
-                                </ul> -->
-                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                </ul> --> 
+                                <h4 class="f-700 mb-20 pt-20 icn" id="pr"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag Engineering's custom trolleys have streamlined our operations. Their commitment to delivering innovative solutions tailored to our industry's needs sets them apart as a trusted partner."</p>
                                 <div class="client-2-img d-flex fixed-bottom1  justify-content-md-start justify-content-start">
-                                    <div class="img-div ml-30 mr-10 pb-20">
+                                    <div class="img-div pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team3b.png')}}" class=" rounded-circle" alt="">
                                         </div>
                                     </div>
-                                    <div class="client-text-2 mb-30">
+                                    <div class="client-text-2 mb-30 pl-20">
                                         <h6 class="client-name green fs-17 f-700 clrtext">Prakash Ingale</h6>
                                         <p class="mb-0 fs-13 f-400 clrtext">Production Manager</p>
                                     </div>
@@ -479,16 +479,16 @@
                                         <i class="fas fa-star"></i>
                                     </li>
                                 </ul> -->            
-                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20 icn" id="pr"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"The rollers are robust, durable, and remarkably efficient. Their professionalism make them our trusted supplier for all material handling equipment."
                                 </p>
                                 <div class="client-2-img d-flex fixed-bottom1 justify-content-md-start justify-content-start">
-                                    <div class="img-div ml-30 mr-10 pb-20">
+                                    <div class="img-div  pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team2b.png')}}" class=" rounded-circle" alt="">
                                         </div>
                                     </div>
-                                    <div class="client-text-2  mb-30">
+                                    <div class="client-text-2  mb-30 pl-20">
                                         <h6 class="client-name green fs-17 f-700 clrtext">Vikas Sawant</h6>
                                         <p class="mb-0 fs-13 f-400 clrtext">Expert Advisor</p>
                                     </div>
@@ -508,16 +508,16 @@
                                     </li>
                                 </ul> -->
                                 
-                                <h4 class="f-700 mb-20 pt-20 icn"><i class="fa-solid fa-quote-left"></i></h4>
+                                <h4 class="f-700 mb-20 pt-20 icn" id="pr"><i class="fa-solid fa-quote-left"></i></h4>
                                 <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag Engineering's conveyors have significantly improved our production line. Their commitment to delivering comprehensive solutions tailored to our business needs makes them a reliable partner."
                                 </p>
                                 <div class="client-2-img d-flex fixed-bottom1 justify-content-md-start justify-content-start">
-                                    <div class="img-div ml-30 mr-10 pb-20">
+                                    <div class="img-div  pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team2b.png')}}" class=" rounded-circle" alt="">
                                         </div>
                                     </div>
-                                    <div class="client-text-2  mb-30">
+                                    <div class="client-text-2  mb-30 pl-20">
                                         <h6 class="client-name green fs-17 f-700 clrtext">Shubham Pawar</h6>
                                         <p class="mb-0 fs-13 f-400 clrtext">Safety Manager</p>
                                     </div>
@@ -536,12 +536,14 @@
         <div class="container-fluid testmo text-center pt-50 pb-50">
            
              <!-- bannar start -->
-            {{-- <div class="banrimgs"> --}}
-                <img src="{{ asset('website/assets/img/banner/contact1.png')}}" alt="">
-            {{-- </div> --}}
-            {{-- <div class="mobibanrimgs">
-            <img src="{{ asset('website/assets/img/banner/mobcontbannr.png')}}" alt="">
-            </div> --}}
+            <div class="banrimgs">
+             <div class="   ">  <img src="{{ asset('website/assets/img/banner/contactnew.png')}}" alt="">
+              </div>             
+             </div> 
+            <div class="mobibanrimgs">
+            <div class=" ">  <img src="{{ asset('website/assets/img/banner/contact.png')}}" alt="">
+              </div>
+            </div> 
         <!-- bannar end -->
 
         </div>
