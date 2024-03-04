@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('designs_details', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('designs_id');
-            $table->string('design_name');
-            $table->string('product_quantity');
-            $table->string('product_size');
-            $table->string('product_unit');
-            $table->string('is_deleted')->default(false);
+        Schema::create('designs', function (Blueprint $table) {
+            $table->id();
+            $table->string('business_id');
+            $table->string('design_image');
+            $table->string('bom_image');
+            $table->boolean('is_approve')->default(false);
             $table->boolean('is_active')->default(true);
+            $table->boolean('is_deleted')->default(false);
             $table->timestamps();
-        });
+      });
     }
 
     /**
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('designs_details');
+        Schema::dropIfExists('designs');
     }
 };
