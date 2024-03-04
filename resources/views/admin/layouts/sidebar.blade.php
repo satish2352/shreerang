@@ -80,11 +80,11 @@
                         </li>
                        
                         <li>
-                            <a class="has-arrow" href="{{ route('list-owner-product') }}"
+                            <a class="has-arrow" href="{{ route('list-business') }}"
                                 aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
                                     class="mini-click-non">Business</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{ route('list-owner-product') }}"><i
+                                <li><a title="Inbox" href="{{ route('list-business') }}"><i
                                             class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
                                             class="mini-sub-pro">Business List</span></a></li>
                             </ul>

@@ -1,116 +1,80 @@
 @extends('admin.layouts.master')
 @section('content')
-<style>
-    label {
-        margin-top: 20px;
-    }
-</style>
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="sparkline12-list">
-            <div class="sparkline12-hd">
-                <div class="main-sparkline12-hd">
-                    <center><h1>Add Organization Data</h1></center>
+    <style>
+        label {
+            margin-top: 20px;
+        }
+    </style>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="sparkline12-list">
+                <div class="sparkline12-hd">
+                    <div class="main-sparkline12-hd">
+                        <center>
+                            <h1>Update Business Data</h1>
+                        </center>
+                    </div>
                 </div>
-            </div>
-            <div class="sparkline12-graph">
-                <div class="basic-login-form-ad">
-                    <div class="row">
-                        @if (Session::get('status') == 'success')
-                            <div class="col-md-12">
-                                <div class="alert alert-success alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Success!</strong> {{ Session::get('msg') }}
+                <div class="sparkline12-graph">
+                    <div class="basic-login-form-ad">
+                        <div class="row">
+                            @if (Session::get('status') == 'success')
+                                <div class="col-md-12">
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Success!</strong> {{ Session::get('msg') }}
+                                    </div>
                                 </div>
-                            </div>
-                        @endif
+                            @endif
 
-                        @if (Session::get('status') == 'error')
-                            <div class="col-md-12">
-                                <div class="alert alert-danger alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Error!</strong> {!! session('msg') !!}
+                            @if (Session::get('status') == 'error')
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error!</strong> {!! session('msg') !!}
+                                    </div>
                                 </div>
-                            </div>
-                        @endif
+                            @endif
                             <div class="all-form-element-inner">
-                                <form action="{{ route('organizations-update-employees') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('update-business') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group-inner">
-                                                <input type="hidden" class="form-control" value="@if (old('id')) {{ old('id') }}@else{{ $editData->id }} @endif" id="id" name="id" >
+                                        <input type="hidden" class="form-control"
+                                            value="@if (old('id')) {{ old('id') }}@else{{ $editData->id }} @endif"
+                                            id="id" name="id">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <label for="company_name">Employee Name:</label>
-                                                <input type="text" class="form-control" value="@if (old('employee_name')) {{ old('employee_name') }}@else{{ $editData->employee_name }} @endif" id="employee_name" name="employee_name" placeholder="Enter Employees name">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label for="title">Title:</label>
+                                                <input class="form-control" name="title" id="title"
+                                                    placeholder="Enter the Title"
+                                                    value=" @if (old('title')) {{ old('title') }}@else{{ $editData->title }} @endif">
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <label for="email">Email:</label>
-                                                <input type="email" class="form-control" id="email" value="@if (old('email')) {{ old('email') }}@else{{ $editData->email }} @endif" name="email" placeholder="Enter email">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label for="descriptions">Description:</label>
+                                                <textarea class="form-control english_description" name="descriptions" id="descriptions"
+                                                    placeholder="Enter the Description">@if (old('descriptions')){{ old('descriptions') }}@else{{ $editData->descriptions }}@endif
+                                            </textarea>
                                             </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <label for="mobile_number">Mobile Number:</label>
-                                                <input type="text" class="form-control" id="mobile_number" value="@if (old('mobile_number')) {{ old('mobile_number') }}@else{{ $editData->mobile_number }} @endif" name="mobile_number" placeholder="Enter mobile number">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <label for="remarks">Remark:</label>
+                                                <textarea class="form-control english_description" name="remarks" id="remarks" placeholder="Enter the Description">@if (old('remarks')){{ old('remarks') }}@else{{ $editData->remarks }}@endif
+                                            </textarea>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <label for="address">Employee Address:</label>
-                                                <input type="text" class="form-control" id="address" value="@if (old('address')) {{ old('address') }}@else{{ $editData->address }} @endif" name="address" placeholder="Enter company address">
-                                            </div>
-                                        </div>
-                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                            <div class="form-select-list">
-                                                    <label for="department_id">Select Department:</label>
-                                                    <select class="form-control custom-select-value" name="department_id">
-                                                        <option value="">Select Department</option>
-                                                        @foreach($dept as $data)
-                                                            <option value="{{ $data->id }}" {{ $data->id == $editData->department_id ? 'selected' : '' }}>
-                                                                {{ ucfirst($data->department_name) }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                            <div class="form-select-list">
-                                                <label for="role_id">Select Role:</label>
-                                                <select class="form-control custom-select-value" name="role_id">
-                                                    <option value="">Select Role</option>
-                                                    @foreach($roles as $data)
-                                                        <option value="{{ $data->id }}" {{ $data->id == $editData->role_id ? 'selected' : '' }}>
-                                                            {{ ucfirst($data->role_name) }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <label for="image">Image:</label>
-                                                <input type="file" class="form-control" id="image" name="image" value="@if (old('image')) {{ old('image') }}@else{{ $editData->image }} @endif">
-                                                @if (old('image') || isset($editData))
-                                                    <div>
-                                                        <label>Old Image:  </label>
-                                                        <img src="@if (old('image')) {{ old('image') }} @elseif(isset($editData)) {{ Config::get('DocumentConstant.EMPLOYEES_VIEW') . $editData->emp_image }} @endif" alt="Old Image" style="max-width: 100px;">
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </div>  
                                         </div>
                                         <div class="login-btn-inner">
                                             <div class="row">
                                                 <div class="col-lg-5"></div>
                                                 <div class="col-lg-7">
                                                     <div class="login-horizental cancel-wp pull-left">
-                                                        <a href="{{ route('list-employees') }}"><button class="btn btn-white" style="margin-bottom:50px">Cancel</button></a>
-                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit" style="margin-bottom:50px">Save Data</button>
+                                                        <a href="{{ route('list-business') }}"><button
+                                                                class="btn btn-white"
+                                                                style="margin-bottom:50px">Cancel</button></a>
+                                                        <button class="btn btn-sm btn-primary login-submit-cs"
+                                                            type="submit" style="margin-bottom:50px">Update Data</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,13 +88,13 @@
             </div>
         </div>
     </div>
-</div>
-  <script src="{{asset('js/password-meter/pwstrength-bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/password-meter/zxcvbn.js')}}"></script>
-    <script src="{{asset('js/password-meter/password-meter-active.js')}}"></script>
+    </div>
+    <script src="{{ asset('js/password-meter/pwstrength-bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/password-meter/zxcvbn.js') }}"></script>
+    <script src="{{ asset('js/password-meter/password-meter-active.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script>
+    {{-- <script>
    jQuery.noConflict();
    jQuery(document).ready(function ($) {
       $("#addEmployeeForm").validate({
@@ -213,6 +177,5 @@
         }
     }
 });
-</script>
-
+</script> --}}
 @endsection

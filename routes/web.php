@@ -186,13 +186,12 @@ Route::post('/store-grn', ['as' => 'store-grn', 'uses' => 'App\Http\Controllers\
 
 
 // ========================OWNER Department Start========
-Route::get('/list-owner-product', ['as' => 'list-owner-product', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@index']);
-Route::get('/add-owner-product', ['as' => 'add-owner-product', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@add']);
-Route::get('/edit-owner-product', ['as' => 'edit-owner-product', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@edit']);
-Route::post('/store-owner-product', ['as' => 'store-owner-product', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@store']);
-// Route::get('/edit-grn/{id}', ['as' => 'edit-grn', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@edit']);
-// Route::post('/update-grn', ['as' => 'update-grn', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@update']);
-// Route::any('/delete-grn/{id}', ['as' => 'delete-grn', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@destroy']);
+Route::get('/list-business', ['as' => 'list-business', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@index']);
+Route::get('/add-business', ['as' => 'add-business', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@add']);
+Route::post('/store-business', ['as' => 'store-business', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@store']);
+Route::get('/edit-business/{id}', ['as' => 'edit-business', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@edit']);
+Route::post('/update-business', ['as' => 'update-business', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@update']); 
+Route::any('/delete-business/{id}', ['as' => 'delete-business', 'uses' => 'App\Http\Controllers\Organizations\Business\BusinessController@destroy']);
 // ========================OWNER Department End========
 
 

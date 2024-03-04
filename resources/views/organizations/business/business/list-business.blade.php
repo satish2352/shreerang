@@ -32,7 +32,7 @@ padding-left: 20px !important;
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
                                         <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('add-owner-product') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Business</button></a>
+                                                <a href="{{ route('add-business') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Business</button></a>
                                         </div>
                                     </div>
                                 <div class="col-lg-10"></div>
@@ -87,23 +87,24 @@ padding-left: 20px !important;
                                         </tr>
 
                                     </thead>
+
                                     <tbody>
-                                       
+                                        @foreach($data_output as $data)
                                         <tr>
                                             <td></td>
-                                            <td>1</td>
-                                            <td>Test</td>
-                                            <td>Test</td>
-                                            <td>Test</td>
-                                                                                     
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ucwords($data->title)}}</td>
+                                            <td>{{ucwords($data->descriptions)}}</td>
+                                            <td>{{ucwords($data->remarks)}}</td>
+                                            
                                             <td>
                                                 <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('edit-grn')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    {{-- <a href="{{route('delete-grn')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
+                                                    <a href="{{route('edit-business', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                    <a href="{{route('delete-business', base64_encode($data->id))}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                                 </div>
                                             </td>
                                            </tr>
-                                      
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
