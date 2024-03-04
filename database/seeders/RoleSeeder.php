@@ -56,7 +56,7 @@ class RoleSeeder extends Seeder
             ]);
         RolesModel::create(
             [
-                'id'=> 8,
+                'id'=> 9,
                 'role_name' => 'HR',
             ]);  
         RolesModel::create(
