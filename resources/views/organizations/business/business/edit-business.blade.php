@@ -2,7 +2,12 @@
 @section('content')
     <style>
         label {
-            margin-top: 20px;
+            margin-top: 10px;
+        }
+        .form-display-center{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center;
         }
     </style>
     <div class="row">

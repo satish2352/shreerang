@@ -2,15 +2,16 @@
 @section('content')
     <style>
         label {
-            margin-top: 20px;
+            margin-top: 10px;
         }
-
         label.error {
             color: red;
-            /* Change 'red' to your desired text color */
             font-size: 12px;
-            /* Adjust font size if needed */
-            /* Add any other styling as per your design */
+        }
+        .form-display-center{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center;
         }
     </style>
     <div class="row">
@@ -52,7 +53,7 @@
                                 @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <div class="row d-flex justify-content-center">
+                                        <div class="row d-flex justify-content-center form-display-center">
                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 ">
                                             <form action="{{ route('store-business') }}" method="POST" id="addEmployeeForm"
                                                 enctype="multipart/form-data">
