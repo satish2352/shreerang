@@ -56,7 +56,7 @@ label.error {
                             @endif
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="all-form-element-inner">
-                                    <form action="{{ route('store-products') }}" method="POST" id="addDesignsForm"
+                                    <form action="{{ route('store-purchase') }}" method="POST" id="addDesignsForm"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group-inner">
@@ -175,7 +175,7 @@ label.error {
                                                     <div class="col-lg-5"></div>
                                                     <div class="col-lg-7">
                                                         <div class="login-horizental cancel-wp pull-left">
-                                                            <a href="{{ route('list-products') }}" class="btn btn-white"
+                                                            <a href="{{ route('list-purchase') }}" class="btn btn-white"
                                                                 style="margin-bottom:50px">Cancel</a>
                                                             <button class="btn btn-sm btn-primary login-submit-cs"
                                                                 type="submit" style="margin-bottom:50px">Save

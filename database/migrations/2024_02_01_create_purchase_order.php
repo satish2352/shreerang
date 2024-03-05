@@ -15,19 +15,17 @@ return new class extends Migration
     {
         Schema::create('purchase_orders', function (Blueprint $table) {
                 $table->id();
-                $table->string('client_name')->nullable();
-                $table->string('tax')->nullable();
-                $table->string('payment_terms')->nullable();
-                $table->string('gst_number')->nullable();
-                $table->string('email')->nullable();
-                $table->string('invoice_date')->nullable();
-                $table->jsonb('items')->nullable();
-                $table->string('note')->nullable();
-                $table->string('discount')->nullable();
-                $table->string('total')->nullable();
+                $table->string('po_date')->nullable();
+                $table->string('vendor_id')->nullable();
+                $table->string('terms_condition')->nullable();
+                $table->string('remark')->nullable();
+                $table->string('transport_dispatch')->nullable();
                 $table->string('status')->nullable();
-            $table->softDeletes();
-            $table->timestamps();
+                $table->boolean('is_approve')->default(false);
+                $table->boolean('is_active')->default(true);
+                $table->boolean('is_deleted')->default(false);
+                $table->softDeletes();
+                $table->timestamps();
         });
     }
 

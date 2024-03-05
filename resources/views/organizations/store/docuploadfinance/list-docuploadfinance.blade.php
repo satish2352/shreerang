@@ -28,11 +28,11 @@ padding-left: 20px !important;
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd">
-                            <h1>Products <span class="table-project-n">Data</span> Table</h1>
+                            <h1>Store <span class="table-project-n">Finance</span> Table</h1>
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
                                         <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('add-products') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Product</button></a>
+                                                <a href="{{ route('add-doc-upload-fianace') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Store</button></a>
                                         </div>
                                     </div>
                                 <div class="col-lg-10"></div>
@@ -80,34 +80,39 @@ padding-left: 20px !important;
                                         <tr>
                                             <th data-field="state" data-checkbox="true"></th>
                                             <th data-field="id">ID</th>
-                                            <th data-field="design_name" data-editable="true">Product Name</th>
-                                            <th data-field="design_page" data-editable="true">Product Page</th>
-                                            <th data-field="project_name" data-editable="true">Project Name</th>
-                                            <th data-field="time_allocation" data-editable="true">Time Allocated For Product</th>
-                                            <th data-field="image" data-editable="false">Image</th>
+                                            <th data-field="department_id" data-editable="true">Department</th>
+                                            <th data-field="grn_image" data-editable="true">GRN Image</th>
+                                            <th data-field="sr_image" data-editable="true">SR Image</th>
+                                            <th data-field="status" data-editable="true">Status</th>
+                                                                                      
                                             <th data-field="action">Action</th>
                                         </tr>
 
                                     </thead>
                                     <tbody>
-                                        @foreach($getOutput as $data)
+                                       
                                         <tr>
                                             <td></td>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ucwords($data->design_name)}}</td>
-                                            <td>{{ucwords($data->design_page)}}</td>
-                                            <td>{{ucwords($data->project_name)}}</td>
-                                            <td>{{ucwords($data->time_allocation)}}</td>
+                                            <td>1</td>
+                                            <td>department</td>
+                                            <td>grn image</td>
+                                            <td>sr_image</td>
+                                            <td>status</td>
                                             
-                                            <td><img style="max-width:250px; max-height:150px;" src="{{ Config::get('DocumentConstant.DESIGNS_VIEW') . $data->image }}" alt="{{ strip_tags($data['company_name']) }} Image" /></td>
+                                            
+
+                                            
+
+                                            
+                                            <!-- <td><img style="max-width:250px; max-height:150px;" src="" alt="Image" /></td> -->
                                             <td>
                                                 <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('edit-products', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    <a href="{{route('delete-products', base64_encode($data->id))}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                                    <a href="{{route('edit-doc-upload-fianace')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                    {{-- <a href="{{route('delete-products')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
                                                 </div>
                                             </td>
                                            </tr>
-                                        @endforeach
+                                      
                                     </tbody>
                                 </table>
                             </div>

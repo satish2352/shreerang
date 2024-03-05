@@ -103,53 +103,49 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/update-designs', ['as' => 'update-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@update']);
     Route::any('/delete-designs/{id}', ['as' => 'delete-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@destroy']);
 
-    //Organizations Production
+    //Start Purchase Order
     Route::get('/production-dashboard', ['as' => '/production-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
-    Route::get('/list-products', ['as' => 'list-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@index']);
-    Route::get('/add-products', ['as' => 'add-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@add']);
-    Route::post('/store-products', ['as' => 'store-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@store']);
-    Route::get('/edit-products/{id}', ['as' => 'edit-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@edit']);
-    Route::post('/update-products', ['as' => 'update-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@update']);
-    Route::any('/delete-products/{id}', ['as' => 'delete-products', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@destroy']);
-   
-    
-    Route::delete('/remove-design-details/{rowId}', ['as' => 'remove-design-details', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@removeDesignDetails']);
-    Route::post('/delete-addmore', ['as' => 'delete-addmore', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@destroyAddmore']);
-    // Route::post('/add-more-rows', ['as' => 'add-more-rows', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@addMoreRows']);
-
-
-    Route::get('/list-purchases', ['as' => 'list-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@index']);
-    Route::get('/add-purchases', ['as' => 'add-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@add']);
-    Route::post('/store-purchases', ['as' => 'store-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@store']);
-    Route::get('/edit-purchases/{id}', ['as' => 'edit-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@edit']);
-    Route::post('/update-purchases', ['as' => 'update-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@update']);
-    Route::any('/delete-purchases/{id}', ['as' => 'delete-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@destroy']);
-
-    //Organizations Purchases
-    Route::get('/purchase-dashboard', ['as' => '/purchase-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
     Route::get('/list-purchase', ['as' => 'list-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@index']);
     Route::get('/add-purchase', ['as' => 'add-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@add']);
     Route::post('/store-purchase', ['as' => 'store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@store']);
     Route::get('/edit-purchase/{id}', ['as' => 'edit-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@edit']);
     Route::post('/update-purchase', ['as' => 'update-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@update']);
-    Route::any('/delete-purchase/{id}', ['as' => 'delete-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@destroy']);
+    Route::any('/delete-purchase/{id}', ['as' => 'delete-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@destroy']);    
+    Route::delete('/remove-design-details/{rowId}', ['as' => 'remove-design-details', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@removeDesignDetails']);
+    Route::post('/delete-addmore', ['as' => 'delete-addmore', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@destroyAddmore']);
 
-    Route::get('/list-purchase-order', ['as' => 'list-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@index']);
-    Route::get('/add-purchase-order', ['as' => 'add-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@create']);
-    Route::post('/store-purchase-order', ['as' => 'store-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@store']);
-    Route::get('/show-purchase-order/{id}', ['as' => 'show-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@show']);
-    Route::get('/edit-purchase-order/{id}', ['as' => 'edit-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@edit']);
-    Route::post('/update-purchase-order', ['as' => 'update-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@update']);
-    Route::any('/delete-purchase-order/{id}', ['as' => 'delete-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@destroy']);
+    // Route::get('/list-purchases', ['as' => 'list-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@index']);
+    // Route::get('/add-purchases', ['as' => 'add-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@add']);
+    // Route::post('/store-purchases', ['as' => 'store-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@store']);
+    // Route::get('/edit-purchases/{id}', ['as' => 'edit-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@edit']);
+    // Route::post('/update-purchases', ['as' => 'update-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@update']);
+    // Route::any('/delete-purchases/{id}', ['as' => 'delete-purchases', 'uses' => 'App\Http\Controllers\Organizations\Productions\PurchaseController@destroy']);
+
+    //Organizations Purchases
+    // Route::get('/purchase-dashboard', ['as' => '/purchase-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
+    // Route::get('/list-purchase', ['as' => 'list-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@index']);
+    // Route::get('/add-purchase', ['as' => 'add-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@add']);
+    // Route::post('/store-purchase', ['as' => 'store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@store']);
+    // Route::get('/edit-purchase/{id}', ['as' => 'edit-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@edit']);
+    // Route::post('/update-purchase', ['as' => 'update-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@update']);
+    // Route::any('/delete-purchase/{id}', ['as' => 'delete-purchase', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseController@destroy']);
+
+    // Route::get('/list-purchase-order', ['as' => 'list-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@index']);
+    // Route::get('/add-purchase-order', ['as' => 'add-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@create']);
+    // Route::post('/store-purchase-order', ['as' => 'store-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@store']);
+    // Route::get('/show-purchase-order/{id}', ['as' => 'show-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@show']);
+    // Route::get('/edit-purchase-order/{id}', ['as' => 'edit-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@edit']);
+    // Route::post('/update-purchase-order', ['as' => 'update-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@update']);
+    // Route::any('/delete-purchase-order/{id}', ['as' => 'delete-purchase-order', 'uses' => 'App\Http\Controllers\Organizations\Purchase\PurchaseOrderController@destroy']);
 
     //Organizations Store
-    Route::get('/store-dashboard', ['as' => '/store-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
-    Route::get('/list-store-purchase', ['as' => 'list-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@index']);
-    Route::get('/add-store-purchase', ['as' => 'add-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@add']);
-    Route::post('/store-store-purchase', ['as' => 'store-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@store']);
-    Route::get('/edit-store-purchase/{id}', ['as' => 'edit-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@edit']);
-    Route::post('/update-store-purchase', ['as' => 'update-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@update']);
-    Route::any('/delete-store-purchase/{id}', ['as' => 'delete-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@destroy']);
+    // Route::get('/store-dashboard', ['as' => '/store-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
+    // Route::get('/list-store-purchase', ['as' => 'list-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@index']);
+    // Route::get('/add-store-purchase', ['as' => 'add-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@add']);
+    // Route::post('/store-store-purchase', ['as' => 'store-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@store']);
+    // Route::get('/edit-store-purchase/{id}', ['as' => 'edit-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@edit']);
+    // Route::post('/update-store-purchase', ['as' => 'update-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@update']);
+    // Route::any('/delete-store-purchase/{id}', ['as' => 'delete-store-purchase', 'uses' => 'App\Http\Controllers\Organizations\Store\PurchaseController@destroy']);
 
 });
 
@@ -200,3 +196,34 @@ Route::any('/delete-business/{id}', ['as' => 'delete-business', 'uses' => 'App\H
 Route::get('/list-design-upload', ['as' => 'list-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@index']);
 Route::get('/add-design-upload', ['as' => 'add-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@add']);
 Route::get('/edit-design-upload', ['as' => 'edit-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@edit']);
+
+// ========================Start Gatepasscontroller========
+
+Route::get('/list-gatepass', ['as' => 'list-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@index']);
+Route::get('/add-gatepass', ['as' => 'add-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@add']);
+Route::get('/edit-gatepass', ['as' => 'edit-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@edit']);
+
+// ========================End Gatepasscontroller========
+// ========================  Start Requistion controller ========
+
+Route::get('/list-requistion', ['as' => 'list-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@index']);
+Route::get('/add-requistion', ['as' => 'add-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@add']);
+Route::get('/edit-requistion', ['as' => 'edit-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@edit']);
+// ======================== End Requistion controller ========
+// ========================  Start DocUploadFianace ========
+
+Route::get('/list-doc-upload-fianace', ['as' => 'list-doc-upload-fianace', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@index']);
+Route::get('/add-doc-upload-fianace', ['as' => 'add-doc-upload-fianace', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@add']);
+Route::get('/edit-doc-upload-fianace', ['as' => 'edit-doc-upload-fianace', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@edit']);
+// ========================  End DocUploadFianace ========
+// ======================== Start Security Remarkcontroller========
+Route::get('/list-security-remark', ['as' => 'list-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@index']);
+Route::get('/add-security-remark', ['as' => 'add-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@add']);
+Route::get('/edit-security-remark', ['as' => 'edit-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@edit']);
+// ========================End Security Remarkcontroller========
+// ======================== Start store receipt controller ========
+
+Route::get('/list-store-receipt', ['as' => 'list-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@index']);
+Route::get('/add-store-receipt', ['as' => 'add-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@add']);
+Route::get('/edit-store-receipt', ['as' => 'edit-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@edit']);
+// ======================== End store receipt controller ========
