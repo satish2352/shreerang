@@ -230,8 +230,8 @@
             <div class="container-fluid testmo mobserv">
                 <div class="row pt-4">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 mb-20  wow fadeInDown">
-                            <h1 class="white fs1 pt-5 ">Service</h1>
+                        <div class="fancy-head text-center relative z-5 mb-30  wow fadeInDown">
+                            <h1 class="white f-800 fs1 mt-60 ">Service</h1>
                         </div>
                     </div>
                 </div>
@@ -239,7 +239,7 @@
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h2 class="white text-center d-flex justify-content-center  f-700 mb-10">
-                                <span class="f-800 fs-1 mr-10">01</span>
+                                <span class="f-800 fs-6 mr-10">01</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
@@ -250,18 +250,18 @@
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h2 class="white f-700 text-center d-flex  justify-content-center  mb-10">
-                                <span class="f-800 fs-1 mr-10">02</span>
+                                <span class="f-800 fs-6 mr-10">02</span>
                                 METALWORKING
     
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20 text-center f-500  text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. s laborum at incidunt. Dolores?</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20 text-center f-500  text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h2 class="white text-center d-flex justify-content-center  f-700 mb-10">
-                                <span class="f-800 fs-1 mr-10">03</span>
+                                <span class="f-800 fs-6 mr-10">03</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
@@ -273,7 +273,7 @@
                     <div class="col-lg-4"></div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         
-                        <div class="servbtn mb-80 mb-md-20">
+                        <div class="servbtn mb-90 mb-md-20">
                             <a href="{{url('/services')}}" class="btn btn-round  justify-content-end">View all services</a>
     
                         </div>
@@ -304,7 +304,7 @@
                     <div class="">
                         <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">01 </h1></span> Request</h1>
                         <img src="{{ asset('website/assets/img/icons/1.png')}}" alt="">
-                        <h6 class="clrtext text-justify fs-18 mrtp pt-3">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
+                        <h6 class="clrtext text-justify align-content-center  fs-18 mrtp pt-3">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 

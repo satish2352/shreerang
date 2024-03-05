@@ -78,7 +78,7 @@
                             WOODWORKING
                             <span class="green"></span>
                         </h2>
-                        <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-50 mt-40 text-center  f-500 pr-md-00  text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                        <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-50 mt-40 text-center  f-500 pr-md-00 p-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
@@ -254,7 +254,7 @@
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info">
-                        <h1 class="white fs2 f-600"> Movement Trollies </h1>
+                        <h1 class="white fs2 f-600 line-ht"> Movement Trollies </h1>
                     
                         </div>
                         
@@ -267,8 +267,8 @@
                     <div class="col-lg-5 col-md-12 p-4">
                         <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body text-center card-info">
-                        <h1 class="white fs2 f-600 line-ht"> Challenging Fabrication Works </h1>
+                        <div class="card-body text-center card-info1">
+                        <h1 class="white fs2 f-600 line-ht "> Challenging Fabrication Works </h1>
                     
                         </div>
                         </div>
@@ -276,8 +276,8 @@
                     <div class="col-lg-5 col-md-12 p-4">
                         <div class="card border-0 bkcl ">
                         <img src="{{ asset('website/assets/img/service/presshop.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body text-center  card-info">
-                        <h1 class="white fs2 f-600 line-ht"> Press Shop Works  </h1>
+                        <div class="card-body text-center  card-info1">
+                        <h1 class="white fs2 f-600 line-ht pb-lg-20  pt-lg-20  "> Press Shop Works  </h1>
                     
                         </div>
                         </div>
