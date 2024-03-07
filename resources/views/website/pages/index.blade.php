@@ -239,7 +239,7 @@
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h2 class="white text-center d-flex justify-content-center  f-700 mb-10">
-                                <span class="f-800 fs-6 mr-10">01</span>
+                                <span class="f-800 fs-1  mr-10">01</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
@@ -250,7 +250,7 @@
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h2 class="white f-700 text-center d-flex  justify-content-center  mb-10">
-                                <span class="f-800 fs-6 mr-10">02</span>
+                                <span class="f-800 fs-1 mr-10">02</span>
                                 METALWORKING
     
                             </h2>
@@ -261,7 +261,7 @@
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h2 class="white text-center d-flex justify-content-center  f-700 mb-10">
-                                <span class="f-800 fs-6 mr-10">03</span>
+                                <span class="f-900 fs-1 mr-10">03</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
@@ -269,17 +269,16 @@
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
-                        
-                        <div class="servbtn mb-90 mb-md-20">
+                    </div>
+                    <div class="row ">
+                    <div class="col-lg-12 z-5 text-center text-lg-left wow fadeIn">
+                        <div class="servbtn mb-90 mb-md-20 d-flex justify-content-end ">
                             <a href="{{url('/services')}}" class="btn btn-round  justify-content-end">View all services</a>
     
                         </div>
                     </div>
                    
-                </div>
+                    </div>
            
             </div>
     </section>
@@ -372,7 +371,7 @@
                                 <h4 class="f-700 mb-20 pt-20  icn"  id="pr"><i class="fa-solid fa-quote-left  "></i></h4>
                                 <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag Engineering's trolleys and rollers have transformed our warehouse operations. Their products' durability and efficiency exceeded our expectations, making them our top choice for material handling solutions."</p>
                                 <div class="client-2-img d-flex  fixed-bottom1 justify-content-md-start justify-content-start">
-                                    <div class="img-div  pb-20">
+                                    <div class="img-div pt-20  pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team5b.png')}}" class=" rounded-circle" alt="">
                                         </div>

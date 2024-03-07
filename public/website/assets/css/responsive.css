@@ -103,7 +103,7 @@
     .pfonts{
         height: 8pc;
         opacity: 67%;
-        /* color: #fff; */
+        color: #fff;
         font-size: 21px;
     }
    
@@ -292,8 +292,13 @@
 
     .pfonts{
         opacity: 67%;
-        /* color: #fff; */
+        color: #fff;
         font-size: 20px;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+    h2{
+        font-size: 25px;
     }
     #dirimg{
         height: 430px;
@@ -1350,9 +1355,6 @@ Custom media queries
         left: 20pc;
         margin-bottom: 10px;
     
-    }
-    .pt-20{
-        padding-right: 300px;
     }
  }
 
