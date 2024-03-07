@@ -148,14 +148,9 @@
                         <li>
                             <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
-                                    class="mini-click-non">Designs</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{ route('list-design-upload') }}"><i
-                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
-                                            class="mini-sub-pro">List Designs</span></a></li>
-                            </ul>
+                                    class="mini-click-non">List Designs</span></a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
                                     class="mini-click-non">Designs</span></a>
@@ -164,7 +159,7 @@
                                             class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
                                             class="mini-sub-pro">List Designs</span></a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                         
                     @endif
                     @if (session()->get('role_id') == config('constants.ROLE_ID.PRODUCTION'))
