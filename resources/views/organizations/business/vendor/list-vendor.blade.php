@@ -28,12 +28,12 @@ padding-left: 20px !important;
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd">
-                            <h1>Design Upload <span class="table-project-n">Data</span> Table</h1>
+                            <h1>Vendor <span class="table-project-n">Registration</span> Table</h1>
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
-                                        {{-- <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('add-design-upload') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Design</button></a>
-                                        </div> --}}
+                                        <div class="login-horizental cancel-wp pull-left">
+                                                <a href="{{ route('add-vendor') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Vendor</button></a>
+                                        </div>
                                     </div>
                                 <div class="col-lg-10"></div>
                             </div>
@@ -79,44 +79,42 @@ padding-left: 20px !important;
                                     <thead>
                                         <tr>
                                             <th data-field="state" data-checkbox="true"></th>
-                                            <th data-field="id">ID</th>   
-                                            <th data-field="grn_number" data-editable="true">Title</th>
-                                            <th data-field="grn_date" data-editable="true">Description</th>
-                                            <th data-field="purchase_id" data-editable="true">Remark</th>                                         
-                                            <th data-field="design_image" data-editable="false">Design Layout</th>
-                                            <th data-field="bom_image" data-editable="false">BOM</th>                                                                                                                           
-                                            {{-- <th data-field="action">Action</th> --}}
+                                            <th data-field="id">ID</th>
+                                            <th data-field="vendor_name" data-editable="true">Vendor Name</th>
+                                            <th data-field="address" data-editable="true">Address</th>
+                                            <th data-field="gst_no" data-editable="true">GST No.</th>
+                                            <th data-field="contact_no" data-editable="true">Conatct No.</th>
+                                            <th data-field="email" data-editable="true">Email</th>
+                                            <th data-field="quote_no" data-editable="true">Quote No.</th>
+                                            <th data-field="payment_terms" data-editable="true">Payment terms</th> 
+                                            <th data-field="status" data-editable="true">Status</th> 
+                                            
+                                            <th data-field="action">Action</th>
                                         </tr>
 
                                     </thead>
-
-                                   
-
                                     <tbody>
-                                        @foreach($data_output as $data)
-                                        <?php //dd($data['design_image']); ?>
+                                       
                                         <tr>
                                             <td></td>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ucwords($data->title)}}</td>
-                                            <td>{{ucwords($data->descriptions)}}</td>
-                                            <td>{{ucwords($data->remarks)}}</td>
-                                            <td> <img class="img-size"
-                                                src="{{ Config::get('FileConstant.DESIGNS_VIEW') }}{{ $data['design_image'] }}"
-                                                alt="No Image" />
-                                        </td>
-                                        <td> <img class="img-size"
-                                                src="{{ Config::get('FileConstant.DESIGNS_VIEW') }}{{ $data['bom_image'] }}"
-                                                alt="No Image" />
-                                        </td>
-                                            {{-- <td>
+                                            <td>1</td>
+                                            <td>vender name</td>
+                                            <td>address</td>
+                                            <td>gst no</td>
+                                            <td>contact</td>
+                                            <td>email</td>
+                                            <td>quote no</td>
+                                            <td>payment terms</td>
+                                            <td>status</td>
+                                         
+                                            <td>
                                                 <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('edit-business', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    <a href="{{route('delete-business', base64_encode($data->id))}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                                    <a href="{{route('edit-vendor')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                    {{-- <a href="{{route('delete-products')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
                                                 </div>
-                                            </td> --}}
+                                            </td>
                                            </tr>
-                                        @endforeach
+                                      
                                     </tbody>
                                 </table>
                             </div>

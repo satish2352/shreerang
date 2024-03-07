@@ -12,7 +12,7 @@ use Carbon;
 use App\Models\DepartmentsModel;
 use App\Models\RolesModel;
 
-class DesignerController extends Controller
+class DesignerControllerOld extends Controller
 { 
     public function __construct(){
         $this->service = new DesignsServices();

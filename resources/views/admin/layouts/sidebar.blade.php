@@ -89,7 +89,11 @@
                                             class="mini-sub-pro">Business List</span></a></li>
                             </ul>
                         </li>
-
+                        <li>
+                            <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
+                                    class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                    class="mini-click-non">List Design Received <br> For Production</span></a>
+                        </li>
                   
                     @endif
                     @if (session()->get('role_id') == config('constants.ROLE_ID.PURCHASE'))
@@ -114,14 +118,39 @@
                                         class="mini-sub-pro">List Purchase Orders</span></a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a class="has-arrow" href="{{ route('list-vendor') }}"
+                            aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                class="mini-click-non">Vendor</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Inbox" href="{{ route('list-vendor') }}"><i
+                                        class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
+                                        class="mini-sub-pro">Vendor List</span></a></li>
+                        </ul>
+                    </li>
                 @endif
                     @if (session()->get('role_id') == config('constants.ROLE_ID.DESIGNER'))
-                        <li>
+                        {{-- <li>
                             <a class="has-arrow" href="{{ route('list-designs') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
                                     class="mini-click-non">Designs</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Inbox" href="{{ route('list-designs') }}"><i
+                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
+                                            class="mini-sub-pro">List Designs</span></a></li>
+                            </ul>
+                        </li> --}}
+                        <li>
+                            <a class="has-arrow" href="{{ route('list-new-requirements-received-for-design') }}" aria-expanded="false"><i
+                                    class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                    class="mini-click-non">List New Requirements <br> Received For Design</span></a>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
+                                    class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                    class="mini-click-non">Designs</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{{ route('list-design-upload') }}"><i
                                             class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
                                             class="mini-sub-pro">List Designs</span></a></li>
                             </ul>
@@ -139,6 +168,11 @@
                         
                     @endif
                     @if (session()->get('role_id') == config('constants.ROLE_ID.PRODUCTION'))
+                    <li>
+                        <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
+                                class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                class="mini-click-non">List Design Received <br> For Production</span></a>
+                    </li>
                         <li>
                             <a class="has-arrow" href="{{ route('list-products') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
@@ -195,7 +229,7 @@
                     </li>
                    @endif
                 @if (session()->get('role_id') == config('constants.ROLE_ID.STORE'))
-                <li>
+                {{-- <li>
                     <a class="has-arrow" href="{{ route('list-store-purchase') }}" aria-expanded="false"><i
                             class="fa big-icon fa-envelope icon-wrap"></i> <span
                             class="mini-click-non">Purchase</span></a>
@@ -204,7 +238,7 @@
                                     class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
                                     class="mini-sub-pro">List Purchase</span></a></li>
                     </ul>
-                </li>
+                </li> --}}
                 <li>
                     <a class="has-arrow" href="{{ route('list-requistion') }}" aria-expanded="false"><i
                             class="fa big-icon fa-envelope icon-wrap"></i> <span

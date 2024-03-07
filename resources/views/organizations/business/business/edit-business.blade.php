@@ -45,6 +45,8 @@
                                 </div>
                             @endif
                             <div class="all-form-element-inner">
+                                <div class="row d-flex justify-content-center form-display-center">
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 ">
                                 <form action="{{ route('update-business') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group-inner">
@@ -86,6 +88,8 @@
                                         </div>
                                     </div>
                                 </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

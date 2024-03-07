@@ -95,13 +95,13 @@ Route::group(['middleware' => ['admin']], function () {
     Route::any('/hr-delete-employees/{id}', ['as' => 'hr-delete-employees', 'uses' => 'App\Http\Controllers\Organizations\HR\Employees\EmployeesHrController@destroy']);
 
     //Organizations Designer
-    Route::get('/designer-dashboard', ['as' => '/designer-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
-    Route::get('/list-designs', ['as' => 'list-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@index']);
-    Route::get('/add-designs', ['as' => 'add-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@add']);
-    Route::post('/store-designs', ['as' => 'store-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@store']);
-    Route::get('/edit-designs/{id}', ['as' => 'edit-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@edit']);
-    Route::post('/update-designs', ['as' => 'update-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@update']);
-    Route::any('/delete-designs/{id}', ['as' => 'delete-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@destroy']);
+    // Route::get('/designer-dashboard', ['as' => '/designer-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
+    // Route::get('/list-designs', ['as' => 'list-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@index']);
+    // Route::get('/add-designs', ['as' => 'add-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@add']);
+    // Route::post('/store-designs', ['as' => 'store-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@store']);
+    // Route::get('/edit-designs/{id}', ['as' => 'edit-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@edit']);
+    // Route::post('/update-designs', ['as' => 'update-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@update']);
+    // Route::any('/delete-designs/{id}', ['as' => 'delete-designs', 'uses' => 'App\Http\Controllers\Organizations\Designers\Designs\DesignerController@destroy']);
 
     //Start Purchase Order
     Route::get('/production-dashboard', ['as' => '/production-dashboard', 'uses' => 'App\Http\Controllers\Organizations\Dashboard\DashboardController@index']);
@@ -192,10 +192,13 @@ Route::any('/delete-business/{id}', ['as' => 'delete-business', 'uses' => 'App\H
 
 
 // ========================DesignUploadcontroller========
+Route::get('/list-new-requirements-received-for-design', ['as' => 'list-new-requirements-received-for-design', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@getAllNewRequirement']);
 
 Route::get('/list-design-upload', ['as' => 'list-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@index']);
-Route::get('/add-design-upload', ['as' => 'add-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@add']);
-Route::get('/edit-design-upload', ['as' => 'edit-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@edit']);
+Route::get('/add-design-upload/{id}', ['as' => 'add-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@add']);
+Route::post('/store-design-upload', ['as' => 'store-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@store']);
+Route::get('/edit-design-upload/{id}', ['as' => 'edit-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@edit']);
+Route::post('/update-design-upload', ['as' => 'update-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@update']);
 
 // ========================Start Gatepasscontroller========
 
@@ -227,3 +230,9 @@ Route::get('/list-store-receipt', ['as' => 'list-store-receipt', 'uses' => 'App\
 Route::get('/add-store-receipt', ['as' => 'add-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@add']);
 Route::get('/edit-store-receipt', ['as' => 'edit-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@edit']);
 // ======================== End store receipt controller ========
+// ========================  Start Vendor controller ========
+
+Route::get('/list-vendor', ['as' => 'list-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@index']);
+Route::get('/add-vendor', ['as' => 'add-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@add']);
+Route::get('/edit-vendor', ['as' => 'edit-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@edit']);
+// ========================  End Vendor controller ========

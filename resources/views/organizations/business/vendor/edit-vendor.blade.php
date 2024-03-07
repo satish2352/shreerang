@@ -121,41 +121,36 @@
                                                 @if($key == 0) --}}
                                                     <div class="form-group-inner">
                                                         <div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label for="english_image"> Image</label>
-                                                                    <input type="file" name="english_image" class="form-control"
-                                                                        id="english_image" accept="image/*" placeholder="image">
-                                                                    @if ($errors->has('english_image'))
-                                                                        <div class="red-text"><?php echo $errors->first('english_image', ':message'); ?>
-                                                                        </div>
-                                                                    @endif
-                                                                </div>
-                                                                <img id="english"
-                                                                    src="{{ Config::get('DocumentConstant.SLIDER_VIEW') }}{{ $slider->english_image }}"
-                                                                    class="img-fluid img-thumbnail" width="150">
-                                                                <img id="english_imgPreview" src="#" alt="pic"
-                                                                    class="img-fluid img-thumbnail" width="150" style="display:none">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="design_page">Product Page:</label>
+                                                                <input type="text" class="form-control" id="design_page" name="design_page" value="" placeholder="Enter Design Page">
                                                             </div>
-                        
-                                                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label for="marathi_image">छायाचित्र </label>
-                                                                    <input type="file" name="marathi_image" id="marathi_image" accept="image/*"
-                                                                        class="form-control">
-                                                                    @if ($errors->has('marathi_image'))
-                                                                        <div class="red-text"><?php echo $errors->first('marathi_image', ':message'); ?>
-                                                                        </div>
-                                                                    @endif
-                                                                </div>
-                        
-                                                                <img id="marathi"
-                                                                    src="{{ Config::get('DocumentConstant.SLIDER_VIEW') }}{{ $slider->marathi_image }}"
-                                                                    class="img-fluid img-thumbnail" width="150">
-                                                                <img id="marathi_imgPreview" src="#" alt="pic"
-                                                                    class="img-fluid img-thumbnail" width="150" style="display:none">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="project_name">Project Name:</label>
+                                                                <input type="text" class="form-control" id="project_name" name="project_name" value="" placeholder="Enter Project Name">
                                                             </div>
-                                                        </div>                                                     
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="time_allocation">Time Allocated For Product:</label>
+                                                                <input type="text" class="form-control" id="time_allocation" name="time_allocation" value="" placeholder="Enter Time Allocated For Product">
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="image">Image:</label>
+                                                                <input type="file" class="form-control" accept="image/*" id="image" name="image">
+                                                                <div id="oldImageDisplay">
+                                                                    {{-- @if (isset($editDataNew->image)) --}}
+                                                                        <b>Image Preview: </b>
+                                                                        <img src="" alt="Old Image" style="max-width: 100px;">
+                                                                    {{-- @endif --}}
+                                                                </div>
+                                                                <div id="selectedImageDisplay" style="display: none;">
+                                                                    <b>Image Preview: </b>
+                                                                    <img src="" alt="Selected Image" style="max-width: 100px;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 {{-- @endif --}}
                                             {{-- @endforeach --}}

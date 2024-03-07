@@ -63,7 +63,7 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <label for="title">Title:</label> 
                                                         <input type="text" class="form-control" id="title" value="{{ old('title') }}"
-                                                            name="title" placeholder="Enter Employee name">
+                                                            name="title" placeholder="Enter Title">
                                                     </div>
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div class="sparkline12-graph">
@@ -71,7 +71,7 @@
                                                                 <div class="form-group">
                                                                     <label for="descriptions">Description</label>
                                                                     <textarea class="form-control" rows="3" type="text" class="form-control" id="descriptions" name="descriptions"
-                                                                        placeholder="Enter Remark">{{ old('descriptions') }}</textarea>
+                                                                        placeholder="Enter Description">{{ old('descriptions') }}</textarea>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="pwstrength_viewport_progress"></span></div>
