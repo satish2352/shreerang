@@ -80,11 +80,11 @@ padding-left: 20px !important;
                                         <tr>
                                             <th data-field="state" data-checkbox="true"></th>
                                             <th data-field="id">ID</th>
-                                            <th data-field="po_date" data-editable="true">PO Date</th>
-                                            <th data-field="vendor_id" data-editable="true">Vendor</th>
-                                            <th data-field="terms_condition" data-editable="true">Terms & Condition</th>
-                                            <th data-field="remark" data-editable="true">Remark</th>
-                                            <th data-field="transport_dispatch" data-editable="true">Transport/Dispatch</th>
+                                            <th data-field="design_name" data-editable="true">Product Name</th>
+                                            <th data-field="design_page" data-editable="true">Product Page</th>
+                                            <th data-field="project_name" data-editable="true">Project Name</th>
+                                            <th data-field="time_allocation" data-editable="true">Time Allocated For Product</th>
+                                            <th data-field="image" data-editable="false">Image</th>
                                             <th data-field="action">Action</th>
                                         </tr>
 
@@ -94,12 +94,12 @@ padding-left: 20px !important;
                                         <tr>
                                             <td></td>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ucwords($data->po_date)}}</td>
-                                            <td>{{ucwords($data->vendor_id)}}</td>
-                                            <td>{{ucwords($data->terms_condition)}}</td>
-                                            <td>{{ucwords($data->remark)}}</td>
-                                            <td>{{ucwords($data->transport_dispatch)}}</td>
-                                                                                        
+                                            <td>{{ucwords($data->design_name)}}</td>
+                                            <td>{{ucwords($data->design_page)}}</td>
+                                            <td>{{ucwords($data->project_name)}}</td>
+                                            <td>{{ucwords($data->time_allocation)}}</td>
+                                            
+                                            <td><img style="max-width:250px; max-height:150px;" src="{{ Config::get('DocumentConstant.DESIGNS_VIEW') . $data->image }}" alt="{{ strip_tags($data['company_name']) }} Image" /></td>
                                             <td>
                                                 <div style="display: flex; align-items: center;">
                                                     <a href="{{route('edit-purchase', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>

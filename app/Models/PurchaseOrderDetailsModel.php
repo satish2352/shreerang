@@ -10,7 +10,7 @@ class PurchaseOrderDetailsModel extends Model
     use HasFactory;
     protected $table = 'purchase_order_details';
     protected $primaryKey = 'id';
-    protected $fillable = ['design_name', 'product_quantity', 'product_size'];
+    protected $fillable = ['part_no', 'description', 'due_date', 'hsn_no', 'quantity', 'rate', 'amount'];
 
     public function design()
     {

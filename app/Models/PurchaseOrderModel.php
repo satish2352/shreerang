@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PurchaseOrderModel extends Model
 {
     use HasFactory;
-    protected $table = 'purchase_order';
+    protected $table = 'purchase_orders';
     protected $primaryKey = 'id';
 }

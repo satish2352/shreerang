@@ -20,6 +20,7 @@ return new class extends Migration
                 $table->string('terms_condition')->nullable();
                 $table->string('remark')->nullable();
                 $table->string('transport_dispatch')->nullable();
+                $table->string('image');
                 $table->string('status')->nullable();
                 $table->boolean('is_approve')->default(false);
                 $table->boolean('is_active')->default(true);

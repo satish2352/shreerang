@@ -94,63 +94,42 @@ label.error {
                                                 </div>
                                                 @endif
 
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="po_date">PO Date:</label>
-                                                    <input type="date" class="form-control" id="po_date"
-                                                        name="po_date" placeholder="Select PO Date">
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <div class="form-select-list">
-                                                        <label for="vendor_id">Select Vendor:</label>
-                                                        <select class="form-control custom-select-value" name="vendor_id" id="vendor_id">
-                                                            <ul class="dropdown-menu ">
-                                                            <option value="">Select Vendor</option>  
-                                                            <option value="vendor1">Vendor 1</option>
-                                                            <option value="vendor2">Vendor 2</option>
-                                                            <option value="vendor3">Vendor 3</option>                                                              
-                                                        </select>
-                                                    </div>                                                                                                   
-                                                </div>
-                                            </div>
+                                                <table class="table table-bordered" id="dynamicTable">
 
-                                                <table class="table table-bordered" id="dynamicTable" style=" margin-top:15px">
                                                     <tr>
-                                                        <th>Part No</th>
-                                                        <th>Description</th>
-                                                        <th>Due Date</th>
-                                                        <th>HSN</th>
-                                                        <th>Quantity</th>
-                                                        <th>Rate</th>
-                                                        <th>Amount</th>
+
+                                                        <th>Product Name</th>
+
+                                                        <th>Product Qty</th>
+
+                                                        <th>Product Price</th>
+                                                        <th>Product Unit</th>
                                                         <th>Action</th>
+
                                                     </tr>
 
                                                     <tr>
-                                                        <td><input type="text" name="addmore[0][part_no]"
-                                                                placeholder="Enter Part No" class="form-control" />
+
+                                                        <td><input type="text" name="addmore[0][design_name]" id="design_name"
+                                                                placeholder="Enter your Name" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][description]"
-                                                                placeholder="Enter Description" class="form-control" />
+
+                                                        <td><input type="text" name="addmore[0][product_quantity]"
+                                                                placeholder="Enter your Qty" class="form-control" />
                                                         </td>
-                                                        <td><input type="date" name="addmore[0][due_date]"
-                                                                placeholder="Select Due Date" class="form-control" />
+
+                                                        <td><input type="text" name="addmore[0][product_size]"
+                                                                placeholder="Enter your Price" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][hsn_no]"
-                                                                placeholder="Enter HSN No" class="form-control" />
+                                                        <td><input type="text" name="addmore[0][product_unit]"
+                                                                placeholder="Enter your Product Unit" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][quantity]"
-                                                                placeholder="Enter Quantity" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][rate]"
-                                                                placeholder="Enter Rate" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][amount]"
-                                                                placeholder="Enter Amount" class="form-control" />
-                                                        </td>
+
                                                         <td><button type="button" name="add" id="add"
                                                                 class="btn btn-success">Add More</button></td>
+
                                                     </tr>
+
                                                 </table>
 
                                                 {{-- <button type="submit" class="btn btn-success">Save</button> --}}
@@ -161,29 +140,34 @@ label.error {
 
                                             {{-- =================== --}}
 
-                                            <div class="row">                                                
+                                            <div class="row">
+                                                <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="design_name">Product Name:</label>
+                                                        <input type="text" class="form-control" id="design_name"
+                                                            name="design_name" placeholder="Enter Employee name">
+                                                    </div> -->
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="terms_condition">Terms & Condition:</label>
-                                                    <input type="text" class="form-control" id="terms_condition"
-                                                        name="terms_condition" placeholder="Enter Terms & Condition">
+                                                    <label for="design_page">Product Page:</label>
+                                                    <input type="text" class="form-control" id="design_page"
+                                                        name="design_page" placeholder="Enter design_page">
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="remark">Remark:</label>
-                                                    <input type="text" class="form-control" id="remark"
-                                                        name="remark" placeholder="Enter Remark">
+                                                    <label for="project_name">Project Name:</label>
+                                                    <input type="text" class="form-control" id="project_name"
+                                                        name="project_name" placeholder="Enter Aadhar number">
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="transport_dispatch">Transport/Dispatch:</label>
-                                                    <input type="text" class="form-control" id="transport_dispatch"
-                                                        name="transport_dispatch" placeholder="Enter Transport/Dispatch">
-                                                </div> 
+                                                    <label for="time_allocation">Time Allocated For Product:</label>
+                                                    <input type="text" class="form-control" id="time_allocation"
+                                                        name="time_allocation" placeholder="Enter Pancard number">
+                                                </div>
+
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="image">Image:</label>
                                                     <input type="file" class="form-control" accept="image/*" id="image"
                                                         name="image">
                                                 </div>
-                                                
                                             </div>
 
                                             <div class="login-btn-inner">
@@ -223,19 +207,13 @@ $("#add").click(function() {
     $("#dynamicTable").append(
         '<tr><td><input type="text" name="addmore[' +
         i +
-        '][part_no]" placeholder="Enter Part No" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][design_name]" placeholder="Enter your Name" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][description]" placeholder="Enter Description" class="form-control" /></td><td><input type="date" name="addmore[' +
+        '][product_quantity]" placeholder="Enter your Qty" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][due_date]" placeholder="Select Due Date" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][product_size]" placeholder="Enter your Price" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][hsn_no]" placeholder="Enter HSN No" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][quantity]" placeholder="Enter Quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][rate]" placeholder="Enter Rate" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][amount]" placeholder="Enter Amount" class="form-control" /></td><td><a class="remove-tr delete-btn btn btn-danger m-1" title="Delete"><i class="fas fa-archive"></i></a></td></tr>'
+        '][product_unit]" placeholder="Enter your Unit" class="form-control" /></td><td><a class="remove-tr delete-btn btn btn-danger m-1" title="Delete"><i class="fas fa-archive"></i></a></td></tr>'
     );
 });
 
@@ -248,84 +226,74 @@ jQuery.noConflict();
 jQuery(document).ready(function($) {
     $("#addDesignsForm").validate({
         rules: {
-            po_date: {
+            // design_name: {
+            //     required: true,
+            // },
+            design_page: {
+                required: true,
+                // Add your custom validation rule if needed
+            },
+            project_name: {
                 required: true,
             },
-            vendor_id: {
+            time_allocation: {
                 required: true,
             },
-            terms_condition: {
+            image: {
                 required: true,
-            },            
-            remark: {
-                required: true,
+                accept: "image/*",
             },
-            transport_dispatch : {
+            design_name: {
                 required: true,
             },
             // Add validation rules for other fields
-            'addmore[0][part_no]': {
+            'addmore[0][design_name]': {
                 required: true,
             },
-            'addmore[0][description]': {
+            'addmore[0][product_quantity]': {
                 required: true,
             },
-            'addmore[0][due_date]': {
+            'addmore[0][product_size]': {
                 required: true,
             },
-            'addmore[0][hsn_no]': {
+            'addmore[0][product_unit]': {
                 required: true,
             },
-            'addmore[0][quantity]': {
-                required: true,
-            },
-            'addmore[0][rate]': {
-                required: true,
-            },
-            'addmore[0][amount]': {
-                required: true,
-            },
+
         },
-
         messages: {
-            po_date: {
-                required: "Please select PO Date.",
+            // design_name: {
+            //     required: "Please enter design name.",
+            // },
+            design_page: {
+                required: "Please enter a valid design page.",
             },
-            vendor_id: {
-                required: "Please enter Vendor Id.",
+            project_name: {
+                required: "Please enter project name.",
             },
-            terms_condition: {
-                required: "Please enter Terms And Condition.",
+            time_allocation: {
+                required: "Please enter time allocated for design.",
             },
-            remark: {
-                required: "Please enter Remark.",
-            },            
-            transport_dispatch: {
-                required: "Please enter Transport/Dispatch.",
+            image: {
+                required: "Please select an image.",
+                accept: "Please select an image file.",
             },
-
+            design_name: {
+                required: "Please enter Design Name.",
+            },
              // Add error messages for other fields
-             'addmore[0][part_no]': {
-                required: "Please Enter Part No",
+             'addmore[0][design_name]': {
+                required: "Please enter Design Name.",
             },
-            'addmore[0][description]': {
-                required: "Please enter Description.",
+            'addmore[0][product_quantity]': {
+                required: "Please enter Product Quantity.",
             },
-            'addmore[0][due_date]': {
-                required: "Please Select Due Date",
+            'addmore[0][product_size]': {
+                required: "Please enter Product Size.",
             },
-            'addmore[0][hsn_no]': {
-                required: "Please Enter HSN No",
+            'addmore[0][product_unit]': {
+                required: "Please enter Product Unit.",
             },
-            'addmore[0][quantity]': {
-                required: "Please Enter Quantity",
-            },
-            'addmore[0][rate]': {
-                required: "Please Enter Rate",
-            },
-            'addmore[0][amount]': {
-                required: "Please Enter Amount",
-            },            
         },
     });
 });

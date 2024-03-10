@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('due_date');
             $table->string('hsn_no');
-            $table->string('quanity');
+            $table->string('quantity');
             $table->string('rate');
             $table->string('amount');
             $table->string('is_deleted')->default(false);

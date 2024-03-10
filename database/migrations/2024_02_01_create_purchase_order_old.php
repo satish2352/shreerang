@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('purchase_orders', function (Blueprint $table) {
+        Schema::create('purchase_orders_old', function (Blueprint $table) {
                 $table->id();
                 $table->string('client_name')->nullable();
                 $table->string('tax')->nullable();
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('purchase_orders');
+        Schema::dropIfExists('purchase_orders_old');
     }
 };

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Organizations\Purchase;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\Organizations\Purchase\PurchaseServices;
@@ -9,28 +8,37 @@ use Session;
 use Validator;
 use Config;
 use Carbon;
-use App\Models\ {
-    DesignModel,
-    DesignDetailsModel
-    };
 
 class PurchaseController extends Controller
 { 
+   
     public function __construct(){
         $this->service = new PurchaseServices();
     }
 
-
-
     public function index(){
         try {
-            $getOutput = DesignModel::get();
-          
+            // $getOutput = $this->service->getAll();
+            $data_output = $this->service->getAll();
+            // dd($data_output);
+            // dd($getOutput);
+            // die();
             return view('organizations.purchase.purchase.list-purchase', compact('getOutput'));
         } catch (\Exception $e) {
             return $e;
         }
-    }    
+    }
+
+    // public function index(){
+    //     try {
+    //         $getOutput = $this->service->getAll();
+    //         dd($getOutput);
+    //         die();
+    //         return view('organizations.purchase.purchase.list-purchase', compact('getOutput'));
+    //     } catch (\Exception $e) {
+    //         return $e;
+    //     }
+    // }    
 
 
     public function add(){
@@ -44,29 +52,29 @@ class PurchaseController extends Controller
 
       public function store(Request $request){
         $rules = [
-                'design_page' => 'required|max:255',
-                'project_name' => 'required|string|max:20',
-                'time_allocation' => 'required|string|max:255',
-                'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
+                // 'design_page' => 'required|max:255',
+                // 'project_name' => 'required|string|max:20',
+                // 'time_allocation' => 'required|string|max:255',
+                // 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
             ];
 
             $messages = [                        
-                        'design_page.required' => 'The design page is required.',
-                        'design_page.max' => 'The design page must not exceed 255 characters.',
+                        // 'design_page.required' => 'The design page is required.',
+                        // 'design_page.max' => 'The design page must not exceed 255 characters.',
                         
-                        'project_name.required' => 'The project name is required.',
-                        'project_name.string' => 'The project name must be a valid string.',
-                        'project_name.max' => 'The project name must not exceed 20 characters.',
+                        // 'project_name.required' => 'The project name is required.',
+                        // 'project_name.string' => 'The project name must be a valid string.',
+                        // 'project_name.max' => 'The project name must not exceed 20 characters.',
                         
-                        'time_allocation.required' => 'The time allocation is required.',
-                        'time_allocation.string' => 'The time allocation must be a valid string.',
-                        'time_allocation.max' => 'The time allocation must not exceed 255 characters.',
+                        // 'time_allocation.required' => 'The time allocation is required.',
+                        // 'time_allocation.string' => 'The time allocation must be a valid string.',
+                        // 'time_allocation.max' => 'The time allocation must not exceed 255 characters.',
                         
-                        'image.required' => 'The image is required.',
-                        'image.image' => 'The image must be a valid image file.',
-                        'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
-                        'image.max' => 'The image size must not exceed 10MB.',
-                        'image.min' => 'The image size must not be less than 5KB.',
+                        // 'image.required' => 'The image is required.',
+                        // 'image.image' => 'The image must be a valid image file.',
+                        // 'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
+                        // 'image.max' => 'The image size must not exceed 10MB.',
+                        // 'image.min' => 'The image size must not be less than 5KB.',
                     ];
 
   

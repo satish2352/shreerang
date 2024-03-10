@@ -5,7 +5,7 @@ use DB;
 use Illuminate\Support\Carbon;
 use App\Models\ {
 PurchaseOrderModel,
-DesignDetailsModel
+PurchaseOrderDetailsModel
 };
 use Config;
 
@@ -16,14 +16,14 @@ class PurchaseRepository  {
         try {
             $data_output= PurchaseOrderModel::get();
 
-            // $data_output = PurchaseOrderModel::leftJoin('designs_details', 'designs.id', '=', 'designs_details.purchase_id')
-            // ->select('designs_details.*','designs_details.id as designs_details_id', 'designs.id as purchase_main_id', 'designs.vendor_id', 'designs.po_date', 'designs.terms_condition', 'designs.image')
-            // ->where('designs.id', $id)
+            // $data_output = PurchaseOrderModel::leftJoin('purchase_order_details', 'purchase_orders.id', '=', 'purchase_order_details.purchase_id')
+            // ->select('purchase_order_details.*','purchase_order_details.id as designs_details_id', 'purchase_orders.id as purchase_main_id', 'purchase_orders.vendor_id', 'purchase_orders.po_date', 'purchase_orders.terms_condition', 'purchase_orders.image')
+            // ->where('purchase_orders.id', $id)
             // ->get();
-            dd($data_output);
-            die();
+          
             return $data_output;
         } catch (\Exception $e) {
+      
             return $e;
         }
     }
@@ -48,7 +48,7 @@ public function addAll($request)
             $designDetails->part_no = $item['part_no'];
             $designDetails->description = $item['description'];
             $designDetails->due_date = $item['due_date'];
-            $designDetails->hsn_date = $item['hsn_date'];
+            $designDetails->hsn_no = $item['hsn_no'];
             $designDetails->quantity = $item['quantity'];
             $designDetails->rate = $item['rate'];
             $designDetails->amount = $item['amount'];
@@ -101,7 +101,7 @@ public function addAll($request)
                 $designDetails->part_no = $request->input("part_no_" . $i);
                 $designDetails->description = $request->input("description_" . $i);
                 $designDetails->due_date = $request->input("due_date_" . $i);
-                $designDetails->hsn_date = $request->input("hsn_date_" . $i);
+                $designDetails->hsn_no = $request->input("hsn_no_" . $i);
                 $designDetails->quantity = $request->input("quantity_" . $i);
                 $designDetails->rate = $request->input("rate_" . $i);
                 $designDetails->amount = $request->input("amount_" . $i);
@@ -127,7 +127,7 @@ public function addAll($request)
                     $designDetails->part_no = $item['part_no'];
                     $designDetails->description = $item['description'];
                     $designDetails->due_date = $item['due_date'];
-                    $designDetails->hsn_date = $item['hsn_date'];
+                    $designDetails->hsn_no = $item['hsn_no'];
                     $designDetails->quantity = $item['quantity'];
                     $designDetails->rate = $item['rate'];
                     $designDetails->amount = $item['amount'];
