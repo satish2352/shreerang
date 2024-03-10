@@ -53,17 +53,18 @@
     <!-- Preloader end -->
 
     <!-- Header start -->
-    <header class="transperant-head transition-4 ">
-        <div class="container nvvv">
+    <header class="transperant-head transition-4  ">
+        <div class="container-fluid  nvvv">
             <div class="row align-items-center">
-                <div class="col-lg-2 col-md-5 col-sm-4 col-5">
+                <div class="col-lg-2 col-md-4 col-sm-4 col-3">
                     <div class="logo transition-4">
                         <a href="{{url('/')}}">
                             <img src="{{ asset('website/assets/img/logo/LANSCAPE LOG.png')}}" class="transition-4" alt="logo">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-7 col-sm-8 col-7">
+                <!-- <div class="col-md-1"> </div> -->
+                <div class="col-lg-10 col-md-8 col-sm-8 col-7">
                     {{-- <div class="icon-links d-flex align-items-start">
                 
                         <a href="{{url('/contact')}}" class="btn btn-round d-none d-sm-block blob-small">Contact Us</a>

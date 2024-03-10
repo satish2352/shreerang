@@ -37,7 +37,6 @@
 body,
 ul,
 label,
-p,
 .black,
 .main-menu li .submenu li a,
 .price-text h1 span,
@@ -52,6 +51,9 @@ p,
 .categories li a,
 .btn-filter {
     color: #243772;
+}
+p{
+    color: white;
 }
 
 
@@ -299,7 +301,8 @@ button,
 }
 /*green bg opacity classes*/
 
-.white1 {
+
+1 {
     color: #f9f2f2eb;
 }
 .bg-green-op-9 {
