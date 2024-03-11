@@ -19,6 +19,35 @@ padding-left: 20px !important;
     font-size: 14px;
     text-align: left;
 }
+
+/* .zoomable-image {
+    transition: transform 0.5s;
+} */
+
+/* .zoomed-in {
+    transform: scale(1.5);
+    position: absolute;
+    z-index: 0;
+    translate :  -450px -150px;
+    translate : -250px  0px;
+} */
+
+.zoomable-image {
+    position: relative;
+    width: 30%;
+    cursor: pointer;
+}
+
+.zoomed-in {
+    transform: scale(3.5) !important;
+    position: fixed;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 1;    
+
+}
+
 </style>
 
 <div class="data-table-area mg-tb-15">
@@ -101,14 +130,20 @@ padding-left: 20px !important;
                                             <td>{{ucwords($data->title)}}</td>
                                             <td>{{ucwords($data->descriptions)}}</td>
                                             <td>{{ucwords($data->remarks)}}</td>
-                                            <td> <img class="img-size"
-                                                src="{{ Config::get('FileConstant.DESIGNS_VIEW') }}{{ $data['design_image'] }}"
-                                                alt="No Image" />
-                                        </td>
-                                        <td> <img class="img-size"
-                                                src="{{ Config::get('FileConstant.DESIGNS_VIEW') }}{{ $data['bom_image'] }}"
-                                                alt="No Image" />
-                                        </td>
+                                            <td> 
+                                                <div class="zoomable-image" onclick="toggleZoom(this)">
+                                                    <img class="img-fluid"
+                                                    src="{{ Config::get('FileConstant.DESIGNS_VIEW') }}{{ $data['design_image'] }}"
+                                                    alt="No Image"/>
+                                                </div>    
+                                            </td>
+                                            <td> 
+                                                <div class="zoomable-image" onclick="toggleZoom(this)">
+                                                    <img class="img-fluid"
+                                                        src="{{ Config::get('FileConstant.DESIGNS_VIEW') }}{{ $data['bom_image'] }}"
+                                                        alt="No Image"/>
+                                                </div>
+                                            </td>
                                             {{-- <td>
                                                 <div style="display: flex; align-items: center;">
                                                     <a href="{{route('edit-business', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
@@ -127,5 +162,25 @@ padding-left: 20px !important;
         </div>
     </div>
 </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function toggleZoom(element) {
+            element.classList.toggle('zoomed-in');
+        }
+
+        // Close zoomed image when clicking outside
+        window.addEventListener('click', function (event) {
+            var zoomedImages = document.querySelectorAll('.zoomed-in');
+            zoomedImages.forEach(function (img) {
+                if (!img.contains(event.target)) {
+                    img.classList.remove('zoomed-in');                   
+                }
+            });
+        });
+    </script>
 
 @endsection

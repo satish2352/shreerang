@@ -1,9 +1,15 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
-        <div class="sidebar-header">
-            <a href="index.html"><img class="main-logo" src="{{ asset('img/logo/logo.png') }}" alt=""></a>
+        <div class="sidebar-header"  style="background:linear-gradient(178deg, #e12503 0%, #85060c 100%);">
+            <a href="index.html">
+            <img class="main-logo" src="{{ asset('website/assets/img/logo/LANSCAPE LOG.png') }}" alt="" width="70%"></a>
             <strong><img src="{{ asset('img/logo/logo.png') }}" alt=""></strong>
         </div>
+        <!-- <div class="sidebar-header" style="background:linear-gradient(178deg, #e12503 0%, #85060c 100%);">
+            <a href="index.html"><img class="main-logo" src="{{ asset('website/assets/img/logo/LANSCAPE LOG.png') }}" width="70%" alt=""></a>            
+        </div> -->
+
+
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
             <nav class="sidebar-nav left-sidebar-menu-pro">
 
