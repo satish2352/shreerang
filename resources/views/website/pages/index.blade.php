@@ -239,33 +239,33 @@
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h2 class="white text-center d-flex justify-content-center  f-700 mb-10">
-                                <span class="f-800 fs-1  mr-10">01</span>
+                                <span class="f-900 fs-1  mr-20">01</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20 text-center f-500  text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20  f-500  text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h2 class="white f-700 text-center d-flex  justify-content-center  mb-10">
-                                <span class="f-800 fs-1 mr-10">02</span>
+                                <span class="f-900 fs-1 mr-20">02</span>
                                 METALWORKING
     
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20 text-center f-500  text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20  f-500  text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00">
                             <h2 class="white text-center d-flex justify-content-center  f-700 mb-10">
-                                <span class="f-900 fs-1 mr-10">03</span>
+                                <span class="f-900 fs-1 mr-20">03</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20 text-center f-500   text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20  f-500   text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
@@ -358,7 +358,7 @@
                 <div class="col-xl-12">
                     <div class="owl-carousel owl-theme testimonial-2-slide  wow fadeIn">
                         <div class="item">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card cardwidth" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -371,7 +371,7 @@
                                 <h4 class="f-700 mb-20 pt-20  icn"  id="pr"><i class="fa-solid fa-quote-left  "></i></h4>
                                 <p class="mb-35 pb-10 clrtext text-justify pr-10 lnh">"Shreerag Engineering's trolleys and rollers have transformed our warehouse operations. Their products' durability and efficiency exceeded our expectations, making them our top choice for material handling solutions."</p>
                                 <div class="client-2-img d-flex  fixed-bottom1 justify-content-md-start justify-content-start">
-                                    <div class="img-div pt-20  pb-20">
+                                    <div class="img-div  pb-20">
                                         <div class="client-image">
                                             <img src="{{ asset('website/assets/img/team/team5b.png')}}" class=" rounded-circle" alt="">
                                         </div>
@@ -385,7 +385,7 @@
                         </div>
 
                         <div class="item ">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card cardwidth" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -413,7 +413,7 @@
                         </div>
 
                         <div class="item ">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card cardwidth" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -441,7 +441,7 @@
                         </div>
 
                         <div class="item ">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card cardwidth" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -468,7 +468,7 @@
                         </div>
 
                         <div class="item ">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card cardwidth" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>
@@ -496,7 +496,7 @@
                         </div>
 
                         <div class="item ">
-                            <div class="each-quote-2 pl-20 pr-sm-00 card" style="height: 350px; border-top:15px solid #243772; background:#e2feff">
+                            <div class="each-quote-2 pl-20 pr-sm-00 card cardwidth" style="height: 350px; border-top:15px solid #243772; background:#e2feff;">
                                 <!-- <ul class="stars-rate mb-5" data-starsactive="5">
                                     <li class="text-md-left text-center">
                                         <i class="fas fa-star"></i>

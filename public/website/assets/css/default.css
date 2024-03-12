@@ -622,6 +622,8 @@ text-align: center;
 
 /*-- Padding Right --*/
 
+
+
 .pr-00 {
     padding-right: 0px !important;
 }
@@ -1055,6 +1057,13 @@ text-align: center;
 /* Medium devices (tablets, 768px and up) */
 
 @media (max-width: 991px) {
+  
+    .addresscenter{
+        display: flex;
+        justify-content: center;
+    
+    }
+
     /*-- Margin Top --*/
     .mt-md-00 {
         margin-top: 0px !important;
@@ -3233,4 +3242,8 @@ text-align: center;
 
 .modal-backdrop.show {
     opacity: 0.95;
+}
+
+.fontsize30{
+    font-size: 30px;
 }

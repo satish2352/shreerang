@@ -11,12 +11,11 @@
         <div class="col-lg-9 col-md-12 col-sm-12 justify-content-md-center">
             <footer class="footer-area footbak">
                 <div class="container-fluid pt-50 pb-50">
-                    <div class="row ml-50">
-                        
-                        <div class="col-lg-6 col-md-6 col-sm-6  ">
+                    <div class="row ml-100">                        
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-xxl-6  ">
                             <div class="footer-links pt-md- mb-0">
                                 <h4 class="green f-700 mb-20 ml-20 foottitle">ADDRESS</h4>
-                                <ul class="links-list  ">
+                                <ul class="links-list fgap  ">
                                     <li><span class="green f-700">Plant No. 1</span><a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87"  target="blank"> W-127 (A), MIDC, Ambad Nashik- 422010,</li></a>
                                     <li><span class="green f-700">Plant No. 2</span><a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6"  target="blank"> W-118 (A), MIDC, Ambad Nashik - 422010 ,</li></a>
                                     <li><span class="green f-700">Plant No. 3</span><a href=""  target="blank"> GAT NO-679/2/1 , Kurli Alandi Road ,Chankan , Tal-khed Dist-Pune - 410501,</li></a>
@@ -25,9 +24,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 col-xxl-3">
                             <div class="footer-links  pt-md- mb-sm-0">
-                                <h4 class="green f-700 mb-20 foottitle">CONTACT1</h4>
+                                <h4 class="green f-700 mb-20 foottitle">CONTACT</h4>
                                 <ul class="links-list foottitle_sub">
                                     <li><a href="tel: +91 7028082176">7028082176</a></li>
                                     <li><a href="tel: +91 0253-2383517">0253 - 2383517</a></li>
@@ -69,14 +68,14 @@
                    
                         <div class="container-fluid">
                             <div class="row align-items-center ">
-                                {{-- <div class="col-xl-1 col-md-1"></div> --}}
-                                <div class="col-xl-12 col-md-12">
-                                    <div class="row">
-                                        <div class="col-xl-9 col-md-9">
-                                        <p class="mb-3 white copyrt">Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank" class="white">sumagoinfotech</a> 2024. All rights reserved.</p>
+                                <div class="col-xl-1 col-md-1"></div>
+                                <div class="col-xl-11 col-md-11">
+                                    <div class="row   ">
+                                        <div class="col-xl-9 col-md-8">
+                                        <p class="mb-3 white copyrt1">Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank" class="white">sumagoinfotech</a> 2024. All rights reserved.</p>
                                         </div>
-                                        <div class="col-xl-3 col-md-3 banrimgs justify-content-lg-end">
-                                            <p class="mb-3 white">Terms & Conditions</p>
+                                        <div class="col-xl-3 col-md-4 banrimgs  ">
+                                            <p class=" white text-end ">Terms & Conditions</p>
                                         </div>
                                     </div>
                                 </div>
