@@ -9,7 +9,7 @@
     white-space: nowrap;
 }
 #table thead th{
-    width: 300px !important; 
+    width: 300px !important;
     padding-right: 49px !important;
 padding-left: 20px !important;
 }
@@ -20,6 +20,9 @@ padding-left: 20px !important;
     text-align: left;
 }
 </style>
+
+<div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 <div class="data-table-area mg-tb-15">
     <div class="container-fluid">
@@ -67,10 +70,10 @@ padding-left: 20px !important;
                                     <option value="all">Export All</option>
                                     <option value="selected">Export Selected</option>
                                 </select>
-                            </div>                         
-                           
-                          
-                            <div class="table-responsive"> 
+                            </div>
+
+
+                            <div class="table-responsive">
                                 <table id="table" data-toggle="table" data-pagination="true" data-search="true"
                                     data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true"
                                     data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
@@ -98,7 +101,7 @@ padding-left: 20px !important;
                                             <td>{{ucwords($data->design_page)}}</td>
                                             <td>{{ucwords($data->project_name)}}</td>
                                             <td>{{ucwords($data->time_allocation)}}</td>
-                                            
+
                                             <td><img style="max-width:250px; max-height:150px;" src="{{ Config::get('DocumentConstant.DESIGNS_VIEW') . $data->image }}" alt="{{ strip_tags($data['company_name']) }} Image" /></td>
                                             <td>
                                                 <div style="display: flex; align-items: center;">
@@ -117,6 +120,8 @@ padding-left: 20px !important;
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 @endsection

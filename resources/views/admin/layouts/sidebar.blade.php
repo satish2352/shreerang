@@ -89,6 +89,13 @@
                                             class="mini-sub-pro">Business List</span></a></li>
                             </ul>
                         </li>
+
+                        <li>
+                            <a class="has-arrow" href="{{ route('list-new-requirements-received-for-design') }}" aria-expanded="false"><i
+                                    class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                    class="mini-click-non">List Business Sent For Design</span></a>
+                        </li>
+
                         <li>
                             <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
