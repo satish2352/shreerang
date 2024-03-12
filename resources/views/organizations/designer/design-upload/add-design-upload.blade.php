@@ -10,102 +10,104 @@
             font-size: 12px;
         }
     </style>
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="sparkline12-list">
-                <div class="sparkline12-hd">
-                    <div class="main-sparkline12-hd">
-                        <center>
-                            <h1>Add Design Data</h1>
-                        </center>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline12-list">
+                    <div class="sparkline12-hd">
+                        <div class="main-sparkline12-hd">
+                            <center>
+                                <h1>Add Design Data</h1>
+                            </center>
+                        </div>
                     </div>
-                </div>
-                <div class="sparkline12-graph">
-                    <div class="basic-login-form-ad">
-                        <div class="row">
-                            @if (session('msg'))
-                                <div class="alert alert-{{ session('status') }}">
-                                    {{ session('msg') }}
-                                </div>
-                            @endif
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                @if (Session::get('status') == 'success')
-                                    <div class="col-md-12">
-                                        <div class="alert alert-success alert-dismissible" role="alert">
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <strong>Success!</strong> {{ Session::get('msg') }}
-                                        </div>
+                    <div class="sparkline12-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                @if (session('msg'))
+                                    <div class="alert alert-{{ session('status') }}">
+                                        {{ session('msg') }}
                                     </div>
                                 @endif
 
-                                @if (Session::get('status') == 'error')
-                                    <div class="col-md-12">
-                                        <div class="alert alert-danger alert-dismissible" role="alert">
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <strong>Error!</strong> {!! session('msg') !!}
-                                        </div>
-                                    </div>
-                                @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="all-form-element-inner">
-                                        <form action="{{ route('update-design-upload') }}" method="POST"
-                                            id="addDesignsForm" enctype="multipart/form-data">
-                                            @csrf
-                                            <div class="form-group-inner">
-                                                <div class="container-fluid">
-                                                    @if (Session::has('success'))
-                                                        <div class="alert alert-success text-center">
-                                                            <a href="#" class="close" data-dismiss="alert"
-                                                                aria-label="close">×</a>
-                                                            <p>{{ Session::get('success') }}</p>
-                                                        </div>
-                                                    @endif
-                                                </div>
+                                    @if (Session::get('status') == 'success')
+                                        <div class="col-md-12">
+                                            <div class="alert alert-success alert-dismissible" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <strong>Success!</strong> {{ Session::get('msg') }}
+                                            </div>
+                                        </div>
+                                    @endif
 
-                                                <input type="hidden" class="form-control" value="{{ $addData }}"
-                                                    id="business_id" name="business_id">
-
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                        <label for="design_image">Upload Design Layout:</label>
-                                                        <input type="file" class="form-control" accept="image/*"
-                                                            id="design_image" name="design_image">
-                                                        @if ($errors->has('design_image'))
-                                                            <span class="red-text"><?php echo $errors->first('design_image', ':message'); ?></span>
+                                    @if (Session::get('status') == 'error')
+                                        <div class="col-md-12">
+                                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <strong>Error!</strong> {!! session('msg') !!}
+                                            </div>
+                                        </div>
+                                    @endif
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="all-form-element-inner">
+                                            <form action="{{ route('update-design-upload') }}" method="POST"
+                                                id="addDesignsForm" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="form-group-inner">
+                                                    <div class="container-fluid">
+                                                        @if (Session::has('success'))
+                                                            <div class="alert alert-success text-center">
+                                                                <a href="#" class="close" data-dismiss="alert"
+                                                                    aria-label="close">×</a>
+                                                                <p>{{ Session::get('success') }}</p>
+                                                            </div>
                                                         @endif
                                                     </div>
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                        <label for="bom_image">upload BOM:</label>
-                                                        <input type="file" class="form-control" accept="image/*"
-                                                            id="bom_image" name="bom_image">
-                                                        @if ($errors->has('bom_image'))
-                                                            <span class="red-text"><?php echo $errors->first('bom_image', ':message'); ?></span>
-                                                        @endif
-                                                    </div>
-                                                </div>
 
-                                                <div class="login-btn-inner">
+                                                    <input type="hidden" class="form-control" value="{{ $addData }}"
+                                                        id="business_id" name="business_id">
+
                                                     <div class="row">
-                                                        <div class="col-lg-5"></div>
-                                                        <div class="col-lg-7">
-                                                            <div class="login-horizental cancel-wp pull-left">
-                                                                <a href="{{ route('list-design-upload') }}"
-                                                                    class="btn btn-white"
-                                                                    style="margin-bottom:50px">Cancel</a>
-                                                                <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                    type="submit" style="margin-bottom:50px">Save
-                                                                    Data</button>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <label for="design_image">Upload Design Layout:</label>
+                                                            <input type="file" class="form-control" accept="image/*"
+                                                                id="design_image" name="design_image">
+                                                            @if ($errors->has('design_image'))
+                                                                <span class="red-text"><?php echo $errors->first('design_image', ':message'); ?></span>
+                                                            @endif
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <label for="bom_image">upload BOM:</label>
+                                                            <input type="file" class="form-control" accept="image/*"
+                                                                id="bom_image" name="bom_image">
+                                                            @if ($errors->has('bom_image'))
+                                                                <span class="red-text"><?php echo $errors->first('bom_image', ':message'); ?></span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="login-btn-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-5"></div>
+                                                            <div class="col-lg-7">
+                                                                <div class="login-horizental cancel-wp pull-left">
+                                                                    <a href="{{ route('list-design-upload') }}"
+                                                                        class="btn btn-white"
+                                                                        style="margin-bottom:50px">Cancel</a>
+                                                                    <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                        type="submit" style="margin-bottom:50px">Save
+                                                                        Data</button>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
