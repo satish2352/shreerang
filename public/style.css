@@ -3304,3 +3304,6 @@ element.style {
 div#sparklinehome canvas {
     width: 100% !important;
 }
+.red-text{
+    color: red !important;
+}
