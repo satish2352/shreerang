@@ -28,7 +28,10 @@
     .coming-soon[data-overlay]::before {
         height: 100vh;
     }
-    .copyrt{
+    /* .copyrt{
+        margin-left: 40px;
+    } */
+    .copyrt1{
         margin-left: 40px;
     }
     
@@ -55,9 +58,9 @@
         margin: -25px 1px 5px 52px; */
 
     }
-    .copyrt{
+    /* .copyrt{
         margin-left: 90px;
-    }
+    } */
     .hrline{
         margin-right: 108px;
     }
@@ -96,15 +99,18 @@
         background-image: url("../img/banner/SERVICES BACKGROUND.png");
         background-size: 98% 100%;
     }
-    .copyrt{
+    /* .copyrt{
         margin-left: 82px;
-    }
+    } */
  
     .pfonts{
         height: 8pc;
         opacity: 67%;
         color: #fff;
         font-size: 21px;
+           /* padding-right: 95px!important;
+        padding-left: 100px !important; */
+     
     }
    
     .footlogocol{
@@ -120,15 +126,16 @@
     .hrline{
         margin-right: 65px;
     }
-    .copyrt{
+    /* .copyrt{
         margin-left: 0px;
-    }
+    } */
     .addrescard{
         color: #444;
         top: -38pc;
         position: relative;
         left: 57pc;
         margin-left: -16pc;
+        display: none;
     
     }
   
@@ -141,11 +148,21 @@
         margin-bottom: 10px;
     
     }
+    .pfots{
+        padding-right: 95px!important;
+        padding-left: 100px !important;
+    }
  
 }
 /*end*/
 
 @media only screen and (min-width: 992px) {
+
+    .topbottom{
+        margin-top: 20px;
+        /* margin-bottom: 20px; */
+
+    }
     .transperant-head.fixed-nav {
         position: fixed;
         -webkit-transition: all .4s;
@@ -163,8 +180,8 @@
         -webkit-transition: all .4s;
         transition: all .4s;
     }
-    .paddiall{
-        padding-top: 100px;
+    .paddiall00{
+        padding-top: 50px;
         padding-bottom: 100px; 
     
     }
@@ -228,8 +245,8 @@
         margin-left: 80px;
     }
     .testmo{
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
     .card-info1{
         height: auto;
@@ -237,8 +254,8 @@
     }
    
     .testmo1{
-        padding-left: 200px;
-        padding-right: 200px;
+        padding-left: 55px;
+        padding-right: 55px;
     }
     .fs1{
         font-size: 47px;
@@ -294,8 +311,8 @@
         opacity: 67%;
         color: #fff;
         font-size: 20px;
-        padding-left: 1px;
         padding-right: 1px;
+        padding-left: 1px;
     }
     h2{
         font-size: 25px;
@@ -1307,7 +1324,7 @@ Custom media queries
         color: #444;
         top: -38pc;
         position: relative;
-        left: 40pc;
+        left: 30pc;
         margin-left: -16pc;
     
     }
@@ -1337,8 +1354,8 @@ Custom media queries
         color: #444;
         top: -38pc;
         position: relative;
-        left: 57pc;
-        margin-left: -16pc;
+        left: 47pc;
+        margin-left: -11pc;
     
     }
   
@@ -1352,7 +1369,7 @@ Custom media queries
         position: relative;
         width: 500px;
         top: -37pc;
-        left: 20pc;
+        left: 12pc;
         margin-bottom: 10px;
     
     }
@@ -1363,7 +1380,7 @@ Custom media queries
         color: #444;
         top: -38pc;
         position: relative;
-        left: 68pc;
+        left: 58pc;
         margin-left: -16pc;
     
     }
@@ -1383,7 +1400,7 @@ Custom media queries
         color: #444;
         top: -38pc;
         position: relative;
-        left: 70pc;
+        left: 60pc;
         margin-left: -16pc;
     
     }
@@ -1401,16 +1418,22 @@ Custom media queries
         height: 478px;
     }
 
- }
-
+}
+/* @media only screen and (min-width: 1920px){
+    .cardwidth{
+        width: 500px;
+    
+    }
+} */
 
 @media only screen and (min-width: 1600px) and (max-width: 1920px){ 
     .addrescard{
         color: #444;
         top: -38pc;
         position: relative;
-        left: 74pc;
+        left: 64pc;
         margin-left: -16pc;
+        
     
     }
     
@@ -1420,7 +1443,15 @@ Custom media queries
         background-image: url('../img/banner/Frame 11.png');
     
     }
-   
+   .pfonts{
+    padding-right: 95px!important;
+    padding-left: 100px !important;
+   }
+   .cardwidth{
+    width: 500px;
+
+}
+ 
     .contcatcontainer{
         position: relative;
         width: 500px;
@@ -1429,9 +1460,9 @@ Custom media queries
         margin-bottom: 10px;
     
     }
-      .copyrt{
+      /* .copyrt{
         margin-left: 90px;
-    }
+    } */
     .hrline{
         margin-right: 108px;
     }
@@ -1513,9 +1544,9 @@ Custom media queries
     }
   
 
-    .copyrt{
+    /* .copyrt{
         margin-left: 48px;
-    }
+    } */
     .hrline{
         margin-right: 60px;
     }
