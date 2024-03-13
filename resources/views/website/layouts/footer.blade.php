@@ -4,11 +4,11 @@
 <section class="desktopfoot paddiall2">
     <div class="row ">
     <!-- footlogocol -->
-        <!-- <div class="col-lg-3 col-md-12 col-sm-12 text-center bg-green-op-100 mr-lg-200 " style="">
+        <div class="col-lg-3 col-md-12 col-sm-12 text-center bg-green-op-100 mr-lg-200 " style="">
             <img class=" mt-200" src="{{ asset('website/assets/img/logo/FOOTER11.png')}}" id="" alt="">
-        </div> -->
+        </div>
         
-        <div class="col-lg-12 col-md-12 col-sm-12 justify-content-md-center">
+        <div class="col-lg-9 col-md-12 col-sm-12 justify-content-md-center">
             <footer class="footer-area footbak">
                 <div class="container-fluid pt-50 pb-50 footerleftmargin">
                     <div class="row ">                        
@@ -123,7 +123,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-2  col-md-3 col-sm-3  cent">
+                        <div class="col-lg-2  col-md-3 col-sm-3  nomp">
                             <div class="footer-links pt-20 pt-md mb-sm-0">
                                 <h4 class="green f-700 mb-20 foottitle">CONTACT</h4>
                                 <ul class="links-list text-center">

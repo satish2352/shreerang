@@ -73,9 +73,12 @@
 
 /* Large devices (Above 1200px) */
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 992px) {
     .footbak{
         border-radius: 250px 0px 0px 250px;
+    }
+    .flogo{
+        margin-top: 100px;
     }
 
   
@@ -894,7 +897,8 @@
     }
 
     #ddimg1{
-        margin-left: -2pc;
+
+        margin-left: 4pc;
         height: 248px;
         margin-top: -2pc;
     
@@ -925,7 +929,7 @@
     }
     .footer-area1{
         position: relative;
-        padding: 45% 6% 0% 12%;
+        padding: 20% 6% 0% 12%;
         border-radius: 279px 261px 0px 0px;
     }
     /* director deskkk */
@@ -1538,7 +1542,7 @@ Custom media queries
  }
 
  /* iPad Air */
-@media only screen and (min-width: 768px) and (max-width: 1024px) { 
+@media only screen and (min-width: 576px) and (max-width: 1024px) { 
     .footlogocol1 .shreelogo{
         display: none;
     }
