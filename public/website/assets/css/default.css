@@ -3244,6 +3244,7 @@ text-align: center;
     opacity: 0.95;
 }
 
-.fontsize30{
-    font-size: 30px;
+.footerleftmargin{
+    margin-left: 100px;
+    
 }

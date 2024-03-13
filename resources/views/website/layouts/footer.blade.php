@@ -5,16 +5,16 @@
     <div class="row ">
     <!-- footlogocol -->
         <div class="col-lg-3 col-md-12 col-sm-12 text-center bg-green-op-100 mr-lg-200 " style="">
-            <img class=" mt-200" src="{{ asset('website/assets/img/logo/FOOTER11.png')}}" id="" alt="">
+            <img class=" mt-200 flogo" src="{{ asset('website/assets/img/logo/FOOTER11.png')}}" id="" alt="">
         </div>
         
-        <div class="col-lg-9 col-md-12 col-sm-12 justify-content-md-center">
+        <div class="col-lg-9 col-md-12 col-sm-12 justify-content-md-center ">
             <footer class="footer-area footbak">
-                <div class="container-fluid pt-50 pb-50">
-                    <div class="row ml-100">                        
+                <div class="container-fluid pt-50 pb-50 footerleftmargin">
+                    <div class="row ">                        
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-xxl-6  ">
                             <div class="footer-links pt-md- mb-0">
-                                <h4 class="green f-700 mb-20 ml-20 foottitle">ADDRESS</h4>
+                                <h4 class="green f-700 mb-20 foottitle">ADDRESS</h4>
                                 <ul class="links-list fgap  ">
                                     <li><span class="green f-700">Plant No. 1</span><a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87"  target="blank"> W-127 (A), MIDC, Ambad Nashik- 422010,</li></a>
                                     <li><span class="green f-700">Plant No. 2</span><a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6"  target="blank"> W-118 (A), MIDC, Ambad Nashik - 422010 ,</li></a>
@@ -24,7 +24,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 col-xxl-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 col-xxl-3 colpadding">
                             <div class="footer-links  pt-md- mb-sm-0">
                                 <h4 class="green f-700 mb-20 foottitle">CONTACT</h4>
                                 <ul class="links-list foottitle_sub">
@@ -51,9 +51,9 @@
                             </div>
                             
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3 foottitle ">
                             <div class="footer-links mb-sm-0">
-                                <h4 class="green f-700 mb-20 foottitle">QUICK LINKS</h4>
+                                <h4 class="green f-700 mb-20 ">QUICK LINKS</h4>
                                 <ul class="links-list foottitle_sub">
                                     <li><a href="{{url('/about')}}">About</a></li>
                                     <li><a href="{{url('/product')}}">Product</a></li>
@@ -67,12 +67,12 @@
                     <div>
                    
                         <div class="container-fluid">
-                            <div class="row align-items-center ">
-                                <div class="col-xl-1 col-md-1"></div>
+                            <div class="row ">
+                                
                                 <div class="col-xl-11 col-md-11">
                                     <div class="row   ">
                                         <div class="col-xl-9 col-md-8">
-                                        <p class="mb-3 white copyrt1">Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank" class="white">sumagoinfotech</a> 2024. All rights reserved.</p>
+                                        <p class="mb-3 white ">Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank" class="white">sumagoinfotech</a> 2024. All rights reserved.</p>
                                         </div>
                                         <div class="col-xl-3 col-md-4 banrimgs  ">
                                             <p class=" white text-end ">Terms & Conditions</p>
@@ -98,13 +98,13 @@
 
 {{-- for mobile view --}}
 <section class="mobilefoot pt-50 d-md-block d-lg-none">
-    <div class="row footlogocol1">
+    <!-- <div class="row footlogocol1"> -->
         
-        <div class="col-md-12 col-sm-12">
+        <!-- <div class="col-md-12 col-sm-12">
             <div class="col-md-12 col-sm-12 col-xs-12 center shreelogo justify-content-center"  style="">
 
                 <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="mobfootlogo center" alt="">
-        </div>
+        </div> -->
             <footer class="footer-area1">
                 <div class="container-fluid">
                     <div class="row">
@@ -123,7 +123,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-2  col-md-3 col-sm-3  cent">
+                        <div class="col-lg-2  col-md-3 col-sm-3  nomp">
                             <div class="footer-links pt-20 pt-md mb-sm-0">
                                 <h4 class="green f-700 mb-20 foottitle">CONTACT</h4>
                                 <ul class="links-list text-center">
