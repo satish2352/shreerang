@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Services\Organizations\Store;
-use App\Http\Repository\Organizations\Store\PurchaseRepository;
+use App\Http\Repository\Organizations\Store\StoreReceiptRepository;
 use Carbon\Carbon;
 use App\Models\ {
     DesignModel
@@ -11,7 +11,7 @@ use Config;
     {
         protected $repo;
         public function __construct(){
-        $this->repo = new PurchaseRepository();
+        $this->repo = new StoreReceiptRepository();
     }
 
 
@@ -27,7 +27,7 @@ use Config;
     public function getAll(){
         try {
             $data = $this->repo->getAll();
-        //    dd($data);
+            return $data; // Add this line to return the data
         } catch (\Exception $e) {
             return $e;
         }
@@ -36,10 +36,11 @@ use Config;
     public function addAll($request){
         try {
             $last_id = $this->repo->addAll($request);
-    //  dd($last_id);
-            $path = Config::get('DocumentConstant.DESIGNS_ADD');
+            // dd($last_id);
+
+            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
             $ImageName = $last_id['ImageName'];
-            uploadImage($request, 'image', $path, $ImageName);
+            uploadImage($request, 'signature', $path, $ImageName);
             
             if ($last_id) {
                 return ['status' => 'success', 'msg' => 'Data Added Successfully.'];
@@ -50,6 +51,8 @@ use Config;
             return ['status' => 'error', 'msg' => $e->getMessage()];
         }      
     }
+
+    
     public function getById($id){
         try {
             $result = $this->repo->getById($id);

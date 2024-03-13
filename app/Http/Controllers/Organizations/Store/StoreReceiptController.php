@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Organizations\Store;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-// use App\Http\Services\Organizations\Productions\ProductionServices;
+use App\Http\Services\Organizations\Store\StoreReceiptServices;
 use Session;
 use Validator;
 use Config;
@@ -16,17 +16,14 @@ use Carbon;
 
 class StoreReceiptController extends Controller
 { 
-    // public function __construct(){
-    //     $this->service = new ProductionServices();
-    // }
-
-
+    public function __construct(){
+        $this->service = new StoreReceiptServices();
+    }
 
     public function index(){
         try {
-          
-          
-            return view('organizations.store.store-receipt.list-store-receipt');
+            $getOutput = $this->service->getAll();
+            return view('organizations.store.store-receipt.list-store-receipt', compact('getOutput') );
         } catch (\Exception $e) {
             return $e;
         }
@@ -34,8 +31,6 @@ class StoreReceiptController extends Controller
     
     public function add(){
         try {
-          
-          
             return view('organizations.store.store-receipt.add-store-receipt');
         } catch (\Exception $e) {
             return $e;
@@ -43,29 +38,31 @@ class StoreReceiptController extends Controller
     } 
     public function store(Request $request){
         $rules = [
-                // 'design_page' => 'required|max:255',
-                // 'project_name' => 'required|string|max:20',
-                // 'time_allocation' => 'required|string|max:255',
-                // 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
+                'store_date' => 'required',
+                'name' => 'required|string',
+                'contact_number' => 'required|string',
+                'remark' => 'required|string',
+                'signature' => 'required|image|mimes:jpeg,png,jpg',
+                // 'signature' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
             ];
 
             $messages = [                        
-                        // 'design_page.required' => 'The design page is required.',
-                        // 'design_page.max' => 'The design page must not exceed 255 characters.',
+                        'store_date.required' => 'Please enter a valid Store Date.',
                         
-                        // 'project_name.required' => 'The project name is required.',
-                        // 'project_name.string' => 'The project name must be a valid string.',
-                        // 'project_name.max' => 'The project name must not exceed 20 characters.',
+                        'name.required' => 'The Store Person name is required.',
+                        'name.string' => 'The Store Person name must be a valid string.',
                         
-                        // 'time_allocation.required' => 'The time allocation is required.',
-                        // 'time_allocation.string' => 'The time allocation must be a valid string.',
-                        // 'time_allocation.max' => 'The time allocation must not exceed 255 characters.',
+                        'contact_number.required' => 'Please Enter contact number.',
+                        'contact_number.string' => 'The contact number must be a valid string.',
+
+                        'remark.required' => 'The remark is required.',
+                        'remark.string' => 'The remark must be a valid string.',
                         
-                        // 'image.required' => 'The image is required.',
-                        // 'image.image' => 'The image must be a valid image file.',
-                        // 'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
-                        // 'image.max' => 'The image size must not exceed 10MB.',
-                        // 'image.min' => 'The image size must not be less than 5KB.',
+                        'signature.required' => 'The signature image is required.',
+                        'signature.image' => 'The signature image must be a valid image file.',
+                        'signature.mimes' => 'The signature image must be in JPEG, PNG, JPG format.',
+                        // 'signature.max' => 'The signature image size must not exceed 10MB.',
+                        // 'signature.min' => 'The signature image- size must not be less than 5KB.',
                     ];
 
   
@@ -73,7 +70,7 @@ class StoreReceiptController extends Controller
               $validation = Validator::make($request->all(), $rules, $messages);
               
               if ($validation->fails()) {
-                  return redirect('add-purchase')
+                  return redirect('add-store-receipt')
                       ->withInput()
                       ->withErrors($validation);
               } else {
@@ -84,27 +81,34 @@ class StoreReceiptController extends Controller
                       $status = $add_record['status'];
   
                       if ($status == 'success') {
-                          return redirect('list-purchase')->with(compact('msg', 'status'));
+                          return redirect('list-store-receipt')->with(compact('msg', 'status'));
                       } else {
-                          return redirect('add-purchase')->withInput()->with(compact('msg', 'status'));
+                          return redirect('add-store-receipt')->withInput()->with(compact('msg', 'status'));
                       }
                   }
               }
           } catch (Exception $e) {
-              return redirect('add-purchase')->withInput()->with(['msg' => $e->getMessage(), 'status' => 'error']);
+              return redirect('add-store-receipt')->withInput()->with(['msg' => $e->getMessage(), 'status' => 'error']);
           }
       }
 
-    public function edit(){
-        try {
-          
-          
-            return view('organizations.store.store-receipt.edit-store-receipt');
-        } catch (\Exception $e) {
-            return $e;
-        }
-    } 
-    
+   
+    //   public function edit(){
+    //     try {
+    //     return view('organizations.store.store-receipt.edit-store-receipt');
+    //     } catch (\Exception $e) {
+    //         return $e;
+    //     }
+    // } 
+    public function edit(Request $request){
+        $edit_data_id = base64_decode($request->id);
+      
+        $editData = $this->service->getById($edit_data_id);
+       
+        // dd($editData);
+        // die();
+        return view('organizations.store.store-receipt.edit-store-receipt', compact('editData'));
+    }
 
     // public function add(){
     //     return view('organizations.store.products.add-products');
