@@ -13,23 +13,12 @@ use Config;
         public function __construct(){
         $this->repo = new PurchaseRepository();
     }
-
-
-    // public function getAll(){
-    //     try {
-    //         return $this->repo->getAll();
-
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // }
-
     public function getAll(){
         try {
             $data = $this->repo->getAll();
-        //    dd($data);
+            return $data; // Add this line to return the data
         } catch (\Exception $e) {
-            return $e;
+            throw $e; // Rethrow the exception to propagate it to the caller
         }
     }
     
