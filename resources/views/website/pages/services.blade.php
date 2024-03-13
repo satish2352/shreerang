@@ -145,7 +145,7 @@
 
             </div>
 
-            <div class="container-fluid text-center mobibanrimgs ">
+            <div class="container-fluid text-center mobibanrimgs mhmi ">
 
 
                 <img src="{{ asset('website/assets/img/banner/Materialnew2.jpg')}}" alt="">

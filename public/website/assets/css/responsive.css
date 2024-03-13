@@ -1357,7 +1357,14 @@
 Custom media queries
 */
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 585px){
+    #ddimg1{
+        height: 180px !important;
+    }
+
+}
+
+@media only screen and (max-width: 575px)  {
 
     .navcont{
       display: none !important;
