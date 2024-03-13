@@ -122,10 +122,10 @@
                            <div class="row">
                                <div class="col-lg-4 col-md-4 col-sm-4">
                                     <img src="{{ asset('website/assets/img/about/doottt.png')}}" class=" pl-20 ml-10" alt="">
-                                   <img src="{{ asset('website/assets/img/about/director1.png')}}" style="top:120px; left:70px; position:absolute; " alt="">
+                                   <img src="{{ asset('website/assets/img/about/director1.png')}}" style="top:120px; left:60px; position:absolute; " alt="">
                                </div>
-                               <div class="col-lg-6 col-md-8 col-sm-8 ml-30 deskk">
-                                   <h3 class="white">Lorem ipsum dolor adipisicing elit. provident cupiditate blanditiis harum neque ipsum!</h3>     
+                               <div class="col-lg-6 col-md-8 col-sm-8 ml-30 ">
+                                   <h3 class="white text-justify">Lorem ipsum dolor adipisicing elit. provident cupiditate blanditiis harum neque ipsum!</h3>     
                                    </div>
                                </div>
                            </div>
@@ -140,10 +140,10 @@
                            <div class="row">
                                <div class="col-lg-4 col-md-4 col-sm-4">
                                 <img src="{{ asset('website/assets/img/about/doottt.png')}}" class="pl-10 ml-10" alt="">
-                                <img src="{{ asset('website/assets/img/about/director1.png')}}" id="ddimg1" style="top:120px; left:70px; position:absolute; " alt="">
+                                <img src="{{ asset('website/assets/img/about/director1.png')}}" id="ddimg1" style="top:120px; left:60px; position:absolute; " alt="">
                                </div>
-                               <div class="col-lg-8 col-md-8 col-sm-8 text-break  p-5">
-                                <h4 class="white" id="texxttt">Lorem ipsum dolor sit amet, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget<span id="dots">...</span><span id="more"> imperdiet sed  congue eros non fermentum.</span></h4>
+                               <div class="col-lg-8 col-md-8 col-sm-8 text-break mtopDD p-5">
+                                <h4 class="white ppp" id="texxttt">Lorem ipsum dolor sit amet, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget<span id="dots">...</span><span id="more"> imperdiet sed  congue eros non fermentum.</span></h4>
                                 <br>
                                 <div class="text-center ">
                                 <h5 class="white" onclick="myFunction()" id="myBtn">Read more</h5>

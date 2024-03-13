@@ -160,7 +160,7 @@
 
     .topbottom{
         margin-top: 20px;
-        /* margin-bottom: 20px; */
+        margin-bottom: 20px;
 
     }
     .transperant-head.fixed-nav {
@@ -230,6 +230,7 @@
         color: #fff;
         line-height: normal;
         font-size: 24px;
+        margin-top: 50px;
        
 
     }
@@ -252,10 +253,24 @@
         height: auto;
         background: #243772; 
     }
+    .mtopDD{
+        margin-top: 40px;
+    }
+    .ppp{
+        margin-left: 10px;
+    }
    
     .testmo1{
-        padding-left: 55px;
-        padding-right: 55px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .fontsize30{
+        font-size: 35px;
+    }
+    .imgnag{
+        margin-top: -30px;
     }
     .fs1{
         font-size: 47px;
@@ -301,8 +316,8 @@
     .fixed-bottom1{
         position: fixed;
         right: 0;
-        bottom: 15px;
-        left: 12px;
+        bottom: -16px;
+        left: 0px;
         z-index: 1030;
     
     }
@@ -537,7 +552,7 @@
     }
  
     .servicebnnr{
-        padding-top: 10px;
+        /* padding-top: 10px; */
         padding-bottom: 10px;
         background-color: #029A99;
 
@@ -580,7 +595,7 @@
     .fixed-bottom1{
         position: fixed;
         right: 0;
-        bottom: 15px;
+        bottom: 5px;
         left: 12px;
         z-index: 1030;
     
@@ -590,8 +605,8 @@
     }
 
     .paddiall2{
-        padding-top: 30px;
-        padding-bottom: 30px; 
+        /* padding-top: 30px; */
+        /* padding-bottom: 30px;  */
     
     }
     .mobmaterl{
@@ -1419,12 +1434,51 @@ Custom media queries
     }
 
 }
-/* @media only screen and (min-width: 1920px){
-    .cardwidth{
+@media only screen and (min-width: 1910px){
+    /* .cardwidth{
         width: 500px;
     
+    } */
+    .mtopDD{
+        margin-top: 50px;
+
     }
-} */
+    .bigfont{
+        font-size: 27px;
+        line-height: 40px;
+        padding-left:40px ;
+        padding-right: 40px;
+    }
+    .servicetext h2{
+        font-size: 35px;
+    }
+    .fontsize30{
+        font-size: 50px;
+    }
+    .footerleftmargin {
+        margin-left: 160px;
+    }
+    .colpadding{
+        padding-left: 100px;
+    }
+    .paddiall4{
+        padding-top: 180px;
+        padding-bottom: 180px;
+    }
+    .imgnag{
+        margin-top: -30px;
+    }
+    .testmo1{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 350px;
+        padding-right: 350px;
+    }
+    h1{
+        font-size: 55px;
+    }
+
+}
 
 @media only screen and (min-width: 1600px) and (max-width: 1920px){ 
     .addrescard{
@@ -1436,20 +1490,25 @@ Custom media queries
         
     
     }
+   
     
     .servicebnnr{
        
         background-size: 100% 116%;
         background-image: url('../img/banner/Frame 11.png');
+        margin-bottom: 25px;
     
     }
    .pfonts{
-    padding-right: 95px!important;
-    padding-left: 100px !important;
+    /* padding-right: 95px;
+    padding-left: 100px; */
    }
    .cardwidth{
-    width: 500px;
+    width: 350px;
 
+}
+.marginleft75{
+    margin-left: 75px;
 }
  
     .contcatcontainer{

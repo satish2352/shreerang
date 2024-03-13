@@ -71,42 +71,42 @@
             </div> --}}
             <div class="row align-items-md-center  paddiall4">
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
-                    <div class="exp-cta pr-50 pr-lg-00">
+                    <div class="exp-cta pr-50 pr-lg-00 servicetext">
                         <h2 class="white text-center d-flex justify-content-center f-700 ">
                             <span class="fontsize30 fs-1 mr-20">01</span>
                             WOODWORKING
                             <span class="green"></span>
                         </h2>
                         <p
-                            class="white1 pfonts mb-55 mb-md-30  mt-30  f-500 pr-md-00  text-justify">
+                            class="white1 pfonts mb-55 mb-md-30  mt-30  f-500 pr-md-00  bigfont text-justify">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim
                             quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn ">
-                    <div class="exp-cta pr-50 pr-lg-00">
+                    <div class="exp-cta pr-50 pr-lg-00 servicetext">
                         <h2 class="white f-700 text-center d-flex justify-content-center f-700 ">
                             <span class="fontsize30 fs-1 mr-20">02</span>
                             METALWORKING
 
                         </h2>
                         <p
-                            class="white1 pfonts mb-55 mb-md-30 mt-30 xxl-pr f-500 pr-md-00  text-justify">
+                            class="white1 pfonts mb-55 mb-md-30 mt-30 xxl-pr f-500 pr-md-00 bigfont text-justify">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim
                             quaerat</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 z-5 text-center text-lg-left wow fadeIn">
-                    <div class="exp-cta pr-50 pr-lg-00">
-                        <h2 class="white text-center d-flex justify-content-center f-700 ">
+                    <div class="exp-cta pr-50 pr-lg-00 servicetext ">
+                        <h2 class="white f-700 text-center d-flex justify-content-center f-700 ">
                             <span class="fontsize30 fs-1 mr-20">03</span>
                             WOODWORKING
                             <span class="green"></span>
                         </h2>
                         <p
-                            class="white1 pfonts mb-55 mb-md-15 mt-30 f-500 pr-md-00 pr-xxl-20px text-justify">
+                            class="white1 pfonts mb-55 mb-md-15 mt-30 f-500 pr-md-00 bigfont text-justify">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim
                             quaerat.</p>
                         <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
@@ -139,7 +139,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="container-fluid text-center col-12 banrimgs   ">
+            <div class="container-fluid text-center col-12 banrimgs imgnag  ">
 
                 <img src="{{ asset('website/assets/img/banner/material.png')}}" alt="">
 
@@ -250,7 +250,7 @@
         <div class="container-fluid testmo1 paddiall">
             <div class="row">
                 <div class="col-lg-12"></div>
-                <div class="col-lg-6 col-md-12 p-4">
+                <div class="col-lg-6 col-md-12 p-2">
                     <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/caster.png')}}" class="card-img-top" alt="...">
                         <div class="card-body  text-center card-info">
@@ -259,7 +259,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 p-4">
+                <div class="col-lg-6 col-md-12 p-2 ">
                     <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info">
@@ -274,21 +274,21 @@
             <div class="row">
 
 
-                <div class="col-lg-6 col-md-12 p-4">
+                <div class="col-lg-6 col-md-12 p-2 ">
                     <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top"
                             alt="...">
                         <div class="card-body text-center card-info1">
-                            <h1 class="white fs2 f-600 line-ht "> Challenging Fabrication Works </h1>
+                            <h1 class="white fs2 f-600 line-ht  "> Challenging Fabrication Works </h1>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 p-4">
+                <div class="col-lg-6 col-md-12 p-2 ">
                     <div class="card border-0 bkcl ">
                         <img src="{{ asset('website/assets/img/service/presshop.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info1">
-                            <h1 class="white fs2 f-600 line-ht pb-lg-20 topbottom  "> Press Shop Works </h1>
+                            <h1 class="white fs2 f-600 line-ht  topbottom   "> Press Shop Works </h1>
 
                         </div>
                     </div>
