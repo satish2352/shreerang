@@ -200,6 +200,18 @@ Route::post('/store-design-upload', ['as' => 'store-design-upload', 'uses' => 'A
 Route::get('/edit-design-upload/{id}', ['as' => 'edit-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@edit']);
 Route::post('/update-design-upload', ['as' => 'update-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@update']);
 
+
+
+// ========================ProductionUploadcontroller========
+Route::get('/list-new-requirements-received-for-production', ['as' => 'list-new-requirements-received-for-production', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@getAllNewRequirement']);
+
+Route::get('/list-design-upload', ['as' => 'list-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@index']);
+Route::get('/accept-design/{id}', ['as' => 'accept-design', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@acceptdesign']);
+Route::post('/reject-design', ['as' => 'reject-design', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@rejectdesign']);
+Route::post('/store-design-upload', ['as' => 'store-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@store']);
+Route::get('/edit-design-upload/{id}', ['as' => 'edit-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@edit']);
+Route::post('/update-design-upload', ['as' => 'update-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Productions\ProductionController@update']);
+
 // ========================Start Gatepasscontroller========
 
 Route::get('/list-gatepass', ['as' => 'list-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@index']);

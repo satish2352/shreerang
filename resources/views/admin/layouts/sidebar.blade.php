@@ -155,7 +155,7 @@
                         <li>
                             <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
-                                    class="mini-click-non">List Designs</span></a>
+                                    class="mini-click-non">Designs Sent To Porduction</span></a>
                         </li>
                         {{-- <li>
                             <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
@@ -171,9 +171,9 @@
                     @endif
                     @if (session()->get('role_id') == config('constants.ROLE_ID.PRODUCTION'))
                     <li>
-                        <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
+                        <a class="has-arrow" href="{{ route('list-new-requirements-received-for-production') }}" aria-expanded="false"><i
                                 class="fa big-icon fa-envelope icon-wrap"></i> <span
-                                class="mini-click-non">List Design Received <br> For Production</span></a>
+                                class="mini-click-non">New Design List</span></a>
                     </li>
                         <li>
                             <a class="has-arrow" href="{{ route('list-products') }}" aria-expanded="false"><i

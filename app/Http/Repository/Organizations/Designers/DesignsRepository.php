@@ -129,7 +129,7 @@ class DesignsRepository  {
                 $business_application->business_id = $dataOutput->business_id;
                 $business_application->business_status_id = config('constants.HIGHER_AUTHORITY.NEW_REQUIREMENTS_SENT_TO_DESIGN_DEPARTMENT');
                 $business_application->design_id = $dataOutput->id;
-                $business_application->design_status_id = config('constants.DESIGN_DEPARTMENT.LIST_NEW_REQUIREMENTS_RECEIVED_FOR_DESIGN');
+                $business_application->design_status_id = config('constants.DESIGN_DEPARTMENT.DESIGN_SENT_TO_PROD_DEPT_FIRST_TIME');
                 $business_application->production_id = $production_data->id;
                 $business_application->production_status_id = config('constants.PRODUCTION_DEPARTMENT.LIST_DESIGN_RECEIVED_FOR_PRODUCTION');
                 $business_application->save();
@@ -150,23 +150,6 @@ class DesignsRepository  {
         }
     }
     
-    // public function deleteById($id){
-    //         try {
-    //             $deleteDataById = DesignModel::find($id);
-                
-    //             if ($deleteDataById) {
-    //                 if (file_exists_view(Config::get('DocumentConstant.DESIGNS_DELETE') . $deleteDataById->image)){
-    //                     removeImage(Config::get('DocumentConstant.DESIGNS_DELETE') . $deleteDataById->image);
-    //                 }
-    //                 $deleteDataById->delete();
-                    
-    //                 return $deleteDataById;
-    //             } else {
-    //                 return null;
-    //             }
-    //         } catch (\Exception $e) {
-    //             return $e;
-    //         }
-    // }
+   
 
 }
