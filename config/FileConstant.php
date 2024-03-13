@@ -7,7 +7,10 @@ return [
     'DESIGNS_DELETE'	         => '/all_web_data/images/designs/',
     'DESIGNS_VIEW'	         => env("FILE_VIEW").'/all_web_data/images/designs/',
 
-   
+    'STORE_RECEIPT_ADD'	         => "/all_web_data/images/store_receipt/",
+    'STORE_RECEIPT_DELETE'	         => '/all_web_data/images/store_receipt/',
+    'STORE_RECEIPT_VIEW'	         => env("FILE_VIEW").'/all_web_data/images/store_receipt/',
+
     // 'ORGANIZATION_ADD'	         => "/all_web_data/images/organization/",
     // 'ORGANIZATION_DELETE'	         => '/all_web_data/images/organization/',
     // 'ORGANIZATION_VIEW'	         => env("FILE_VIEW").'/all_web_data/images/organization/',

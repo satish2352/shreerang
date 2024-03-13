@@ -4,8 +4,8 @@ use Illuminate\Database\QueryException;
 use DB;
 use Illuminate\Support\Carbon;
 use App\Models\ {
-PurchaseOrderModel,
-PurchaseOrderDetailsModel
+StoreReceipt,
+StoreReceiptDetails
 };
 use Config;
 
@@ -14,9 +14,9 @@ class StoreReceiptRepository  {
 
     public function getAll(){
         try {
-            $data_output= PurchaseOrderModel::get();
+            $data_output= StoreReceipt::get();
 
-            // $data_output = PurchaseOrderModel::leftJoin('purchase_order_details', 'purchase_orders.id', '=', 'purchase_order_details.purchase_id')
+            // $data_output = StoreReceipt::leftJoin('purchase_order_details', 'purchase_orders.id', '=', 'purchase_order_details.store_receipt_id')
             // ->select('purchase_order_details.*','purchase_order_details.id as designs_details_id', 'purchase_orders.id as purchase_main_id', 'purchase_orders.vendor_id', 'purchase_orders.po_date', 'purchase_orders.terms_condition', 'purchase_orders.image')
             // ->where('purchase_orders.id', $id)
             // ->get();
@@ -31,34 +31,31 @@ class StoreReceiptRepository  {
 public function addAll($request)
 {
     try {
-        $dataOutput = new PurchaseOrderModel();
-        $dataOutput->po_date = $request->po_date;
-        $dataOutput->vendor_id = $request->vendor_id;
-        $dataOutput->terms_condition = $request->terms_condition;
+        $dataOutput = new StoreReceipt();
+        $dataOutput->store_date = $request->store_date;
+        $dataOutput->name = $request->name;
+        $dataOutput->contact_number = $request->contact_number;
         $dataOutput->remark = $request->remark;
-        $dataOutput->transport_dispatch = $request->transport_dispatch;
-        $dataOutput->image = 'null';
+        $dataOutput->signature = 'null';
         $dataOutput->save();
         $last_insert_id = $dataOutput->id;
 
         // Save data into DesignDetailsModel
         foreach ($request->addmore as $item) {
-            $designDetails = new PurchaseOrderDetailsModel();
-            $designDetails->purchase_id = $last_insert_id;
-            $designDetails->part_no = $item['part_no'];
-            $designDetails->description = $item['description'];
-            $designDetails->due_date = $item['due_date'];
-            $designDetails->hsn_no = $item['hsn_no'];
+            $designDetails = new StoreReceiptDetails();
+            $designDetails->store_receipt_id = $last_insert_id;
             $designDetails->quantity = $item['quantity'];
-            $designDetails->rate = $item['rate'];
+            $designDetails->description = $item['description'];
+            $designDetails->price = $item['price'];
             $designDetails->amount = $item['amount'];
+            $designDetails->total = $item['total'];
             $designDetails->save();
         }
 
-        // Updating image name in PurchaseOrderModel
-        $imageName = $last_insert_id . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
-        $finalOutput = PurchaseOrderModel::find($last_insert_id);
-        $finalOutput->image = $imageName;
+        // Updating image name in StoreReceipt
+        $imageName = $last_insert_id . '_' . rand(100000, 999999) . '_image.' . $request->signature->extension();
+        $finalOutput = StoreReceipt::find($last_insert_id);
+        $finalOutput->signature = $imageName;
         $finalOutput->save();
 
         return [
@@ -72,12 +69,16 @@ public function addAll($request)
         ];
     }
 }
+
+
     public function getById($id) {
         try {
-            $designData = PurchaseOrderModel::leftJoin('purchase_order_details', 'purchase_order.id', '=', 'purchase_order_details.purchase_id')
-                ->select('purchase_order_details.*','purchase_order_details.id as purchase_order_details_id', 'purchase_order.id as purchase_main_id', 'purchase_order.vendor_id', 'purchase_order.po_date', 'purchase_order.remark', 'purchase_order.image')
-                ->where('purchase_order.id', $id)
+            $designData = StoreReceipt::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
+                ->select('store_receipt_details.*','store_receipt_details.id as store_receipt_details_id', 'store_receipt.id as store_receipt_main_id',
+                 'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.remark', 'store_receipt.signature')
+                ->where('store_receipt.id', $id)
                 ->get();
+                dd($designData);
             if ($designData->isEmpty()) {
                 return null;
             } else {
@@ -96,52 +97,45 @@ public function addAll($request)
         try {
             // Update existing design details
             for ($i = 0; $i <= $request->design_count; $i++) {
-                $designDetails = PurchaseOrderDetailsModel::findOrFail($request->input("design_id_" . $i));
+                $designDetails = StoreReceiptDetails::findOrFail($request->input("design_id_" . $i));
                 
-                $designDetails->part_no = $request->input("part_no_" . $i);
-                $designDetails->description = $request->input("description_" . $i);
-                $designDetails->due_date = $request->input("due_date_" . $i);
-                $designDetails->hsn_no = $request->input("hsn_no_" . $i);
+                $designDetails->store_receipt_id = $request->input("store_receipt_id_" . $i);
                 $designDetails->quantity = $request->input("quantity_" . $i);
-                $designDetails->rate = $request->input("rate_" . $i);
-                $designDetails->amount = $request->input("amount_" . $i);
+                $designDetails->description = $request->input("description_" . $i);
+                $designDetails->price = $request->input("price_" . $i);
+                $designDetails->amount = $request->input("amount_" . $i);                
+                $designDetails->total = $request->input("total_" . $i);
                 $designDetails->save();
             }
     
             // Update main design data
-            $dataOutput = PurchaseOrderModel::findOrFail($request->design_main_id);
-            $dataOutput->po_date = $request->po_date;
-            $dataOutput->vendor_id = $request->vendor_id;
-            $dataOutput->terms_condition = $request->terms_condition;
+            $dataOutput = StoreReceipt::findOrFail($request->design_main_id);
+            $dataOutput->store_date = $request->store_date;
+            $dataOutput->name = $request->name;
+            $dataOutput->contact_number = $request->contact_number;
             $dataOutput->remark = $request->remark;
-            $dataOutput->transport_dispatch = $request->transport_dispatch;
-            $dataOutput->save();
-   
+            $dataOutput->save();     
+
             // Add new design details
             if ($request->has('addmore')) {
                 foreach ($request->addmore as $key => $item) {
-                    $designDetails = new PurchaseOrderDetailsModel();
+                    $designDetails = new StoreReceiptDetails();
               
-                    // Assuming 'purchase_id' is a foreign key related to 'PurchaseOrderModel'
-                    $designDetails->purchase_id = $request->design_main_id; // Set the parent design ID
-                    $designDetails->part_no = $item['part_no'];
-                    $designDetails->description = $item['description'];
-                    $designDetails->due_date = $item['due_date'];
-                    $designDetails->hsn_no = $item['hsn_no'];
+                    // Assuming 'store_receipt_id' is a foreign key related to 'StoreReceipt'
+                    $designDetails->store_receipt_id = $request->store_receipt_id; // Set the parent design ID                    
                     $designDetails->quantity = $item['quantity'];
-                    $designDetails->rate = $item['rate'];
-                    $designDetails->amount = $item['amount'];
-                  
-                 
-                    $designDetails->save();
-                     
+                    $designDetails->description = $item['description'];
+                    $designDetails->price = $item['price'];
+                    $designDetails->amount = $item['amount'];  
+                    $designDetails->total = $item['total'];                   
+                    $designDetails->save();                     
                 }
             }
     
-            // Updating image name in PurchaseOrderModel if a new image is uploaded
+            // Updating image name in StoreReceipt if a new image is uploaded
             if ($request->hasFile('image')) {
-                $imageName = $dataOutput->id . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
-                $dataOutput->image = $imageName;
+                $imageName = $dataOutput->id . '_' . rand(100000, 999999) . '_image.' . $request->signature->extension();
+                $dataOutput->signature = $imageName;
                 $dataOutput->save();
             }
     
@@ -181,7 +175,7 @@ public function addAll($request)
 
     public function deleteByIdAddmore($id){
         try {
-            $rti = PurchaseOrderDetailsModel::find($id);
+            $rti = StoreReceiptDetails::find($id);
             if ($rti) {
                 $rti->delete();           
                 return $rti;

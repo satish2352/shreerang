@@ -19,6 +19,23 @@ padding-left: 20px !important;
     font-size: 14px;
     text-align: left;
 }
+
+.zoomable-image {
+    position: relative;
+    width: 30%;
+    cursor: pointer;
+}
+
+.zoomed-in {
+    transform: scale(3.5) !important;
+    position: fixed;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 1;    
+
+}
+
 </style>
 
 <div class="data-table-area mg-tb-15">
@@ -85,14 +102,14 @@ padding-left: 20px !important;
                                             <th data-field="name" data-editable="true">Name</th>
                                             <th data-field="contact_number" data-editable="true">Conatct No.</th>
                                             <!-- <th data-field="address" data-editable="true">Address</th> -->
-                                            <th data-field="quantity" data-editable="true">Quantity</th>
+                                            <!-- <th data-field="quantity" data-editable="true">Quantity</th> -->
                                             <!-- <th data-field="description" data-editable="true">Description</th>
                                             <th data-field="price" data-editable="true">Price</th>
                                             <th data-field="amount" data-editable="true">Amount</th>
-                                            <th data-field="total" data-editable="true">Total</th> 
-                                            <th data-field="remark" data-editable="true">Remark</th>  -->
-                                            <th data-field="signature" data-editable="true">Signature</th> 
-                                            <th data-field="status" data-editable="true">Status</th> 
+                                            <th data-field="total" data-editable="true">Total</th>   -->
+                                            <th data-field="remark" data-editable="true">Remark</th>
+                                            <th data-field="signature" data-editable="false">Signature</th> 
+                                            <!-- <th data-field="status" data-editable="true">Status</th>  -->
                                             
                                             <th data-field="action">Action</th>
                                         </tr>
@@ -100,34 +117,29 @@ padding-left: 20px !important;
                                     </thead>
                                     <tbody>
                                        
+                                    @foreach($getOutput as $data)
                                         <tr>
                                             <td></td>
-                                            <td>1</td>
-                                            <td>date</td>
-                                            <td>name</td>
-                                            <td>123456</td>
-                                            <!-- <td>quantity</td>
-                                            <td>description</td>
-                                            <td>price</td>
-                                            <td>amount</td>
-                                            <td>total</td> -->
-                                            <td>remark</td>
-                                            <td>signature</td>
-                                            <td>status</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ucwords($data->store_date)}}</td>
+                                            <td>{{ucwords($data->name)}}</td>
+                                            <td>{{ucwords($data->contact_number)}}</td>
+                                            <td>{{ucwords($data->remark)}}</td>
+                                            <td>
+                                                <div class="zoomable-image" onclick="toggleZoom(this)"> 
+                                                    <img class="img-fluid" 
+                                                    src="{{ Config::get('FileConstant.STORE_RECEIPT_VIEW') . $data->signature }}" 
+                                                    alt="{{ strip_tags($data['company_name']) }} Image" />
+                                                </div>    
+                                            </td>
                                             
-                                            
-
-                                            
-
-                                            
-                                            <!-- <td><img style="max-width:250px; max-height:150px;" src="" alt="Image" /></td> -->
                                             <td>
                                                 <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('edit-store-receipt')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    {{-- <a href="{{route('delete-products')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
+                                                    <a href="{{route('edit-store-receipt', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                                 </div>
                                             </td>
                                            </tr>
+                                        @endforeach
                                       
                                     </tbody>
                                 </table>
@@ -139,5 +151,25 @@ padding-left: 20px !important;
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function toggleZoom(element) {
+            element.classList.toggle('zoomed-in');
+        }
+
+        // Close zoomed image when clicking outside
+        window.addEventListener('click', function (event) {
+            var zoomedImages = document.querySelectorAll('.zoomed-in');
+            zoomedImages.forEach(function (img) {
+                if (!img.contains(event.target)) {
+                    img.classList.remove('zoomed-in');                   
+                }
+            });
+        });
+    </script>
 
 @endsection
