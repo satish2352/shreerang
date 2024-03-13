@@ -5,10 +5,10 @@
     <div class="row ">
     <!-- footlogocol -->
         <div class="col-lg-3 col-md-12 col-sm-12 text-center bg-green-op-100 mr-lg-200 " style="">
-            <img class=" mt-200" src="{{ asset('website/assets/img/logo/FOOTER11.png')}}" id="" alt="">
+            <img class=" mt-200 flogo" src="{{ asset('website/assets/img/logo/FOOTER11.png')}}" id="" alt="">
         </div>
         
-        <div class="col-lg-9 col-md-12 col-sm-12 justify-content-md-center">
+        <div class="col-lg-9 col-md-12 col-sm-12 justify-content-md-center ">
             <footer class="footer-area footbak">
                 <div class="container-fluid pt-50 pb-50 footerleftmargin">
                     <div class="row ">                        

@@ -279,7 +279,7 @@
                         <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top"
                             alt="...">
                         <div class="card-body text-center card-info1">
-                            <h1 class="white fs2 f-600 line-ht  "> Challenging Fabrication Works </h1>
+                            <h1 class="white fs2 f-600 line-ht ptb "> Challenging Fabrication Works </h1>
 
                         </div>
                     </div>
