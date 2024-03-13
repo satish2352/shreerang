@@ -15,9 +15,13 @@ class EmployeesRepository  {
         try {
             $data_output= EmployeesModel::with(['role', 'department'])
                         ->where('organization_id', session()->get('org_id'))
-                        ->orderBy('updated_at', 'desc')
-                        ->get();
-
+                        ->orderBy('updated_at', 'desc');
+                        
+            if (session()->get('role_id') ==  config('constants.ROLE_ID.HIGHER_AUTHORITY')) {
+                $data_output = $data_output->where('tbl_employees.role_id', '<>',config('constants.ROLE_ID.HIGHER_AUTHORITY'));
+            } 
+            $data_output = $data_output->get();
+            
             return $data_output;
         } catch (\Exception $e) {
             return $e;
