@@ -55,7 +55,7 @@
     <!-- Header start -->
     <header class="transperant-head transition-4  ">
         <div class="container-fluid d-flex  justify-content-center   nvvv">
-            <div class="row align-items-center">
+            <div class="row align-items-center tab-navbar">
                 <div class="col-lg-2 col-md-5 col-sm-4 col-3">
                     <div class="logo transition-4">
                         <a href="{{url('/')}}">
