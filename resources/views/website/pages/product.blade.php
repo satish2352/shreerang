@@ -174,7 +174,7 @@
     <!-- Product area end -->
 
     <section>
-        <div class="pt-35 pb-50">
+        <div class="pt-35 pb-50 hidd">
                   <!-- bannar start -->
                   <div class="banrimgs">
                     <img src="{{ asset('website/assets/img/banner/HOME_PAGE31.png')}}" alt="">

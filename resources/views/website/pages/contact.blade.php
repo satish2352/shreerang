@@ -158,12 +158,12 @@
                     <div class="col-lg-4 col-2 col-sm-4">
                         <img src="{{ asset('website/assets/img/contact/callimg1.png')}}" alt="">
                     </div>
-                    <div class="col-lg-8 col-4 col-sm-6 mt-60">
+                    <div class="col-lg-8 col-4 col-sm-8 contnom mt-60">
                         <div class="row">
-                            <div class="col-lg-3">
+                            <div class="col-lg-3 col-md-3 col-sm-3">
                                 <h5 class="f-700 clrtext">Contact</h5>
                             </div>
-                            <ul class="d-lg-flex">
+                            <ul class="d-flex col-lg-9 col-md-9 col-sm-9">
                                 <li><a href="tel:+91 7028082176" class="clrtext  f-600">7028082176</a>
                                 </li>
                                 <li><a href="tel: +91 0253 - 2383517" class="clrtext ml-20 f-600">0253-2383517</a>
