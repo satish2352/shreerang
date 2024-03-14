@@ -13,139 +13,141 @@ label.error {
     /* Add any other styling as per your design */
 }
 </style>
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="sparkline12-list">
-            <div class="sparkline12-hd">
-                <div class="main-sparkline12-hd">
-                    <center>
-                        <h1>Add Store Finance Data</h1>
-                    </center>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="sparkline12-list">
+                <div class="sparkline12-hd">
+                    <div class="main-sparkline12-hd">
+                        <center>
+                            <h1>Add Store Finance Data</h1>
+                        </center>
+                    </div>
                 </div>
-            </div>
-            <div class="sparkline12-graph">
-                <div class="basic-login-form-ad">
-                    <div class="row">
-                        @if (session('msg'))
-                        <div class="alert alert-{{ session('status') }}">
-                            {{ session('msg') }}
-                        </div>
-                        @endif
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            @if (Session::get('status') == 'success')
-                            <div class="col-md-12">
-                                <div class="alert alert-success alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Success!</strong> {{ Session::get('msg') }}
-                                </div>
+                <div class="sparkline12-graph">
+                    <div class="basic-login-form-ad">
+                        <div class="row">
+                            @if (session('msg'))
+                            <div class="alert alert-{{ session('status') }}">
+                                {{ session('msg') }}
                             </div>
                             @endif
 
-                            @if (Session::get('status') == 'error')
-                            <div class="col-md-12">
-                                <div class="alert alert-danger alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Error!</strong> {!! session('msg') !!}
-                                </div>
-                            </div>
-                            @endif
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="all-form-element-inner">
-                                    <form action="{{ route('store-doc-upload-fianace') }}" method="POST" id="addDesignsForm"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="form-group-inner">
+                                @if (Session::get('status') == 'success')
+                                <div class="col-md-12">
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Success!</strong> {{ Session::get('msg') }}
+                                    </div>
+                                </div>
+                                @endif
 
-                                            {{-- ========================== --}}
-                                            <div class="container-fluid">
-                                                {{-- <form 
-                                                action="{{ route('addmorePost') }}"
-                                                method="POST"> --}}
+                                @if (Session::get('status') == 'error')
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error!</strong> {!! session('msg') !!}
+                                    </div>
+                                </div>
+                                @endif
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="all-form-element-inner">
+                                        <form action="{{ route('store-doc-upload-fianace') }}" method="POST" id="addDesignsForm"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group-inner">
 
-                                                {{-- @csrf --}}
+                                                {{-- ========================== --}}
+                                                <div class="container-fluid">
+                                                    {{-- <form 
+                                                    action="{{ route('addmorePost') }}"
+                                                    method="POST"> --}}
 
-                                                @if ($errors->any())
-                                                <div class="alert alert-danger">
+                                                    {{-- @csrf --}}
 
-                                                    <ul>
+                                                    @if ($errors->any())
+                                                    <div class="alert alert-danger">
 
-                                                        @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                        @endforeach
+                                                        <ul>
 
-                                                    </ul>
+                                                            @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                            @endforeach
 
-                                                </div>
-                                                @endif
+                                                        </ul>
 
-                                                @if (Session::has('success'))
-                                                <div class="alert alert-success text-center">
+                                                    </div>
+                                                    @endif
 
-                                                    <a href="#" class="close" data-dismiss="alert"
-                                                        aria-label="close">×</a>
+                                                    @if (Session::has('success'))
+                                                    <div class="alert alert-success text-center">
 
-                                                    <p>{{ Session::get('success') }}</p>
+                                                        <a href="#" class="close" data-dismiss="alert"
+                                                            aria-label="close">×</a>
 
-                                                </div>
-                                                @endif
+                                                        <p>{{ Session::get('success') }}</p>
 
+                                                    </div>
+                                                    @endif
 
-                                            </div>
-
-                                            {{-- =================== --}}
-
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-select-list">        
-                                                        <label for="department_id">Select Department :</label>
-                                                        <select class="form-control custom-select-value" name="department_id">
-                                                            <option value="">Select Department</option>
-                                                            <option value="">sample</option>
-                                                        </select>
-                                                </div>     
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <label for="grn_image">GRN Image :</label>
-                                                    <input type="file" class="form-control" accept="image/*" id="grn_image"
-                                                        name="grn_image">
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <label for="sr_image">GRN Image :</label>
-                                                    <input type="file" class="form-control" accept="image/*" id="sr_image"
-                                                        name="sr_image" >
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <label for="status">Status :</label>
-                                                    <input type="text" class="form-control" id="status"
-                                                        name="status" placeholder="Enter your status ">
-                                                </div>
-
-                                                
 
                                                 </div>
-                                                
-                                                                                  
 
-                                            <div class="login-btn-inner">
+                                                {{-- =================== --}}
+
                                                 <div class="row">
-                                                    <div class="col-lg-5"></div>
-                                                    <div class="col-lg-7">
-                                                        <div class="login-horizental cancel-wp pull-left">
-                                                            <a href="{{ route('list-doc-upload-fianace') }}" class="btn btn-white"
-                                                                style="margin-bottom:50px">Cancel</a>
-                                                            <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                type="submit" style="margin-bottom:50px">Save
-                                                                Data</button>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-select-list">        
+                                                            <label for="department_id">Select Department :</label>
+                                                            <select class="form-control custom-select-value" name="department_id">
+                                                                <option value="">Select Department</option>
+                                                                <option value="">sample</option>
+                                                            </select>
+                                                    </div>     
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <label for="grn_image">GRN Image :</label>
+                                                        <input type="file" class="form-control" accept="image/*" id="grn_image"
+                                                            name="grn_image">
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <label for="sr_image">GRN Image :</label>
+                                                        <input type="file" class="form-control" accept="image/*" id="sr_image"
+                                                            name="sr_image" >
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <label for="status">Status :</label>
+                                                        <input type="text" class="form-control" id="status"
+                                                            name="status" placeholder="Enter your status ">
+                                                    </div>
+
+                                                    
+
+                                                    </div>
+                                                    
+                                                                                    
+
+                                                <div class="login-btn-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-5"></div>
+                                                        <div class="col-lg-7">
+                                                            <div class="login-horizental cancel-wp pull-left">
+                                                                <a href="{{ route('list-doc-upload-fianace') }}" class="btn btn-white"
+                                                                    style="margin-bottom:50px">Cancel</a>
+                                                                <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                    type="submit" style="margin-bottom:50px">Save
+                                                                    Data</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +156,7 @@ label.error {
             </div>
         </div>
     </div>
-</div>
+</div>    
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>

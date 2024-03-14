@@ -108,8 +108,11 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
         </div>
         <div class="row">
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            <!-- <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center">
                 <p>Copyright &copy; 2024 <a href="#">NKS</a> All rights reserved.</p>
+            </div> -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <p>Copyright @ 2024 <a href="#">Shreerag</a> All rights reserved by Admin.</p>
             </div>
         </div>
     </div>

@@ -1,9 +1,16 @@
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <!-- <div class="col-lg-12">
                         <div class="footer-copy-right">
                             <p>Copyright &copy; 2018 <a href="#">NKS</a> All rights reserved.</p>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-12">
+                        <div class="footer-copy-right">
+                            <p>Copyright @2024  <a href="#">| Shreerag Designed by </a>  <a href="https://www.sumagoinfotech.com/index1.php" target="_blank"> ❤
+                            <!-- <img src="{{ asset('website/assets/img/red-heart.jpeg')}}" className="img-fluid" style="width:20px " alt="" /> -->
+                            </a>From Nashik. </p>
                         </div>
                     </div>
                 </div>

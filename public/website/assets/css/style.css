@@ -3705,6 +3705,7 @@ non use css
     background: rgba(4, 170, 109, 0.1);
     background-size:  100% 101%;;
     background-image: url('../img/banner/HOME_PAGE3.png');
+    /* background-size: cover; */
 }
 
 #instaimg{

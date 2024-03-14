@@ -1,34 +1,46 @@
 <?php
-namespace App\Http\Services\Organizations\Purchase;
-use App\Http\Repository\Organizations\Purchase\PurchaseRepository;
+namespace App\Http\Services\Organizations\Store;
+use App\Http\Repository\Organizations\Store\StoreReceiptRepository;
 use Carbon\Carbon;
 use App\Models\ {
     DesignModel
     };
 
 use Config;
-    class PurchaseServices
+    class StoreReceiptServices
     {
         protected $repo;
         public function __construct(){
-        $this->repo = new PurchaseRepository();
+        $this->repo = new StoreReceiptRepository();
     }
+
+
+    // public function getAll(){
+    //     try {
+    //         return $this->repo->getAll();
+
+    //     } catch (\Exception $e) {
+    //         return $e;
+    //     }
+    // }
+
     public function getAll(){
         try {
             $data = $this->repo->getAll();
             return $data; // Add this line to return the data
         } catch (\Exception $e) {
-            throw $e; // Rethrow the exception to propagate it to the caller
+            return $e;
         }
     }
     
     public function addAll($request){
         try {
             $last_id = $this->repo->addAll($request);
-    //  dd($last_id);
-            $path = Config::get('DocumentConstant.DESIGNS_ADD');
+            // dd($last_id);
+
+            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
             $ImageName = $last_id['ImageName'];
-            uploadImage($request, 'image', $path, $ImageName);
+            uploadImage($request, 'signature', $path, $ImageName);
             
             if ($last_id) {
                 return ['status' => 'success', 'msg' => 'Data Added Successfully.'];
@@ -39,6 +51,8 @@ use Config;
             return ['status' => 'error', 'msg' => $e->getMessage()];
         }      
     }
+
+    
     public function getById($id){
         try {
             $result = $this->repo->getById($id);

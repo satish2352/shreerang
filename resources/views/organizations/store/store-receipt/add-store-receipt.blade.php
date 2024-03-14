@@ -13,6 +13,7 @@ label.error {
     /* Add any other styling as per your design */
 }
 </style>
+<div class="container-fluid">
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="sparkline12-list">
@@ -56,7 +57,7 @@ label.error {
                             @endif
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="all-form-element-inner">
-                                    <form action="{{ route('store-products') }}" method="POST" id="addDesignsForm"
+                                    <form action="{{ route('store-store-receipt') }}" method="POST" id="addDesignsForm"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group-inner">
@@ -94,44 +95,6 @@ label.error {
                                                 </div>
                                                 @endif
 
-                                                <!-- <table class="table table-bordered" id="dynamicTable">
-
-                                                    <tr>
-
-                                                        <th>Product Name</th>
-
-                                                        <th>Product Qty</th>
-
-                                                        <th>Product Price</th>
-                                                        <th>Product Unit</th>
-                                                        <th>Action</th>
-
-                                                    </tr>
-
-                                                    <tr>
-
-                                                        <td><input type="text" name="addmore[0][design_name]"
-                                                                placeholder="Enter your Name" class="form-control" />
-                                                        </td>
-
-                                                        <td><input type="text" name="addmore[0][product_quantity]"
-                                                                placeholder="Enter your Qty" class="form-control" />
-                                                        </td>
-
-                                                        <td><input type="text" name="addmore[0][product_size]"
-                                                                placeholder="Enter your Price" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][product_unit]"
-                                                                placeholder="Enter your Product Unit" class="form-control" />
-                                                        </td>
-
-                                                        <td><button type="button" name="add" id="add"
-                                                                class="btn btn-success">Add More</button></td>
-
-                                                    </tr>
-
-                                                </table> -->
-
                                                 {{-- <button type="submit" class="btn btn-success">Save</button> --}}
 
                                                 {{-- </form> --}}
@@ -144,8 +107,8 @@ label.error {
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <label for="store_date">Date:</label>
                                                         <input type="date" class="form-control" id="store_date"
-                                                            name="store_date">
-                                                    </div>                                           
+                                                            name="store_date" >
+                                                </div>                                           
 <!-- 
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="receipt_no">Receipt No. :</label>
@@ -154,9 +117,9 @@ label.error {
                                                 </div>     -->
                                                 
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="name">Name of store person :</label>
+                                                    <label for="name">Name of Store Person :</label>
                                                     <input type="text" class="form-control" id="name"
-                                                        name="name" placeholder="Enter Name of store person">
+                                                        name="name" placeholder="Enter Name of Store Person">
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -171,24 +134,19 @@ label.error {
                                                         name="address" placeholder="Enter Address">
                                                 </div> -->
                                                     
-                                                </div>
+                                            </div>
                                                 
                                             <div style="margin-top:30px;" >
                                                 <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " > -->
                                               
                                                 <table class="table table-bordered" id="dynamicTable">
-
                                                     <tr>
-
                                                         <th>Quantity</th>
-
                                                         <th>Description</th>
-
                                                         <th>Price</th>
                                                         <th>Amount</th>
                                                         <th>Total</th>
                                                         <th>Action</th>
-
                                                     </tr>
 
                                                     <tr>
@@ -220,72 +178,43 @@ label.error {
                                                 <!-- </div> -->
                                                 </div>
 
-                                                <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="quantity">Quantity :</label>
-                                                    <input type="number" class="form-control" id="quantity"
-                                                        name="quantity" placeholder="Enter Quantity">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="description">Description:</label>
-                                                    <input type="text" class="form-control" id="description"
-                                                        name="description" placeholder="Enter Description">
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="price">Price :</label>
-                                                    <input type="number" class="form-control" id="price"
-                                                        name="price" placeholder="Enter Price">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="amount">Amount :</label>
-                                                    <input type="number" class="form-control" id="amount"
-                                                        name="amount" placeholder="Enter Amount">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="total">Total :</label>
-                                                    <input type="number" class="form-control" id="total"
-                                                        name="total">
-                                                </div> -->
-
                                                 <div class='row'>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="remark">Remark :</label>
-                                                    <input type="text" class="form-control" id="remark"
-                                                        name="remark" placeholder="Enter Remark here">
-                                                </div>
-                                    <!-- signature -->
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <label for="signature">Signature :</label>
-                                                    <input type="file" class="form-control" accept="image/*" id="signature"
-                                                        name="signature" placeholder="Enter signature">
-                                                </div>
-                                                                                                  
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <label for="status">Status :</label>
-                                                    <input type="text" class="form-control" id="status"
-                                                        name="status" placeholder="Enter Remark here">
-                                                </div>
-                                               
-                                                </div>
-                                                
-                                      
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="remark">Remark :</label>
+                                                        <input type="text" class="form-control" id="remark"
+                                                            name="remark" placeholder="Enter Remark here">
+                                                    </div>
+                                                    
+                                                    <!-- signature -->
 
-                                            <div class="login-btn-inner">
-                                                <div class="row">
-                                                    <div class="col-lg-5"></div>
-                                                    <div class="col-lg-7">
-                                                        <div class="login-horizental cancel-wp pull-left">
-                                                            <a href="{{ route('list-store-receipt') }}" class="btn btn-white"
-                                                                style="margin-bottom:50px">Cancel</a>
-                                                            <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                type="submit" style="margin-bottom:50px">Save
-                                                                Data</button>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <label for="signature">Signature :</label>
+                                                        <input type="file" class="form-control" accept="image/*" id="signature"
+                                                            name="signature" placeholder="Enter signature">
+                                                    </div>
+                                                                                                  
+                                                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <label for="status">Status :</label>
+                                                        <input type="text" class="form-control" id="status"
+                                                            name="status" placeholder="Enter Status here">
+                                                    </div>
+                                                    -->
+                                                </div>                                            
+
+                                                <div class="login-btn-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-5"></div>
+                                                        <div class="col-lg-7">
+                                                            <div class="login-horizental cancel-wp pull-left">
+                                                                <a href="{{ route('list-store-receipt') }}" class="btn btn-white"
+                                                                    style="margin-bottom:50px">Cancel</a>
+                                                                <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                    type="submit" style="margin-bottom:50px">Save
+                                                                    Data</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -296,6 +225,7 @@ label.error {
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -335,90 +265,102 @@ jQuery(document).ready(function($) {
             // },
             store_date: {
                 required: true,
-                // Add your custom validation rule if needed
+                date: true,
             },
-            receipt_no: {
-                required: true,
-            },
+            // receipt_no: {
+            //     required: true,
+            // },
             name: {
                 required: true,
             },
             contact_number: {
                 required: true,
+                digits: true 
             },
             address: {
                 required: true,
-            },
-            quantity: {
-                required: true,
-            },
-            description: {
-                required: true,
-            },
-            price: {
-                required: true,
-            },
-            amount: {
-                required: true,
-            },
-            total: {
-                required: true,
-            },
+            },           
             remark: {
                 required: true,
             },
             signature: {
                 required: true,
             },
-            status: {
-                required: true,
-            },
-        },
-        messages: {
-            // design_name: {
-            //     required: "Please enter design name.",
+            // status: {
+            //     required: true,
             // },
+            'addmore[0][quantity]': {
+                required : true,
+                number: true 
+            },
+            'addmore[0][description]': {
+                required : true,
+            },
+            'addmore[0][price]': {
+                required : true,
+                number: true 
+            },
+            'addmore[0][amount]': {
+                required : true,
+                number: true 
+            },
+            'addmore[0][total]': {
+                required : true,
+                number: true 
+            },            
+        },
+
+        messages: {
+            store_date: {
+                required: "Please Select a Store Date.",
+                date: "Please enter a valid Store date."
+            },
             receipt_date: {
-                required: "Please enter a valid date.",
+                required: "Please Select a valid date.",
             },
             // receipt_no: {
-            //     required: "Please enter receipt No.",
+            //     required: "Please Enter receipt No.",
             // },
             name: {
-                required: "Please enter  name.",
+                required: "Please Enter Store Person Name.",
             },
             contact_number: {
-                required: "Please enter a valid contact no.",
+                required: "Please Enter a valid Contact No.",
+                digits: "Contact Number should contain only digits."
             },
             // address: {
             //     required: "Please enter a valid address.",
-            // },
-            quantity: {
-                required: "Please enter quantity.",
-            },
-            description: {
-                required: "Please enter  a valid description.",
-            },
-            price: {
-                required: "Please enter  price.",
-            },
-            amount: {
-                required: "Please enter amount",
-            },
-            total: {
-                required: "Please enter  total",
-            },
+            // },           
             remark: {
-                required: "Please write remark",
+                required: "Please Write Remark",
             },
             signature: {
-                required: "Please select an image.",
-                accept: "Please select an image file.",
+                required: "Please select an Signature Image.",
+                accept: "Please select an Signature Image file.",
             },
         
-            status: {
-                required: "Please enter status",
+            // status: {
+            //     required: "Please Enter status",
+            // },
+            'addmore[0][quantity]': {
+                required: "Please Enter Quantity.",
+                number: "Quantity should contain only numbers."
             },
+            'addmore[0][description]': {
+                required: "Please Enter Description.",                
+            },
+            'addmore[0][price]': {
+                required: "Please Enter Price.",
+                number: "Price should contain only numbers."
+            },
+            'addmore[0][amount]': {
+                required: "Please Enter Amount.",
+                number: "Amount should contain only numbers."
+            },
+            'addmore[0][total]': {
+                required: "Please Enter Total.",
+                number: "Total should contain only numbers."
+            },    
 
         },
     });
