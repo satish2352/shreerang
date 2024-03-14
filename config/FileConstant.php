@@ -11,6 +11,18 @@ return [
     'STORE_RECEIPT_DELETE'	         => '/all_web_data/images/store_receipt/',
     'STORE_RECEIPT_VIEW'	         => env("FILE_VIEW").'/all_web_data/images/store_receipt/',
 
+    'PURCHASE_ORDER_ADD'	         => "/all_web_data/images/purchase_order/",
+    'PURCHASE_ORDER_DELETE'	         => '/all_web_data/images/purchase_order/',
+    'PURCHASE_ORDER_VIEW'	         => env("FILE_VIEW").'/all_web_data/images/purchase_order/',
+
+    'REQUISITION_ADD'	         => "/all_web_data/images/requisition/",
+    'REQUISITION_DELETE'	         => '/all_web_data/images/requisition/',
+    'REQUISITION_VIEW'	         => env("FILE_VIEW").'/all_web_data/images/requisition/',
+
+    'UPLOAD_FINANCE_DOC_ADD'	         => "/all_web_data/images/uploadfinancedocuments/",
+    'UPLOAD_FINANCE_DOC_DELETE'	         => '/all_web_data/images/uploadfinancedocuments/',
+    'UPLOAD_FINANCE_DOC_VIEW'	         => env("FILE_VIEW").'/all_web_data/images/uploadfinancedocuments/',
+
     // 'ORGANIZATION_ADD'	         => "/all_web_data/images/organization/",
     // 'ORGANIZATION_DELETE'	         => '/all_web_data/images/organization/',
     // 'ORGANIZATION_VIEW'	         => env("FILE_VIEW").'/all_web_data/images/organization/',

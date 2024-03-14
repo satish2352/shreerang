@@ -49,7 +49,8 @@ padding-left: 20px !important;
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
                                         <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('add-store-receipt') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Store</button></a>
+                                                <a href="{{ route('add-store-receipt') }}" >
+                                                    <button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Store Receipt</button></a>
                                         </div>
                                     </div>
                                 <div class="col-lg-10"></div>

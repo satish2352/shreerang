@@ -55,7 +55,7 @@
     <!-- Header start -->
     <header class="transperant-head transition-4  ">
         <div class="container-fluid d-flex  justify-content-center   nvvv">
-            <div class="row align-items-center">
+            <div class="row align-items-center tab-navbar">
                 <div class="col-lg-2 col-md-5 col-sm-4 col-3">
                     <div class="logo transition-4">
                         <a href="{{url('/')}}">
@@ -65,10 +65,10 @@
                 </div>
                 <!-- <div class="col-md-1"> </div> -->
                 <div class="col-lg-10 col-md-7 col-sm-8">
-                    {{-- <div class="icon-links d-flex align-items-start">
+                    <!-- {{-- <div class="icon-links d-flex align-items-start">
                 
                         <a href="{{url('/contact')}}" class="btn btn-round d-none d-sm-block blob-small">Contact Us</a>
-                    </div> --}}
+                    </div> --}} -->
                     <div class="menu-links">
                         <nav class="main-menu white">
                             <ul>

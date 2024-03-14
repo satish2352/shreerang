@@ -33,7 +33,7 @@
             <div class="row ">
 
                 <div class="col-xl-4 col-lg-6 col-md-6 p-3">
-                    <div class="team-each team1 prosha ml-20 mb-40">
+                    <div class="team-each team1 prosha  mb-40">
                         <div class="team-image  relative">
                             <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">            
                         </div>
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-6 col-md-6 p-3">
-                    <div class="team-each team1 prosha ml-20 mb-40">
+                    <div class="team-each team1 prosha  mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod2.png')}}" alt="">
                            
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-6 col-md-6 p-3">
-                    <div class="team-each team1 prosha ml-20 mb-40">
+                    <div class="team-each team1 prosha  mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod3.png')}}" alt="">
                            
@@ -77,7 +77,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-6 col-md-6 p-3">
-                    <div class="team-each team1 prosha ml-20 mb-40">
+                    <div class="team-each team1 prosha mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod4.png')}}" alt="">
                             
@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-6 col-md-6 p-3">
-                    <div class="team-each team1 prosha ml-20 mb-40">
+                    <div class="team-each team1 prosha  mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod5.png')}}" alt="">
                            
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-6 col-md-6 p-3">
-                    <div class="team-each team1 prosha ml-20 mb-40">
+                    <div class="team-each team1 prosha  mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod6.png')}}" alt="">
                            
@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-6 col-md-6 p-3">
-                    <div class="team-each team1 prosha ml-20 mb-40">
+                    <div class="team-each team1 prosha mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod1.png')}}" alt="">
                            
@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-6 col-md-6 p-3">
-                    <div class="team-each team1 prosha ml-20 mb-40">
+                    <div class="team-each team1 prosha  mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod4.png')}}" alt="">
                             
@@ -152,7 +152,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-6 col-md-6 p-3">
-                    <div class="team-each team1 prosha ml-20 mb-40">
+                    <div class="team-each team1 prosha  mb-40">
                         <div class="team-image relative">
                             <img src="{{ asset('website/assets/img/products/prod2.png')}}" alt="">
                            
@@ -174,7 +174,7 @@
     <!-- Product area end -->
 
     <section>
-        <div class="pt-35 pb-50">
+        <div class="pt-35 pb-50 hidd">
                   <!-- bannar start -->
                   <div class="banrimgs">
                     <img src="{{ asset('website/assets/img/banner/HOME_PAGE31.png')}}" alt="">

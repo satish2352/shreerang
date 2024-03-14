@@ -87,7 +87,7 @@ padding-left: 20px !important;
                                             <th data-field="email" data-editable="true">Email</th>
                                             <th data-field="quote_no" data-editable="true">Quote No.</th>
                                             <th data-field="payment_terms" data-editable="true">Payment terms</th> 
-                                            <th data-field="status" data-editable="true">Status</th> 
+                                            <!-- <th data-field="status" data-editable="true">Status</th>  -->
                                             
                                             <th data-field="action">Action</th>
                                         </tr>
@@ -105,12 +105,12 @@ padding-left: 20px !important;
                                             <td>email</td>
                                             <td>quote no</td>
                                             <td>payment terms</td>
-                                            <td>status</td>
+                                            <!-- <td>status</td> -->
                                          
                                             <td>
                                                 <div style="display: flex; align-items: center;">
                                                     <a href="{{route('edit-vendor')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    {{-- <a href="{{route('delete-products')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
+                                                    {{-- <a href="{{route('delete-vendor')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
                                                 </div>
                                             </td>
                                            </tr>

@@ -140,7 +140,7 @@
                            <div class="row">
                                <div class="col-lg-4 col-md-4 col-sm-4">
                                 <img src="{{ asset('website/assets/img/about/doottt.png')}}" class="pl-10 ml-10" alt="">
-                                <img src="{{ asset('website/assets/img/about/director1.png')}}" id="ddimg1" style="top:120px; left:60px; position:absolute; " alt="">
+                                <img src="{{ asset('website/assets/img/about/director1.png')}}" id="ddimg1" class="ddimg1" style="top:120px; left:60px; position:absolute; " alt="">
                                </div>
                                <div class="col-lg-8 col-md-8 col-sm-8 text-break mtopDD p-5">
                                 <h4 class="white ppp" id="texxttt">Lorem ipsum dolor sit amet, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget<span id="dots">...</span><span id="more"> imperdiet sed  congue eros non fermentum.</span></h4>
@@ -362,7 +362,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6 pb-60">
+                <div class="col-xl-4 col-lg-4 col-md-6 ">
                     <div class="each-team-3 team_shadow fix">
                         <div class="image-team-3 relative">
                             <a><img src="{{ asset('website/assets/img/team/team6b.png')}}" class="pt-3 pl-3 pr-3" alt=""></a>
