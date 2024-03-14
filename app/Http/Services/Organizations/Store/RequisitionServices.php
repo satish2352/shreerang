@@ -1,28 +1,18 @@
 <?php
 namespace App\Http\Services\Organizations\Store;
-use App\Http\Repository\Organizations\Store\StoreReceiptRepository;
+use App\Http\Repository\Organizations\Store\RequisitionRepository;
 use Carbon\Carbon;
 use App\Models\ {
     DesignModel
     };
 
 use Config;
-    class StoreReceiptServices
+    class RequisitionServices
     {
         protected $repo;
         public function __construct(){
-        $this->repo = new StoreReceiptRepository();
+        $this->repo = new RequisitionRepository();
     }
-
-
-    // public function getAll(){
-    //     try {
-    //         return $this->repo->getAll();
-
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // }
 
     public function getAll(){
         try {
@@ -38,7 +28,7 @@ use Config;
             $last_id = $this->repo->addAll($request);
             // dd($last_id);
 
-            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
+            $path = Config::get('FileConstant.REQUISITION_ADD');
             $ImageName = $last_id['ImageName'];
             uploadImage($request, 'signature', $path, $ImageName);
             
@@ -69,11 +59,11 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
+            $path = Config::get('FileConstant.REQUISITION_ADD');
             if ($request->hasFile('image')) {
                 if ($return_data['image']) {
-                    if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image']);
+                    if (file_exists_view(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['image'])) {
+                        removeImage(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['image']);
                     }
 
                 }

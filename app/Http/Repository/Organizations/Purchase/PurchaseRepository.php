@@ -74,10 +74,12 @@ public function addAll($request)
 }
     public function getById($id) {
         try {
-            $designData = PurchaseOrderModel::leftJoin('purchase_order_details', 'purchase_order.id', '=', 'purchase_order_details.purchase_id')
-                ->select('purchase_order_details.*','purchase_order_details.id as purchase_order_details_id', 'purchase_order.id as purchase_main_id', 'purchase_order.vendor_id', 'purchase_order.po_date', 'purchase_order.remark', 'purchase_order.image')
-                ->where('purchase_order.id', $id)
-                ->get();
+            // $designData = PurchaseOrderModel::leftJoin('purchase_order_details', 'purchase_order.id', '=', 'purchase_order_details.purchase_id')
+            //     ->select('purchase_order_details.*','purchase_order_details.id as purchase_order_details_id', 'purchase_order.id as purchase_main_id', 'purchase_order.vendor_id', 'purchase_order.po_date', 'purchase_order.remark', 'purchase_order.image')
+            //     ->where('purchase_order.id', $id)
+            //     ->get();
+            $designData= PurchaseOrderModel::get();
+
             if ($designData->isEmpty()) {
                 return null;
             } else {

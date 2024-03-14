@@ -19,7 +19,7 @@ label.error {
             <div class="sparkline12-hd">
                 <div class="main-sparkline12-hd">
                     <center>
-                        <h1>Add Production Data</h1>
+                        <h1>Add Purchase Order Data</h1>
                     </center>
                 </div>
             </div>
@@ -98,7 +98,8 @@ label.error {
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="po_date">PO Date:</label>
                                                     <input type="date" class="form-control" id="po_date"
-                                                        name="po_date" placeholder="Select PO Date">
+                                                        name="po_date"  value="{{ old('po_date') }}"
+                                                        placeholder="Select PO Date">
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <div class="form-select-list">
@@ -127,25 +128,25 @@ label.error {
                                                     </tr>
 
                                                     <tr>
-                                                        <td><input type="text" name="addmore[0][part_no]"
+                                                        <td><input type="text" name="addmore[0][part_no]" value="{{ old('part_no') }}"
                                                                 placeholder="Enter Part No" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][description]"
+                                                        <td><input type="text" name="addmore[0][description]" value="{{ old('description') }}"
                                                                 placeholder="Enter Description" class="form-control" />
                                                         </td>
-                                                        <td><input type="date" name="addmore[0][due_date]"
+                                                        <td><input type="date" name="addmore[0][due_date]" value="{{ old('due_date') }}"
                                                                 placeholder="Select Due Date" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][hsn_no]"
+                                                        <td><input type="text" name="addmore[0][hsn_no]" value="{{ old('hsn_no') }}"
                                                                 placeholder="Enter HSN No" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][quantity]"
+                                                        <td><input type="text" name="addmore[0][quantity]" value="{{ old('quantity') }}"
                                                                 placeholder="Enter Quantity" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][rate]"
+                                                        <td><input type="text" name="addmore[0][rate]" value="{{ old('rate') }}"
                                                                 placeholder="Enter Rate" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][amount]"
+                                                        <td><input type="text" name="addmore[0][amount]" value="{{ old('amount') }}"
                                                                 placeholder="Enter Amount" class="form-control" />
                                                         </td>
                                                         <td><button type="button" name="add" id="add"
@@ -165,22 +166,29 @@ label.error {
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="terms_condition">Terms & Condition:</label>
                                                     <input type="text" class="form-control" id="terms_condition"
-                                                        name="terms_condition" placeholder="Enter Terms & Condition">
+                                                        name="terms_condition" 
+                                                        value="{{ old('terms_condition') }}"
+                                                        placeholder="Enter Terms & Condition">
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="remark">Remark:</label>
                                                     <input type="text" class="form-control" id="remark"
-                                                        name="remark" placeholder="Enter Remark">
+                                                        name="remark" 
+                                                        value="{{ old('remark') }}"
+                                                        placeholder="Enter Remark">
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="transport_dispatch">Transport/Dispatch:</label>
                                                     <input type="text" class="form-control" id="transport_dispatch"
-                                                        name="transport_dispatch" placeholder="Enter Transport/Dispatch">
+                                                        name="transport_dispatch" 
+                                                        value="{{ old('transport_dispatch') }}"
+                                                        placeholder="Enter Transport/Dispatch">
                                                 </div> 
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="image">Image:</label>
                                                     <input type="file" class="form-control" accept="image/*" id="image"
+                                                        value="{{ old('image') }}"
                                                         name="image">
                                                 </div>
                                                 
@@ -250,6 +258,7 @@ jQuery(document).ready(function($) {
         rules: {
             po_date: {
                 required: true,
+                date: true,
             },
             vendor_id: {
                 required: true,
@@ -263,68 +272,89 @@ jQuery(document).ready(function($) {
             transport_dispatch : {
                 required: true,
             },
+            image: {
+                required: true,
+            },
+
             // Add validation rules for other fields
             'addmore[0][part_no]': {
                 required: true,
+                number : true                
             },
             'addmore[0][description]': {
                 required: true,
             },
             'addmore[0][due_date]': {
                 required: true,
+                date : true,
             },
             'addmore[0][hsn_no]': {
                 required: true,
+                number: true
             },
             'addmore[0][quantity]': {
                 required: true,
+                number: true
             },
             'addmore[0][rate]': {
                 required: true,
+                number: true
             },
             'addmore[0][amount]': {
                 required: true,
+                number: true
             },
         },
 
         messages: {
             po_date: {
-                required: "Please select PO Date.",
+                required: "Please Select PO Date.",
+                date: "Please Select a valid PO date."
             },
             vendor_id: {
-                required: "Please enter Vendor Id.",
+                required: "Please Enter Vendor.",
             },
             terms_condition: {
-                required: "Please enter Terms And Condition.",
+                required: "Please Enter Terms And Condition.",
             },
             remark: {
-                required: "Please enter Remark.",
+                required: "Please Enter Remark.",
             },            
             transport_dispatch: {
-                required: "Please enter Transport/Dispatch.",
+                required: "Please Enter Transport/Dispatch.",
+            },
+            image: {
+                required: "Please select an Image.",
+                accept: "Please select an Image file.",
             },
 
              // Add error messages for other fields
              'addmore[0][part_no]': {
                 required: "Please Enter Part No",
+                number: "Part No should contain only numbers."
             },
             'addmore[0][description]': {
-                required: "Please enter Description.",
+                required: "Please Enter Description.",
             },
             'addmore[0][due_date]': {
                 required: "Please Select Due Date",
+                date: "Please Enter a valid Due date."
             },
             'addmore[0][hsn_no]': {
                 required: "Please Enter HSN No",
+                number: "HSN No should contain only numbers."
             },
             'addmore[0][quantity]': {
                 required: "Please Enter Quantity",
+                number: "Quantity should contain only numbers."
             },
             'addmore[0][rate]': {
                 required: "Please Enter Rate",
+                number: "Rate should contain only numbers."
             },
             'addmore[0][amount]': {
                 required: "Please Enter Amount",
+                number: "Amount should contain only numbers."
             },            
         },
     });

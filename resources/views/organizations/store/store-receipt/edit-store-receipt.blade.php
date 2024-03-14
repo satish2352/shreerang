@@ -56,9 +56,10 @@
                                                             placeholder="">
                                             <a
                                             {{-- href="{{ route('add-more-data') }}" --}}
-                                           > <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
+                                           > 
+                                           <!-- <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
                                             <div class="container-fluid">
-                                                @if ($errors->any())
+                                                <!-- @if ($errors->any())
                                                     <div class="alert alert-danger">
                                                         <ul>
                                                             @foreach ($errors->all() as $error)
@@ -66,116 +67,124 @@
                                                             @endforeach
                                                         </ul>
                                                     </div>
-                                                @endif
+                                                @endif -->
 
-                                                <table class="table table-bordered" id="dynamicTable">
-                                                    <tr>
-                                                        <th>Quantity</th>
-                                                        <th>Description</th>
-                                                        <th>Price</th>
-                                                        <th>Amount</th>
-                                                        <th>Total</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                    @foreach ($editData as $key => $editDataNew)
-                                                    <?php 
-                                                    // dd($editDataNew);
-                                                    // die();
-                                                    ?>
-                                                        <tr>
-
-                                                            <input type="hidden" name="design_count"
-                                                            id="design_id_{{ $key }}" class="form-control"
-                                                            value="{{ $key}}"
-                                                            placeholder="">
-
-                                                            <input type="hidden" name="design_id_{{ $key }}"
-                                                                id="design_id_{{ $key }}" class="form-control"
-                                                                value="{{ $editDataNew->purchase_order_details_id }}"
-                                                                placeholder="">
-                                                           
-                                                            <td>
-                                                                <input type="text"
-                                                                    name="quantity_{{ $key }}"
-                                                                    value="{{ $editDataNew->quantity }}"
-                                                                    placeholder="Enter Quantity"
-                                                                    class="form-control" />
-                                                            </td>
-                                                                    
-                                                            <td>
-                                                                <input type="text"
-                                                                    name="description_{{ $key }}"
-                                                                    value="{{ $editDataNew->description }}"
-                                                                    placeholder="Enter description" class="form-control" />
-                                                            </td>
-
-                                                            <td>
-                                                                <input type="text"
-                                                                    name="price_{{ $key }}"
-                                                                    value="{{ $editDataNew->price}}"
-                                                                    placeholder="Enter Price"
-                                                                    class="form-control" />
-                                                            </td>
-
-                                                            <td>
-                                                                <input type="text"
-                                                                    name="amount_{{ $key }}"
-                                                                    value="{{ $editDataNew->amount}}"
-                                                                    placeholder="Enter amount" class="form-control" />
-                                                            </td>
-
-                                                            <td>
-                                                                <input type="text"
-                                                                    name="total_{{ $key }}"
-                                                                    value="{{ $editDataNew->total}}"
-                                                                    placeholder="Enter total" class="form-control" />
-                                                            </td>
-
-                                                            <td>
-                                                                <a data-id="{{ $editDataNew->id }}"
-                                                                    class="delete-btn btn btn-danger m-1"
-                                                                    title="Delete Tender"><i
-                                                                        class="fas fa-archive"></i></a>
-               
-                                                                </td>
-                                                        </tr>
-                                                    @endforeach
-
-                                                </table>
                                                 @foreach ($editData as $key => $editDataNew)
                                                     @if ($key == 0)
-                                                        <div class="form-group-inner">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                        <label for="store_date">Date:</label>
-                                                                        <input type="date" class="form-control" id="store_date"
-                                                                        name="store_date" 
-                                                                        value="{{ $editDataNew->store_date }}">
-                                                                </div>   
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                    <label for="store_date">Date:</label>
+                                                                    <input type="date" class="form-control" id="store_date"
+                                                                    name="store_date" 
+                                                                    value="{{ $editDataNew->store_date }}">
+                                                            </div>   
 
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                    <label for="name">Name of Store Person :</label>
-                                                                    <input type="text" class="form-control" id="name"
-                                                                        name="name" placeholder="Enter Name of Store Person"
-                                                                        value="{{ $editDataNew->name }}">
-                                                                </div>
-
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                    <label for="contact_number">Contact No. :</label>
-                                                                    <input type="text" class="form-control" id="contact_number"
-                                                                        name="contact_number" placeholder="Enter Contact No."
-                                                                        value="{{ $editDataNew->contact_number }}">
-                                                                </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="name">Name of Store Person :</label>
+                                                                <input type="text" class="form-control" id="name"
+                                                                    name="name" placeholder="Enter Name of Store Person"
+                                                                    value="{{ $editDataNew->name }}">
                                                             </div>
 
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="contact_number">Contact No. :</label>
+                                                                <input type="text" class="form-control" id="contact_number"
+                                                                    name="contact_number" placeholder="Enter Contact No."
+                                                                    value="{{ $editDataNew->contact_number }}">
+                                                            </div>
+                                                        </div>
+                                                    @endif
+                                                @endforeach
+
+                                                <div style="margin-top:30px;"> 
+                                                    <table class="table table-bordered" id="dynamicTable">
+                                                        <tr>
+                                                            <th>Quantity</th>
+                                                            <th>Description</th>
+                                                            <th>Price</th>
+                                                            <th>Amount</th>
+                                                            <th>Total</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                        @foreach ($editData as $key => $editDataNew)
+                                                        <?php 
+                                                        // dd($editDataNew);
+                                                        // die();
+                                                        ?>
+                                                            <tr>
+
+                                                                <input type="hidden" name="design_count"
+                                                                id="design_id_{{ $key }}" class="form-control"
+                                                                value="{{ $key}}"
+                                                                placeholder="">
+
+                                                                <input type="hidden" name="design_id_{{ $key }}"
+                                                                    id="design_id_{{ $key }}" class="form-control"
+                                                                    value="{{ $editDataNew->purchase_order_details_id }}"
+                                                                    placeholder="">
+                                                            
+                                                                <td>
+                                                                    <input type="text"
+                                                                        name="quantity_{{ $key }}"
+                                                                        value="{{ $editDataNew->quantity }}"
+                                                                        placeholder="Enter Quantity"
+                                                                        class="form-control" />
+                                                                </td>
+                                                                        
+                                                                <td>
+                                                                    <input type="text"
+                                                                        name="description_{{ $key }}"
+                                                                        value="{{ $editDataNew->description }}"
+                                                                        placeholder="Enter description" class="form-control" />
+                                                                </td>
+
+                                                                <td>
+                                                                    <input type="text"
+                                                                        name="price_{{ $key }}"
+                                                                        value="{{ $editDataNew->price}}"
+                                                                        placeholder="Enter Price"
+                                                                        class="form-control" />
+                                                                </td>
+
+                                                                <td>
+                                                                    <input type="text"
+                                                                        name="amount_{{ $key }}"
+                                                                        value="{{ $editDataNew->amount}}"
+                                                                        placeholder="Enter amount" class="form-control" />
+                                                                </td>
+
+                                                                <td>
+                                                                    <input type="text"
+                                                                        name="total_{{ $key }}"
+                                                                        value="{{ $editDataNew->total}}"
+                                                                        placeholder="Enter total" class="form-control" />
+                                                                </td>
+
+                                                                <td>
+                                                                    <a data-id="{{ $editDataNew->id }}"
+                                                                        class="delete-btn btn btn-danger m-1"
+                                                                        title="Delete Tender"><i
+                                                                            class="fas fa-archive"></i></a>
+                
+                                                                    </td>
+                                                            </tr>
+                                                        @endforeach
+
+                                                    </table>
+                                                </div>    
+                                                
+                                                
+                                                @foreach ($editData as $key => $editDataNew)
+                                                    @if ($key == 0)
+                                                        <div class="form-group-inner">                                                           
                                                             <div class="row">
                                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                     <label for="remark">Remark :</label>
                                                                     <input type="text" class="form-control" id="remark"
                                                                         name="remark" placeholder="Enter Remark here"
                                                                         value="{{ $editDataNew->remark }}">
-                                                                </div>
-                                                            
+                                                                </div>                                                            
                                                             
                                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                     <label for="signature">Image:</label>
@@ -202,7 +211,7 @@
                                                         <div class="col-lg-5"></div>
                                                         <div class="col-lg-7">
                                                             <div class="login-horizental cancel-wp pull-left">
-                                                                <a href="{{ route('list-purchase') }}"
+                                                                <a href="{{ route('list-store-receipt') }}"
                                                                     class="btn btn-white"
                                                                     style="margin-bottom:50px">Cancel</a>
                                                                 <button class="btn btn-sm btn-primary login-submit-cs"

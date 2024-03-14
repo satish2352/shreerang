@@ -20,13 +20,11 @@ class VendorController extends Controller
     //     $this->service = new ProductionServices();
     // }
 
-
-
     public function index(){
         try {
           
-          
-            return view('organizations.business.vendor.list-vendor');
+          return view('organizations.business.vendor.list-vendor');
+
         } catch (\Exception $e) {
             return $e;
         }

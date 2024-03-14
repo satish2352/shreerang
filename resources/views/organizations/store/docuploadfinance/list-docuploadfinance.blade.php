@@ -19,6 +19,23 @@ padding-left: 20px !important;
     font-size: 14px;
     text-align: left;
 }
+
+.zoomable-image {
+    position: relative;
+    width: 30%;
+    cursor: pointer;
+}
+
+.zoomed-in {
+    transform: scale(3.5) !important;
+    position: fixed;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 1;    
+
+}
+
 </style>
 
 <div class="data-table-area mg-tb-15">
@@ -28,11 +45,12 @@ padding-left: 20px !important;
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd">
-                            <h1>Store <span class="table-project-n">Finance</span> Table</h1>
+                            <h1>Finance Document <span class="table-project-n"></span> Table</h1>
                                 <div class="form-group-inner login-btn-inner row">
                                     <div class="col-lg-2" >
                                         <div class="login-horizental cancel-wp pull-left">
-                                                <a href="{{ route('add-doc-upload-fianace') }}" ><button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Store</button></a>
+                                            <a href="{{ route('add-docuploadfinance') }}" >
+                                                <button class="btn btn-sm btn-primary login-submit-cs" type="submit" >Add Finance Documents</button></a>
                                         </div>
                                     </div>
                                 <div class="col-lg-10"></div>
@@ -80,39 +98,42 @@ padding-left: 20px !important;
                                         <tr>
                                             <th data-field="state" data-checkbox="true"></th>
                                             <th data-field="id">ID</th>
-                                            <th data-field="department_id" data-editable="true">Department</th>
-                                            <th data-field="grn_image" data-editable="true">GRN Image</th>
-                                            <th data-field="sr_image" data-editable="true">SR Image</th>
-                                            <th data-field="status" data-editable="true">Status</th>
-                                                                                      
+                                            <th data-field="grn_image" data-editable="false">GRN Image</th>
+                                            <th data-field="sr_image" data-editable="false">SR Image</th>                                                                                      
                                             <th data-field="action">Action</th>
                                         </tr>
 
                                     </thead>
-                                    <tbody>
-                                       
+                                    <tbody>   
+                                    @foreach($getOutput as $data)                                    
                                         <tr>
                                             <td></td>
-                                            <td>1</td>
-                                            <td>department</td>
-                                            <td>grn image</td>
-                                            <td>sr_image</td>
-                                            <td>status</td>
-                                            
-                                            
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>
+                                                <div class="zoomable-image" onclick="toggleZoom(this)"> 
+                                                    <img class="img-fluid" 
+                                                    src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $data->grn_image }}" 
+                                                    alt="{{ strip_tags($data['company_name']) }} Image" />
+                                                </div>    
+                                            </td>
 
-                                            
+                                            <td>
+                                                <div class="zoomable-image" onclick="toggleZoom(this)"> 
+                                                    <img class="img-fluid" 
+                                                    src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $data->sr_image }}" 
+                                                    alt="{{ strip_tags($data['company_name']) }} Image" />
+                                                </div>    
+                                            </td>
 
-                                            
-                                            <!-- <td><img style="max-width:250px; max-height:150px;" src="" alt="Image" /></td> -->
                                             <td>
                                                 <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('edit-doc-upload-fianace')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    {{-- <a href="{{route('delete-products')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
+                                                    <a href="{{route('edit-docuploadfinance')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                    {{-- <a href="{{route('delete-docuploadfinance')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
                                                 </div>
                                             </td>
-                                           </tr>
-                                      
+                                        </tr>
+                                        @endforeach
+                                                                              
                                     </tbody>
                                 </table>
                             </div>
@@ -123,5 +144,25 @@ padding-left: 20px !important;
         </div>
     </div>
 </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function toggleZoom(element) {
+            element.classList.toggle('zoomed-in');
+        }
+
+        // Close zoomed image when clicking outside
+        window.addEventListener('click', function (event) {
+            var zoomedImages = document.querySelectorAll('.zoomed-in');
+            zoomedImages.forEach(function (img) {
+                if (!img.contains(event.target)) {
+                    img.classList.remove('zoomed-in');                   
+                }
+            });
+        });
+    </script>
 
 @endsection

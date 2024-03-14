@@ -106,8 +106,8 @@ label.error {
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <label for="store_date">Date:</label>
-                                                        <input type="date" class="form-control" id="store_date"
-                                                            name="store_date" >
+                                                        <input type="date" class="form-control" id="store_date" 
+                                                            name="store_date"  value="{{ old('po_date') }}" >
                                                 </div>                                           
 <!-- 
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -118,13 +118,15 @@ label.error {
                                                 
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="name">Name of Store Person :</label>
-                                                    <input type="text" class="form-control" id="name"
+                                                    <input type="text" class="form-control" id="name"  
+                                                        value="{{ old('name') }}"
                                                         name="name" placeholder="Enter Name of Store Person">
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="contact_number">Contact No. :</label>
-                                                    <input type="text" class="form-control" id="contact_number"
+                                                    <input type="text" class="form-control" id="contact_number"  
+                                                        value="{{ old('contact_number') }}"
                                                         name="contact_number" placeholder="Enter Contact No.">
                                                 </div>
 
@@ -151,21 +153,21 @@ label.error {
 
                                                     <tr>
 
-                                                        <td><input type="text" name="addmore[0][quantity]"
+                                                        <td><input type="text" name="addmore[0][quantity]"  value="{{ old('quantity') }}"
                                                                 placeholder="Enter your Quantity" class="form-control" />
                                                         </td>
 
-                                                        <td><input type="text" name="addmore[0][description]"
+                                                        <td><input type="text" name="addmore[0][description]"  value="{{ old('description') }}" 
                                                                 placeholder="Enter your description" class="form-control" />
                                                         </td>
 
-                                                        <td><input type="text" name="addmore[0][price]"
+                                                        <td><input type="text" name="addmore[0][price]"  value="{{ old('price') }}"
                                                                 placeholder="Enter your Price" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][amount]"
+                                                        <td><input type="text" name="addmore[0][amount]"  value="{{ old('amount') }}"
                                                                 placeholder="Enter your amount" class="form-control" />
                                                         </td>
-                                                        <td><input type="text" name="addmore[0][total]"
+                                                        <td><input type="text" name="addmore[0][total]"  value="{{ old('total') }}"
                                                                 placeholder="Enter your total" class="form-control" />
                                                         </td>
 
@@ -181,15 +183,15 @@ label.error {
                                                 <div class='row'>
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <label for="remark">Remark :</label>
-                                                        <input type="text" class="form-control" id="remark"
+                                                        <input type="text" class="form-control" id="remark"  
+                                                            value="{{ old('remark') }}"
                                                             name="remark" placeholder="Enter Remark here">
                                                     </div>
-                                                    
-                                                    <!-- signature -->
-
+                                                                                                        
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                     <label for="signature">Signature :</label>
                                                         <input type="file" class="form-control" accept="image/*" id="signature"
+                                                            value="{{ old('signature') }}"
                                                             name="signature" placeholder="Enter signature">
                                                     </div>
                                                                                                   

@@ -19,7 +19,7 @@
                 <div class="sparkline12-hd">
                     <div class="main-sparkline12-hd">
                         <center>
-                            <h1>Edit Production Data</h1>
+                            <h1>Edit Finance Documents Data</h1>
                         </center>
                     </div>
                 </div>
@@ -47,17 +47,18 @@
                                 @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <form action="{{ route('update-doc-upload-fianace', 
+                                        <form action="{{ route('update-docuploadfinance', 
                                        ) }}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                             @csrf
                                            
-                                            <a
+                                            <!-- <a
                                              {{-- href="{{ route('add-more-data') }}" --}}
-                                            class="btn btn-sm btn-primary ml-3"> <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
+                                            class="btn btn-sm btn-primary ml-3"> 
+                                            <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
 
                                             <div class="container-fluid">
-                                                @if ($errors->any())
+                                                <!-- @if ($errors->any())
                                                     <div class="alert alert-danger">
                                                         <ul>
                                                             @foreach ($errors->all() as $error)
@@ -65,101 +66,51 @@
                                                             @endforeach
                                                         </ul>
                                                     </div>
-                                                @endif
-
-                                                <table class="table table-bordered" id="dynamicTable">
-                                                    <tr>
-                                                        <th>Product Name</th>
-                                                        <th>Product Qty</th>
-                                                        <th>Product Price</th>
-                                                        <th>Product Unit</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                    {{-- @foreach ($editData as $key => $editDataNew) --}}
-                                                        <tr>
-                                                            <input type="hidden" name=""
-                                                                id="" class="form-control"
-                                                                value=""
-                                                                placeholder="">
-                                                            <td>
-                                                                <input type="text"
-                                                                    name=""
-                                                                    value=""
-                                                                    placeholder="Enter Product Name" class="form-control" />
-                                                            </td>
-                                                            <td><input type="text"
-                                                                    name=""
-                                                                    value=""
-                                                                    placeholder="Enter Product Quantity"
-                                                                    class="form-control" /></td>
-                                                            <td><input type="text"
-                                                                    name=""
-                                                                    value=""
-                                                                    placeholder="Enter Product Price"
-                                                                    class="form-control" /></td>
-                                                            <td><input type="text"
-                                                                    name=""
-                                                                    value=""
-                                                                    placeholder="Enter Product Unit" class="form-control" />
-                                                            </td>
-                                                            {{-- <td><button type="button" class="btn btn-danger remove-tr">Remove</button></td> --}}
-                                                            <td>
-                                                                
-                                                                <a data-id=""
-                                                                    class="delete-btn btn btn-danger m-1"
-                                                                    title="Delete Tender"><i
-                                                                        class="fas fa-archive"></i></a>
-                                                         
-
-
-                                                                {{-- <button type="button" class="btn btn-danger remove-tr " data-row-id="{{ $editDataNew->designs_details_id }}">Remove</button> --}}
-                                                            </td>
-                                                        </tr>
-                                                    {{-- @endforeach --}}
-                                                </table>
-                                                {{-- @foreach ($editData as $key=> $editDataNew)
-                                                @if($key == 0) --}}
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <label for="design_page">Product Page:</label>
-                                                                <input type="text" class="form-control" id="design_page" name="design_page" value="" placeholder="Enter Design Page">
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <label for="project_name">Project Name:</label>
-                                                                <input type="text" class="form-control" id="project_name" name="project_name" value="" placeholder="Enter Project Name">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <label for="time_allocation">Time Allocated For Product:</label>
-                                                                <input type="text" class="form-control" id="time_allocation" name="time_allocation" value="" placeholder="Enter Time Allocated For Product">
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <label for="image">Image:</label>
-                                                                <input type="file" class="form-control" accept="image/*" id="image" name="image">
-                                                                <div id="oldImageDisplay">
-                                                                    {{-- @if (isset($editDataNew->image)) --}}
-                                                                        <b>Image Preview: </b>
-                                                                        <img src="" alt="Old Image" style="max-width: 100px;">
-                                                                    {{-- @endif --}}
-                                                                </div>
-                                                                <div id="selectedImageDisplay" style="display: none;">
+                                                @endif -->
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="grn_image">GRN Image:</label>
+                                                            <input type="file" class="form-control"
+                                                                accept="image/*" id="grn_image" name="grn_image">
+                                                            <div id="oldImageDisplay">
+                                                                @if (isset($editDataNew->grn_image))
                                                                     <b>Image Preview: </b>
-                                                                    <img src="" alt="Selected Image" style="max-width: 100px;">
-                                                                </div>
+                                                                    <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editDataNew->grn_image }}"
+                                                                        alt="Old GRN Image" style="max-width: 100px;">
+                                                                @endif
+                                                            </div>
+                                                            <div id="selectedImageDisplay" style="display: none;">
+                                                                <b>Image Preview: </b>
+                                                                <img src="" alt="Selected GRN Image"
+                                                                    style="max-width: 100px;">
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                {{-- @endif --}}
-                                            {{-- @endforeach --}}
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <label for="sr_image">SR Image:</label>
+                                                            <input type="file" class="form-control"
+                                                                accept="image/*" id="sr_image" name="sr_image">
+                                                            <div id="oldImageDisplay">
+                                                                @if (isset($editDataNew->sr_image))
+                                                                    <b>Image Preview: </b>
+                                                                    <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editDataNew->sr_image }}"
+                                                                        alt="Old Image" style="max-width: 100px;">
+                                                                @endif
+                                                            </div>
+                                                            <div id="selectedImageDisplay" style="display: none;">
+                                                                <b>Image Preview: </b>
+                                                                <img src="" alt="Selected SR Image"
+                                                                    style="max-width: 100px;">
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                        
+                                                </div>                                            
+
                                                 <div class="login-btn-inner">
                                                     <div class="row">
                                                         <div class="col-lg-5"></div>
                                                         <div class="col-lg-7">
                                                             <div class="login-horizental cancel-wp pull-left">
-                                                                <a href="{{ route('list-doc-upload-fianace') }}"
+                                                                <a href="{{ route('list-docuploadfinance') }}"
                                                                     class="btn btn-white"
                                                                     style="margin-bottom:50px">Cancel</a>
                                                                 <button class="btn btn-sm btn-primary login-submit-cs"

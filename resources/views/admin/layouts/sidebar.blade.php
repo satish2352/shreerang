@@ -307,13 +307,13 @@
                 <li>
                     <a class="has-arrow" href="{{ route('list-requistion') }}" aria-expanded="false">
                         <i class="fa big-icon fa-envelope icon-wrap"></i> 
-                        <span class="mini-click-non">Requistion</span>
+                        <span class="mini-click-non">Requisition</span>
                     </a>
                     <ul class="submenu-angle" aria-expanded="false">
                         <li>
                             <a title="Inbox" href="{{ route('list-requistion') }}">
                                 <i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> 
-                                <span class="mini-sub-pro">List Requistion</span>
+                                <span class="mini-sub-pro">List Requisition</span>
                             </a>
                         </li>
                     </ul>
@@ -334,18 +334,18 @@
                 </li>
                 
                 <li>
-                    <a class="has-arrow" href="{{ route('list-doc-upload-fianace') }}" aria-expanded="false">
+                    <a class="has-arrow" href="{{ route('list-docuploadfinance') }}" aria-expanded="false">
                        <div class=" sidebarmenumain">
                             <div><i class="fa big-icon fa-envelope icon-wrap"></i></div>
-                            <div><span class="mini-click-non">Document Upload to Fianace</span></div>
+                            <div><span class="mini-click-non">Upload Finance Document</span></div>
                        </div>
                     </a>
                     <ul class="submenu-angle" aria-expanded="false">
                         <li>
-                            <a class="has-arrow" title="Inbox" href="{{ route('list-doc-upload-fianace') }}">
+                            <a class="has-arrow" title="Inbox" href="{{ route('list-docuploadfinance') }}">
                                 <div class=" sidebarmenumain">
                                     <div><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i></div>
-                                    <div><span class="mini-sub-pro">List Document Upload to Fianace</span></div>
+                                    <div><span class="mini-sub-pro">List Upload Finance Document</span></div>
                                 </div>    
                             </a>
                         </li>

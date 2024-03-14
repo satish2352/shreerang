@@ -20,7 +20,7 @@ label.error {
                 <div class="sparkline12-hd">
                     <div class="main-sparkline12-hd">
                         <center>
-                            <h1>Add Store Finance Data</h1>
+                            <h1>Add Finance Documents Data</h1>
                         </center>
                     </div>
                 </div>
@@ -57,11 +57,10 @@ label.error {
                                 @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <form action="{{ route('store-doc-upload-fianace') }}" method="POST" id="addDesignsForm"
+                                        <form action="{{ route('store-docuploadfinance') }}" method="POST" id="addDesignsForm"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group-inner">
-
                                                 {{-- ========================== --}}
                                                 <div class="container-fluid">
                                                     {{-- <form 
@@ -94,49 +93,31 @@ label.error {
 
                                                     </div>
                                                     @endif
-
-
                                                 </div>
-
                                                 {{-- =================== --}}
 
                                                 <div class="row">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-select-list">        
-                                                            <label for="department_id">Select Department :</label>
-                                                            <select class="form-control custom-select-value" name="department_id">
-                                                                <option value="">Select Department</option>
-                                                                <option value="">sample</option>
-                                                            </select>
-                                                    </div>     
-
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="grn_image">GRN Image :</label>
+                                                        <label for="grn_image">GRN Image :</label>
                                                         <input type="file" class="form-control" accept="image/*" id="grn_image"
-                                                            name="grn_image">
+                                                            name="grn_image"
+                                                            value="{{ old('grn_image') }}">
                                                     </div>
+
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="sr_image">GRN Image :</label>
+                                                        <label for="sr_image">SR Image :</label>
                                                         <input type="file" class="form-control" accept="image/*" id="sr_image"
-                                                            name="sr_image" >
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="status">Status :</label>
-                                                        <input type="text" class="form-control" id="status"
-                                                            name="status" placeholder="Enter your status ">
-                                                    </div>
-
-                                                    
-
-                                                    </div>
-                                                    
-                                                                                    
-
+                                                            name="sr_image"
+                                                            value="{{ old('sr_image') }}" >
+                                                    </div>                                                                                                   
+                                                </div>
+                                                                                                                                        
                                                 <div class="login-btn-inner">
                                                     <div class="row">
                                                         <div class="col-lg-5"></div>
                                                         <div class="col-lg-7">
                                                             <div class="login-horizental cancel-wp pull-left">
-                                                                <a href="{{ route('list-doc-upload-fianace') }}" class="btn btn-white"
+                                                                <a href="{{ route('list-docuploadfinance') }}" class="btn btn-white"
                                                                     style="margin-bottom:50px">Cancel</a>
                                                                 <button class="btn btn-sm btn-primary login-submit-cs"
                                                                     type="submit" style="margin-bottom:50px">Save
@@ -160,37 +141,13 @@ label.error {
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script>
-var i = 0;
 
-$("#add").click(function() {
-    ++i;
 
-    $("#dynamicTable").append(
-        '<tr><td><input type="text" name="addmore[' +
-        i +
-        '][quantity]" placeholder="Enter your quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][description]" placeholder="Enter your description" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][price]" placeholder="Enter your Price" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][amount]" placeholder="Enter your amount" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][total]" placeholder="Enter your total" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
-    );
-});
-
-$(document).on("click", ".remove-tr", function() {
-    $(this).parents("tr").remove();
-});
-</script>
 <script>
 jQuery.noConflict();
 jQuery(document).ready(function($) {
     $("#addDesignsForm").validate({
         rules: {
-          
             department_id: {
                 required: true,
                 // Add your custom validation rule if needed
@@ -200,31 +157,22 @@ jQuery(document).ready(function($) {
             },
             sr_image: {
                 required: true,
-            },
-           
-            status: {
-                required: true,
-            },
+            },           
         },
-        messages: {
-          
+
+        messages: {          
             department_id: {
-                required: "Please enter a valid department id.",
+                required: "Please Select a Valid department Name.",
             },
             grn_image: {
-                required: "Please select an image.",
-                accept: "Please select an image file.",
+                required: "Please select an GRN image.",
+                accept: "Please select an GRN image file.",
             },
           
             sr_image: {
-                required: "Please select an image.",
-                accept: "Please select an image file.",
+                required: "Please select an SR image.",
+                accept: "Please select an SR image file.",
             },
-        
-            status: {
-                required: "Please enter status",
-            },
-
         },
     });
 });

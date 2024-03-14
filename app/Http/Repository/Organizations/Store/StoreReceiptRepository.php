@@ -11,7 +11,6 @@ use Config;
 
 class StoreReceiptRepository  {
 
-
     public function getAll(){
         try {
             $data_output= StoreReceipt::get();
@@ -27,58 +26,61 @@ class StoreReceiptRepository  {
             return $e;
         }
     }
-    // repository
-public function addAll($request)
-{
-    try {
-        $dataOutput = new StoreReceipt();
-        $dataOutput->store_date = $request->store_date;
-        $dataOutput->name = $request->name;
-        $dataOutput->contact_number = $request->contact_number;
-        $dataOutput->remark = $request->remark;
-        $dataOutput->signature = 'null';
-        $dataOutput->save();
-        $last_insert_id = $dataOutput->id;
 
-        // Save data into DesignDetailsModel
-        foreach ($request->addmore as $item) {
-            $designDetails = new StoreReceiptDetails();
-            $designDetails->store_receipt_id = $last_insert_id;
-            $designDetails->quantity = $item['quantity'];
-            $designDetails->description = $item['description'];
-            $designDetails->price = $item['price'];
-            $designDetails->amount = $item['amount'];
-            $designDetails->total = $item['total'];
-            $designDetails->save();
+    
+    public function addAll($request)
+    {
+        try {
+            $dataOutput = new StoreReceipt();
+            $dataOutput->store_date = $request->store_date;
+            $dataOutput->name = $request->name;
+            $dataOutput->contact_number = $request->contact_number;
+            $dataOutput->remark = $request->remark;
+            $dataOutput->signature = 'null';
+            $dataOutput->save();
+            $last_insert_id = $dataOutput->id;
+
+            // Save data into StoreReceiptDetails
+            foreach ($request->addmore as $item) {
+                $designDetails = new StoreReceiptDetails();
+                $designDetails->store_receipt_id = $last_insert_id;
+                $designDetails->quantity = $item['quantity'];
+                $designDetails->description = $item['description'];
+                $designDetails->price = $item['price'];
+                $designDetails->amount = $item['amount'];
+                $designDetails->total = $item['total'];
+                $designDetails->save();
+            }
+
+            // Updating image name in StoreReceipt
+            $imageName = $last_insert_id . '_' . rand(100000, 999999) . '_image.' . $request->signature->extension();
+            $finalOutput = StoreReceipt::find($last_insert_id);
+            $finalOutput->signature = $imageName;
+            $finalOutput->save();
+
+            return [
+                'ImageName' => $imageName,
+                'status' => 'success'
+            ];
+        } catch (\Exception $e) {
+            return [
+                'msg' => $e->getMessage(),
+                'status' => 'error'
+            ];
         }
-
-        // Updating image name in StoreReceipt
-        $imageName = $last_insert_id . '_' . rand(100000, 999999) . '_image.' . $request->signature->extension();
-        $finalOutput = StoreReceipt::find($last_insert_id);
-        $finalOutput->signature = $imageName;
-        $finalOutput->save();
-
-        return [
-            'ImageName' => $imageName,
-            'status' => 'success'
-        ];
-    } catch (\Exception $e) {
-        return [
-            'msg' => $e->getMessage(),
-            'status' => 'error'
-        ];
     }
-}
-
 
     public function getById($id) {
         try {
-            $designData = StoreReceipt::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
-                ->select('store_receipt_details.*','store_receipt_details.id as store_receipt_details_id', 'store_receipt.id as store_receipt_main_id',
-                 'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.remark', 'store_receipt.signature')
-                ->where('store_receipt.id', $id)
-                ->get();
-                dd($designData);
+            $designData= StoreReceipt::get();
+
+            // $designData = StoreReceipt::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
+            //     ->select('store_receipt_details.*','store_receipt_details.id as store_receipt_details_id', 'store_receipt.id as store_receipt_main_id',
+            //      'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.remark', 'store_receipt.signature')
+            //     ->where('store_receipt.id', $id)
+            //     ->get();
+            //     dd($designData);
+
             if ($designData->isEmpty()) {
                 return null;
             } else {
@@ -92,10 +94,12 @@ public function addAll($request)
             ];
         }
     }
+
+    
     public function updateAll($request){
        
         try {
-            // Update existing design details
+            // Update existing Store Receipt details
             for ($i = 0; $i <= $request->design_count; $i++) {
                 $designDetails = StoreReceiptDetails::findOrFail($request->input("design_id_" . $i));
                 
@@ -159,8 +163,8 @@ public function addAll($request)
                 $deleteDataById = DesignModel::find($id);
                 
                 if ($deleteDataById) {
-                    if (file_exists_view(Config::get('DocumentConstant.DESIGNS_DELETE') . $deleteDataById->image)){
-                        removeImage(Config::get('DocumentConstant.DESIGNS_DELETE') . $deleteDataById->image);
+                    if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $deleteDataById->image)){
+                        removeImage(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $deleteDataById->image);
                     }
                     $deleteDataById->delete();
                     
