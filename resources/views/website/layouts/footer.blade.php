@@ -97,7 +97,7 @@
 </section>
 
 {{-- for mobile view --}}
-<section class="mobilefoot pt-50 d-md-block d-lg-none">
+<section class="mobilefoot pt-10 d-md-block d-lg-none">
     <!-- <div class="row footlogocol1"> -->
         
         <!-- <div class="col-md-12 col-sm-12">
@@ -108,13 +108,13 @@
             <footer class="footer-area1">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-2 col-md-1 col-sm-1">
+                        <!-- <div class="col-lg-2 col-md-1 col-sm-1">
                             {{-- <img src="{{ asset('website/assets/img/logo/FOOTER.png')}}" id="mobfootlogo" alt=""> --}}
-                        </div>
+                        </div> -->
                         <div class="col-lg-4 col-md-6 col-sm-6 cent">
                             <div class="footer-links pt-20 pt-md- mb-0">
                                 <h4 class="green f-700 mb-20 foottitle">ADDRESS</h4>
-                                <ul class="links-list">
+                                <ul class="links-list fleftm">
                                     <li><span class="green">Plant No. 1</span><a href="https://maps.app.goo.gl/ThctFSNi3kxhsAV87"  target="blank"> - W-127 (A), MIDC, Ambad Nashik- 422010,</li></a>
                                     <li><span class="green">Plant No. 2</span><a href="https://maps.app.goo.gl/HkB2JkJixZCUWmQK6"  target="blank"> - W-118 (A), MIDC, Ambad Nashik - 422010 ,</li></a>
                                     <li><span class="green">Plant No. 3</span><a href=""  target="blank"> - GAT NO-679/2/1 , Kurli Alandi Road ,Chankan , Tal-khed Dist-Pune - 410501,</li></a>

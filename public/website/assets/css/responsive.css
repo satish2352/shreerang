@@ -77,15 +77,20 @@
         background-size: 100% 100%;
     }
 }
+@media only screen and (max-width: 992px)  {
+    .tab-navbar{
+        width: 100% !important;
+    }
+}
 
 /* Large devices (Above 1200px) */
-@media only screen and (min-width: 992px) and (max-width: 1280px) {
+@media only screen and (min-width: 992px) and (max-width: 1300px) {
     .flogo{
-        margin-top: 100px;
+        margin-top: 13px;
         /* display: none */
     width: 300px;
-    /* height: 400px; */
-   margin-left: -100px;
+    height: 400px;
+   margin-left: -110px;
     position: absolute;
     }
 }
@@ -564,6 +569,10 @@
 }
 
 @media only screen and (max-width: 991px) {
+
+    .hidd{
+        display: none;
+    }
     .slider-area {
         min-height: 650px;
     }
@@ -571,6 +580,7 @@
         /* margin-top: 10px; */
         padding: 15px 12px;
     }
+   
  
     .servicebnnr{
         /* padding-top: 10px; */
@@ -625,9 +635,9 @@
         display: none;
     }
 
-    .paddiall2{
+    .paddiall2 {
         /* padding-top: 30px; */
-        /* padding-bottom: 30px;  */
+        margin-bottom: 30px !important; 
     
     }
     .mobmaterl{
@@ -914,13 +924,13 @@
     height: 210px;
     }
 
-    #ddimg1{
+    /* #ddimg1{
 
         margin-left: 4  pc;
         height: 248px;
         margin-top: -2pc;
     
-    }
+    } */
     #texxttt {
         font-size: 14px;
         margin-top: 11rem;
@@ -1078,7 +1088,7 @@
         margin: 20px 0px;
     }
     .mean-container a.meanmenu-reveal {
-        margin-top: -68px;
+        /* margin-top: -68px; */
     }
     .line-head .line {
         display: none;
@@ -1355,13 +1365,114 @@
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 Custom media queries
 */
+
+@media only screen and (min-width: 391px ) and (max-width: 490px) {
+    #ddimg1{
+        margin-left: 20px !important;
+    }
+   
+
+}
+
+@media only screen and (min-width: 370px ) and (max-width: 490px) {
+    .contbak{
+        height:45rem !important;
+    }
+    .mhmi{
+        margin-top: -25px !important;
+        margin-bottom: -50px;
+    }
+    .indexlastimg{
+        padding-bottom: 20px !important;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    #ddimg1{
+     
+        height: 180px !important ;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    #texxttt{
+        margin-top: 150px;
+    }
+    
+}
+
+@media only screen and (max-width: 575px)  {
+
+    .navcont{
+      display: none !important;
+    }
+}
+@media only screen  and (max-width: 768px){
+    .addrescard{
+        left: 18pc !important;
+    }
+    .contcatcontainer{
+        left: 4pc !important;
+    }
+    .contnom{
+        margin-top: 40px !important;
+    }
+}
+
+@media only screen  and (max-width: 540px){
+    #ddimg1 {
+        top: 115px !important;
+        left: 123px !important;
+        height: 213px !important;
+    }
+}
+
+@media only screen  and (max-width: 412px){
+    #ddimg1{
+        left: 43px !important;
+        top: 103px !important;
+    }
+}
+
+@media only screen  and (min-width: 240px) and (max-width: 340px){
+    .logo img{
+        max-width: 213px !important;
+    }
+    #ddimg1{
+        top: 79px !important;
+        left: 31px !important;
+        height: 150px !important;
+    }
+    #texxttt {
+        font-size: 13px;
+        margin-top: 120px;
+    }
+    .director {
+        height: 530px;
+    }
+    .hptext{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .hptext1{
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        font-weight: 500 !important;
+    }
+    .indexlastimg{
+        padding-bottom: 20px !important;
+    }
+
+}
+
 @media only screen and (min-width: 767px) and (max-width: 991px){
     
     .addrescard{
         color: #444;
         top: -38pc;
         position: relative;
-        left: 30pc;
+        left: 22pc;
         margin-left: -16pc;
     
     }
@@ -1465,6 +1576,12 @@ Custom media queries
         margin-top: 50px;
 
     }
+
+    .flogo{
+        height: 425px !important;
+      
+    }
+
     .bigfont{
         font-size: 27px;
         line-height: 40px;
@@ -1513,8 +1630,8 @@ Custom media queries
     
     }
     .flogo{
-        height: 400px;
-        padding-left: 40px;
+        height: 380px;
+        padding-left: 24px;
     }
    
     
@@ -1564,6 +1681,17 @@ Custom media queries
  }
 
  /* iPad Air */
+ @
+
+ @media only screen and (min-width: 576px) and (max-width: 1024px){
+    #ddimg1{
+        margin-left: -2pc;
+        height: 180px !important ; ;
+        margin-top: -3pc;
+    
+    }
+ }
+
 @media only screen and (min-width: 576px) and (max-width: 1024px) { 
     .footlogocol1 .shreelogo{
         display: none;
@@ -1590,12 +1718,12 @@ Custom media queries
     }
     #ddimg1{
         margin-left: -2pc;
-        height: 211px;
+      
         margin-top: -3pc;
     
     }
     #texxttt {
-        font-size: 16px;
+        font-size: 14px;
         margin-top: 0rem;
     }
     .director {

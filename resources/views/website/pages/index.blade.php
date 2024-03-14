@@ -239,34 +239,34 @@
                     
                     <div class="col-lg-4 col-xx-3 z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00 servicetext">
-                            <h2 class="white text-center d-flex justify-content-center  f-700 mb-10">
-                                <span class="fontsize30 f-900 fs-1  mr-20">01</span>
+                            <h2 class="white text-center d-flex justify-content-center hptext1  f-700 mb-10">
+                                <span class="fontsize30 f-900 fs-1   mr-20">01</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20  f-500 bigfont  text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20  f-500 bigfont hptext text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 z-5 col-xxl-3 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00 servicetext">
-                            <h2 class="white f-700 text-center d-flex  justify-content-center  mb-10">
-                                <span class="fontsize30 f-900 fs-1 mr-20">02</span>
+                            <h2 class="white f-700 text-center d-flex  justify-content-center hptext1  mb-10">
+                                <span class="fontsize30 f-900  fs-1 mr-20">02</span>
                                 METALWORKING
     
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20  f-500 bigfont  text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20  f-500 bigfont hptext text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 col-xxl-3  z-5 text-center text-lg-left wow fadeIn">
                         <div class="exp-cta pr-50 pr-lg-00 servicetext">
-                            <h2 class="white text-center d-flex justify-content-center  f-700 mb-10">
-                                <span class="fontsize30 f-900 fs-1 mr-20">03</span>
+                            <h2 class="white text-center d-flex justify-content-center hptext1 f-700 mb-10">
+                                <span class="fontsize30 f-900  fs-1 mr-20">03</span>
                                 WOODWORKING
                                 <span class="green"></span>
                             </h2>
-                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20  f-500 bigfont   text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
+                            <p class="white1 pfonts mb-55 mb-md-30 pr-70 pl-70 mt-20 hptext f-500 bigfont   text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. stiae exercitationem debitis enim quaerat.</p>
                             <!-- <a href="contact-us.html" class="btn btn-square">Contact us<i class="fas fa-long-arrow-alt-right ml-20"></i></a> -->
                         </div>
                     </div>
@@ -533,7 +533,7 @@
     
     <!-- contact -->
     <section>
-        <div class="container-fluid testmo text-center pt-50 pb-50">
+        <div class="container-fluid testmo text-center pt-50 pb-50 indexlastimg">
            
              <!-- bannar start -->
             <div class="banrimgs">
