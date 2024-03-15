@@ -82,39 +82,36 @@ padding-left: 20px !important;
                                             <th data-field="id">ID</th>
                                             <th data-field="vendor_name" data-editable="true">Vendor Name</th>
                                             <th data-field="address" data-editable="true">Address</th>
-                                            <th data-field="gst_no" data-editable="true">GST No.</th>
-                                            <th data-field="contact_no" data-editable="true">Conatct No.</th>
+                                            <th data-field="gst_no" data-editable="true">GST No</th>
+                                            <th data-field="contact_no" data-editable="true">Conatct No</th>
                                             <th data-field="email" data-editable="true">Email</th>
-                                            <th data-field="quote_no" data-editable="true">Quote No.</th>
-                                            <th data-field="payment_terms" data-editable="true">Payment terms</th> 
-                                            <!-- <th data-field="status" data-editable="true">Status</th>  -->
-                                            
+                                            <th data-field="quote_no" data-editable="true">Quote No</th>
+                                            <th data-field="payment_terms" data-editable="true">Payment terms</th>                                                                                        
                                             <th data-field="action">Action</th>
                                         </tr>
 
                                     </thead>
                                     <tbody>
-                                       
-                                        <tr>
-                                            <td></td>
-                                            <td>1</td>
-                                            <td>vender name</td>
-                                            <td>address</td>
-                                            <td>gst no</td>
-                                            <td>contact</td>
-                                            <td>email</td>
-                                            <td>quote no</td>
-                                            <td>payment terms</td>
-                                            <!-- <td>status</td> -->
-                                         
-                                            <td>
-                                                <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('edit-vendor')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    {{-- <a href="{{route('delete-vendor')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
-                                                </div>
-                                            </td>
-                                           </tr>
-                                      
+                                        @foreach($getOutput as $data)                                       
+                                            <tr>
+                                                <td></td>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ucwords($data->vendor_name)}}</td>
+                                                <td>{{ucwords($data->address)}}</td>
+                                                <td>{{ucwords($data->gst_no)}}</td>
+                                                <td>{{ucwords($data->contact_no)}}</td>
+                                                <td>{{ucwords($data->email)}}</td>
+                                                <td>{{ucwords($data->quote_no)}}</td>
+                                                <td>{{ucwords($data->payment_terms)}}</td>
+                                            
+                                                <td>
+                                                    <div style="display: flex; align-items: center;">
+                                                        <a href="{{route('edit-vendor')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                        {{-- <a href="{{route('delete-vendor')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

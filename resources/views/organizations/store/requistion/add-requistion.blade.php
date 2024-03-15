@@ -2,7 +2,7 @@
 @section('content')
 <style>
 label {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 label.error {
@@ -13,6 +13,7 @@ label.error {
     /* Add any other styling as per your design */
 }
 </style>
+
 
 <div class="container-fluid">
     <div class="row">
@@ -267,6 +268,7 @@ jQuery(document).ready(function($) {
             },
             signature: {
                 required: true,
+                accept: "Please select an Signature Image file.",
             },
 
             'addmore[0][description]': {
@@ -296,15 +298,15 @@ jQuery(document).ready(function($) {
                 required: "Please select a valid department id.",
             },
             req_name: {
-                required: "Please enter Requisition name.",
+                required: "Please Enter Requisition name.",
             },
             req_number: {
-                required: "Please enter Requisition Number.",
+                required: "Please Enter Requisition Number.",
                 number: "Requisition Number should contain only numbers."
             },
             req_date: {
-                required: "Please enter Requisition date.",
-                date: "Please enter a valid Requisition date."
+                required: "Please Select Requisition date.",
+                date: "Please Select a valid Requisition date."
             },
 
             'addmore[0][description]': {
@@ -327,8 +329,8 @@ jQuery(document).ready(function($) {
                 required: "Please Enter Stock.",
             },     
             signature: {
-                required: "Please select a Signature.",
-                accept: "Please select an Signature image file.",
+                required: "Please Upload a Signature.",
+                accept: "Please Upload an Signature image file.",
             },
         },
     });

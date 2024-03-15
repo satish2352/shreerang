@@ -2,7 +2,7 @@
 @section('content')
     <style>
         label {
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         label.error {
@@ -13,6 +13,8 @@
             /* Add any other styling as per your design */
         }
     </style>
+
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="sparkline12-list">
@@ -57,7 +59,6 @@
                                             <a
                                             {{-- href="{{ route('add-more-data') }}" --}}
                                            > 
-                                           <!-- <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
                                             <div class="container-fluid">
                                                 <!-- @if ($errors->any())
                                                     <div class="alert alert-danger">
@@ -106,7 +107,7 @@
                                             @endif
                                             @endforeach
 
-                                            <div style="margin-top:30px;"> 
+                                            <div style="margin-top:10px;"> 
                                                 <table class="table table-bordered" id="dynamicTable">
                                                     <tr>
                                                         <th>Part No</th>
@@ -216,65 +217,67 @@
                                                                         value="{{ $editDataNew->remark }}"
                                                                         placeholder="Enter Remark">
                                                                 </div>
+                                                        </div>    
 
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                    <label for="transport_dispatch">Transport/Dispatch:</label>
-                                                                    <input type="text" class="form-control" id="transport_dispatch"
-                                                                        name="transport_dispatch" 
-                                                                        value="{{ $editDataNew->transport_dispatch }}"
-                                                                        placeholder="Enter Transport/Dispatch">
-                                                                </div>    
-                                                             
-                                                        @endif
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="transport_dispatch">Transport/Dispatch:</label>
+                                                                <input type="text" class="form-control" id="transport_dispatch"
+                                                                    name="transport_dispatch" 
+                                                                    value="{{ $editDataNew->transport_dispatch }}"
+                                                                    placeholder="Enter Transport/Dispatch">
+                                                            </div>                                                             
+                                                    @endif
                                                     @endforeach    
                                                                                                                 
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                    <label for="image">Image:</label>
-                                                                    <input type="file" class="form-control"
-                                                                        accept="image/*" id="image" name="image">
-                                                                    <div id="oldImageDisplay">
-                                                                        @if (isset($editDataNew->image))
-                                                                            <b>Image Preview: </b>
-                                                                            <img src="{{ Config::get('FileConstant.PURCHASE_ORDER_VIEW') . $editDataNew->image }}"
-                                                                                alt="Old Image" style="max-width: 100px;">
-                                                                        @endif
-                                                                    </div>
-                                                                    <div id="selectedImageDisplay" style="display: none;">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="image">Image:</label>
+                                                                <input type="file" class="form-control"
+                                                                    accept="image/*" id="image" name="image">
+                                                                <div id="oldImageDisplay">
+                                                                    @if (isset($editDataNew->image))
                                                                         <b>Image Preview: </b>
-                                                                        <img src="" alt="Selected Image"
-                                                                            style="max-width: 100px;">
-                                                                    </div>
+                                                                        <img src="{{ Config::get('FileConstant.PURCHASE_ORDER_VIEW') . $editDataNew->image }}"
+                                                                            alt="Old Image" style="max-width: 100px;">
+                                                                    @endif
                                                                 </div>
+                                                                <div id="selectedImageDisplay" style="display: none;">
+                                                                    <b>Image Preview: </b>
+                                                                    <img src="" alt="Selected Image"
+                                                                        style="max-width: 100px;">
                                                                 </div>
-                                                    
-
-                                                <div class="login-btn-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-5"></div>
-                                                        <div class="col-lg-7">
-                                                            <div class="login-horizental cancel-wp pull-left">
-                                                                <a href="{{ route('list-purchase') }}"
-                                                                    class="btn btn-white"
-                                                                    style="margin-bottom:50px">Cancel</a>
-                                                                <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                    type="submit" style="margin-bottom:50px">Update
-                                                                    Data</button>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                        </div>
+                                                    
+
+                                                        <div class="login-btn-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-5"></div>
+                                                                <div class="col-lg-7">
+                                                                    <div class="login-horizental cancel-wp pull-left">
+                                                                        <a href="{{ route('list-purchase') }}"
+                                                                            class="btn btn-white"
+                                                                            style="margin-bottom:50px">Cancel</a>
+                                                                        <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                            type="submit" style="margin-bottom:50px">Update
+                                                                            Data</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                        </form>
                                     </div>
-                                    </form>
                                 </div>
-                            </div>
+                           
+                            </div>                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+</div>
+
 
     <form method="POST" action="{{ route('delete-addmore') }}" id="deleteform">
         @csrf

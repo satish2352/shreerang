@@ -2,7 +2,7 @@
 @section('content')
     <style>
         label {
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         label.error {
@@ -13,6 +13,9 @@
             /* Add any other styling as per your design */
         }
     </style>
+
+
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="sparkline12-list">
@@ -67,43 +70,51 @@
                                                         </ul>
                                                     </div>
                                                 @endif -->
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                        <label for="grn_image">GRN Image:</label>
-                                                            <input type="file" class="form-control"
-                                                                accept="image/*" id="grn_image" name="grn_image">
-                                                            <div id="oldImageDisplay">
-                                                                @if (isset($editDataNew->grn_image))
-                                                                    <b>Image Preview: </b>
-                                                                    <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editDataNew->grn_image }}"
-                                                                        alt="Old GRN Image" style="max-width: 100px;">
-                                                                @endif
-                                                            </div>
-                                                            <div id="selectedImageDisplay" style="display: none;">
-                                                                <b>Image Preview: </b>
-                                                                <img src="" alt="Selected GRN Image"
-                                                                    style="max-width: 100px;">
-                                                            </div>
-                                                        </div>
 
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                            <label for="sr_image">SR Image:</label>
-                                                            <input type="file" class="form-control"
-                                                                accept="image/*" id="sr_image" name="sr_image">
-                                                            <div id="oldImageDisplay">
-                                                                @if (isset($editDataNew->sr_image))
-                                                                    <b>Image Preview: </b>
-                                                                    <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editDataNew->sr_image }}"
-                                                                        alt="Old Image" style="max-width: 100px;">
-                                                                @endif
-                                                            </div>
-                                                            <div id="selectedImageDisplay" style="display: none;">
-                                                                <b>Image Preview: </b>
-                                                                <img src="" alt="Selected SR Image"
-                                                                    style="max-width: 100px;">
-                                                            </div>
-                                                        </div>
-                                                    </div>                                                        
-                                                </div>                                            
+                                            @foreach ($editData as $key => $editDataNew)
+                                                @if ($key == 0)
+                                                    <div class="form-group-inner">                                                           
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="grn_image">GRN Image:</label>
+                                                                    <input type="file" class="form-control"
+                                                                        accept="image/*" id="grn_image" name="grn_image">
+                                                                    <div id="oldImageDisplay">
+                                                                        @if (isset($editDataNew->grn_image))
+                                                                            <b>Image Preview: </b>
+                                                                            <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editDataNew->grn_image }}"
+                                                                                alt="Old GRN Image" style="max-width: 100px;">
+                                                                        @endif
+                                                                    </div>
+                                                                    <div id="selectedImageDisplay" style="display: none;">
+                                                                        <b>Image Preview: </b>
+                                                                        <img src="" alt="Selected GRN Image"
+                                                                            style="max-width: 100px;">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                    <label for="sr_image">SR Image:</label>
+                                                                    <input type="file" class="form-control"
+                                                                        accept="image/*" id="sr_image" name="sr_image">
+                                                                    <div id="oldImageDisplay">
+                                                                        @if (isset($editDataNew->sr_image))
+                                                                            <b>Image Preview: </b>
+                                                                            <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editDataNew->sr_image }}"
+                                                                                alt="Old Image" style="max-width: 100px;">
+                                                                        @endif
+                                                                    </div>
+                                                                    <div id="selectedImageDisplay" style="display: none;">
+                                                                        <b>Image Preview: </b>
+                                                                        <img src="" alt="Selected SR Image"
+                                                                            style="max-width: 100px;">
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>                                                           
+                                                    </div>      
+                                                    @endif
+                                                @endforeach                                          
 
                                                 <div class="login-btn-inner">
                                                     <div class="row">
@@ -131,7 +142,10 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
+
+
+
     <form method="POST" action="{{ route('delete-addmore') }}" id="deleteform">
         @csrf
         <input type="hidden" name="delete_id" id="delete_id" value="">
