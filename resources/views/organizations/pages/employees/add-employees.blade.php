@@ -91,7 +91,7 @@
                                                 <label for="company_id">Select Role:</label>
                                                 <select class="form-control custom-select-value" name="role_id">
                                                     <ul class="dropdown-menu ">
-                                                        <option value="">Select Company</option>
+                                                        <option value="">Select Role</option>
                                                         @foreach($roles as $datas)
                                                         <option value="{{$datas->id}}">{{ucfirst($datas->role_name)}}</option>
                                                         @endforeach
