@@ -191,16 +191,16 @@ Route::any('/delete-business/{id}', ['as' => 'delete-business', 'uses' => 'App\H
 
 
 //ALL List
-
 Route::get('/list-forwarded-to-design', ['as' => 'list-forwarded-to-design', 'uses' => 'App\Http\Controllers\Organizations\Business\AllListController@getAllListForwardedToDesign']);
 
 // ========================OWNER Department End========
 
 
 // ========================DesignUploadcontroller========
+//ALL List
 Route::get('/list-new-requirements-received-for-design', ['as' => 'list-new-requirements-received-for-design', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@getAllNewRequirement']);
-
 Route::get('/list-design-upload', ['as' => 'list-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@index']);
+
 Route::get('/add-design-upload/{id}', ['as' => 'add-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@add']);
 Route::post('/store-design-upload', ['as' => 'store-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@store']);
 Route::get('/edit-design-upload/{id}', ['as' => 'edit-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@edit']);

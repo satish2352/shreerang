@@ -104,9 +104,6 @@ class DesignsRepository  {
                 ];
             }
             
-            // Update the design record
-            $dataOutput->save();
-    
             // Store the design and bom image names
             $designImageName = $dataOutput->id . '_' . rand(100000, 999999) . '_design.' . $request->design_image->extension();
             $bomImageName = $dataOutput->id . '_' . rand(100000, 999999) . '_bom.' . $request->bom_image->extension();
@@ -116,15 +113,28 @@ class DesignsRepository  {
             $dataOutput->bom_image = $bomImageName;
             $dataOutput->save();
     
-            // Insert into ProductionModel
-            $production_data = new ProductionModel();
-            $production_data->business_id = $dataOutput->business_id;
-            $production_data->design_id = $dataOutput->id;
-            $production_data->save();
+            // Insert into 
+            
+            $production_data = ProductionModel::where('business_id', $request->business_id)->first();
+            if (!$production_data) {
+                
+                $production_data->business_id = $dataOutput->business_id;
+                $production_data->design_id = $dataOutput->id;
+                $production_data->save();
+
+            } else {
+
+                $production_data = new ProductionModel();
+                $production_data->business_id = $dataOutput->business_id;
+                $production_data->design_id = $dataOutput->id;
+                $production_data->save();
+
+            }
     
             // Update BusinessApplicationProcesses if record exists
             $business_application = BusinessApplicationProcesses::where('business_id', $request->business_id)->first();
             if ($business_application) {
+
                 $business_application->business_id = $dataOutput->business_id;
                 $business_application->business_status_id = config('constants.HIGHER_AUTHORITY.NEW_REQUIREMENTS_SENT_TO_DESIGN_DEPARTMENT');
                 $business_application->design_id = $dataOutput->id;
@@ -132,6 +142,7 @@ class DesignsRepository  {
                 $business_application->production_id = $production_data->id;
                 $business_application->production_status_id = config('constants.PRODUCTION_DEPARTMENT.LIST_DESIGN_RECEIVED_FOR_PRODUCTION');
                 $business_application->save();
+
             }
     
             $return_data['designImageName'] = $designImageName;
