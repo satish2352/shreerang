@@ -175,6 +175,18 @@
                                 class="fa big-icon fa-envelope icon-wrap"></i> <span
                                 class="mini-click-non">New Design List</span></a>
                     </li>
+
+                    <li>
+                        <a class="has-arrow" href="{{ route('list-accept-design') }}" aria-expanded="false"><i
+                                class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                class="mini-click-non">Accepted Design List</span></a>
+                    </li>
+
+                    <li>
+                        <a class="has-arrow" href="{{ route('list-reject-design') }}" aria-expanded="false"><i
+                                class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                class="mini-click-non">Rejected Design List</span></a>
+                    </li>
                         <li>
                             <a class="has-arrow" href="{{ route('list-products') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span

@@ -26,6 +26,7 @@ class ProductionRepository  {
               ->whereIn('business_application_processes.design_status_id',$array_to_be_check)
               ->where('businesses.is_active',true)
               ->select(
+                  'production.id as productionId',
                   'businesses.id',
                   'businesses.title',
                   'businesses.descriptions',
@@ -121,11 +122,30 @@ class ProductionRepository  {
 
     public function rejectdesign($request){
         try {
-            $production_data = ProductionModel::where('business_id', $request->business_id)->first();
-            // $production_data->business_id = $request->business_id;
-            $production_data->design_id = $request->design_id;
-            $production_data->reject_design_remark = $request->reject_design_remark;
-            $production_data->save();
+            $idtoedit = base64_decode($request->businessid);
+            $production_data = ProductionModel::where('id', $request->idtoedit)->first();
+            $designRevisionForProdID = DesignRevisionForProd::where('id', $production_data->id)->last();
+            if($designRevisionForProdID) {
+
+                $designRevisionForProdID->business_id = $production_data->business_id;
+                $designRevisionForProdID->design_id = $production_data->business_id;
+                $designRevisionForProdID->production_id = $production_data->business_id;
+                $designRevisionForProdID->reject_reason_prod = $production_data->business_id;
+                $designRevisionForProdID->remark_by_design = $production_data->business_id;
+                $designRevisionForProdID->save();
+
+            } else {
+                $designRevisionForProdIDInsert = new DesignRevisionForProd();
+                $designRevisionForProdIDInsert->business_id = $production_data->business_id;
+                $designRevisionForProdIDInsert->design_id = $production_data->business_id;
+                $designRevisionForProdIDInsert->production_id = $production_data->business_id;
+                $designRevisionForProdIDInsert->reject_reason_prod = $production_data->business_id;
+                $designRevisionForProdIDInsert->remark_by_design = $production_data->business_id;
+                $designRevisionForProdIDInsert->save();
+
+            }
+            
+           
 
             $business_application = BusinessApplicationProcesses::where('business_id', $request->business_id)->first();
             if ($business_application) {

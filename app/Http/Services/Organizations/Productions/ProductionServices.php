@@ -51,9 +51,9 @@ use Config;
     } 
 
 
-    public function rejectdesign($id){
+    public function rejectdesign($request) {
         try {
-            $update_data = $this->repo->rejectdesign($id);
+            $update_data = $this->repo->rejectdesign($request);
         } catch (\Exception $e) {
             return $e;
         }

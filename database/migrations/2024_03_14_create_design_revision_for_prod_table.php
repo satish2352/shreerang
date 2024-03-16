@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('production', function (Blueprint $table) {
+        Schema::create('design_revision_for_prod', function (Blueprint $table) {
             $table->id();
             $table->string('business_id');
             $table->string('design_id');
-            $table->boolean('is_approve')->default(false);
-            $table->boolean('reject_reason');
+            $table->string('production_id');
+            $table->boolean('reject_reason_prod');
+            $table->boolean('remark_by_design');
             $table->boolean('is_active')->default(true);
             $table->boolean('is_deleted')->default(false);
             $table->timestamps();
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('production');
+        Schema::dropIfExists('design_revision_for_prod');
     }
 };
