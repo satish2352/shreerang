@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('business_id');
             $table->string('design_id');
             $table->string('production_id');
-            $table->boolean('reject_reason_prod');
+            $table->boolean('reject_reason_prod')->nullable();
             $table->boolean('remark_by_design');
             $table->boolean('is_active')->default(true);
             $table->boolean('is_deleted')->default(false);

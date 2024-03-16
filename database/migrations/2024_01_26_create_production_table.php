@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('business_id');
             $table->string('design_id');
             $table->boolean('is_approve')->default(false);
-            $table->boolean('reject_reason');
             $table->boolean('is_active')->default(true);
             $table->boolean('is_deleted')->default(false);
             $table->timestamps();

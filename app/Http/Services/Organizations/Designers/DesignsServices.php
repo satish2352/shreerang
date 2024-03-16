@@ -43,6 +43,7 @@ use Config;
         try {
            
             $last_id = $this->repo->updateAll($request);
+            dd( $last_id);
             $path = Config::get('FileConstant.DESIGNS_ADD');
             $designImageName = $last_id['designImageName'];
             $bomImageName = $last_id['bomImageName'];
