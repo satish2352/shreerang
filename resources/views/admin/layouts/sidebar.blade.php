@@ -91,7 +91,7 @@
                         </li>
 
                         <li>
-                            <a class="has-arrow" href="{{ route('list-new-requirements-received-for-design') }}" aria-expanded="false"><i
+                            <a class="has-arrow" href="{{ route('list-forwarded-to-design') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
                                     class="mini-click-non">List Business Sent For Design</span></a>
                         </li>

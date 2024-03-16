@@ -36,7 +36,6 @@ class DesignsRepository  {
               )->get();
             return $data_output;
         } catch (\Exception $e) {
-            dd($e);
             return $e;
         }
     }
