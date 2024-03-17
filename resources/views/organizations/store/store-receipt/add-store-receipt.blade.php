@@ -2,7 +2,7 @@
 @section('content')
 <style>
 label {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 label.error {
@@ -13,171 +13,125 @@ label.error {
     /* Add any other styling as per your design */
 }
 </style>
+
+
 <div class="container-fluid">
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="sparkline12-list">
-            <div class="sparkline12-hd">
-                <div class="main-sparkline12-hd">
-                    <center>
-                        <h1>Add Store Data</h1>
-                    </center>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="sparkline12-list">
+                <div class="sparkline12-hd">
+                    <div class="main-sparkline12-hd">
+                        <center>
+                            <h1>Add Store Data</h1>
+                        </center>
+                    </div>
                 </div>
-            </div>
-            <div class="sparkline12-graph">
-                <div class="basic-login-form-ad">
-                    <div class="row">
-                        @if (session('msg'))
-                        <div class="alert alert-{{ session('status') }}">
-                            {{ session('msg') }}
-                        </div>
-                        @endif
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            @if (Session::get('status') == 'success')
-                            <div class="col-md-12">
-                                <div class="alert alert-success alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Success!</strong> {{ Session::get('msg') }}
-                                </div>
+                <div class="sparkline12-graph">
+                    <div class="basic-login-form-ad">
+                        <div class="row">
+                            @if (session('msg'))
+                            <div class="alert alert-{{ session('status') }}">
+                                {{ session('msg') }}
                             </div>
                             @endif
 
-                            @if (Session::get('status') == 'error')
-                            <div class="col-md-12">
-                                <div class="alert alert-danger alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Error!</strong> {!! session('msg') !!}
-                                </div>
-                            </div>
-                            @endif
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="all-form-element-inner">
-                                    <form action="{{ route('store-store-receipt') }}" method="POST" id="addDesignsForm"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="form-group-inner">
+                                @if (Session::get('status') == 'success')
+                                <div class="col-md-12">
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Success!</strong> {{ Session::get('msg') }}
+                                    </div>
+                                </div>
+                                @endif
 
-                                            {{-- ========================== --}}
-                                            <div class="container-fluid">
-                                                {{-- <form 
-                                                action="{{ route('addmorePost') }}"
-                                                method="POST"> --}}
-
-                                                {{-- @csrf --}}
-
-                                                @if ($errors->any())
-                                                <div class="alert alert-danger">
-
-                                                    <ul>
-
-                                                        @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                        @endforeach
-
-                                                    </ul>
-
-                                                </div>
-                                                @endif
-
-                                                @if (Session::has('success'))
-                                                <div class="alert alert-success text-center">
-
-                                                    <a href="#" class="close" data-dismiss="alert"
-                                                        aria-label="close">×</a>
-
-                                                    <p>{{ Session::get('success') }}</p>
-
-                                                </div>
-                                                @endif
-
-                                                {{-- <button type="submit" class="btn btn-success">Save</button> --}}
-
-                                                {{-- </form> --}}
-
-                                            </div>
-
-                                            {{-- =================== --}}
-
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                        <label for="store_date">Date:</label>
-                                                        <input type="date" class="form-control" id="store_date" 
-                                                            name="store_date"  value="{{ old('po_date') }}" >
-                                                </div>                                           
-<!-- 
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="receipt_no">Receipt No. :</label>
-                                                    <input type="text" class="form-control" id="receipt_no"
-                                                        name="receipt_no">
-                                                </div>     -->
-                                                
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="name">Name of Store Person :</label>
-                                                    <input type="text" class="form-control" id="name"  
-                                                        value="{{ old('name') }}"
-                                                        name="name" placeholder="Enter Name of Store Person">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="contact_number">Contact No. :</label>
-                                                    <input type="text" class="form-control" id="contact_number"  
-                                                        value="{{ old('contact_number') }}"
-                                                        name="contact_number" placeholder="Enter Contact No.">
-                                                </div>
-
-                                                <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="address">Address:</label>
-                                                    <input type="text" class="form-control" id="address"
-                                                        name="address" placeholder="Enter Address">
-                                                </div> -->
+                                @if (Session::get('status') == 'error')
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error!</strong> {!! session('msg') !!}
+                                    </div>
+                                </div>
+                                @endif
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="all-form-element-inner">
+                                        <form action="{{ route('store-store-receipt') }}" method="POST" id="addDesignsForm"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <label for="store_date">Date:</label>
+                                                            <input type="date" class="form-control" id="store_date" 
+                                                                name="store_date"  value="{{ old('po_date') }}" >
+                                                    </div>
                                                     
-                                            </div>
-                                                
-                                            <div style="margin-top:30px;" >
-                                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " > -->
-                                              
-                                                <table class="table table-bordered" id="dynamicTable">
-                                                    <tr>
-                                                        <th>Quantity</th>
-                                                        <th>Description</th>
-                                                        <th>Price</th>
-                                                        <th>Amount</th>
-                                                        <th>Total</th>
-                                                        <th>Action</th>
-                                                    </tr>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="name">Name of Store Person :</label>
+                                                        <input type="text" class="form-control" id="name"  
+                                                            value="{{ old('name') }}"
+                                                            name="name" placeholder="Enter Name of Store Person">
+                                                    </div>
 
-                                                    <tr>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="contact_number">Contact No. :</label>
+                                                        <input type="text" class="form-control" id="contact_number"  
+                                                            value="{{ old('contact_number') }}"
+                                                            name="contact_number" placeholder="Enter Contact No."
+                                                            pattern="[789]{1}[0-9]{9}" 
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" 
+                                                            maxlength="10" 
+                                                            minlength="10"
+                                                            >
+                                                    </div>
 
-                                                        <td><input type="text" name="addmore[0][quantity]"  value="{{ old('quantity') }}"
-                                                                placeholder="Enter your Quantity" class="form-control" />
-                                                        </td>
+                                                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="address">Address:</label>
+                                                        <input type="text" class="form-control" id="address"
+                                                            name="address" placeholder="Enter Address">
+                                                    </div> -->
+                                                        
+                                                </div>
+                                                    
+                                                <div style="margin-top:10px;" >
+                                                    <table class="table table-bordered" id="dynamicTable">
+                                                        <tr>
+                                                            <th>Quantity</th>
+                                                            <th>Description</th>
+                                                            <th>Price</th>
+                                                            <th>Amount</th>
+                                                            <th>Total</th>
+                                                            <th>Action</th>
+                                                        </tr>
 
-                                                        <td><input type="text" name="addmore[0][description]"  value="{{ old('description') }}" 
-                                                                placeholder="Enter your description" class="form-control" />
-                                                        </td>
+                                                        <tr>
 
-                                                        <td><input type="text" name="addmore[0][price]"  value="{{ old('price') }}"
-                                                                placeholder="Enter your Price" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][amount]"  value="{{ old('amount') }}"
-                                                                placeholder="Enter your amount" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][total]"  value="{{ old('total') }}"
-                                                                placeholder="Enter your total" class="form-control" />
-                                                        </td>
+                                                            <td><input type="text" name="addmore[0][quantity]"  value="{{ old('quantity') }}"
+                                                                    placeholder="Enter your Quantity" class="form-control" />
+                                                            </td>
 
-                                                        <td><button type="button" name="add" id="add"
-                                                                class="btn btn-success">Add More</button></td>
+                                                            <td><input type="text" name="addmore[0][description]"  value="{{ old('description') }}" 
+                                                                    placeholder="Enter your description" class="form-control" />
+                                                            </td>
 
-                                                    </tr>
+                                                            <td><input type="text" name="addmore[0][price]"  value="{{ old('price') }}"
+                                                                    placeholder="Enter your Price" class="form-control" />
+                                                            </td>
+                                                            <td><input type="text" name="addmore[0][amount]"  value="{{ old('amount') }}"
+                                                                    placeholder="Enter your amount" class="form-control" />
+                                                            </td>
+                                                            <td><input type="text" name="addmore[0][total]"  value="{{ old('total') }}"
+                                                                    placeholder="Enter your total" class="form-control" />
+                                                            </td>
 
-                                                </table>
-                                                <!-- </div> -->
+                                                            <td><button type="button" name="add" id="add"
+                                                                    class="btn btn-success">Add More</button></td>
+                                                        </tr>
+                                                    </table>                                                
                                                 </div>
 
                                                 <div class='row'>
@@ -193,32 +147,26 @@ label.error {
                                                         <input type="file" class="form-control" accept="image/*" id="signature"
                                                             value="{{ old('signature') }}"
                                                             name="signature" placeholder="Enter signature">
-                                                    </div>
-                                                                                                  
-                                                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="status">Status :</label>
-                                                        <input type="text" class="form-control" id="status"
-                                                            name="status" placeholder="Enter Status here">
-                                                    </div>
-                                                    -->
+                                                    </div>                                                
                                                 </div>                                            
 
-                                                <div class="login-btn-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-5"></div>
-                                                        <div class="col-lg-7">
-                                                            <div class="login-horizental cancel-wp pull-left">
-                                                                <a href="{{ route('list-store-receipt') }}" class="btn btn-white"
-                                                                    style="margin-bottom:50px">Cancel</a>
-                                                                <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                    type="submit" style="margin-bottom:50px">Save
-                                                                    Data</button>
+                                                    <div class="login-btn-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-5"></div>
+                                                            <div class="col-lg-7">
+                                                                <div class="login-horizental cancel-wp pull-left">
+                                                                    <a href="{{ route('list-store-receipt') }}" class="btn btn-white"
+                                                                        style="margin-bottom:50px">Cancel</a>
+                                                                    <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                        type="submit" style="margin-bottom:50px">Save
+                                                                        Data</button>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                        </div>
-                                    </form>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -227,7 +175,6 @@ label.error {
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -262,18 +209,13 @@ jQuery.noConflict();
 jQuery(document).ready(function($) {
     $("#addDesignsForm").validate({
         rules: {
-            // design_name: {
-            //     required: true,
-            // },
             store_date: {
                 required: true,
                 date: true,
             },
-            // receipt_no: {
-            //     required: true,
-            // },
             name: {
                 required: true,
+                noNumbers: true
             },
             contact_number: {
                 required: true,
@@ -288,9 +230,6 @@ jQuery(document).ready(function($) {
             signature: {
                 required: true,
             },
-            // status: {
-            //     required: true,
-            // },
             'addmore[0][quantity]': {
                 required : true,
                 number: true 
@@ -318,13 +257,15 @@ jQuery(document).ready(function($) {
                 date: "Please enter a valid Store date."
             },
             receipt_date: {
-                required: "Please Select a valid date.",
+                required: "Please Select a Receipt date.",
+                date: "Please enter a valid Receipt date."
             },
             // receipt_no: {
             //     required: "Please Enter receipt No.",
             // },
             name: {
                 required: "Please Enter Store Person Name.",
+                noNumbers: "Store Person Name should not contain any numbers."
             },
             contact_number: {
                 required: "Please Enter a valid Contact No.",
@@ -337,13 +278,10 @@ jQuery(document).ready(function($) {
                 required: "Please Write Remark",
             },
             signature: {
-                required: "Please select an Signature Image.",
-                accept: "Please select an Signature Image file.",
+                required: "Please Upload an Signature Image.",
+                accept: "Please Upload an Signature Image file.",
             },
         
-            // status: {
-            //     required: "Please Enter status",
-            // },
             'addmore[0][quantity]': {
                 required: "Please Enter Quantity.",
                 number: "Quantity should contain only numbers."
@@ -366,6 +304,11 @@ jQuery(document).ready(function($) {
 
         },
     });
+
+    $.validator.addMethod("noNumbers", function(value, element) {
+            return this.optional(element) || !/\d/.test(value);
+        }, "Vendor Name should not contain any numbers.");
+        
 });
 </script>
 

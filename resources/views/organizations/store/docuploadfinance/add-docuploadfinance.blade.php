@@ -2,7 +2,7 @@
 @section('content')
 <style>
 label {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 label.error {
@@ -13,6 +13,9 @@ label.error {
     /* Add any other styling as per your design */
 }
 </style>
+
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -61,41 +64,6 @@ label.error {
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group-inner">
-                                                {{-- ========================== --}}
-                                                <div class="container-fluid">
-                                                    {{-- <form 
-                                                    action="{{ route('addmorePost') }}"
-                                                    method="POST"> --}}
-
-                                                    {{-- @csrf --}}
-
-                                                    @if ($errors->any())
-                                                    <div class="alert alert-danger">
-
-                                                        <ul>
-
-                                                            @foreach ($errors->all() as $error)
-                                                            <li>{{ $error }}</li>
-                                                            @endforeach
-
-                                                        </ul>
-
-                                                    </div>
-                                                    @endif
-
-                                                    @if (Session::has('success'))
-                                                    <div class="alert alert-success text-center">
-
-                                                        <a href="#" class="close" data-dismiss="alert"
-                                                            aria-label="close">×</a>
-
-                                                        <p>{{ Session::get('success') }}</p>
-
-                                                    </div>
-                                                    @endif
-                                                </div>
-                                                {{-- =================== --}}
-
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <label for="grn_image">GRN Image :</label>
@@ -147,11 +115,7 @@ label.error {
 jQuery.noConflict();
 jQuery(document).ready(function($) {
     $("#addDesignsForm").validate({
-        rules: {
-            department_id: {
-                required: true,
-                // Add your custom validation rule if needed
-            },
+        rules: {          
             grn_image: {
                 required: true,
             },
@@ -160,18 +124,15 @@ jQuery(document).ready(function($) {
             },           
         },
 
-        messages: {          
-            department_id: {
-                required: "Please Select a Valid department Name.",
-            },
+        messages: {                 
             grn_image: {
-                required: "Please select an GRN image.",
-                accept: "Please select an GRN image file.",
+                required: "Please Upload an GRN image.",
+                accept: "Please Upload an GRN image file.",
             },
           
             sr_image: {
-                required: "Please select an SR image.",
-                accept: "Please select an SR image file.",
+                required: "Please Upload an SR image.",
+                accept: "Please Upload an SR image file.",
             },
         },
     });

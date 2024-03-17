@@ -2,7 +2,7 @@
 @section('content')
 <style>
 label {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 label.error {
@@ -13,207 +13,175 @@ label.error {
     /* Add any other styling as per your design */
 }
 </style>
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="sparkline12-list">
-            <div class="sparkline12-hd">
-                <div class="main-sparkline12-hd">
-                    <center>
-                        <h1>Add GRN Data</h1>
-                    </center>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="sparkline12-list">
+                <div class="sparkline12-hd">
+                    <div class="main-sparkline12-hd">
+                        <center>
+                            <h1>Add GRN Data</h1>
+                        </center>
+                    </div>
                 </div>
-            </div>
-            <div class="sparkline12-graph">
-                <div class="basic-login-form-ad">
-                    <div class="row">
-                        @if (session('msg'))
-                        <div class="alert alert-{{ session('status') }}">
-                            {{ session('msg') }}
-                        </div>
-                        @endif
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            @if (Session::get('status') == 'success')
-                            <div class="col-md-12">
-                                <div class="alert alert-success alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Success!</strong> {{ Session::get('msg') }}
-                                </div>
+                <div class="sparkline12-graph">
+                    <div class="basic-login-form-ad">
+                        <div class="row">
+                            @if (session('msg'))
+                            <div class="alert alert-{{ session('status') }}">
+                                {{ session('msg') }}
                             </div>
                             @endif
 
-                            @if (Session::get('status') == 'error')
-                            <div class="col-md-12">
-                                <div class="alert alert-danger alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Error!</strong> {!! session('msg') !!}
-                                </div>
-                            </div>
-                            @endif
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="all-form-element-inner">
-                                    <form action="" method="POST" id="addDesignsForm"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="form-group-inner">
+                                @if (Session::get('status') == 'success')
+                                <div class="col-md-12">
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Success!</strong> {{ Session::get('msg') }}
+                                    </div>
+                                </div>
+                                @endif
 
-                                            {{-- ========================== --}}
-                                            <div class="container-fluid">
-                                                {{-- <form 
-                                                action="{{ route('addmorePost') }}"
-                                                method="POST"> --}}
+                                @if (Session::get('status') == 'error')
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error!</strong> {!! session('msg') !!}
+                                    </div>
+                                </div>
+                                @endif
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="all-form-element-inner">
+                                        <form action="{{ route('store-grn') }}" method="POST" id="addDesignsForm"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="grn_date">GRN Date:</label>
+                                                        <input type="date" class="form-control" id="grn_date"
+                                                            name="grn_date" 
+                                                            value="{{ old('grn_date') }}"
+                                                            placeholder="Enter GRN Date">
+                                                    </div>
 
-                                                {{-- @csrf --}}
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="purchase_id">PO No.:</label>
+                                                        <input type="text" class="form-control" id="purchase_id"
+                                                            name="purchase_id" 
+                                                            value="{{ old('purchase_id') }}"
+                                                            placeholder="Enter Purchase No.">
+                                                    </div>
 
-                                                @if ($errors->any())
-                                                <div class="alert alert-danger">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="po_date">PO Date :</label>
+                                                        <input type="date" class="form-control" id="po_date"
+                                                            name="po_date" 
+                                                            value="{{ old('po_date') }}"
+                                                            placeholder="Enter PO Date">
+                                                    </div>                                               
 
-                                                    <ul>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="invoice_no">Invoice No.:</label>
+                                                        <input type="text" class="form-control" id="invoice_no"
+                                                            name="invoice_no" 
+                                                            value="{{ old('invoice_no') }}"
+                                                            placeholder="Enter Invoice No">
+                                                    </div>
 
-                                                        @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                        @endforeach
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="invoice_date">Invoice Date:</label>
+                                                        <input type="date" class="form-control" id="invoice_date"
+                                                            name="invoice_date" 
+                                                            value="{{ old('invoice_date') }}"
+                                                            placeholder="Enter Invoice Date">
+                                                    </div>
 
-                                                    </ul>
-
-                                                </div>
-                                                @endif
-
-                                                @if (Session::has('success'))
-                                                <div class="alert alert-success text-center">
-
-                                                    <a href="#" class="close" data-dismiss="alert"
-                                                        aria-label="close">×</a>
-
-                                                    <p>{{ Session::get('success') }}</p>
-
-                                                </div>
-                                                @endif
-                                            
-                                                {{-- <button type="submit" class="btn btn-success">Save</button> --}}
-
-                                                {{-- </form> --}}
-
-                                            </div>
-
-                                            {{-- =================== --}}
-
-                                            <div class="row">                                                
-                                                {{-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="grn_number">GRN No:</label>
-                                                    <input type="text" class="form-control" id="grn_number"
-                                                        name="grn_number" placeholder="Enter GRN Number">
-                                                </div> --}}
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="grn_date">GRN Date:</label>
-                                                    <input type="date" class="form-control" id="grn_date"
-                                                        name="grn_date" placeholder="Enter GRN Date">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="purchase_id">PO No.:</label>
-                                                    <input type="text" class="form-control" id="purchase_id"
-                                                        name="purchase_id" placeholder="Enter Purchase No.">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="po_date">PO Date :</label>
-                                                    <input type="date" class="form-control" id="po_date"
-                                                        name="po_date" placeholder="Enter PO Date">
-                                                </div>                                               
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="invoice_no">Invoice No.:</label>
-                                                    <input type="text" class="form-control" id="invoice_no"
-                                                        name="invoice_no" placeholder="Enter Invoice No">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="invoice_date">Invoice Date:</label>
-                                                    <input type="date" class="form-control" id="invoice_date"
-                                                        name="invoice_date" placeholder="Enter Invoice Date">
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="image">Signature:</label>
-                                                    <input type="file" class="form-control" accept="image/*" id="image"
-                                                        name="image">
-                                                </div>
-                                            </div>
-                                            
-                                            <div style="margin-top:20px">
-                                                <table class="table table-bordered" id="dynamicTable">
-                                                    <tr>
-                                                        <th>Description</th>
-                                                        <th>QC Check</th>
-                                                        <th>Chalan Quantity</th>
-                                                        <th>Actual Quantity</th>
-                                                        <th>Accepted Quantity</th>
-                                                        <th>Rejected Quantity</th>
-                                                        <th>Action</th>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td><input type="text" name="addmore[0][description]"
-                                                                placeholder="Enter Description" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][qc_check_remark]"
-                                                                placeholder="Enter QC Check" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][chalan_quantity]"
-                                                                placeholder="Enter Chalan Qty" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][actual_quantity]"
-                                                                placeholder="Enter Actual Qty" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][accepted_quantity]"
-                                                                placeholder="Enter Accepted Qty" class="form-control" />
-                                                        </td>
-                                                        <td><input type="text" name="addmore[0][rejected_quantity]"
-                                                                placeholder="Enter Rejected Qty" class="form-control" />
-                                                        </td>
-                                                        <td><button type="button" name="add" id="add"
-                                                                class="btn btn-success">Add More</button></td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    <label for="remark">Remark:</label>
-                                                        <textarea class="form-control" rows="3" type="text" class="form-control" id="remark"
-                                                        name="remark" placeholder="Enter Remark"></textarea>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="image">Signature:</label>
+                                                        <input type="file" class="form-control" accept="image/*" id="image"
+                                                            value="{{ old('image') }}"
+                                                            name="image">
+                                                    </div>
                                                 </div>
                                                 
-                                             
+                                                <div style="margin-top:20px">
+                                                    <table class="table table-bordered" id="dynamicTable">
+                                                        <tr>
+                                                            <th>Description</th>
+                                                            <th>QC Check</th>
+                                                            <th>Chalan Quantity</th>
+                                                            <th>Actual Quantity</th>
+                                                            <th>Accepted Quantity</th>
+                                                            <th>Rejected Quantity</th>
+                                                            <th>Action</th>
+                                                        </tr>
 
-                                                {{-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="status">Status:</label>
-                                                    <input type="text" class="form-control" id="status"
-                                                        name="status" placeholder="Enter Status">
-                                               </div>                                             --}}
-                                            </div>
+                                                        <tr>
+                                                            <td><input type="text" name="addmore[0][description]" value="{{ old('description') }}"
+                                                                    placeholder="Enter Description" class="form-control" />
+                                                            </td>
+                                                            <td><input type="text" name="addmore[0][qc_check_remark]" value="{{ old('qc_check_remark') }}"
+                                                                    placeholder="Enter QC Check" class="form-control" />
+                                                            </td>
+                                                            <td><input type="text" name="addmore[0][chalan_quantity]" value="{{ old('chalan_quantity') }}" 
+                                                                    placeholder="Enter Chalan Qty" class="form-control" />
+                                                            </td>
+                                                            <td><input type="text" name="addmore[0][actual_quantity]" value="{{ old('actual_quantity') }}"
+                                                                    placeholder="Enter Actual Qty" class="form-control" />
+                                                            </td>
+                                                            <td><input type="text" name="addmore[0][accepted_quantity]" value="{{ old('accepted_quantity') }}"
+                                                                    placeholder="Enter Accepted Qty" class="form-control" />
+                                                            </td>
+                                                            <td><input type="text" name="addmore[0][rejected_quantity]" value="{{ old('rejected_quantity') }}"
+                                                                    placeholder="Enter Rejected Qty" class="form-control" />
+                                                            </td>
+                                                            <td><button type="button" name="add" id="add"
+                                                                    class="btn btn-success">Add More</button></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
 
-                                            <div class="login-btn-inner">
                                                 <div class="row">
-                                                    <div class="col-lg-5"></div>
-                                                    <div class="col-lg-7">
-                                                        <div class="login-horizental cancel-wp pull-left">
-                                                            <a href="{{ route('list-grn') }}" class="btn btn-white"
-                                                                style="margin-bottom:50px">Cancel</a>
-                                                            <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                type="submit" style="margin-bottom:50px">Save
-                                                                Data</button>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="remark">Remark:</label>
+                                                        <input type="text" class="form-control" id="remark"
+                                                            name="remark" 
+                                                            value="{{ old('remark') }}"
+                                                            placeholder="Enter Remark">
+                                                    </div>
+
+                                                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <label for="remark">Remark:</label>
+                                                            <textarea class="form-control" rows="3" type="text" class="form-control" id="remark"
+                                                            name="remark" placeholder="Enter Remark"></textarea>
+                                                    </div>                                                 -->
+                                                </div>
+
+                                                <div class="login-btn-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-5"></div>
+                                                        <div class="col-lg-7">
+                                                            <div class="login-horizental cancel-wp pull-left">
+                                                                <a href="{{ route('list-grn') }}" class="btn btn-white"
+                                                                    style="margin-bottom:50px">Cancel</a>
+                                                                <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                    type="submit" style="margin-bottom:50px">Save
+                                                                    Data</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -257,94 +225,102 @@ $(document).on("click", ".remove-tr", function() {
 jQuery.noConflict();
 jQuery(document).ready(function($) {
     $("#addDesignsForm").validate({
-        rules: {           
-            // grn_number: {
-            //     required: true,
-            // },
+        rules: { 
             grn_date: {
                 required: true,
+                date: "Please enter a valid GRN date."
             },
             purchase_id: {
                 required: true,
             },
             po_date:{
                 required : true,
+                date: "Please enter a valid PO date."
             },
             invoice_no: {
                 required : true,
             },
             invoice_date : {
                 required : true,
+                date: "Please enter a valid Invoice date."
             },
             remark :{
                 required : true,
             },
             image: {
                 required: true,
-                accept: "image/*",
+                accept: "Please select an Signature Image file.",
             },
             'addmore[0][description]': {
                 required : true,
             },
             'addmore[0][qc_check_remark]': {
-                required : true,
+                required : true,                
             },
             'addmore[0][chalan_quantity]': {
                 required : true,
+                number: true
             },
             'addmore[0][actual_quantity]': {
                 required : true,
+                number: true
             },
             'addmore[0][accepted_quantity]': {
                 required : true,
+                number: true
             },
             'addmore[0][rejected_quantity]': {
                 required : true,
+                number: true
             },  
         },
         messages: {
-            // grn_number: {
-            //     required: "Please Enter GRN Number.",
-            // },
             grn_date: {
                 required: "Please Select GRN Date.",
+                date: "Please enter a valid GRN Date."
             },            
             purchase_id : {
                 required: "Please Enter PO No",
             },
             po_date : {
-                required: "Please select PO Date.",
+                required: "Please Select PO Date.",
+                date: "Please enter a valid PO Date."
             },            
             invoice_no: {
-                required: "Please Enter Invoice No.",
+                required: "Please Enter Invoice No",
             },
             invoice_date : {
                 required: "Please Select Invoice Date.",
+                date: "Please enter a valid Invoice Date."
             },
             remark : {
-                required: "Please enter Remark.",
+                required: "Please Enter Remark.",
             },
             image: {
-                required: "Please select Signature .",
-                accept: "Please select an Signature file.",
+                    required: "Please Upload Signature.",
+                    accept: "Please Upload an Signature file.",
             },            
             'addmore[0][description]': {
-                required: "Please enter Description.",
+                required: "Please Enter Description.",
             },
             'addmore[0][qc_check_remark]': {
-                required: "Please enter QC Check.",
+                required: "Please Enter QC Check.",
             },
             'addmore[0][chalan_quantity]': {
-                required: "Please enter Chalan Qty.",
+                required: "Please Enter Chalan Qty.",
+                number: "Chalan Quantity should contain only numbers."
             },
             'addmore[0][actual_quantity]': {
-                required: "Please enter Actual Qty.",
+                required: "Please Enter Actual Qty.",
+                number: "Actual Quantity should contain only numbers."
             },
             'addmore[0][accepted_quantity]': {
-                required: "Please enter Accepted Qty.",
+                required: "Please Enter Accepted Qty.",
+                number: "Accepted Quantity should contain only numbers."
             },
             'addmore[0][rejected_quantity]': {
-                required: "Please enter Rejected Qty.",
+                required: "Please Enter Rejected Qty.",
+                number: "Rejected Quantity should contain only numbers."
             },
         },
     });
