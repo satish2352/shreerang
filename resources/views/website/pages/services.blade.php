@@ -131,8 +131,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="fancy-head text-center relative z-5 wow fadeInDown">
-                            <h1 class="fs6">Material Handling <span class="green">Equipment For</span></h1>
+                        <div class="fancy-head text-center relative z-5 wow fadeInDown ">
+                            <h1 class="fs6 mthtext">Material Handling <span class="green">Equipment For</span></h1>
                         </div>
                     </div>
                 </div>
@@ -250,7 +250,7 @@
         <div class="container-fluid testmo1 paddiall">
             <div class="row">
                 <div class="col-lg-12"></div>
-                <div class="col-lg-6 col-md-12 p-2">
+                <div class="col-lg-6 col-md-12 p-2 exp">
                     <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/caster.png')}}" class="card-img-top" alt="...">
                         <div class="card-body  text-center card-info">
@@ -259,11 +259,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 p-2 ">
+                <div class="col-lg-6 col-md-12 p-2 exp ">
                     <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/movement.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info">
-                            <h1 class="white fs2 f-600 line-ht"> Movement Trollies </h1>
+                            <h1 class="white fs2 f-600 line-ht pptt"> Movement Trollies </h1>
 
                         </div>
 
@@ -274,7 +274,7 @@
             <div class="row">
 
 
-                <div class="col-lg-6 col-md-12 p-2 ">
+                <div class="col-lg-6 col-md-12 p-2 exp ">
                     <div class="card border-0 bkcl">
                         <img src="{{ asset('website/assets/img/service/fabrication.png')}}" class="card-img-top"
                             alt="...">
@@ -284,7 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 p-2 ">
+                <div class="col-lg-6 col-md-12 p-2 exp ">
                     <div class="card border-0 bkcl ">
                         <img src="{{ asset('website/assets/img/service/presshop.png')}}" class="card-img-top" alt="...">
                         <div class="card-body text-center  card-info1">
