@@ -92,14 +92,7 @@ class StoreReceiptController extends Controller
           }
       }
 
-   
-    //   public function edit(){
-    //     try {
-    //     return view('organizations.store.store-receipt.edit-store-receipt');
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // } 
+
     public function edit(Request $request){
         $edit_data_id = base64_decode($request->id);
       
@@ -109,11 +102,5 @@ class StoreReceiptController extends Controller
         // die();
         return view('organizations.store.store-receipt.edit-store-receipt', compact('editData'));
     }
-
-    // public function add(){
-    //     return view('organizations.store.products.add-products');
-    // }
-
-
 
 }

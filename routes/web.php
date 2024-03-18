@@ -173,11 +173,10 @@ Route::any('/delete-products/{id}', ['as' => 'delete-products', 'uses' => 'App\H
 // ========================Quality Department Start========
 Route::get('/list-grn', ['as' => 'list-grn', 'uses' => 'App\Http\Controllers\Organizations\Quality\GRNController@index']);
 Route::get('/add-grn', ['as' => 'add-grn', 'uses' => 'App\Http\Controllers\Organizations\Quality\GRNController@add']);
-Route::get('/edit-grn', ['as' => 'edit-grn', 'uses' => 'App\Http\Controllers\Organizations\Quality\GRNController@edit']);
 Route::post('/store-grn', ['as' => 'store-grn', 'uses' => 'App\Http\Controllers\Organizations\Quality\GRNController@store']);
-// Route::get('/edit-grn/{id}', ['as' => 'edit-grn', 'uses' => 'App\Http\Controllers\Organizations\Quality\GRNController@edit']);
-// Route::post('/update-grn', ['as' => 'update-grn', 'uses' => 'App\Http\Controllers\Organizations\Quality\GRNController@update']);
-// Route::any('/delete-grn/{id}', ['as' => 'delete-grn', 'uses' => 'App\Http\Controllers\Organizations\Quality\GRNController@destroy']);
+Route::get('/edit-grn', ['as' => 'edit-grn', 'uses' => 'App\Http\Controllers\Organizations\Quality\GRNController@edit']);
+Route::post('/update-grn', ['as' => 'update-grn', 'uses' => 'App\Http\Controllers\Organizations\Quality\GRNController@update']);
+
 // ========================Quality Department End========
 
 
@@ -211,19 +210,32 @@ Route::get('/edit-gatepass', ['as' => 'edit-gatepass', 'uses' => 'App\Http\Contr
 
 Route::get('/list-requistion', ['as' => 'list-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@index']);
 Route::get('/add-requistion', ['as' => 'add-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@add']);
+Route::post('/store-requistion', ['as' => 'store-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@store']);
 Route::get('/edit-requistion', ['as' => 'edit-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@edit']);
+Route::post('/update-requistion', ['as' => 'update-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@update']);
+
 // ======================== End Requistion controller ========
+
+
 // ========================  Start DocUploadFianace ========
 
-Route::get('/list-doc-upload-fianace', ['as' => 'list-doc-upload-fianace', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@index']);
-Route::get('/add-doc-upload-fianace', ['as' => 'add-doc-upload-fianace', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@add']);
-Route::get('/edit-doc-upload-fianace', ['as' => 'edit-doc-upload-fianace', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@edit']);
+Route::get('/list-docuploadfinance', ['as' => 'list-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@index']);
+Route::get('/add-docuploadfinance', ['as' => 'add-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@add']);
+Route::post('/store-docuploadfinance', ['as' => 'store-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@store']);
+Route::get('/edit-docuploadfinance', ['as' => 'edit-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@edit']);
+Route::post('/update-docuploadfinance', ['as' => 'update-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@update']); 
+
+
 // ========================  End DocUploadFianace ========
+
 // ======================== Start Security Remarkcontroller========
+
 Route::get('/list-security-remark', ['as' => 'list-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@index']);
 Route::get('/add-security-remark', ['as' => 'add-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@add']);
 Route::get('/edit-security-remark', ['as' => 'edit-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@edit']);
+
 // ========================End Security Remarkcontroller========
+
 // ======================== Start store receipt controller ========
 
 Route::get('/list-store-receipt', ['as' => 'list-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@index']);
@@ -233,9 +245,13 @@ Route::get('/edit-store-receipt', ['as' => 'edit-store-receipt', 'uses' => 'App\
 Route::post('/update-store-receipt', ['as' => 'update-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@update']); 
 
 // ======================== End store receipt controller ========
+
 // ========================  Start Vendor controller ========
 
 Route::get('/list-vendor', ['as' => 'list-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@index']);
 Route::get('/add-vendor', ['as' => 'add-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@add']);
+Route::post('/store-vendor', ['as' => 'store-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@store']);
 Route::get('/edit-vendor', ['as' => 'edit-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@edit']);
+Route::post('/update-vendor', ['as' => 'update-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@update']); 
+
 // ========================  End Vendor controller ========

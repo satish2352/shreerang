@@ -26,7 +26,8 @@ use Config;
         try {
             $last_id = $this->repo->addAll($request);
     //  dd($last_id);
-            $path = Config::get('DocumentConstant.DESIGNS_ADD');
+            // $path = Config::get('DocumentConstant.DESIGNS_ADD');
+            $path = Config::get('FileConstant.PURCHASE_ORDER_ADD');
             $ImageName = $last_id['ImageName'];
             uploadImage($request, 'image', $path, $ImageName);
             
@@ -55,11 +56,13 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-            $path = Config::get('DocumentConstant.DESIGNS_ADD');
+            // dd($return_data);
+            // die();
+            $path = Config::get('FileConstant.PURCHASE_ORDER_ADD');
             if ($request->hasFile('image')) {
                 if ($return_data['image']) {
-                    if (file_exists_view(Config::get('DocumentConstant.DESIGNS_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('DocumentConstant.DESIGNS_DELETE') . $return_data['image']);
+                    if (file_exists_view(Config::get('FileConstant.PURCHASE_ORDER_DELETE') . $return_data['image'])) {
+                        removeImage(Config::get('FileConstant.PURCHASE_ORDER_DELETE') . $return_data['image']);
                     }
 
                 }

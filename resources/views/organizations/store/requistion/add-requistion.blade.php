@@ -2,7 +2,7 @@
 @section('content')
 <style>
 label {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 label.error {
@@ -14,6 +14,7 @@ label.error {
 }
 </style>
 
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -21,7 +22,7 @@ label.error {
                 <div class="sparkline12-hd">
                     <div class="main-sparkline12-hd">
                         <center>
-                            <h1>Add Requistion Data</h1>
+                            <h1>Add Requisition Data</h1>
                         </center>
                     </div>
                 </div>
@@ -58,7 +59,7 @@ label.error {
                                 @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <form action="{{ route('store-products') }}" method="POST" id="addDesignsForm"
+                                        <form action="{{ route('store-requistion') }}" method="POST" id="addDesignsForm"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group-inner">
@@ -103,26 +104,34 @@ label.error {
 
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="req_name">Requistion Name :</label>
+                                                    <label for="req_name">Requisition Name :</label>
                                                         <input type="text" class="form-control" id="req_name"
-                                                            name="req_name" placeholder="Enter your requistion name ">
+                                                            name="req_name" 
+                                                            value="{{ old('req_name') }}"
+                                                            placeholder="Enter your Requisition name ">
                                                     </div>
 
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="req_number">Requistion Number :</label>
+                                                    <label for="req_number">Requisition Number :</label>
                                                         <input type="text" class="form-control" id="req_number"
-                                                            name="req_number" placeholder="Enter your requistion number ">
+                                                            name="req_number" 
+                                                            value="{{ old('req_number') }}"
+                                                            placeholder="Enter your Requisition number ">
                                                     </div>
 
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="req_date">Requistion Date :</label>
+                                                    <label for="req_date">Requisition Date :</label>
                                                         <input type="date" class="form-control" id="req_date"
-                                                            name="req_date" placeholder="Enter requistion date ">
+                                                            name="req_date" 
+                                                            value="{{ old('req_date') }}"
+                                                            placeholder="Enter Requisition date ">
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <label for="signature">Signature :</label>
                                                         <input type="file" class="form-control" accept="image/*" id="signature"
-                                                            name="signature" placeholder="Enter signature">
+                                                            name="signature" 
+                                                            value="{{ old('signature') }}"
+                                                            placeholder="Enter signature">
                                                     </div>
                                                     </div>
 
@@ -142,29 +151,40 @@ label.error {
                                                         </tr>
 
                                                         <tr>
-                                                            <td><input type="text" name="addmore[0][description]"
-                                                                    placeholder="Enter your description" class="form-control" />
+                                                            <td>
+                                                                <input type="text" name="addmore[0][description]" value="{{ old('description') }}"
+                                                                    placeholder="Enter your Description" class="form-control" />
                                                             </td>
 
-                                                            <td><input type="text" name="addmore[0][quantity]"
+                                                            <td>
+                                                                <input type="text" name="addmore[0][quantity]" value="{{ old('quantity') }}"
                                                                     placeholder="Enter your quntity" class="form-control" />
                                                             </td>
 
-                                                            <td><input type="text" name="addmore[0][unit]"
+                                                            <td>
+                                                                <input type="text" name="addmore[0][unit]" value="{{ old('unit') }}"
                                                                     placeholder="Enter your unit" class="form-control" />
                                                             </td>
-                                                            <td><input type="text" name="addmore[0][day]"
+
+                                                            <td>
+                                                                <input type="text" name="addmore[0][day]" value="{{ old('day') }}"
                                                                     placeholder="Enter your day" class="form-control" />
                                                             </td>
-                                                            <td><input type="text" name="addmore[0][remark]"
+
+                                                            <td>
+                                                                <input type="text" name="addmore[0][remark]" value="{{ old('remark') }}"
                                                                     placeholder="Enter your remark" class="form-control" />
                                                             </td>
-                                                            <td><input type="text" name="addmore[0][stock]"
+
+                                                            <td>
+                                                                <input type="text" name="addmore[0][stock]" value="{{ old('stock') }}"
                                                                     placeholder="Enter your stock" class="form-control" />
                                                             </td>
 
-                                                            <td><button type="button" name="add" id="add"
-                                                                    class="btn btn-success">Add More</button></td>
+                                                            <td>
+                                                                <button type="button" name="add" id="add"
+                                                                    class="btn btn-success">Add More</button>
+                                                            </td>
 
                                                         </tr>
 
@@ -231,87 +251,87 @@ $(document).on("click", ".remove-tr", function() {
 jQuery.noConflict();
 jQuery(document).ready(function($) {
     $("#addDesignsForm").validate({
-        rules: {
-          
+        rules: {          
             department_id: {
                 required: true,
-                // Add your custom validation rule if needed
             },
             req_name: {
                 required: true,
             },
             req_number: {
                 required: true,
+                number: true 
             },
             req_date: {
                 required: true,
-            },
-            description: {
-                required: true,
-            },
-            quantity: {
-                required: true,
-            },
-            unit: {
-                required: true,
-            },
-            day: {
-                required: true,
-            },          
-            remark: {
-                required: true,
-            },
-            stock: {
-                required: true,
+                date : true
             },
             signature: {
                 required: true,
+                accept: "Please select an Signature Image file.",
             },
-            status: {
-                required: true,
+
+            'addmore[0][description]': {
+                required : true,                
+            },
+            'addmore[0][quantity]': {
+                required : true,
+                number: true
+            },
+            'addmore[0][unit]': {
+                required : true,
+            },
+            'addmore[0][day]': {
+                required : true,
+            },
+            'addmore[0][remark]': {
+                required : true,
+            },   
+            'addmore[0][stock]': {
+                required : true,
             },
         },
+
         messages: {
           
             department_id: {
                 required: "Please select a valid department id.",
             },
             req_name: {
-                required: "Please enter requistion name.",
+                required: "Please Enter Requisition name.",
             },
             req_number: {
-                required: "Please enter requistion number.",
+                required: "Please Enter Requisition Number.",
+                number: "Requisition Number should contain only numbers."
             },
             req_date: {
-                required: "Please enter requistion date.",
-            },
-            description: {
-                required: "Please enter description.",
-            },
-            quantity: {
-                required: "Please enter quantity.",
-            },
-            unit: {
-                required: "Please enter unit.",
-            },
-            day: {
-                required: "Please enter day.",
-            },
-            remark: {
-                required: "Please enter remark.",
-            },
-            stock: {
-                required: "Please enter stock.",
-            },
-            signature: {
-                required: "Please select a signature.",
-                accept: "Please select an image file.",
-            },
-        
-            status: {
-                required: "Please enter status",
+                required: "Please Select Requisition date.",
+                date: "Please Select a valid Requisition date."
             },
 
+            'addmore[0][description]': {
+                required: "Please Enter Description.",                
+            },
+            'addmore[0][quantity]': {
+                required: "Please Enter Quantity.",
+                number: "Quantity should contain only numbers."
+            },            
+            'addmore[0][unit]': {
+                required: "Please Enter Unit.",
+            }, 
+            'addmore[0][day]': {
+                required: "Please Enter Day.",
+            },
+            'addmore[0][remark]': {
+                required: "Please Enter Remark.",
+            },
+            'addmore[0][stock]': {
+                required: "Please Enter Stock.",
+            },     
+            signature: {
+                required: "Please Upload a Signature.",
+                accept: "Please Upload an Signature image file.",
+            },
         },
     });
 });

@@ -2,7 +2,7 @@
 @section('content')
     <style>
         label {
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         label.error {
@@ -13,13 +13,15 @@
             /* Add any other styling as per your design */
         }
     </style>
+
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="sparkline12-list">
                 <div class="sparkline12-hd">
                     <div class="main-sparkline12-hd">
                         <center>
-                            <h1>Edit Production Data</h1>
+                            <h1>Edit Requisition Data</h1>
                         </center>
                     </div>
                 </div>
@@ -47,17 +49,18 @@
                                 @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <form action="{{ route('update-products', 
+                                        <form action="{{ route('update-requistion', 
                                        ) }}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                             @csrf
                                            
-                                            <a
+                                            <!-- <a
                                              {{-- href="{{ route('add-more-data') }}" --}}
-                                            class="btn btn-sm btn-primary ml-3"> <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
+                                            class="btn btn-sm btn-primary ml-3"> 
+                                            <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
 
                                             <div class="container-fluid">
-                                                @if ($errors->any())
+                                                <!-- @if ($errors->any())
                                                     <div class="alert alert-danger">
                                                         <ul>
                                                             @foreach ($errors->all() as $error)
@@ -65,111 +68,155 @@
                                                             @endforeach
                                                         </ul>
                                                     </div>
-                                                @endif
+                                                @endif -->
 
-                                                <table class="table table-bordered" id="dynamicTable">
-                                                    <tr>
-                                                        <th>Product Name</th>
-                                                        <th>Product Qty</th>
-                                                        <th>Product Price</th>
-                                                        <th>Product Unit</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                    {{-- @foreach ($editData as $key => $editDataNew) --}}
-                                                        <tr>
-                                                            <input type="hidden" name=""
-                                                                id="" class="form-control"
-                                                                value=""
-                                                                placeholder="">
-                                                            <td>
-                                                                <input type="text"
-                                                                    name=""
-                                                                    value=""
-                                                                    placeholder="Enter Product Name" class="form-control" />
-                                                            </td>
-                                                            <td><input type="text"
-                                                                    name=""
-                                                                    value=""
-                                                                    placeholder="Enter Product Quantity"
-                                                                    class="form-control" /></td>
-                                                            <td><input type="text"
-                                                                    name=""
-                                                                    value=""
-                                                                    placeholder="Enter Product Price"
-                                                                    class="form-control" /></td>
-                                                            <td><input type="text"
-                                                                    name=""
-                                                                    value=""
-                                                                    placeholder="Enter Product Unit" class="form-control" />
-                                                            </td>
-                                                            {{-- <td><button type="button" class="btn btn-danger remove-tr">Remove</button></td> --}}
-                                                            <td>
-                                                                
-                                                                <a data-id=""
-                                                                    class="delete-btn btn btn-danger m-1"
-                                                                    title="Delete Tender"><i
-                                                                        class="fas fa-archive"></i></a>
-                                                         
+                                        @foreach ($editData as $key => $editDataNew)
+                                        @if ($key == 0)
+                                        <div class="form-group-inner">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <label for="req_name">Requisition Name :</label>
+                                                    <input type="text" class="form-control" id="req_name"
+                                                        name="req_name" 
+                                                        value="{{ $editDataNew->req_name }}"
+                                                        placeholder="Enter your Requisition Name ">
+                                                </div>
 
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <label for="req_number">Requisition Number :</label>
+                                                    <input type="text" class="form-control" id="req_number"
+                                                        name="req_number" 
+                                                        value="{{ $editDataNew->req_number }}"
+                                                        placeholder="Enter your Requisition Number ">
+                                                </div>
+                                            </div>    
 
-                                                                {{-- <button type="button" class="btn btn-danger remove-tr " data-row-id="{{ $editDataNew->designs_details_id }}">Remove</button> --}}
-                                                            </td>
-                                                        </tr>
-                                                    {{-- @endforeach --}}
-                                                </table>
-                                                {{-- @foreach ($editData as $key=> $editDataNew)
-                                                @if($key == 0) --}}
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <label for="design_page">Product Page:</label>
-                                                                <input type="text" class="form-control" id="design_page" name="design_page" value="" placeholder="Enter Design Page">
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <label for="project_name">Project Name:</label>
-                                                                <input type="text" class="form-control" id="project_name" name="project_name" value="" placeholder="Enter Project Name">
-                                                            </div>
-                                                        </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <label for="req_date">Requisition Date :</label>
+                                                    <input type="date" class="form-control" id="req_date"
+                                                        name="req_date" 
+                                                        value="{{ $editDataNew->req_date }}"
+                                                        placeholder="Enter Requisition Date ">
+                                                </div>
 
-                                                        <div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <label for="time_allocation">Time Allocated For Product:</label>
-                                                                <input type="text" class="form-control" id="time_allocation" name="time_allocation" value="" placeholder="Enter Time Allocated For Product">
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <label for="image">Image:</label>
-                                                                <input type="file" class="form-control" accept="image/*" id="image" name="image">
-                                                                <div id="oldImageDisplay">
-                                                                    {{-- @if (isset($editDataNew->image)) --}}
-                                                                        <b>Image Preview: </b>
-                                                                        <img src="" alt="Old Image" style="max-width: 100px;">
-                                                                    {{-- @endif --}}
-                                                                </div>
-                                                                <div id="selectedImageDisplay" style="display: none;">
-                                                                    <b>Image Preview: </b>
-                                                                    <img src="" alt="Selected Image" style="max-width: 100px;">
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <label for="signature">Image:</label>
+                                                    <input type="file" class="form-control"
+                                                        accept="image/*" id="signature" name="signature">
+                                                    <div id="oldImageDisplay">
+                                                        @if (isset($editDataNew->signature))
+                                                            <b>Image Preview: </b>
+                                                            <img src="{{ Config::get('FileConstant.REQUISITION_VIEW') . $editDataNew->signature }}"
+                                                                alt="Old Image" style="max-width: 100px;">
+                                                        @endif
                                                     </div>
-                                                {{-- @endif --}}
-                                            {{-- @endforeach --}}
-                                                <div class="login-btn-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-5"></div>
-                                                        <div class="col-lg-7">
-                                                            <div class="login-horizental cancel-wp pull-left">
-                                                                <a href="{{ route('list-products') }}"
-                                                                    class="btn btn-white"
-                                                                    style="margin-bottom:50px">Cancel</a>
-                                                                <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                    type="submit" style="margin-bottom:50px">Update Data</button>
-                                                               
-                                                            </div>
-                                                        </div>
+                                                    <div id="selectedImageDisplay" style="display: none;">
+                                                        <b>Image Preview: </b>
+                                                        <img src="" alt="Selected Image"
+                                                            style="max-width: 100px;">
+                                                    </div>
+                                                </div>                                                        
+                                            </div>
+                                            @endif
+                                        @endforeach
+
+                                        <div style="margin-top:10px">
+                                            <table class="table table-bordered" id="dynamicTable">
+                                                <tr>
+                                                    <th>Description</th>
+                                                    <th>Quantity</th>
+                                                    <th>Unit</th>
+                                                    <th>Day</th>
+                                                    <th>Remark</th>
+                                                    <th>Stock</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                
+                                                @foreach ($editData as $key => $editDataNew)                                                        
+                                                    <tr>
+                                                        <input type="hidden" name="design_count"
+                                                        id="design_id_{{ $key }}" class="form-control"
+                                                        value="{{ $key}}"
+                                                        placeholder="">
+
+                                                        <input type="hidden" name="design_id_{{ $key }}"
+                                                            id="design_id_{{ $key }}" class="form-control"
+                                                            value="{{ $editDataNew->purchase_order_details_id }}"
+                                                            placeholder="">
+                                                                                                                    
+                                                        <td>
+                                                            <input type="text"
+                                                                name="description_{{ $key }}"
+                                                                value="{{ $editDataNew->description}}"
+                                                                placeholder="Enter Description"
+                                                                class="form-control" />
+                                                        </td>                                                                                                                                
+
+                                                        <td>
+                                                            <input type="text"
+                                                                name="quantity_{{ $key }}"
+                                                                value="{{ $editDataNew->quantity}}"
+                                                                placeholder="Enter Quantity"
+                                                                class="form-control" />
+                                                        </td>
+
+                                                        <td>
+                                                            <input type="text"
+                                                                name="unit_{{ $key }}"
+                                                                value="{{ $editDataNew->unit}}"
+                                                                placeholder="Enter Unit" class="form-control" />
+                                                        </td>
+
+                                                        <td>
+                                                            <input type="text"
+                                                                name="day_{{ $key }}"
+                                                                value="{{ $editDataNew->day}}"
+                                                                placeholder="Enter Day" class="form-control" />
+                                                        </td>
+
+                                                        <td>
+                                                            <input type="text"
+                                                                name="remark_{{ $key }}"
+                                                                value="{{ $editDataNew->remark}}"
+                                                                placeholder="Enter Remark" class="form-control" />
+                                                        </td>
+
+                                                        <td>
+                                                            <input type="text"
+                                                                name="stock_{{ $key }}"
+                                                                value="{{ $editDataNew->stock}}"
+                                                                placeholder="Enter Stock" class="form-control" />
+                                                        </td>
+
+                                                        <td>
+                                                            <a data-id="{{ $editDataNew->id }}"
+                                                                class="delete-btn btn btn-danger m-1"
+                                                                title="Delete Tender"><i
+                                                                    class="fas fa-archive"></i></a>
+        
+                                                            </td>
+                                                    </tr>
+                                                    @endforeach                                        
+                                            </table>
+                                        </div>    
+                                                
+                                        <div class="login-btn-inner">
+                                            <div class="row">
+                                                <div class="col-lg-5"></div>
+                                                <div class="col-lg-7">
+                                                    <div class="login-horizental cancel-wp pull-left">
+                                                        <a href="{{ route('list-requistion') }}"
+                                                            class="btn btn-white"
+                                                            style="margin-bottom:50px">Cancel</a>
+                                                        <button class="btn btn-sm btn-primary login-submit-cs"
+                                                            type="submit" style="margin-bottom:50px">Update Data</button>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
                                     </div>
                                     </form>
                                 </div>
@@ -180,7 +227,9 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
+
+
     <form method="POST" action="{{ route('delete-addmore') }}" id="deleteform">
         @csrf
         <input type="hidden" name="delete_id" id="delete_id" value="">

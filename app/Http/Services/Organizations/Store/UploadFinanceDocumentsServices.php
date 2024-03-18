@@ -1,28 +1,18 @@
 <?php
 namespace App\Http\Services\Organizations\Store;
-use App\Http\Repository\Organizations\Store\StoreReceiptRepository;
+use App\Http\Repository\Organizations\Store\UploadFinanceDocumentsRepository;
 use Carbon\Carbon;
 use App\Models\ {
     DesignModel
     };
 
 use Config;
-    class StoreReceiptServices
+    class UploadFinanceDocumentsServices
     {
         protected $repo;
         public function __construct(){
-        $this->repo = new StoreReceiptRepository();
+        $this->repo = new UploadFinanceDocumentsRepository();
     }
-
-
-    // public function getAll(){
-    //     try {
-    //         return $this->repo->getAll();
-
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // }
 
     public function getAll(){
         try {
@@ -38,10 +28,12 @@ use Config;
             $last_id = $this->repo->addAll($request);
             // dd($last_id);
 
-            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
+            $path = Config::get('FileConstant.UPLOAD_FINANCE_DOC_ADD');
             $ImageName = $last_id['ImageName'];
-            uploadImage($request, 'signature', $path, $ImageName);
-            
+            $srImageName = $last_id['srImageName'];
+            uploadImage($request, 'grn_image', $path, $ImageName);
+            uploadImage($request, 'sr_image', $path, $srImageName);
+            //  dd($last_id);
             if ($last_id) {
                 return ['status' => 'success', 'msg' => 'Data Added Successfully.'];
             } else {
@@ -69,11 +61,11 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
+            $path = Config::get('FileConstant.UPLOAD_FINANCE_DOC_ADD');
             if ($request->hasFile('image')) {
                 if ($return_data['image']) {
-                    if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image']);
+                    if (file_exists_view(Config::get('FileConstant.UPLOAD_FINANCE_DOC_DELETE') . $return_data['image'])) {
+                        removeImage(Config::get('FileConstant.UPLOAD_FINANCE_DOC_DELETE') . $return_data['image']);
                     }
 
                 }

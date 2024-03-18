@@ -1,33 +1,25 @@
 <?php
-namespace App\Http\Services\Organizations\Store;
-use App\Http\Repository\Organizations\Store\StoreReceiptRepository;
+namespace App\Http\Services\Organizations\Quality;
+use App\Http\Repository\Organizations\Quality\GRNRepository;
 use Carbon\Carbon;
 use App\Models\ {
-    DesignModel
-    };
+    GRN , 
+    GRNDetails
+};
 
 use Config;
-    class StoreReceiptServices
+    class GRNServices
     {
         protected $repo;
         public function __construct(){
-        $this->repo = new StoreReceiptRepository();
+        $this->repo = new GRNRepository();
     }
-
-
-    // public function getAll(){
-    //     try {
-    //         return $this->repo->getAll();
-
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // }
 
     public function getAll(){
         try {
             $data = $this->repo->getAll();
-            return $data; // Add this line to return the data
+            return $data; 
+            
         } catch (\Exception $e) {
             return $e;
         }
@@ -38,9 +30,9 @@ use Config;
             $last_id = $this->repo->addAll($request);
             // dd($last_id);
 
-            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
+            $path = Config::get('FileConstant.GRN_ADD');
             $ImageName = $last_id['ImageName'];
-            uploadImage($request, 'signature', $path, $ImageName);
+            uploadImage($request, 'image', $path, $ImageName);
             
             if ($last_id) {
                 return ['status' => 'success', 'msg' => 'Data Added Successfully.'];
@@ -69,11 +61,11 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
+            $path = Config::get('FileConstant.GRN_ADD');
             if ($request->hasFile('image')) {
                 if ($return_data['image']) {
-                    if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image']);
+                    if (file_exists_view(Config::get('FileConstant.GRN_DELETE') . $return_data['image'])) {
+                        removeImage(Config::get('FileConstant.GRN_DELETE') . $return_data['image']);
                     }
 
                 }

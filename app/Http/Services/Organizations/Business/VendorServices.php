@@ -1,28 +1,18 @@
 <?php
-namespace App\Http\Services\Organizations\Store;
-use App\Http\Repository\Organizations\Store\StoreReceiptRepository;
+namespace App\Http\Services\Organizations\Business;
+use App\Http\Repository\Organizations\Business\VendorRepository;
 use Carbon\Carbon;
 use App\Models\ {
-    DesignModel
+    Vendor
     };
 
 use Config;
-    class StoreReceiptServices
+    class VendorServices
     {
         protected $repo;
         public function __construct(){
-        $this->repo = new StoreReceiptRepository();
+        $this->repo = new VendorRepository();
     }
-
-
-    // public function getAll(){
-    //     try {
-    //         return $this->repo->getAll();
-
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // }
 
     public function getAll(){
         try {
@@ -38,9 +28,9 @@ use Config;
             $last_id = $this->repo->addAll($request);
             // dd($last_id);
 
-            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
-            $ImageName = $last_id['ImageName'];
-            uploadImage($request, 'signature', $path, $ImageName);
+            // $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
+            // $ImageName = $last_id['ImageName'];
+            // uploadImage($request, 'signature', $path, $ImageName);
             
             if ($last_id) {
                 return ['status' => 'success', 'msg' => 'Data Added Successfully.'];
@@ -69,25 +59,25 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-            $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
-            if ($request->hasFile('image')) {
-                if ($return_data['image']) {
-                    if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image']);
-                    }
+            // $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
+            // if ($request->hasFile('image')) {
+            //     if ($return_data['image']) {
+            //         if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image'])) {
+            //             removeImage(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image']);
+            //         }
 
-                }
-                if ($request->hasFile('image')) {
-                    $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->file('image')->extension();
+            //     }
+            //     if ($request->hasFile('image')) {
+            //         $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->file('image')->extension();
                     
-                } else {
+            //     } else {
                     
-                }                
-                uploadImage($request, 'image', $path, $englishImageName);
-                $slide_data = DesignModel::find($return_data['last_insert_id']);
-                $slide_data->image = $englishImageName;
-                $slide_data->save();
-            }      
+            //     }                
+            //     uploadImage($request, 'image', $path, $englishImageName);
+            //     $slide_data = DesignModel::find($return_data['last_insert_id']);
+            //     $slide_data->image = $englishImageName;
+            //     $slide_data->save();
+            // }      
             
             // dd($return_data);
             //     die();
@@ -117,16 +107,16 @@ use Config;
         } 
     }
 
-    public function deleteByIdAddmore($id){
-        try {
-            $delete = $this->repo->deleteByIdAddmore($id);
-            if ($delete) {
-                return ['status' => 'success', 'msg' => 'Deleted Successfully.'];
-            } else {
-                return ['status' => 'error', 'msg' => ' Not Deleted.'];
-            }  
-        } catch (Exception $e) {
-            return ['status' => 'error', 'msg' => $e->getMessage()];
-        } 
-    }
+    // public function deleteByIdAddmore($id){
+    //     try {
+    //         $delete = $this->repo->deleteByIdAddmore($id);
+    //         if ($delete) {
+    //             return ['status' => 'success', 'msg' => 'Deleted Successfully.'];
+    //         } else {
+    //             return ['status' => 'error', 'msg' => ' Not Deleted.'];
+    //         }  
+    //     } catch (Exception $e) {
+    //         return ['status' => 'error', 'msg' => $e->getMessage()];
+    //     } 
+    // }
 }

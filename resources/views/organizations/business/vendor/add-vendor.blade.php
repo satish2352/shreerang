@@ -2,7 +2,7 @@
 @section('content')
 <style>
 label {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 label.error {
@@ -13,161 +13,111 @@ label.error {
     /* Add any other styling as per your design */
 }
 </style>
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="sparkline12-list">
-            <div class="sparkline12-hd">
-                <div class="main-sparkline12-hd">
-                    <center>
-                        <h1>Vendor Registration Form</h1>
-                    </center>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="sparkline12-list">
+                <div class="sparkline12-hd">
+                    <div class="main-sparkline12-hd">
+                        <center>
+                            <h1>Vendor Registration Form</h1>
+                        </center>
+                    </div>
                 </div>
-            </div>
-            <div class="sparkline12-graph">
-                <div class="basic-login-form-ad">
-                    <div class="row">
-                        @if (session('msg'))
-                        <div class="alert alert-{{ session('status') }}">
-                            {{ session('msg') }}
-                        </div>
-                        @endif
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            @if (Session::get('status') == 'success')
-                            <div class="col-md-12">
-                                <div class="alert alert-success alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Success!</strong> {{ Session::get('msg') }}
-                                </div>
-                            </div>
-                            @endif
-
-                            @if (Session::get('status') == 'error')
-                            <div class="col-md-12">
-                                <div class="alert alert-danger alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Error!</strong> {!! session('msg') !!}
-                                </div>
-                            </div>
-                            @endif
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="all-form-element-inner">
-                                    <form action="{{ route('store-products') }}" method="POST" id="addDesignsForm"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="form-group-inner">
-
-                                            {{-- ========================== --}}
-                                            <div class="container-fluid">
-                                                {{-- <form 
-                                                action="{{ route('addmorePost') }}"
-                                                method="POST"> --}}
-
-                                                {{-- @csrf --}}
-
-                                                @if ($errors->any())
-                                                <div class="alert alert-danger">
-
-                                                    <ul>
-
-                                                        @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                        @endforeach
-
-                                                    </ul>
-
-                                                </div>
-                                                @endif
-
-                                                @if (Session::has('success'))
-                                                <div class="alert alert-success text-center">
-
-                                                    <a href="#" class="close" data-dismiss="alert"
-                                                        aria-label="close">×</a>
-
-                                                    <p>{{ Session::get('success') }}</p>
-
-                                                </div>
-                                                @endif
-
-
-                                            </div>
-
-                                            {{-- =================== --}}
-
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                        <label for="vendor_name">Vendor Name:</label>
-                                                        <input type="text" class="form-control" id="vendor_name"
-                                                            name="vendor_name" placeholder="Enter your name">
-                                                </div>                                           
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="address">Address :</label>
-                                                    <input type="text" class="form-control" id="address"
-                                                        name="address" placeholder="Enter your address">
-                                                </div>    
-                                                
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="gst_no">GST No:</label>
-                                                    <input type="text" class="form-control" id="gst_no"
-                                                        name="gst_no" placeholder="Enter GST number">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="contact_no">Contact No. :</label>
-                                                    <input type="text" class="form-control" id="contact_no"
-                                                        name="contact_no" placeholder="Enter your contact No.">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="email">Address:</label>
-                                                    <input type="email" class="form-control" id="email"
-                                                        name="email" placeholder="Enter your email">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="quote_no">Quote No:</label>
-                                                    <input type="text" class="form-control" id="quote_no"
-                                                        name="quote_no" placeholder="Enter your quote no">
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="payment_terms">Payment Terms:</label>
-                                                    <input type="text" class="form-control" id="payment_terms"
-                                                        name="payment_terms" placeholder="Enter your payment terms">
-                                                </div>
-                                                                                                  
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <label for="status">Status :</label>
-                                                    <input type="text" class="form-control" id="status"
-                                                        name="status" placeholder="Enter status here">
-                                                </div>
-                                               
-                                            </div>
-                                                
-                                      
-
-                                            <div class="login-btn-inner">
+                <div class="sparkline12-graph">
+                    <div class="basic-login-form-ad">
+                        <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="all-form-element-inner">
+                                        <form action="{{ route('store-vendor') }}" method="POST" id="addDesignsForm"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group-inner">                                               
                                                 <div class="row">
-                                                    <div class="col-lg-5"></div>
-                                                    <div class="col-lg-7">
-                                                        <div class="login-horizental cancel-wp pull-left">
-                                                            <a href="{{ route('list-vendor') }}" class="btn btn-white"
-                                                                style="margin-bottom:50px">Cancel</a>
-                                                            <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                type="submit" style="margin-bottom:50px">Save
-                                                                Data</button>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <label for="vendor_name">Vendor Name:</label>
+                                                            <input type="text" class="form-control" id="vendor_name"
+                                                                name="vendor_name" 
+                                                                value="{{ old('vendor_name') }}"
+                                                                placeholder="Enter Vendor Name">
+                                                    </div>                                           
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="address">Address :</label>
+                                                        <input type="text" class="form-control" id="address"
+                                                            name="address" 
+                                                            value="{{ old('address') }}"
+                                                            placeholder="Enter Address">
+                                                    </div>  
+                                                </div>      
+                                                
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="gst_no">GST No:</label>
+                                                        <input type="text" class="form-control" id="gst_no"
+                                                            name="gst_no" 
+                                                            value="{{ old('gst_no') }}"
+                                                            placeholder="Enter GST Number">
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="contact_no">Contact No. :</label>
+                                                        <input type="text" class="form-control" id="contact_no"
+                                                            name="contact_no" 
+                                                            value="{{ old('contact_no') }}"
+                                                            placeholder="Enter Contact No"
+                                                            pattern="[789]{1}[0-9]{9}" 
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" 
+                                                            maxlength="10" 
+                                                            minlength="10">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="email">Email Id:</label>
+                                                        <input type="email" class="form-control" id="email"
+                                                            name="email" 
+                                                            value="{{ old('email') }}"
+                                                            placeholder="Enter Email">
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="quote_no">Quote No:</label>
+                                                        <input type="text" class="form-control" id="quote_no"
+                                                            name="quote_no" 
+                                                            value="{{ old('quote_no') }}"
+                                                            placeholder="Enter Quote No">
+                                                    </div>
+                                                </div>    
+
+                                                <div class="row">                                                    
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <label for="payment_terms">Payment Terms:</label>
+                                                            <input type="text" class="form-control" id="payment_terms"
+                                                                name="payment_terms" 
+                                                                value="{{ old('payment_terms') }}"
+                                                                placeholder="Enter Payment Terms">
+                                                    </div>  
+                                                </div>
+                                                                                        
+                                                <div class="login-btn-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-5"></div>
+                                                        <div class="col-lg-7">
+                                                            <div class="login-horizental cancel-wp pull-left">
+                                                                <a href="{{ route('list-vendor') }}" class="btn btn-white"
+                                                                    style="margin-bottom:50px">Cancel</a>
+                                                                <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                    type="submit" style="margin-bottom:50px">Save
+                                                                    Data</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -176,95 +126,87 @@ label.error {
             </div>
         </div>
     </div>
-</div>
+</div>    
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+
 <script>
-var i = 0;
+    jQuery.noConflict();
+    jQuery(document).ready(function($) {
+        $("#addDesignsForm").validate({
+            rules: {
+                vendor_name: {
+                    required: true,
+                    noNumbers: true
+                },
+                address: {
+                    required: true,
+                },
+                gst_no: {
+                    required: true,
+                    // gstIN: true,
+                },
+                contact_no: {
+                    required: true,
+                    digits: true
+                },
+                email: {
+                    required: true,
+                    email: true,
+                },
+                quote_no: {
+                    required: true,
+                    number: true
+                },
+                payment_terms: {
+                    required: true,
+                },
+            },
 
-$("#add").click(function() {
-    ++i;
+            messages: {
+                vendor_name: {
+                    required: "Please Enter Vendor Name.",
+                    noNumbers: "Vendor Name should not contain any numbers."
+                },
+                address: {
+                    required: "Please Enter Address.",
+                },
+                gst_no: {
+                    required: "Please Enter GST No.",
+                    // gstIN: "Please Enter a valid GST No.",
+                },
+                contact_no: {
+                    required: "Please Enter a valid Contact No.",
+                    digits: "Contact Number should contain only digits."
+                },
+                email: {
+                    required: "Please Enter valid Email.",
+                    email: "Please Enter a valid Email Address.",
+                },
+                quote_no: {
+                    required: "Please Enter Quote No.",
+                    number: "Quote No. should contain only numbers."
+                },
+                payment_terms: {
+                    required: "Please Enter Payment terms.",
+                },                             
 
-    $("#dynamicTable").append(
-        '<tr><td><input type="text" name="addmore[' +
-        i +
-        '][quantity]" placeholder="Enter your quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][description]" placeholder="Enter your description" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][price]" placeholder="Enter your Price" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][amount]" placeholder="Enter your amount" class="form-control" /></td><td><input type="text" name="addmore[' +
-        i +
-        '][total]" placeholder="Enter your total" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
-    );
+            },
+        });
+
+
+        $.validator.addMethod("noNumbers", function(value, element) {
+            return this.optional(element) || !/\d/.test(value);
+        }, "Vendor Name should not contain any numbers.");
+        
 });
 
-$(document).on("click", ".remove-tr", function() {
-    $(this).parents("tr").remove();
-});
-</script>
-<script>
-jQuery.noConflict();
-jQuery(document).ready(function($) {
-    $("#addDesignsForm").validate({
-        rules: {
-            vendor_name: {
-            required: true,
-            },
-            address: {
-                required: true,
-                // Add your custom validation rule if needed
-            },
-            gst_no: {
-                required: true,
-            },
-            contact_no: {
-                required: true,
-            },
-            email: {
-                required: true,
-            },
-            quote_no: {
-                required: true,
-            },
-            payment_terms: {
-                required: true,
-            },
-            status: {
-                required: true,
-            },
-        },
-        messages: {
-            vendor_name: {
-                required: "Please enter your name.",
-            },
-            address: {
-                required: "Please enter your address.",
-            },
-            gst_no: {
-                required: "Please enter your GST No.",
-            },
-            contact_no: {
-                required: "Please enter a valid contact no.",
-            },
-            email: {
-                required: "Please enter your valid email.",
-            },
-            quote_no: {
-                required: "Please enter your quote no.",
-            },
-            payment_terms: {
-                required: "Please enter your payment terms.",
-            },  
-            status: {
-                required: "Please enter status",
-            },
-
-        },
-    });
-});
+// // Custom validation method for GST No
+// $.validator.addMethod("gstIN", function(value, element) {
+//         return this.optional(element) || /^\d{2}[A-Z]{5}\d{4}[A-Z]\d[Z0-9]$/i.test(value);
+//         }, "Please enter a valid GST No.");
 </script>
 
 

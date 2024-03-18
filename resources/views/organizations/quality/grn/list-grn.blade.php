@@ -19,6 +19,24 @@ padding-left: 20px !important;
     font-size: 14px;
     text-align: left;
 }
+
+
+.zoomable-image {
+    position: relative;
+    width: 30%;
+    cursor: pointer;
+}
+
+.zoomed-in {
+    transform: scale(3.5) !important;
+    position: fixed;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 1;    
+
+}
+
 </style>
 
 <div class="data-table-area mg-tb-15">
@@ -80,41 +98,45 @@ padding-left: 20px !important;
                                         <tr>
                                             <th data-field="state" data-checkbox="true"></th>
                                             <th data-field="id">ID</th>
-                                            <th data-field="grn_number" data-editable="true">GRN No.</th>
                                             <th data-field="grn_date" data-editable="true">GRN Date</th>
                                             <th data-field="purchase_id" data-editable="true">PO No</th>
                                             <th data-field="po_date" data-editable="true">PO Date</th>
                                             <th data-field="invoice_no" data-editable="true">Invoice No</th>
                                             <th data-field="invoice_date" data-editable="true">Invoice Date</th>
                                             <th data-field="remark" data-editable="true">Remark</th>
-                                            <th data-field="image" data-editable="false">Signature</th>
-                                            <th data-field="status" data-editable="true">Status</th>                                            
+                                            <th data-field="image" data-editable="false">Signature</th>                                           
                                             <th data-field="action">Action</th>
                                         </tr>
 
                                     </thead>
                                     <tbody>
                                        
+                                    @foreach($getOutput as $data)
                                         <tr>
                                             <td></td>
-                                            <td>1</td>
-                                            <td>GRN No.</td>
-                                            <td>GRN Date</td>
-                                            <td>PO No.</td>
-                                            <td>PO Date</td>
-                                            <td>Invoice No.</td>
-                                            <td>Invoice Date</td>
-                                            <td>Remark</td>
-                                            <td><img style="max-width:250px; max-height:150px;" src="" alt="Signature" /></td>
-                                            <td>Status</td>                                                   
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ucwords($data->grn_date)}}</td>
+                                            <td>{{ucwords($data->purchase_id)}}</td>
+                                            <td>{{ucwords($data->po_date)}}</td>
+                                            <td>{{ucwords($data->invoice_no)}}</td>
+                                            <td>{{ucwords($data->invoice_date)}}</td>
+                                            <td>{{ucwords($data->remark)}}</td>
+                                            <td>
+                                                <div class="zoomable-image" onclick="toggleZoom(this)"> 
+                                                    <img class="img-fluid" 
+                                                    src="{{ Config::get('FileConstant.GRN_VIEW') . $data->image }}" 
+                                                    alt="{{ strip_tags($data['company_name']) }} Image" />
+                                                </div>    
+                                            </td>
+                                                                                       
                                             <td>
                                                 <div style="display: flex; align-items: center;">
                                                     <a href="{{route('edit-grn')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                                     {{-- <a href="{{route('delete-grn')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
                                                 </div>
                                             </td>
-                                           </tr>
-                                      
+                                        </tr>  
+                                    @endforeach                                    
                                     </tbody>
                                 </table>
                             </div>
@@ -125,5 +147,25 @@ padding-left: 20px !important;
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function toggleZoom(element) {
+            element.classList.toggle('zoomed-in');
+        }
+
+        // Close zoomed image when clicking outside
+        window.addEventListener('click', function (event) {
+            var zoomedImages = document.querySelectorAll('.zoomed-in');
+            zoomedImages.forEach(function (img) {
+                if (!img.contains(event.target)) {
+                    img.classList.remove('zoomed-in');                   
+                }
+            });
+        });
+</script>
 
 @endsection
