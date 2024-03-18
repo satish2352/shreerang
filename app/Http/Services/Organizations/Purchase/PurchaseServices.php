@@ -56,6 +56,8 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
+            // dd($return_data);
+            // die();
             $path = Config::get('FileConstant.PURCHASE_ORDER_ADD');
             if ($request->hasFile('image')) {
                 if ($return_data['image']) {

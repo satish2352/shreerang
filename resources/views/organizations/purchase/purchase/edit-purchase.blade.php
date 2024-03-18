@@ -52,7 +52,7 @@
                                         <form action="{{ route('update-purchase', $editData[0]->purchase_main_id) }}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" name="design_main_id"
+                                            <input type="hidden" name="purchase_main_id"
                                                             id="" class="form-control"
                                                             value="{{ $editData[0]->purchase_main_id}}"
                                                             placeholder="">

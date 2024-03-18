@@ -125,10 +125,10 @@ class PurchaseController extends Controller
             
            $rules = [
                 // 'design_name' => 'required|string|max:255',
-                'design_page' => 'required|max:255',
-                'project_name' => 'required|string|max:20',
-                'time_allocation' => 'required|string|max:255',
-                'image' => 'image|mimes:jpeg,png,jpg|max:10240|min:5',
+                // 'design_page' => 'required|max:255',
+                // 'project_name' => 'required|string|max:20',
+                // 'time_allocation' => 'required|string|max:255',
+                // 'image' => 'image|mimes:jpeg,png,jpg|max:10240|min:5',
             ];
 
             $messages = [
@@ -136,16 +136,16 @@ class PurchaseController extends Controller
                         // 'design_name.string' => 'The design name must be a valid string.',
                         // 'design_name.max' => 'The design name must not exceed 255 characters.',
                         
-                        'design_page.required' => 'The design page is required.',
-                        'design_page.max' => 'The design page must not exceed 255 characters.',
+                        // 'design_page.required' => 'The design page is required.',
+                        // 'design_page.max' => 'The design page must not exceed 255 characters.',
                         
-                        'project_name.required' => 'The project name is required.',
-                        'project_name.string' => 'The project name must be a valid string.',
-                        'project_name.max' => 'The project name must not exceed 20 characters.',
+                        // 'project_name.required' => 'The project name is required.',
+                        // 'project_name.string' => 'The project name must be a valid string.',
+                        // 'project_name.max' => 'The project name must not exceed 20 characters.',
                         
-                        'time_allocation.required' => 'The time allocation is required.',
-                        'time_allocation.string' => 'The time allocation must be a valid string.',
-                        'time_allocation.max' => 'The time allocation must not exceed 255 characters.',
+                        // 'time_allocation.required' => 'The time allocation is required.',
+                        // 'time_allocation.string' => 'The time allocation must be a valid string.',
+                        // 'time_allocation.max' => 'The time allocation must not exceed 255 characters.',
                         
                         // 'image.required' => 'The image is required.',
                         // 'image.image' => 'The image must be a valid image file.',

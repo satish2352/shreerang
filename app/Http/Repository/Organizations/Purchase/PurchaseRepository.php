@@ -78,7 +78,12 @@ public function addAll($request)
             //     ->select('purchase_order_details.*','purchase_order_details.id as purchase_order_details_id', 'purchase_order.id as purchase_main_id', 'purchase_order.vendor_id', 'purchase_order.po_date', 'purchase_order.remark', 'purchase_order.image')
             //     ->where('purchase_order.id', $id)
             //     ->get();
-            $designData= PurchaseOrderModel::get();
+            $designData = PurchaseOrderModel::leftJoin('purchase_order_details', 'purchase_orders.id', '=', 'purchase_order_details.purchase_id')
+                ->select('purchase_order_details.*', 'purchase_order_details.id as purchase_order_details_id', 'purchase_orders.id as purchase_main_id', 'purchase_orders.vendor_id', 'purchase_orders.po_date', 'purchase_orders.remark','purchase_orders.terms_condition', 'purchase_orders.transport_dispatch','purchase_orders.image')
+                ->where('purchase_orders.id', $id)
+                ->get();
+
+            // $designData= PurchaseOrderModel::get();
 
             if ($designData->isEmpty()) {
                 return null;
@@ -111,7 +116,7 @@ public function addAll($request)
             }
     
             // Update main design data
-            $dataOutput = PurchaseOrderModel::findOrFail($request->design_main_id);
+            $dataOutput = PurchaseOrderModel::findOrFail($request->purchase_main_id);
             $dataOutput->po_date = $request->po_date;
             $dataOutput->vendor_id = $request->vendor_id;
             $dataOutput->terms_condition = $request->terms_condition;
@@ -125,7 +130,7 @@ public function addAll($request)
                     $designDetails = new PurchaseOrderDetailsModel();
               
                     // Assuming 'purchase_id' is a foreign key related to 'PurchaseOrderModel'
-                    $designDetails->purchase_id = $request->design_main_id; // Set the parent design ID
+                    $designDetails->purchase_id = $request->purchase_main_id; // Set the parent design ID
                     $designDetails->part_no = $item['part_no'];
                     $designDetails->description = $item['description'];
                     $designDetails->due_date = $item['due_date'];
