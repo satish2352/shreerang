@@ -89,6 +89,24 @@
 }
 
 /* Large devices (Above 1200px) */
+@media only screen and (min-width: 1301px) and (max-width: 1599px){
+    .flogo {
+        margin-top: 27px;
+        /* display: none; */
+        width: 347px;
+        height: 347px;
+        margin-left: -139px;
+        position: absolute;
+    }
+}
+@media only screen and (min-width: 1301px) and (max-width: 1920px){
+    .foottitle1{
+        margin-left: -76px;
+    }
+ 
+    
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1300px) {
     .flogo{
         margin-top: 83px;
@@ -318,7 +336,7 @@
         font-size: 47px;
     }
     .fs2{
-        font-size: 25px;
+        font-size: 24px;
     }
     .pptt{
         padding-top: 10px ;
@@ -1625,8 +1643,8 @@ Custom media queries
         padding-left: 100px;
     }
     .paddiall4{
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 120px;
+        padding-bottom: 120px;
     }
     .imgnag{
         margin-top: -30px;
