@@ -88,6 +88,7 @@ class StoreReceiptRepository  {
             $designData = StoreReceipt::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
             ->select('store_receipt_details.*', 'store_receipt_details.id as store_receipt_details_id',
              'store_receipt.id as store_receipt_main_id',
+             'store_receipt.store_date' ,'store_receipt.remark',
              'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.signature')
             ->where('store_receipt.id', $id)
             ->get();

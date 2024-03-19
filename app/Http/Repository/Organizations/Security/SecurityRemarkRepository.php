@@ -127,18 +127,4 @@ class SecurityRemarkRepository  {
                 return $e;
             }
     }
-
-    // public function deleteByIdAddmore($id){
-    //     try {
-    //         $rti = GatepassDetails::find($id);
-    //         if ($rti) {
-    //             $rti->delete();           
-    //             return $rti;
-    //         } else {
-    //             return null;
-    //         }
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // }
 }

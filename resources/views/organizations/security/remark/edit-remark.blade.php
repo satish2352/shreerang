@@ -47,14 +47,12 @@
                                 @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <form action="{{ route('update-security-remark') }}"
+                                        <form action="{{ route('update-security-remark')}}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                             @csrf
                                            
-                                            
-                                            <!-- <a
-                                             {{-- href="{{ route('add-more-data') }}" --}}
-                                            class="btn btn-sm btn-primary ml-3"> <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
+                                            <input type="hidden" name="id" id="id" class="form-control"
+                                                value="{{ $editData->id }}" placeholder="">
 
                                             <div class="container-fluid">
                                                 <!-- @if ($errors->any())
@@ -67,8 +65,6 @@
                                                     </div>
                                                 @endif -->
 
-                                            @foreach ($editData as $key => $editDataNew)
-                                            @if ($key == 0)
                                                 <div class="form-group-inner">
                                                     <div class="row">                                                
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -76,9 +72,9 @@
                                                                 <label for="vendor_id">Select Vendor:</label>
                                                                     <select class="form-control custom-select-value" name="purchase_id" id="purchase_id">
                                                                         <option value="">Select Vendor</option>
-                                                                        <option value="po1" {{ $editDataNew->purchase_id == 'po1' ? 'selected' : '' }}>PO 1</option>
-                                                                        <option value="po2" {{ $editDataNew->purchase_id == 'po2' ? 'selected' : '' }}>PO 2</option>
-                                                                        <option value="po3" {{ $editDataNew->purchase_id == 'po3' ? 'selected' : '' }}>PO 3</option>                                                  
+                                                                        <option value="po1" {{ $editData->purchase_id == 'po1' ? 'selected' : '' }}>PO 1</option>
+                                                                        <option value="po2" {{ $editData->purchase_id == 'po2' ? 'selected' : '' }}>PO 2</option>
+                                                                        <option value="po3" {{ $editData->purchase_id == 'po3' ? 'selected' : '' }}>PO 3</option>                                                  
                                                                     </select>
                                                             </div>                                                                                                                                          
                                                         </div>
@@ -87,14 +83,11 @@
                                                             <label for="remark">Remark:</label>
                                                             <input type="text" class="form-control" id="remark"
                                                                 name="remark" 
-                                                                value="{{ $editDataNew->remark }}"
+                                                                value="@if (old('remark')) {{ old('remark') }}@else{{ $editData->remark }} @endif"                                                                
                                                                 placeholder="Enter Remark">
                                                         </div>                                                                                                                                                                                        
                                                     </div>
-                                                </div>    
-                                            @endif
-                                            @endforeach     
-                                                
+                                                </div>                                                
                                                
                                                 <div class="login-btn-inner">
                                                     <div class="row">
@@ -112,7 +105,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                    </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -133,45 +126,41 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
  
 <script>
-    // $(document).ready(function() {
-    //     var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
-
-    //     $("#add").click(function() {
-    //         ++i;
-
-    //         $("#dynamicTable").append(
-    //             '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '" placeholder="Enter Product Unit" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
-    //         );
-    //     });
-
-    //     $(document).on("click", ".remove-tr", function() {
-    //         $(this).parents("tr").remove();
-    //     });
-
-    //     // Hide the "Add More" button initially if needed
-    //     // $("#add").hide();
-    // });
-
-    $(document).ready(function() {
-    var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
-
-    $("#add").click(function() {
-        ++i;
-
-        $("#dynamicTable").append(
-            '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
-        );
+    jQuery.noConflict();
+    jQuery(document).ready(function($) {
+    $("#editDesignsForm").validate({
+        rules: {          
+            purchase_id: {
+                required: true
+            },
+            department_id : {
+                required : true
+            },
+            remark :{
+                required : true,
+            },           
+            status :{
+                required : true,
+            },            
+        },
+        messages: {
+            purchase_id: {
+                required: "Please Enter Po Number.",
+            },              
+            department_id : {
+                required: "Please Enter Department.",
+            },           
+            remark : {
+                required: "Please enter Remark.",
+            },                      
+            status : {
+                required: "Please enter Status.",
+            },            
+        },
     });
-
-    $(document).on("click", ".remove-tr", function() {
-        $(this).parents("tr").remove();
-    });
-
-    // Hide the "Add More" button initially if needed
-    // $("#add").hide();
 });
-
 </script>
+
 <script>
     $('.delete-btn').click(function(e) {
 
@@ -194,30 +183,4 @@
 </script>
 
 
-
-
-
-{{-- <script>
- $(document).on("click", ".remove-tr", function() {
-    var rowId = $(this).data('row-id');
-    var row = $(this).closest('tr');
-    alert(rowId);
-    $.ajax({
-    url: '/remove-design-details/' + rowId,
-    type: 'DELETE',
-    data: {
-        _token: '{{ csrf_token() }}'
-    },
-    success: function(response) {
-        row.remove();
-        alert(response.msg);
-    },
-    error: function(xhr, status, error) {
-        console.error(xhr.responseText);
-        alert('Error occurred. Please check console for details.');
-    }
-});
-});
-
-</script> --}}
 @endsection

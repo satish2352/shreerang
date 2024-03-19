@@ -75,6 +75,7 @@ class GatepassRepository  {
            
             $dataOutputById = Gatepass::find($id);
             // dd($dataOutputById);
+            // dd($dataOutputById);
             // Check if data is found
             if ($dataOutputById !== null) {
                 return $dataOutputById;
@@ -137,18 +138,4 @@ class GatepassRepository  {
                 return $e;
             }
     }
-
-    // public function deleteByIdAddmore($id){
-    //     try {
-    //         $rti = GatepassDetails::find($id);
-    //         if ($rti) {
-    //             $rti->delete();           
-    //             return $rti;
-    //         } else {
-    //             return null;
-    //         }
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // }
 }

@@ -147,7 +147,7 @@ class StoreReceiptController extends Controller
                     $msg = $update_data['msg'];
                     $status = $update_data['status'];
                     if ($status == 'success') {
-                        return redirect('list-purchase')->with(compact('msg', 'status'));
+                        return redirect('list-store-receipt')->with(compact('msg', 'status'));
                     } else {
                         return redirect()->back()
                             ->withInput()

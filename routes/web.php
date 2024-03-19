@@ -235,7 +235,7 @@ Route::post('/update-docuploadfinance', ['as' => 'update-docuploadfinance', 'use
 Route::get('/list-security-remark', ['as' => 'list-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@index']);
 Route::get('/add-security-remark', ['as' => 'add-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@add']);
 Route::post('/store-security-remark', ['as' => 'store-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@store']);
-Route::get('/edit-security-remark', ['as' => 'edit-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@edit']);
+Route::get('/edit-security-remark/{id}', ['as' => 'edit-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@edit']);
 Route::post('/update-security-remark', ['as' => 'update-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@update']);
 
 // ========================End Security Remarkcontroller========
@@ -255,7 +255,7 @@ Route::post('/update-store-receipt', ['as' => 'update-store-receipt', 'uses' => 
 Route::get('/list-vendor', ['as' => 'list-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@index']);
 Route::get('/add-vendor', ['as' => 'add-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@add']);
 Route::post('/store-vendor', ['as' => 'store-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@store']);
-Route::get('/edit-vendor', ['as' => 'edit-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@edit']);
+Route::get('/edit-vendor/{id}', ['as' => 'edit-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@edit']);
 Route::post('/update-vendor', ['as' => 'update-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@update']); 
 
 // ========================  End Vendor controller ========

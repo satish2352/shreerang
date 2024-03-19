@@ -262,39 +262,6 @@
         ++i;
 
         $("#dynamicTable").append(
-            '<tr>  <input type="hidden" name="addmore[' + i + '][design_count]" class="form-control" value="' + i + '" placeholder=""> <input type="hidden" name="addmore[' + i + '][purchase_id]" class="form-control" value="' + i + '" placeholder=""><td><input type="text" name="addmore[' + i + '][design_name]" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_quantity]" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_size]" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_unit]" placeholder="Enter Product Unit" class="form-control" /></td><td> <a class="remove-tr delete-btn btn btn-danger m-1" title="Delete"><i class="fas fa-archive"></i></a></td></tr>'
-        );
-    });
-
-    $(document).on("click", ".remove-tr", function() {
-        $(this).parents("tr").remove();
-    });
-});
-
-        // $(document).ready(function() {
-        //     var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
-
-        //     $("#add").click(function() {
-        //         ++i;
-
-        //         $("#dynamicTable").append(
-        //             '<tr>  <input type="hidden" name="addmore[' + i + '][design_count]" class="form-control" value="" placeholder=""><input type="hidden" name="addmore[' + i + '][design_id]" id="design_id" class="form-control" value="" placeholder=""><td><input type="text" name="addmore[' + i + '][design_name]" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_quantity]" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_size]" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_unit]" placeholder="Enter Product Unit" class="form-control" /></td><td><button class="delete-btn btn btn-danger m-1 remove-tr" type="button">Delete</button></td></tr>'
-        //         );
-        //     });
-
-        //     $(document).on("click", ".remove-tr", function() {
-        //         $(this).parents("tr").remove();
-        //     });
-        // });
-    </script>
-{{-- <script>
-    $(document).ready(function() {
-    var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
-
-    $("#add").click(function() {
-        ++i;
-
-        $("#dynamicTable").append(
             // '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
 
             '<tr><td><input type="text" name="addmore[' +
@@ -315,12 +282,8 @@
     $(document).on("click", ".remove-tr", function() {
         $(this).parents("tr").remove();
     });
-
-    // Hide the "Add More" button initially if needed
-    // $("#add").hide();
 });
 
-</script> --}}
 <script>
     $('.delete-btn').click(function(e) {
 
@@ -345,7 +308,7 @@
 <script>
 jQuery.noConflict();
 jQuery(document).ready(function($) {
-    $("#addDesignsForm").validate({
+    $("#editDesignsForm").validate({
         rules: {
             store_date: {
                 required: true,

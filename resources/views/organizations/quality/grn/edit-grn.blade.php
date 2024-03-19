@@ -54,9 +54,9 @@
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                             @csrf
                                            
-                                            <!-- <a
+                                            <a
                                              {{-- href="{{ route('add-more-data') }}" --}}
-                                            class="btn btn-sm btn-primary ml-3"> <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
+                                            class="btn btn-sm btn-primary ml-3"> <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
 
                                             <div class="container-fluid">
                                                 <!-- @if ($errors->any())
@@ -221,12 +221,6 @@
                                                             value="{{ $editDataNew->remark}}"
                                                             placeholder="Enter Remark">
                                                     </div>
-
-                                                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                        <label for="remark">Remark:</label>
-                                                            <textarea class="form-control" rows="3" type="text" class="form-control" id="remark"
-                                                            name="remark" placeholder="Enter Remark"></textarea>
-                                                    </div>                                                 -->
                                                 </div>
 
                                                 
@@ -261,13 +255,16 @@
 
     <form method="POST" action="{{ route('delete-addmore') }}" id="deleteform">
         @csrf
-        <input type="hidden" name="delete_id" id="delete_id" value="">
+    <input type="hidden" name="delete_id" id="delete_id" value="">
     </form>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
  
+
+    
+
 <script>
     // $(document).ready(function() {
     //     var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
@@ -295,7 +292,20 @@
         ++i;
 
         $("#dynamicTable").append(
-            '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
+            '<tr><td><input type="text" name="addmore[' +
+        i +
+        '][description]" placeholder="Enter Description" class="form-control" /></td><td><input type="text" name="addmore[' +
+        i +
+        '][qc_check_remark]" placeholder="Enter QC Check" class="form-control" /></td><td><input type="text" name="addmore[' +
+        i +
+        '][chalan_quantity]" placeholder="Enter Chalan Qty" class="form-control" /></td><td><input type="text" name="addmore[' +
+        i +
+        '][actual_quantity]" placeholder="Enter Actual Qty" class="form-control" /></td><td><input type="text" name="addmore[' +
+        i+
+        '][accepted_quantity]" placeholder="Enter Accepted Qty" class="form-control" /></td><td><input type="text" name="addmore[' +
+        i+
+        '][rejected_quantity]" placeholder="Enter Rejected Qty" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
+
         );
     });
 
@@ -327,6 +337,112 @@
         })
 
     });
+</script>
+
+<script>
+        jQuery.noConflict();
+        jQuery(document).ready(function($) {
+            $("#editDesignsForm").validate({
+            rules: { 
+                grn_date: {
+                    required: true,
+                    date: "Please enter a valid GRN date."
+                },
+                purchase_id: {
+                    required: true,
+                },
+                po_date:{
+                    required : true,
+                    date: "Please enter a valid PO date."
+                },
+                invoice_no: {
+                    required : true,
+                },
+                invoice_date : {
+                    required : true,
+                    date: "Please enter a valid Invoice date."
+                },
+                remark :{
+                    required : true,
+                },
+                image: {
+                    required: true,
+                    accept: "Please select an Signature Image file.",
+                },
+                'addmore[0][description]': {
+                    required : true,
+                },
+                'addmore[0][qc_check_remark]': {
+                    required : true,                
+                },
+                'addmore[0][chalan_quantity]': {
+                    required : true,
+                    number: true
+                },
+                'addmore[0][actual_quantity]': {
+                    required : true,
+                    number: true
+                },
+                'addmore[0][accepted_quantity]': {
+                    required : true,
+                    number: true
+                },
+                'addmore[0][rejected_quantity]': {
+                    required : true,
+                    number: true
+                },  
+            },
+            messages: {
+                grn_date: {
+                    required: "Please Select GRN Date.",
+                    date: "Please enter a valid GRN Date."
+                },            
+                purchase_id : {
+                    required: "Please Enter PO No",
+                },
+                po_date : {
+                    required: "Please Select PO Date.",
+                    date: "Please enter a valid PO Date."
+                },            
+                invoice_no: {
+                    required: "Please Enter Invoice No",
+                },
+                invoice_date : {
+                    required: "Please Select Invoice Date.",
+                    date: "Please enter a valid Invoice Date."
+                },
+                remark : {
+                    required: "Please Enter Remark.",
+                },
+                image: {
+                        required: "Please Upload Signature.",
+                        accept: "Please Upload an Signature file.",
+                },            
+                'addmore[0][description]': {
+                    required: "Please Enter Description.",
+                },
+                'addmore[0][qc_check_remark]': {
+                    required: "Please Enter QC Check.",
+                },
+                'addmore[0][chalan_quantity]': {
+                    required: "Please Enter Chalan Qty.",
+                    number: "Chalan Quantity should contain only numbers."
+                },
+                'addmore[0][actual_quantity]': {
+                    required: "Please Enter Actual Qty.",
+                    number: "Actual Quantity should contain only numbers."
+                },
+                'addmore[0][accepted_quantity]': {
+                    required: "Please Enter Accepted Qty.",
+                    number: "Accepted Quantity should contain only numbers."
+                },
+                'addmore[0][rejected_quantity]': {
+                    required: "Please Enter Rejected Qty.",
+                    number: "Rejected Quantity should contain only numbers."
+                },
+            },
+    });
+});
 </script>
 
 

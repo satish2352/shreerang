@@ -79,11 +79,17 @@ class GRNRepository  {
         try {
             // $designData= GRN::get();
 
-            $designData = GRN::leftJoin('tbl_grn_details', 'tbl_grn.id', '=', 'tbl_grn_details.purchase_id')
-            ->select('tbl_grn_details.*', 'tbl_grn_details.id as tbl_grn_details_id', 'tbl_grn.id as grn_main_id', 'tbl_grn.grn_date', 'tbl_grn.po_date', 'tbl_grn.remark','tbl_grn.invoice_no', 'tbl_grn.invoice_date','tbl_grn.image')
+            $designData = GRN::leftJoin('tbl_grn_details', 'tbl_grn.id', '=', 'tbl_grn_details.grn_id')
+            ->select('tbl_grn_details.*', 'tbl_grn_details.id as tbl_grn_details_id', 
+                'tbl_grn.id as grn_main_id', 'tbl_grn.grn_date', 
+                'tbl_grn.purchase_id' , 'tbl_grn.po_date', 
+                'tbl_grn.invoice_no','tbl_grn.invoice_date',
+                'tbl_grn.remark',
+                'tbl_grn.image')
             ->where('tbl_grn.id', $id)
             ->get();
-dd($designData);
+            // dd($designData);
+
             if ($designData->isEmpty()) {
                 return null;
             } else {
@@ -106,7 +112,6 @@ dd($designData);
             for ($i = 0; $i <= $request->design_count; $i++) {
                 $designDetails = GRNDetails::findOrFail($request->input("design_id_" . $i));
                 
-                $designDetails->grn_id = $request->input("grn_id_" . $i);
                 $designDetails->description = $request->input("description_" . $i);
                 $designDetails->qc_check_remark = $request->input("qc_check_remark_" . $i);
                 $designDetails->chalan_quantity = $request->input("chalan_quantity_" . $i);
@@ -117,7 +122,7 @@ dd($designData);
             }
     
             // Update main design data
-            $dataOutput = GRN::findOrFail($request->design_main_id);
+            $dataOutput = GRN::findOrFail($request->grn_main_id);
             $dataOutput->grn_date = $request->grn_date;
             $dataOutput->purchase_id = $request->purchase_id;
             $dataOutput->po_date = $request->po_date;
@@ -133,7 +138,7 @@ dd($designData);
                     $designDetails = new GRNDetails();
               
                     // Assuming 'store_receipt_id' is a foreign key related to 'GRN'
-                    $designDetails->grn_id = $request->grn_id; // Set the parent design ID                    
+                    $designDetails->grn_id = $request->grn_main_id; // Set the parent design ID                    
                     $designDetails->description = $item['description'];
                     $designDetails->qc_check_remark = $item['qc_check_remark'];                    
                     $designDetails->chalan_quantity = $item['chalan_quantity'];

@@ -52,7 +52,10 @@
                                         <form action="{{ route('update-gatepass')}}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                             @csrf
-                                           
+                                            <input type="hidden" name="id" id="id" class="form-control"
+                                                value="{{ $editData->id }}" placeholder="">
+
+                                  
                                             <!-- <a
                                              {{-- href="{{ route('add-more-data') }}" --}}
                                             class="btn btn-sm btn-primary ml-3"> <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
@@ -67,8 +70,7 @@
                                                         </ul>
                                                     </div>
                                                 @endif -->
-                                                @foreach ($editData as $key => $editDataNew)
-                                                @if ($key == 0)
+                                           
                                                     
                                                     <div class="form-group-inner">
                                                         <div class="row">
@@ -76,7 +78,7 @@
                                                                 <label for="purchase_id">PO:</label>
                                                                 <input type="text" class="form-control" id="purchase_id"
                                                                     name="purchase_id" 
-                                                                    value="{{ $editDataNew->purchase_id }}"
+                                                                    value="@if (old('purchase_id')) {{ old('purchase_id') }}@else{{ $editData->purchase_id }} @endif"
                                                                     placeholder="Enter PO No">
                                                             </div>                                               
 
@@ -84,7 +86,7 @@
                                                                 <label for="gatepass_name">Name:</label>
                                                                 <input type="text" class="form-control" id="gatepass_name"
                                                                     name="gatepass_name" 
-                                                                    value="{{ $editDataNew->gatepass_name }}"
+                                                                    value="@if (old('gatepass_name')) {{ old('gatepass_name') }}@else{{ $editData->gatepass_name }} @endif"
                                                                     placeholder="Enter Name">
                                                             </div>
 
@@ -92,7 +94,7 @@
                                                                 <label for="gatepass_date">Date:</label>
                                                                 <input type="date" class="form-control" id="gatepass_date"
                                                                     name="gatepass_date" 
-                                                                    value="{{ $editDataNew->gatepass_date }}"
+                                                                    value="@if (old('gatepass_date')) {{ old('gatepass_date') }}@else{{ $editData->gatepass_date }} @endif"
                                                                     placeholder="Select Date">
                                                             </div>
 
@@ -100,7 +102,7 @@
                                                                 <label for="gatepass_time">Time:</label>
                                                                 <input type="time" class="form-control" id="gatepass_time"
                                                                     name="gatepass_time" 
-                                                                    value="{{ $editDataNew->gatepass_time }}"
+                                                                    value="@if (old('gatepass_time')) {{ old('gatepass_time') }}@else{{ $editData->gatepass_time }} @endif"
                                                                     placeholder="Select Time">
                                                             </div>
                                                     
@@ -108,13 +110,12 @@
                                                                 <label for="remark">Remark:</label>
                                                                 <input type="text" class="form-control" id="remark"
                                                                     name="remark" 
-                                                                    value="{{ $editDataNew->remark }}"
+                                                                    value="@if (old('remark')) {{ old('remark') }}@else{{ $editData->remark }} @endif"
                                                                     placeholder="Enter Remark">
                                                             </div>  
                                                         </div>   
                                                     </div>   
-                                                    @endif
-                                                @endforeach 
+                                                   
 
                                                     <div class="login-btn-inner">
                                                         <div class="row">
@@ -155,46 +156,61 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
  
+
+
 <script>
-    // $(document).ready(function() {
-    //     var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
-
-    //     $("#add").click(function() {
-    //         ++i;
-
-    //         $("#dynamicTable").append(
-    //             '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '" placeholder="Enter Product Unit" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
-    //         );
-    //     });
-
-    //     $(document).on("click", ".remove-tr", function() {
-    //         $(this).parents("tr").remove();
-    //     });
-
-    //     // Hide the "Add More" button initially if needed
-    //     // $("#add").hide();
-    // });
-
-    $(document).ready(function() {
-    var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
-
-    $("#add").click(function() {
-        ++i;
-
-        $("#dynamicTable").append(
-            '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
-        );
+    jQuery.noConflict();
+    jQuery(document).ready(function($) {
+    $("#editDesignsForm").validate({
+        rules: {          
+            purchase_id: {
+                required: true
+            },
+            gatepass_name : {
+                required : true,
+                noNumbers: true ,
+            },     
+            gatepass_date : {
+                required : true,
+                date: true,
+            },    
+            gatepass_time : {
+                required : true,
+                time : true,
+            },
+            remark :{
+                required : true,
+            },             
+        },
+        messages: {
+            purchase_id: {
+                required: "Please Enter Po Number.",
+            },              
+            gatepass_name : {
+                required: "Please Enter Gatepass Name.",
+                noNumbers: "Store Gatepass Name should not contain any numbers."
+            },
+            gatepass_date : {
+                required: "Please Select Gatepass Date.",
+                date: "Please enter a valid Gatepass date."
+            },
+            gatepass_time : {
+                required: "Please Select Gatepass Time.",
+                time: "Please enter a valid Gatepass Time."
+            },
+            remark : {
+                required: "Please enter Remark.",
+            },               
+        },
     });
 
-    $(document).on("click", ".remove-tr", function() {
-        $(this).parents("tr").remove();
-    });
+    $.validator.addMethod("noNumbers", function(value, element) {
+            return this.optional(element) || !/\d/.test(value);
+        }, "Vendor Name should not contain any numbers.");
 
-    // Hide the "Add More" button initially if needed
-    // $("#add").hide();
 });
-
 </script>
+
 <script>
     $('.delete-btn').click(function(e) {
 

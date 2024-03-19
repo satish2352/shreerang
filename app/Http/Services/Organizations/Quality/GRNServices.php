@@ -57,10 +57,11 @@ use Config;
         }
     }
     
-
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
+            // dd($return_data);
+            // die();
             $path = Config::get('FileConstant.GRN_ADD');
             if ($request->hasFile('image')) {
                 if ($return_data['image']) {
