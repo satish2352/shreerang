@@ -3,7 +3,8 @@ namespace App\Http\Services\Organizations\Store;
 use App\Http\Repository\Organizations\Store\StoreReceiptRepository;
 use Carbon\Carbon;
 use App\Models\ {
-    DesignModel
+    StoreReceipt,
+    StoreReceiptDetails
     };
 
 use Config;
@@ -13,16 +14,6 @@ use Config;
         public function __construct(){
         $this->repo = new StoreReceiptRepository();
     }
-
-
-    // public function getAll(){
-    //     try {
-    //         return $this->repo->getAll();
-
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // }
 
     public function getAll(){
         try {
@@ -69,7 +60,9 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
+
             $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
+
             if ($request->hasFile('image')) {
                 if ($return_data['image']) {
                     if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image'])) {
@@ -84,7 +77,7 @@ use Config;
                     
                 }                
                 uploadImage($request, 'image', $path, $englishImageName);
-                $slide_data = DesignModel::find($return_data['last_insert_id']);
+                $slide_data = StoreReceipt::find($return_data['last_insert_id']);
                 $slide_data->image = $englishImageName;
                 $slide_data->save();
             }      

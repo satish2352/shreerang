@@ -3,7 +3,7 @@ namespace App\Http\Services\Organizations\Store;
 use App\Http\Repository\Organizations\Store\RequisitionRepository;
 use Carbon\Carbon;
 use App\Models\ {
-    DesignModel
+    Requisition
     };
 
 use Config;
@@ -59,28 +59,37 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
+
             $path = Config::get('FileConstant.REQUISITION_ADD');
-            if ($request->hasFile('image')) {
-                if ($return_data['image']) {
-                    if (file_exists_view(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['image']);
+
+            if ($request->hasFile('signature')) {
+                if ($return_data['signature']) {
+                    if (file_exists_view(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['signature'])) {
+                        removeImage(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['signature']);
                     }
 
                 }
-                if ($request->hasFile('image')) {
+
+                  // dd($englishImageName);
+                // die();
+                
+                if ($request->hasFile('signature')) {
                     $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->file('image')->extension();
                     
                 } else {
                     
-                }                
+                }      
+               
                 uploadImage($request, 'image', $path, $englishImageName);
-                $slide_data = DesignModel::find($return_data['last_insert_id']);
-                $slide_data->image = $englishImageName;
+
+                // dd($englishImageName);
+                // die();
+                $slide_data = Requisition::find($return_data['last_insert_id']);
+                $slide_data->signature = $englishImageName;
                 $slide_data->save();
             }      
             
-            // dd($return_data);
-            //     die();
+          
             
             if ($return_data) {
                 return ['status' => 'success', 'msg' => 'Data Updated Successfully.'];

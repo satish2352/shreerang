@@ -48,8 +48,6 @@ class PurchaseController extends Controller
     }
 
 
-
-
       public function store(Request $request){
         $rules = [
                 'po_date' => 'required',
@@ -123,36 +121,37 @@ class PurchaseController extends Controller
 
         public function update(Request $request){
             
-           $rules = [
-                // 'design_name' => 'required|string|max:255',
-                // 'design_page' => 'required|max:255',
-                // 'project_name' => 'required|string|max:20',
-                // 'time_allocation' => 'required|string|max:255',
-                // 'image' => 'image|mimes:jpeg,png,jpg|max:10240|min:5',
+            $rules = [
+                'po_date' => 'required',
+                'vendor_id' => 'required|string',
+                'terms_condition' => 'required|string',
+                'remark' => 'required|string',
+                'transport_dispatch' => 'required|string',
+                'image' => 'required|image|mimes:jpeg,png,jpg',
+                // 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
             ];
 
-            $messages = [
-                        // 'design_name.required' => 'The design name is required.',
-                        // 'design_name.string' => 'The design name must be a valid string.',
-                        // 'design_name.max' => 'The design name must not exceed 255 characters.',
+            $messages = [                        
+                'po_date.required' => 'Please enter a valid PO Date.',
                         
-                        // 'design_page.required' => 'The design page is required.',
-                        // 'design_page.max' => 'The design page must not exceed 255 characters.',
-                        
-                        // 'project_name.required' => 'The project name is required.',
-                        // 'project_name.string' => 'The project name must be a valid string.',
-                        // 'project_name.max' => 'The project name must not exceed 20 characters.',
-                        
-                        // 'time_allocation.required' => 'The time allocation is required.',
-                        // 'time_allocation.string' => 'The time allocation must be a valid string.',
-                        // 'time_allocation.max' => 'The time allocation must not exceed 255 characters.',
-                        
-                        // 'image.required' => 'The image is required.',
-                        // 'image.image' => 'The image must be a valid image file.',
-                        // 'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
-                        // 'image.max' => 'The image size must not exceed 10MB.',
-                        // 'image.min' => 'The image size must not be less than 5KB.',
-                    ];
+                'vendor_id.required' => 'The Vendor is required.',
+                'vendor_id.string' => 'The Vendor must be a valid string.',
+                
+                'terms_condition.required' => 'Please Enter Terms And Conditions.',
+                'terms_condition.string' => 'The Terms And Conditions must be a valid string.',
+
+                'remark.required' => 'The remark is required.',
+                'remark.string' => 'The remark must be a valid string.',
+
+                'transport_dispatch.required' => 'The Transport/Dispatch is required.',
+                'transport_dispatch.string' => 'The Transport/Dispatch must be a valid string.',
+                
+                'image.required' => 'The image image is required.',
+                'image.image' => 'The image image must be a valid image file.',
+                'image.mimes' => 'The image image must be in JPEG, PNG, JPG format.',
+                // 'image.max' => 'The image image size must not exceed 10MB.',
+                // 'image.min' => 'The image image- size must not be less than 5KB.',
+            ];
     
             try {
                 $validation = Validator::make($request->all(),$rules, $messages);

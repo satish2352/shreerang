@@ -245,7 +245,7 @@ Route::post('/update-security-remark', ['as' => 'update-security-remark', 'uses'
 Route::get('/list-store-receipt', ['as' => 'list-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@index']);
 Route::get('/add-store-receipt', ['as' => 'add-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@add']);
 Route::post('/store-store-receipt', ['as' => 'store-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@store']);
-Route::get('/edit-store-receipt', ['as' => 'edit-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@edit']);
+Route::get('/edit-store-receipt/{id}', ['as' => 'edit-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@edit']);
 Route::post('/update-store-receipt', ['as' => 'update-store-receipt', 'uses' => 'App\Http\Controllers\Organizations\Store\StoreReceiptController@update']); 
 
 // ======================== End store receipt controller ========

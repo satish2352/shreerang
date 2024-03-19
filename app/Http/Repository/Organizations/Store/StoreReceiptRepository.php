@@ -110,7 +110,6 @@ class StoreReceiptRepository  {
             for ($i = 0; $i <= $request->design_count; $i++) {
                 $designDetails = StoreReceiptDetails::findOrFail($request->input("design_id_" . $i));
                 
-                // $designDetails->store_receipt_id = $request->input("store_receipt_id_" . $i);
                 $designDetails->quantity = $request->input("quantity_" . $i);
                 $designDetails->description = $request->input("description_" . $i);
                 $designDetails->price = $request->input("price_" . $i);
@@ -167,7 +166,7 @@ class StoreReceiptRepository  {
     
     public function deleteById($id){
             try {
-                $deleteDataById = DesignModel::find($id);
+                $deleteDataById = StoreReceipt::find($id);
                 
                 if ($deleteDataById) {
                     if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $deleteDataById->image)){

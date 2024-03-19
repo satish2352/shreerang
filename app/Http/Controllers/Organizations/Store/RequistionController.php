@@ -9,10 +9,10 @@ use Session;
 use Validator;
 use Config;
 use Carbon;
-// use App\Models\ {
-//     DesignModel,
-//     DesignDetailsModel
-//     };
+use App\Models\ {
+    Requisition,
+    RequisitionDetails
+    };
 
 class RequistionController extends Controller
 { 
@@ -97,7 +97,7 @@ class RequistionController extends Controller
 
 
 
-    public function edit(Request $request){
+    public function edit(Request $request){                
         try {
           
             $edit_data_id = base64_decode($request->id);
@@ -111,10 +111,121 @@ class RequistionController extends Controller
         }
     } 
     
+    public function update(Request $request){
+            
+        $rules = [
+            // 'req_name' => 'required|string',                               
+            // 'req_number' => 'required|string',
+            // 'req_date' => 'required',
+            // 'signature' => 'required|image|mimes:jpeg,png,jpg',
+            // 'signature' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
+        ];
 
-    // public function add(){
-    //     return view('organizations.productions.products.add-products');
-    // }
+        $messages = [                                               
+                    
+                    // 'req_name.required' => 'The Requisition name is required.',
+                    // 'req_name.string' => 'The Requisition name must be a valid string.',
+                    
+                    // 'req_number.required' => 'Please Enter Requisition number.',
+                    // 'req_number.string' => 'The Requisition number must be a valid string.',
+
+                    // 'req_date.required' => 'Please enter a valid Store Date.',
+                    
+                    // 'signature.required' => 'The signature image is required.',
+                    // 'signature.image' => 'The signature image must be a valid image file.',
+                    // 'signature.mimes' => 'The signature image must be in JPEG, PNG, JPG format.',
+                    // 'signature.max' => 'The signature image size must not exceed 10MB.',
+                    // 'signature.min' => 'The signature image- size must not be less than 5KB.',
+                ];
+
+        try {
+            $validation = Validator::make($request->all(),$rules, $messages);
+            if ($validation->fails()) {
+                return redirect()->back()
+                    ->withInput()
+                    ->withErrors($validation);
+            } else {
+                
+                $update_data = $this->service->updateAll($request);
+
+                // dd($update_data);
+                // die();
+                
+                if ($update_data) {
+                    $msg = $update_data['msg'];
+                    $status = $update_data['status'];
+                    if ($status == 'success') {
+                        return redirect('list-requistion')->with(compact('msg', 'status'));
+                    } else {
+                        return redirect()->back()
+                            ->withInput()
+                            ->with(compact('msg', 'status'));
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            return redirect()->back()
+                ->withInput()
+                ->with(['msg' => $e->getMessage(), 'status' => 'error']);
+        }
+    }
+
+    public function destroy(Request $request){
+        $delete_data_id = base64_decode($request->id);
+        try {
+            $delete_record = $this->service->deleteById($delete_data_id);
+            // dd($delete_record);
+            if ($delete_record) {
+                $msg = $delete_record['msg'];
+                $status = $delete_record['status'];
+                if ($status == 'success') {
+                    return redirect('list-requistion')->with(compact('msg', 'status'));
+                } else {
+                    return redirect()->back()
+                        ->withInput()
+                        ->with(compact('msg', 'status'));
+                }
+            }
+        } catch (\Exception $e) {
+            return $e;
+        }
+    } 
+
+
+    public function destroyAddmore(Request $request){
+        try {
+            $delete_rti = $this->service->deleteByIdAddmore($request->delete_id);
+            if ($delete_rti) {
+                $msg = $delete_rti['msg'];
+                $status = $delete_rti['status'];
+                if ($status == 'success') {
+                    return redirect('edit-requistion/{id}')->with(compact('msg', 'status'));
+                    
+                } else {
+                    return redirect()->back()
+                        ->withInput()
+                        ->with(compact('msg', 'status'));
+                }
+            }
+        } catch (\Exception $e) {
+            return $e;
+        }
+    } 
+
+    public function removeRequisitionDetails(Request $request, $rowId) {
+        try {
+            $designDetails = RequisitionDetails::find($rowId);
+    
+            if ($designDetails) {
+                $designDetails->delete();
+                return response()->json(['msg' => 'Requisition details removed successfully.']);
+            } else {
+                return response()->json(['msg' => 'Requisition details not found.'], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['msg' => 'Failed to remove Requisition details.', 'error' => $e->getMessage()], 500);
+        }
+    }
 
 
 

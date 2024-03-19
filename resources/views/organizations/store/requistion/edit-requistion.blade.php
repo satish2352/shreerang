@@ -293,12 +293,100 @@
     $(document).on("click", ".remove-tr", function() {
         $(this).parents("tr").remove();
     });
-
-    // Hide the "Add More" button initially if needed
-    // $("#add").hide();
 });
 
 </script>
+
+<script>
+jQuery.noConflict();
+jQuery(document).ready(function($) {
+    $("#editDesignsForm").validate({
+        rules: {          
+            department_id: {
+                required: true,
+            },
+            req_name: {
+                required: true,
+            },
+            req_number: {
+                required: true,
+                number: true 
+            },
+            req_date: {
+                required: true,
+                date : true
+            },
+            signature: {
+                required: true,
+                accept: "Please select an Signature Image file.",
+            },
+
+            'addmore[0][description]': {
+                required : true,                
+            },
+            'addmore[0][quantity]': {
+                required : true,
+                number: true
+            },
+            'addmore[0][unit]': {
+                required : true,
+            },
+            'addmore[0][day]': {
+                required : true,
+            },
+            'addmore[0][remark]': {
+                required : true,
+            },   
+            'addmore[0][stock]': {
+                required : true,
+            },
+        },
+
+        messages: {
+          
+            department_id: {
+                required: "Please select a valid department id.",
+            },
+            req_name: {
+                required: "Please Enter Requisition name.",
+            },
+            req_number: {
+                required: "Please Enter Requisition Number.",
+                number: "Requisition Number should contain only numbers."
+            },
+            req_date: {
+                required: "Please Select Requisition date.",
+                date: "Please Select a valid Requisition date."
+            },
+
+            'addmore[0][description]': {
+                required: "Please Enter Description.",                
+            },
+            'addmore[0][quantity]': {
+                required: "Please Enter Quantity.",
+                number: "Quantity should contain only numbers."
+            },            
+            'addmore[0][unit]': {
+                required: "Please Enter Unit.",
+            }, 
+            'addmore[0][day]': {
+                required: "Please Enter Day.",
+            },
+            'addmore[0][remark]': {
+                required: "Please Enter Remark.",
+            },
+            'addmore[0][stock]': {
+                required: "Please Enter Stock.",
+            },     
+            signature: {
+                required: "Please Upload a Signature.",
+                accept: "Please Upload an Signature image file.",
+            },
+        },
+    });
+});
+</script>
+
 <script>
     $('.delete-btn').click(function(e) {
 
@@ -347,4 +435,8 @@
 });
 
 </script> --}}
+
+
+
+
 @endsection

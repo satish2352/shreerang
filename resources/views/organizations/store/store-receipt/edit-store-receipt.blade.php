@@ -52,11 +52,13 @@
                                     <div class="all-form-element-inner">
                                         <form action="{{ route('update-store-receipt', $editData[0]->store_receipt_main_id) }}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
+                                            
                                             @csrf
                                             <input type="hidden" name="store_receipt_main_id"
                                                             id="" class="form-control"
                                                             value="{{ $editData[0]->store_receipt_main_id}}"
                                                             placeholder="">
+                                                            
                                             <a
                                             {{-- href="{{ route('add-more-data') }}" --}}
                                            > 
@@ -340,7 +342,113 @@
     });
 </script>
 
+<script>
+jQuery.noConflict();
+jQuery(document).ready(function($) {
+    $("#addDesignsForm").validate({
+        rules: {
+            store_date: {
+                required: true,
+                date: true,
+            },
+            name: {
+                required: true,
+                noNumbers: true
+            },
+            contact_number: {
+                required: true,
+                digits: true 
+            },
+            address: {
+                required: true,
+            },           
+            remark: {
+                required: true,
+            },
+            signature: {
+                required: true,
+            },
+            'addmore[0][quantity]': {
+                required : true,
+                number: true 
+            },
+            'addmore[0][description]': {
+                required : true,
+            },
+            'addmore[0][price]': {
+                required : true,
+                number: true 
+            },
+            'addmore[0][amount]': {
+                required : true,
+                number: true 
+            },
+            'addmore[0][total]': {
+                required : true,
+                number: true 
+            },            
+        },
 
-    
+        messages: {
+            store_date: {
+                required: "Please Select a Store Date.",
+                date: "Please enter a valid Store date."
+            },
+            receipt_date: {
+                required: "Please Select a Receipt date.",
+                date: "Please enter a valid Receipt date."
+            },
+            // receipt_no: {
+            //     required: "Please Enter receipt No.",
+            // },
+            name: {
+                required: "Please Enter Store Person Name.",
+                noNumbers: "Store Person Name should not contain any numbers."
+            },
+            contact_number: {
+                required: "Please Enter a valid Contact No.",
+                digits: "Contact Number should contain only digits."
+            },
+            // address: {
+            //     required: "Please enter a valid address.",
+            // },           
+            remark: {
+                required: "Please Write Remark",
+            },
+            signature: {
+                required: "Please Upload an Signature Image.",
+                accept: "Please Upload an Signature Image file.",
+            },
+        
+            'addmore[0][quantity]': {
+                required: "Please Enter Quantity.",
+                number: "Quantity should contain only numbers."
+            },
+            'addmore[0][description]': {
+                required: "Please Enter Description.",                
+            },
+            'addmore[0][price]': {
+                required: "Please Enter Price.",
+                number: "Price should contain only numbers."
+            },
+            'addmore[0][amount]': {
+                required: "Please Enter Amount.",
+                number: "Amount should contain only numbers."
+            },
+            'addmore[0][total]': {
+                required: "Please Enter Total.",
+                number: "Total should contain only numbers."
+            },    
+
+        },
+    });
+
+    $.validator.addMethod("noNumbers", function(value, element) {
+            return this.optional(element) || !/\d/.test(value);
+        }, "Vendor Name should not contain any numbers.");
+        
+});
+
+</script>
 
 @endsection

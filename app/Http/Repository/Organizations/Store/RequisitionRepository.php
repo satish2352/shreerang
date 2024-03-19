@@ -76,10 +76,10 @@ public function addAll($request)
         try {
             // $designData= Requisition::get();
 
-            $designData = Requisition::leftJoin('requisition_details', 'requisition.id', '=', 'requisition_details.requisition_id')
-            ->select('requisition_details.*', 'requisition_details.id as requisition_details_id', 'requisition.id as requisition_main_id', 'requisition.req_name', 'requisition.req_number', 'requisition.req_date','requisition.signature')
-            ->where('requisition.id', $id)
-            ->get();
+            // $designData = Requisition::leftJoin('requisition_details', 'requisition.id', '=', 'requisition_details.requisition_id')
+            // ->select('requisition_details.*', 'requisition_details.id as requisition_details_id', 'requisition.id as requisition_main_id', 'requisition.req_name', 'requisition.req_number', 'requisition.req_date','requisition.signature')
+            // ->where('requisition.id', $id)
+            // ->get();
 
 
             // $designData = Requisition::leftJoin('requisition_details', 'store_receipt.id', '=', 'requisition_details.store_receipt_id')
@@ -117,7 +117,7 @@ public function addAll($request)
             for ($i = 0; $i <= $request->design_count; $i++) {
                 $designDetails = RequisitionDetails::findOrFail($request->input("design_id_" . $i));
                 
-                $designDetails->requisition_id = $request->input("requisition_id_" . $i);
+                // $designDetails->requisition_id = $request->input("requisition_id_" . $i);
                 $designDetails->description = $request->input("description_" . $i);
                 $designDetails->quantity = $request->input("quantity_" . $i);
                 $designDetails->unit = $request->input("unit_" . $i);
