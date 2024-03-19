@@ -186,8 +186,8 @@
                                     <li>
                                         <a href="#"><i class="fab fa-instagram"></i></a>
                                     </li>
-                                    <li>
-                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    <li class="email">
+                                        <a href="#"><i class="fa-regular fa-envelope "></i></a>
                                     </li>
                                 </ul>
                             </div>
