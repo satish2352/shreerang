@@ -88,19 +88,21 @@ padding-left: 20px !important;
                                     </thead>
                                     <tbody>
                                        
-                                        <tr>
-                                            <td></td>
-                                            <td>1</td>                                            
-                                            <td>PO</td>
-                                            <td>Remark</td>                                                                                          
+                                    @foreach($getOutput as $data)  
+                                    <tr>
+                                        <td></td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ucwords($data->purchase_id)}}</td>
+                                            <td>{{ucwords($data->remark)}}</td>
+
                                             <td>
                                                 <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('edit-security-remark')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    {{-- <a href="{{route('delete-remark')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
+                                                    <a href="{{route('edit-security-remark', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                    {{-- <a href="{{route('delete-security-remark')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
                                                 </div>
                                             </td>
                                            </tr>
-                                      
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

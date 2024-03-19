@@ -49,15 +49,20 @@
                                 @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <form action="{{ route('update-requistion', 
-                                       ) }}"
+                                    <form action="{{ route('update-requistion', $editData[0]->requisition_main_id) }}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
+
                                             @csrf
                                            
-                                            <!-- <a
+                                            <input type="hidden" name="requisition_main_id"
+                                                id="" class="form-control"
+                                                value="{{ $editData[0]->requisition_main_id}}"
+                                                placeholder="">
+                                                
+                                            <a
                                              {{-- href="{{ route('add-more-data') }}" --}}
                                             class="btn btn-sm btn-primary ml-3"> 
-                                            <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
+                                            <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
 
                                             <div class="container-fluid">
                                                 <!-- @if ($errors->any())
@@ -72,52 +77,52 @@
 
                                         @foreach ($editData as $key => $editDataNew)
                                         @if ($key == 0)
-                                        <div class="form-group-inner">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="req_name">Requisition Name :</label>
-                                                    <input type="text" class="form-control" id="req_name"
-                                                        name="req_name" 
-                                                        value="{{ $editDataNew->req_name }}"
-                                                        placeholder="Enter your Requisition Name ">
-                                                </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="req_name">Requisition Name :</label>
+                                                        <input type="text" class="form-control" id="req_name"
+                                                            name="req_name" 
+                                                            value="{{ $editDataNew->req_name }}"
+                                                            placeholder="Enter your Requisition Name ">
+                                                    </div>
 
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="req_number">Requisition Number :</label>
-                                                    <input type="text" class="form-control" id="req_number"
-                                                        name="req_number" 
-                                                        value="{{ $editDataNew->req_number }}"
-                                                        placeholder="Enter your Requisition Number ">
-                                                </div>
-                                            </div>    
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="req_number">Requisition Number :</label>
+                                                        <input type="text" class="form-control" id="req_number"
+                                                            name="req_number" 
+                                                            value="{{ $editDataNew->req_number }}"
+                                                            placeholder="Enter your Requisition Number ">
+                                                    </div>
+                                                </div>    
 
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="req_date">Requisition Date :</label>
-                                                    <input type="date" class="form-control" id="req_date"
-                                                        name="req_date" 
-                                                        value="{{ $editDataNew->req_date }}"
-                                                        placeholder="Enter Requisition Date ">
-                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="req_date">Requisition Date :</label>
+                                                        <input type="date" class="form-control" id="req_date"
+                                                            name="req_date" 
+                                                            value="{{ $editDataNew->req_date }}"
+                                                            placeholder="Enter Requisition Date ">
+                                                    </div>
 
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <label for="signature">Image:</label>
-                                                    <input type="file" class="form-control"
-                                                        accept="image/*" id="signature" name="signature">
-                                                    <div id="oldImageDisplay">
-                                                        @if (isset($editDataNew->signature))
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label for="signature">Image:</label>
+                                                        <input type="file" class="form-control"
+                                                            accept="image/*" id="signature" name="signature">
+                                                        <div id="oldImageDisplay">
+                                                            @if (isset($editDataNew->signature))
+                                                                <b>Image Preview: </b>
+                                                                <img src="{{ Config::get('FileConstant.REQUISITION_VIEW') . $editDataNew->signature }}"
+                                                                    alt="Old Image" style="max-width: 100px;">
+                                                            @endif
+                                                        </div>
+                                                        <div id="selectedImageDisplay" style="display: none;">
                                                             <b>Image Preview: </b>
-                                                            <img src="{{ Config::get('FileConstant.REQUISITION_VIEW') . $editDataNew->signature }}"
-                                                                alt="Old Image" style="max-width: 100px;">
-                                                        @endif
-                                                    </div>
-                                                    <div id="selectedImageDisplay" style="display: none;">
-                                                        <b>Image Preview: </b>
-                                                        <img src="" alt="Selected Image"
-                                                            style="max-width: 100px;">
-                                                    </div>
-                                                </div>                                                        
-                                            </div>
+                                                            <img src="" alt="Selected Image"
+                                                                style="max-width: 100px;">
+                                                        </div>
+                                                    </div>                                                        
+                                                </div>
                                             @endif
                                         @endforeach
 
@@ -142,7 +147,7 @@
 
                                                         <input type="hidden" name="design_id_{{ $key }}"
                                                             id="design_id_{{ $key }}" class="form-control"
-                                                            value="{{ $editDataNew->purchase_order_details_id }}"
+                                                            value="{{ $editDataNew->requisition_details_id }}"
                                                             placeholder="">
                                                                                                                     
                                                         <td>
@@ -266,7 +271,22 @@
         ++i;
 
         $("#dynamicTable").append(
-            '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
+            // '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
+
+            '<tr><td><input type="text" name="addmore[' +
+                i +
+                '][description]" placeholder="Enter your description" class="form-control" /></td><td><input type="text" name="addmore[' +
+                i +
+                '][quantity]" placeholder="Enter your quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
+                i +
+                '][unit]" placeholder="Enter your unit" class="form-control" /></td><td><input type="text" name="addmore[' +
+                i +
+                '][day]" placeholder="Enter your day" class="form-control" /></td><td><input type="text" name="addmore[' +
+                i +
+                '][remark]" placeholder="Enter your rremark" class="form-control" /></td><td><input type="text" name="addmore[' +
+                i +
+                '][stock]" placeholder="Enter your stock" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
+                
         );
     });
 

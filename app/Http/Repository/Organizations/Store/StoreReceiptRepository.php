@@ -72,14 +72,21 @@ class StoreReceiptRepository  {
 
     public function getById($id) {
         try {
-            $designData= StoreReceipt::get();
+            // $designData= StoreReceipt::get();
 
             // $designData = StoreReceipt::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
-            //     ->select('store_receipt_details.*','store_receipt_details.id as store_receipt_details_id', 'store_receipt.id as store_receipt_main_id',
-            //      'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.remark', 'store_receipt.signature')
-            //     ->where('store_receipt.id', $id)
-            //     ->get();
-            //     dd($designData);
+            // ->select('store_receipt_details.*', 'store_receipt_details.id as store_receipt_details_id', 'store_receipt.id as store_receipt_main_id',
+            //              'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number','store_receipt.remark',)
+            // ->where('store_receipt.id', $id)
+            // ->get();
+
+            
+            $designData = StoreReceipt::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
+            ->select('store_receipt_details.*', 'store_receipt_details.id as store_receipt_details_id',
+             'store_receipt.id as store_receipt_main_id',
+             'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.signature')
+            ->where('store_receipt.id', $id)
+            ->get();
 
             if ($designData->isEmpty()) {
                 return null;
@@ -103,7 +110,7 @@ class StoreReceiptRepository  {
             for ($i = 0; $i <= $request->design_count; $i++) {
                 $designDetails = StoreReceiptDetails::findOrFail($request->input("design_id_" . $i));
                 
-                $designDetails->store_receipt_id = $request->input("store_receipt_id_" . $i);
+                // $designDetails->store_receipt_id = $request->input("store_receipt_id_" . $i);
                 $designDetails->quantity = $request->input("quantity_" . $i);
                 $designDetails->description = $request->input("description_" . $i);
                 $designDetails->price = $request->input("price_" . $i);
@@ -113,7 +120,7 @@ class StoreReceiptRepository  {
             }
     
             // Update main design data
-            $dataOutput = StoreReceipt::findOrFail($request->design_main_id);
+            $dataOutput = StoreReceipt::findOrFail($request->store_receipt_main_id);
             $dataOutput->store_date = $request->store_date;
             $dataOutput->name = $request->name;
             $dataOutput->contact_number = $request->contact_number;
@@ -126,7 +133,7 @@ class StoreReceiptRepository  {
                     $designDetails = new StoreReceiptDetails();
               
                     // Assuming 'store_receipt_id' is a foreign key related to 'StoreReceipt'
-                    $designDetails->store_receipt_id = $request->store_receipt_id; // Set the parent design ID                    
+                    $designDetails->store_receipt_id = $request->store_receipt_main_id; // Set the parent design ID                    
                     $designDetails->quantity = $item['quantity'];
                     $designDetails->description = $item['description'];
                     $designDetails->price = $item['price'];

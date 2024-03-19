@@ -203,7 +203,9 @@ Route::post('/update-design-upload', ['as' => 'update-design-upload', 'uses' => 
 
 Route::get('/list-gatepass', ['as' => 'list-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@index']);
 Route::get('/add-gatepass', ['as' => 'add-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@add']);
-Route::get('/edit-gatepass', ['as' => 'edit-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@edit']);
+Route::post('/store-gatepass', ['as' => 'store-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@store']);
+Route::get('/edit-gatepass/{id}', ['as' => 'edit-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@edit']);
+Route::post('/update-gatepass', ['as' => 'update-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@update']);
 
 // ========================End Gatepasscontroller========
 // ========================  Start Requistion controller ========
@@ -232,7 +234,9 @@ Route::post('/update-docuploadfinance', ['as' => 'update-docuploadfinance', 'use
 
 Route::get('/list-security-remark', ['as' => 'list-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@index']);
 Route::get('/add-security-remark', ['as' => 'add-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@add']);
+Route::post('/store-security-remark', ['as' => 'store-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@store']);
 Route::get('/edit-security-remark', ['as' => 'edit-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@edit']);
+Route::post('/update-security-remark', ['as' => 'update-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@update']);
 
 // ========================End Security Remarkcontroller========
 

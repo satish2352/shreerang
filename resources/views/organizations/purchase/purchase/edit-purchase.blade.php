@@ -59,6 +59,9 @@
                                             <a
                                             {{-- href="{{ route('add-more-data') }}" --}}
                                            > 
+
+                                           <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
+
                                             <div class="container-fluid">
                                                 <!-- @if ($errors->any())
                                                     <div class="alert alert-danger">
@@ -79,6 +82,7 @@
                                                             name="po_date" value="{{ $editDataNew->po_date }}"
                                                             placeholder="Select PO Date">
                                                     </div>
+                                                    
                                                     <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <div class="form-select-list">
                                                             <label for="vendor_id">Select Vendor:</label>
@@ -91,6 +95,7 @@
                                                             </select>
                                                         </div>                                                                                                   
                                                     </div> -->
+
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <div class="form-select-list">
                                                             <label for="vendor_id">Select Vendor:</label>
@@ -301,8 +306,23 @@
         ++i;
 
         $("#dynamicTable").append(
-            '<tr>  <input type="hidden" name="addmore[' + i + '][design_count]" class="form-control" value="' + i + '" placeholder=""> <input type="hidden" name="addmore[' + i + '][purchase_id]" class="form-control" value="' + i + '" placeholder=""><td><input type="text" name="addmore[' + i + '][design_name]" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_quantity]" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_size]" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_unit]" placeholder="Enter Product Unit" class="form-control" /></td><td> <a class="remove-tr delete-btn btn btn-danger m-1" title="Delete"><i class="fas fa-archive"></i></a></td></tr>'
-        );
+            // '<tr>  <input type="hidden" name="addmore[' + i + '][design_count]" class="form-control" value="' + i + '" placeholder=""> <input type="hidden" name="addmore[' + i + '][purchase_id]" class="form-control" value="' + i + '" placeholder=""><td><input type="text" name="addmore[' + i + '][design_name]" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_quantity]" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_size]" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="addmore[' + i + '][product_unit]" placeholder="Enter Product Unit" class="form-control" /></td><td> <a class="remove-tr delete-btn btn btn-danger m-1" title="Delete"><i class="fas fa-archive"></i></a></td></tr>'
+            '<tr><td><input type="text" name="addmore[' +
+            i +
+            '][part_no]" placeholder="Enter Part No" class="form-control" /></td><td><input type="text" name="addmore[' +
+            i +
+            '][description]" placeholder="Enter Description" class="form-control" /></td><td><input type="date" name="addmore[' +
+            i +
+            '][due_date]" placeholder="Select Due Date" class="form-control" /></td><td><input type="text" name="addmore[' +
+            i +
+            '][hsn_no]" placeholder="Enter HSN No" class="form-control" /></td><td><input type="text" name="addmore[' +
+            i +
+            '][quantity]" placeholder="Enter Quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
+            i +
+            '][rate]" placeholder="Enter Rate" class="form-control" /></td><td><input type="text" name="addmore[' +
+            i +
+            '][amount]" placeholder="Enter Amount" class="form-control" /></td><td><a class="remove-tr delete-btn btn btn-danger m-1" title="Delete"><i class="fas fa-archive"></i></a></td></tr>'
+            );
     });
 
     $(document).on("click", ".remove-tr", function() {

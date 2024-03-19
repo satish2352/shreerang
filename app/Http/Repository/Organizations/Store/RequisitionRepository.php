@@ -74,7 +74,7 @@ public function addAll($request)
 
     public function getById($id) {
         try {
-            $designData= Requisition::get();
+            // $designData= Requisition::get();
 
             // $designData = Requisition::leftJoin('requisition_details', 'store_receipt.id', '=', 'requisition_details.store_receipt_id')
             //     ->select('requisition_details.*','requisition_details.id as requisition_details_id', 'store_receipt.id as store_receipt_main_id',
@@ -82,6 +82,14 @@ public function addAll($request)
             //     ->where('store_receipt.id', $id)
             //     ->get();
             //     dd($designData);
+
+            $designData = Requisition::leftJoin('requisition_details', 'requisition.id', '=', 'requisition_details.requisition_id')
+                ->select('requisition_details.*', 'requisition_details.id as requisition_details_id', 
+                'requisition.id as requisition_main_id', 
+                'requisition.req_name', 'requisition.req_number', 
+                'requisition.req_date','requisition.signature')
+                ->where('requisition.id', $id)
+                ->get();
             
             if ($designData->isEmpty()) {
                 return null;
@@ -114,7 +122,7 @@ public function addAll($request)
             }
     
             // Update main Requisition data
-            $dataOutput = Requisition::findOrFail($request->design_main_id);
+            $dataOutput = Requisition::findOrFail($request->requisition_main_id);
             $dataOutput->req_name = $request->req_name;
             $dataOutput->req_number = $request->req_number;
             $dataOutput->req_date = $request->req_date;
@@ -126,7 +134,7 @@ public function addAll($request)
                     $designDetails = new RequisitionDetails();
               
                     // Assuming 'requisition_id' is a foreign key related to 'Requisition'
-                    $designDetails->requisition_id = $request->requisition_id; // Set the parent design ID                    
+                    $designDetails->requisition_id = $request->requisition_main_id; // Set the parent design ID                    
                     $designDetails->description = $item['description'];
                     $designDetails->quantity = $item['quantity'];
                     $designDetails->unit = $item['unit'];

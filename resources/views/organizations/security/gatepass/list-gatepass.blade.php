@@ -84,30 +84,30 @@ padding-left: 20px !important;
                                             <th data-field="name" data-editable="true">Name</th>   
                                             <th data-field="date" data-editable="true">Date</th>   
                                             <th data-field="time" data-editable="true">Time</th>
-                                            <th data-field="remark" data-editable="true">Remark</th>                                            
-                                            <th data-field="status" data-editable="true">Status</th>                                                                               
+                                            <th data-field="remark" data-editable="true">Remark</th>                                                                               
                                             <th data-field="action">Action</th>
                                         </tr>
 
                                     </thead>
-                                    <tbody>                                       
+                                    <tbody> 
+                                    @foreach($getOutput as $data)                                      
                                         <tr>
-                                            <td></td>
-                                            <td>1</td>                                            
-                                            <td>PO</td>
-                                            <td>Name</td>
-                                            <td>Date</td>
-                                            <td>Time</td>
-                                            <td>Remark</td>
-                                            <td>Status</td>
+                                        <td></td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ucwords($data->purchase_id)}}</td>
+                                            <td>{{ucwords($data->gatepass_name)}}</td>
+                                            <td>{{ucwords($data->gatepass_date)}}</td>
+                                            <td>{{ucwords($data->gatepass_time)}}</td>
+                                            <td>{{ucwords($data->remark)}}</td>
+                                            
                                             <td>
                                                 <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('edit-gatepass')}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                    <a  href="{{route('edit-gatepass', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                                     {{-- <a href="{{route('delete-gatepass')}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
                                                 </div>
                                             </td>
                                            </tr>
-                                      
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

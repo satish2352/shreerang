@@ -53,14 +53,14 @@
                                         <form action="{{ route('update-store-receipt', $editData[0]->store_receipt_main_id) }}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" name="design_main_id"
+                                            <input type="hidden" name="store_receipt_main_id"
                                                             id="" class="form-control"
                                                             value="{{ $editData[0]->store_receipt_main_id}}"
                                                             placeholder="">
                                             <a
                                             {{-- href="{{ route('add-more-data') }}" --}}
                                            > 
-                                           <!-- <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
+                                           <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
                                             <div class="container-fluid">
                                                 <!-- @if ($errors->any())
                                                     <div class="alert alert-danger">
@@ -123,7 +123,7 @@
 
                                                                 <input type="hidden" name="design_id_{{ $key }}"
                                                                     id="design_id_{{ $key }}" class="form-control"
-                                                                    value="{{ $editDataNew->purchase_order_details_id }}"
+                                                                    value="{{ $editDataNew->store_receipt_details_id }}"
                                                                     placeholder="">
                                                             
                                                                 <td>
@@ -293,7 +293,20 @@
         ++i;
 
         $("#dynamicTable").append(
-            '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
+            // '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
+
+            '<tr><td><input type="text" name="addmore[' +
+                i +
+                '][quantity]" placeholder="Enter your quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
+                i +
+                '][description]" placeholder="Enter your description" class="form-control" /></td><td><input type="text" name="addmore[' +
+                i +
+                '][price]" placeholder="Enter your Price" class="form-control" /></td><td><input type="text" name="addmore[' +
+                i +
+                '][amount]" placeholder="Enter your amount" class="form-control" /></td><td><input type="text" name="addmore[' +
+                i +
+                '][total]" placeholder="Enter your total" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
+                
         );
     });
 
