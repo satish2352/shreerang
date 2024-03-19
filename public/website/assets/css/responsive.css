@@ -82,17 +82,51 @@
         width: 100% !important;
     }
 }
+@media only screen and (min-width: 1300px){
+    .mthtext{
+        font-size: 65px !important;
+    }
+}
 
 /* Large devices (Above 1200px) */
+@media only screen and (min-width: 1301px) and (max-width: 1599px){
+    .flogo {
+        margin-top: 27px;
+        /* display: none; */
+        width: 347px;
+        height: 347px;
+        margin-left: -139px;
+        position: absolute;
+    }
+}
+@media only screen and (min-width: 1301px) and (max-width: 1920px){
+    .foottitle1{
+        margin-left: -76px;
+    }
+ 
+    
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1300px) {
     .flogo{
-        margin-top: 13px;
+        margin-top: 83px;
         /* display: none */
     width: 300px;
-    height: 400px;
+    height: 300px;
    margin-left: -110px;
     position: absolute;
     }
+    .footercoloums{
+        padding-left: 0;
+        padding-right: 0px;
+    }
+    .foottitle1{
+        margin-left: -76px;
+    }
+    .footercoloums1{
+        padding-left: 53px;
+    }
+
 }
 
 @media only screen and (min-width: 992px)  {
@@ -289,8 +323,8 @@
     .testmo1{
         padding-top: 20px;
         padding-bottom: 20px;
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 150px;
+        padding-right: 150px;
     }
     .fontsize30{
         font-size: 35px;
@@ -302,7 +336,13 @@
         font-size: 47px;
     }
     .fs2{
-        font-size: 30px;
+        font-size: 24px;
+    }
+    .pptt{
+        padding-top: 10px ;
+    }
+    .exp{
+        padding: 1.5rem !important;
     }
     .fs3{
         font-size: 45px;
@@ -479,7 +519,9 @@
         margin-bottom: 10px;
     
     } */
-   
+    .flogo{
+
+    }
 }
 
 /* Large devices (Desktop ,Laptop) */
@@ -1577,10 +1619,10 @@ Custom media queries
 
     }
 
-    .flogo{
+    /* .flogo{
         height: 425px !important;
       
-    }
+    } */
 
     .bigfont{
         font-size: 27px;
@@ -1601,8 +1643,8 @@ Custom media queries
         padding-left: 100px;
     }
     .paddiall4{
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 120px;
+        padding-bottom: 120px;
     }
     .imgnag{
         margin-top: -30px;
@@ -1614,7 +1656,7 @@ Custom media queries
         padding-right: 350px;
     }
     h1{
-        font-size: 55px;
+        font-size: 56px;
     }
 
 }
@@ -1624,14 +1666,20 @@ Custom media queries
         color: #444;
         top: -38pc;
         position: relative;
-        left: 64pc;
+        left: 70pc;
         margin-left: -16pc;
         
     
     }
+    .misn1{
+        margin-top: 80px !important;
+    }
     .flogo{
-        height: 380px;
-        padding-left: 24px;
+        top: -11px;
+        right: -40px;
+        height: 410;
+        padding-left: 0px;
+        position: absolute;
     }
    
     
@@ -1666,7 +1714,10 @@ Custom media queries
         margin-left: 90px;
     } */
     .hrline{
-        margin-right: 108px;
+        margin-right: 207px;
+    }
+    .ftc{
+        padding-left: 73px;
     }
     #ddimg{
         height: 480px;

@@ -12,7 +12,7 @@
             <footer class="footer-area footbak">
                 <div class="container-fluid pt-50 pb-50 footerleftmargin">
                     <div class="row ">                        
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-xxl-6  ">
+                        <div class="col-lg-6 col-md-5 col-sm-6 col-xl-6 col-xxl-6  ">
                             <div class="footer-links pt-md- mb-0">
                                 <h4 class="green f-700 mb-20 foottitle">ADDRESS</h4>
                                 <ul class="links-list fgap  ">
@@ -24,7 +24,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 col-xxl-3 colpadding">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 col-xxl-3  colpadding ">
                             <div class="footer-links  pt-md- mb-sm-0">
                                 <h4 class="green f-700 mb-20 foottitle">CONTACT</h4>
                                 <ul class="links-list foottitle_sub">
@@ -51,8 +51,8 @@
                             </div>
                             
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 foottitle ">
-                            <div class="footer-links mb-sm-0">
+                        <div class="col-lg-3 col-md-4 col-sm-3 footercoloums foottitle foottitle1 ">
+                            <div class="footer-links mb-sm-0 footercoloums1">
                                 <h4 class="green f-700 mb-20 ">QUICK LINKS</h4>
                                 <ul class="links-list foottitle_sub">
                                     <li><a href="{{url('/about')}}">About</a></li>
@@ -69,12 +69,12 @@
                         <div class="container-fluid">
                             <div class="row ">
                                 
-                                <div class="col-xl-11 col-md-11">
+                                <div class="col-xl-11 col-md-11 pll-0">
                                     <div class="row   ">
                                         <div class="col-xl-9 col-md-8">
                                         <p class="mb-3 white ">Copyrights <a href="https://sumagoinfotech.com/websiteprintpark_new/index.php" target="blank" class="white">sumagoinfotech</a> 2024. All rights reserved.</p>
                                         </div>
-                                        <div class="col-xl-3 col-md-4 banrimgs  ">
+                                        <div class="col-xl-3 col-md-4 banrimgs ftc  ">
                                             <p class=" white text-end ">Terms & Conditions</p>
                                         </div>
                                     </div>

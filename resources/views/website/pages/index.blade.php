@@ -302,7 +302,7 @@
             <div class="row pb-50 pb-md-20 pb-sm-20">
                 <div class="col-xl-4 pl-60 pr-60 mt-30">
                     <div class="item">
-                        <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">01 </h1></span> Request</h1>
+                        <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1 pd00"><h1 class="white fs1 f-800">01 </h1></span> Request</h1>
                         <img src="{{ asset('website/assets/img/icons/1.png')}}" alt="">
                         <h6 class="clrtext text-justify align-content-center  fs-18 mrtp pt-3">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
@@ -310,14 +310,14 @@
                 
                 <div class="col-xl-4 pl-60 pr-60 mt-30">
                     <div class="item">
-                    <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">02 </h1></span> Develop</h1>
+                    <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1 pd00"><h1 class="white fs1 f-800">02 </h1></span> Develop</h1>
                         <img src="{{ asset('website/assets/img/icons/2.png')}}"  alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp pt-3">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>
                 </div>
                 <div class="col-xl-4 pl-60 pr-60 mt-30">
                     <div class="item">
-                    <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1"><h1 class="white fs1 f-800">03 </h1></span> Install</h1>
+                    <h1 class="f-800 clrtext position-absolute"><span class="btn btn-round1 pd00"><h1 class="white fs1 f-800">03 </h1></span> Install</h1>
                         <img src="{{ asset('website/assets/img/icons/3.png')}}"  alt="">
                         <h6 class="clrtext text-justify fs-18 mrtp pt-3">Lorem ipsum dolor sit Provident nam illum, maxime ipsum nostrum amet, consectetur adipisicing  aut unde officiis eveniet</h6>
                     </div>

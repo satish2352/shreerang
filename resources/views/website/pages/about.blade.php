@@ -180,7 +180,7 @@
                         </div>
                         <img src="{{ asset('website/assets/img/about/vission.png')}}" id="vision_mision" alt="">
                     </div>
-                    <div class="col-lg-6 pt-60 pb-50 vison">
+                    <div class="col-lg-6 pt-60 pb-50 vison align-items-center d-flex">
                     <h4 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, assumenda quam placeat porro soluta quod sapiente accusamus consectetur excepturi nobis tenetur culpa veniam qui, provident cupiditate blanditiis harum neque ipsum!</h4>
                     </div>
                     
@@ -191,7 +191,7 @@
                             <h1 class="f-800">MISSION</h1>
                         </div>
                     </div>
-                    <div class="col-lg-6 pt-30 order-md-1 misn1">
+                    <div class="col-lg-6 pt-30 order-md-1 misn1 ">
                     <h4 class="clrtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo pariatur odio. Placeat vitae temporibus suscipit harum doloremque, ipsum corrupti, quis tempore, cumque dignissimos sunt quia laborum? Ducimus, alias quidem?</h4>
                     </div>
                     </div>
