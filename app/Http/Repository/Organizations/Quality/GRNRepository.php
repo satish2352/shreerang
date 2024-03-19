@@ -19,6 +19,8 @@ class GRNRepository  {
             // ->select('purchase_order_details.*','purchase_order_details.id as designs_details_id', 'purchase_orders.id as purchase_main_id', 'purchase_orders.vendor_id', 'purchase_orders.po_date', 'purchase_orders.terms_condition', 'purchase_orders.image')
             // ->where('purchase_orders.id', $id)
             // ->get();
+
+           
           
             return $data_output;
         } catch (\Exception $e) {
@@ -75,15 +77,13 @@ class GRNRepository  {
 
     public function getById($id) {
         try {
-            $designData= GRN::get();
+            // $designData= GRN::get();
 
-            // $designData = GRN::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
-            //     ->select('store_receipt_details.*','store_receipt_details.id as store_receipt_details_id', 'store_receipt.id as store_receipt_main_id',
-            //      'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.remark', 'store_receipt.signature')
-            //     ->where('store_receipt.id', $id)
-            //     ->get();
-            //     dd($designData);
-
+            $designData = GRN::leftJoin('tbl_grn_details', 'tbl_grn.id', '=', 'tbl_grn_details.purchase_id')
+            ->select('tbl_grn_details.*', 'tbl_grn_details.id as tbl_grn_details_id', 'tbl_grn.id as grn_main_id', 'tbl_grn.grn_date', 'tbl_grn.po_date', 'tbl_grn.remark','tbl_grn.invoice_no', 'tbl_grn.invoice_date','tbl_grn.image')
+            ->where('tbl_grn.id', $id)
+            ->get();
+dd($designData);
             if ($designData->isEmpty()) {
                 return null;
             } else {
