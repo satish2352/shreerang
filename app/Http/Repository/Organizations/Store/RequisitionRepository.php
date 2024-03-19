@@ -74,7 +74,13 @@ public function addAll($request)
 
     public function getById($id) {
         try {
-            $designData= Requisition::get();
+            // $designData= Requisition::get();
+
+            $designData = Requisition::leftJoin('requisition_details', 'requisition.id', '=', 'requisition_details.requisition_id')
+            ->select('requisition_details.*', 'requisition_details.id as requisition_details_id', 'requisition.id as requisition_main_id', 'requisition.req_name', 'requisition.req_number', 'requisition.req_date','requisition.signature')
+            ->where('requisition.id', $id)
+            ->get();
+
 
             // $designData = Requisition::leftJoin('requisition_details', 'store_receipt.id', '=', 'requisition_details.store_receipt_id')
             //     ->select('requisition_details.*','requisition_details.id as requisition_details_id', 'store_receipt.id as store_receipt_main_id',

@@ -211,7 +211,7 @@ Route::get('/edit-gatepass', ['as' => 'edit-gatepass', 'uses' => 'App\Http\Contr
 Route::get('/list-requistion', ['as' => 'list-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@index']);
 Route::get('/add-requistion', ['as' => 'add-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@add']);
 Route::post('/store-requistion', ['as' => 'store-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@store']);
-Route::get('/edit-requistion', ['as' => 'edit-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@edit']);
+Route::get('/edit-requistion/{id}', ['as' => 'edit-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@edit']);
 Route::post('/update-requistion', ['as' => 'update-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@update']);
 
 // ======================== End Requistion controller ========
