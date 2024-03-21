@@ -97,7 +97,9 @@ padding-left: 20px !important;
                                             <td>{{ucwords($data->purchase_id)}}</td>
                                             <td>{{ucwords($data->gatepass_name)}}</td>
                                             <td>{{ucwords($data->gatepass_date)}}</td>
-                                            <td>{{ucwords($data->gatepass_time)}}</td>
+                                            <!-- <td>{{ date('m/d/Y', strtotime($data->gatepass_date)) }}</td> -->
+                                            <!-- <td>{{ucwords($data->gatepass_time)}}</td> -->
+                                            <td>{{ date('h:i A', strtotime($data->gatepass_time)) }}</td>
                                             <td>{{ucwords($data->remark)}}</td>
                                             
                                             <td>

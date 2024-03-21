@@ -94,17 +94,25 @@
                                                                 <label for="gatepass_date">Date:</label>
                                                                 <input type="date" class="form-control" id="gatepass_date"
                                                                     name="gatepass_date" 
-                                                                    value="@if (old('gatepass_date')) {{ old('gatepass_date') }}@else{{ $editData->gatepass_date }} @endif"
+                                                                    value="{{ old('gatepass_date', isset($editData) ? date('Y-m-d', strtotime($editData->gatepass_date)) : '') }}"
                                                                     placeholder="Select Date">
                                                             </div>
 
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                 <label for="gatepass_time">Time:</label>
                                                                 <input type="time" class="form-control" id="gatepass_time"
                                                                     name="gatepass_time" 
                                                                     value="@if (old('gatepass_time')) {{ old('gatepass_time') }}@else{{ $editData->gatepass_time }} @endif"
                                                                     placeholder="Select Time">
+                                                            </div> -->
+
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="gatepass_time">Time:</label>
+                                                                <input type="time" class="form-control" id="gatepass_time" name="gatepass_time" 
+                                                                    value="{{ $editData->gatepass_time ? date('H:i', strtotime($editData->gatepass_time)) : '' }}"
+                                                                    placeholder="Select Time">
                                                             </div>
+
                                                     
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                 <label for="remark">Remark:</label>

@@ -59,11 +59,12 @@
                                                             value="{{ $editData[0]->store_receipt_main_id}}"
                                                             placeholder="">
                                                             
-                                            <a
+                                                            <a
                                             {{-- href="{{ route('add-more-data') }}" --}}
-                                           > 
-                                           <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
-                                            <div class="container-fluid">
+                                            class="btn btn-sm btn-primary ml-3"> 
+                                            <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
+      
+                                           <div class="container-fluid">
                                                 <!-- @if ($errors->any())
                                                     <div class="alert alert-danger">
                                                         <ul>
@@ -78,25 +79,35 @@
                                                     @if ($key == 0)
                                                     <div class="form-group-inner">
                                                         <div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                     <label for="store_date">Date:</label>
                                                                     <input type="date" class="form-control" id="store_date"
                                                                     name="store_date" 
-                                                                    value="{{ $editDataNew->store_date }}">
-                                                            </div>   
+                                                                    value="@if (old('store_date')) {{ old('store_date') }}@else{{ $editDataNew->store_date}} @endif"
+                                                                    >
+                                                            </div>    -->
+
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                    <label for="store_date">Date:</label>
+                                                                    <input type="date" class="form-control" id="store_date" name="store_date" 
+                                                                        value="{{ old('store_date', isset($editDataNew) ? date('Y-m-d', strtotime($editDataNew->store_date)) : '') }}">
+                                                            </div>
 
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                 <label for="name">Name of Store Person :</label>
                                                                 <input type="text" class="form-control" id="name"
                                                                     name="name" placeholder="Enter Name of Store Person"
-                                                                    value="{{ $editDataNew->name }}">
+                                                                    value="@if (old('name')) {{ old('name') }}@else{{ $editDataNew->name}} @endif"
+                                                                    >
                                                             </div>
+                                                        </div>    
 
+                                                        <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                 <label for="contact_number">Contact No. :</label>
                                                                 <input type="text" class="form-control" id="contact_number"
                                                                     name="contact_number" placeholder="Enter Contact No."
-                                                                    value="{{ $editDataNew->contact_number }}"
+                                                                    value="@if(old('contact_number')){{ old('contact_number') }}@else{{ $editDataNew->contact_number}} @endif"
                                                                     pattern="[789]{1}[0-9]{9}" 
                                                                     oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" 
                                                                     maxlength="10" 
@@ -125,13 +136,13 @@
 
                                                                 <input type="hidden" name="design_id_{{ $key }}"
                                                                     id="design_id_{{ $key }}" class="form-control"
-                                                                    value="{{ $editDataNew->store_receipt_details_id }}"
+                                                                    value="{{ $editDataNew->store_receipt_details_id}}"
                                                                     placeholder="">
                                                             
                                                                 <td>
                                                                     <input type="text"
                                                                         name="quantity_{{ $key }}"
-                                                                        value="{{ $editDataNew->quantity }}"
+                                                                        value="@if (old('quantity')) {{ old('quantity') }}@else{{ $editDataNew->quantity }} @endif"
                                                                         placeholder="Enter Quantity"
                                                                         class="form-control" />
                                                                 </td>
@@ -139,14 +150,14 @@
                                                                 <td>
                                                                     <input type="text"
                                                                         name="description_{{ $key }}"
-                                                                        value="{{ $editDataNew->description }}"
+                                                                        value="@if (old('description')) {{ old('description') }}@else{{ $editDataNew->description }} @endif"
                                                                         placeholder="Enter description" class="form-control" />
                                                                 </td>
 
                                                                 <td>
                                                                     <input type="text"
                                                                         name="price_{{ $key }}"
-                                                                        value="{{ $editDataNew->price}}"
+                                                                        value="@if (old('price')) {{ old('price') }}@else{{ $editDataNew->price }} @endif"
                                                                         placeholder="Enter Price"
                                                                         class="form-control" />
                                                                 </td>
@@ -154,14 +165,14 @@
                                                                 <td>
                                                                     <input type="text"
                                                                         name="amount_{{ $key }}"
-                                                                        value="{{ $editDataNew->amount}}"
+                                                                        value="@if (old('amount')) {{ old('amount') }}@else{{ $editDataNew->amount }} @endif"
                                                                         placeholder="Enter amount" class="form-control" />
                                                                 </td>
 
                                                                 <td>
                                                                     <input type="text"
                                                                         name="total_{{ $key }}"
-                                                                        value="{{ $editDataNew->total}}"
+                                                                        value="@if (old('total')) {{ old('total') }}@else{{ $editDataNew->total }} @endif"
                                                                         placeholder="Enter total" class="form-control" />
                                                                 </td>
 
@@ -186,7 +197,8 @@
                                                                     <label for="remark">Remark :</label>
                                                                     <input type="text" class="form-control" id="remark"
                                                                         name="remark" placeholder="Enter Remark here"
-                                                                        value="{{ $editDataNew->remark }}">
+                                                                        value="@if (old('remark')) {{ old('remark') }}@else{{ $editDataNew->remark }} @endif"
+                                                                        >
                                                                 </div>                                                            
                                                             
                                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -205,7 +217,19 @@
                                                                         <img src="" alt="Selected Image"
                                                                             style="max-width: 100px;">
                                                                     </div>
-                                                                </div>
+                                                                </div>  
+                                                                
+                                                                <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                    <label for="signature">Image:</label>
+                                                                    <input type="file" class="form-control" id="signature" name="signature" value="@if (old('signature')) {{ old('signature') }}@else{{ $editDataNew->signature }} @endif">
+                                                                    @if (old('signature') || isset($editDataNew))
+                                                                        <div>
+                                                                            <label>Old Image:  </label>
+                                                                            <img src="@if (old('signature')) {{ old('signature') }} @elseif(isset($editDataNew)) {{ Config::get('FileConstant.STORE_RECEIPT_VIEW') . $editDataNew->signature }} @endif" alt="Old Image" style="max-width: 100px;">
+                                                                        </div>
+                                                                    @endif
+                                                                </div> -->
+                                                                
                                                             </div>
                                                     @endif
                                                 @endforeach
@@ -254,27 +278,26 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script>
-        $(document).ready(function() {
+    
+<script>
+    $(document).ready(function() {
     var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
 
     $("#add").click(function() {
         ++i;
 
         $("#dynamicTable").append(
-            // '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
-
             '<tr><td><input type="text" name="addmore[' +
                 i +
-                '][quantity]" placeholder="Enter your quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
+                '][quantity]" placeholder="Enter Quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
                 i +
-                '][description]" placeholder="Enter your description" class="form-control" /></td><td><input type="text" name="addmore[' +
+                '][description]" placeholder="Enter Description" class="form-control" /></td><td><input type="text" name="addmore[' +
                 i +
-                '][price]" placeholder="Enter your Price" class="form-control" /></td><td><input type="text" name="addmore[' +
+                '][price]" placeholder="Enter Price" class="form-control" /></td><td><input type="text" name="addmore[' +
                 i +
-                '][amount]" placeholder="Enter your amount" class="form-control" /></td><td><input type="text" name="addmore[' +
+                '][amount]" placeholder="Enter Amount" class="form-control" /></td><td><input type="text" name="addmore[' +
                 i +
-                '][total]" placeholder="Enter your total" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
+                '][total]" placeholder="Enter Total" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
                 
         );
     });
@@ -283,26 +306,6 @@
         $(this).parents("tr").remove();
     });
 });
-
-<script>
-    $('.delete-btn').click(function(e) {
-
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $("#delete_id").val($(this).attr("data-id"));
-                $("#deleteform").submit();
-            }
-        })
-
-    });
 </script>
 
 <script>
@@ -321,16 +324,12 @@ jQuery(document).ready(function($) {
             contact_number: {
                 required: true,
                 digits: true 
-            },
-            address: {
-                required: true,
-            },           
+            },        
             remark: {
                 required: true,
             },
-            signature: {
-                required: true,
-            },
+            
+            
             'addmore[0][quantity]': {
                 required : true,
                 number: true 
@@ -357,13 +356,6 @@ jQuery(document).ready(function($) {
                 required: "Please Select a Store Date.",
                 date: "Please enter a valid Store date."
             },
-            receipt_date: {
-                required: "Please Select a Receipt date.",
-                date: "Please enter a valid Receipt date."
-            },
-            // receipt_no: {
-            //     required: "Please Enter receipt No.",
-            // },
             name: {
                 required: "Please Enter Store Person Name.",
                 noNumbers: "Store Person Name should not contain any numbers."
@@ -371,17 +363,11 @@ jQuery(document).ready(function($) {
             contact_number: {
                 required: "Please Enter a valid Contact No.",
                 digits: "Contact Number should contain only digits."
-            },
-            // address: {
-            //     required: "Please enter a valid address.",
-            // },           
+            },          
             remark: {
                 required: "Please Write Remark",
             },
-            signature: {
-                required: "Please Upload an Signature Image.",
-                accept: "Please Upload an Signature Image file.",
-            },
+           
         
             'addmore[0][quantity]': {
                 required: "Please Enter Quantity.",
@@ -413,5 +399,28 @@ jQuery(document).ready(function($) {
 });
 
 </script>
+
+<script>
+    $('.delete-btn').click(function(e) {
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $("#delete_id").val($(this).attr("data-id"));
+                $("#deleteform").submit();
+            }
+        })
+
+    });
+</script>
+
+
 
 @endsection

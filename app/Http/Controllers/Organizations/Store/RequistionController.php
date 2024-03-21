@@ -24,7 +24,6 @@ class RequistionController extends Controller
     public function index(){
         try {
                 $getOutput = $this->service->getAll();
-
                 return view('organizations.store.requistion.list-requistion', compact('getOutput'));
 
         } catch (\Exception $e) {
@@ -33,8 +32,7 @@ class RequistionController extends Controller
     }  
     
     public function add(){
-        try {
-          
+        try {          
             return view('organizations.store.requistion.add-requistion');
 
         } catch (\Exception $e) {
@@ -47,26 +45,30 @@ class RequistionController extends Controller
                 'req_name' => 'required|string',                               
                 'req_number' => 'required|string',
                 'req_date' => 'required',
-                'signature' => 'required|image|mimes:jpeg,png,jpg',
+                // 'signature' => 'required|image|mimes:jpeg,png,jpg',
                 // 'signature' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
             ];
 
-            $messages = [                                               
-                        
-                        'req_name.required' => 'The Requisition name is required.',
-                        'req_name.string' => 'The Requisition name must be a valid string.',
-                        
-                        'req_number.required' => 'Please Enter Requisition number.',
-                        'req_number.string' => 'The Requisition number must be a valid string.',
+            if($request->has('signature')) {
+                $rules['signature'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.SLIDER_IMAGE_MIN_SIZE");
+            }
 
-                        'req_date.required' => 'Please enter a valid Store Date.',
-                        
-                        'signature.required' => 'The signature image is required.',
-                        'signature.image' => 'The signature image must be a valid image file.',
-                        'signature.mimes' => 'The signature image must be in JPEG, PNG, JPG format.',
-                        // 'signature.max' => 'The signature image size must not exceed 10MB.',
-                        // 'signature.min' => 'The signature image- size must not be less than 5KB.',
-                    ];
+            $messages = [
+                'req_name.required' => 'The Requisition name is required.',
+                'req_name.string' => 'The Requisition name must be a valid string.',
+                
+                'req_number.required' => 'Please Enter Requisition number.',
+                'req_number.string' => 'The Requisition number must be a valid string.',
+
+                'req_date.required' => 'Please enter a valid Store Date.',
+                
+                'signature.required' => 'The image is required.',
+                'signature.image' => 'The image must be a valid image file.',
+                'signature.mimes' => 'The image must be in JPEG, PNG, JPG format.',
+                'signature.max' => 'The image size must not exceed '.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'KB .',
+                'signature.min' => 'The image size must not be less than '.Config::get("AllFileValidation.REQUISITION_IMAGE_MIN_SIZE").'KB .',
+                'signature.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+            ];
 
   
           try {
@@ -98,12 +100,9 @@ class RequistionController extends Controller
 
 
     public function edit(Request $request){                
-        try {
-          
-            $edit_data_id = base64_decode($request->id);
-      
+        try {          
+            $edit_data_id = base64_decode($request->id);      
             $editData = $this->service->getById($edit_data_id);
-
             return view('organizations.store.requistion.edit-requistion' , compact('editData'));
 
         } catch (\Exception $e) {
@@ -111,32 +110,35 @@ class RequistionController extends Controller
         }
     } 
     
-    public function update(Request $request){
-            
+    public function update(Request $request){            
         $rules = [
-            // 'req_name' => 'required|string',                               
-            // 'req_number' => 'required|string',
-            // 'req_date' => 'required',
+            'req_name' => 'required|string',                               
+            'req_number' => 'required|string',
+            'req_date' => 'required',
             // 'signature' => 'required|image|mimes:jpeg,png,jpg',
             // 'signature' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
         ];
 
-        $messages = [                                               
-                    
-                    // 'req_name.required' => 'The Requisition name is required.',
-                    // 'req_name.string' => 'The Requisition name must be a valid string.',
-                    
-                    // 'req_number.required' => 'Please Enter Requisition number.',
-                    // 'req_number.string' => 'The Requisition number must be a valid string.',
+        if($request->has('signature')) {
+            $rules['signature'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.SLIDER_IMAGE_MIN_SIZE");
+        }
 
-                    // 'req_date.required' => 'Please enter a valid Store Date.',
-                    
-                    // 'signature.required' => 'The signature image is required.',
-                    // 'signature.image' => 'The signature image must be a valid image file.',
-                    // 'signature.mimes' => 'The signature image must be in JPEG, PNG, JPG format.',
-                    // 'signature.max' => 'The signature image size must not exceed 10MB.',
-                    // 'signature.min' => 'The signature image- size must not be less than 5KB.',
-                ];
+        $messages = [
+            'req_name.required' => 'The Requisition name is required.',
+            'req_name.string' => 'The Requisition name must be a valid string.',
+            
+            'req_number.required' => 'Please Enter Requisition number.',
+            'req_number.string' => 'The Requisition number must be a valid string.',
+
+            'req_date.required' => 'Please enter a valid Store Date.',
+            
+            'signature.required' => 'The image is required.',
+            'signature.image' => 'The image must be a valid image file.',
+            'signature.mimes' => 'The image must be in JPEG, PNG, JPG format.',
+            'signature.max' => 'The image size must not exceed '.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'KB .',
+            'signature.min' => 'The image size must not be less than '.Config::get("AllFileValidation.REQUISITION_IMAGE_MIN_SIZE").'KB .',
+            'signature.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+        ];
 
         try {
             $validation = Validator::make($request->all(),$rules, $messages);
@@ -147,9 +149,6 @@ class RequistionController extends Controller
             } else {
                 
                 $update_data = $this->service->updateAll($request);
-
-                // dd($update_data);
-                // die();
                 
                 if ($update_data) {
                     $msg = $update_data['msg'];
@@ -173,8 +172,7 @@ class RequistionController extends Controller
     public function destroy(Request $request){
         $delete_data_id = base64_decode($request->id);
         try {
-            $delete_record = $this->service->deleteById($delete_data_id);
-            // dd($delete_record);
+            $delete_record = $this->service->deleteById($delete_data_id);            
             if ($delete_record) {
                 $msg = $delete_record['msg'];
                 $status = $delete_record['status'];

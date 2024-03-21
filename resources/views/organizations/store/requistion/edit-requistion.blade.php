@@ -83,7 +83,7 @@
                                                         <label for="req_name">Requisition Name :</label>
                                                         <input type="text" class="form-control" id="req_name"
                                                             name="req_name" 
-                                                            value="{{ $editDataNew->req_name }}"
+                                                            value="@if (old('req_name')) {{ old('req_name') }}@else{{ $editDataNew->req_name }} @endif"
                                                             placeholder="Enter your Requisition Name ">
                                                     </div>
 
@@ -91,7 +91,7 @@
                                                         <label for="req_number">Requisition Number :</label>
                                                         <input type="text" class="form-control" id="req_number"
                                                             name="req_number" 
-                                                            value="{{ $editDataNew->req_number }}"
+                                                            value="@if (old('req_number')) {{ old('req_number') }}@else{{ $editDataNew->req_number }} @endif"
                                                             placeholder="Enter your Requisition Number ">
                                                     </div>
                                                 </div>    
@@ -101,7 +101,7 @@
                                                         <label for="req_date">Requisition Date :</label>
                                                         <input type="date" class="form-control" id="req_date"
                                                             name="req_date" 
-                                                            value="{{ $editDataNew->req_date }}"
+                                                            value="{{ old('req_date', isset($editDataNew) ? date('Y-m-d', strtotime($editDataNew->req_date)) : '') }}"
                                                             placeholder="Enter Requisition Date ">
                                                     </div>
 
@@ -153,7 +153,7 @@
                                                         <td>
                                                             <input type="text"
                                                                 name="description_{{ $key }}"
-                                                                value="{{ $editDataNew->description}}"
+                                                                value="@if (old('description')) {{ old('description') }}@else{{ $editDataNew->description }} @endif"
                                                                 placeholder="Enter Description"
                                                                 class="form-control" />
                                                         </td>                                                                                                                                
@@ -161,7 +161,7 @@
                                                         <td>
                                                             <input type="text"
                                                                 name="quantity_{{ $key }}"
-                                                                value="{{ $editDataNew->quantity}}"
+                                                                value="@if (old('quantity')) {{ old('quantity') }}@else{{ $editDataNew->quantity }} @endif"
                                                                 placeholder="Enter Quantity"
                                                                 class="form-control" />
                                                         </td>
@@ -169,28 +169,28 @@
                                                         <td>
                                                             <input type="text"
                                                                 name="unit_{{ $key }}"
-                                                                value="{{ $editDataNew->unit}}"
+                                                                value="@if (old('unit')) {{ old('unit') }}@else{{ $editDataNew->unit }} @endif"
                                                                 placeholder="Enter Unit" class="form-control" />
                                                         </td>
 
                                                         <td>
                                                             <input type="text"
                                                                 name="day_{{ $key }}"
-                                                                value="{{ $editDataNew->day}}"
+                                                                value="@if (old('day')) {{ old('day') }}@else{{ $editDataNew->day }} @endif"
                                                                 placeholder="Enter Day" class="form-control" />
                                                         </td>
 
                                                         <td>
                                                             <input type="text"
                                                                 name="remark_{{ $key }}"
-                                                                value="{{ $editDataNew->remark}}"
+                                                                value="@if (old('remark')) {{ old('remark') }}@else{{ $editDataNew->remark }} @endif"
                                                                 placeholder="Enter Remark" class="form-control" />
                                                         </td>
 
                                                         <td>
                                                             <input type="text"
                                                                 name="stock_{{ $key }}"
-                                                                value="{{ $editDataNew->stock}}"
+                                                                value="@if (old('stock')) {{ old('stock') }}@else{{ $editDataNew->stock }} @endif"
                                                                 placeholder="Enter Stock" class="form-control" />
                                                         </td>
 
@@ -245,25 +245,7 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
  
 <script>
-    // $(document).ready(function() {
-    //     var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
-
-    //     $("#add").click(function() {
-    //         ++i;
-
-    //         $("#dynamicTable").append(
-    //             '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '" placeholder="Enter Product Unit" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
-    //         );
-    //     });
-
-    //     $(document).on("click", ".remove-tr", function() {
-    //         $(this).parents("tr").remove();
-    //     });
-
-    //     // Hide the "Add More" button initially if needed
-    //     // $("#add").hide();
-    // });
-
+    
     $(document).ready(function() {
     var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
 
@@ -271,21 +253,20 @@
         ++i;
 
         $("#dynamicTable").append(
-            // '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
-
+            
             '<tr><td><input type="text" name="addmore[' +
                 i +
-                '][description]" placeholder="Enter your description" class="form-control" /></td><td><input type="text" name="addmore[' +
+                '][description]" placeholder="Enter Description" class="form-control" /></td><td><input type="text" name="addmore[' +
                 i +
-                '][quantity]" placeholder="Enter your quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
+                '][quantity]" placeholder="Enter Quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
                 i +
-                '][unit]" placeholder="Enter your unit" class="form-control" /></td><td><input type="text" name="addmore[' +
+                '][unit]" placeholder="Enter Unit" class="form-control" /></td><td><input type="text" name="addmore[' +
                 i +
-                '][day]" placeholder="Enter your day" class="form-control" /></td><td><input type="text" name="addmore[' +
+                '][day]" placeholder="Enter Day" class="form-control" /></td><td><input type="text" name="addmore[' +
                 i +
-                '][remark]" placeholder="Enter your rremark" class="form-control" /></td><td><input type="text" name="addmore[' +
+                '][remark]" placeholder="Enter Remark" class="form-control" /></td><td><input type="text" name="addmore[' +
                 i +
-                '][stock]" placeholder="Enter your stock" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
+                '][stock]" placeholder="Enter Stock" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
                 
         );
     });
@@ -301,25 +282,20 @@
 jQuery.noConflict();
 jQuery(document).ready(function($) {
     $("#editDesignsForm").validate({
-        rules: {          
-            department_id: {
-                required: true,
-            },
+        rules: {
             req_name: {
                 required: true,
+                noNumbers: true
             },
             req_number: {
                 required: true,
                 number: true 
             },
-            req_date: {
+            stock: {
                 required: true,
                 date : true
             },
-            signature: {
-                required: true,
-                accept: "Please select an Signature Image file.",
-            },
+           
 
             'addmore[0][description]': {
                 required : true,                
@@ -343,12 +319,9 @@ jQuery(document).ready(function($) {
         },
 
         messages: {
-          
-            department_id: {
-                required: "Please select a valid department id.",
-            },
             req_name: {
                 required: "Please Enter Requisition name.",
+                noNumbers: "Requisition Name should not contain any numbers."
             },
             req_number: {
                 required: "Please Enter Requisition Number.",
@@ -378,12 +351,14 @@ jQuery(document).ready(function($) {
             'addmore[0][stock]': {
                 required: "Please Enter Stock.",
             },     
-            signature: {
-                required: "Please Upload a Signature.",
-                accept: "Please Upload an Signature image file.",
-            },
+            
         },
     });
+
+    $.validator.addMethod("noNumbers", function(value, element) {
+            return this.optional(element) || !/\d/.test(value);
+        }, "Vendor Name should not contain any numbers.");
+        
 });
 </script>
 

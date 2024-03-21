@@ -49,11 +49,15 @@
                                 @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <form action="{{ route('update-grn', 
-                                       ) }}"
+                                        <form action="{{ route('update-grn', $editData[0]->grn_main_id) }}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                             @csrf
                                            
+                                            <input type="hidden" name="grn_main_id"
+                                                id="" class="form-control"
+                                                value="{{ $editData[0]->grn_main_id}}"
+                                                placeholder="">
+
                                             <a
                                              {{-- href="{{ route('add-more-data') }}" --}}
                                             class="btn btn-sm btn-primary ml-3"> <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
@@ -77,7 +81,7 @@
                                                                 <label for="grn_date">GRN Date:</label>
                                                                 <input type="date" class="form-control" id="grn_date"
                                                                     name="grn_date" 
-                                                                    value="{{ $editDataNew->grn_date }}"
+                                                                    value="{{ old('grn_date', isset($editDataNew) ? date('Y-m-d', strtotime($editDataNew->grn_date)) : '') }}"
                                                                     placeholder="Enter GRN Date">
                                                             </div>
 
@@ -85,7 +89,7 @@
                                                                 <label for="purchase_id">PO No.:</label>
                                                                 <input type="text" class="form-control" id="purchase_id"
                                                                     name="purchase_id" 
-                                                                    value="{{ $editDataNew->purchase_id }}"
+                                                                    value="@if (old('purchase_id')) {{ old('purchase_id') }}@else{{ $editDataNew->purchase_id }} @endif"
                                                                     placeholder="Enter Purchase No.">
                                                             </div>
                                                         </div>
@@ -95,7 +99,7 @@
                                                                 <label for="po_date">PO Date :</label>
                                                                 <input type="date" class="form-control" id="po_date"
                                                                     name="po_date" 
-                                                                    value="{{ $editDataNew->po_date }}"
+                                                                    value="{{ old('po_date', isset($editDataNew) ? date('Y-m-d', strtotime($editDataNew->po_date)) : '') }}"
                                                                     placeholder="Enter PO Date">
                                                             </div>                                               
 
@@ -103,7 +107,7 @@
                                                                 <label for="invoice_no">Invoice No.:</label>
                                                                 <input type="text" class="form-control" id="invoice_no"
                                                                     name="invoice_no" 
-                                                                    value="{{ $editDataNew->invoice_no }}"
+                                                                    value="@if (old('invoice_no')) {{ old('invoice_no') }}@else{{ $editDataNew->invoice_no }} @endif"
                                                                     placeholder="Enter Invoice No">
                                                             </div>
                                                         </div>    
@@ -113,7 +117,7 @@
                                                                 <label for="invoice_date">Invoice Date:</label>
                                                                 <input type="date" class="form-control" id="invoice_date"
                                                                     name="invoice_date" 
-                                                                    value="{{ $editDataNew->invoice_date }}"
+                                                                    value="{{ old('invoice_date', isset($editDataNew) ? date('Y-m-d', strtotime($editDataNew->invoice_date)) : '') }}"
                                                                     placeholder="Enter Invoice Date">
                                                             </div>
 
@@ -154,9 +158,20 @@
                                                         
                                                             <tr>                                                                                                                      
                                                                 <td>
+
+                                                                <input type="hidden" name="design_count"
+                                                                    id="design_id_{{ $key }}" class="form-control"
+                                                                    value="{{ $key}}"
+                                                                    placeholder="">
+
+                                                                <input type="hidden" name="design_id_{{ $key }}"
+                                                                    id="design_id_{{ $key }}" class="form-control"
+                                                                    value="{{ $editDataNew->tbl_grn_details_id }}"
+                                                                    placeholder="">
+                                                                    
                                                                     <input type="text"
                                                                         name="description_{{ $key }}"
-                                                                        value="{{ $editDataNew->description}}"
+                                                                        value="@if (old('description')) {{ old('description') }}@else{{ $editDataNew->description }} @endif"
                                                                         placeholder="Enter Description"
                                                                         class="form-control" />
                                                                 </td>
@@ -164,7 +179,7 @@
                                                                 <td>
                                                                     <input type="text"
                                                                         name="qc_check_remark_{{ $key }}"
-                                                                        value="{{ $editDataNew->qc_check_remark }}"
+                                                                        value="@if (old('qc_check_remark')) {{ old('qc_check_remark') }}@else{{ $editDataNew->qc_check_remark }} @endif"
                                                                         placeholder="Enter QC Check"
                                                                          class="form-control" />
                                                                 </td>
@@ -172,7 +187,7 @@
                                                                 <td>
                                                                     <input type="text"
                                                                         name="chalan_quantity_{{ $key }}"
-                                                                        value="{{ $editDataNew->chalan_quantity}}"
+                                                                        value="@if (old('chalan_quantity')) {{ old('chalan_quantity') }}@else{{ $editDataNew->chalan_quantity }} @endif"
                                                                         placeholder="Enter Chalan Qty"
                                                                         class="form-control" />
                                                                 </td>
@@ -180,7 +195,7 @@
                                                                 <td>
                                                                     <input type="text"
                                                                         name="actual_quantity_{{ $key }}"
-                                                                        value="{{ $editDataNew->actual_quantity}}"
+                                                                        value="@if (old('actual_quantity')) {{ old('actual_quantity') }}@else{{ $editDataNew->actual_quantity }} @endif"
                                                                         placeholder="Enter Actual Qty"
                                                                         class="form-control" />
                                                                 </td>
@@ -188,7 +203,7 @@
                                                                 <td>
                                                                     <input type="text"
                                                                         name="accepted_quantity_{{ $key }}"
-                                                                        value="{{ $editDataNew->accepted_quantity}}"
+                                                                        value="@if (old('accepted_quantity')) {{ old('accepted_quantity') }}@else{{ $editDataNew->accepted_quantity }} @endif"
                                                                         placeholder="Enter Accepted Qty"
                                                                         class="form-control" />
                                                                 </td>
@@ -196,7 +211,7 @@
                                                                 <td>
                                                                     <input type="text"
                                                                         name="rejected_quantity_{{ $key }}"
-                                                                        value="{{ $editDataNew->rejected_quantity}}"
+                                                                        value="@if (old('rejected_quantity')) {{ old('rejected_quantity') }}@else{{ $editDataNew->rejected_quantity }} @endif"
                                                                         placeholder="Enter Rejected Qty"
                                                                         class="form-control" />
                                                                 </td>
@@ -217,8 +232,8 @@
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <label for="remark">Remark:</label>
                                                         <input type="text" class="form-control" id="remark"
-                                                            name="remark" 
-                                                            value="{{ $editDataNew->remark}}"
+                                                            name="remark"
+                                                            value="@if (old('remark')) {{ old('remark') }}@else{{ $editDataNew->remark }} @endif"
                                                             placeholder="Enter Remark">
                                                     </div>
                                                 </div>
@@ -365,10 +380,7 @@
                 remark :{
                     required : true,
                 },
-                image: {
-                    required: true,
-                    accept: "Please select an Signature Image file.",
-                },
+              
                 'addmore[0][description]': {
                     required : true,
                 },
@@ -414,10 +426,7 @@
                 remark : {
                     required: "Please Enter Remark.",
                 },
-                image: {
-                        required: "Please Upload Signature.",
-                        accept: "Please Upload an Signature file.",
-                },            
+                         
                 'addmore[0][description]': {
                     required: "Please Enter Description.",
                 },
@@ -449,27 +458,27 @@
 
 
 
-{{-- <script>
- $(document).on("click", ".remove-tr", function() {
-    var rowId = $(this).data('row-id');
-    var row = $(this).closest('tr');
-    alert(rowId);
-    $.ajax({
-    url: '/remove-design-details/' + rowId,
-    type: 'DELETE',
-    data: {
-        _token: '{{ csrf_token() }}'
-    },
-    success: function(response) {
-        row.remove();
-        alert(response.msg);
-    },
-    error: function(xhr, status, error) {
-        console.error(xhr.responseText);
-        alert('Error occurred. Please check console for details.');
-    }
-});
-});
+<script>
+    $(document).on("click", ".remove-tr", function() {
+        var rowId = $(this).data('row-id');
+        var row = $(this).closest('tr');
+        alert(rowId);
+        $.ajax({
+        url: '/remove-GRN-details/' + rowId,
+        type: 'DELETE',
+        data: {
+            _token: '{{ csrf_token() }}'
+        },
+        success: function(response) {
+            row.remove();
+            alert(response.msg);
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+            alert('Error occurred. Please check console for details.');
+        }
+    });
+    });
 
-</script> --}}
+</script>
 @endsection

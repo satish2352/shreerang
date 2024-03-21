@@ -56,44 +56,33 @@ use Config;
         }
     }
     
-
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-
+            
             $path = Config::get('FileConstant.STORE_RECEIPT_ADD');
-
-            if ($request->hasFile('image')) {
-                if ($return_data['image']) {
-                    if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['image']);
-                    }
-
+            if (isset($return_data['signature'])) {
+                if (file_exists_view(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['signature'])) {
+                    removeImage(Config::get('FileConstant.STORE_RECEIPT_DELETE') . $return_data['signature']);
                 }
-                if ($request->hasFile('image')) {
-                    $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->file('image')->extension();
-                    
-                } else {
-                    
-                }                
-                uploadImage($request, 'image', $path, $englishImageName);
+            }
+            if ($request->hasFile('signature')) {
+                $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->signature->extension();
+                uploadImage($request, 'signature', $path, $englishImageName);
                 $slide_data = StoreReceipt::find($return_data['last_insert_id']);
-                $slide_data->image = $englishImageName;
+                $slide_data->signature = $englishImageName;
                 $slide_data->save();
-            }      
-            
-            // dd($return_data);
-            //     die();
-            
+            }
             if ($return_data) {
                 return ['status' => 'success', 'msg' => 'Data Updated Successfully.'];
             } else {
-                return ['status' => 'error', 'msg' => 'Data  Not Updated.'];
+                return ['status' => 'error', 'msg' => 'Data Not Updated.'];
             }  
         } catch (Exception $e) {
             return ['status' => 'error', 'msg' => $e->getMessage()];
         }      
     }
+    
 
     public function deleteById($id)
     {

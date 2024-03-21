@@ -19,9 +19,7 @@ class GRNRepository  {
             // ->select('purchase_order_details.*','purchase_order_details.id as designs_details_id', 'purchase_orders.id as purchase_main_id', 'purchase_orders.vendor_id', 'purchase_orders.po_date', 'purchase_orders.terms_condition', 'purchase_orders.image')
             // ->where('purchase_orders.id', $id)
             // ->get();
-
-           
-          
+        
             return $data_output;
         } catch (\Exception $e) {
       
@@ -137,7 +135,7 @@ class GRNRepository  {
                 foreach ($request->addmore as $key => $item) {
                     $designDetails = new GRNDetails();
               
-                    // Assuming 'store_receipt_id' is a foreign key related to 'GRN'
+                    // Assuming 'grn_main_id' is a foreign key related to 'GRN'
                     $designDetails->grn_id = $request->grn_main_id; // Set the parent design ID                    
                     $designDetails->description = $item['description'];
                     $designDetails->qc_check_remark = $item['qc_check_remark'];                    
@@ -148,13 +146,11 @@ class GRNRepository  {
                     $designDetails->save();                     
                 }
             }
-    
-            // Updating image name in GRN if a new image is uploaded
-            if ($request->hasFile('image')) {
-                $imageName = $dataOutput->id . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
-                $dataOutput->image = $imageName;
-                $dataOutput->save();
-            }
+            $previousImage = $dataOutput->image;           
+            $last_insert_id = $dataOutput->id;
+            $return_data['last_insert_id'] = $last_insert_id;
+            $return_data['image'] = $previousImage;
+            return  $return_data;
     
             // Returning success message
             return [

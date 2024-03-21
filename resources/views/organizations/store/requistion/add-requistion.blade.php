@@ -153,32 +153,32 @@ label.error {
                                                         <tr>
                                                             <td>
                                                                 <input type="text" name="addmore[0][description]" value="{{ old('description') }}"
-                                                                    placeholder="Enter your Description" class="form-control" />
+                                                                    placeholder="Enter Description" class="form-control" />
                                                             </td>
 
                                                             <td>
                                                                 <input type="text" name="addmore[0][quantity]" value="{{ old('quantity') }}"
-                                                                    placeholder="Enter your quntity" class="form-control" />
+                                                                    placeholder="Enter Quantity" class="form-control" />
                                                             </td>
 
                                                             <td>
                                                                 <input type="text" name="addmore[0][unit]" value="{{ old('unit') }}"
-                                                                    placeholder="Enter your unit" class="form-control" />
+                                                                    placeholder="Enter Unit" class="form-control" />
                                                             </td>
 
                                                             <td>
                                                                 <input type="text" name="addmore[0][day]" value="{{ old('day') }}"
-                                                                    placeholder="Enter your day" class="form-control" />
+                                                                    placeholder="Enter Day" class="form-control" />
                                                             </td>
 
                                                             <td>
                                                                 <input type="text" name="addmore[0][remark]" value="{{ old('remark') }}"
-                                                                    placeholder="Enter your remark" class="form-control" />
+                                                                    placeholder="Enter Remark" class="form-control" />
                                                             </td>
 
                                                             <td>
                                                                 <input type="text" name="addmore[0][stock]" value="{{ old('stock') }}"
-                                                                    placeholder="Enter your stock" class="form-control" />
+                                                                    placeholder="Enter Stock" class="form-control" />
                                                             </td>
 
                                                             <td>
@@ -189,8 +189,8 @@ label.error {
                                                         </tr>
 
                                                     </table>
-                                                    <!-- </div> -->
-                                                    </div>
+                                                </div>
+
                                                 <div class="login-btn-inner">
                                                     <div class="row">
                                                         <div class="col-lg-5"></div>
@@ -229,17 +229,17 @@ $("#add").click(function() {
     $("#dynamicTable").append(
         '<tr><td><input type="text" name="addmore[' +
         i +
-        '][description]" placeholder="Enter your description" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][description]" placeholder="Enter Description" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][quantity]" placeholder="Enter your quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][quantity]" placeholder="Enter Quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][unit]" placeholder="Enter your unit" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][unit]" placeholder="Enter Unit" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][day]" placeholder="Enter your day" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][day]" placeholder="Enter Day" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][remark]" placeholder="Enter your rremark" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][remark]" placeholder="Enter Remark" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][stock]" placeholder="Enter your stock" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
+        '][stock]" placeholder="Enter Stock" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
     );
 });
 

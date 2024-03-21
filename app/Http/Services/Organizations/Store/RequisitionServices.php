@@ -59,42 +59,24 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-
+            
             $path = Config::get('FileConstant.REQUISITION_ADD');
-
-            if ($request->hasFile('signature')) {
-                if ($return_data['signature']) {
-                    if (file_exists_view(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['signature'])) {
-                        removeImage(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['signature']);
-                    }
-
+            if (isset($return_data['signature'])) {
+                if (file_exists_view(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['signature'])) {
+                    removeImage(Config::get('FileConstant.REQUISITION_DELETE') . $return_data['signature']);
                 }
-
-                  // dd($englishImageName);
-                // die();
-                
-                if ($request->hasFile('signature')) {
-                    $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->file('image')->extension();
-                    
-                } else {
-                    
-                }      
-               
-                uploadImage($request, 'image', $path, $englishImageName);
-
-                // dd($englishImageName);
-                // die();
+            }
+            if ($request->hasFile('signature')) {
+                $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->signature->extension();
+                uploadImage($request, 'signature', $path, $englishImageName);
                 $slide_data = Requisition::find($return_data['last_insert_id']);
                 $slide_data->signature = $englishImageName;
                 $slide_data->save();
-            }      
-            
-          
-            
+            }
             if ($return_data) {
                 return ['status' => 'success', 'msg' => 'Data Updated Successfully.'];
             } else {
-                return ['status' => 'error', 'msg' => 'Data  Not Updated.'];
+                return ['status' => 'error', 'msg' => 'Data Not Updated.'];
             }  
         } catch (Exception $e) {
             return ['status' => 'error', 'msg' => $e->getMessage()];

@@ -83,6 +83,8 @@ public function addAll($request)
                 ->where('purchase_orders.id', $id)
                 ->get();
 
+                // dd($designData);
+                // die();
             // $designData= PurchaseOrderModel::get();
 
             if ($designData->isEmpty()) {
@@ -98,8 +100,8 @@ public function addAll($request)
             ];
         }
     }
-    public function updateAll($request){
-       
+
+    public function updateAll($request){       
         try {
             // Update existing design details
             for ($i = 0; $i <= $request->design_count; $i++) {
@@ -137,20 +139,22 @@ public function addAll($request)
                     $designDetails->hsn_no = $item['hsn_no'];
                     $designDetails->quantity = $item['quantity'];
                     $designDetails->rate = $item['rate'];
-                    $designDetails->amount = $item['amount'];
-                  
-                 
+                    $designDetails->amount = $item['amount'];                              
                     $designDetails->save();
                      
                 }
-            }
-    
-            // Updating image name in PurchaseOrderModel if a new image is uploaded
-            if ($request->hasFile('image')) {
-                $imageName = $dataOutput->id . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
-                $dataOutput->image = $imageName;
-                $dataOutput->save();
-            }
+            }    
+            
+            $previousImage = $dataOutput->image;
+           
+            $last_insert_id = $dataOutput->id;
+
+            $return_data['last_insert_id'] = $last_insert_id;
+            $return_data['image'] = $previousImage;
+            return  $return_data;
+
+            dd($return_data);
+            die();
     
             // Returning success message
             return [

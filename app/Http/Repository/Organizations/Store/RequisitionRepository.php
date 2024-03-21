@@ -76,19 +76,6 @@ public function addAll($request)
         try {
             // $designData= Requisition::get();
 
-            // $designData = Requisition::leftJoin('requisition_details', 'requisition.id', '=', 'requisition_details.requisition_id')
-            // ->select('requisition_details.*', 'requisition_details.id as requisition_details_id', 'requisition.id as requisition_main_id', 'requisition.req_name', 'requisition.req_number', 'requisition.req_date','requisition.signature')
-            // ->where('requisition.id', $id)
-            // ->get();
-
-
-            // $designData = Requisition::leftJoin('requisition_details', 'store_receipt.id', '=', 'requisition_details.store_receipt_id')
-            //     ->select('requisition_details.*','requisition_details.id as requisition_details_id', 'store_receipt.id as store_receipt_main_id',
-            //      'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.remark', 'store_receipt.signature')
-            //     ->where('store_receipt.id', $id)
-            //     ->get();
-            //     dd($designData);
-
             $designData = Requisition::leftJoin('requisition_details', 'requisition.id', '=', 'requisition_details.requisition_id')
                 ->select('requisition_details.*', 'requisition_details.id as requisition_details_id', 
                 'requisition.id as requisition_main_id', 
@@ -110,6 +97,8 @@ public function addAll($request)
             ];
         }
     }
+
+
     public function updateAll($request){
        
         try {
@@ -117,7 +106,6 @@ public function addAll($request)
             for ($i = 0; $i <= $request->design_count; $i++) {
                 $designDetails = RequisitionDetails::findOrFail($request->input("design_id_" . $i));
                 
-                // $designDetails->requisition_id = $request->input("requisition_id_" . $i);
                 $designDetails->description = $request->input("description_" . $i);
                 $designDetails->quantity = $request->input("quantity_" . $i);
                 $designDetails->unit = $request->input("unit_" . $i);
@@ -150,15 +138,14 @@ public function addAll($request)
                     $designDetails->save();                     
                 }
             }
-            
-    
-            // Updating image name in Requisition if a new image is uploaded
-            if ($request->hasFile('image')) {
-                $imageName = $dataOutput->id . '_' . rand(100000, 999999) . '_image.' . $request->signature->extension();
-                $dataOutput->signature = $imageName;
-                $dataOutput->save();
-            }
-    
+                
+            $previousImage = $dataOutput->signature;
+           
+            $last_insert_id = $dataOutput->id;
+            $return_data['last_insert_id'] = $last_insert_id;
+            $return_data['signature'] = $previousImage;
+            return  $return_data;
+                
             // Returning success message
             return [
                 'msg' => 'Data updated successfully.',

@@ -73,18 +73,7 @@ class StoreReceiptRepository  {
     public function getById($id) {
         try {
             // $designData= StoreReceipt::get();
-            $designData = StoreReceipt::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
-            ->select('store_receipt_details.*', 'store_receipt_details.id as store_receipt_details_id', 'store_receipt.id as store_receipt_main_id', 'store_receipt.store_date')
-            ->where('store_receipt.id', $id)
-            ->get();
-// dd($designData);
-            // $designData = StoreReceipt::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
-            // ->select('store_receipt_details.*', 'store_receipt_details.id as store_receipt_details_id', 'store_receipt.id as store_receipt_main_id',
-            //              'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number','store_receipt.remark',)
-            // ->where('store_receipt.id', $id)
-            // ->get();
-
-            
+                       
             $designData = StoreReceipt::leftJoin('store_receipt_details', 'store_receipt.id', '=', 'store_receipt_details.store_receipt_id')
             ->select('store_receipt_details.*', 'store_receipt_details.id as store_receipt_details_id',
              'store_receipt.id as store_receipt_main_id',
@@ -147,12 +136,12 @@ class StoreReceiptRepository  {
                 }
             }
     
-            // Updating image name in StoreReceipt if a new image is uploaded
-            if ($request->hasFile('image')) {
-                $imageName = $dataOutput->id . '_' . rand(100000, 999999) . '_image.' . $request->signature->extension();
-                $dataOutput->signature = $imageName;
-                $dataOutput->save();
-            }
+            $previousImage = $dataOutput->signature;
+           
+            $last_insert_id = $dataOutput->id;
+            $return_data['last_insert_id'] = $last_insert_id;
+            $return_data['signature'] = $previousImage;
+            return  $return_data;
     
             // Returning success message
             return [

@@ -62,52 +62,77 @@ public function addAll($request)
 }
 
 
+    // public function getById($id) {
+    //     try {
+    //         $designData= UploadFinanceDocument::get();
+
+    //         // $designData = UploadFinanceDocument::leftJoin('requisition_details', 'store_receipt.id', '=', 'requisition_details.store_receipt_id')
+    //         //     ->select('requisition_details.*','requisition_details.id as requisition_details_id', 'store_receipt.id as store_receipt_main_id',
+    //         //      'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.remark', 'store_receipt.signature')
+    //         //     ->where('store_receipt.id', $id)
+    //         //     ->get();
+    //         //     dd($designData);
+            
+    //         if ($designData->isEmpty()) {
+    //             return null;
+    //         } else {
+    //             return $designData;
+    //         }
+    //     } catch (\Exception $e) {
+    //         return [
+    //             'msg' => 'Failed to get by id Citizen Volunteer.',
+    //             'status' => 'error',
+    //             'error' => $e->getMessage(), 
+    //         ];
+    //     }
+    // }
+
     public function getById($id) {
         try {
-            $designData= UploadFinanceDocument::get();
-
-            // $designData = UploadFinanceDocument::leftJoin('requisition_details', 'store_receipt.id', '=', 'requisition_details.store_receipt_id')
-            //     ->select('requisition_details.*','requisition_details.id as requisition_details_id', 'store_receipt.id as store_receipt_main_id',
-            //      'store_receipt.store_date', 'store_receipt.name', 'store_receipt.contact_number', 'store_receipt.remark', 'store_receipt.signature')
-            //     ->where('store_receipt.id', $id)
-            //     ->get();
-            //     dd($designData);
-            
-            if ($designData->isEmpty()) {
-                return null;
+           
+            $dataOutputById = UploadFinanceDocument::find($id);
+            // dd($dataOutputById);
+            // dd($dataOutputById);
+            // Check if data is found
+            if ($dataOutputById !== null) {
+                return $dataOutputById;
             } else {
-                return $designData;
+                // Data not found
+                return null;
             }
         } catch (\Exception $e) {
+            // Catch and handle exceptions
             return [
-                'msg' => 'Failed to get by id Citizen Volunteer.',
-                'status' => 'error',
-                'error' => $e->getMessage(), 
+                'msg' => $e->getMessage(), // Retrieve error message
+                'status' => 'error'
             ];
         }
     }
+    
+
     public function updateAll($request){
        
         try {
             // Update existing finance documents details
             
-            // Update main Requisition data
-            $dataOutput = Requisition::findOrFail($request->design_main_id);
+            // Update main Upload Finance Document  data
+            $dataOutput = UploadFinanceDocument::findOrFail($request->id);
             $dataOutput->save();                 
     
-            // Updating GRN image name in Finance Documents if a new image is uploaded
-            if ($request->hasFile('image')) {
-                $imageName = $dataOutput->id . '_' . rand(100000, 999999) . '_image.' . $request->grn_image->extension();
-                $dataOutput->grn_image = $imageName;
-                $dataOutput->save();
-            }
+            // Updating GRN image name in Finance Documents if a new image is uploaded           
+            $previousImage = $dataOutput->grn_image;           
+            $last_insert_id = $dataOutput->id;
+            $return_data['last_insert_id'] = $last_insert_id;
+            $return_data['grn_image'] = $previousImage;
+            return  $return_data;
 
-             // Updating SR image name in Finance Documents if a new image is uploaded
-             if ($request->hasFile('image')) {
-                $imageName = $dataOutput->id . '_' . rand(100000, 999999) . '_image.' . $request->sr_image->extension();
-                $dataOutput->sr_image = $imageName;
-                $dataOutput->save();
-            }
+
+             // Updating SR image name in Finance Documents if a new image is uploaded           
+            $previousImage = $dataOutput->sr_image;           
+            $last_insert_id = $dataOutput->id;
+            $return_data['last_insert_id'] = $last_insert_id;
+            $return_data['sr_image'] = $previousImage;
+            return  $return_data;
     
             // Returning success message
             return [
@@ -142,18 +167,4 @@ public function addAll($request)
                 return $e;
             }
     }
-
-    // public function deleteByIdAddmore($id){
-    //     try {
-    //         $rti = RequisitionDetails::find($id);
-    //         if ($rti) {
-    //             $rti->delete();           
-    //             return $rti;
-    //         } else {
-    //             return null;
-    //         }
-    //     } catch (\Exception $e) {
-    //         return $e;
-    //     }
-    // }
 }

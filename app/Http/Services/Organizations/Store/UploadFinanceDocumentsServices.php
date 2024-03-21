@@ -3,7 +3,7 @@ namespace App\Http\Services\Organizations\Store;
 use App\Http\Repository\Organizations\Store\UploadFinanceDocumentsRepository;
 use Carbon\Carbon;
 use App\Models\ {
-    DesignModel
+    UploadFinanceDocument
     };
 
 use Config;
@@ -61,33 +61,41 @@ use Config;
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
+            
             $path = Config::get('FileConstant.UPLOAD_FINANCE_DOC_ADD');
-            if ($request->hasFile('image')) {
-                if ($return_data['image']) {
-                    if (file_exists_view(Config::get('FileConstant.UPLOAD_FINANCE_DOC_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('FileConstant.UPLOAD_FINANCE_DOC_DELETE') . $return_data['image']);
-                    }
 
+            //GRN Image
+            if (isset($return_data['grn_image'])) {
+                if (file_exists_view(Config::get('FileConstant.UPLOAD_FINANCE_DOC_DELETE') . $return_data['grn_image'])) {
+                    removeImage(Config::get('FileConstant.UPLOAD_FINANCE_DOC_DELETE') . $return_data['grn_image']);
                 }
-                if ($request->hasFile('image')) {
-                    $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->file('image')->extension();
-                    
-                } else {
-                    
-                }                
-                uploadImage($request, 'image', $path, $englishImageName);
-                $slide_data = DesignModel::find($return_data['last_insert_id']);
-                $slide_data->image = $englishImageName;
+            }
+            if ($request->hasFile('grn_image')) {
+                $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->grn_image->extension();
+                uploadImage($request, 'grn_image', $path, $englishImageName);
+                $slide_data = UploadFinanceDocument::find($return_data['last_insert_id']);
+                $slide_data->grn_image = $englishImageName;
                 $slide_data->save();
-            }      
-            
-            // dd($return_data);
-            //     die();
-            
+            }
+
+            //SR Image
+            if (isset($return_data['sr_image'])) {
+                if (file_exists_view(Config::get('FileConstant.UPLOAD_FINANCE_DOC_DELETE') . $return_data['sr_image'])) {
+                    removeImage(Config::get('FileConstant.UPLOAD_FINANCE_DOC_DELETE') . $return_data['sr_image']);
+                }
+            }
+            if ($request->hasFile('sr_image')) {
+                $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->sr_image->extension();
+                uploadImage($request, 'sr_image', $path, $englishImageName);
+                $slide_data = UploadFinanceDocument::find($return_data['last_insert_id']);
+                $slide_data->sr_image = $englishImageName;
+                $slide_data->save();
+            }
+
             if ($return_data) {
                 return ['status' => 'success', 'msg' => 'Data Updated Successfully.'];
             } else {
-                return ['status' => 'error', 'msg' => 'Data  Not Updated.'];
+                return ['status' => 'error', 'msg' => 'Data Not Updated.'];
             }  
         } catch (Exception $e) {
             return ['status' => 'error', 'msg' => $e->getMessage()];
@@ -109,16 +117,16 @@ use Config;
         } 
     }
 
-    public function deleteByIdAddmore($id){
-        try {
-            $delete = $this->repo->deleteByIdAddmore($id);
-            if ($delete) {
-                return ['status' => 'success', 'msg' => 'Deleted Successfully.'];
-            } else {
-                return ['status' => 'error', 'msg' => ' Not Deleted.'];
-            }  
-        } catch (Exception $e) {
-            return ['status' => 'error', 'msg' => $e->getMessage()];
-        } 
-    }
+    // public function deleteByIdAddmore($id){
+    //     try {
+    //         $delete = $this->repo->deleteByIdAddmore($id);
+    //         if ($delete) {
+    //             return ['status' => 'success', 'msg' => 'Deleted Successfully.'];
+    //         } else {
+    //             return ['status' => 'error', 'msg' => ' Not Deleted.'];
+    //         }  
+    //     } catch (Exception $e) {
+    //         return ['status' => 'error', 'msg' => $e->getMessage()];
+    //     } 
+    // }
 }

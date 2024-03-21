@@ -199,15 +199,7 @@ Route::post('/store-design-upload', ['as' => 'store-design-upload', 'uses' => 'A
 Route::get('/edit-design-upload/{id}', ['as' => 'edit-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@edit']);
 Route::post('/update-design-upload', ['as' => 'update-design-upload', 'uses' => 'App\Http\Controllers\Organizations\Designers\DesignUploadController@update']);
 
-// ========================Start Gatepasscontroller========
 
-Route::get('/list-gatepass', ['as' => 'list-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@index']);
-Route::get('/add-gatepass', ['as' => 'add-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@add']);
-Route::post('/store-gatepass', ['as' => 'store-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@store']);
-Route::get('/edit-gatepass/{id}', ['as' => 'edit-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@edit']);
-Route::post('/update-gatepass', ['as' => 'update-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@update']);
-
-// ========================End Gatepasscontroller========
 // ========================  Start Requistion controller ========
 
 Route::get('/list-requistion', ['as' => 'list-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@index']);
@@ -217,28 +209,6 @@ Route::get('/edit-requistion/{id}', ['as' => 'edit-requistion', 'uses' => 'App\H
 Route::post('/update-requistion', ['as' => 'update-requistion', 'uses' => 'App\Http\Controllers\Organizations\Store\RequistionController@update']);
 
 // ======================== End Requistion controller ========
-
-
-// ========================  Start DocUploadFianace ========
-
-Route::get('/list-docuploadfinance', ['as' => 'list-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@index']);
-Route::get('/add-docuploadfinance', ['as' => 'add-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@add']);
-Route::post('/store-docuploadfinance', ['as' => 'store-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@store']);
-Route::get('/edit-docuploadfinance', ['as' => 'edit-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@edit']);
-Route::post('/update-docuploadfinance', ['as' => 'update-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@update']); 
-
-
-// ========================  End DocUploadFianace ========
-
-// ======================== Start Security Remarkcontroller========
-
-Route::get('/list-security-remark', ['as' => 'list-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@index']);
-Route::get('/add-security-remark', ['as' => 'add-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@add']);
-Route::post('/store-security-remark', ['as' => 'store-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@store']);
-Route::get('/edit-security-remark/{id}', ['as' => 'edit-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@edit']);
-Route::post('/update-security-remark', ['as' => 'update-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@update']);
-
-// ========================End Security Remarkcontroller========
 
 // ======================== Start store receipt controller ========
 
@@ -250,7 +220,37 @@ Route::post('/update-store-receipt', ['as' => 'update-store-receipt', 'uses' => 
 
 // ======================== End store receipt controller ========
 
-// ========================  Start Vendor controller ========
+// ========================  Start DocUploadFianace Controller ========
+
+Route::get('/list-docuploadfinance', ['as' => 'list-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@index']);
+Route::get('/add-docuploadfinance', ['as' => 'add-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@add']);
+Route::post('/store-docuploadfinance', ['as' => 'store-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@store']);
+Route::get('/edit-docuploadfinance/{id}', ['as' => 'edit-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@edit']);
+Route::post('/update-docuploadfinance', ['as' => 'update-docuploadfinance', 'uses' => 'App\Http\Controllers\Organizations\Store\DocUploadFianaceController@update']); 
+
+// ========================  End DocUploadFianace Controller ========
+
+// ========================Start Gatepass Controller==============
+
+Route::get('/list-gatepass', ['as' => 'list-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@index']);
+Route::get('/add-gatepass', ['as' => 'add-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@add']);
+Route::post('/store-gatepass', ['as' => 'store-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@store']);
+Route::get('/edit-gatepass/{id}', ['as' => 'edit-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@edit']);
+Route::post('/update-gatepass', ['as' => 'update-gatepass', 'uses' => 'App\Http\Controllers\Organizations\Security\GatepassController@update']);
+
+// ========================End Gatepasscontroller==============
+
+// ======================== Start Security Remark Controller========
+
+Route::get('/list-security-remark', ['as' => 'list-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@index']);
+Route::get('/add-security-remark', ['as' => 'add-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@add']);
+Route::post('/store-security-remark', ['as' => 'store-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@store']);
+Route::get('/edit-security-remark/{id}', ['as' => 'edit-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@edit']);
+Route::post('/update-security-remark', ['as' => 'update-security-remark', 'uses' => 'App\Http\Controllers\Organizations\Security\SecurityRemarkController@update']);
+
+// ========================End Security Remark Controller========
+
+// ========================  Start Vendor controller ==============
 
 Route::get('/list-vendor', ['as' => 'list-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@index']);
 Route::get('/add-vendor', ['as' => 'add-vendor', 'uses' => 'App\Http\Controllers\Organizations\Business\VendorController@add']);

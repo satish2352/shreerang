@@ -42,9 +42,6 @@ class VendorController extends Controller
     } 
 
     public function store(Request $request){
-
-        // dd($request);
-
         $rules = [                
                 'vendor_name' => 'required|string|max:255',
                 'address' => 'required|string|max:255',
@@ -53,35 +50,34 @@ class VendorController extends Controller
                 'email' => 'required|email|max:255',
                 'quote_no' => 'required|string',
                 'payment_terms' => 'required|string',
-            ];
+        ];
 
-            $messages = [                                                
-                        'vendor_name.required' => 'The Vendor name is required.',
-                        'vendor_name.string' => 'The Vendor name must be a valid string.',
-                        'vendor_name.max' => 'The Vendor name must not exceed 255 characters.',
-                        
-                        'address.required' => 'Please enter the address.',
-                        'address.string' => 'The address must be a valid string.',
-                        'address.max' => 'The address must not exceed 255 characters.',
+        $messages = [                                                
+            'vendor_name.required' => 'The Vendor name is required.',
+            'vendor_name.string' => 'The Vendor name must be a valid string.',
+            'vendor_name.max' => 'The Vendor name must not exceed 255 characters.',
+            
+            'address.required' => 'Please enter the address.',
+            'address.string' => 'The address must be a valid string.',
+            'address.max' => 'The address must not exceed 255 characters.',
 
-                        'gst_no.required' => 'The gst_no is required.',
-                        'gst_no.string' => 'The gst_no must be a valid string.',
+            'gst_no.required' => 'The gst_no is required.',
+            'gst_no.string' => 'The gst_no must be a valid string.',
 
-                        'contact_no.required' => 'Please enter the Contact number.',
-                        'contact_no.string' => 'The Contact number must be a valid string.',
-                        'contact_no.max' => 'The Contact number must not exceed 20 characters.',
+            'contact_no.required' => 'Please enter the Contact number.',
+            'contact_no.string' => 'The Contact number must be a valid string.',
+            'contact_no.max' => 'The Contact number must not exceed 20 characters.',
 
-                        'email.required' => 'Please enter the email.',
-                        'email.email' => 'Please enter a valid email address.',
-                        'email.max' => 'The email must not exceed 255 characters.',
+            'email.required' => 'Please enter the email.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.max' => 'The email must not exceed 255 characters.',
 
-                        'quote_no.required' => 'The Quote No is required.',
-                        'quote_no.string' => 'The Quote No must be a valid string.',
+            'quote_no.required' => 'The Quote No is required.',
+            'quote_no.string' => 'The Quote No must be a valid string.',
 
-                        'payment_terms.required' => 'The Payment Terms is required.',
-                        'payment_terms.string' => 'The Payment Terms must be a valid string.',                       
-                    ];
-
+            'payment_terms.required' => 'The Payment Terms is required.',
+            'payment_terms.string' => 'The Payment Terms must be a valid string.',                       
+        ];
   
           try {
               $validation = Validator::make($request->all(), $rules, $messages);
@@ -138,31 +134,31 @@ class VendorController extends Controller
         ];
 
         $messages = [                                                
-                    'vendor_name.required' => 'The Vendor name is required.',
-                    'vendor_name.string' => 'The Vendor name must be a valid string.',
-                    'vendor_name.max' => 'The Vendor name must not exceed 255 characters.',
-                    
-                    'address.required' => 'Please enter the address.',
-                    'address.string' => 'The address must be a valid string.',
-                    'address.max' => 'The address must not exceed 255 characters.',
+            'vendor_name.required' => 'The Vendor name is required.',
+            'vendor_name.string' => 'The Vendor name must be a valid string.',
+            'vendor_name.max' => 'The Vendor name must not exceed 255 characters.',
+            
+            'address.required' => 'Please enter the address.',
+            'address.string' => 'The address must be a valid string.',
+            'address.max' => 'The address must not exceed 255 characters.',
 
-                    'gst_no.required' => 'The gst_no is required.',
-                    'gst_no.string' => 'The gst_no must be a valid string.',
+            'gst_no.required' => 'The gst_no is required.',
+            'gst_no.string' => 'The gst_no must be a valid string.',
 
-                    'contact_no.required' => 'Please enter the Contact number.',
-                    'contact_no.string' => 'The Contact number must be a valid string.',
-                    'contact_no.max' => 'The Contact number must not exceed 20 characters.',
+            'contact_no.required' => 'Please enter the Contact number.',
+            'contact_no.string' => 'The Contact number must be a valid string.',
+            'contact_no.max' => 'The Contact number must not exceed 20 characters.',
 
-                    'email.required' => 'Please enter the email.',
-                    'email.email' => 'Please enter a valid email address.',
-                    'email.max' => 'The email must not exceed 255 characters.',
+            'email.required' => 'Please enter the email.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.max' => 'The email must not exceed 255 characters.',
 
-                    'quote_no.required' => 'The Quote No is required.',
-                    'quote_no.string' => 'The Quote No must be a valid string.',
+            'quote_no.required' => 'The Quote No is required.',
+            'quote_no.string' => 'The Quote No must be a valid string.',
 
-                    'payment_terms.required' => 'The Payment Terms is required.',
-                    'payment_terms.string' => 'The Payment Terms must be a valid string.',                       
-                ];  
+            'payment_terms.required' => 'The Payment Terms is required.',
+            'payment_terms.string' => 'The Payment Terms must be a valid string.',                       
+        ];  
         
         try {
             $validation = Validator::make($request->all(),$rules, $messages);

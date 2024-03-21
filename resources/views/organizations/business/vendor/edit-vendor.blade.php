@@ -57,10 +57,6 @@
                                             <input type="hidden" name="id" id="id" class="form-control"
                                                 value="{{ $editData->id }}" placeholder="">
 
-                                            <!-- <a
-                                            {{-- href="{{ route('add-more-data') }}" --}}
-                                            class="btn btn-sm btn-primary ml-3"> <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
-
                                             <div class="container-fluid">
                                                 <!-- @if ($errors->any())
                                                     <div class="alert alert-danger">
@@ -99,7 +95,7 @@
                                                                     placeholder="Enter GST number">
                                                             </div>
 
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                 <label for="contact_no">Contact No. :</label>
                                                                 <input type="text" class="form-control" id="contact_no"
                                                                     name="contact_no" 
@@ -109,6 +105,14 @@
                                                                     oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" 
                                                                     maxlength="10" 
                                                                     minlength="10">
+                                                            </div> -->
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <label for="contact_no">Contact No. :</label>
+                                                                <input type="text" class="form-control" id="contact_no" name="contact_no" 
+                                                                    value="@if (old('contact_no')) {{ old('contact_no') }}@else{{ $editData->contact_no }} @endif"
+                                                                    placeholder="Enter Contact No."
+                                                                    pattern="[789]{1}[0-9]{9}"
+                                                                    >
                                                             </div>
                                                         </div>
 
@@ -190,10 +194,11 @@
                 },
                 gst_no: {
                     required: true,
-                    // gstIN: true,
                 },
                 contact_no: {
                     required: true,
+                    minlength: 10,
+                    maxlength: 10,
                     digits: true
                 },
                 email: {
@@ -202,7 +207,7 @@
                 },
                 quote_no: {
                     required: true,
-                    number: true
+                    number : true,
                 },
                 payment_terms: {
                     required: true,
@@ -219,11 +224,12 @@
                 },
                 gst_no: {
                     required: "Please Enter GST No.",
-                    // gstIN: "Please Enter a valid GST No.",
                 },
                 contact_no: {
                     required: "Please Enter a valid Contact No.",
-                    digits: "Contact Number should contain only digits."
+                    minlength: "Contact No. must be exactly 10 digits.",
+                    maxlength: "Contact No. must be exactly 10 digits.",
+                    digits: "Please enter only digits."
                 },
                 email: {
                     required: "Please Enter valid Email.",
@@ -231,7 +237,7 @@
                 },
                 quote_no: {
                     required: "Please Enter Quote No.",
-                    number: "Quote No. should contain only numbers."
+                    number: "Quote No. should be contain any numbers.",
                 },
                 payment_terms: {
                     required: "Please Enter Payment terms.",

@@ -47,20 +47,20 @@ class GatepassController extends Controller
                 'remark' => 'required|string',
             ];
 
-            $messages = [                        
-                        'purchase_id.required' => 'The Purchase Number is required.',
-                        'purchase_id.string' => 'The Purchase Number must be a valid string.',
-                        
-                        'gatepass_name.required' => 'The Gatepass name is required.',
-                        'gatepass_name.string' => 'The Gatepass Person name must be a valid string.',
+        $messages = [                        
+                'purchase_id.required' => 'The Purchase Number is required.',
+                'purchase_id.string' => 'The Purchase Number must be a valid string.',
+                
+                'gatepass_name.required' => 'The Gatepass name is required.',
+                'gatepass_name.string' => 'The Gatepass Person name must be a valid string.',
 
-                        'gatepass_date.required' => 'Please enter a valid Gatepass Date.',
-                        
-                        'gatepass_time.required' => 'Please Enter  a valid Gatepass Time.',
+                'gatepass_date.required' => 'Please enter a valid Gatepass Date.',
+                
+                'gatepass_time.required' => 'Please Enter  a valid Gatepass Time.',
 
-                        'remark.required' => 'The remark is required.',
-                        'remark.string' => 'The remark must be a valid string.',                        
-                    ];
+                'remark.required' => 'The remark is required.',
+                'remark.string' => 'The remark must be a valid string.',                        
+        ];
 
   
           try {
@@ -114,19 +114,19 @@ class GatepassController extends Controller
         ];
 
         $messages = [                        
-                    'purchase_id.required' => 'The Purchase Number is required.',
-                    'purchase_id.string' => 'The Purchase Number must be a valid string.',
-                    
-                    'gatepass_name.required' => 'The Gatepass name is required.',
-                    'gatepass_name.string' => 'The Gatepass Person name must be a valid string.',
+            'purchase_id.required' => 'The Purchase Number is required.',
+            'purchase_id.string' => 'The Purchase Number must be a valid string.',
+            
+            'gatepass_name.required' => 'The Gatepass name is required.',
+            'gatepass_name.string' => 'The Gatepass Person name must be a valid string.',
 
-                    'gatepass_date.required' => 'Please enter a valid Gatepass Date.',
-                    
-                    'gatepass_time.required' => 'Please Enter  a valid Gatepass Time.',
+            'gatepass_date.required' => 'Please enter a valid Gatepass Date.',
+            
+            'gatepass_time.required' => 'Please Enter  a valid Gatepass Time.',
 
-                    'remark.required' => 'The remark is required.',
-                    'remark.string' => 'The remark must be a valid string.',                        
-                ];    
+            'remark.required' => 'The remark is required.',
+            'remark.string' => 'The remark must be a valid string.',                        
+        ];    
         
         try {
             $validation = Validator::make($request->all(),$rules, $messages);

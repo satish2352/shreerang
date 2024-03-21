@@ -50,15 +50,12 @@
                                 @endif
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="all-form-element-inner">
-                                        <form action="{{ route('update-docuploadfinance', 
-                                       ) }}"
+                                        <form action="{{ route('update-docuploadfinance') }}"
                                             method="POST" id="editDesignsForm" enctype="multipart/form-data">
                                             @csrf
                                            
-                                            <!-- <a
-                                             {{-- href="{{ route('add-more-data') }}" --}}
-                                            class="btn btn-sm btn-primary ml-3"> 
-                                            <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a> -->
+                                            <input type="hidden" name="id" id="id" class="form-control"
+                                                value="{{ $editData->id }}" placeholder="">
 
                                             <div class="container-fluid">
                                                 <!-- @if ($errors->any())
@@ -71,8 +68,6 @@
                                                     </div>
                                                 @endif -->
 
-                                            @foreach ($editData as $key => $editDataNew)
-                                                @if ($key == 0)
                                                     <div class="form-group-inner">                                                           
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -80,9 +75,9 @@
                                                                     <input type="file" class="form-control"
                                                                         accept="image/*" id="grn_image" name="grn_image">
                                                                     <div id="oldImageDisplay">
-                                                                        @if (isset($editDataNew->grn_image))
+                                                                        @if (isset($editData->grn_image))
                                                                             <b>Image Preview: </b>
-                                                                            <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editDataNew->grn_image }}"
+                                                                            <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editData->grn_image }}"
                                                                                 alt="Old GRN Image" style="max-width: 100px;">
                                                                         @endif
                                                                     </div>
@@ -98,9 +93,9 @@
                                                                     <input type="file" class="form-control"
                                                                         accept="image/*" id="sr_image" name="sr_image">
                                                                     <div id="oldImageDisplay">
-                                                                        @if (isset($editDataNew->sr_image))
+                                                                        @if (isset($editData->sr_image))
                                                                             <b>Image Preview: </b>
-                                                                            <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editDataNew->sr_image }}"
+                                                                            <img src="{{ Config::get('FileConstant.UPLOAD_FINANCE_DOC_VIEW') . $editData->sr_image }}"
                                                                                 alt="Old Image" style="max-width: 100px;">
                                                                         @endif
                                                                     </div>
@@ -113,24 +108,23 @@
                                                             </div> 
                                                         </div>                                                           
                                                     </div>      
-                                                    @endif
-                                                @endforeach                                          
+                                                                                          
 
-                                                <div class="login-btn-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-5"></div>
-                                                        <div class="col-lg-7">
-                                                            <div class="login-horizental cancel-wp pull-left">
-                                                                <a href="{{ route('list-docuploadfinance') }}"
-                                                                    class="btn btn-white"
-                                                                    style="margin-bottom:50px">Cancel</a>
-                                                                <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                    type="submit" style="margin-bottom:50px">Update Data</button>
-                                                               
+                                                    <div class="login-btn-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-5"></div>
+                                                            <div class="col-lg-7">
+                                                                <div class="login-horizental cancel-wp pull-left">
+                                                                    <a href="{{ route('list-docuploadfinance') }}"
+                                                                        class="btn btn-white"
+                                                                        style="margin-bottom:50px">Cancel</a>
+                                                                    <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                        type="submit" style="margin-bottom:50px">Update Data</button>
+                                                                
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                             </div>
                                     </div>
                                     </form>
@@ -156,45 +150,33 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
  
 <script>
-    // $(document).ready(function() {
-    //     var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
+jQuery.noConflict();
+jQuery(document).ready(function($) {
+    $("#editDesignsForm").validate({
+        rules: {          
+            grn_image: {
+                required : true,
+            },
+            sr_image: {
+                required : "Please Select Valid Image",
+            },           
+        },
 
-    //     $("#add").click(function() {
-    //         ++i;
-
-    //         $("#dynamicTable").append(
-    //             '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '" placeholder="Enter Product Unit" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
-    //         );
-    //     });
-
-    //     $(document).on("click", ".remove-tr", function() {
-    //         $(this).parents("tr").remove();
-    //     });
-
-    //     // Hide the "Add More" button initially if needed
-    //     // $("#add").hide();
-    // });
-
-    $(document).ready(function() {
-    var i = {!! count($editData) !!}; // Initialize i with the number of existing rows
-
-    $("#add").click(function() {
-        ++i;
-
-        $("#dynamicTable").append(
-            '<tr><td><input type="text" name="design_name_' + i + '" placeholder="Enter Product Name" class="form-control" /></td><td><input type="text" name="product_quantity_' + i + '" placeholder="Enter Product Quantity" class="form-control" /></td><td><input type="text" name="product_size_' + i + '" placeholder="Enter Product Price" class="form-control" /></td><td><input type="text" name="product_unit_' + i + '][product_unit_]" placeholder="Enter Product Unit" class="form-control" /></td><td><a class="delete-btn btn btn-danger m-1 remove-tr" title="Delete Tender"><i class="fas fa-archive"></i></a></td></tr>'
-        );
+        messages: {                 
+            grn_image: {
+                validImage: "Only JPG, JPEG, PNG images are allowed.",
+                fileSize: "The file size must be between 10 KB and 2048 KB.",
+            },
+          
+            sr_image: {
+                validImage: "Only JPG, JPEG, PNG images are allowed.",
+                fileSize: "The file size must be between 10 KB and 2048 KB.",
+            },
+        },
     });
-
-    $(document).on("click", ".remove-tr", function() {
-        $(this).parents("tr").remove();
-    });
-
-    // Hide the "Add More" button initially if needed
-    // $("#add").hide();
 });
-
 </script>
+
 <script>
     $('.delete-btn').click(function(e) {
 
@@ -219,28 +201,4 @@
 
 
 
-
-{{-- <script>
- $(document).on("click", ".remove-tr", function() {
-    var rowId = $(this).data('row-id');
-    var row = $(this).closest('tr');
-    alert(rowId);
-    $.ajax({
-    url: '/remove-design-details/' + rowId,
-    type: 'DELETE',
-    data: {
-        _token: '{{ csrf_token() }}'
-    },
-    success: function(response) {
-        row.remove();
-        alert(response.msg);
-    },
-    error: function(xhr, status, error) {
-        console.error(xhr.responseText);
-        alert('Error occurred. Please check console for details.');
-    }
-});
-});
-
-</script> --}}
 @endsection

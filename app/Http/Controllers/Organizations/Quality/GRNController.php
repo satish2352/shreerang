@@ -40,39 +40,41 @@ class GRNController extends Controller
 
     public function store(Request $request){
         $rules = [
-                'grn_date' => 'required',
-                'purchase_id' => 'required|string',
-                'po_date' => 'required',
-                'invoice_no' => 'required|string',
-                'invoice_date' => 'required',
-                'remark' => 'required|string',
-                'image' => 'required|image|mimes:jpeg,png,jpg',
-                // 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
-            ];
+            'grn_date' => 'required',
+            'purchase_id' => 'required|string',
+            'po_date' => 'required',
+            'invoice_no' => 'required|string',
+            'invoice_date' => 'required',
+            'remark' => 'required|string',
+        ];
 
-            $messages = [                        
-                        'grn_date.required' => 'Please enter a valid GRN Date.',
-                        
-                        'purchase_id.required' => 'The Purchase Number is required.',
-                        'purchase_id.string' => 'The Purchase Number must be a valid string.',
-                        
-                        'po_date.required' => 'Please enter a valid PO Date.',
-                        
-                        'invoice_no.required' => 'Please Enter Invoice Number.',
-                        'invoice_no.string' => 'The Invoice Number must be a valid string.',
+        if($request->has('image')) {
+            $rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.GRN_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.GRN_IMAGE_MIN_SIZE");
+        }
 
-                        'invoice_date.required' => 'Please enter a valid Invoice Date.',
+        $messages = [                        
+            'grn_date.required' => 'Please enter a valid GRN Date.',
+            
+            'purchase_id.required' => 'The Purchase Number is required.',
+            'purchase_id.string' => 'The Purchase Number must be a valid string.',
+            
+            'po_date.required' => 'Please enter a valid PO Date.',
+            
+            'invoice_no.required' => 'Please Enter Invoice Number.',
+            'invoice_no.string' => 'The Invoice Number must be a valid string.',
 
-                        'remark.required' => 'The remark is required.',
-                        'remark.string' => 'The remark must be a valid string.',
-                        
-                        'image.required' => 'The signature image is required.',
-                        'image.image' => 'The signature image must be a valid image file.',
-                        'image.mimes' => 'The signature image must be in JPEG, PNG, JPG format.',
-                        // 'signature.max' => 'The signature image size must not exceed 10MB.',
-                        // 'signature.min' => 'The signature image- size must not be less than 5KB.',
-                    ];
+            'invoice_date.required' => 'Please enter a valid Invoice Date.',
 
+            'remark.required' => 'The remark is required.',
+            'remark.string' => 'The remark must be a valid string.',
+            
+            'image.required' => 'The image is required.',
+            'image.image' => 'The image must be a valid image file.',
+            'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
+            'image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.GRN_IMAGE_MAX_SIZE").'KB .',
+            'image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.GRN_IMAGE_MIN_SIZE").'KB .',
+            'image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',            
+        ];
   
           try {
               $validation = Validator::make($request->all(), $rules, $messages);
@@ -119,32 +121,35 @@ class GRNController extends Controller
             'invoice_no' => 'required|string',
             'invoice_date' => 'required',
             'remark' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg',
-            // 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
         ];
 
+        if($request->has('image')) {
+            $rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.GRN_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.GRN_IMAGE_MIN_SIZE");
+        }
+
         $messages = [                        
-                    'grn_date.required' => 'Please enter a valid GRN Date.',
-                    
-                    'purchase_id.required' => 'The Purchase Number is required.',
-                    'purchase_id.string' => 'The Purchase Number must be a valid string.',
-                    
-                    'po_date.required' => 'Please enter a valid PO Date.',
-                    
-                    'invoice_no.required' => 'Please Enter Invoice Number.',
-                    'invoice_no.string' => 'The Invoice Number must be a valid string.',
+            'grn_date.required' => 'Please enter a valid GRN Date.',
+            
+            'purchase_id.required' => 'The Purchase Number is required.',
+            'purchase_id.string' => 'The Purchase Number must be a valid string.',
+            
+            'po_date.required' => 'Please enter a valid PO Date.',
+            
+            'invoice_no.required' => 'Please Enter Invoice Number.',
+            'invoice_no.string' => 'The Invoice Number must be a valid string.',
 
-                    'invoice_date.required' => 'Please enter a valid Invoice Date.',
+            'invoice_date.required' => 'Please enter a valid Invoice Date.',
 
-                    'remark.required' => 'The remark is required.',
-                    'remark.string' => 'The remark must be a valid string.',
-                    
-                    'image.required' => 'The signature image is required.',
-                    'image.image' => 'The signature image must be a valid image file.',
-                    'image.mimes' => 'The signature image must be in JPEG, PNG, JPG format.',
-                    // 'signature.max' => 'The signature image size must not exceed 10MB.',
-                    // 'signature.min' => 'The signature image- size must not be less than 5KB.',
-                ];
+            'remark.required' => 'The remark is required.',
+            'remark.string' => 'The remark must be a valid string.',
+            
+            'image.required' => 'The image is required.',
+            'image.image' => 'The image must be a valid image file.',
+            'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
+            'image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.GRN_IMAGE_MAX_SIZE").'KB .',
+            'image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.GRN_IMAGE_MIN_SIZE").'KB .',
+            'image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',            
+        ];
 
         try {
             $validation = Validator::make($request->all(),$rules, $messages);

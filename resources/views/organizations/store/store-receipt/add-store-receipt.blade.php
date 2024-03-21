@@ -110,26 +110,34 @@ label.error {
 
                                                         <tr>
 
-                                                            <td><input type="text" name="addmore[0][quantity]"  value="{{ old('quantity') }}"
-                                                                    placeholder="Enter your Quantity" class="form-control" />
+                                                            <td>
+                                                                <input type="text" name="addmore[0][quantity]"  value="{{ old('quantity') }}"
+                                                                    placeholder="Enter Quantity" class="form-control" />
                                                             </td>
 
-                                                            <td><input type="text" name="addmore[0][description]"  value="{{ old('description') }}" 
-                                                                    placeholder="Enter your description" class="form-control" />
+                                                            <td>
+                                                                <input type="text" name="addmore[0][description]"  value="{{ old('description') }}" 
+                                                                    placeholder="Enter Description" class="form-control" />
                                                             </td>
 
-                                                            <td><input type="text" name="addmore[0][price]"  value="{{ old('price') }}"
-                                                                    placeholder="Enter your Price" class="form-control" />
+                                                            <td>
+                                                                <input type="text" name="addmore[0][price]"  value="{{ old('price') }}"
+                                                                    placeholder="Enter Price" class="form-control" />
                                                             </td>
-                                                            <td><input type="text" name="addmore[0][amount]"  value="{{ old('amount') }}"
-                                                                    placeholder="Enter your amount" class="form-control" />
+
+                                                            <td>
+                                                                <input type="text" name="addmore[0][amount]"  value="{{ old('amount') }}"
+                                                                    placeholder="Enter Amount" class="form-control" />
                                                             </td>
-                                                            <td><input type="text" name="addmore[0][total]"  value="{{ old('total') }}"
-                                                                    placeholder="Enter your total" class="form-control" />
+
+                                                            <td>
+                                                                <input type="text" name="addmore[0][total]"  value="{{ old('total') }}"
+                                                                    placeholder="Enter Total" class="form-control" />
                                                             </td>
 
                                                             <td><button type="button" name="add" id="add"
-                                                                    class="btn btn-success">Add More</button></td>
+                                                                    class="btn btn-success">Add More</button>
+                                                            </td>
                                                         </tr>
                                                     </table>                                                
                                                 </div>
@@ -188,15 +196,15 @@ $("#add").click(function() {
     $("#dynamicTable").append(
         '<tr><td><input type="text" name="addmore[' +
         i +
-        '][quantity]" placeholder="Enter your quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][quantity]" placeholder="Enter  Quantity" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][description]" placeholder="Enter your description" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][description]" placeholder="Enter  Description" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][price]" placeholder="Enter your Price" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][price]" placeholder="Enter Price" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][amount]" placeholder="Enter your amount" class="form-control" /></td><td><input type="text" name="addmore[' +
+        '][amount]" placeholder="Enter Amount" class="form-control" /></td><td><input type="text" name="addmore[' +
         i +
-        '][total]" placeholder="Enter your total" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
+        '][total]" placeholder="Enter Total" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>'
     );
 });
 

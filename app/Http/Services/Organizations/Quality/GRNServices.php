@@ -63,32 +63,22 @@ use Config;
             // dd($return_data);
             // die();
             $path = Config::get('FileConstant.GRN_ADD');
-            if ($request->hasFile('image')) {
-                if ($return_data['image']) {
-                    if (file_exists_view(Config::get('FileConstant.GRN_DELETE') . $return_data['image'])) {
-                        removeImage(Config::get('FileConstant.GRN_DELETE') . $return_data['image']);
-                    }
-
+            if (isset($return_data['image'])) { // Check if 'image' key exists
+                if (file_exists_view(Config::get('FileConstant.GRN_DELETE') . $return_data['image'])) {
+                    removeImage(Config::get('FileConstant.GRN_DELETE') . $return_data['image']);
                 }
-                if ($request->hasFile('image')) {
-                    $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->file('image')->extension();
-                    
-                } else {
-                    
-                }                
+            }
+            if ($request->hasFile('image')) {
+                $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
                 uploadImage($request, 'image', $path, $englishImageName);
-                $slide_data = DesignModel::find($return_data['last_insert_id']);
+                $slide_data = GRN::find($return_data['last_insert_id']);
                 $slide_data->image = $englishImageName;
                 $slide_data->save();
-            }      
-            
-            // dd($return_data);
-            //     die();
-            
+            }
             if ($return_data) {
                 return ['status' => 'success', 'msg' => 'Data Updated Successfully.'];
             } else {
-                return ['status' => 'error', 'msg' => 'Data  Not Updated.'];
+                return ['status' => 'error', 'msg' => 'Data Not Updated.'];
             }  
         } catch (Exception $e) {
             return ['status' => 'error', 'msg' => $e->getMessage()];

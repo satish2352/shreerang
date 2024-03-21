@@ -56,10 +56,7 @@
                                                             id="" class="form-control"
                                                             value="{{ $editData[0]->purchase_main_id}}"
                                                             placeholder="">
-                                            <a
-                                            {{-- href="{{ route('add-more-data') }}" --}}
-                                           > 
-
+                                           
                                            <button type="button" name="add" id="add" class="btn btn-success">Add More</button></a>
 
                                             <div class="container-fluid">
@@ -79,7 +76,8 @@
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <label for="po_date">PO Date:</label>
                                                         <input type="date" class="form-control" id="po_date"
-                                                            name="po_date" value="{{ $editDataNew->po_date }}"
+                                                            name="po_date"
+                                                            value="{{ old('po_date', isset($editDataNew) ? date('Y-m-d', strtotime($editDataNew->po_date)) : '') }}"
                                                             placeholder="Select PO Date">
                                                     </div>
                                                     
@@ -143,28 +141,31 @@
                                                     <td>
                                                         <input type="text"
                                                             name="part_no_{{ $key }}"
-                                                            value="{{ $editDataNew->part_no }}"
-                                                            placeholder="Enter Part No" class="form-control" />
+                                                            value="@if (old('part_no')) {{ old('part_no') }}@else{{ $editDataNew->part_no}} @endif"
+                                                            placeholder="Enter Part No" 
+                                                            class="form-control" />
                                                     </td>
 
                                                     <td>
                                                         <input type="text"
                                                             name="description_{{ $key }}"
-                                                            value="{{ $editDataNew->description }}"
-                                                            placeholder="Enter Description" class="form-control" />
+                                                            value="@if (old('description')) {{ old('description') }}@else{{ $editDataNew->description}} @endif"
+                                                            placeholder="Enter Description" 
+                                                            class="form-control" />
                                                     </td>
 
                                                     <td>
                                                         <input type="date"
                                                             name="due_date_{{ $key }}"
-                                                            value="{{ $editDataNew->due_date }}"
-                                                            placeholder="Enter Due Date" class="form-control" />
+                                                            value="{{ old('due_date', isset($editDataNew) ? date('Y-m-d', strtotime($editDataNew->due_date)) : '') }}"
+                                                            placeholder="Enter Due Date" 
+                                                            class="form-control" />
                                                     </td>
 
                                                     <td>
                                                         <input type="text"
                                                             name="hsn_no_{{ $key }}"
-                                                            value="{{ $editDataNew->hsn_no }}"
+                                                            value="@if (old('hsn_no')) {{ old('hsn_no') }}@else{{ $editDataNew->hsn_no}} @endif"
                                                             placeholder="Enter HSN No"
                                                             class="form-control" />
                                                     </td>
@@ -172,7 +173,7 @@
                                                     <td>
                                                         <input type="text"
                                                             name="quantity_{{ $key }}"
-                                                            value="{{ $editDataNew->quantity }}"
+                                                            value="@if (old('quantity')) {{ old('quantity') }}@else{{ $editDataNew->quantity}} @endif"
                                                             placeholder="Enter Quantity"
                                                             class="form-control" />
                                                     </td>
@@ -180,7 +181,7 @@
                                                     <td>
                                                         <input type="text"
                                                             name="rate_{{ $key }}"
-                                                            value="{{ $editDataNew->rate }}"
+                                                            value="@if (old('rate')) {{ old('rate') }}@else{{ $editDataNew->rate}} @endif"
                                                             placeholder="Enter Rate"
                                                             class="form-control" />
                                                     </td>
@@ -188,7 +189,7 @@
                                                     <td>
                                                         <input type="text"
                                                             name="amount_{{ $key }}"
-                                                            value="{{ $editDataNew->amount }}"
+                                                            value="@if (old('amount')) {{ old('amount') }}@else{{ $editDataNew->amount}} @endif"
                                                             placeholder="Enter Amount" class="form-control" />
                                                     </td>
 
@@ -211,7 +212,7 @@
                                                                     <label for="terms_condition">Terms & Condition:</label>
                                                                     <input type="text" class="form-control" id="terms_condition"
                                                                         name="terms_condition" 
-                                                                        value="{{ $editDataNew->terms_condition }}"
+                                                                        value="@if (old('terms_condition')) {{ old('terms_condition') }}@else{{ $editDataNew->terms_condition }} @endif"
                                                                         placeholder="Enter Terms & Condition">
                                                                 </div>
 
@@ -219,7 +220,7 @@
                                                                     <label for="remark">Remark:</label>
                                                                     <input type="text" class="form-control" id="remark"
                                                                         name="remark" 
-                                                                        value="{{ $editDataNew->remark }}"
+                                                                        value="@if (old('remark')) {{ old('remark') }}@else{{ $editDataNew->remark }} @endif"
                                                                         placeholder="Enter Remark">
                                                                 </div>
                                                         </div>    
@@ -229,7 +230,7 @@
                                                                 <label for="transport_dispatch">Transport/Dispatch:</label>
                                                                 <input type="text" class="form-control" id="transport_dispatch"
                                                                     name="transport_dispatch" 
-                                                                    value="{{ $editDataNew->transport_dispatch }}"
+                                                                    value="@if (old('transport_dispatch')) {{ old('transport_dispatch') }}@else{{ $editDataNew->transport_dispatch }} @endif"
                                                                     placeholder="Enter Transport/Dispatch">
                                                             </div>                                                             
                                                     @endif
@@ -346,6 +347,112 @@
         //     });
         // });
     </script>
+
+<script>
+jQuery.noConflict();
+jQuery(document).ready(function($) {
+    $("#addDesignsForm").validate({
+        rules: {
+            po_date: {
+                required: true,
+                date: true,
+            },
+            vendor_id: {
+                required: true,
+            },
+            terms_condition: {
+                required: true,
+            },            
+            remark: {
+                required: true,
+            },
+            transport_dispatch : {
+                required: true,
+            },
+          
+
+            // Add validation rules for other fields
+            'addmore[0][part_no]': {
+                required: true,
+                number : true                
+            },
+            'addmore[0][description]': {
+                required: true,
+            },
+            'addmore[0][due_date]': {
+                required: true,
+                date : true,
+            },
+            'addmore[0][hsn_no]': {
+                required: true,
+                number: true
+            },
+            'addmore[0][quantity]': {
+                required: true,
+                number: true
+            },
+            'addmore[0][rate]': {
+                required: true,
+                number: true
+            },
+            'addmore[0][amount]': {
+                required: true,
+                number: true
+            },
+        },
+
+        messages: {
+            po_date: {
+                required: "Please Select PO Date.",
+                date: "Please Select a valid PO date."
+            },
+            vendor_id: {
+                required: "Please Select Vendor.",
+            },
+            terms_condition: {
+                required: "Please Enter Terms And Condition.",
+            },
+            remark: {
+                required: "Please Enter Remark.",
+            },            
+            transport_dispatch: {
+                required: "Please Enter Transport/Dispatch.",
+            },
+        
+
+             // Add error messages for other fields
+             'addmore[0][part_no]': {
+                required: "Please Enter Part No",
+                number: "Part No should contain only numbers."
+            },
+            'addmore[0][description]': {
+                required: "Please Enter Description.",
+            },
+            'addmore[0][due_date]': {
+                required: "Please Select Due Date",
+                date: "Please Enter a valid Due date."
+            },
+            'addmore[0][hsn_no]': {
+                required: "Please Enter HSN No",
+                number: "HSN No should contain only numbers."
+            },
+            'addmore[0][quantity]': {
+                required: "Please Enter Quantity",
+                number: "Quantity should contain only numbers."
+            },
+            'addmore[0][rate]': {
+                required: "Please Enter Rate",
+                number: "Rate should contain only numbers."
+            },
+            'addmore[0][amount]': {
+                required: "Please Enter Amount",
+                number: "Amount should contain only numbers."
+            },            
+        },
+    });
+});
+</script>
+
 {{-- <script>
     $(document).ready(function() {
     var i = {!! count($editData) !!}; // Initialize i with the number of existing rows

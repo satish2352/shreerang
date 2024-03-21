@@ -54,10 +54,12 @@ class PurchaseController extends Controller
                 'vendor_id' => 'required|string',
                 'terms_condition' => 'required|string',
                 'remark' => 'required|string',
-                'transport_dispatch' => 'required|string',
-                'image' => 'required|image|mimes:jpeg,png,jpg',
-                // 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
+                'transport_dispatch' => 'required|string',             
             ];
+
+            if($request->has('image')) {
+                $rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE");
+            }
 
             $messages = [                        
                 'po_date.required' => 'Please enter a valid PO Date.',
@@ -74,11 +76,12 @@ class PurchaseController extends Controller
                 'transport_dispatch.required' => 'The Transport/Dispatch is required.',
                 'transport_dispatch.string' => 'The Transport/Dispatch must be a valid string.',
                 
-                'image.required' => 'The image image is required.',
-                'image.image' => 'The image image must be a valid image file.',
-                'image.mimes' => 'The image image must be in JPEG, PNG, JPG format.',
-                // 'image.max' => 'The image image size must not exceed 10MB.',
-                // 'image.min' => 'The image image- size must not be less than 5KB.',
+                'image.required' => 'The image is required.',
+                'image.image' => 'The image must be a valid image file.',
+                'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
+                'image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'KB .',
+                'image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE").'KB .',
+                'image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
             ];
   
           try {
@@ -126,10 +129,12 @@ class PurchaseController extends Controller
                 'vendor_id' => 'required|string',
                 'terms_condition' => 'required|string',
                 'remark' => 'required|string',
-                'transport_dispatch' => 'required|string',
-                'image' => 'required|image|mimes:jpeg,png,jpg',
-                // 'image' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
+                'transport_dispatch' => 'required|string',             
             ];
+
+            if($request->has('image')) {
+                $rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE");
+            }
 
             $messages = [                        
                 'po_date.required' => 'Please enter a valid PO Date.',
@@ -146,13 +151,14 @@ class PurchaseController extends Controller
                 'transport_dispatch.required' => 'The Transport/Dispatch is required.',
                 'transport_dispatch.string' => 'The Transport/Dispatch must be a valid string.',
                 
-                'image.required' => 'The image image is required.',
-                'image.image' => 'The image image must be a valid image file.',
-                'image.mimes' => 'The image image must be in JPEG, PNG, JPG format.',
-                // 'image.max' => 'The image image size must not exceed 10MB.',
-                // 'image.min' => 'The image image- size must not be less than 5KB.',
+                'image.required' => 'The image is required.',
+                'image.image' => 'The image must be a valid image file.',
+                'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
+                'image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'KB .',
+                'image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE").'KB .',
+                'image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
             ];
-    
+            
             try {
                 $validation = Validator::make($request->all(),$rules, $messages);
                 if ($validation->fails()) {
