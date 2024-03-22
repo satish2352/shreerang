@@ -1,6 +1,6 @@
 <?php
-namespace App\Http\Services\Organizations\Business;
-use App\Http\Repository\Organizations\Business\AllListRepositor;
+namespace App\Http\Services\Organizations\Designers;
+use App\Http\Repository\Organizations\Designers\AllListRepositor;
 use Carbon\Carbon;
 // use App\Models\ {
 //     DesignModel
@@ -16,9 +16,9 @@ class AllListServices
 
     }
 
-    public function getAllListForwardedToDesign(){
+    public function getAllListDesignRecievedForCorrection(){
         try {
-            return  $this->repo->getAllListForwardedToDesign();
+            return  $this->repo->getAllListDesignRecievedForCorrection();
         
         } catch (\Exception $e) {
             return $e;

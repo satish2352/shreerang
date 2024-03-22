@@ -101,6 +101,12 @@
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
                                     class="mini-click-non">List Design Received <br> For Production</span></a>
                         </li>
+
+                        <li>
+                            <a class="has-arrow" href="{{ route('list-design-correction') }}" aria-expanded="false"><i
+                                    class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                    class="mini-click-non">List Design Received <br> For Design Correction</span></a>
+                        </li>
                   
                     @endif
                     @if (session()->get('role_id') == config('constants.ROLE_ID.PURCHASE'))
@@ -157,6 +163,14 @@
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
                                     class="mini-click-non">Designs Sent To Porduction</span></a>
                         </li>
+
+                        <li>
+                        <a class="has-arrow" href="{{ route('list-reject-design-from-prod') }}" aria-expanded="false"><i
+                                class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                class="mini-click-non">Rejected Design List</span></a>
+                    </li>
+
+
                         {{-- <li>
                             <a class="has-arrow" href="{{ route('list-design-upload') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span
@@ -187,16 +201,7 @@
                                 class="fa big-icon fa-envelope icon-wrap"></i> <span
                                 class="mini-click-non">Rejected Design List</span></a>
                     </li>
-                        <li>
-                            <a class="has-arrow" href="{{ route('list-products') }}" aria-expanded="false"><i
-                                    class="fa big-icon fa-envelope icon-wrap"></i> <span
-                                    class="mini-click-non">Products</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{ route('list-products') }}"><i
-                                            class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span
-                                            class="mini-sub-pro">List Products</span></a></li>
-                            </ul>
-                        </li>
+                       
                         {{-- <li>
                             <a class="has-arrow" href="{{ route('list-purchases') }}" aria-expanded="false"><i
                                     class="fa big-icon fa-envelope icon-wrap"></i> <span

@@ -85,7 +85,6 @@ padding-left: 20px !important;
                                             <th data-field="purchase_id" data-editable="true">Remark</th>                                         
                                             <th data-field="design_image" data-editable="false">Design Layout</th>
                                             <th data-field="bom_image" data-editable="false">BOM</th>                                                                                                                           
-                                            <th data-field="action">Action</th>
                                         </tr>
 
                                     </thead>
@@ -94,7 +93,7 @@ padding-left: 20px !important;
 
                                     <tbody>
                                         @foreach($data_output as $data)
-                                        <?php //dd($data['design_image']); ?>
+                                        <?php    //dd($data['design_image']); ?>
                                         <tr>
                                             <td></td>
                                             <td>{{ $loop->iteration }}</td>
@@ -110,12 +109,7 @@ padding-left: 20px !important;
                                                 alt="No Image" />
                                         </td>
                                             
-                                            <td>
-                                                <div style="display: flex; align-items: center;">
-                                                    <a href="{{route('reject-design', base64_encode($data->id))}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                                    <a href="{{route('accept-design', base64_encode($data->id))}} "><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-check" aria-hidden="true"></i></button></a>
-                                                </div>
-                                            </td>
+                                           
                                            </tr>
                                         @endforeach
                                     </tbody>

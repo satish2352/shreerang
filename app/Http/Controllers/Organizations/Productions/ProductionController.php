@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Organizations\Productions;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\Organizations\Productions\ProductionServices;
+use App\Http\Controllers\Organizations\Productions\AllListController;
 use Illuminate\Validation\Rule;
 use Session;
 use Validator;
@@ -13,39 +14,13 @@ use Carbon;
 
 class ProductionController extends Controller
 { 
-    public function __construct(){
+    private $listapi;
+    public function __construct(AllListController $listapi){
         $this->service = new ProductionServices();
+        $this->listapiservice = new AllListController();
     }
     
-    public function getAllNewRequirement(Request $request){
-        try {
-            $data_output = $this->service->getAllNewRequirement();
-        
-            return view('organizations.productions.product.list_design_received_for_production', compact('data_output'));
-        } catch (\Exception $e) {
-            return $e;
-        }
-    } 
     
-    public function acceptdesignlist(){
-        try {
-            $data_output = $this->service->getAllacceptdesign();
-            return view('organizations.productions.product.list-design-accepted', compact('data_output'));
-        } catch (\Exception $e) {
-            return $e;
-        }
-    } 
-
-    public function rejectdesignlist(){
-        try {
-            $data_output = $this->service->getAllrejectdesign();
-            return view('organizations.productions.product.list-design-rejected', compact('data_output'));
-        } catch (\Exception $e) {
-            return $e;
-        }
-    } 
- 
-
     public function acceptdesign($id){
         try {
             $acceptdesign = base64_decode($id);
@@ -69,8 +44,7 @@ class ProductionController extends Controller
     public function rejectdesign(Request $request){
         try {
             $update_data = $this->service->rejectdesign($request);
-            $data_output = $this->service->getAllrejectdesign();
-            return view('organizations.productions.product.list-design-rejected', compact('data_output'));
+            return redirect('list-reject-design');
         } catch (\Exception $e) {
             return $e;
         }

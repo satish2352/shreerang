@@ -7,7 +7,8 @@ use App\Models\ {
 Business, 
 DesignModel,
 BusinessApplicationProcesses,
-ProductionModel
+ProductionModel,
+DesignRevisionForProd
 };
 use Config;
 
@@ -95,7 +96,6 @@ class DesignsRepository  {
             $return_data = array();
             
             $dataOutput = DesignModel::where('business_id', $request->business_id)->first();
-    
             // Check if the record was found
             if (!$dataOutput) {
                 return [
@@ -114,9 +114,8 @@ class DesignsRepository  {
             $dataOutput->save();
     
             // Insert into 
-            
             $production_data = ProductionModel::where('business_id', $request->business_id)->first();
-            if (!$production_data) {
+            if ($production_data) {
                 
                 $production_data->business_id = $dataOutput->business_id;
                 $production_data->design_id = $dataOutput->id;
@@ -160,6 +159,59 @@ class DesignsRepository  {
         }
     }
     
+
+    public function updateReUploadDesign($request)
+    {
+        try {
+            $return_data = array();
+
+            $designRevisionForProd = DesignRevisionForProd::where('id', $request->design_revision_for_prod_id)->orderBy('id','desc')->first();
+            // dd( $designRevisionForProd->business_id);
+            if($designRevisionForProd) {
+
+                $designRevisionForProd->remark_by_design = $request->remark_by_design;
+
+                $designImageName = $designRevisionForProd->id . '_' . rand(100000, 999999) . '_re_design.' . $request->design_image->extension();
+                $bomImageName = $designRevisionForProd->id . '_' . rand(100000, 999999) . '_re_bom.' . $request->bom_image->extension();
+                
+                // Update the design image and bom image fields in the DesignModel
+                $designRevisionForProd->design_image = $designImageName;
+                $designRevisionForProd->bom_image = $bomImageName;
+
+                $designRevisionForProd->save();
+
+            } 
+    
+            // Update BusinessApplicationProcesses if record exists
+            $business_application = BusinessApplicationProcesses::where('business_id', $request->business_id)->first();
+            if ($business_application) {
+
+                $business_application->business_id = $designRevisionForProd->business_id;
+                $business_application->business_status_id = config('constants.HIGHER_AUTHORITY.DESIGN_SENT_TO_PROD_DEPT_REVISED');
+                $business_application->design_id = $designRevisionForProd->design_id;
+                $business_application->design_status_id = config('constants.DESIGN_DEPARTMENT.DESIGN_SENT_TO_PROD_DEPT_REVISED');
+                $business_application->production_id = $production_data->production_id;
+                $business_application->production_status_id = config('constants.PRODUCTION_DEPARTMENT.LIST_DESIGN_RECIVED_FROM_PRODUCTION_DEPT_REVISED');
+                $business_application->save();
+
+            }
+    
+            $return_data['designImageName'] = $designImageName;
+            $return_data['bomImageName'] = $bomImageName;
+            $return_data['last_insert_id'] = $designRevisionForProd->business_id;
+    
+            // Return the data
+
+            return $return_data;
+        } catch (\Exception $e) {
+            dd($e);
+            return [
+                'msg' => 'Failed to update Report Incident Crowdsourcing.',
+                'status' => 'error',
+                'error' => $e->getMessage() // Return the error message for debugging purposes
+            ];
+        }
+    }
    
 
 }

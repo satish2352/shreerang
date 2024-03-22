@@ -14,32 +14,7 @@ use Config;
         $this->repo = new ProductionRepository();
     }
 
-    
-    public function getAllNewRequirement(){
-        try {
-            return $this->repo->getAllNewRequirement();
-        } catch (\Exception $e) {
-            return $e;
-        }
-    }
 
-
-    public function getAllacceptdesign(){
-        try {
-            return $this->repo->getAllacceptdesign();
-        } catch (\Exception $e) {
-            return $e;
-        }
-    }
-
-
-    public function getAllrejectdesign(){
-        try {
-            return $this->repo->getAllrejectdesign();
-        } catch (\Exception $e) {
-            return $e;
-        }
-    }
 
 
     public function acceptdesign($id){
