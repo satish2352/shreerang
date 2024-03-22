@@ -83,7 +83,7 @@
                                                         <label for="req_name">Requisition Name :</label>
                                                         <input type="text" class="form-control" id="req_name"
                                                             name="req_name" 
-                                                            value="@if (old('req_name')) {{ old('req_name') }}@else{{ $editDataNew->req_name }} @endif"
+                                                            value="@if (old('req_name')) {{ old('req_name') }}@else{{$editDataNew->req_name}} @endif"
                                                             placeholder="Enter your Requisition Name ">
                                                     </div>
 
@@ -91,7 +91,7 @@
                                                         <label for="req_number">Requisition Number :</label>
                                                         <input type="text" class="form-control" id="req_number"
                                                             name="req_number" 
-                                                            value="@if (old('req_number')) {{ old('req_number') }}@else{{ $editDataNew->req_number }} @endif"
+                                                            value="@if (old('req_number')) {{ old('req_number') }}@else{{$editDataNew->req_number}} @endif"
                                                             placeholder="Enter your Requisition Number ">
                                                     </div>
                                                 </div>    
@@ -112,7 +112,7 @@
                                                         <div id="oldImageDisplay">
                                                             @if (isset($editDataNew->signature))
                                                                 <b>Image Preview: </b>
-                                                                <img src="{{ Config::get('FileConstant.REQUISITION_VIEW') . $editDataNew->signature }}"
+                                                                <img src="{{ Config::get('FileConstant.REQUISITION_VIEW') . $editDataNew->signature}}"
                                                                     alt="Old Image" style="max-width: 100px;">
                                                             @endif
                                                         </div>
@@ -152,45 +152,45 @@
                                                                                                                     
                                                         <td>
                                                             <input type="text"
-                                                                name="description_{{ $key }}"
-                                                                value="@if (old('description')) {{ old('description') }}@else{{ $editDataNew->description }} @endif"
+                                                                name="description_{{$key}}"
+                                                                value="@if (old('description')) {{ old('description') }}@else{{$editDataNew->description}} @endif"
                                                                 placeholder="Enter Description"
                                                                 class="form-control" />
                                                         </td>                                                                                                                                
 
                                                         <td>
                                                             <input type="text"
-                                                                name="quantity_{{ $key }}"
-                                                                value="@if (old('quantity')) {{ old('quantity') }}@else{{ $editDataNew->quantity }} @endif"
+                                                                name="quantity_{{$key}}"
+                                                                value="@if (old('quantity')) {{ old('quantity') }}@else{{$editDataNew->quantity}} @endif"
                                                                 placeholder="Enter Quantity"
                                                                 class="form-control" />
                                                         </td>
 
                                                         <td>
                                                             <input type="text"
-                                                                name="unit_{{ $key }}"
-                                                                value="@if (old('unit')) {{ old('unit') }}@else{{ $editDataNew->unit }} @endif"
+                                                                name="unit_{{$key}}"
+                                                                value="@if (old('unit')) {{ old('unit') }}@else{{$editDataNew->unit}} @endif"
                                                                 placeholder="Enter Unit" class="form-control" />
                                                         </td>
 
                                                         <td>
                                                             <input type="text"
-                                                                name="day_{{ $key }}"
-                                                                value="@if (old('day')) {{ old('day') }}@else{{ $editDataNew->day }} @endif"
+                                                                name="day_{{$key}}"
+                                                                value="@if (old('day')) {{ old('day') }}@else{{$editDataNew->day}} @endif"
                                                                 placeholder="Enter Day" class="form-control" />
                                                         </td>
 
                                                         <td>
                                                             <input type="text"
-                                                                name="remark_{{ $key }}"
-                                                                value="@if (old('remark')) {{ old('remark') }}@else{{ $editDataNew->remark }} @endif"
+                                                                name="remark_{{$key}}"
+                                                                value="@if (old('remark')) {{ old('remark') }}@else{{$editDataNew->remark}} @endif"
                                                                 placeholder="Enter Remark" class="form-control" />
                                                         </td>
 
                                                         <td>
                                                             <input type="text"
-                                                                name="stock_{{ $key }}"
-                                                                value="@if (old('stock')) {{ old('stock') }}@else{{ $editDataNew->stock }} @endif"
+                                                                name="stock_{{$key}}"
+                                                                value="@if (old('stock')) {{ old('stock') }}@else{{$editDataNew->stock}} @endif"
                                                                 placeholder="Enter Stock" class="form-control" />
                                                         </td>
 
@@ -214,7 +214,7 @@
                                                         <a href="{{ route('list-requistion') }}"
                                                             class="btn btn-white"
                                                             style="margin-bottom:50px">Cancel</a>
-                                                        <button class="btn btn-sm btn-primary login-submit-cs"
+                                                        <button class="btn btn-sm btn-primary login-submit-cs" id="submitButton"
                                                             type="submit" style="margin-bottom:50px">Update Data</button>
                                                         
                                                     </div>
@@ -241,8 +241,10 @@
     </form>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
  
 <script>
     
@@ -279,90 +281,250 @@
 </script>
 
 <script>
-jQuery.noConflict();
-jQuery(document).ready(function($) {
-    $("#editDesignsForm").validate({
-        rules: {
-            req_name: {
-                required: true,
-                noNumbers: true
-            },
-            req_number: {
-                required: true,
-                number: true 
-            },
-            stock: {
-                required: true,
-                date : true
-            },
-           
+    jQuery.noConflict();
+    jQuery(document).ready(function($) {
+        $("#editDesignsForm").validate({
+            rules: {
+                req_name: {
+                    required: true,
+                    noNumbers: true
+                },
+                req_number: {
+                    required: true,
+                    number: true 
+                },
+                stock: {
+                    required: true,
+                    date : true
+                },
+                signature: {
+                    required: true,
+                    accept: "Please select an Signature Image file.",
+                },            
 
-            'addmore[0][description]': {
-                required : true,                
-            },
-            'addmore[0][quantity]': {
-                required : true,
-                number: true
-            },
-            'addmore[0][unit]': {
-                required : true,
-            },
-            'addmore[0][day]': {
-                required : true,
-            },
-            'addmore[0][remark]': {
-                required : true,
-            },   
-            'addmore[0][stock]': {
-                required : true,
-            },
-        },
-
-        messages: {
-            req_name: {
-                required: "Please Enter Requisition name.",
-                noNumbers: "Requisition Name should not contain any numbers."
-            },
-            req_number: {
-                required: "Please Enter Requisition Number.",
-                number: "Requisition Number should contain only numbers."
-            },
-            req_date: {
-                required: "Please Select Requisition date.",
-                date: "Please Select a valid Requisition date."
+                'addmore[0][description]': {
+                    required : true,                
+                },
+                'addmore[0][quantity]': {
+                    required : true,
+                    number: true
+                },
+                'addmore[0][unit]': {
+                    required : true,
+                },
+                'addmore[0][day]': {
+                    required : true,
+                },
+                'addmore[0][remark]': {
+                    required : true,
+                },   
+                'addmore[0][stock]': {
+                    required : true,
+                },
             },
 
-            'addmore[0][description]': {
-                required: "Please Enter Description.",                
+            messages: {
+                req_name: {
+                    required: "Please Enter Requisition name.",
+                    noNumbers: "Requisition Name should not contain any numbers."
+                },
+                req_number: {
+                    required: "Please Enter Requisition Number.",
+                    number: "Requisition Number should contain only numbers."
+                },
+                req_date: {
+                    required: "Please Select Requisition date.",
+                    date: "Please Select a valid Requisition date."
+                },
+                signature: {
+                    required: "Please Upload a Signature.",
+                    accept: "Please Upload an Signature image file.",
+                },
+
+                'addmore[0][description]': {
+                    required: "Please Enter Description.",                
+                },
+                'addmore[0][quantity]': {
+                    required: "Please Enter Quantity.",
+                    number: "Quantity should contain only numbers."
+                },            
+                'addmore[0][unit]': {
+                    required: "Please Enter Unit.",
+                }, 
+                'addmore[0][day]': {
+                    required: "Please Enter Day.",
+                },
+                'addmore[0][remark]': {
+                    required: "Please Enter Remark.",
+                },
+                'addmore[0][stock]': {
+                    required: "Please Enter Stock.",
+                },     
+                
             },
-            'addmore[0][quantity]': {
-                required: "Please Enter Quantity.",
-                number: "Quantity should contain only numbers."
-            },            
-            'addmore[0][unit]': {
-                required: "Please Enter Unit.",
-            }, 
-            'addmore[0][day]': {
-                required: "Please Enter Day.",
-            },
-            'addmore[0][remark]': {
-                required: "Please Enter Remark.",
-            },
-            'addmore[0][stock]': {
-                required: "Please Enter Stock.",
-            },     
+        });
+
+        $.validator.addMethod("noNumbers", function(value, element) {
+                return this.optional(element) || !/\d/.test(value);
+            }, "Vendor Name should not contain any numbers.");
             
-        },
     });
-
-    $.validator.addMethod("noNumbers", function(value, element) {
-            return this.optional(element) || !/\d/.test(value);
-        }, "Vendor Name should not contain any numbers.");
-        
-});
 </script>
 
-<script>
+ <!-- Make sure you have jQuery and jquery.validate.js included before this script -->
+ <!-- <script>
+        $(document).ready(function() {
+            var currentSignatureImage = $("#currentSignatureImage").val();
+    
+            // Function to check if all input fields are filled with valid data
+            function checkFormValidity() {
+                const req_name = $('#req_name').val();
+                const req_number = $('#req_number').val();
+                const stock = $('#stock').val();
+                const signature = $('#signature').val();
+    
+                // Update the old PDF values if there are any selected files
+                if (signature !== currentSignatureImage) {
+                    $("#currentSignatureImage").val(signature);
+                }                  
+            }
+    
+            // Call the checkFormValidity function on file input change
+            $('input, #signature').on('change', function() {
+                checkFormValidity();
+                validator.element(this); // Revalidate the file input
+            });
+    
+            $.validator.addMethod("validImage", function(value, element) {
+                // Check if a file is selected
+                if (element.files && element.files.length > 0) {
+                    var extension = element.files[0].name.split('.').pop().toLowerCase();
+                    // Check the file extension
+                    return (extension == "jpg" || extension == "jpeg" || extension == "png");
+                }
+                return true; // No file selected, so consider it valid
+            }, "Only JPG, JPEG, PNG images are allowed.");
+    
+            $.validator.addMethod("fileSize", function(value, element, param) {
+                // Check if a file is selected
+                if (element.files && element.files.length > 0) {
+                    // Convert bytes to KB
+                    const fileSizeKB = element.files[0].size / 1024;
+                    return fileSizeKB >= param[0] && fileSizeKB <= param[1];
+                }
+                return true; // No file selected, so consider it valid
+            }, "File size must be between {0} KB and {1} KB.");
+    
+            $.validator.addMethod("noNumbers", function(value, element) {
+                return this.optional(element) || !/\d/.test(value);
+            }, "Requisition Name should not contain any numbers.");
+
+            // Initialize the form validation
+            var form = $("#editDesignsForm");
+            var validator = form.validate({
+                rules: {
+                    req_name: {
+                        required: true,
+                        noNumbers: true
+                    },
+                    req_number: {
+                        required: true,
+                        number: true 
+                    },
+                    stock: {
+                        required: true,
+                        date : true
+                    },
+                    signature: {
+                        validImage: true,
+                        fileSize: [10, 2048], // Min 180KB and Max 2MB (2 * 1024 KB)
+                    },     
+                    'addmore[0][description]': {
+                        required : true,
+                    },
+                    'addmore[0][quantity]': {
+                        required : true,
+                        number: true
+                    },
+                    'addmore[0][unit]': {
+                        required : true,
+                    },
+                    'addmore[0][day]': {
+                        required : true,
+                    },
+                    'addmore[0][remark]': {
+                        required : true,
+                    },   
+                    'addmore[0][stock]': {
+                        required : true,
+                    },                  
+                },
+                messages: {
+                    req_name: {
+                        required: "Please Enter Requisition name.",
+                        noNumbers: "Requisition Name should not contain any numbers."
+                    },
+                    req_number: {
+                        required: "Please Enter Requisition Number.",
+                        number: "Requisition Number should contain only numbers."
+                    },
+                    req_date: {
+                        required: "Please Select Requisition date.",
+                        date: "Please Select a valid Requisition date."
+                    },                        
+                    signature: {
+                        validImage: "Only JPG, JPEG, PNG images are allowed.",
+                        fileSize: "The file size must be between 10 KB and 2048 KB.",
+                    },
+
+                    'addmore[0][description]': {
+                        required: "Please Enter Description.",                
+                    },
+                    'addmore[0][quantity]': {
+                        required: "Please Enter Quantity.",
+                        number: "Quantity should contain only numbers."
+                    },            
+                    'addmore[0][unit]': {
+                        required: "Please Enter Unit.",
+                    }, 
+                    'addmore[0][day]': {
+                        required: "Please Enter Day.",
+                    },
+                    'addmore[0][remark]': {
+                        required: "Please Enter Remark.",
+                    },
+                    'addmore[0][stock]': {
+                        required: "Please Enter Stock.",
+                    },                                               
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });                
+                            
+            // Submit the form when the "Update" button is clicked
+            $("#submitButton").click(function() {
+                // Validate the form
+                if (form.valid()) {
+                    form.submit();
+                }
+            });
+    
+            // You can remove the following two blocks if you don't need to display selected images on the page
+            $("#signature").change(function() {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    // Display the selected image for English
+                    // You can remove this if you don't need to display the image on the page
+                    $("#currentEnglishImageDisplay").attr('src', e.target.result);
+                    validator.element("#signature"); // Revalidate the file input
+                };
+                reader.readAsDataURL(this.files[0]);
+            });        
+        });
+</script> -->
+
+<!-- <script>
     $('.delete-btn').click(function(e) {
 
         Swal.fire({
@@ -381,13 +543,9 @@ jQuery(document).ready(function($) {
         })
 
     });
-</script>
+</script> -->
 
-
-
-
-
-{{-- <script>
+<!-- {{-- <script>
  $(document).on("click", ".remove-tr", function() {
     var rowId = $(this).data('row-id');
     var row = $(this).closest('tr');
@@ -409,9 +567,5 @@ jQuery(document).ready(function($) {
 });
 });
 
-</script> --}}
-
-
-
-
+</script> --}} -->
 @endsection

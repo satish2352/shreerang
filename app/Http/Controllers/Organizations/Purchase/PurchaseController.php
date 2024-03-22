@@ -54,12 +54,15 @@ class PurchaseController extends Controller
                 'vendor_id' => 'required|string',
                 'terms_condition' => 'required|string',
                 'remark' => 'required|string',
-                'transport_dispatch' => 'required|string',             
+                'transport_dispatch' => 'required|string',
+                // 'image' => 'required|image|mimes:jpeg,png,jpg',        
             ];
 
             if($request->has('image')) {
-                $rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE");
+                $rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'|min:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE");
             }
+
+            //dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|
 
             $messages = [                        
                 'po_date.required' => 'Please enter a valid PO Date.',
@@ -81,7 +84,7 @@ class PurchaseController extends Controller
                 'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
                 'image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'KB .',
                 'image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE").'KB .',
-                'image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+                // 'image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
             ];
   
           try {
@@ -130,11 +133,14 @@ class PurchaseController extends Controller
                 'terms_condition' => 'required|string',
                 'remark' => 'required|string',
                 'transport_dispatch' => 'required|string',             
+                // 'image' => 'required|image|mimes:jpeg,png,jpg',
             ];
 
             if($request->has('image')) {
-                $rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE");
+                $rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'|min:'.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE");
             }
+
+            //dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|
 
             $messages = [                        
                 'po_date.required' => 'Please enter a valid PO Date.',
@@ -156,7 +162,7 @@ class PurchaseController extends Controller
                 'image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
                 'image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MAX_SIZE").'KB .',
                 'image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.PURCHASE_ORDER_IMAGE_MIN_SIZE").'KB .',
-                'image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+                // 'image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
             ];
             
             try {

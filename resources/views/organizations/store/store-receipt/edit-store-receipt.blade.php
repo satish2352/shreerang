@@ -243,7 +243,7 @@
                                                                 <a href="{{ route('list-store-receipt') }}"
                                                                     class="btn btn-white"
                                                                     style="margin-bottom:50px">Cancel</a>
-                                                                <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                <button class="btn btn-sm btn-primary login-submit-cs" id="submitButton"
                                                                     type="submit" style="margin-bottom:50px">Update
                                                                     Data</button>
                                                             </div>
@@ -276,8 +276,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     
 <script>
     $(document).ready(function() {
@@ -309,96 +312,268 @@
 </script>
 
 <script>
-jQuery.noConflict();
-jQuery(document).ready(function($) {
-    $("#editDesignsForm").validate({
-        rules: {
-            store_date: {
-                required: true,
-                date: true,
+    jQuery.noConflict();
+    jQuery(document).ready(function($) {
+        $("#editDesignsForm").validate({
+            rules: {
+                store_date: {
+                    required: true,
+                    date: true,
+                },
+                name: {
+                    required: true,
+                    noNumbers: true
+                },
+                contact_number: {
+                    required: true,
+                    digits: true 
+                },
+                address: {
+                    required: true,
+                },           
+                remark: {
+                    required: true,
+                },
+                signature: {
+                    required: true,
+                    accept: "Please select an Signature Image file.",
+                },
+                'addmore[0][quantity]': {
+                    required : true,
+                    number: true 
+                },
+                'addmore[0][description]': {
+                    required : true,
+                },
+                'addmore[0][price]': {
+                    required : true,
+                    number: true 
+                },
+                'addmore[0][amount]': {
+                    required : true,
+                    number: true 
+                },
+                'addmore[0][total]': {
+                    required : true,
+                    number: true 
+                },            
             },
-            name: {
-                required: true,
-                noNumbers: true
-            },
-            contact_number: {
-                required: true,
-                digits: true 
-            },        
-            remark: {
-                required: true,
-            },
-            
-            
-            'addmore[0][quantity]': {
-                required : true,
-                number: true 
-            },
-            'addmore[0][description]': {
-                required : true,
-            },
-            'addmore[0][price]': {
-                required : true,
-                number: true 
-            },
-            'addmore[0][amount]': {
-                required : true,
-                number: true 
-            },
-            'addmore[0][total]': {
-                required : true,
-                number: true 
-            },            
-        },
 
-        messages: {
-            store_date: {
-                required: "Please Select a Store Date.",
-                date: "Please enter a valid Store date."
-            },
-            name: {
-                required: "Please Enter Store Person Name.",
-                noNumbers: "Store Person Name should not contain any numbers."
-            },
-            contact_number: {
-                required: "Please Enter a valid Contact No.",
-                digits: "Contact Number should contain only digits."
-            },          
-            remark: {
-                required: "Please Write Remark",
-            },
-           
-        
-            'addmore[0][quantity]': {
-                required: "Please Enter Quantity.",
-                number: "Quantity should contain only numbers."
-            },
-            'addmore[0][description]': {
-                required: "Please Enter Description.",                
-            },
-            'addmore[0][price]': {
-                required: "Please Enter Price.",
-                number: "Price should contain only numbers."
-            },
-            'addmore[0][amount]': {
-                required: "Please Enter Amount.",
-                number: "Amount should contain only numbers."
-            },
-            'addmore[0][total]': {
-                required: "Please Enter Total.",
-                number: "Total should contain only numbers."
-            },    
+            messages: {
+                store_date: {
+                    required: "Please Select a Store Date.",
+                    date: "Please enter a valid Store date."
+                },
+                receipt_date: {
+                    required: "Please Select a Receipt date.",
+                    date: "Please enter a valid Receipt date."
+                },                
+                name: {
+                    required: "Please Enter Store Person Name.",
+                    noNumbers: "Store Person Name should not contain any numbers."
+                },
+                contact_number: {
+                    required: "Please Enter a valid Contact No.",
+                    digits: "Contact Number should contain only digits."
+                },          
+                remark: {
+                    required: "Please Write Remark",
+                },
+                signature: {
+                    required: "Please Upload an Signature Image.",
+                    accept: "Please Upload an Signature Image file.",
+                },
+            
+                'addmore[0][quantity]': {
+                    required: "Please Enter Quantity.",
+                    number: "Quantity should contain only numbers."
+                },
+                'addmore[0][description]': {
+                    required: "Please Enter Description.",                
+                },
+                'addmore[0][price]': {
+                    required: "Please Enter Price.",
+                    number: "Price should contain only numbers."
+                },
+                'addmore[0][amount]': {
+                    required: "Please Enter Amount.",
+                    number: "Amount should contain only numbers."
+                },
+                'addmore[0][total]': {
+                    required: "Please Enter Total.",
+                    number: "Total should contain only numbers."
+                },    
 
-        },
+            },
+        });
+
+        $.validator.addMethod("noNumbers", function(value, element) {
+                return this.optional(element) || !/\d/.test(value);
+            }, "Vendor Name should not contain any numbers.");
+            
     });
-
-    $.validator.addMethod("noNumbers", function(value, element) {
-            return this.optional(element) || !/\d/.test(value);
-        }, "Vendor Name should not contain any numbers.");
-        
-});
-
 </script>
+
+<!-- Make sure you have jQuery and jquery.validate.js included before this script -->
+<!-- <script>
+    $(document).ready(function() {
+        var currentSignatureImage = $("#currentSignatureImage").val();
+
+        // Function to check if all input fields are filled with valid data
+        function checkFormValidity() {
+            const store_date = $('#store_date').val();
+            const name = $('#name').val();
+            const contact_number = $('#contact_number').val();
+            const remark = $('#remark').val();
+            const signature = $('#signature').val();
+
+            // Update the old PDF values if there are any selected files
+            if (signature !== currentSignatureImage) {
+                $("#currentSignatureImage").val(signature);
+            }                  
+        }
+
+        // Call the checkFormValidity function on file input change
+        $('input, #signature').on('change', function() {
+            checkFormValidity();
+            validator.element(this); // Revalidate the file input
+        });
+
+        $.validator.addMethod("validImage", function(value, element) {
+            // Check if a file is selected
+            if (element.files && element.files.length > 0) {
+                var extension = element.files[0].name.split('.').pop().toLowerCase();
+                // Check the file extension
+                return (extension == "jpg" || extension == "jpeg" || extension == "png");
+            }
+            return true; // No file selected, so consider it valid
+        }, "Only JPG, JPEG, PNG images are allowed.");
+
+        $.validator.addMethod("fileSize", function(value, element, param) {
+            // Check if a file is selected
+            if (element.files && element.files.length > 0) {
+                // Convert bytes to KB
+                const fileSizeKB = element.files[0].size / 1024;
+                return fileSizeKB >= param[0] && fileSizeKB <= param[1];
+            }
+            return true; // No file selected, so consider it valid
+        }, "File size must be between {0} KB and {1} KB.");
+
+        $.validator.addMethod("noNumbers", function(value, element) {
+            return this.optional(element) || !/\d/.test(value);
+        }, "Store Receipt Name should not contain any numbers.");
+
+        // Initialize the form validation
+        var form = $("#editDesignsForm");
+        var validator = form.validate({
+            rules: {
+                store_date: {
+                    required: true,
+                    date: true,
+                },
+                name: {
+                    required: true,
+                    noNumbers: true
+                },
+                contact_number: {
+                    required: true,
+                    digits: true 
+                },        
+                remark: {
+                    required: true,
+                },
+                signature: {
+                    validImage: true,
+                    fileSize: [10, 2048], // Min 180KB and Max 2MB (2 * 1024 KB)
+                },          
+                
+                'addmore[0][quantity]': {
+                    required : true,
+                    number: true 
+                },
+                'addmore[0][description]': {
+                    required : true,
+                },
+                'addmore[0][price]': {
+                    required : true,
+                    number: true 
+                },
+                'addmore[0][amount]': {
+                    required : true,
+                    number: true 
+                },
+                'addmore[0][total]': {
+                    required : true,
+                    number: true 
+                },                                                  
+            },
+            messages: {
+                store_date: {
+                    required: "Please Select a Store Date.",
+                    date: "Please enter a valid Store date."
+                },
+                name: {
+                    required: "Please Enter Store Person Name.",
+                    noNumbers: "Store Person Name should not contain any numbers."
+                },
+                contact_number: {
+                    required: "Please Enter a valid Contact No.",
+                    digits: "Contact Number should contain only digits."
+                },          
+                remark: {
+                    required: "Please Write Remark",
+                },                        
+                signature: {
+                    validImage: "Only JPG, JPEG, PNG images are allowed.",
+                    fileSize: "The file size must be between 10 KB and 2048 KB.",
+                },
+
+                'addmore[0][quantity]': {
+                    required: "Please Enter Quantity.",
+                    number: "Quantity should contain only numbers."
+                },
+                'addmore[0][description]': {
+                    required: "Please Enter Description.",                
+                },
+                'addmore[0][price]': {
+                    required: "Please Enter Price.",
+                    number: "Price should contain only numbers."
+                },
+                'addmore[0][amount]': {
+                    required: "Please Enter Amount.",
+                    number: "Amount should contain only numbers."
+                },
+                'addmore[0][total]': {
+                    required: "Please Enter Total.",
+                    number: "Total should contain only numbers."
+                },                                               
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });                
+                        
+        // Submit the form when the "Update" button is clicked
+        $("#submitButton").click(function() {
+            // Validate the form
+            if (form.valid()) {
+                form.submit();
+            }
+        });
+
+        // You can remove the following two blocks if you don't need to display selected images on the page
+        $("#signature").change(function() {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                // Display the selected image for English
+                // You can remove this if you don't need to display the image on the page
+                $("#currentEnglishImageDisplay").attr('src', e.target.result);
+                validator.element("#signature"); // Revalidate the file input
+            };
+            reader.readAsDataURL(this.files[0]);
+        });        
+    });
+</script> -->
 
 <script>
     $('.delete-btn').click(function(e) {
@@ -420,7 +595,5 @@ jQuery(document).ready(function($) {
 
     });
 </script>
-
-
 
 @endsection

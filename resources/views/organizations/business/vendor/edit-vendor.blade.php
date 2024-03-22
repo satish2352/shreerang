@@ -152,7 +152,7 @@
                                                                         <a href="{{ route('list-vendor') }}"
                                                                             class="btn btn-white"
                                                                             style="margin-bottom:50px">Cancel</a>
-                                                                        <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                        <button class="btn btn-sm btn-primary login-submit-cs" id="submitButton"
                                                                             type="submit" style="margin-bottom:50px">Update Data</button>
                                                                         
                                                                     </div>
@@ -177,10 +177,13 @@
     </form>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
  
-    <script>
+<script>
     jQuery.noConflict();
     jQuery(document).ready(function($) {
         $("#editDesignsForm").validate({
@@ -194,11 +197,10 @@
                 },
                 gst_no: {
                     required: true,
+                    // gstIN: true,
                 },
                 contact_no: {
                     required: true,
-                    minlength: 10,
-                    maxlength: 10,
                     digits: true
                 },
                 email: {
@@ -207,7 +209,7 @@
                 },
                 quote_no: {
                     required: true,
-                    number : true,
+                    number: true
                 },
                 payment_terms: {
                     required: true,
@@ -224,12 +226,11 @@
                 },
                 gst_no: {
                     required: "Please Enter GST No.",
+                    // gstIN: "Please Enter a valid GST No.",
                 },
                 contact_no: {
                     required: "Please Enter a valid Contact No.",
-                    minlength: "Contact No. must be exactly 10 digits.",
-                    maxlength: "Contact No. must be exactly 10 digits.",
-                    digits: "Please enter only digits."
+                    digits: "Contact Number should contain only digits."
                 },
                 email: {
                     required: "Please Enter valid Email.",
@@ -237,7 +238,7 @@
                 },
                 quote_no: {
                     required: "Please Enter Quote No.",
-                    number: "Quote No. should be contain any numbers.",
+                    number: "Quote No. should contain only numbers."
                 },
                 payment_terms: {
                     required: "Please Enter Payment terms.",
@@ -252,12 +253,107 @@
         }, "Vendor Name should not contain any numbers.");
         
 });
-
 // // Custom validation method for GST No
 // $.validator.addMethod("gstIN", function(value, element) {
 //         return this.optional(element) || /^\d{2}[A-Z]{5}\d{4}[A-Z]\d[Z0-9]$/i.test(value);
 //         }, "Please enter a valid GST No.");
 </script>
+
+<!-- Make sure you have jQuery and jquery.validate.js included before this script -->
+<!-- <script>
+        $(document).ready(function() {    
+            // Function to check if all input fields are filled with valid data
+            function checkFormValidity() {
+                const vendor_name = $('#vendor_name').val();
+                const address = $('#address').val();
+                const gst_no = $('#gst_no').val();
+                const contact_no = $('#contact_no').val();
+                const email = $('#email').val();
+                const quote_no = $('#quote_no').val();
+                const payment_terms = $('#payment_terms').val();                    
+            }
+    
+            $.validator.addMethod("noNumbers", function(value, element) {
+                return this.optional(element) || !/\d/.test(value);
+            }, "Vendor Name should not contain any numbers.");
+
+            // Initialize the form validation
+            var form = $("#editDesignsForm");
+            var validator = form.validate({
+                rules: {
+                    vendor_name: {
+                        required: true,
+                        noNumbers: true
+                    },
+                    address: {
+                        required: true,
+                    },
+                    gst_no: {
+                        required: true,
+                    },
+                    contact_no: {
+                        required: true,
+                        minlength: 10,
+                        maxlength: 10,
+                        digits: true
+                    },
+                    email: {
+                        required: true,
+                        email: true,
+                    },
+                    quote_no: {
+                        required: true,
+                        number : true,
+                    },
+                    payment_terms: {
+                        required: true,
+                    },                                    
+                },
+                messages: {
+                    vendor_name: {
+                        required: "Please Enter Vendor Name.",
+                        noNumbers: "Vendor Name should not contain any numbers."
+                    },
+                    address: {
+                        required: "Please Enter Address.",
+                    },
+                    gst_no: {
+                        required: "Please Enter GST No.",
+                    },
+                    contact_no: {
+                        required: "Please Enter a valid Contact No.",
+                        minlength: "Contact No. must be exactly 10 digits.",
+                        maxlength: "Contact No. must be exactly 10 digits.",
+                        digits: "Please enter only digits."
+                    },
+                    email: {
+                        required: "Please Enter valid Email.",
+                        email: "Please Enter a valid Email Address.",
+                    },
+                    quote_no: {
+                        required: "Please Enter Quote No.",
+                        number: "Quote No. should be contain any numbers.",
+                    },
+                    payment_terms: {
+                        required: "Please Enter Payment terms.",
+                    },                        
+                                                                 
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });                
+                            
+            // Submit the form when the "Update" button is clicked
+            $("#submitButton").click(function() {
+                // Validate the form
+                if (form.valid()) {
+                    form.submit();
+                }
+            });
+                        
+        });
+</script>     -->
 
 <script>
     $('.delete-btn').click(function(e) {
@@ -279,9 +375,6 @@
 
     });
 </script>
-
-
-
 
 
 {{-- <script>

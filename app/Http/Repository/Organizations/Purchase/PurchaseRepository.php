@@ -153,8 +153,8 @@ public function addAll($request)
             $return_data['image'] = $previousImage;
             return  $return_data;
 
-            dd($return_data);
-            die();
+            // dd($return_data);
+            // die();
     
             // Returning success message
             return [

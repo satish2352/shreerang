@@ -49,11 +49,13 @@ class DocUploadFianaceController extends Controller
         //     ];
 
         if($request->has('grn_image')) {
-            $rules['grn_image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE");
+            $rules['grn_image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'|min:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE");
         }
 
+        //|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000
+
         if($request->has('sr_image')) {
-            $rules['sr_image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE");
+            $rules['sr_image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'|min:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE");
         }
 
         $messages = [
@@ -62,14 +64,14 @@ class DocUploadFianaceController extends Controller
             'grn_image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
             'grn_image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'KB .',
             'grn_image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE").'KB .',
-            'grn_image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+            // 'grn_image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
 
             'sr_image.required' => 'The image is required.',
             'sr_image.image' => 'The image must be a valid image file.',
             'sr_image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
             'sr_image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'KB .',
             'sr_image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE").'KB .',
-            'sr_image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+            // 'sr_image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
         ]; 
   
           try {
@@ -123,11 +125,13 @@ class DocUploadFianaceController extends Controller
         // ];
 
         if($request->has('grn_image')) {
-            $rules['grn_image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE");
+            $rules['grn_image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'|min:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE");
         }
 
+        //|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000
+
         if($request->has('sr_image')) {
-            $rules['sr_image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE");
+            $rules['sr_image'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'|min:'.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE");
         }
 
         $messages = [
@@ -136,15 +140,15 @@ class DocUploadFianaceController extends Controller
             'grn_image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
             'grn_image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'KB .',
             'grn_image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE").'KB .',
-            'grn_image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+            // 'grn_image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
 
             'sr_image.required' => 'The image is required.',
             'sr_image.image' => 'The image must be a valid image file.',
             'sr_image.mimes' => 'The image must be in JPEG, PNG, JPG format.',
             'sr_image.max' => 'The image size must not exceed '.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MAX_SIZE").'KB .',
             'sr_image.min' => 'The image size must not be less than '.Config::get("AllFileValidation.FINANCE_DOCUMENT_IMAGE_MIN_SIZE").'KB .',
-            'sr_image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
-        ];    
+            // 'sr_image.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+        ];     
         
         
         try {

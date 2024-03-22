@@ -89,13 +89,40 @@ use Config;
     //     }      
     // }
 
+    // public function updateAll($request){
+    //     try {
+    //         $return_data = $this->repo->updateAll($request);
+    //         // dd($return_data);
+    //         // die();
+    //         $path = Config::get('FileConstant.PURCHASE_ORDER_ADD');
+    //         if (isset($return_data['image'])) { // Check if 'image' key exists
+    //             if (file_exists_view(Config::get('FileConstant.PURCHASE_ORDER_DELETE') . $return_data['image'])) {
+    //                 removeImage(Config::get('FileConstant.PURCHASE_ORDER_DELETE') . $return_data['image']);
+    //             }
+    //         }
+    //         if ($request->hasFile('image')) {
+    //             $englishImageName = $return_data['last_insert_id'] . '_' . rand(100000, 999999) . '_image.' . $request->image->extension();
+    //             uploadImage($request, 'image', $path, $englishImageName);
+    //             $slide_data = PurchaseOrderModel::find($return_data['last_insert_id']);
+    //             $slide_data->image = $englishImageName;
+    //             $slide_data->save();
+    //         }
+    //         if ($return_data) {
+    //             return ['status' => 'success', 'msg' => 'Data Updated Successfully.'];
+    //         } else {
+    //             return ['status' => 'error', 'msg' => 'Data Not Updated.'];
+    //         }  
+    //     } catch (Exception $e) {
+    //         return ['status' => 'error', 'msg' => $e->getMessage()];
+    //     }      
+    // }
+
     public function updateAll($request){
         try {
             $return_data = $this->repo->updateAll($request);
-            // dd($return_data);
-            // die();
+            
             $path = Config::get('FileConstant.PURCHASE_ORDER_ADD');
-            if (isset($return_data['image'])) { // Check if 'image' key exists
+            if (isset($return_data['image'])) {
                 if (file_exists_view(Config::get('FileConstant.PURCHASE_ORDER_DELETE') . $return_data['image'])) {
                     removeImage(Config::get('FileConstant.PURCHASE_ORDER_DELETE') . $return_data['image']);
                 }

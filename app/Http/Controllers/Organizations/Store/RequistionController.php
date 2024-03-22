@@ -45,13 +45,14 @@ class RequistionController extends Controller
                 'req_name' => 'required|string',                               
                 'req_number' => 'required|string',
                 'req_date' => 'required',
-                // 'signature' => 'required|image|mimes:jpeg,png,jpg',
-                // 'signature' => 'required|image|mimes:jpeg,png,jpg|max:10240|min:5',
+                // 'signature' => 'required|image|mimes:jpeg,png,jpg|',
             ];
 
             if($request->has('signature')) {
-                $rules['signature'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.SLIDER_IMAGE_MIN_SIZE");
+                $rules['signature'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'|min:'.Config::get("AllFileValidation.REQUISITION_IMAGE_MIN_SIZE");
             }
+    
+            //|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000
 
             $messages = [
                 'req_name.required' => 'The Requisition name is required.',
@@ -67,7 +68,7 @@ class RequistionController extends Controller
                 'signature.mimes' => 'The image must be in JPEG, PNG, JPG format.',
                 'signature.max' => 'The image size must not exceed '.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'KB .',
                 'signature.min' => 'The image size must not be less than '.Config::get("AllFileValidation.REQUISITION_IMAGE_MIN_SIZE").'KB .',
-                'signature.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+                // 'signature.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
             ];
 
   
@@ -120,8 +121,10 @@ class RequistionController extends Controller
         ];
 
         if($request->has('signature')) {
-            $rules['signature'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000|min:'.Config::get("AllFileValidation.SLIDER_IMAGE_MIN_SIZE");
+            $rules['signature'] = 'required|image|mimes:jpeg,png,jpg|max:'.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'|min:'.Config::get("AllFileValidation.REQUISITION_IMAGE_MIN_SIZE");
         }
+
+        //|dimensions:min_width=1500,min_height=500,max_width=2000,max_height=1000
 
         $messages = [
             'req_name.required' => 'The Requisition name is required.',
@@ -137,7 +140,7 @@ class RequistionController extends Controller
             'signature.mimes' => 'The image must be in JPEG, PNG, JPG format.',
             'signature.max' => 'The image size must not exceed '.Config::get("AllFileValidation.REQUISITION_IMAGE_MAX_SIZE").'KB .',
             'signature.min' => 'The image size must not be less than '.Config::get("AllFileValidation.REQUISITION_IMAGE_MIN_SIZE").'KB .',
-            'signature.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
+            // 'signature.dimensions' => 'The image dimensions must be between 1500x500 and 2000x1000 pixels.',
         ];
 
         try {

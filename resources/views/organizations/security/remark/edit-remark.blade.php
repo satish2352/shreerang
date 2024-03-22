@@ -69,9 +69,9 @@
                                                     <div class="row">                                                
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                             <div class="form-select-list">
-                                                                <label for="vendor_id">Select Vendor:</label>
+                                                                <label for="vendor_id">Select PO Number:</label>
                                                                     <select class="form-control custom-select-value" name="purchase_id" id="purchase_id">
-                                                                        <option value="">Select Vendor</option>
+                                                                        <option value="">Select PO</option>
                                                                         <option value="po1" {{ $editData->purchase_id == 'po1' ? 'selected' : '' }}>PO 1</option>
                                                                         <option value="po2" {{ $editData->purchase_id == 'po2' ? 'selected' : '' }}>PO 2</option>
                                                                         <option value="po3" {{ $editData->purchase_id == 'po3' ? 'selected' : '' }}>PO 3</option>                                                  
@@ -97,7 +97,7 @@
                                                                 <a href="{{ route('list-security-remark') }}"
                                                                     class="btn btn-white"
                                                                     style="margin-bottom:50px">Cancel</a>
-                                                                <button class="btn btn-sm btn-primary login-submit-cs"
+                                                                <button class="btn btn-sm btn-primary login-submit-cs" id="submitButton"
                                                                     type="submit" style="margin-bottom:50px">Update Data</button>
                                                                
                                                             </div>
@@ -122,43 +122,89 @@
     </form>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script> -->
  
-<script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+<!-- <script>
     jQuery.noConflict();
     jQuery(document).ready(function($) {
-    $("#editDesignsForm").validate({
-        rules: {          
-            purchase_id: {
-                required: true
+        $("#editDesignsForm").validate({
+            rules: {          
+                purchase_id: {
+                    required: true
+                },
+                department_id : {
+                    required : true
+                },
+                remark :{
+                    required : true,
+                },           
+                status :{
+                    required : true,
+                },            
             },
-            department_id : {
-                required : true
+            messages: {
+                purchase_id: {
+                    required: "Please Enter Po Number.",
+                },              
+                department_id : {
+                    required: "Please Enter Department.",
+                },           
+                remark : {
+                    required: "Please enter Remark.",
+                },                      
+                status : {
+                    required: "Please enter Status.",
+                },            
             },
-            remark :{
-                required : true,
-            },           
-            status :{
-                required : true,
-            },            
-        },
-        messages: {
-            purchase_id: {
-                required: "Please Enter Po Number.",
-            },              
-            department_id : {
-                required: "Please Enter Department.",
-            },           
-            remark : {
-                required: "Please enter Remark.",
-            },                      
-            status : {
-                required: "Please enter Status.",
-            },            
-        },
+        });
     });
-});
+</script> -->
+
+<!-- Make sure you have jQuery and jquery.validate.js included before this script -->
+ <script>
+        $(document).ready(function() {           
+            // Function to check if all input fields are filled with valid data
+            function checkFormValidity() {
+                const purchase_id = $('#purchase_id').val();
+                const remark = $('#remark').val();                                
+            }                                
+
+            // Initialize the form validation
+            var form = $("#editDesignsForm");
+            var validator = form.validate({
+                rules: {
+                    purchase_id: {
+                        required: true
+                    },
+                    remark :{
+                        required : true,
+                    },                                     
+                },
+                messages: {
+                    purchase_id: {
+                        required: "Please Enter Po Number.",
+                    },
+                    remark : {
+                        required: "Please Enter Remark.",
+                    },                                               
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });                
+                            
+            // Submit the form when the "Update" button is clicked
+            $("#submitButton").click(function() {
+                // Validate the form
+                if (form.valid()) {
+                    form.submit();
+                }
+            });         
+        });
 </script>
 
 <script>
